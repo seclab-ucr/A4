@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>WebThing Ltd</title>
+<style type="text/css">
+@import url(index.css) ;
+</style>
+<script type="text/javascript">
+var currentdiv = 0 ;
+var divs = [ "valet", "apache", "address" ] ;
+function hidedivs() {
+  for ( var i = 0; i&lt;3; ++i)
+    document.getElementById(divs[i]).className = "hidden" ;
+}
+function showdiv(divid) {
+  if ( divid == currentdiv ) {
+    return true ;
+  } else {
+    hidedivs() ;
+    document.getElementById(divid).className = "visible" ;
+    currentdiv = divid ;
+    return false ;
+  }
+}
+function init() {
+  showdiv("address") ;
+}
+</script>
+</head>
+<body onload="init();">
+<div id="title">
+<h1><img src="webthing.gif" alt="WebÞing" /></h1>
+<p>Systems and Software - Products, Development and Consultancy</p>
+</div>
+<div id="links" class="body">
+<a href="#valet" title="Site Valet" onclick="return showdiv('valet');">Web QA and Accessibility</a>
+·
+<a href="http://apache.webthing.com/" title="Apache Software">Web Server Technologies</a>
+<!--
+&middot;
+<a href="#software" title="Software Projects"
+onclick="return showdiv('software');">Software</a>
+-->
+·
+<a href="#address" title="Contact Details" onclick="return showdiv('address');">Contact</a>
+<!--
+<br>
+<a title="Web&#222;ing" href="http://www.webthing.com/">Standard Site</a>
+&middot;
+<a title="Powered by mod_accessibility"
+href="http://access.www.webthing.com/">Accessibility Options</a>
+-->
+</div>
+
+<div id="valet" class="hidden">
+<h2><a href="http://valet.webthing.com/">Web Tools</a></h2>
+<div id="valet-about" class="about">
+<p>WebÞing Technical Director and Valet developer <a href="/~nick/">Nick Kew</a> has numerous interests in Web QA and Accessibility.
+He serves on the <a href="http://www.w3.org/WAI/ER/">Evaluation and
+Repair Working Group</a> of the <abbr title="Worldwide Web Consortium">W3C</abbr>, and Valet was the world's first software to support
+<abbr title="Evaluation and Report Language">EARL</abbr> in a fully
+automatic system.  He is a member of the <a href="http://www.htmlhelp.org/">Web Design Group</a>, the <a href="http://validator.w3.org/">W3C
+Validator team</a>, and the newly-formed <a href="http://lists.w3.org/Archives/Public/public-qa-dev/">W3C QA Development</a> team.</p>
+</div>
+<a href="http://valet.webthing.com/"><img src="valet.gif" id="qa" alt="Site Valet: the Mark of Quality on the Web" /></a>
+<p>
+Site Valet is the leading online toolkit for Web Developers, featuring</p>
+<ul>
+	<li>Quality Assurance</li>
+	<li>Web Accessibility Analysis</li>
+	<li>HTML and XML Validation</li>
+	<li>Link Checking and Monitoring</li>
+	<li>Debugging Tools for Web Applications</li>
+</ul>
+<p>as well as <a href="/software/valet.pdf">Enterprise Edition</a>
+(total QA for corporate networks) and Desktop Tools for developers.</p>
+<div id="valet-testimonials">
+<h3>Testimonials</h3>
+<p class="left"><q>Site Valet and WebThing's wide range of Quality Assurance Tools have
+set the standard to aspire to.  Very impressive work, from a very
+impressive company.</q> - Terje Bless, lead developer of the
+<a href="http://validator.w3.org/">W3C Validator</a>.</p>
+
+<p class="right"><q>We have deployed WebThing's Valet technology on corporate sites
+to provide instant, automated checks and reports on consistency,
+quality and conformance, and are very satisfied with the results.</q>
+- Simon Brooke, Weft Technology Ltd.</p>
+
+
+<p class="left"><q>I've always liked SP's parse tree, but I was never going to
+convince the staff to use W3C's version.  The new Page Valet is
+very easy on the eye, whilst keeping the [X|SG]ML correctness
+we'd expect from WebThing.  Great.</q> - Calum I Mac Leod,
+Bordernet Ltd.</p>
+<p class="right"><q>The absolute best real validator I know of.  Nothing bad said about
+Gerald, Terje and their W3 Validator, it works as it is supposed to do.
+But as always, things can be made better from the users standpoint,
+and that is what Nick has spent time on.  His online tools are all worth
+a visit, and high marks for quality.</q> - Jan Roland Eriksson,
+CSS Pointers Group.</p>
+</div>
+</div> <!-- valet -->
+
+<div id="apache" class="hidden">
+<h2>Apache Modules</h2>
+<p>Now moved to <a href="http://apache.webthing.com/">apache.webthing.com</a>.</p>
+</div>
+
+<div id="address" class="visible">
+<h2>Contact Details</h2>
+<p>Either use the <a href="contact.html">Online Contact Form</a>,
+or contact us at:</p>
+<address>
+WebThing Ltd,<br />
+<!--PO Box 4, Callington,<br>
+Cornwall, PL17 8YW, UK<br>-->
+Tel. (+44) 7703 347797<br />
+Email. <a href="mailto:webthing@webthing.com">webthing@webthing.com</a>
+</address>
+<p class="legal">WebThing Ltd is registered in England and Wales,
+Registered number 3427454.</p>
+</div>
+
+
+</body></html>

@@ -1,0 +1,236 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script async="" src="https://ddc.optimahub.com/3/ddc.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-T6BPC96&amp;l=aaa_gtm_prod"></script><script id="aaa-national-datalayer">aaa_gtm_prod = [{"club":"1000","memberStatus":"Unknown","category":"ZipCode","subcategory":"ZC_STOP","pageType":"General","eventType":"Transitional"}]</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','aaa_gtm_prod','GTM-T6BPC96')</script>
+<meta charset="UTF-8" />
+
+<!--stops zooming-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        
+<title>AAA ZIP/Postal Code</title>
+
+<!--Fav Icon-->
+<link rel="icon" type="image/png" href="" />
+
+<!--AAA services - application global stylesheet-->
+<!--Fonts-->	
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet" /> 
+<link type="text/css" href="/AAA/common/styles/cssd/aaa-fonts.css" rel="stylesheet" />
+<!--Main layout-->
+<link type="text/css" href="/AAA/common/styles/cssd/aaa-services-V2.css" rel="stylesheet" />
+
+<!--Project level-->
+<link type="text/css" href="css/aaa-zip-code-page.css" rel="stylesheet" />
+
+<!--jQuery--> 
+<script type="text/javascript" src="/jsincludes/jquery/jquery.latest.min.js"></script>
+
+<!--AAA Services JS-->
+<!--Loading progress bar-->
+<script type="text/javascript" src="/jsincludes/jquery/pace.min.js"></script>
+<!--AAA services - application global functionality-->
+<script type="text/javascript" src="/jsincludes/jquery/aaa-services.js"></script>
+
+<!--Project level-->
+<script type="text/javascript" src="js/aaa-zip-code-page.js"></script>
+</head>
+
+<body class=" pace-running"><div class="pace pace-active"><div class="pace-progress" data-progress-text="39%" data-progress="39" style="transform: translate3d(39.1467%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+<div class="aaa-zip-code-content">
+    <!--Banner Image-->
+    <div class="aaa-banner-image aaa-banner-image-full-screen" style="height: 600px;"></div>
+    <!--Error Message-->
+    <div class="wht5 aaa-error-message-full-container" onclick="aaa_hideErrorMessage();">
+        <span class="regularText" id="zip-code-errorMessage">This is where error messages should go.</span>
+    </div>
+	<!--Banner content-->
+    <div class="aaa-banner-container">
+        <div class="aaa-static-banner"></div>           
+        <div class="aaa-banner-filter"></div>              
+        <div class="aaa-inner-container">
+            <div id="aaa-zipcode-banner-content" class="aaa-banner-content" style="height: 612px;"> 
+                <div class="aaa-content-container">   
+                    <div class="aaa-caa-logos-wht"></div>
+                    <h1 class="wht1">Find Your Local AAA Club</h1>
+                    <!--Zip Code Form-->
+                    <div id="zip-code-form" class="aaa-search-container">
+                        <div class="aaa-inline-blockContainer">
+                            <div class="aaa-form-block">
+                                <!--Location-->
+                                <div class="aaa-formLeft">
+                                    <label class="wht5 aaa-formLabel" for="zipCode">Home ZIP/postal code</label>
+                                    <input type="text" name="zipCode" id="zipCode" class="aaa-inputText" maxlength="7" placeholder="Enter home ZIP/postal code" />
+                                </div>
+                                <!--Search Button-->
+                                <div class="aaa-formLeft">
+                                    <input type="button" id="goButton" class="aaa-btn aaa-zip-code-btn" value="Go" onclick="findClub();" />
+                                </div>
+                            </div>
+                            <h2 class="wht3 regularText">AAA/CAA is a federation of regional clubs located throughout North America.</h2>
+                            <h3 class="wht5 regularText">Enter your ZIP/postal code to take full advantage of your local club's products and services. AAA/CAA clubs offer insurance, travel services, travel information including maps, guides and information on top-rated Diamond hotels and restaurants, member discounts, auto repair recommendations, tow truck services, and more.</h3>
+                            <!--Zipcode Footer-->
+                            <div class="aaa-zipcode-footer-bottom">
+                                <span class="wht6 regularText">Copyright © </span>
+                                <span class="wht6 regularText aaa-footer-copy-date"></span>
+                                <span class="wht6 regularText"> AAA/CAA Rights Reserved.</span><br />
+                                <a class="aaa-link" onclick="showZipcodeTerms();">Terms of Use</a>
+                                <span class="wht6 regularText"> | </span>
+                                <a class="aaa-link" onclick="showZipcodePrivacy();">Privacy Policy</a>
+                                <span class="wht6 regularText"> | </span>
+                                <a class="aaa-link" href="http://www.aaa.com/Suggestions.html" target="_blank">Comments</a>
+                                <span class="wht6 regularText"> | </span>
+                                <a class="aaa-link" href="https://www.aaa.com/international" target="_blank">International Members</a>
+                            </div>
+                        </div>  
+                    </div>
+                    <div id="zip-code-loader" class="aaa-loader-wht"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!--Content-->
+    <div id="start-main-content" class="aaa-column-outer-container">
+        <div class="aaa-column-inner-container">
+            <div class="aaa-inner-container">
+                <div class="aaa-inline-blockContainer">
+                    <!---->
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/aboutAAA-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">About AAA</h1>
+                            <div class="blk5 regularText">AAA serves more than 57 million members. Your local club is available to serve you through branch office locations and online services. Take full advantage of every AAA membership benefit including a variety of services that can help you save money.</div>
+                        </div>
+                    </div>
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/membership-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Membership</h1>
+                            <div class="blk5 regularText">Your AAA membership is a membership for life. Use it every day to get discounts and deals at places to shop around town from restaurant deals, hotel deals, movie tickets, and more. Use AAA on your smartphone to find cheap gas nearby and get travel information, AAA Diamond rated hotels, restaurants, attractions, events, and more. In times when you need auto repair, roadside service or a new car battery, a AAA tow truck or service vehicle will be on its way to help.</div>
+                        </div>
+                    </div>
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/travel-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Travel</h1>
+                            <div class="blk5 regularText">When it comes to travel, AAA gets your trip heading in the right direction. Partnerships with Royal Caribbean and Carnival Cruise Lines, among others, make for some sweet cruise deals. Work with a AAA travel agent or use online trip planning tools to find cheap hotels, book flights, reserve rental cars and even find the best motel along your road trip. Use your AAA membership to get hotel discounts, air discounts and car rental discounts. Also, check out the best AAA Diamond rated hotels and restaurants.</div>
+                        </div>
+                    </div> 
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/travel-info-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Travel Information</h1>
+                            <div class="blk5 regularText">Whether you're planning a family trip to Universal Studios Orlando or a Las Vegas getaway, use AAA travel information to be a well-informed traveler. Travel Guides provide detailed destination information and travel tips, Drive Trips can help you plan vacations to go, and TripTik maps will help you find nearby restaurants, gas stations and last minute hotels.</div>
+                        </div>
+                    </div> 
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/savings-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Savings &amp; Discounts</h1>
+                            <div class="blk5 regularText">If you want to know how to save money, AAA membership is one answer. With discounts at more than 100,000 places across North America, you're sure to save whether you’re at home or traveling. With a AAA membership, you can save at places where you may already shop, dine, and visit, including attractions and events. AAA offers local discounts near you, and national discounts that provide ways to save money.</div>
+                        </div>
+                    </div> 
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/auto-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Auto Services</h1>
+                            <div class="blk5 regularText">As a AAA member, you have peace of mind when things on the road don't go as planned. When you need Roadside Assistance or a new car battery, a AAA tow truck or service vehicle is just a tap, click, or call away. If you’re looking for a mechanic you can trust, use AAA’s  network of Approved Auto Repair shops. (AAR shops). And when it’s time for a replacement, use AAA’s comprehensive car buying resources for new cars and used cars.</div>
+                        </div>
+                    </div> 
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/insurance-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Insurance</h1>
+                            <div class="blk5 regularText">Turn to AAA for your insurance needs. Your AAA insurance agent can help you get the right home insurance or car insurance policy to help protect you and your family.</div>
+                        </div>
+                    </div> 
+                    <!---->  
+                    <div class="aaa-article-summary">
+                        <div class="aaa-article-thumb">
+                            <img src="images/financial-thumb.jpg" alt="Windshield Repair And Replacement" />
+                         </div>
+                         <div class="aaa-article-description">
+                            <h1 class="blk3 aar-article-title-link">Financial Services</h1>
+                            <div class="blk5 regularText">When it comes to peace of mind, AAA has your finances covered too. Learn more about ID protection services, credit cards, and a selection of financial products for domestic trips as well as international travel.  AAA also offers currency exchange to ensure you're prepared to enjoy traveling abroad.</div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Terms-->
+<div class="aaa-zipcode-terms-container">
+    <div class="wht3 regularText aaa-zipcode-close-x" onclick="termsBack();">X</div>
+    <div class="wht2">Terms of use</div>
+    <div class="wht6 regularText">AAA.com Online Registration Agreement<br /><br /></div>
+    <div class="wht6 regularText">AAA AND DEVELOPMENT SUPPLIED DATA DISCLAIMS ALL REPRESENTATIONS AND WARRANTIES, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTIBILITY AND FITNESS, AS WELL AS WARRANTIES OF TITLE AND NON-INFRINGEMENT, WITH RESPECT TO THE SOFTWARE, PRODUCTS, AND SERVICES THAT ARE PUBLISHED ON OR AVAILABLE THROUGH THIS WEB SITE (COLLECTIVELY "INFORMATION").<br /><br /></div>
+    <div class="wht6 regularText">MEMBER AGREES THAT AAA AND DEVELOPMENT SUPPLIED DATA WILL HAVE NO LIABILITY FOR ANY EFFECTS OR DAMAGE THAT MEMBER'S USE OF THE INFORMATION MAY HAVE ON MEMBER'S OPERATING ENVIRONMENT, DATA, OR BUSINESS OPERATIONS.<br /><br /></div>
+    <div class="wht6 regularText">AAA AND DEVELOPMENT SUPPLIED DATA MAKES NO WARRANTY OR REPRESENTATION REGARDING THE CONTENT, ACCURACY, TIMELINESS, OR COMPLETENESS OF THE INFORMATION FURNISHED HEREUNDER OR THAT SUCH INFORMATION WILL MEET MEMBER'S SPECIFIC NEEDS.<br /><br /></div>
+    <div class="wht6 regularText">MEMBER AGREES THAT AAA AND DEVELOPMENT SUPPLIED DATA 'S LIABILITY, IF ANY, ARISING OUT OF OR RELATING TO MEMBER'S USE OF THE INFORMATION SHALL NOT EXCEED THE AMOUNT OF MEMBER'S ANNUAL AAA AND DEVELOPMENT SUPPLIED DATA MEMBERSHIP FEE. IN NO EVENT SHALL AAA AND DEVELOPMENT SUPPLIED DATA BE LIABLE FOR ANY INCIDENTAL, INDIRECT, CONSEQUENTIAL, OR EXEMPLARY DAMAGES WHATSOEVER, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM THE USE OF THE INFORMATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</div>
+</div>
+<!--Privacy-->
+<div class="aaa-zipcode-privacy-container">
+    <div class="wht3 regularText aaa-zipcode-close-x" onclick="privacyBack();">X</div>
+    <div class="wht2">Privacy Policy<br /><br /></div>
+    <div class="wht5 regularText">AAA is committed to honoring the privacy of the users of the AAA Web Site, which includes any personally identifiable information. AAA will utilize any information collected to better understand its users needs and provide better service. In addition, AAA will use the information it gathers to improve the content of the web site. If any personally identifiable information has been volunteered, AAA may utilize that information to notify users about updates to the web site and/or contact users for marketing purposes. The information that is personally identifiable will not be shared with or sold to any other organizations for commercial purposes.<br /><br /></div>
+    <div class="wht5 regularText">Below is a list of non-volunteered information that will be collected automatically when visiting the AAA Enhanced Services Web Site:<br /><br /></div>
+    <div class="wht5 regularText">• The referrer (the site prior to entering the AAA web site)</div>
+    <div class="wht5 regularText">•  The IP address of the workstation</div>
+    <div class="wht5 regularText">• Date and time logged in and out</div>
+    <div class="wht5 regularText">• Pages visited while on our site</div>
+    <div class="wht5 regularText">• Time spent on each page</div>
+    <div class="wht5 regularText">• Files downloaded</div>
+    <div class="wht5 regularText">• Criteria used when searching</div>
+    <div class="wht5 regularText"><br />If the user supplies their telephone number online, they may be contacted by AAA regarding orders placed online. Please be sure to provide AAA with the correct phone number.</div>
+</div>    
+
+<a class="scroller_anchor"></a>
+
+<!--Back to Top-->
+<a id="aaa-backToTop" class="aaa-backToTop" onclick="aaa_scrollToTop()"></a>
+
+<!-- dcs_tag.js needs to be absolute or it won't resolve on the aaa.aaa domain -->
+<script src="//www.aaa.com/configuration/dcs_tag.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var nologParm = getUrlParameter("nolog", "no");
+    var performWTLogging = true;
+    if(nologParm &amp;&amp; nologParm == 'yes'){
+        performWTLogging = false;
+    }
+    if(performWTLogging){
+       var campaignParm = getUrlParameter("campaign", "");
+       setCategory("ZipCode");
+       setSubcategory("ZC_STOP");
+       setPageType("General");
+       setURL("/zipcode.html");
+       setByClub("1000");
+       setCampaign(campaignParm);
+       logPage();
+    }
+</script>
+
+<script type="text/javascript" id="">(function(a,e,f,g,b,c,d){a[b]||(a.GlobalSnowplowNamespace=a.GlobalSnowplowNamespace||[],a.GlobalSnowplowNamespace.push(b),a[b]=function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].q=a[b].q||[],c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d))})(window,document,"script","https://ddc.optimahub.com/3/ddc.min.js","oh_track");
+oh_track("newTracker","oh","odc.optimahub.com",{appId:"OH-235499-1",platform:"web",discoverRootDomain:!0,forceSecureTracker:!0,cookieSync:{ixi:{baseUrl:"https://dl.ixiaa.com",partnerId:"dac4de9d-81b4-41c4-a280-cd768bde0631",method:"a.gif"},facebook:{baseUrl:"https://www.facebook.com/tr",partnerId:0xc587c5903d5a,params:{ev:"PageView"}}}});oh_track("trackPageView");</script></body></html>

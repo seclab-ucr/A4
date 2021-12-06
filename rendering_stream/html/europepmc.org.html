@@ -1,0 +1,887 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="dc: http://purl.org/dc/elements/1.1/#; dcterms: http://purl.org/dc/terms/#"><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><script type="text/javascript" async="" defer="" src="/piwik.js"></script><script type="text/javascript" src="./wicket/resource/org.apache.wicket.resource.JQueryResourceReference/jquery/jquery-1.11.1.min-ver-8101D596B2B8FA35FE3A634EA342D7C3.js"></script>
+<link rel="stylesheet" type="text/css" href="/css_min/min/orcid-min.css?v=12044" />
+<script type="text/javascript" src="./wicket/resource/org.europepmc.account.AccountSigninPanel/AccoutSigninPanel-ver-DDFA915CA8B013CB37F91166D4CDBB3B.js"></script>
+<title>Europe PMC</title><link href="/css/chunk-143a746e.80f506e3.css" rel="prefetch" /><link href="/css/chunk-1709751c.5c492fbf.css" rel="prefetch" /><link href="/css/chunk-1bb0cee9.90934981.css" rel="prefetch" /><link href="/css/chunk-1f61457d.509a7ff1.css" rel="prefetch" /><link href="/css/chunk-27cba8f0.765c0e84.css" rel="prefetch" /><link href="/css/chunk-2ea88abf.9ef8a7b3.css" rel="prefetch" /><link href="/css/chunk-3da12e9e.ae170bd4.css" rel="prefetch" /><link href="/css/chunk-489a0e72.5dcb5e92.css" rel="prefetch" /><link href="/css/chunk-4f12588d.07f83f93.css" rel="prefetch" /><link href="/css/chunk-75abc371.8d00344e.css" rel="prefetch" /><link href="/css/chunk-77f002d8.c842d7aa.css" rel="prefetch" /><link href="/css/chunk-7827c6b7.17436e23.css" rel="prefetch" /><link href="/css/chunk-7bbb5032.54327a4a.css" rel="prefetch" /><link href="/css/chunk-89f57112.95acf322.css" rel="prefetch" /><link href="/css/chunk-8ea8efdc.6454f8f4.css" rel="prefetch" /><link href="/css/chunk-ba6879b4.f1724bbd.css" rel="prefetch" /><link href="/css/chunk-bbdd3776.220a96c7.css" rel="prefetch" /><link href="/css/chunk-cc75b612.ea319f60.css" rel="prefetch" /><link href="/css/chunk-f2b4701e.9bd9c258.css" rel="prefetch" /><link href="/css/chunk-f31030b4.a4f06a81.css" rel="prefetch" /><link href="/css/chunk-vendors.13ebcd05.css" rel="stylesheet" /><link href="/css/app.4937e4c1.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/css/chunk-8ea8efdc.6454f8f4.css" /><script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-event-jquery.min-ver-F070EDFAD7E5A1BD9662F385470094FF.js"></script>
+<script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-ajax-jquery.min-ver-1D4EE56166B3A1106E05B678CC2AB1EF.js"></script>
+<script type="text/javascript" src="./wicket/resource/org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow/res/modal.min-ver-E43C9229F7812A6259B89C7E5B5028FB.js"></script>
+<link rel="stylesheet" type="text/css" href="./wicket/resource/org.apache.wicket.extensions.ajax.markup.html.modal.ModalWindow/res/modal.min-ver-E99D4201F0F6C5D3081AD42ACB1F22C2.css" />
+<script type="text/javascript" id="wicket-ajax-base-url">
+/*&lt;![CDATA[*/
+Wicket.Ajax.baseUrl="";
+/*]]&gt;*/
+</script>
+
+<style id="uk-bl-ukpmc-web-pages-template-TemplatePage-0">
+/*&lt;![CDATA[*/
+
+#search-feature-link {
+display: none;
+}
+@media only screen and (max-width: 800px) {
+#search-feature-link {
+display: block;
+}
+}
+
+/*]]&gt;*/
+</style>
+<script type="text/javascript" src="./wicket/resource/uk.bl.ukpmc.web.pages.template.TemplatePage/TemplatePage-ver-540ECA69167ECC178EB8C919D0809EB3.js"></script>
+
+<title>Europe PMC</title>
+<link rel="stylesheet" href="/template/font-awesome/css/all.min.css" />
+<link rel="stylesheet" href="/template/EPMC-iconfont/style.css?v=12044" />
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+<link rel="prefetch" href="//europepmc.org/template/images/epmc-bubbles.jpg" />
+<link rel="alternate" type="application/rss+xml" title="Europe PMC: Popular articles" href="/Funders/RSS/MostViewedArticles.xml" />
+<link rel="alternate" type="application/rss+xml" title="Europe PMC: Recent articles" href="/Funders/RSS/AllFunders.xml" />
+<link rel="alternate" type="application/rss+xml" title="Europe PMC: Latest journals" href="/Funders/rss/NewJournals.xml" />
+<link rel="alternate" type="application/rss+xml" title="Europe PMC: Content Holdings" href="/contentrss" />
+<meta name="theme-color" content="#666" />
+<meta name="author" content="Europe PMC" />
+<meta name="owner" content="Europe PMC" />
+<meta name="keywords" content="Europe PMC, Europe PubMed Central, open access, research articles, journal articles, abstracts, full text, literature search, clinical guidelines, biological patents, life sciences, bioinformatics, biomedical research, citation search, biomedical journals, ORCIDs, text mining, citation networks, REST APIs " />
+<meta name="description" content="Europe PMC is an archive of life sciences journal literature." />
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+<link rel="search" type="application/opensearchdescription+xml" title="Search Europe PMC" href="/tools_epmc/opensearch_epmc.xml" />
+<link rel="stylesheet" type="text/css" media="print, screen" href="/template/jquery_ui.css?v=12044" />
+<link rel="stylesheet" type="text/css" media="screen" href="/template/jquery_menu.css?v=12044" />
+<script type="text/javascript" src="/template/yahoo-min.js?v=12044"></script>
+<script type="text/javascript" src="/template/dom-min.js?v=12044"></script>
+<script type="text/javascript" src="/template/enrichment.js?v=12044"></script>
+<link rel="stylesheet" type="text/css" media="print, screen" href="/template/enrichment.css?v=12044" />
+<script type="text/javascript" src="/template/hoverIntent.js?v=12044"></script>
+<script type="text/javascript" src="/template/jquery.js?v=12044"></script>
+<link rel="stylesheet" type="text/css" href="/template/ncbi/epmc.ncbi.css?v=12044" />
+<script type="text/javascript" src="/template/epmc.js?v=12044"></script>
+<link rel="stylesheet" type="text/css" href="/template/epmc_new.css?v=12044" />
+<link href="/css/compromise.css" rel="stylesheet" type="text/css" />
+
+
+
+<style>
+/*&lt;![CDATA[*/
+
+.covid-notification {
+position: static;
+justify-content: space-around;
+box-sizing: border-box;
+font-size: 20px;
+padding: 14px 16px;
+word-wrap: break-word;
+background-color: #EBFAAF;
+color: #494949;
+text-align: left;
+z-index: 100;
+}
+.covid-notification-text {
+font-weight: 600;
+}
+.covid-notification-link {
+text-decoration: none;
+font-weight: 600;
+}
+.icon-close {
+float: right;
+cursor: pointer;
+padding-left: 8px;
+text-decoration: none;
+color: #20699C;
+font-weight: 600;
+:hover {
+color: #1d7ac8;
+}
+}
+@media screen and (max-width: 1599px) {
+.covid-notification {
+font-size: 18px;
+}
+}
+@media screen and (max-width: 999px) {
+.covid-notification {
+font-size: 16px;
+}
+}
+@media screen and (max-width: 799px) {
+.covid-notification {
+font-size: 14px;
+padding: 13px 0;
+}
+.covid-notification-text-editable {
+display: none;
+}
+}
+.sticky-banner {
+position: absolute !important;
+top: 0;
+width: 100%;
+z-index: 1;
+}
+
+/*]]&gt;*/
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.4.2/dist/vue.min.js"></script>
+
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+$(document).ready(function () {
+$("#Highlight_head").click(function (event) {
+event.preventDefault();
+$("#Highlight_body").slideToggle();
+});
+$("#Highlight_body a").click(function (event) {
+event.preventDefault();
+$("#Highlight_body").slideUp();
+});
+var locationHost = $.cookie('location_host');
+if (typeof locationHost === 'undefined' || locationHost == null || locationHost == "") {
+$.cookie("location_host", window.location.host);
+}
+initBanner();
+});
+$(window).resize(handleBannerChangeForResize);
+function initBanner() {
+if ($.cookie('covid_banner') !== "dismissed") {
+var div = '&lt;div class="covid-notification small urgent sticky-banner covid_banner"&gt;&lt;div class="grid-row"&gt;&lt;div class="col-16"&gt;&lt;span class="covid-notification-text"&gt;&lt;i class="fas fa-info-circle" /&gt; Coronavirus: &lt;a id="covid-example-link" class="covid-notification-link" href=\'/search?query=("2019-nCoV" OR "2019nCoV" OR "COVID-19" OR "SARS-CoV-2" OR "COVID19" OR "COVID" OR "SARS-nCoV" OR ("wuhan" AND "coronavirus") OR "Coronavirus" OR "Corona virus" OR "corona-virus" OR "corona viruses" OR "coronaviruses" OR "SARS-CoV" OR "Orthocoronavirinae" OR "MERS-CoV" OR "Severe Acute Respiratory Syndrome" OR "Middle East Respiratory Syndrome" OR ("SARS" AND "virus") OR "soluble ACE2" OR ("ACE2" AND "virus") OR ("ARDS" AND "virus") or ("angiotensin-converting enzyme 2" AND "virus"))\'&gt;&lt;span class="covid-notification-text-editable"&gt;Find the latest &lt;/span&gt;articles and preprints&lt;/a&gt;&lt;/span&gt;&lt;span class="icon-close" id="banner-dismiss"&gt;&lt;i class="fas fa-times"/&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
+$(div).insertBefore('#body');
+$('#covid-example-link').click(function() {
+PiwikAnalyticsTracker.track("All pages", "Covid-19", "Clicked Covid search link");
+});
+$('#banner-dismiss').click(function() {
+removeBanner();
+PiwikAnalyticsTracker.track("All pages", "Covid-19", "Dismissed Covid search link");
+});
+}
+handleBannerChangeForResize();
+}
+function handleBannerChangeForResize() {
+// var h = document.getElementsByClassName('covid_banner');
+// if (window.innerWidth &lt;= 870 &amp;&amp; h.length === 2) {
+// document.getElementById("feedback-container").style.top =
+// (44 + document.getElementsByClassName('covid_banner')[0].offsetHeight) + "px";
+// } else {
+// document.getElementById("feedback-container").style.removeProperty("top");
+// }
+$('#banner-dismiss').html((window.innerWidth &lt;= 1000 ? "":"") + '&lt;i class="fas fa-times"/&gt;');
+$(".page_proper").first().css("margin-top", $('.covid_banner').first().outerHeight());
+}
+function removeBanner() {
+// if (window.innerWidth &lt;= 870)
+// document.getElementById("feedback-container").style.top = "44px";
+var elem = document.getElementsByClassName('covid_banner');
+elem[0].parentNode.removeChild(elem[0]);
+$(".page_proper").first().css("margin-top", 0);
+if ($.cookie('covid_banner') !== "dismissed")
+$.cookie('covid_banner', 'dismissed');
+}
+
+/*]]&gt;*/
+</script>
+
+
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+Wicket.Event.subscribe('/ajax/call/complete', function (jqEvent, attributes, jqXHR, errorThrown, textStatus) {
+if (jqXHR != null &amp;&amp; jqXHR.responseText != null &amp;&amp;
+(jqXHR.responseText.match("ShowCitationDetails]]&gt;&lt;/redirect&gt;&lt;/ajax-response&gt;")
+|| jqXHR.responseText.match("articles]]&gt;&lt;/redirect&gt;&lt;/ajax-response&gt;"))) {
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+var trident = ua.indexOf("Trident/");
+if (msie &gt; 0 || trident &gt; 0) {
+window.document.execCommand("Stop");
+} else {
+window.stop();
+}
+}
+});
+
+/*]]&gt;*/
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="./wicket/resource/uk.bl.ukpmc.web.pages.home.HomePage/homepage-ver-A5E4180F845BC33909EA571095E68055.css" />
+
+<script type="application/ld+json" id="uk-bl-ukpmc-web-pages-home-HomePage-0">
+[{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"name": "Europe PMC",
+"url": "https://europepmc.org",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://europepmc.org/search?query={search_term_string}",
+"query-input": "required name=search_term_string"
+}
+}, {
+"@context": "http://schema.org",
+"@type": "Organization",
+"name": "Europe PMC",
+"alternateName": "Europe PubMed Central",
+"url": "https://europepmc.org",
+"logo": "https://europepmc.org/template/images/epmc-logo-single.png",
+"sameAs" : [
+"https://en.wikipedia.org/wiki/Europe_PubMed_Central",
+"https://twitter.com/europepmc_news",
+"http://blog.europepmc.org/"
+],
+"contactPoint": [{
+"@type": "ContactPoint",
+"name": "Europe PMC Helpdesk",
+"telephone": "+44-1223494118",
+"contactType": "technical support",
+"email": "helpdesk@europepmc.org"
+}]
+}]
+</script>
+<script src="./js_min/site_stats_updater.js"></script>
+<script type="text/javascript" src="./wicket/resource/com.googlecode.wicket.jquery.core.resource.JQueryUIResourceReference/jquery-ui.min-ver-80CBC031ED1AE0BD82C578DD2D6A4EA0.js"></script>
+<script type="text/javascript" src="/js_min/min/epmc-min.js?v=12044"></script>
+<script type="text/javascript" src="/js_min/min/responsify-analytics-min.js?v=12044"></script>
+<link rel="stylesheet" type="text/css" href="/css_min/min/jquery-ui-min.css?v=12044" />
+<link rel="stylesheet" type="text/css" href="/css_min/min/advanced_search-min.css?v=12044" />
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+Wicket.Event.add(window, "domready", function(event) { 
+Wicket.Ajax.ajax({"c":"id1","u":"./?0-1.IBehaviorListener.0-search-clipboard","e":"click"});;
+Wicket.Ajax.ajax({"c":"exportPanelLink","u":"./?0-1.IBehaviorListener.0-search-exportPanelLink","e":"click","coh":[function(attrs, jqXHR, textStatus){;onClickPanelLink();registerExportPanel();}]});;
+Wicket.Ajax.ajax({"c":"closeExportWindow","u":"./?0-1.IBehaviorListener.0-search-closeExportWindow","e":"click"});;
+;});
+/*]]&gt;*/
+</script>
+<script src="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/script.min.js?legacyRequest=other"></script></head>
+<body class="piwik-loaded" style="padding-bottom: 127px;"><div id="WzTtDiV" style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; left: 0px; top: 0px; width: 0px;"></div>
+<span style="display:none" id="piwikIdSite">1</span>
+<div class="covid-notification small urgent sticky-banner covid_banner"><div class="grid-row"><div class="col-16"><span class="covid-notification-text"><i class="fas fa-info-circle"></i> Coronavirus: <a id="covid-example-link" class="covid-notification-link" href="/search?query=(&quot;2019-nCoV&quot; OR &quot;2019nCoV&quot; OR &quot;COVID-19&quot; OR &quot;SARS-CoV-2&quot; OR &quot;COVID19&quot; OR &quot;COVID&quot; OR &quot;SARS-nCoV&quot; OR (&quot;wuhan&quot; AND &quot;coronavirus&quot;) OR &quot;Coronavirus&quot; OR &quot;Corona virus&quot; OR &quot;corona-virus&quot; OR &quot;corona viruses&quot; OR &quot;coronaviruses&quot; OR &quot;SARS-CoV&quot; OR &quot;Orthocoronavirinae&quot; OR &quot;MERS-CoV&quot; OR &quot;Severe Acute Respiratory Syndrome&quot; OR &quot;Middle East Respiratory Syndrome&quot; OR (&quot;SARS&quot; AND &quot;virus&quot;) OR &quot;soluble ACE2&quot; OR (&quot;ACE2&quot; AND &quot;virus&quot;) OR (&quot;ARDS&quot; AND &quot;virus&quot;) or (&quot;angiotensin-converting enzyme 2&quot; AND &quot;virus&quot;))"><span class="covid-notification-text-editable">Find the latest </span>articles and preprints</a></span><span class="icon-close" id="banner-dismiss"><i class="fas fa-times"></i></span></div></div></div><div class="page_proper" id="body" style="margin-top: 52px;">
+<noscript>
+&lt;div style="text-align:center"&gt;
+&lt;p&gt;&lt;b&gt;Europe PMC&lt;/b&gt; requires Javascript to function effectively.&lt;/p&gt;
+&lt;p&gt;Either your web browser doesn't support Javascript or it is currently turned off. In the latter case, please
+turn on Javascript support in your web browser and reload this page.&lt;/p&gt;
+&lt;/div&gt;
+</noscript>
+<header>
+<div id="epmc_pageHeader">
+
+
+<div class="dark-gray">
+<div class="container">
+<div>
+<span>
+
+<span id="id2">
+<span>
+<i class="fa fa-user profile-icon"></i><a id="login-bar--signin-link" class="orcid_signin_text" href="/accounts/login">Sign in</a> or <a class="orcid_signin_text" href="/accounts/registration">create an account</a>
+</span>
+</span>
+</span>
+<iframe id="iframeId" name="aframe" style="border:none" seamless=""></iframe>
+<span id="orcidurlId" class="screenReader">https://orcid.org</span>
+<span style="display:none" id="plusLogoutUrl">https://plus.europepmc.org</span>
+</div>
+</div>
+</div>
+<nav class="container">
+<ul id="epmc_mainNav">
+<li>
+<div class="logo">
+<a href="/" target="_top" accesskey="U" class="current parent">
+<span class="screenReader">Europe PMC</span>
+</a>
+</div>
+<a id="menu_button" href="#" onclick="return navDrop(this);" class="">
+<span>Menu</span>
+</a>
+<ul class="dropdown">
+<li>
+<a href="./About" onclick="return navDrop(this);">
+<span>About</span>
+</a>
+<ul class="sub_menu">
+<li class="citation_navigation_unselected">
+<a href="./About">
+<span>About Europe PMC</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Preprints">
+<span>Preprints in Europe PMC</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Funders">
+<span>Funders</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Joining">
+<span>Joining Europe PMC</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Governance">
+<span>Governance</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Roadmap">
+<span>Roadmap</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Outreach">
+<span>Outreach</span>
+</a>
+</li>
+</ul>
+</li><li>
+<a href="./tools" onclick="return navDrop(this);">
+<span>Tools</span>
+</a>
+<ul class="sub_menu">
+<li class="citation_navigation_unselected">
+<a href="./tools">
+<span>Tools overview</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./orcid/import">
+<span>ORCID article claiming</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./journalList">
+<span>Journal list</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./grantfinder">
+<span>Grant finder</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./LabsLink">
+<span>External links service</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./RssFeeds">
+<span>RSS feeds</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./Annotations">
+<span>Annotations</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./AnnotationsSubmission">
+<span>Annotations submission service</span>
+</a>
+</li>
+</ul>
+</li><li>
+<a href="./developers" onclick="return navDrop(this);">
+<span>Developers</span>
+</a>
+<ul class="sub_menu">
+<li class="citation_navigation_unselected">
+<a href="./developers">
+<span>Developer resources</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./RestfulWebService">
+<span>Articles RESTful API</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./GristAPI">
+<span>Grants RESTful API</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./use-cases">
+<span>API use cases</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./SoapWebServices">
+<span>SOAP web service</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./AnnotationsApi">
+<span>Annotations API</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./OaiService">
+<span>OAI service</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./downloads">
+<span>Bulk downloads</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="http://groups.google.com/a/ebi.ac.uk/forum/#!forum/epmc-webservices">
+<span>Developers Forum</span>
+</a>
+</li>
+</ul>
+</li><li>
+<a href="./Help" onclick="return navDrop(this);">
+<span>Help</span>
+</a>
+<ul class="sub_menu">
+<li class="citation_navigation_unselected">
+<a href="./Help">
+<span>Help using Europe PMC</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./searchsyntax">
+<span>Search syntax reference</span>
+</a>
+</li><li class="citation_navigation_unselected">
+<a href="./ContactUs">
+<span>Contact us</span>
+</a>
+</li>
+</ul>
+</li><li class="contact-us">
+<a href="/ContactUs" onclick="return navDrop(this);">
+<span>Contact us</span>
+</a>
+<ul class="sub_menu">
+<li>
+<a href="/ContactUs">
+<span>Helpdesk</span>
+</a>
+</li>
+<li>
+<a href="/feedback?url=" onclick="var w = window.open('/feedback?url='+getReferredUrl(), 'ukpmc_feedback', 'scrollbars=no,location=no,menuBar=yes,resizable=yes,status=no,toolbar=yes,width=1050,height=810'); try {if (w.blur) w.focus();}catch(ignore){}; return false;"><span>Feedback</span></a>
+</li>
+<li>
+<a href="https://twitter.com/EuropePMC_news">
+<span>Twitter</span>
+</a>
+</li>
+<li>
+<a href="http://blog.europepmc.org">
+<span>Blog</span>
+</a>
+</li>
+<li>
+<a href="//europepmc.github.io/techblog/">
+<span>Tech blog</span>
+</a>
+</li>
+<li>
+<a href="//groups.google.com/a/ebi.ac.uk/forum/#!forum/epmc-webservices">
+<span>Developer Forum</span>
+</a>
+</li>
+</ul>
+</li><li class="last">
+<a href="https://plus.europepmc.org/" target="epmcplus" onmouseover="TipAllowed('Submit your manuscripts, manage your grants and publish your research impact using &lt;b&gt;Europe PMC plus&lt;/b&gt;')" onmouseout="UnTipAllowed()">
+<span>Europe PMC plus</span>
+</a>
+</li>
+</ul>
+<div style="clear:both"></div>
+</li>
+</ul>
+</nav>
+</div>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+function openFeedbackForm() {
+var referredURL = window.location.origin + window.location.pathname + encodeURIComponent(window.location.search)
+var w = window.open(
+window.location.protocol + '//' + window.location.host + '/feedback?url=' + referredURL,
+'ukpmc_feedback',
+'scrollbars=no,location=no,menuBar=yes,resizable=yes,status=no,toolbar=yes,width=550,height=810'
+);
+try {
+if (w.blur) w.focus();
+} catch(ignore){};
+return false;
+}
+function navDrop(link){
+if ($('#epmc_pageHeader').width() &lt; 870) {
+if ($('.nav_clicked').length &gt; 0){
+if ($(link).hasClass('nav_clicked')) {
+$(link).removeClass('nav_clicked');
+} else {
+if ($(link).not('#menu_button')) {
+$('.nav_clicked').not('#menu_button').removeClass('nav_clicked');
+}
+$(link).addClass('nav_clicked');
+}
+} else {
+$(link).addClass('nav_clicked');
+}
+return false;
+} else {
+return true;
+}
+}
+$(document).ready(function(){
+$('#epmc_mainNav a').each(function(){
+if($(this).attr('href').replace(/\./g, '').replace(/\//g, '') == window.location.pathname.replace(/\//g, '')){
+$(this).addClass('current');
+$(this).closest('ul').closest('li').children('a').addClass('current');
+}
+if(window.location.pathname.replace(/\//g, '').indexOf($(this).attr('href').replace(/\./g, '').replace(/\//g, ''))!= -1){
+$(this).addClass('parent');
+$(this).closest('ul').closest('li').children('a').addClass('current');
+}
+});
+});
+
+/*]]&gt;*/
+</script>
+</header>
+<div id="epmc_pageBody">
+
+
+<h1 style="text-indent: -9999px; position: absolute;">Europe PMC Homepage</h1>
+<div class="search_home">
+<div>
+<script type="text/javascript" src="/Scripts/recaptcha_ajax.js?v=12044"></script>
+<div id="epmc_searchBanner">
+<div class="search container">
+<form action="./?0-1.IFormSubmitListener-search-searchForm" method="post" id="searchForm11" name="searchForm11" accept-charset="UTF-8"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="searchForm11_hf_0" id="searchForm11_hf_0" /></div>
+<h2><label for="banner--search-input">Search worldwide, life-sciences literature</label></h2>
+<input type="text" id="banner--search-input" name="searchString" placeholder="" value="" /><button type="submit" id="banner--search-button"><i class="fa fa-search"></i><span class="button-text">Search</span></button>
+</form>
+<a href="/advancesearch" title="Advanced Search" class="advancedSearch" id="banner--advanced-search">
+Advanced Search
+</a>
+<span>
+<span class="search-caption">
+<a id="covid-search-example-link" href="/search?query=(&quot;2019-nCoV&quot; OR &quot;2019nCoV&quot; OR &quot;COVID-19&quot; OR &quot;SARS-CoV-2&quot; OR &quot;COVID19&quot; OR &quot;COVID&quot; OR &quot;SARS-nCoV&quot; OR (&quot;wuhan&quot; AND &quot;coronavirus&quot;) OR &quot;Coronavirus&quot; OR &quot;Corona virus&quot; OR &quot;corona-virus&quot; OR &quot;corona viruses&quot; OR &quot;coronaviruses&quot; OR &quot;SARS-CoV&quot; OR &quot;Orthocoronavirinae&quot; OR &quot;MERS-CoV&quot; OR &quot;Severe Acute Respiratory Syndrome&quot; OR &quot;Middle East Respiratory Syndrome&quot; OR (&quot;SARS&quot; AND &quot;virus&quot;) OR &quot;soluble ACE2&quot; OR (&quot;ACE2&quot; AND &quot;virus&quot;) OR (&quot;ARDS&quot; AND &quot;virus&quot;) or (&quot;angiotensin-converting enzyme 2&quot; AND &quot;virus&quot;))">Coronavirus articles and preprints</a>   <br id="search-feature-link" />Search examples:  <a href="/search?query=%22breast%20cancer%22">"breast cancer"</a>  <a href="/search?query=Smith%20J">Smith J</a>
+</span>
+</span>
+
+<div class="covid-19-find-out-more">
+<a id="covid-19-find-out-more-link" href="/Preprints#preprint-indexing">
+<img src="images/COVIDSignpostwText_over1000px.svg" />
+</a>
+<span></span>
+</div>
+
+</div>
+</div>
+
+<div class="container">
+<div id="searchToolsBox">
+<div id="searchTools" style="display:none">
+<div class="epmc_searchTools">
+
+
+
+</div>
+</div>
+</div>
+<div id="exportPanel"></div>
+<span id="closeExportWindow"></span>
+</div>
+<div id="id3">
+
+</div>
+<style>
+/*&lt;![CDATA[*/
+
+.covid-19-find-out-more {
+float: right;
+margin-top: 32px;
+}
+@media screen and (max-width: 1000px) {
+.covid-19-find-out-more {
+float: none;
+margin-top: 16px;
+}
+}
+
+/*]]&gt;*/
+</style>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+jQuery('#banner--search-input').on('input', function () {
+if (jQuery(this).val().length &gt;= 1500) {
+alert('The maximum allowed query length is 1500 characters');
+}
+});
+$('#searchButton').on('click', function () {
+PiwikAnalyticsTracker.track('Search', 'Keyword', 'Manual Input - ' + $('#textfield').val());
+});
+function onClickPanelLink() {
+var speed = 500;
+if ($('#exportPanel').css('display') == 'none') {
+$("#exportPanel").slideDown(speed);
+$('body').append('&lt;div class="wicket-mask-dark export" style="z-index: 2; position: absolute; top: 0px; left: 0px; background-image: none;"&gt;&lt;/div&gt;"');
+exportDisplaySection();
+// $(".results_pagination_range").fadeOut(speed - 100)
+$('#exportPanel').focus();
+} else {
+$("#exportPanel").slideUp(speed);
+setTimeout(function () {
+$(".wicket-mask-dark.export").remove();
+}, speed);
+// $(".results_pagination_range").fadeIn(speed + 150);
+}
+}
+$(document).ready(function() {
+$('#covid-search-example-link').click(function() {
+PiwikAnalyticsTracker.track("Search", "Covid-19", "Clicked Covid search link");
+});
+$('#covid-19-find-out-more-link').click(function() {
+PiwikAnalyticsTracker.track("Home", "Home page", "COVID-19 preprints intiative");
+});
+})
+
+/*]]&gt;*/
+</script>
+</div>
+</div>
+<div class="epmc_pageHolder">
+<div class="home-bar">
+<div>
+<a class="iconcircle" href="/About"><i class="epmc-icon-searchDoc"><span>About Europe PMC Search</span></i></a>
+<div class="home-text">
+<h3>Search more than abstracts</h3>
+<ul>
+<li><b>Abstracts</b> (<span id="abstracts"><a class="count" href="/search?query=SRC:*">37.9 million</a></span>, including from <span><a class="count" href="/search?query=SRC:MED">PubMed</a></span>, <span><a class="count" href="/search?query=SRC:AGR">Agricola</a></span>, and <span><a class="count" href="/search?query=SRC%3ACBA%20OR%20SRC%3ACTX%20OR%20SRC%3AETH%20OR%20SRC%3APAT%20OR%20SRC%3AHIR">other sources</a></span>)</li>
+<li><b>Full text articles</b> (<span id="full-text"><a class="count" href="/search?query=HAS_FT:Y">6.5 million</a></span>)</li>
+<li><b>Books and documents</b> (<span id="books"><a class="count" href="/search?query=HAS_BOOK:Y">24,689</a></span>)</li>
+<li><b>Preprints</b> (<span id="preprints"><a class="count" href="/search?query=SRC:PPR">209,329</a></span>)</li>
+</ul>
+<p><a href="/About">About Europe PMC <i class="fa fa-arrow-circle-o-right"></i></a></p>
+</div>
+</div>
+<div>
+<a class="iconcircle" href="/Help#linkeddata"><i class="epmc-icon-link"><span>Linked data resources</span></i></a>
+<div class="home-text">
+<h3>Link to data and resources</h3>
+<p>Explore the article and discover:</p>
+<ul>
+<li>Supporting and curated data</li>
+<li>Peer reviews and recommendations</li>
+<li>Protocols and materials</li>
+<li>Evidence (protein interactions, mutations, gene‑disease relationships)</li>
+</ul>
+<p><a href="/Help#linkeddata">About linked data and resources <i class="fa fa-arrow-circle-o-right"></i></a></p>
+</div>
+</div>
+<div>
+<a class="iconcircle" href="/orcid/import"><i class="epmc-icon-orcid"><span>ORCID Linking Tool</span></i></a>
+<div class="home-text">
+<h3>Get credit for your work</h3>
+<p>ORCID is a unique identifier for researchers which distinguishes you from every other researcher, and makes it easier to find your work.</p>
+<p class="light-gray">Use our claiming tool to link your Europe PMC articles to your ORCID<br />
+<a href="/orcid/import">Link articles to your ORCID <i class="fa fa-arrow-circle-o-right"></i></a></p>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="./wicket/resource/uk.bl.ukpmc.web.pages.home.HomePage/HomePage-ver-490E503ADB3B82FF8888E574ED774C9D.js"></script>
+
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+document.forms['searchForm11'].elements['banner--search-input'].focus();
+
+/*]]&gt;*/
+</script>
+
+
+</div>
+<footer id="epmc_pageFooter"><div class="epmc-elements"><div data-v-a4078bae="" id="footer"><div data-v-a4078bae="" id="menus" class="grid-row"><div data-v-a4078bae="" class="col-3"><h5 data-v-a4078bae=""><a data-v-a4078bae="" href="/About" target="_top">About</a></h5><div data-v-a4078bae=""><a data-v-a4078bae="" href="/About" target="_top" class="extra-small">About Europe PMC</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Funders" target="_top" class="extra-small">Funders</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Joining" target="_top" class="extra-small">Joining Europe PMC</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Governance" target="_top" class="extra-small">Governance</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Roadmap" target="_top" class="extra-small">Roadmap</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Outreach" target="_top" class="extra-small">Outreach</a></div></div><div data-v-a4078bae="" class="col-3"><h5 data-v-a4078bae=""><a data-v-a4078bae="" href="/tools" target="_top">Tools</a></h5><div data-v-a4078bae=""><a data-v-a4078bae="" href="/tools" target="_top" class="extra-small">Tools overview</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/orcid/import" target="_top" class="extra-small">ORCID article claiming</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/journalList" target="_top" class="extra-small">Journal list</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/grantfinder" target="_top" class="extra-small">Grant finder</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/LabsLink" target="_top" class="extra-small">External links service</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/RssFeeds" target="_top" class="extra-small">RSS feeds</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Annotations" target="_top" class="extra-small">Annotations</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/AnnotationsSubmission" target="_top" class="extra-small">Annotations submission service</a></div></div><div data-v-a4078bae="" class="col-3"><h5 data-v-a4078bae=""><a data-v-a4078bae="" href="/developers" target="_top">Developers</a></h5><div data-v-a4078bae=""><a data-v-a4078bae="" href="/developers" target="_top" class="extra-small">Developer resources</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/RestfulWebService" target="_top" class="extra-small">Articles RESTful API</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/GristAPI" target="_top" class="extra-small">Grants RESTful API</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/use-cases" target="_top" class="extra-small">API use cases</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/SoapWebServices" target="_top" class="extra-small">SOAP web service</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/AnnotationsApi" target="_top" class="extra-small">Annotations API</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/OaiService" target="_top" class="extra-small">OAI service</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/downloads" target="_top" class="extra-small">Bulk downloads</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="//groups.google.com/a/ebi.ac.uk/forum/#!forum/epmc-webservices" target="_blank" class="extra-small">Developers Forum</a></div></div><div data-v-a4078bae="" class="col-3"><h5 data-v-a4078bae=""><a data-v-a4078bae="" href="/Help" target="_top">Help</a></h5><div data-v-a4078bae=""><a data-v-a4078bae="" href="/Help" target="_top" class="extra-small">Help using Europe PMC</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/searchsyntax" target="_top" class="extra-small">Search syntax reference</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="/ContactUs" target="_top" class="extra-small">Contact us</a></div></div><div data-v-a4078bae="" class="col-3"><h5 data-v-a4078bae=""><a data-v-a4078bae="" href="/ContactUs" target="_top">Contact us</a></h5><div data-v-a4078bae=""><a data-v-a4078bae="" href="/ContactUs" target="_top" class="extra-small">Helpdesk</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="#" target="_top" onclick="var w = window.open('/feedback?url='+window.location.origin + window.location.pathname + encodeURIComponent(window.location.search), 'ukpmc_feedback', 'scrollbars=no,location=no,menuBar=yes,resizable=yes,status=no,toolbar=yes,width=1050,height=810'); try {if (w.blur) w.focus();}catch(ignore){}; return false;" class="extra-small">Feedback</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="//twitter.com/EuropePMC_news" target="_blank" class="extra-small">Twitter</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="http://blog.europepmc.org/" target="_top" class="extra-small">Blog</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="//europepmc.github.io/techblog/" target="_blank" class="extra-small">Tech blog</a></div><div data-v-a4078bae=""><a data-v-a4078bae="" href="//groups.google.com/a/ebi.ac.uk/forum/#!forum/epmc-webservices" target="_blank" class="extra-small">Developer forum</a></div></div></div><div data-v-a4078bae="" id="feedback"><div data-v-a4078bae="" class="grid-row"><div data-v-a4078bae="" class="col-16"><span data-v-a4078bae="" id="feedback-label">Let us know how we are doing.</span><span data-v-a4078bae="" id="mobile-feedback-label">How are we doing.</span><a data-v-a4078bae="" id="feedback-button" href="#" onclick="var w = window.open('/feedback?url='+window.location.origin + window.location.pathname + encodeURIComponent(window.location.search), 'ukpmc_feedback', 'scrollbars=no,location=no,menuBar=yes,resizable=yes,status=no,toolbar=yes,width=1050,height=810'); try {if (w.blur) w.focus();}catch(ignore){}; return false;"><input data-v-a4078bae="" type="button" value="Give feedback" class="secondary" /></a></div></div></div><div data-v-a4078bae="" id="elixir-banner"><div data-v-a4078bae="" class="grid-row"><div data-v-a4078bae="" class="col-16"><a data-v-a4078bae="" href="//www.elixir-europe.org/platforms/data/core-data-resources" target="_blank"><div data-v-a4078bae="" id="elixir-logo-kite"></div><h5 data-v-a4078bae="">
+Europe PMC is part of the ELIXIR infrastructure
+</h5><div data-v-a4078bae="" id="elixir-logo-text" class="small">
+Europe PMC is an ELIXIR Core Data Resource
+<span data-v-a4078bae="" id="elixir-banner-learn-more">Learn more &gt;</span></div></a></div></div></div><div data-v-a4078bae="" id="footer-bottom"><div data-v-a4078bae="" class="grid-row"><div data-v-a4078bae="" class="col-16 extra-small">
+Europe PMC is a service of the
+<a data-v-a4078bae="" href="/Funders">Europe PMC Funders' Group</a>, in partnership with
+the
+<a data-v-a4078bae="" href="//www.ebi.ac.uk/" target="_blank">European Bioinformatics Institute</a>; and in cooperation with the
+<a data-v-a4078bae="" href="//www.ncbi.nlm.nih.gov/" target="_blank">National Center for Biotechnology Information</a>
+at the
+<a data-v-a4078bae="" href="//www.nlm.nih.gov/" target="_blank">U.S. National Library of Medicine (NCBI/NLM)</a>. It includes content provided to the
+<a data-v-a4078bae="" href="//www.ncbi.nlm.nih.gov/pmc/" target="_blank">PMC International archive</a>
+by participating publishers.
+</div></div><div data-v-a4078bae="" id="social-links"><a data-v-a4078bae="" href="http://blog.europepmc.org/" target="_blank" aria-label="Europe PMC blog" title="Europe PMC blog"><i data-v-a4078bae="" class="fas fa-blog"></i></a><a data-v-a4078bae="" href="//europepmc.github.io/techblog/" target="_blank" aria-label="Europe PMC tech blog" title="Europe PMC tech blog"><i data-v-a4078bae="" class="fas fa-cogs"></i></a><a data-v-a4078bae="" href="//twitter.com/EuropePMC_news" target="_blank" aria-label="Find us on Twitter" title="Find us on Twitter"><i data-v-a4078bae="" class="fab fa-twitter"></i></a><a data-v-a4078bae="" href="//www.youtube.com/user/EuropePMC" target="_blank" aria-label="Find us on YouTube" title="Find us on YouTube"><i data-v-a4078bae="" class="fab fa-youtube"></i></a></div><div data-v-a4078bae="" id="footer-bottom-links" class="extra-small"><a data-v-a4078bae="" href="/ContactUs">Contact us</a>
+|
+<a data-v-a4078bae="" href="/PrivacyNotice">Privacy</a>
+|
+<a data-v-a4078bae="" href="//www.ebi.ac.uk/Information/termsofuse.html" target="_blank">Terms of use</a>
+|
+<a data-v-a4078bae="" href="/Copyright">Copyright</a>
+|
+<a data-v-a4078bae="" href="/Accessibility">Accessibility</a></div></div></div></div></footer>
+
+
+<div>
+<style>
+/*&lt;![CDATA[*/
+
+.data-protection-banner {
+text-align: left;
+background-color: #20699c !important;
+}
+.data-protection-banner a:link, .data-protection-banner a:visited {
+color: #eeeeee;
+}
+.data-protection-banner a:hover {
+color: #ffffff !important;
+}
+.data-protection-banner .row {
+font-size: 16px;
+}
+.data-protection-banner .row div:first-child {
+padding: 10px;
+}
+.data-protection-banner .row div:last-child {
+padding: 10px;
+}
+.data-protection-banner #data-protection-agree {
+text-decoration: none;
+background-color: #ffffff;
+padding: 6px 16px 8px 16px;
+color: #20699c;
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+cursor: pointer;
+font-weight: 600;
+}
+.data-protection-banner #data-protection-agree:hover {
+background-color: #eeeeee;
+color: #1d7ac8 !important;
+}
+@media print, screen and (min-width: 900px) {
+.data-protection-banner {
+padding: 18px 28px !important;
+width: auto !important;
+right: 0;
+}
+.data-protection-banner #data-protection-agree {
+display: block;
+}
+.data-protection-banner .columns {
+display: inline-block;
+vertical-align: middle;
+}
+.data-protection-banner .row div:first-child {
+box-sizing:border-box;
+width: 75%;
+padding-right:32px;
+}
+.data-protection-banner .row div:last-child {
+box-sizing:border-box;
+width: 24%;
+text-align: center;
+font-weight: 600;
+padding: 0px;
+}
+}
+@media print, screen and (min-width: 1200px) {
+.data-protection-banner .row div:last-child {
+width: auto;
+}
+}
+
+/*]]&gt;*/
+</style>
+<div>
+<div id="gdpr-banner"><div id="data-protection-message-configuration" data-message="This website requires cookies, and the limited processing of your personal data in order to function. By using the site you are agreeing to this as outlined in our &lt;a href=&quot;https://www.ebi.ac.uk/data-protection/privacy-notice/europe-pmc-website&quot; target=&quot;_blank&quot;&gt;privacy notice&lt;/a&gt; and &lt;a href=&quot;/CookiePolicy&quot;&gt;cookie policy&lt;/a&gt;." data-service-id="myService" data-data-protection-version="0.1"></div></div>
+<template id="gdpr-banner-template">
+<div id="data-protection-message-configuration" :data-message="message" data-service-id="myService" data-data-protection-version="0.1"></div>
+</template>
+</div>
+<script>
+/*&lt;![CDATA[*/
+
+var message = 'This website requires cookies, and the limited processing of your personal data in order to function. By using the site you are agreeing to this as outlined in our &lt;a href="https://www.ebi.ac.uk/data-protection/privacy-notice/europe-pmc-website" target="_blank"&gt;privacy notice&lt;/a&gt; and &lt;a href="/CookiePolicy"&gt;cookie policy&lt;/a&gt;.';
+Vue.component('gdpr-banner-component', {
+template: '#gdpr-banner-template',
+data: function() {
+return {
+message: message
+}
+},
+mounted: function() {
+var localFrameworkVersion = 'other'; // 1.1 or 1.2 or compliance or other
+var newDataProtectionNotificationBanner = document.createElement('script');
+newDataProtectionNotificationBanner.src = 'https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/script.min.js?legacyRequest='+localFrameworkVersion;
+document.head.appendChild(newDataProtectionNotificationBanner);
+newDataProtectionNotificationBanner.onload = function() {
+ebiFrameworkRunDataProtectionBanner();
+};
+}
+})
+new Vue({
+el: '#gdpr-banner'
+})
+
+/*]]&gt;*/
+</script>
+</div>
+<script type="text/javascript" src="/Scripts/wz_tooltip.js?v=12044"></script>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+/**$(document).ready(function(){
+$('#container-1 &gt; ul').tabs();
+});*/
+
+/*]]&gt;*/
+</script>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+var width = $(window).width();
+if (width &lt; 700) {
+/* $('#feedback-container').css('top', '44px'); */
+/* $('#feedback-container').css('position', 'absolute'); */
+$('#feedback-container').draggable();
+} else {
+//@date 23/08/2016 https://www.ebi.ac.uk/panda/jira/browse/CIT-2216
+//$('#feedback-container').css('top', height - 39 + 'px');
+//$('#feedback-container').css('position', 'fixed');
+}
+
+/*]]&gt;*/
+</script>
+<style>
+/*&lt;![CDATA[*/
+
+@media screen and (max-width: 870px) {
+#feedback-container {
+top: 44px;
+bottom: auto;
+position: absolute;
+}
+}
+
+/*]]&gt;*/
+</style>
+<script type="text/javascript">
+/*&lt;![CDATA[*/
+
+jQuery.cachedScript = function (url, options) {
+// Allow user to set any option except for dataType, cache, and url
+options = jQuery.extend(options || {}, {
+dataType: "script",
+cache: true,
+url: url
+});
+// Use $.ajax() since it is more flexible than $.getScript
+// Return the jqXHR object so we can chain callbacks
+return jQuery.ajax(options);
+};
+jQuery.cachedCss = function (url, options) {
+// Allow user to set any option except for dataType, cache, and url
+options = jQuery.extend(options || {}, {
+dataType: "text",
+cache: true,
+url: url
+});
+// Use $.ajax() since it is more flexible than $.getScript
+// Return the jqXHR object so we can chain callbacks
+return jQuery.ajax(options);
+};
+
+/*]]&gt;*/
+</script>
+<script type="text/javascript">var piwikIdSite = document.getElementById('piwikIdSite').innerHTML;var _paq = _paq || [];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['setAPIUrl', 'http://ves-ebi-34/europepmc/piwik/']);(function() {	var u='/';	_paq.push(['setTrackerUrl', u+'piwik.jsp']);	_paq.push(['setSiteId', piwikIdSite]);	var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];	g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);})();</script>
+<noscript>&lt;p&gt;&lt;img src="/piwik.jsp?idsite=1&amp;rec=1&amp;idgoal=4" style="border:0" alt="" /&gt;&lt;/p&gt;</noscript>
+</div>
+
+
+<div id="data-protection-banner" class="data-protection-banner" style="position: fixed; background: rgb(17, 17, 17); width: 100%; padding: 0.75rem 1%; left: 0px; bottom: 0px; color: rgb(238, 238, 238); z-index: 10; display: block;"><div class="row"><div class="columns medium-8 large-9 white-color">This website requires cookies, and the limited processing of your personal data in order to function. By using the site you are agreeing to this as outlined in our <a href="https://www.ebi.ac.uk/data-protection/privacy-notice/europe-pmc-website" target="_blank">privacy notice</a> and <a href="/CookiePolicy">cookie policy</a>.</div><div class="columns medium-4 large-3 text-right white-color"><a id="data-protection-agree" class="">I agree, dismiss this banner</a></div></div></div></body></html>

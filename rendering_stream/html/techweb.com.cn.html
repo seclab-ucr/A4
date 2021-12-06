@@ -1,0 +1,1598 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+<meta charset="UTF-8" />
+<meta name="mobile-agent" content="format=html5; url=http://m.techweb.com.cn/" />
+<meta name="mobile-agent" content="format=xhtml; url=http://m.techweb.com.cn/" />
+<meta name="baidu_union_verify" content="e718eb0dd4320c884de414f6558fc60f" />
+<title>TechWeb.com.cn - 领先的互联网消费互动媒体</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" /> 
+<meta name="keywords" content="互联网消费,互联网金融,互联网+,移动互联网,电子商务,手机游戏,O2O,创业创新,投资融资,智能设备,智能手机,VR及AR,AI人工智能" />
+<meta name="description" content="TechWeb专注于互联网消费领域，每日专业提供互联网产品、智能设备及互联网服务等方面的最新资讯，呈现为网站、微博、微信、APP等全媒体新形态，是国内领先的互联网消费互动媒体。" />
+<link href="http://s1.techweb.com.cn/static/newtwhome/images/favicon.ico?202009031109" rel="shortcut icon" type="images/x-icon" />
+<link href="http://s1.techweb.com.cn/static/newtwhome/css/new_index_style.css?202009031109" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
+<link type="text/css" href="http://s1.techweb.com.cn/static/img/css/smoothness/jquery-ui-1.8.6.custom.css?202009031109" rel="stylesheet" meddia="screen" />
+<link href="http://s1.techweb.com.cn/static/newtwhome/css/new_base.css?202009031109" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
+<script type="text/javascript" async="" src="https://pos.baidu.com/auto_dup?psi=2076f90a8e25488b771c34baebfe28fd&amp;di=0&amp;dri=0&amp;dis=0&amp;dai=0&amp;ps=0x0&amp;enu=encoding&amp;exps=110011&amp;ant=0&amp;dcb=___baidu_union_callback&amp;dtm=AUTO_JSONP&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tsr=0&amp;tpr=1606992670255&amp;ti=TechWeb.com.cn%20-%20%E9%A2%86%E5%85%88%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%B6%88%E8%B4%B9%E4%BA%92%E5%8A%A8%E5%AA%92%E4%BD%93&amp;ari=2&amp;ver=1203&amp;dbv=2&amp;drs=1&amp;pcs=800x585&amp;pss=975x585&amp;cfv=0&amp;cpl=0&amp;chi=2&amp;cce=true&amp;cec=UTF-8&amp;tlm=1606992670&amp;prot=2&amp;rw=600&amp;ltu=http%3A%2F%2Fwww.techweb.com.cn%2F&amp;ecd=1&amp;uc=800x600&amp;pis=-1x-1&amp;sr=800x600&amp;tcn=1606992670&amp;dc=4"></script><script type="text/javascript" src="http://www.techweb.com.cn/static/img/js/jquery.js?202009031109"></script><script src="http://tongji.techweb.com.cn/tj/index/r/0/w/800*600_800*600_24/a/techweb/t/techweb%E9%A6%96%E9%A1%B5/c/1/sn/techweb%E9%A6%96%E9%A1%B5/i/0/rom/1606992701469"></script>
+<script src="http://s1.techweb.com.cn/static/js/qrcode.js?202009031109"></script>
+<!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="http://s1.techweb.com.cn/static/newtwhome/css/new_iestyle_ie8.css?202009031109"/>
+<![endif]-->
+<!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="http://s1.techweb.com.cn/static/newtwhome/css/new_iestyle_ie9.css?202009031109"/>
+<![endif]-->
+<script>
+    var contentids = Array();
+    var scrolltopstart;
+    function sure(url,contentid){
+        var cname=document.getElementById('weixin_qrcode'+contentid).className;
+        var weixin_qrcode  = document.getElementById('weixin_qrcode'+contentid);
+        contentids.push(contentid);
+        scrolltopstart = $(window).scrollTop();
+        var qrcodex = document.getElementById('qrcode'+contentid);
+        if(cname==''){
+            var qrcode = new QRCode('qrcode'+contentid, 
+                {text: url,width: 128,height: 128,colorDark : '#000000',colorLight : '#ffffff',correctLevel : QRCode.CorrectLevel.H});
+            qrcodex.style.display = 'block'; //显示
+            document.getElementById('weixin_qrcode'+contentid).className='first';
+        }else if(cname=='first'){
+            qrcodex.style.display = 'none'; //隐藏
+            document.getElementById('weixin_qrcode'+contentid).className='second';
+        }else if(cname=='second'){
+            qrcodex.style.display = 'block'; //显示
+            document.getElementById('weixin_qrcode'+contentid).className='first';
+        }
+    }
+    function sure1(url,contentid){
+        var qrcodex = document.getElementById('qrcode'+contentid);
+        qrcodex.style.display = 'none'; //隐藏
+        document.getElementById('weixin_qrcode'+contentid).className='second';
+    }
+    window.onscroll = function(){//当窗口滚动时触发
+        var scrollTopnow = $(window).scrollTop();
+        for (var i = 0; i &lt; contentids.length; i++) {
+            if(scrollTopnow-scrolltopstart &gt;=700)
+            {
+                var qrcodex = document.getElementById('qrcode'+contentids[i]);
+                qrcodex.style.display = 'none'; //隐藏
+                var roll=document.getElementById('weixin_qrcode'+contentids[i]).className;
+                if(roll=='first'){ document.getElementById('weixin_qrcode'+contentids[i]).className='second';}
+            }
+        };
+    }
+</script>
+<script type="text/javascript">
+    $(function(){
+        //默认停止加载
+        var stop = true;
+        // 加载页数
+        //距离底部多少像素开始加载
+        var bottomH=1900;
+        // $(".news_more").hide();
+        $(window).scroll(function() {
+            var pageNum = parseInt($("#page").val()) + 1;
+            var html = '';
+            var thumb = [];
+            if(pageNum &lt; 6){
+                totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop() + bottomH);
+                if($(document).height() &lt;= totalheight ){
+                    if(stop == true){
+                        stop = false;
+                        $.ajax({
+                            url: 'http://www.techweb.com.cn/newindexlist/' + pageNum + '/' + "MTg4ZGZiMjAwYTI3ODY5MmE3ODY5NDA2NGFlZGZmZTI=",
+                            type: 'GET',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function(data){
+                                if(data.length &gt; 0)
+                                {
+                                    for (var i = 0; i &lt; data.length; i++) {
+                                        if(data[i].thumb)
+                                        {
+                                            thumb[i] = "http://upload1.techweb.com.cn/s/250/" + data[i].thumb;
+                                            html += "&lt;div class='news_article clearfix'&gt;&lt;a href='"+ data[i].url +"' target='_blank' class='na_pic'&gt;&lt;img src='" + thumb[i] + "' alt='" + data[i].title + "' onerror=\"src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'\"/&gt;&lt;/a&gt;";
+                                            html += "&lt;div class='na_detail clearfix'&gt;&lt;div class='news_title'&gt;&lt;h3&gt;&lt;a href='" + data[i].url+ "' target='_blank'&gt;"+data[i].title+"&lt;/a&gt;&lt;/h3&gt;&lt;/div&gt;";
+                                            if(data[i].description){
+                                                html += "&lt;div class='news_text'&gt;&lt;p&gt;"+data[i].description+"&lt;/p&gt;&lt;/div&gt;";
+                                            }
+                                            if(data[i].classify)
+                                            {
+                                                html += "&lt;div class='news_tag'&gt;&lt;strong class='barlink'&gt;&lt;a href='"+ data[i].classify.url +"' target='_blank'&gt;"+data[i].classify.name+"&lt;/a&gt;&lt;/strong&gt;&lt;div class='keywords'&gt;";
+                                            }else{
+                                                html += "&lt;div class='news_tag'&gt;&lt;strong class='barlink'&gt;&lt;/strong&gt;&lt;div class='keywords'&gt;";
+                                            }
+                                            
+                                            if(data[i].tags)
+                                            {
+                                                for(var j=0;j&lt;data[i].tags.length;j++)
+                                                {
+                                                    html += "&lt;a href='http://www.techweb.com.cn/tag/"+data[i].tags[j]+"/' target='_blank'&gt;"+data[i].tags[j]+"&lt;/a&gt;";
+                                                }
+                                            }
+                                            html += "&lt;/div&gt;&lt;span calss='time_tag'&gt;"+ data[i].published +"&lt;/span&gt;&lt;/div&gt;";
+                                            html += "&lt;div class=\"share-join clearfix\"&gt;&lt;span&gt;分享：&lt;/span&gt;&lt;a href=\"http://service.weibo.com/share/share.php?url=" + data[i].url + "&amp;title=" + data[i].title + "&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052\" class=\"weibo_share\" data-cmd=\"tsina\" title=\"分享到新浪微博\" target=\"_blank\"&gt;&lt;/a&gt;&lt;div class=\"weixin_share\" data-cmd=\"weixin\" title=\"分享到微信\" onclick=\"sure('" + data[i].url + "','" + data[i].contentid + "')\"&gt;&lt;/div&gt;&lt;span id=\"weixin_qrcode" + data[i].contentid + "\" class=\"\"&gt;&lt;/span&gt;&lt;div class=\"wxfx\" id=\"qrcode" + data[i].contentid + "\" style=\"display:none;\" onclick=\"sure1('" + data[i].url + "','" + data[i].contentid + "')\"&gt;扫码分享至朋友圈&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;";
+                                        }else{
+                                            html += "&lt;div class=\"news_article clearfix\"&gt;&lt;div class='na_detail clearfix no_pic'&gt;&lt;div class='news_title'&gt;&lt;h3&gt;&lt;a href='" + data[i].url+ "' target='_blank'&gt;"+data[i].title+"&lt;/a&gt;&lt;/h3&gt;&lt;/div&gt;";
+                                            if(data[i].description){
+                                                html += "&lt;div class='news_text'&gt;&lt;p&gt;"+data[i].description+"&lt;/p&gt;&lt;/div&gt;";
+                                            }
+                                            if(data[i].classify)
+                                            {
+                                                html += "&lt;div class='news_tag'&gt;&lt;strong class='barlink'&gt;&lt;a href='"+ data[i].classify.url +"' target='_blank'&gt;"+data[i].classify.name+"&lt;/a&gt;&lt;/strong&gt;&lt;div class='keywords'&gt;";
+                                            }else{
+                                                html += "&lt;div class='news_tag'&gt;&lt;strong class='barlink'&gt;&lt;/strong&gt;&lt;div class='keywords'&gt;";
+                                            }
+                                            if(data[i].tags)
+                                            {
+                                                for(var j=0;j&lt;data[i].tags.length;j++)
+                                                {
+                                                    html += "&lt;a href='http://www.techweb.com.cn/tag/"+data[i].tags[j]+"/' target='_blank'&gt;"+data[i].tags[j]+"&lt;/a&gt;";
+                                                }
+                                            }
+                                            html += "&lt;/div&gt;&lt;span calss='time_tag'&gt;"+ data[i].published +"&lt;/span&gt;&lt;/div&gt;";
+                                            html += "&lt;div class=\"share-join clearfix\"&gt;&lt;span&gt;分享：&lt;/span&gt;&lt;a href=\"http://service.weibo.com/share/share.php?url=" + data[i].url + "&amp;title=" + data[i].title + "&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052\" class=\"weibo_share\" data-cmd=\"tsina\" title=\"分享到新浪微博\" target=\"_blank\"&gt;&lt;/a&gt;&lt;div class=\"weixin_share\" data-cmd=\"weixin\" title=\"分享到微信\" onclick=\"sure('" + data[i].url + "','" + data[i].contentid + "')\"&gt;&lt;/div&gt;&lt;span id=\"weixin_qrcode" + data[i].contentid + "\" class=\"\"&gt;&lt;/span&gt;&lt;div class=\"wxfx\" id=\"qrcode" + data[i].contentid + "\" style=\"display:none;\" onclick=\"sure1('" + data[i].url + "','" + data[i].contentid + "')\"&gt;扫码分享至朋友圈&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;";
+                                        }
+                                    }
+                                    $(".news_more").before(html);
+                                    $("#page").val(pageNum);
+                                    stop = true;
+                                    /*if(pageNum &gt;= 5){
+                                        $(".news_more").show();
+                                    }*/
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    })
+</script>
+</head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="https://pos.baidu.com/wh/o.htm?ltr=" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+<!--通用导航 start-->
+
+<div class="top">
+    <div class="top_con">
+        <div class="nav">
+            <!--2019年修改 start-->
+            <div class="headnav"><ul>
+                <li><a href="http://www.techweb.com.cn/">首页<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/new5g/" target="_blank">5G<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/microchips/" target="_blank">芯片<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newcloud/" target="_blank">云计算<em>/</em></a></li>               
+                <li><a href="http://www.techweb.com.cn/intelligent/" target="_blank">AI<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newfinance/" target="_blank">科创板<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newinternet/" target="_blank">互联网<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newit/" target="_blank">IT<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/smartcar/" target="_blank">智能车<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/mobiledigital/" target="_blank">手机数码<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newgame/" target="_blank">游戏<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/newblockchain/" target="_blank">区块链<em>/</em></a></li>
+                <li><a href="http://www.techweb.com.cn/taglist/">更多</a></li>
+            </ul></div>
+            <!--2019年修改 end-->
+        </div>
+       <div class="nav_others">
+          <a href="http://www.techweb.com.cn/search/" class="search_item">搜索</a>
+            <a href="http://www.techweb.com.cn/shouji/app.html" class="app_item" target="_blank">客户端</a>
+            <a href="http://www.techweb.com.cn/rss.shtml" class="rss_item" target="_blank">订阅</a>
+            <a href="http://www.techweb.com.cn/weixin/" class="qr_item" target="_blank">扫码关注</a>
+            <a href="http://www.techweb.com.cn/weibo" class="wb_item" target="_blank">微博</a>
+       </div>
+    </div> 
+</div>
+
+<!--通用导航 end-->
+<div class="logo">
+	<div class="logo_tw"><a href="http://www.techweb.com.cn/" target="_blank"></a></div>
+    <div class="top_banner" style="text-align: center;"><!-- 广告位：TW首页顶通2017自适应 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('&lt;div id="' + s + '"&gt;&lt;/div&gt;');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '5241152',
+        container: s,
+        size: '20,2',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_519waqpbie5"></div>
+<script src="https://dup.baidustatic.com/js/om.js"></script><script charset="utf-8" src="https://pos.baidu.com/mcom?psi=2076f90a8e25488b771c34baebfe28fd&amp;di=5241152&amp;dri=0&amp;dis=0&amp;dai=0&amp;ps=130x249&amp;enu=encoding&amp;exps=110011&amp;ant=0&amp;dcb=___adblockplus_&amp;dtm=SSP_JSONP&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tsr=0&amp;tpr=1606992670255&amp;ti=TechWeb.com.cn%20-%20%E9%A2%86%E5%85%88%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%B6%88%E8%B4%B9%E4%BA%92%E5%8A%A8%E5%AA%92%E4%BD%93&amp;ari=2&amp;ver=1203&amp;dbv=2&amp;drs=1&amp;pcs=800x585&amp;pss=975x585&amp;cfv=0&amp;cpl=0&amp;chi=2&amp;cce=true&amp;cec=UTF-8&amp;tlm=1606992670&amp;prot=2&amp;rw=600&amp;ltu=http%3A%2F%2Fwww.techweb.com.cn%2F&amp;ecd=1&amp;uc=800x600&amp;pis=-1x-1&amp;sr=800x600&amp;tcn=1606992670"></script><style>
+.top_banner996 {width: 996px; height:100px;overflow: hidden;position: relative;}
+#slidesImgs li { width: 996px; height:100px; display: none; position:relative;}
+.slidebar{ position: absolute;bottom:2px;right:0; }
+.slidebar li {float: left; overflow:auto;margin-right:4px; width:5px; height:5px; font-size:0;cursor: pointer;background: rgba(0,0,0,0.2); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000,endColorstr = #90000000);overflow: hidden;-khtml-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px; border-radius:5px;}
+.slidebar li.on { background: rgba(101,221,235,0.7); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000,endColorstr = #90000000);}
+
+.techweb_box{background:#fff url(http://s1.techweb.com.cn/static/newadimg/bg1.png?20180323) no-repeat 0 0; background-size:cover;}
+.candou_box{ background:#80e0b2 url(http://s1.techweb.com.cn/static/newadimg/bg2.png?20180323) no-repeat 0 0;background-size:cover;}
+.jqx_box{ background:#fcdb42 url(http://s1.techweb.com.cn/static/newadimg/bg3.png?20180323) no-repeat 0 0;background-size:cover;}
+.hzb_box{ background:#fb6d6d url(http://s1.techweb.com.cn/static/newadimg/bg4.png?20180323) no-repeat 0 0;background-size:cover;}
+.weibo_link,.toutiaohao_link{position:absolute;top:12px;-khtml-border-radius:35px;-ms-border-radius:35px;-o-border-radius:35px;-moz-border-radius:35px;-webkit-border-radius:35px; border-radius:35px;}
+.weibo_link span,.toutiaohao_link span{height:63px;width:63px;display:block;-khtml-border-radius:35px;-ms-border-radius:35px;-o-border-radius:35px;-moz-border-radius:35px;-webkit-border-radius:35px; border-radius:35px;}
+.weibo_link{right:231px; border:rgba(145,219,243,0.25) solid 5px;}
+.weibo_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/weibo_icon.png?20180323); background-color:rgba(128,208,243,0.67); background-repeat:no-repeat; background-position:center center;}
+.toutiaohao_link{right:146px; border:rgba(101,221,235,0.25) solid 5px;}
+.toutiaohao_link span{ background-color:rgba(101,221,235,0.73); background-image:url(http://s1.techweb.com.cn/static/newadimg/toutiao_icon.png?20180323);background-repeat:no-repeat; background-position:center center;}
+.weibo_link:hover span{background-color:rgba(128,208,243,0.8);}
+.toutiaohao_link:hover span{background-color:rgba(101,221,235,0.9);}
+.candou_box .weibo_link{border:rgba(95,202,160,0.2) solid 5px;}
+.candou_box .weibo_link span{background-color:rgba(95,202,160,0.67);}
+.candou_box .weibo_link:hover span{background-color:rgba(95,202,160,0.8);}
+.candou_box .toutiaohao_link{border:rgba(89,207,185,0.2) solid 5px;}
+.candou_box .toutiaohao_link span{background-color:rgba(89,207,185,0.67);}
+.candou_box .toutiaohao_link:hover span{background-color:rgba(89,207,185,0.8);}
+.jqx_box .weibo_link{border:rgba(255,156,0,0.25) solid 5px;}
+.jqx_box .weibo_link span{background-color:rgba(255,156,0,0.67);}
+.jqx_box .weibo_link:hover span{background-color:rgba(255,156,0,0.8);}
+.jqx_box .toutiaohao_link{border:rgba(255,72,0,0.15) solid 5px;}
+.jqx_box .toutiaohao_link span{background-color:rgba(255,72,0,0.5);}
+.jqx_box .toutiaohao_link:hover span{background-color:rgba(255,72,0,0.6);}
+.hzb_box .weibo_link{border:rgba(255,104,161,0.2) solid 5px;}
+.hzb_box .weibo_link span{background-color:rgba(255,104,161,0.67);}
+.hzb_box .weibo_link:hover span{background-color:rgba(255,104,161,0.8);}
+.hzb_box .toutiaohao_link{border:rgba(255,0,84,0.15) solid 5px;}
+.hzb_box .toutiaohao_link span{background-color:rgba(255,0,84,0.5);}
+.hzb_box .toutiaohao_link:hover span{background-color:rgba(255,0,84,0.6);}
+
+@media (max-width:1366px){
+.techweb_box{ background-size:756px;}
+.top_banner996,#slidesImgs li{width: 756px; height:76px;}
+.weibo_link,.toutiaohao_link{top:9px;}
+.weibo_link span,.toutiaohao_link span{ width:48px; height:48px;}
+.weibo_link{right:174px;}
+.toutiaohao_link{right:110px;}
+.weibo_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/weibo_icon_ie.png?20180323);}
+.toutiaohao_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/toutiao_icon_ie.png?20180323);}
+}
+@media only screen and (max-width:768px),only screen and (max-device-width:768px){
+.top_banner996{width:716px;height:70px;}
+.techweb_box,.candou_box,.jqx_box,.hzb_box{background-size:716px;}
+.weibo_link{right:204px;}
+.toutiaohao_link{right:140px;}
+}
+</style>
+<!--[if IE 8]>
+<style>
+.top_banner996,#slidesImgs li{width: 756px; height:76px;}
+.weibo_link,.toutiaohao_link{top:9px;}
+.weibo_link span,.toutiaohao_link span{ width:48px; height:48px;}
+.weibo_link{right:174px;}
+.toutiaohao_link{right:110px;}
+.weibo_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/weibo_icon_ie.png);}
+.toutiaohao_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/toutiao_icon_ie.png);}
+.slidebar{width:0px;overflow:hidden;}
+.techweb_box{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg1.png?20180323',sizingMethod='scale');-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg1.png?20180323',sizingMethod='scale');}
+.candou_box{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg2.png?20180323',sizingMethod='scale');-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg2.png?20180323',sizingMethod='scale');}
+.jqx_box{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg3.png?20180323',sizingMethod='scale');-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg3.png?20180323',sizingMethod='scale');}
+.hzb_box{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg4.png?20180323',sizingMethod='scale');-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://s1.techweb.com.cn/static/newadimg/bg4.png?20180323',sizingMethod='scale');}
+.weibo_link{background:url(http://s1.techweb.com.cn/static/newadimg/weibo_bg1.png?20180323) no-repeat 0 0;}
+.toutiaohao_link{background:url(http://s1.techweb.com.cn/static/newadimg/toutiao_bg1.png?20180323) no-repeat 0 0;}
+.candou_box .weibo_link{background:url(http://s1.techweb.com.cn/static/newadimg/weibo_bg2.png?20180323) no-repeat 0 0;}
+.candou_box .toutiaohao_link{background:url(http://s1.techweb.com.cn/static/newadimg/toutiao_bg2.png?20180323) no-repeat 0 0;}
+.jqx_box .weibo_link{background:url(http://s1.techweb.com.cn/static/newadimg/weibo_bg3.png?20180323) no-repeat 0 0;}
+.jqx_box .toutiaohao_link{background:url(http://s1.techweb.com.cn/static/newadimg/toutiao_bg3.png?20180323) no-repeat 0 0;}
+.hzb_box .weibo_link{background:url(http://s1.techweb.com.cn/static/newadimg/weibo_bg4.png?20180323) no-repeat 0 0;}
+.hzb_box .toutiaohao_link{background:url(http://s1.techweb.com.cn/static/newadimg/toutiao_bg4.png?20180323) no-repeat 0 0;}
+.weibo_link span,.toutiaohao_link span{ width:56px; height:56px;}
+</style>  
+<![endif]-->
+<!--[if IE 9]>
+<style>
+.techweb_box{ background-size:756px;}
+.top_banner996,#slidesImgs li{width: 756px; height:76px;}
+.weibo_link,.toutiaohao_link{top:9px;}
+.weibo_link span,.toutiaohao_link span{ width:48px; height:48px;}
+.weibo_link{right:174px;}
+.toutiaohao_link{right:110px;}
+.weibo_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/weibo_icon_ie.png?20180323);}
+.toutiaohao_link span{background-image:url(http://s1.techweb.com.cn/static/newadimg/toutiao_icon_ie.png?20180323);}
+.slidebar{width:30px;overflow:hidden;}
+</style>  
+<![endif]-->
+<script type="text/javascript">
+function SlideShow(c) {
+    var a = document.getElementById("slideContainer"), f = document.getElementById("slidesImgs").getElementsByTagName("li"), h = document.getElementById("slideBar"), n = h.getElementsByTagName("li"), d = f.length, c = c || 3000, e = lastI = 0, j, m;
+    function b() {
+        m = setInterval(function () {
+            e = e + 1 &gt;= d ? e + 1 - d : e + 1;
+            g()
+        }, c)
+    }
+    function k() {
+        clearInterval(m)
+    }
+    function g() {
+        f[lastI].style.display = "none";
+        n[lastI].className = "";
+        f[e].style.display = "block";
+        n[e].className = "on";
+        lastI = e
+    }
+    f[e].style.display = "block";
+    a.onmouseover = k;
+    a.onmouseout = b;
+    h.onmouseover = function (i) {
+        j = i ? i.target : window.event.srcElement;
+        if (j.nodeName === "LI") {
+            e = parseInt(j.innerHTML,5) - 1;
+            g()
+        }
+    };
+    b()
+};
+</script>
+<!-- 代码 开始 -->
+<div class="top_banner996" id="slideContainer">
+       <ul class="slideshow" id="slidesImgs">
+             <li class="techweb_box" style="display: none;"><a href="https://weibo.com/techweb" target="_blank" class="weibo_link"><span></span></a><a href="http://m.toutiao.com/profile/3323966416/?version_code=6.6.1&amp;version_name=&amp;device_platform=iphone" target="_blank" class="toutiaohao_link"><span></span></a></li>
+             <li class="candou_box" style="display: block;"><a href="https://weibo.com/candou" target="_blank" class="weibo_link"><span></span></a><a href="http://m.toutiao.com/profile/3303580095/?version_code=6.6.1&amp;version_name=&amp;device_platform=iphone" target="_blank" class="toutiaohao_link"><span></span></a></li>
+             <li class="jqx_box" style="display: none;"><a href="https://weibo.com/605675742" target="_blank" class="weibo_link"><span></span></a><a href="http://m.toutiao.com/profile/3336448956/?version_code=6.6.1&amp;version_name=&amp;device_platform=iphone" target="_blank" class="toutiaohao_link"><span></span></a></li>
+             <li class="hzb_box" style="display: none;"><a href="https://weibo.com/hongzhubo" target="_blank" class="weibo_link"><span></span></a><a href="http://m.toutiao.com/profile/88623140496/?version_code=6.6.1&amp;version_name=&amp;device_platform=iphone" target="_blank" class="toutiaohao_link"><span></span></a></li>
+       </ul>
+       <div class="slidebar" id="slideBar">
+              <ul>
+                     <li class="">1</li>
+                     <li class="on">2</li>
+                     <li class="">3</li>
+                     <li class="">4</li>
+               </ul>
+       </div>
+</div>
+<script type="text/javascript">
+SlideShow(3500);
+</script>
+<!-- 代码 结束 -->
+</div>
+</div>
+<!--临时start -->
+<!--临时end -->
+<!--人物 start-->
+<div class="personage">
+	<div class="personage_item">
+    	<a href="http://www.techweb.com.cn/internet/2020-12-02/2814370.shtml" target="_blank">
+    		<div class="personage_img"><img src="http://upload1.techweb.com.cn/s/110/2020/1123/1606110497946.png" width="110" height="92" alt="库克：苹果因防水问题被罚1000万欧元" /></div>
+            <h4><i><span>库克：</span>苹果因防水问题被罚1000万欧元</i></h4>
+        </a>
+    </div>
+    	<div class="personage_item">
+    	<a href="http://www.techweb.com.cn/world/2020-12-03/2814621.shtml" target="_blank">
+    		<div class="personage_img"><img src="http://upload1.techweb.com.cn/s/110/2020/1111/1605062433872.png" width="110" height="92" alt="马斯克：明年在部分地区推出L5级全自动驾驶" /></div>
+            <h4><i><span>马斯克：</span>明年在部分地区推出L5级全自动驾驶</i></h4>
+        </a>
+    </div>
+    	<div class="personage_item">
+    	<a href="http://www.techweb.com.cn/it/2020-12-03/2814537.shtml" target="_blank">
+    		<div class="personage_img"><img src="http://upload1.techweb.com.cn/s/110/2020/1125/1606295223456.png" width="110" height="92" alt="任正非：高通总裁称已与荣耀对话" /></div>
+            <h4><i><span>任正非：</span>高通总裁称已与荣耀对话</i></h4>
+        </a>
+    </div>
+    	<div class="personage_item">
+    	<a href="http://www.techweb.com.cn/it/2020-12-02/2814390.shtml" target="_blank">
+    		<div class="personage_img"><img src="http://upload1.techweb.com.cn/s/110/2020/1202/1606876064259.png" width="110" height="92" alt="马化腾：坚守正直的信仰，让连接创造价值" /></div>
+            <h4><i><span>马化腾：</span>坚守正直的信仰，让连接创造价值</i></h4>
+        </a>
+    </div>
+    </div>
+<!--人物 end-->
+<!--头条 start-->
+<div class="top_news">
+	<h1><a href="http://www.techweb.com.cn/internet/2020-12-03/2814541.shtml" target="_blank">微众银行公布蛋壳租金贷偿还方案</a></h1>
+    <p>今日，微众银行发布租房消费贷款客户的公告称，建议被迫搬离的租房消费贷客户可到该行登记相关信息，免息将延至2023年底。    </p>
+</div> 
+<!--头条 end-->
+<div class="sydatonglan" style="text-align: center;">
+   <script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('&lt;div id="' + s + '"&gt;&lt;/div&gt;');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '5232092',
+        container: s,
+        size: '20,2',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_a2t5jsuudjk"></div><script charset="utf-8" src="https://pos.baidu.com/mcom?psi=2076f90a8e25488b771c34baebfe28fd&amp;di=5232092&amp;dri=0&amp;dis=0&amp;dai=0&amp;ps=393x0&amp;enu=encoding&amp;exps=110011&amp;ant=0&amp;dcb=___adblockplus_&amp;dtm=SSP_JSONP&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tsr=0&amp;tpr=1606992670255&amp;ti=TechWeb.com.cn%20-%20%E9%A2%86%E5%85%88%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%B6%88%E8%B4%B9%E4%BA%92%E5%8A%A8%E5%AA%92%E4%BD%93&amp;ari=2&amp;ver=1203&amp;dbv=2&amp;drs=1&amp;pcs=800x585&amp;pss=1005x585&amp;cfv=0&amp;cpl=0&amp;chi=2&amp;cce=true&amp;cec=UTF-8&amp;tlm=1606992671&amp;prot=2&amp;rw=600&amp;ltu=http%3A%2F%2Fwww.techweb.com.cn%2F&amp;ecd=1&amp;uc=800x600&amp;pis=-1x-1&amp;sr=800x600&amp;tcn=1606992671"></script>
+</div>
+<!--一屏 start-->
+<div class="con_box">
+	<!--新闻 start-->
+	<div class="news">
+    	<h2 class="tit"><a href="http://www.techweb.com.cn/roll/">新闻</a><span class="more"><a href="http://www.techweb.com.cn/roll/">更多</a></span></h2>
+        <ul>
+                	<li class="mar_t"><a href="http://www.techweb.com.cn/it/2020-12-03/2814542.shtml" title="美国众议院通过《外国公司问责法》 矛头直指中国" target="_blank">美国众议院通过《外国公司问责法》 矛头直指中国</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/finance/2020-12-03/2814536.shtml" title="蚂蚁回应出售“印度支付宝”Paytm股份：消息不实" target="_blank">蚂蚁回应出售“印度支付宝”Paytm股份：消息不实</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814538.shtml" title="上海房管部门回应蛋壳事件：要求企业及时妥善处理" target="_blank">上海房管部门回应蛋壳事件：要求企业及时妥善处理</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814541.shtml" title="微众银行：对蛋壳租房贷客户剩余贷款本金免息延期" target="_blank">微众银行：对蛋壳租房贷客户剩余贷款本金免息延期</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/it/2020-12-03/2814537.shtml" title="高通总裁已与荣耀对话 只要荣耀愿意可使用骁龙888" target="_blank">高通总裁已与荣耀对话 只要荣耀愿意可使用骁龙888</a>
+                        </li>
+                	<li class="mar_t"><a href="http://www.techweb.com.cn/world/2020-12-02/2814521.shtml" title="2021年全球半导体市场规模预计达到4694亿美元 " target="_blank">2021年全球半导体市场规模预计达到4694亿美元 </a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814552.shtml" title="上海市场监管局：规范直播带货等网络经营活动秩序" target="_blank">上海市场监管局：规范直播带货等网络经营活动秩序</a>
+                        </li>
+                	<li><a href="http://mo.techweb.com.cn/digi/2020-12-03/2814551.shtml" title="IDC：今年第三季度Apple Watch出货量达1180万台" target="_blank">IDC：今年第三季度Apple Watch出货量达1180万台</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/it/2020-12-03/2814557.shtml" title="金龙鱼：目前公司的零售渠道已涉足社区团购业务" target="_blank">金龙鱼：目前公司的零售渠道已涉足社区团购业务</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/world/2020-12-03/2814589.shtml" title="巴西圣保罗要求苹果必须为iPhone 12提供充电器" target="_blank">巴西圣保罗要求苹果必须为iPhone 12提供充电器</a>
+                        </li>
+                	<li class="mar_t"><a href="http://www.techweb.com.cn/world/2020-12-03/2814579.shtml" title="郭明錤：自研芯片和Mini-LED屏的Mac于明后年推出" target="_blank">郭明錤：自研芯片和Mini-LED屏的Mac于明后年推出</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/it/2020-12-03/2814591.shtml" title="美上诉法院：12月14日就TikTok下载禁令举行听证会" target="_blank">美上诉法院：12月14日就TikTok下载禁令举行听证会</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/world/2020-12-03/2814621.shtml" title="马斯克称明年将在部分地区推出L5级全自动驾驶功能" target="_blank">马斯克称明年将在部分地区推出L5级全自动驾驶功能</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/world/2020-12-03/2814624.shtml" title="马斯克有信心：SpaceX将在2026年前让人类登陆火星" target="_blank">马斯克有信心：SpaceX将在2026年前让人类登陆火星</a>
+                        </li>
+                	<li><a href="http://www.techweb.com.cn/it/2020-12-03/2814703.shtml" title="北大光华师生参观贝壳 感受VR在居住产业落地实践" target="_blank">北大光华师生参观贝壳 感受VR在居住产业落地实践</a>
+                        </li>
+        	
+        </ul>
+    </div> 
+    <!--新闻 end-->
+    <!--新品 start-->
+    <div class="products">
+    	<h2 class="tit">热点<span class="more"></span></h2>
+    	        <div class="product_item"><a href="http://www.techweb.com.cn/it/2020-12-03/2814537.shtml" target="_blank">
+		<img id="n11" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961846211.png" alt="高通总裁已与荣耀对话" title="高通总裁已与荣耀对话" style="display: none;" />
+		<img id="n12" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961846211.png" alt="高通总裁已与荣耀对话" title="高通总裁已与荣耀对话" />
+		<h3><span>高通总裁已与荣耀对话</span></h3></a></div>
+
+                 <div class="product_item"><a href="http://www.techweb.com.cn/internet/2020-12-03/2814552.shtml" target="_blank">
+		<img id="n21" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961611579.png" alt="上海规范网络经营秩序" title="上海规范网络经营秩序" style="display: none;" />
+		<img id="n22" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961611579.png" alt="上海规范网络经营秩序" title="上海规范网络经营秩序" />
+		<h3><span>上海规范网络经营秩序</span></h3></a></div>
+
+                 <div class="product_item"><a href="http://www.techweb.com.cn/it/2020-12-03/2814542.shtml" target="_blank">
+		<img id="n31" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961940489.png" alt="美国众议院通过《外国公司问责法》" title="美国众议院通过《外国公司问责法》" style="display: none;" />
+		<img id="n32" src="http://upload.techweb.com.cn/s/310/2020/1203/1606961940489.png" alt="美国众议院通过《外国公司问责法》" title="美国众议院通过《外国公司问责法》" />
+		<h3><span>美国众议院通过《外国公司问责法》</span></h3></a></div>
+
+             </div>
+     <script>
+  var w = $(".product_item").width();
+  var n = 1;
+  for(n=1;n&lt;=4;n++){
+    if( w &lt; 380 ){ 
+      $("#n"+n+"1").hide();
+      $("#n"+n+"2").show();
+    }else{
+      $("#n"+n+"2").hide();
+      $("#n"+n+"1").show();
+    }
+  }
+  
+ </script>
+    <!--新品 end-->
+    <!--选择、比拼 start-->
+    <div class="con_r">
+    	<div class="select">
+        	<!-- <div class="select">
+        	<h2 class="tit"><span><a href="http://www.techweb.com.cn/viewpoint/">观点</a></span><a href="http://www.techweb.com.cn/shipin/2020-11-30/2814025.shtml"target="_blank">薄如纸张任意弯曲的显示屏亮相</a></h2>
+            <div class="select_con">
+       	    	<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814025.shtml" target="_blank" class="select_img">
+				<img id="c1" src='http://upload.techweb.com.cn/s/130/2020/1130/1606716391494.png' alt='薄如纸张任意弯曲的显示屏亮相' title='薄如纸张任意弯曲的显示屏亮相'/>
+				<img id="c2" src='http://upload.techweb.com.cn/s/150/2020/1130/1606716391494.png' alt='薄如纸张任意弯曲的显示屏亮相' title='薄如纸张任意弯曲的显示屏亮相'/>
+				</a><p>...<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814025.shtml" target="_blank">[详细]</a></p>
+            </div>
+        </div>
+		<script>
+			var w = $(".select_img").width();
+			if( w < 150 ){
+				$("#c2").hide();
+				$("#c1").show();
+			}else{
+				$("#c1").hide();
+				$("#c2").show();
+			}
+		</script> -->
+
+<div class="select">
+	<h2 class="tit2"><a href="http://www.techweb.com.cn/shipin/">视频</a><em></em><span class="more"><a href="http://www.techweb.com.cn/shipin/">更多</a></span></h2>
+	<div class="guandian_list">
+	        <div class="select_con">
+       	   	<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814025.shtml" target="_blank" class="select_img">
+			<!-- <span class="list_tag"></span> -->
+			<img class="imgg1" src="http://upload.techweb.com.cn/s/130/2020/1130/1606716391494.png" alt="薄如纸张任意弯曲的显示屏亮相" title="薄如纸张任意弯曲的显示屏亮相" />
+				<img class="imgg2" src="http://upload.techweb.com.cn/s/150/2020/1130/1606716391494.png" alt="薄如纸张任意弯曲的显示屏亮相" title="薄如纸张任意弯曲的显示屏亮相" style="display: none;" />
+			</a><h2><a href="http://www.techweb.com.cn/shipin/2020-11-30/2814025.shtml" target="_blank">薄如纸张任意弯曲的显示屏亮相</a></h2>
+		</div>
+		        <div class="select_con">
+       	   	<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814027.shtml" target="_blank" class="select_img">
+			<!-- <span class="list_tag"></span> -->
+			<img class="imgg1" src="http://upload.techweb.com.cn/s/130/2020/1130/1606717393698.png" alt="华为P50 Pro渲染图曝光" title="华为P50 Pro渲染图曝光" />
+				<img class="imgg2" src="http://upload.techweb.com.cn/s/150/2020/1130/1606717393698.png" alt="华为P50 Pro渲染图曝光" title="华为P50 Pro渲染图曝光" style="display: none;" />
+			</a><h2><a href="http://www.techweb.com.cn/shipin/2020-11-30/2814027.shtml" target="_blank">华为P50 Pro渲染图曝光</a></h2>
+		</div>
+		        <div class="select_con">
+       	   	<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814029.shtml" target="_blank" class="select_img">
+			<!-- <span class="list_tag"></span> -->
+			<img class="imgg1" src="http://upload.techweb.com.cn/s/130/2020/1130/1606716961773.png" alt="任正非谈剥离荣耀：要做华为最强的竞争对手" title="任正非谈剥离荣耀：要做华为最强的竞争对手" />
+				<img class="imgg2" src="http://upload.techweb.com.cn/s/150/2020/1130/1606716961773.png" alt="任正非谈剥离荣耀：要做华为最强的竞争对手" title="任正非谈剥离荣耀：要做华为最强的竞争对手" style="display: none;" />
+			</a><h2><a href="http://www.techweb.com.cn/shipin/2020-11-30/2814029.shtml" target="_blank">任正非谈剥离荣耀：要做华为最强的竞争对手</a></h2>
+		</div>
+		        <div class="select_con">
+       	   	<a href="http://www.techweb.com.cn/shipin/2020-11-30/2814030.shtml" target="_blank" class="select_img">
+			<!-- <span class="list_tag"></span> -->
+			<img class="imgg1" src="http://upload.techweb.com.cn/s/130/2020/1130/1606717133895.png" alt="马斯克超越比尔盖茨，成为全球第二大富豪" title="马斯克超越比尔盖茨，成为全球第二大富豪" />
+				<img class="imgg2" src="http://upload.techweb.com.cn/s/150/2020/1130/1606717133895.png" alt="马斯克超越比尔盖茨，成为全球第二大富豪" title="马斯克超越比尔盖茨，成为全球第二大富豪" style="display: none;" />
+			</a><h2><a href="http://www.techweb.com.cn/shipin/2020-11-30/2814030.shtml" target="_blank">马斯克超越比尔盖茨，成为全球第二大富豪</a></h2>
+		</div>
+		 
+	</div>
+	</div>
+<script>
+var w = $(".select_img").width();
+if( w &lt; 150 ){
+$(".imgg2").hide();
+$(".imgg1").show();
+}else{
+$(".imgg2").hide();
+$(".imgg1").show();
+}
+</script>
+        </div>
+    </div>
+    <!--选择、比拼 end-->
+</div>
+<!--一屏 end-->
+<div class="syerping" style="text-align: center;">
+    <script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('&lt;div id="' + s + '"&gt;&lt;/div&gt;');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '5242178',
+        container: s,
+        size: '20,2',
+        display: 'inlay-fix'
+    });
+})();
+</script><div id="_kj617a53psr"></div><script charset="utf-8" src="https://pos.baidu.com/mcom?psi=2076f90a8e25488b771c34baebfe28fd&amp;di=5242178&amp;dri=0&amp;dis=0&amp;dai=0&amp;ps=841x0&amp;enu=encoding&amp;exps=110011&amp;ant=0&amp;dcb=___adblockplus_&amp;dtm=SSP_JSONP&amp;dvi=0.0&amp;dci=-1&amp;dpt=none&amp;tsr=0&amp;tpr=1606992670255&amp;ti=TechWeb.com.cn%20-%20%E9%A2%86%E5%85%88%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E6%B6%88%E8%B4%B9%E4%BA%92%E5%8A%A8%E5%AA%92%E4%BD%93&amp;ari=2&amp;ver=1203&amp;dbv=2&amp;drs=1&amp;pcs=785x585&amp;pss=1005x841&amp;cfv=0&amp;cpl=0&amp;chi=2&amp;cce=true&amp;cec=UTF-8&amp;tlm=1606992671&amp;prot=2&amp;rw=600&amp;ltu=http%3A%2F%2Fwww.techweb.com.cn%2F&amp;ecd=1&amp;uc=800x600&amp;pis=-1x-1&amp;sr=800x600&amp;tcn=1606992671"></script>
+</div>
+
+<div class="con_box">
+<!-- </div> -->
+<!--2019年修改 start-->
+<!-- <div class="con_box"> -->
+    <!--左侧列表 start-->
+    <div class="con_box_l">
+        <!--列表标题 start-->
+        <div class="listtitle">
+            <h3>最新</h3>
+            <span class="more"><a href="http://www.techweb.com.cn/allnews/" target="_blank">更多</a></span>
+        </div>
+        <!-- 文章信息流置顶广告 start -->
+        
+        <!-- 文章信息流置顶广告 end -->
+        <!--列表标题 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606991040183.png" alt="中国广电曾庆军：5G NR广播将实现5G手机免流量收看广播电视" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml" target="_blank">中国广电曾庆军：5G NR广播将实现5G手机免流量收看广播电视</a></h3></div>
+                                <div class="news_text"><p>【TechWeb】12月3日消息，在700MHz技术与产业应用研讨会上，中国广播电视网络有限公司副总经理曾庆军表示，在即将来临的2022年冬奥会上，国网公司将致力于实现让所有5G手机都能收看广播电视。既不怕流量问题，又没有</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/internet/" target="_blank">网络</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/曾庆军/" target="_blank">曾庆军</a>
+                                                <a href="http://www.techweb.com.cn/tag/5G/" target="_blank">5G</a>
+                                                <a href="http://www.techweb.com.cn/tag/中国广电/" target="_blank">中国广电</a>
+                                            </div>
+                    <span calss="time_tag">27分钟前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml&amp;title=中国广电曾庆军：5G NR广播将实现5G手机免流量收看广播电视&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml','2814731')"></div>
+                    <span id="weixin_qrcode2814731" class=""></span>
+                    <div class="wxfx" id="qrcode2814731" style="display:none;" onclick="sure1('http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml','2814731')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/world/2020-12-03/2814730.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606990863807.jpg" alt="得润电子：拟转让旗下子公司华麟电路52%股权" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/world/2020-12-03/2814730.shtml" target="_blank">得润电子：拟转让旗下子公司华麟电路52%股权</a></h3></div>
+                                <div class="news_text"><p>【TechWeb】12月3日消息，特斯拉供应商、深交所上市公司得润电子发布公告称，该公司拟转让子公司深圳华麟电路技术有限公司（以下简称“华麟电路”）52%的股权。
+
+该公司在公告中表示，为了更好地促进华麟</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/world/" target="_blank">资讯编译</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/得润电子/" target="_blank">得润电子</a>
+                                                <a href="http://www.techweb.com.cn/tag/华麟电路/" target="_blank">华麟电路</a>
+                                            </div>
+                    <span calss="time_tag">30分钟前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/world/2020-12-03/2814730.shtml&amp;title=得润电子：拟转让旗下子公司华麟电路52%股权&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/world/2020-12-03/2814730.shtml','2814730')"></div>
+                    <span id="weixin_qrcode2814730" class=""></span>
+                    <div class="wxfx" id="qrcode2814730" style="display:none;" onclick="sure1('http://www.techweb.com.cn/world/2020-12-03/2814730.shtml','2814730')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/world/2020-12-03/2814724.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606989605282.jpg" alt="国际半导体产业协会：Q3全球半导体设备销售额同比增长30%" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/world/2020-12-03/2814724.shtml" target="_blank">国际半导体产业协会：Q3全球半导体设备销售额同比增长30%</a></h3></div>
+                                <div class="news_text"><p>【TechWeb】12月3日消息，据国外媒体报道，周三，国际半导体产业协会（SEMI）宣布，2020年第三季度，全球半导体设备销售额同比增长30%，环比增长16%，达到193.8亿美元。
+
+图片来源于国际半导体产业协会
+按地区划分的</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/world/" target="_blank">资讯编译</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/半导体/" target="_blank">半导体</a>
+                                                <a href="http://www.techweb.com.cn/tag/半导体设备/" target="_blank">半导体设备</a>
+                                                <a href="http://www.techweb.com.cn/tag/半导体设备销售额/" target="_blank">半导体设备销售额</a>
+                                            </div>
+                    <span calss="time_tag">51分钟前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/world/2020-12-03/2814724.shtml&amp;title=国际半导体产业协会：Q3全球半导体设备销售额同比增长30%&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/world/2020-12-03/2814724.shtml','2814724')"></div>
+                    <span id="weixin_qrcode2814724" class=""></span>
+                    <div class="wxfx" id="qrcode2814724" style="display:none;" onclick="sure1('http://www.techweb.com.cn/world/2020-12-03/2814724.shtml','2814724')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/world/2020-12-03/2814723.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606989222721.jpg" alt="日月光获得大单？产业链人士称高通骁龙888与X60均由日月光封装" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/world/2020-12-03/2814723.shtml" target="_blank">日月光获得大单？产业链人士称高通骁龙888与X60均由日月光封装</a></h3></div>
+                                <div class="news_text"><p>英文媒体援引产业链人士透露的消息称，专注于芯片封装及测试的日月光，获得了高通高通新推出的骁龙888及集成X60 5G调至解调器的封装订单。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/world/" target="_blank">资讯编译</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/高通骁龙888/" target="_blank">高通骁龙888</a>
+                                                <a href="http://www.techweb.com.cn/tag/高通骁龙X60/" target="_blank">高通骁龙X60</a>
+                                                <a href="http://www.techweb.com.cn/tag/日月光/" target="_blank">日月光</a>
+                                                <a href="http://www.techweb.com.cn/tag/日月光高通骁龙/" target="_blank">日月光高通骁龙</a>
+                                                <a href="http://www.techweb.com.cn/tag/高通/" target="_blank">高通</a>
+                                            </div>
+                    <span calss="time_tag">54分钟前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/world/2020-12-03/2814723.shtml&amp;title=日月光获得大单？产业链人士称高通骁龙888与X60均由日月光封装&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/world/2020-12-03/2814723.shtml','2814723')"></div>
+                    <span id="weixin_qrcode2814723" class=""></span>
+                    <div class="wxfx" id="qrcode2814723" style="display:none;" onclick="sure1('http://www.techweb.com.cn/world/2020-12-03/2814723.shtml','2814723')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814720.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2019/0618/1560824176469.jpg" alt="网络热词“干饭人”被注册成餐饮公司" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814720.shtml" target="_blank">网络热词“干饭人”被注册成餐饮公司</a></h3></div>
+                                <div class="news_text"><p>天眼查App显示，近日，网络热词“干饭人”已被注册成公司，其中包含干饭人餐饮管理（成都）有限责任公司、武汉市青山区干饭人日用百货店、汽车经济技术开发区干饭人快餐店等。
+
+其中，干饭人餐饮管理（成</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/餐饮/" target="_blank">餐饮</a>
+                                                <a href="http://www.techweb.com.cn/tag/网络热词/" target="_blank">网络热词</a>
+                                                <a href="http://www.techweb.com.cn/tag/干饭人/" target="_blank">干饭人</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814720.shtml&amp;title=网络热词“干饭人”被注册成餐饮公司&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814720.shtml','2814720')"></div>
+                    <span id="weixin_qrcode2814720" class=""></span>
+                    <div class="wxfx" id="qrcode2814720" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814720.shtml','2814720')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/world/2020-12-03/2814718.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987860211.png" alt="区块链市场Climatetrade将在Algorand区块链上建立碳补偿平台" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/world/2020-12-03/2814718.shtml" target="_blank">区块链市场Climatetrade将在Algorand区块链上建立碳补偿平台</a></h3></div>
+                                <div class="news_text"><p>【TechWeb】12月3日消息，据国外媒体报道，区块链市场Climatetrade周三宣布，已选择Algorand区块链为其碳补偿市场提供动力，该市场旨在帮助组织实现碳中和。而二氧化碳中和是对抗气候变化的关键支柱。
+
+Climatetrade</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/world/" target="_blank">资讯编译</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/区块链市场/" target="_blank">区块链市场</a>
+                                                <a href="http://www.techweb.com.cn/tag/Climatetrade/" target="_blank">Climatetrade</a>
+                                                <a href="http://www.techweb.com.cn/tag/Algorand/" target="_blank">Algorand</a>
+                                                <a href="http://www.techweb.com.cn/tag/碳补偿/" target="_blank">碳补偿</a>
+                                                <a href="http://www.techweb.com.cn/tag/平台/" target="_blank">平台</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/world/2020-12-03/2814718.shtml&amp;title=区块链市场Climatetrade将在Algorand区块链上建立碳补偿平台&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/world/2020-12-03/2814718.shtml','2814718')"></div>
+                    <span id="weixin_qrcode2814718" class=""></span>
+                    <div class="wxfx" id="qrcode2814718" style="display:none;" onclick="sure1('http://www.techweb.com.cn/world/2020-12-03/2814718.shtml','2814718')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/finance/2020-12-03/2814717.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987856620.png" alt="消息称京东物流拟2021年启动香港IPO 筹资至多30亿美元" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/finance/2020-12-03/2814717.shtml" target="_blank">消息称京东物流拟2021年启动香港IPO 筹资至多30亿美元</a></h3></div>
+                                <div class="news_text"><p>腾讯科技讯 12月3日，据两位知情人士透露，京东物流正准备在2021年上半年启动香港首次公开募股(IPO)，拟筹资至多30亿美元，目前其已在选择投行充当顾问。
+物流业务是中国电商巨头京东公司的重要组成部分，将是其母公</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/finance/42.shtml" target="_blank">IPO上市</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/京东/" target="_blank">京东</a>
+                                                <a href="http://www.techweb.com.cn/tag/物流/" target="_blank">物流</a>
+                                                <a href="http://www.techweb.com.cn/tag/IPO/" target="_blank">IPO</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/finance/2020-12-03/2814717.shtml&amp;title=消息称京东物流拟2021年启动香港IPO 筹资至多30亿美元&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/finance/2020-12-03/2814717.shtml','2814717')"></div>
+                    <span id="weixin_qrcode2814717" class=""></span>
+                    <div class="wxfx" id="qrcode2814717" style="display:none;" onclick="sure1('http://www.techweb.com.cn/finance/2020-12-03/2814717.shtml','2814717')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814716.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987767221.jpg" alt="工信部通报60家侵害用户权益行为APP 包括春雨医生、千寻位置等" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814716.shtml" target="_blank">工信部通报60家侵害用户权益行为APP 包括春雨医生、千寻位置等</a></h3></div>
+                                <div class="news_text"><p>据工信部发布的消息，截至目前，尚有60款APP未完成整改，包括VIP陪练、直播吧、春雨医生、蜜月直播以及千寻位置等。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/工信部/" target="_blank">工信部</a>
+                                                <a href="http://www.techweb.com.cn/tag/通报批评/" target="_blank">通报批评</a>
+                                                <a href="http://www.techweb.com.cn/tag/APP/" target="_blank">APP</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814716.shtml&amp;title=工信部通报60家侵害用户权益行为APP 包括春雨医生、千寻位置等&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814716.shtml','2814716')"></div>
+                    <span id="weixin_qrcode2814716" class=""></span>
+                    <div class="wxfx" id="qrcode2814716" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814716.shtml','2814716')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/smarttraveling/2020-12-03/2814715.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987610332.png" alt="蔚来李斌今年净资产增加逾11倍 成全球身价增速最快富豪" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/smarttraveling/2020-12-03/2814715.shtml" target="_blank">蔚来李斌今年净资产增加逾11倍 成全球身价增速最快富豪</a></h3></div>
+                                <div class="news_text"><p>腾讯科技讯 12月3日消息，埃隆·马斯克（Elon Musk）在2020年令人眼花缭乱的攀升在本周迎来巅峰，因为他即将成为一家标准普尔500指数成分股公司的的负责人。就在几天前，他以1390亿美元的财富跃升为全球第二大</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/smarttraveling/" target="_blank">智能出行</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/李斌/" target="_blank">李斌</a>
+                                                <a href="http://www.techweb.com.cn/tag/净资产/" target="_blank">净资产</a>
+                                                <a href="http://www.techweb.com.cn/tag/富豪/" target="_blank">富豪</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/smarttraveling/2020-12-03/2814715.shtml&amp;title=蔚来李斌今年净资产增加逾11倍 成全球身价增速最快富豪&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/smarttraveling/2020-12-03/2814715.shtml','2814715')"></div>
+                    <span id="weixin_qrcode2814715" class=""></span>
+                    <div class="wxfx" id="qrcode2814715" style="display:none;" onclick="sure1('http://www.techweb.com.cn/smarttraveling/2020-12-03/2814715.shtml','2814715')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/finance/2020-12-03/2814714.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987513440.jpg" alt="欢喜传媒获批在港交所购回最多3.15亿股股份" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/finance/2020-12-03/2814714.shtml" target="_blank">欢喜传媒获批在港交所购回最多3.15亿股股份</a></h3></div>
+                                <div class="news_text"><p>欢喜传媒发布公告称，根据购回授权，本公司获批准在香港联合交易所有限公司购回最多315,465,540股。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/finance/42.shtml" target="_blank">IPO上市</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/欢喜传媒/" target="_blank">欢喜传媒</a>
+                                                <a href="http://www.techweb.com.cn/tag/港股/" target="_blank">港股</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/finance/2020-12-03/2814714.shtml&amp;title=欢喜传媒获批在港交所购回最多3.15亿股股份&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/finance/2020-12-03/2814714.shtml','2814714')"></div>
+                    <span id="weixin_qrcode2814714" class=""></span>
+                    <div class="wxfx" id="qrcode2814714" style="display:none;" onclick="sure1('http://www.techweb.com.cn/finance/2020-12-03/2814714.shtml','2814714')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/smarttraveling/2020-12-03/2814713.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987394165.png" alt="东风汽车跨界网约车领域 成立广西风行出行科技公司" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/smarttraveling/2020-12-03/2814713.shtml" target="_blank">东风汽车跨界网约车领域 成立广西风行出行科技公司</a></h3></div>
+                                <div class="news_text"><p>【智车派新闻】现在很多企业都喜欢在汽车相关领域玩跨界。能源公司跨界造车，网约车企业跨界造车，现在汽车企业还要跨界做出行。近日，东风汽车集团旗下企业成立出行公司——广西风行出行科技有限公司，注</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/smarttraveling/" target="_blank">智能出行</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/东风汽车/" target="_blank">东风汽车</a>
+                                                <a href="http://www.techweb.com.cn/tag/出行/" target="_blank">出行</a>
+                                                <a href="http://www.techweb.com.cn/tag/科技/" target="_blank">科技</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/smarttraveling/2020-12-03/2814713.shtml&amp;title=东风汽车跨界网约车领域 成立广西风行出行科技公司&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/smarttraveling/2020-12-03/2814713.shtml','2814713')"></div>
+                    <span id="weixin_qrcode2814713" class=""></span>
+                    <div class="wxfx" id="qrcode2814713" style="display:none;" onclick="sure1('http://www.techweb.com.cn/smarttraveling/2020-12-03/2814713.shtml','2814713')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814711.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606987105595.png" alt="1.5万人！京东面向2021届高校毕业生开启最大规模校招" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814711.shtml" target="_blank">1.5万人！京东面向2021届高校毕业生开启最大规模校招</a></h3></div>
+                                <div class="news_text"><p>据京东官方发布的消息，近日，教育部、人社部公布数据，2021届高校毕业生总规模预计909万人，就业形势严峻复杂。为此，京东宣布向2021届高校毕业生提供1.5万个就业岗位。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/京东/" target="_blank">京东</a>
+                                                <a href="http://www.techweb.com.cn/tag/2021届校招/" target="_blank">2021届校招</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814711.shtml&amp;title=1.5万人！京东面向2021届高校毕业生开启最大规模校招&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814711.shtml','2814711')"></div>
+                    <span id="weixin_qrcode2814711" class=""></span>
+                    <div class="wxfx" id="qrcode2814711" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814711.shtml','2814711')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://mo.techweb.com.cn/digi/2020-12-03/2814710.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606986932865.png" alt="苹果今年最便宜新品 HomePod mini在官网、天猫独家开售 " onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://mo.techweb.com.cn/digi/2020-12-03/2814710.shtml" target="_blank">苹果今年最便宜新品 HomePod mini在官网、天猫独家开售 </a></h3></div>
+                                <div class="news_text"><p>2020年岁末，苹果今年最便宜新品终于在国内正式开售，它就是智能音箱新品HomePod mini，售价749元。
+目前，HomePod mini已在苹果官网、天猫独家开售，京东、苏宁暂时还没有货。
+其实，自2013年苹果正式入驻天猫以来</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://mo.techweb.com.cn/" target="_blank">数码新酷</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/天猫/" target="_blank">天猫</a>
+                                                <a href="http://www.techweb.com.cn/tag/新品/" target="_blank">新品</a>
+                                                <a href="http://www.techweb.com.cn/tag/苹果/" target="_blank">苹果</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://mo.techweb.com.cn/digi/2020-12-03/2814710.shtml&amp;title=苹果今年最便宜新品 HomePod mini在官网、天猫独家开售 &amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://mo.techweb.com.cn/digi/2020-12-03/2814710.shtml','2814710')"></div>
+                    <span id="weixin_qrcode2814710" class=""></span>
+                    <div class="wxfx" id="qrcode2814710" style="display:none;" onclick="sure1('http://mo.techweb.com.cn/digi/2020-12-03/2814710.shtml','2814710')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814709.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606986907261.png" alt="微盟上新付费优惠券帮助商家提升老用户复购率和客单价" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814709.shtml" target="_blank">微盟上新付费优惠券帮助商家提升老用户复购率和客单价</a></h3></div>
+                                <div class="news_text"><p>据微盟官方发布的消息，其微商城和智慧零售业务已上线虚拟商品，首发付费优惠券功能，旨在帮助商家提升老用户复购率和客单价，并进行品牌传播，沉淀新用户。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/微盟/" target="_blank">微盟</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814709.shtml&amp;title=微盟上新付费优惠券帮助商家提升老用户复购率和客单价&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814709.shtml','2814709')"></div>
+                    <span id="weixin_qrcode2814709" class=""></span>
+                    <div class="wxfx" id="qrcode2814709" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814709.shtml','2814709')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814708.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2018/0516/1526437348540.jpg" alt="抖音电商发布专项治理公告 严打演戏炒作卖货等行为" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814708.shtml" target="_blank">抖音电商发布专项治理公告 严打演戏炒作卖货等行为</a></h3></div>
+                                <div class="news_text"><p>主播为了给粉丝低价折扣，假装自掏腰包补齐差价；妻子为了销量不得不降价卖货，却因此被丈夫辱骂……直播带货快速发展，这样的“演戏式卖货”场景近期出现在一些达人和商家的直播间中，严重损</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/电商/" target="_blank">电商</a>
+                                                <a href="http://www.techweb.com.cn/tag/抖音/" target="_blank">抖音</a>
+                                                <a href="http://www.techweb.com.cn/tag/整治/" target="_blank">整治</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814708.shtml&amp;title=抖音电商发布专项治理公告 严打演戏炒作卖货等行为&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814708.shtml','2814708')"></div>
+                    <span id="weixin_qrcode2814708" class=""></span>
+                    <div class="wxfx" id="qrcode2814708" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814708.shtml','2814708')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/world/2020-12-03/2814707.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606985711973.jpg" alt="产业链人士：三星降低了5nm工艺代工报价 以获得骁龙888等代工订单" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/world/2020-12-03/2814707.shtml" target="_blank">产业链人士：三星降低了5nm工艺代工报价 以获得骁龙888等代工订单</a></h3></div>
+                                <div class="news_text"><p>英文媒体援引产业链人士的透露消息报道称，三星降低了5nm工艺的代工报价的，以吸引来自高通新发布的骁龙888系列等在内的芯片代工订单。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/world/" target="_blank">资讯编译</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/三星/" target="_blank">三星</a>
+                                                <a href="http://www.techweb.com.cn/tag/三星5nm/" target="_blank">三星5nm</a>
+                                                <a href="http://www.techweb.com.cn/tag/高通骁龙888/" target="_blank">高通骁龙888</a>
+                                                <a href="http://www.techweb.com.cn/tag/三星高通/" target="_blank">三星高通</a>
+                                                <a href="http://www.techweb.com.cn/tag/高通/" target="_blank">高通</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/world/2020-12-03/2814707.shtml&amp;title=产业链人士：三星降低了5nm工艺代工报价 以获得骁龙888等代工订单&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/world/2020-12-03/2814707.shtml','2814707')"></div>
+                    <span id="weixin_qrcode2814707" class=""></span>
+                    <div class="wxfx" id="qrcode2814707" style="display:none;" onclick="sure1('http://www.techweb.com.cn/world/2020-12-03/2814707.shtml','2814707')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/finance/2020-12-03/2814706.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606985688643.png" alt="达达集团：增发新股定价50美元 募资规模5.2亿美元" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/finance/2020-12-03/2814706.shtml" target="_blank">达达集团：增发新股定价50美元 募资规模5.2亿美元</a></h3></div>
+                                <div class="news_text"><p>本地即时零售和配送平台达达集团对外发布公告称，增发美国存托股票（ADS）完成50美元定价。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/finance/42.shtml" target="_blank">IPO上市</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/达达集团/" target="_blank">达达集团</a>
+                                                <a href="http://www.techweb.com.cn/tag/股市/" target="_blank">股市</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/finance/2020-12-03/2814706.shtml&amp;title=达达集团：增发新股定价50美元 募资规模5.2亿美元&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/finance/2020-12-03/2814706.shtml','2814706')"></div>
+                    <span id="weixin_qrcode2814706" class=""></span>
+                    <div class="wxfx" id="qrcode2814706" style="display:none;" onclick="sure1('http://www.techweb.com.cn/finance/2020-12-03/2814706.shtml','2814706')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814705.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606985454761.jpg" alt="为上市做准备？原猫眼CFO施康平加盟水滴公司" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814705.shtml" target="_blank">为上市做准备？原猫眼CFO施康平加盟水滴公司</a></h3></div>
+                                <div class="news_text"><p>知情人士透露，原猫眼娱乐首席财务官（CFO）施康平已于11月加盟水滴，出任水滴公司CFO，向水滴公司创始人兼CEO沈鹏汇报。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/猫眼/" target="_blank">猫眼</a>
+                                                <a href="http://www.techweb.com.cn/tag/施康平/" target="_blank">施康平</a>
+                                                <a href="http://www.techweb.com.cn/tag/水滴公司/" target="_blank">水滴公司</a>
+                                            </div>
+                    <span calss="time_tag">1小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814705.shtml&amp;title=为上市做准备？原猫眼CFO施康平加盟水滴公司&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814705.shtml','2814705')"></div>
+                    <span id="weixin_qrcode2814705" class=""></span>
+                    <div class="wxfx" id="qrcode2814705" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814705.shtml','2814705')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814704.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606985130697.png" alt="去哪儿网发布2021年预测 民航出行将达6.29亿人次" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814704.shtml" target="_blank">去哪儿网发布2021年预测 民航出行将达6.29亿人次</a></h3></div>
+                                <div class="news_text"><p>日前，去哪儿网发布预测显示，民航出行将达到6.29亿人次，或超今年50%。</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/去哪儿网/" target="_blank">去哪儿网</a>
+                                            </div>
+                    <span calss="time_tag">2小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814704.shtml&amp;title=去哪儿网发布2021年预测 民航出行将达6.29亿人次&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814704.shtml','2814704')"></div>
+                    <span id="weixin_qrcode2814704" class=""></span>
+                    <div class="wxfx" id="qrcode2814704" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814704.shtml','2814704')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--单图 start-->
+        <div class="news_article clearfix">
+            <a href="http://www.techweb.com.cn/it/2020-12-03/2814703.shtml" target="_blank" class="na_pic"><img src="http://upload1.techweb.com.cn/s/250/2020/1203/1606985040379.png" alt="北大光华管理学院师生参观贝壳 感受VR在居住产业的落地实践" onerror="src='http://upload1.techweb.com.cn/s/250/2016/1102/1478051162839.jpg'" /></a>
+            <div class="na_detail clearfix">
+                <div class="news_title"><h3><a href="http://www.techweb.com.cn/it/2020-12-03/2814703.shtml" target="_blank">北大光华管理学院师生参观贝壳 感受VR在居住产业的落地实践</a></h3></div>
+                                <div class="news_text"><p>提及VR的商业应用，很多人第一个想到的就是贝壳的VR看房功能。VR技术是如何在新居住服务产业中一步步走向大规模应用落地，又是如何改造居住服务体验，加速居住产业走向数字化的？
+12月2日，由北京大学光华管理学院师</p></div>
+                                <div class="news_tag">
+                    <strong class="barlink"><a href="http://www.techweb.com.cn/it/" target="_blank">业界</a></strong>
+                    <div class="keywords">
+                                                <a href="http://www.techweb.com.cn/tag/贝壳/" target="_blank">贝壳</a>
+                                                <a href="http://www.techweb.com.cn/tag/北大光华管理学院/" target="_blank">北大光华管理学院</a>
+                                            </div>
+                    <span calss="time_tag">2小时前</span>
+                </div>
+                <div class="share-join clearfix">
+                    <span>分享：</span>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.techweb.com.cn/it/2020-12-03/2814703.shtml&amp;title=北大光华管理学院师生参观贝壳 感受VR在居住产业的落地实践&amp;appkey=2184619778&amp;searchPic=true&amp;ralateUid=1642471052" class="weibo_share" data-cmd="tsina" title="分享到新浪微博" target="_blank"></a>
+                    <div class="weixin_share" data-cmd="weixin" title="分享到微信" onclick="sure('http://www.techweb.com.cn/it/2020-12-03/2814703.shtml','2814703')"></div>
+                    <span id="weixin_qrcode2814703" class=""></span>
+                    <div class="wxfx" id="qrcode2814703" style="display:none;" onclick="sure1('http://www.techweb.com.cn/it/2020-12-03/2814703.shtml','2814703')"><p>扫码分享至朋友圈</p></div>
+                </div>
+            </div>
+        </div>
+        <!--单图 end-->
+                <!--多图 start-->
+        <!-- <div class="news_photoview clearfix">
+            <div class="news_title"><h3><a href="" target="_blank">iphone又曝导致系统崩溃漏洞？iOS最新测试版竟也未能幸免！</a></h3></div>
+            <div class="np_pic">
+                <a href="" target="_blank">
+                    <span class="p_img3"><img src="images/img618.jpg" alt=""/></span>
+                    <span class="p_img3"><img src="images/img618.jpg" alt=""/></span>
+                    <span class="p_img3"><img src="images/img618.jpg" alt=""/></span>
+                </a>
+            </div>
+            <div class="news_tag">
+                <strong class="barlink"><a href="" target="_blank">移动互联</a></strong>
+                <div class="keywords"><a href="" target="">漏洞</a><a href="" target="">系统崩溃</a><a href="" target="">最新</a><a href="" target="">iOS12.2</a><a href="" target="">系统崩溃系统崩溃系统崩溃</a></div>
+                <span calss="time_tag">2小时前</span>
+            </div>
+            <div class="share-join clearfix">
+                <span>分享：</span>
+                <a href="#" class="weibo_share" data-cmd="weixin" title="分享到微信"></a>
+                <a href="#" class="weixin_share" data-cmd="tsina" title="分享到新浪微博"></a>
+            </div>
+        </div> -->
+        <!--多图 end-->
+        <!--更多 start-->
+        <input type="hidden" value="1" id="page" autocomplete="off" />
+        <a href="http://www.techweb.com.cn/allnews/80/" target="_blank" class="news_more">查看全部</a>
+        <!--更多 end-->
+    </div>
+    <!--左侧列表 end-->
+    
+    <!--右侧栏目 start-->
+    <div class="con_box_r">
+        <!--独家 start-->
+        <div class="exclusive">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/yuanchuang" target="_blank" class="exclusive_tit"></a><em></em><span class="more"><a href="http://www.techweb.com.cn/yuanchuang">更多</a></span></h2>
+            <div class="exclusive_con">
+                <ul>
+        <li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814731.shtml" target="_blank" title="中国广电曾庆军：5G NR广播将实现5G手机免流量收看广播电视">中国广电曾庆军：5G NR广播将实现5G手机免流量收看广播电视</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814716.shtml" target="_blank" title="工信部通报60家侵害用户权益行为APP 包括春雨医生、千寻位置等">工信部通报60家侵害用户权益行为APP 包括春雨医生、千寻位置等</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814711.shtml" target="_blank" title="1.5万人！京东面向2021届高校毕业生开启最大规模校招">1.5万人！京东面向2021届高校毕业生开启最大规模校招</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814709.shtml" target="_blank" title="微盟上新付费优惠券帮助商家提升老用户复购率和客单价">微盟上新付费优惠券帮助商家提升老用户复购率和客单价</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814705.shtml" target="_blank" title="为上市做准备？原猫眼CFO施康平加盟水滴公司">为上市做准备？原猫眼CFO施康平加盟水滴公司</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814704.shtml" target="_blank" title="去哪儿网发布2021年预测 民航出行将达6.29亿人次">去哪儿网发布2021年预测 民航出行将达6.29亿人次</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814703.shtml" target="_blank" title="北大光华管理学院师生参观贝壳 感受VR在居住产业的落地实践">北大光华管理学院师生参观贝壳 感受VR在居住产业的落地实践</a></li>
+    <li><a href="http://www.techweb.com.cn/it/2020-12-03/2814662.shtml" target="_blank" title="《夺冠》将代表中国内地角逐奥斯卡最佳国际影片奖">《夺冠》将代表中国内地角逐奥斯卡最佳国际影片奖</a></li>
+    <li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814631.shtml" target="_blank" title="手语也能出字幕 考拉海购推出手语识别系统">手语也能出字幕 考拉海购推出手语识别系统</a></li>
+    <li><a href="http://www.techweb.com.cn/internet/2020-12-03/2814619.shtml" target="_blank" title="蚂蚁金服关联公司经营范围新增非居住房地产租赁">蚂蚁金服关联公司经营范围新增非居住房地产租赁</a></li>
+  
+</ul>
+            </div>
+        </div>
+        <!--独家 end-->
+        <!--编译 start-->
+        <div class="compile">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/world" target="_blank" class="compile_tit"></a><em></em><span class="more"><a href="http://www.techweb.com.cn/world">更多</a></span></h2>
+            <div class="compile_con">
+                <ul>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814730.shtml" target="_blank" title="得润电子：拟转让旗下子公司华麟电路52%股权">得润电子：拟转让旗下子公司华麟电路52%股权</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814724.shtml" target="_blank" title="国际半导体产业协会：Q3全球半导体设备销售额同比增长30%">国际半导体产业协会：Q3全球半导体设备销售额同比增长30%</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814723.shtml" target="_blank" title="日月光获得大单？产业链人士称高通骁龙888与X60均由日月光封装">日月光获得大单？产业链人士称高通骁龙888与X60均由日月光封装</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814718.shtml" target="_blank" title="区块链市场Climatetrade将在Algorand区块链上建立碳补偿平台">区块链市场Climatetrade将在Algorand区块链上建立碳补偿平台</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814707.shtml" target="_blank" title="产业链人士：三星降低了5nm工艺代工报价 以获得骁龙888等代工订单">产业链人士：三星降低了5nm工艺代工报价 以获得骁龙888等代工订单</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814702.shtml" target="_blank" title="谷歌宣布收购数据管理公司Actifio 加强谷歌云数据保护">谷歌宣布收购数据管理公司Actifio 加强谷歌云数据保护</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814688.shtml" target="_blank" title="上千用户称iPhone 12 Pro耗电异常 没开启任何应用电量也急剧下降">上千用户称iPhone 12 Pro耗电异常 没开启任何应用电量也急剧下降</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814686.shtml" target="_blank" title="Lucid Motors亚利桑那州工厂完成一期建设 明春生产Lucid Air">Lucid Motors亚利桑那州工厂完成一期建设 明春生产Lucid Air</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814667.shtml" target="_blank" title="信用卡巨头Visa将支持USDC支付 更多传统机构进入加密市场">信用卡巨头Visa将支持USDC支付 更多传统机构进入加密市场</a></li>
+        <li><a href="http://www.techweb.com.cn/world/2020-12-03/2814666.shtml" target="_blank" title="自动驾驶汽车创企Autox已开始在国内进行自动驾驶测试">自动驾驶汽车创企Autox已开始在国内进行自动驾驶测试</a></li>
+    </ul>
+            </div>
+        </div>
+        <!--编译 end-->
+        <div class="con_r">
+            <!--专题 start-->
+            <div class="special">
+                <h2 class="tit2"><a href="http://www.techweb.com.cn/special" target="_blank">专题</a><span class="more"><a href="http://www.techweb.com.cn/special">更多</a></span></h2>
+                <div class="special_con">
+        <div class="special_banner"><a href="http://www.techweb.com.cn/special/zt/OriginOS/" target="_blank" title="OriginOS特别活动"><img src="http://upload1.techweb.com.cn/s/300/2020/1117/1605600627829.jpg" alt="OriginOS特别活动" title="OriginOS特别活动" /></a></div>
+        <div class="special_banner"><a href="http://www.techweb.com.cn/special/zt/HUAWEI_Mate40/" target="_blank" title="2020华为年度旗舰新品发布会图文直播"><img src="http://upload1.techweb.com.cn/s/300/2020/1030/1604019905534.jpg" alt="2020华为年度旗舰新品发布会图文直播" title="2020华为年度旗舰新品发布会图文直播" /></a></div>
+        <ul>
+                <li><span><a href="http://www.techweb.com.cn/special/zt/huaweiQLJ2020/" target="_blank" title="华为全联接2020">华为全联接2020</a></span></li>
+                <li><span><a href="http://www.techweb.com.cn/special/zt/WWZNbaidu2020/" target="_blank" title="万物智能--百度世界2020大会">万物智能--百度世界2020大会</a></span></li>
+                <li><span><a href="http://www.techweb.com.cn/special/zt/smicIPO/" target="_blank" title="中芯国际科创板上市">中芯国际科创板上市</a></span></li>
+                <li><span><a href="http://www.techweb.com.cn/special/zt/baiduWAVE" target="_blank" title=" 2020年百度深度学习开发者峰会 "> 2020年百度深度学习开发者峰会 </a></span></li>
+            </ul>
+</div>
+            </div>
+            <!--专题 end-->
+        </div>
+        
+        <!--智能家电 start-->
+        <div class="house_ele">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/smarthome/" target="_blank">智能家庭</a><em></em><span class="more"><a href="http://www.techweb.com.cn/smarthome/">更多</a></span></h2>
+            <div class="house_con">
+        <div class="picture_text"><a href="http://mo.techweb.com.cn/digi/2020-07-09/2796547.shtml" target="_blank"><div class="picture">
+		<img id="sm01" src="http://upload1.techweb.com.cn/s/139/2020/0709/1594263012668.jpg" alt="小米超高端OLED什么水平？" title="小米超高端OLED什么水平？" style="display: none;" />
+		<img id="sm02" src="http://upload1.techweb.com.cn/s/124/2020/0709/1594263012668.jpg" alt="小米超高端OLED什么水平？" title="小米超高端OLED什么水平？" />
+		
+	</div><h4>小米超高端OLED什么水平？</h4></a></div>
+        <div class="picture_text"><a href="http://mo.techweb.com.cn/digi/2020-07-09/2796563.shtml" target="_blank"><div class="picture">
+		<img id="sm11" src="http://upload1.techweb.com.cn/s/139/2020/0709/1594263160349.png" alt="小米电视棒官方渲染图泄露" title="小米电视棒官方渲染图泄露" style="display: none;" />
+		<img id="sm12" src="http://upload1.techweb.com.cn/s/124/2020/0709/1594263160349.png" alt="小米电视棒官方渲染图泄露" title="小米电视棒官方渲染图泄露" />
+		
+	</div><h4>小米电视棒官方渲染图泄露</h4></a></div>
+        <div class="picture_text"><a href="http://mo.techweb.com.cn/digi/2020-07-09/2796552.shtml" target="_blank"><div class="picture">
+		<img id="sm21" src="http://upload1.techweb.com.cn/s/139/2020/0709/1594263123220.jpg" alt="科学家设计新型空气过滤器" title="科学家设计新型空气过滤器" style="display: none;" />
+		<img id="sm22" src="http://upload1.techweb.com.cn/s/124/2020/0709/1594263123220.jpg" alt="科学家设计新型空气过滤器" title="科学家设计新型空气过滤器" />
+		
+	</div><h4>科学家设计新型空气过滤器</h4></a></div>
+    </div>
+        </div>
+        <!--智能家电 end-->
+        <!--云计算 start-->
+        <div class="cloud">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/cloud/" target="_blank">云计算</a><em></em><span class="more"><a href="http://www.techweb.com.cn/cloud/">更多</a></span></h2>
+            <div class="cloud_con">
+                <ul>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-12-03/2814689.shtml" target="_blank" alt="MongoDB Atlas支持多云数据库集群 阿里云在列" title="MongoDB Atlas支持多云数据库集群 阿里云在列">MongoDB Atlas支持多云数据库集群 阿里云在列</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-12-02/2814474.shtml" target="_blank" alt="网银互联郑永：SD-WAN技术为企业上云创造更大价值" title="网银互联郑永：SD-WAN技术为企业上云创造更大价值">网银互联郑永：SD-WAN技术为企业上云创造更大价值</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-18/2812191.shtml" target="_blank" alt="飞算全自动软件工程平台全球首发要让人人都能开发软件" title="飞算全自动软件工程平台全球首发要让人人都能开发软件">飞算全自动软件工程平台全球首发要让人人都能开发软件</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-12/2811437.shtml" target="_blank" alt="阿里云（上海）信息科技有限公司成立，注册资本5亿元" title="阿里云（上海）信息科技有限公司成立，注册资本5亿元">阿里云（上海）信息科技有限公司成立，注册资本5亿元</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-12/2811398.shtml" target="_blank" alt="新MacBook买前必看，ARM架构的mac book 不兼容程序列表" title="新MacBook买前必看，ARM架构的mac book 不兼容程序列表">新MacBook买前必看，ARM架构的mac book 不兼容程序列表</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-12/2811395.shtml" target="_blank" alt="多款Arm Mac Book的软件还不兼容，你准备好买了么？" title="多款Arm Mac Book的软件还不兼容，你准备好买了么？">多款Arm Mac Book的软件还不兼容，你准备好买了么？</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-12/2811390.shtml" target="_blank" alt="Arm Mac Book 不兼容软件列表：PhotoShop目前还不能用" title="Arm Mac Book 不兼容软件列表：PhotoShop目前还不能用">Arm Mac Book 不兼容软件列表：PhotoShop目前还不能用</a></li>
+        <li><a href="http://www.techweb.com.cn/cloud/2020-11-12/2811388.shtml" target="_blank" alt="Apple Silicon 的Mac Book到底能买么？我们看看目前不兼容 Arm Mac Book的程序有哪些" title="Apple Silicon 的Mac Book到底能买么？我们看看目前不兼容 Arm Mac Book的程序有哪些">Apple Silicon 的Mac Book到底能买么？我们看看目前不兼容 Arm Mac Book的程序有哪些</a></li>
+    </ul>
+            </div>
+        </div>
+        <!--云计算 end-->
+        <!--手机游戏 start-->
+        <div class="mobile_game">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/shoujiyouxi/" target="_blank">手机游戏</a><em></em><span class="more"><a href="http://www.techweb.com.cn/shoujiyouxi/">更多</a></span></h2>
+            <div class="game_con">
+        <div class="picture_text"><a href="http://www.techweb.com.cn/onlinegamenews/2020-09-17/2804511.shtml" target="_blank"><div class="picture">
+		<img id="sm31" src="http://upload1.techweb.com.cn/s/139/2020/0917/1600307081642.png" alt="《英雄联盟》S10赛程公布：JDG首日迎战DWG SN迎战G2" title="《英雄联盟》S10赛程公布：JDG首日迎战DWG SN迎战G2" style="display: none;" />
+		<img id="sm31" src="http://upload1.techweb.com.cn/s/124/2020/0917/1600307081642.png" alt="《英雄联盟》S10赛程公布：JDG首日迎战DWG SN迎战G2" title="《英雄联盟》S10赛程公布：JDG首日迎战DWG SN迎战G2" />
+	</div><h4>《英雄联盟》S10赛程公布：JDG首日迎战DWG SN迎战G2</h4></a></div>
+        <div class="picture_text"><a href="http://www.techweb.com.cn/onlinegamenews/2020-09-17/2804509.shtml" target="_blank"><div class="picture">
+		<img id="sm41" src="http://upload1.techweb.com.cn/s/139/2020/0917/1600307183355.jpg" alt="《和平精英》创意工坊“极限追猎”模式 " title="《和平精英》创意工坊“极限追猎”模式 " style="display: none;" />
+		<img id="sm41" src="http://upload1.techweb.com.cn/s/124/2020/0917/1600307183355.jpg" alt="《和平精英》创意工坊“极限追猎”模式 " title="《和平精英》创意工坊“极限追猎”模式 " />
+	</div><h4>《和平精英》创意工坊“极限追猎”模式 </h4></a></div>
+        <div class="picture_text"><a href="http://www.techweb.com.cn/onlinegamenews/2020-09-17/2804510.shtml" target="_blank"><div class="picture">
+		<img id="sm51" src="http://upload1.techweb.com.cn/s/139/2020/0917/1600307166321.jpg" alt="《糖豆人：终极淘汰赛》公开新更新内容" title="《糖豆人：终极淘汰赛》公开新更新内容" style="display: none;" />
+		<img id="sm51" src="http://upload1.techweb.com.cn/s/124/2020/0917/1600307166321.jpg" alt="《糖豆人：终极淘汰赛》公开新更新内容" title="《糖豆人：终极淘汰赛》公开新更新内容" />
+	</div><h4>《糖豆人：终极淘汰赛》公开新更新内容</h4></a></div>
+    </div>
+<script>
+	var w = $(".picture").width();
+	for(n=0;n&lt;=10;n++){
+		if( w &lt; 150 ){ 
+			$("#y"+n+"1").hide();
+			$("#y"+n+"2").show();
+			$("#sm"+n+"1").hide();
+			$("#sm"+n+"2").show();
+		}else{
+			$("#sm"+n+"2").hide();
+			$("#sm"+n+"1").show();
+		}
+	}
+</script>
+        </div>
+        <!--手机游戏 end-->
+        <!--排行 start-->
+        <!--排行 start-->
+        <div class="ranking">
+    	<h2 class="tit2">排行<em></em></h2>
+        <div class="ranking_con">
+        	<ul>
+                        		<li><a href="http://www.techweb.com.cn/internet/2020-12-02/2814378.shtml" target="_blank" title="嫦娥五号成功落月 传回着陆影像图">嫦娥五号成功落月 传回着陆影像图</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/internet/2020-11-24/2813081.shtml" target="_blank" title="嫦娥五号发射成功去月球“挖土”">嫦娥五号发射成功去月球“挖土”</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-11-30/2813917.shtml" target="_blank" title="虾米音乐明年关闭？">虾米音乐明年关闭？</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/" target="_blank" title="美国计算机专项教育受重视 编程走进中小学课堂">美国计算机专项教育受重视 编程走进中小学</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/internet/2020-12-02/2814459.shtml" target="_blank" title="嫦娥五号完成月球钻取采样及封装 正式开始“挖土”">嫦娥五号完成月球钻取采样及封装 正式开始</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-12-02/2814355.shtml" target="_blank" title="高通发布骁龙888移动平台 支持全球毫米波和Sub-6GHz主要频段">高通发布骁龙888移动平台 支持全球毫米波和</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-12-02/2814432.shtml" target="_blank" title="嫦娥五号完成 “钻取”采样及封装，正进行 “表取”">嫦娥五号完成 “钻取”采样及封装，正进行 </a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-12-02/2814356.shtml" target="_blank" title="嫦娥五号自述如何月球取土">嫦娥五号自述如何月球取土</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-12-02/2814420.shtml" target="_blank" title="马化腾发文总结2020：正直是腾讯最基本的价值观">马化腾发文总结2020：正直是腾讯最基本的价</a></li>
+        		        		<li><a href="http://www.techweb.com.cn/it/2020-12-02/2814442.shtml" target="_blank" title="嫦娥五号成功落月采样返回时间 嫦娥五号自述如何月球取土">嫦娥五号成功落月采样返回时间 嫦娥五号自</a></li>
+        		        	</ul>
+        </div>
+    </div>
+        <!--排行 end-->
+        <div class="video">
+            <h2 class="tit2"><a href="http://www.techweb.com.cn/viewpoint/" target="_blank">观点</a><em></em><span class="more"><a href="http://www.techweb.com.cn/viewpoint/">更多</a></span></h2>
+                <div class="game_con">
+		<div class="picture_text"><a href="http://www.techweb.com.cn/it/2020-09-28/2805717.shtml" target="_blank">
+		<div class="picture">
+		<span class="list_tag">并购</span>
+			<img src="http://upload.techweb.com.cn/s/150/2020/0928/1601278714131.jpg" alt="倪光南：商务部可能会否掉英伟达对ARM并购" title="倪光南：商务部可能会否掉英伟达对ARM并购" />
+		</div>
+		<h4>倪光南：商务部可能会否掉英伟达对ARM并购</h4></a>
+	</div>
+		<div class="picture_text"><a href="http://www.techweb.com.cn/it/2020-09-28/2805791.shtml" target="_blank">
+		<div class="picture">
+		<span class="list_tag">网络</span>
+			<img src="http://upload.techweb.com.cn/s/150/2020/0928/1601278754926.jpg" alt="TikTok在美暂无需下架 逃过一劫？" title="TikTok在美暂无需下架 逃过一劫？" />
+		</div>
+		<h4>TikTok在美暂无需下架 逃过一劫？</h4></a>
+	</div>
+		<div class="picture_text"><a href="http://www.techweb.com.cn/it/2020-09-15/2804171.shtml" target="_blank">
+		<div class="picture">
+		<span class="list_tag">芯片</span>
+			<img src="http://upload.techweb.com.cn/s/150/2020/0915/1600133603234.jpg" alt="英伟达收购Arm想干嘛？" title="英伟达收购Arm想干嘛？" />
+		</div>
+		<h4>英伟达收购Arm想干嘛？</h4></a>
+	</div>
+		<div class="picture_text"><a href="http://www.techweb.com.cn/it/2020-09-28/2805743.shtml" target="_blank">
+		<div class="picture">
+		<span class="list_tag">互联网金融</span>
+			<img src="http://upload.techweb.com.cn/s/150/2020/0928/1601278825587.jpg" alt="微信不微 支付宝不宝？APP吃了你多少存储" title="微信不微 支付宝不宝？APP吃了你多少存储" />
+		</div>
+		<h4>微信不微 支付宝不宝？APP吃了你多少存储</h4></a>
+	</div>
+	 
+</div>
+        </div>
+        <!-- 图赏 start -->
+		<meta charset="UTF-8" />
+
+<script src="http://s2.techweb.com.cn/static/js/jquery1.42.min.js?201806041900" type="text/javascript"></script>
+<script src="http://s2.techweb.com.cn/static/js/jquery.superslide.2.1.1.js?201806041900" type="text/javascript"></script>
+
+
+
+<!--图赏区块 start-->
+<div class="picshow">
+	<div class="con_tit">
+		<h2 class="tit2"><a href="http://mo.techweb.com.cn/picnews">图赏</a><em></em><span class="more"><a href="http://mo.techweb.com.cn/picnews">更多</a></span></h2>
+	</div>
+    <div class="pic_box">
+        <ul class="pic_list" style="position: relative; width: 310px; height: 225px;">
+
+                  <li style="position: absolute; width: 310px; left: 0px; top: 0px; display: none;"><a href="http://mo.techweb.com.cn/picnews/2020-11-02/2809491.shtml" target="_blank"><img src="http://upload1.techweb.com.cn/s/300/2020/1102/1604313447322.png" /><p>低端生活与高等科技的结合 一加8T赛博朋克2077限定版真机图赏</p></a></li>
+
+              <li style="position: absolute; width: 310px; left: 0px; top: 0px; display: none;"><a href="http://mo.techweb.com.cn/picnews/2020-11-02/2809489.shtml" target="_blank"><img src="http://upload1.techweb.com.cn/s/300/2020/1102/1604313095965.png" /><p>耀眼的红色再升级 搭载全新固件的索尼NW-A105真机图赏</p></a></li>
+
+              <li style="position: absolute; width: 310px; left: 0px; top: 0px; display: list-item; opacity: 0.0121;"><a href="http://mo.techweb.com.cn/picnews/2020-10-24/2808168.shtml" target="_blank"><img src="http://upload1.techweb.com.cn/s/300/2020/1024/1603508767249.jpg" /><p>这个秋天的最美旗舰 华为Mate40 Pro真机图赏</p></a></li>
+
+              <li style="position: absolute; width: 310px; left: 0px; top: 0px; display: list-item; opacity: 0.988212;"><a href="http://mo.techweb.com.cn/picnews/2020-09-15/2804168.shtml" target="_blank"><img src="http://upload1.techweb.com.cn/s/300/2020/0915/1600131855594.png" /><p>iQOO 5 Pro赛道版图赏：全能旗舰背后的速度美学</p></a></li>
+
+              <li style="position: absolute; width: 310px; left: 0px; top: 0px; display: none;"><a href="http://mo.techweb.com.cn/picnews/2020-09-14/2804040.shtml" target="_blank"><img src="http://upload1.techweb.com.cn/s/300/2020/0914/1600048394749.png" /><p>vivo X50 Pro+alexanderwang限定版图赏：黑色与幻彩碰撞 打造与众不同的时尚单品</p></a></li>
+
+    
+        </ul>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+        <div class="num">
+        <ul><li class="">1</li><li class="">2</li><li class="">3</li><li class="on">4</li><li class="">5</li></ul>
+      </div>
+    </div>
+
+    <script>
+    $(".pic_box").hover(function(){
+        $(this).find(".prev,.next").fadeTo("show",0.3);
+    },function(){
+        $(this).find(".prev,.next").hide();
+    })
+    $(".prev,.next").hover(function(){
+        $(this).fadeTo("show",0.7);
+    },function(){
+        $(this).fadeTo("show",0.3);
+    })
+    $(".pic_box").slide({ titCell:".num ul" , mainCell:".pic_list" , effect:"fold", autoPlay:true, delayTime:700 , autoPage:true });
+    </script>
+</div>
+        <div class="activity">
+            <!--官方活动 start-->
+            <div class="tw_activity">
+                <h2 class="tit">官方活动</h2>
+                <a href="http://www.techweb.com.cn/lmz/" target="_blank" class="activity_logo"><img src="http://s1.techweb.com.cn/static/newtwhome/images/itlmz_logo.png" alt="" /></a>
+                <a href="http://mo.techweb.com.cn/jiqingxiu" target="_blank" class="activity_logo"><img src="http://s1.techweb.com.cn/static/newtwhome/images/jiqingxiu_logo.png" alt="" /></a>
+            </div>
+            <!--官方活动 end-->
+            <!--活动资讯 start-->
+            <div class="activity_info">
+       			<h2 class="tit">活动资讯</h2>
+         		<ul>
+                                		  <li><a href="https://www.top100summit.com/?qd=techweb" target="_blank" title="TOP100软件案例峰会">TOP100软件案例峰会</a></li>
+                                		  <li><a href="https://www.huodongxing.com/event/1563278370600" target="_blank" title="EmTech新兴科技峰会">EmTech新兴科技峰会</a></li>
+                                		  <li><a href="http://www.tbifestival.com/" target="_blank" title="TBI 中国杰出品牌创新奖">TBI 中国杰出品牌创新奖</a></li>
+                                		  <li><a href="https://www.traveldaily.cn/go/16630" target="_blank" title="2020环球旅讯峰会">2020环球旅讯峰会</a></li>
+                                		  <li><a href="https://www.ccai.cn/" target="_blank" title="2020中国人工智能大会">2020中国人工智能大会</a></li>
+                                		  <li><a href="http://wgdc.taibo.cn/" target="_blank" title="WGDC科技与产业大会">WGDC科技与产业大会</a></li>
+                                	</ul>
+</div>
+
+            <!--活动资讯 end-->
+        </div>
+        
+        <!--历史回顾 start-->
+        <script type="text/javascript">
+  $(function() {
+      var maxDate = '-1d';
+
+
+      if (new Date().getHours() &gt; 11) {
+      maxDate = '0d'; 
+      }
+
+      $('#datepicker_top').datepicker({ inline: true,dateFormat:'yy-mm-dd',defaultDate:'-1d',dayNamesMin:['日','一','二','三','四','五','六'],
+        minDate:new Date(2005,10,15), hideIfNoPrevNext: true ,
+        maxDate:maxDate,
+        onSelect:function(date,instance) { showHistory(); },
+        monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'] });
+      $('#datepicker').datepicker({ inline: true,dateFormat:'yy-mm-dd',defaultDate:'-1d',dayNamesMin:['日','一','二','三','四','五','六'],
+        minDate:new Date(2005,10,15), hideIfNoPrevNext: true ,
+        maxDate:maxDate,
+        onSelect:function(date,instance) { showHistory1(); },
+        monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'] });
+
+      })
+
+function showHistory() {
+
+  var time = $('.reviewTime-on').html();
+
+  var now = new Date();
+  var day = $('#datepicker_top').val().replace(/-/g,'');
+  var d = $('#datepicker_top').datepicker('getDate');
+  if (day == '' || day == '请选择日期') {
+    $('#datepicker_top').focus();
+    return;
+  }
+
+  var tm = d.getFullYear()+'';
+  if (d.getMonth()&lt;9) {
+    tm +='0'+(d.getMonth()+1);
+  } else {
+    tm += (d.getMonth()+1);
+  }
+
+  if (d.getDate()&lt;10)
+  {
+    tm += '0' + d.getDate();
+  } else {
+    tm += d.getDate();
+  }
+
+  if (time =='11:00') {
+    time = 'am';
+  } else if (time == '23:00') {
+    time = 'pm';
+  }
+   tm= parseInt(tm);
+  if (tm &lt;= 20101117) {
+    //2010-11-17日之前每天只有一个历史页面
+    time ='';
+  }
+
+  //当天只能请求到中午１２点的历史页面
+  if (day == ""+now.getFullYear()+(now.getMonth()+1)+now.getDate()) {
+    time = 'am';
+  }
+
+  var url ='http://www.techweb.com.cn/history/'+day+time+'.shtml';
+  window.open(url,'_blank')
+}
+
+function showHistory1() {
+
+  var time = $('#reviewTime').val();
+
+  var now = new Date();
+  var day = $('#datepicker').val().replace(/-/g,'');
+  var d = $('#datepicker').datepicker('getDate');
+  if (day == '' || day == '请选择日期') {
+    $('#datepicker').focus();
+    return;
+  }
+
+  var tm = d.getFullYear()+'';
+  if (d.getMonth()&lt;9) {
+    tm +='0'+(d.getMonth()+1);
+  } else {
+    tm += (d.getMonth()+1);
+  }
+
+  if (d.getDate()&lt;10)
+  {
+    tm += '0' + d.getDate();
+  } else {
+    tm += d.getDate();
+  }
+
+  tm= parseInt(tm);
+  if (tm &lt;= 20101117) {
+    //2010-11-17日之前每天只有一个历史页面
+    time ='';
+  }
+
+  //当天只能请求到中午１２点的历史页面
+  if (day == ""+now.getFullYear()+(now.getMonth()+1)+now.getDate()) {
+    time = 'am';
+  }
+
+  var url ='http://www.techweb.com.cn/history/'+day+time+'.shtml';
+  window.open(url,'_blank')
+}
+
+</script>
+ <div class="history">
+          <span>历史回顾</span>
+            <input type="text" value="请选择日期" readonly="readonly" id="datepicker" class="hasDatepicker" />
+            <select id="reviewTime" onchange="showHistory1()">
+                <option value="am">11:00</option>
+                <option value="pm">23:00</option>
+            </select>
+ </div>
+
+        <!--历史回顾 end-->
+        <div class="sticky-holder" style="visibility:hidden;height:0;display:block"></div><div class="index_hd" id="sticky-box" style="width: 310px;">
+        <!--微博 start-->
+        <div class="wbzb" style="transition: margin 0.1s ease-out; margin-top: 0px;"><iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=100%&amp;height=430&amp;fansRow=2&amp;ptype=0&amp;speed=0&amp;skin=1&amp;isTitle=0&amp;noborder=0&amp;isWeibo=1&amp;isFans=0&amp;uid=1642471052&amp;verifier=a7415e95&amp;dpc=1"></iframe></div>
+        <!--微博 end-->
+        <!--微信公众号 start-->
+        <div class="wxgzh">
+            <div class="wxgzh_box"><a href="http://www.techweb.com.cn/contact.html" target="_blank"><img src="http://s1.techweb.com.cn/static/newtwhome/images/lxwm06041507.jpg?202009031109" /></a></div>
+        </div>
+        <!--微信公众号 end-->
+        </div>
+    </div>
+    <!--右侧栏目 end-->
+</div>
+<!--2019年修改 end-->
+<!--底部 start-->
+<div class="web_bottom">
+	<!--合作伙伴 start-->
+	<div class="friends">
+		<h2 class="tit"><a href="http://www.techweb.com.cn/flink.html" target="_blank" rel="nofollow">合作伙伴</a><a href="http://www.candou.com/" target="_blank" class="candou_logo"></a><a href="http://www.epchina.com/" target="_blank" class="epchina_logo"></a></h2>
+        <div class="friend_list">
+        <a href="http://tech.sina.com.cn/" target="_blank" rel="nofollow">新浪科技</a>
+        <a href="http://tech.qq.com/" target="_blank" rel="nofollow">腾讯科技</a>
+        <a href="http://it.sohu.com/" target="_blank" rel="nofollow">搜狐IT</a>
+        <a href="http://tech.ifeng.com/" target="_blank" rel="nofollow">凤凰科技</a>
+        <a href="https://www.qbitai.com/" target="_blank" rel="nofollow">量子位</a>
+        <a href="http://www.zol.com.cn/" target="_blank" rel="nofollow">中关村在线</a>
+        <a href="http://www.huanqiu.com/" target="_blank" rel="nofollow">环球网</a>
+        </div>
+</div>
+    <!--合作伙伴 end-->
+    <!--版权 start-->
+	<div class="footer">
+	<div class="footer_con">
+        	<div class="footer_nav"><a href="http://www.techweb.com.cn/about.html" target="_blank">关于本站</a><a href="http://www.techweb.com.cn/team.html" target="_blank">管理团队</a><a href="http://www.techweb.com.cn/copyright.html" target="_blank">版权申明</a><a href="http://www.techweb.com.cn/map.html" target="_blank">网站地图</a><a href="http://www.techweb.com.cn/contact.html" target="_blank">联系合作</a><a href="http://m.techweb.com.cn/" target="_blank">WAP版</a><a href="http://www.candou.com/iphone/477116069" target="_blank">iPhone版</a><a href="http://www.candou.com/android/58264" target="_blank">Android版</a><a href="http://www.techweb.com.cn/hr" target="_blank">招聘信息</a></div>
+          <div class="copyright">
+            	<div class="support"><a href="http://www.cmstop.com/" target="_blank" rel="nofollow"><img src="http://s2.techweb.com.cn/static/newtwhome/img/cmstop_icon.png" width="106" height="10" alt="思拓合众" title="思拓合众" /></a><a href="http://adm.baidu.com/" target="_blank" rel="nofollow"><img src="http://s2.techweb.com.cn/static/newtwhome/img/adm_icon.png" width="93" height="16" alt="百度广告管家，精准广告支持" /></a></div>
+                <p>Copyright © 2005-2020 <a href="http://www.techweb.com.cn/" target="_blank">TechWeb.COM.CN</a> - <a href="http://www.candou.com/" target="_blank">candou.com</a> All rights reserved. <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP证060517号/京ICP备09080754号</a> 京公网安备11010802020576号</p>
+          </div>
+        </div>
+        <div class="qr">
+        	<div class="qr_tw"><img src="http://s2.techweb.com.cn/static/newtwhome/img/qr_tw.png" alt="" /><p>TechWeb公众号</p></div>
+        	<div class="qr_jqx"><img src="http://s2.techweb.com.cn/static/newtwhome/img/qr_jiqingxiu.png" alt="" /><p>机情秀公众号</p></div>
+        </div>
+  </div>
+    <!--版权 end-->
+</div>
+    <script type="text/javascript" src="http://s1.techweb.com.cn/static/img/js/jquery-ui.js?202009031109"></script>
+    <script type="text/javascript" src="http://s1.techweb.com.cn/static/img/js/lib/jquery.cookie.js?202009031109"></script>
+    <script type="text/javascript" src="http://ads.techweb.com.cn/advtcnt.php?pos=index"></script>
+    <script type="text/javascript" src="http://ads.techweb.com.cn/advtcnt.php?pos=index_banner"></script>
+    <script type="text/javascript" src="http://ads.techweb.com.cn/advtcnt.php?pos=index_k"></script>
+    <script>var title="techweb首页",catname="techweb首页",type=1;</script>
+    <script type="text/javascript" src="http://tongji.techweb.com.cn/tj.js "></script>
+<!--底部 end-->
+<script type="text/javascript">
+(function(n) {
+    n.fn.sticky = function(t) {
+        var i = n.extend({},
+        {
+            topSpacing: 0,
+            bottomSpacing: 0,
+            debug: !1
+        },
+        t),
+        r = function(t, r, u) {
+            var o = u.offset(),
+            e = n(window).scrollTop(),
+            f = n(document).height() - i.bottomSpacing - i.topSpacing - t.outerHeight();
+            f &lt;= 0 || t.height() &lt;= 0 || (e &gt; o.top - i.topSpacing &amp;&amp; e &lt; f ? (t.css("position") != "fixed" &amp;&amp; (t.trigger("sticky-start"), t.css({
+                position: "fixed",
+                top: i.topSpacing
+            })), t.trigger("sticky-bottom-unreached")) : e &gt; o.top - i.topSpacing &amp;&amp; e &gt;= f ? t.css("position") == "fixed" ? (t.trigger("sticky-bottom-reached"), t.css({
+                position: "absolute",
+                top: f - r.offset().top + i.topSpacing + "px"
+            })) : t.css("position") == "absolute" ? t.css({
+                top: f - r.offset().top + i.topSpacing + "px"
+            }) : f &gt; o.top &amp;&amp; t.css({
+                position: "absolute",
+                top: f - r.offset().top + i.topSpacing + "px"
+            }) : ((t.css("position") == "fixed" || t.css("position") == "absolute") &amp;&amp; t.trigger("sticky-end"), t.css({
+                position: "",
+                top: ""
+            })))
+        };
+        return this.each(function() {
+            var t = n(this),
+            u = t.offsetParent(),
+            i;
+            t.width(t.width());
+            i = n("&lt;div class='sticky-holder' style='visibility:hidden;height:0;display:block'&gt;&lt;\/div&gt;").insertBefore(t);
+            r(t, u, i);
+            n(window).scroll(function() {
+                r(t, u, i)
+            })
+        })
+    }
+})(jQuery);
+</script>
+<script type="text/javascript">
+    $(function(){ // document ready 
+        $('.index_hd').sticky( {topSpacing: 20,bottomSpacing:$(".web_bottom").outerHeight(true)} );
+    });
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible" style="position: absolute; top: 4874.59px; left: 1133.5px; z-index: 1; display: none;"></div></body></html>

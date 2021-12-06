@@ -1,0 +1,118 @@
+<!--?php $mobile = preg_match("#ipod|iphone|ipad|android|webos#i", $_SERVER['HTTP_USER_AGENT']) ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta charset="utf-8" />
+  <title>anonymously link to any website - anonym.to</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="verify-v1" content="SaRD+i49PaVQdIfqfUPduGgC/YgjUy+DhZBGqmeV2ug=" />
+  <link rel="shortcut icon" type="image/png" href="favicong.png" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css" />
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/grids-responsive-old-ie-min.css"/>
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/grids-responsive-min.css" />
+  <!--<![endif]-->
+  <link rel="stylesheet" href="/ng/css/anonym.css?&lt;?php echo time() ?&gt;" />
+</head>
+<body>
+  <div id="layout">
+    <div class="header">
+      <h1>anonym.to</h1>
+      <h2>link everything. anonymously.</h2>
+      <div id="language_selector">
+        <a href="/en.html"><img src="/ng/en.png" alt="English" title="English" width="12" /></a>
+        <a href="/de.html"><img src="/ng/de.png" alt="Deutsch" title="Deutsch" width="12" /></a>
+        <a href="/es.html"><img src="/ng/es.png" alt="Español" title="Español" width="12" /></a>
+        <a href="/ru.html"><img src="/ng/ru.png" alt="русский" title="русский" width="12" /></a>
+        <a href="/nl.html"><img src="/ng/nl.png" alt="Nederlands" title="Nederlands" width="12" /></a>
+      </div>  
+  </div>
+
+  <div class="content" style="margin-top:1em">
+    <form class="pure-form pure-form-stacked" onsubmit="return go()" name="theform" novalidate="">
+
+      <!--span style="width:100%"><a class="button-warning pure-button" href="https://www.spyoff.com/en/?a_aid=10106&a_bid=a4dfb245" target="_blank" style="color:#fff;text-decoration:none;display:block;margin-bottom:1em"><span class="nm">Tip of the Day: </span><b>Anonymous Surfing with SpyOff VPN</b></a></span-->
+
+      <div class="sec">
+        <div id="url">
+          <input style="border:3px solid #555;padding:8px;border-radius:3px" type="&lt;?php if($mobile): ?&gt;url&lt;?php else: ?&gt;text&lt;?php endif ?&gt;" placeholder="Enter any URL to anonymize it!" name="nick" class="pure-input-1" required="" />
+        </div>
+
+        <p><a href="" id="theurl" target="_blank"> </a></p>
+
+        <input type="submit" class="pure-input-1 pure-button pure-button-primary" onclick="go(); return false" value="Anonymize URL" />
+
+        <label for="thelink1">This is the anonymous URL: <a href="javascript:clipboard(1)"><img src="/ng/copy.png" title="Copy to clipboard" width="12" /></a></label>
+        <input type="text" name="thelink1" id="thelink1" class="pure-input-1" onclick="clipboard(1)" readonly="" />
+        <label for="thelink2">As HTML link: <a href="javascript:clipboard(2)"><img src="/ng/copy.png" title="Copy to clipboard" width="12" /></a></label>
+        <input type="text" name="thelink2" id="thelink2" class="pure-input-1" onclick="clipboard(2)" readonly="" />
+        <label for="thelink3">As board link (works with any board software): <a href="javascript:clipboard(3)"><img src="/ng/copy.png" title="Copy to clipboard" width="12" /></a></label>
+        <input type="text" name="thelink3" id="thelink3" class="pure-input-1" onclick="clipboard(3)" readonly="" />
+      </div>
+    </form>
+
+    <form class="pure-form pure-form-stacked" name="displayResult">
+      <h2 class="content-subhead">Script to anonymize all the links on your homepage or board</h2>
+
+      <p>If you want to anonymize all the external links on your board or homepage, we can generate a script for you to deal with this automatically for all your pages. Enter the Sites for which links shall not be redirected to anonym.to (e.g. your own) and click on "<b>Update code</b>".</p>
+
+      <p>You only have to place the resulting code at the end of the body area (if possible, directly before the &lt;/body&gt; tag) of your main template. (<a href="#anleitung">detailed instructions</a>)</p>
+
+      <div class="sec">
+
+        <textarea id="embeddingCode" name="embeddingCode" class="pure-input-1" rows="5"></textarea>
+
+        <input class="pure-button pure-button-primary" type="button" name="markAll" id="markAll" value="Select all and copy to Clipboard" onclick="document.displayResult.embeddingCode.select();document.execCommand('copy')" />
+        
+
+        <form class="pure-form pure-form-stacked" name="anonymizerForm" onsubmit="generateCode('anonymizerForm', 'embeddingCode'); return false" action="#">
+            <label for="keywordsInput" accesskey="1" style="font-size:.8em">Do not anonymize the following domains / keywords - comma separated: domain1.tld, domain2.tld, keyword1, ...</label>
+            <input type="text" id="keywordsInput" name="keywords" class="pure-input-1" placeholder="Domain / Keyword exceptions" />
+            <input type="submit" id="submitButton" value="Update code" class="pure-button button-secondary" />
+        </form>
+
+      </div></form>
+        
+      <h2 id="info" class="content-subhead">The advantages of anonymizing your external links with anonym.to</h2>
+
+      <p>Webmasters can use this tool to prevent their site from appearing in the server logs of
+      referred pages as referrer. The operators of the referred pages cannot see where their 
+      visitors come from any more.</p>
+      
+      <p><b>Using the referrer removal service is quite easy:</b></p>
+      
+      <p><a href="//anonym.to/?http://www.gulli.com/">https://anonym.to/?http://www.gulli.com/</a>
+      produces an anonymous link to <a href="http://www.gulli.com/">gulli.com</a> which prevents
+      the original site from appearing as a referrer in the logfiles of the referred page.</p>
+            
+      <h2 id="anleitung" class="content-subhead">Detailed instructions for the anonymizing script</h2>
+      <p>Once the script is embedded in a website, it redirects all the links via anonym.to
+      - except for the sites that were excluded when generating the script. In vBulletin, for 
+      example, you can include the script code in the footer of the global templates
+      (Styles&amp;Templates - Global templates - Footer). Alternatively, you can include the 
+      <a href="http://www.vbulletin.org/forum/showthread.php?t=95753">vBulletin Anonymizer Hack.</a> In Wordpress, use the footer.php.</p>
+
+      <p>Since the script can only anonymize links that have already been loaded at runtime, 
+      it's a good idea to place the code as close to the end as possible. Otherwise, links
+      that appear after the script code would not be redirected via anonym.to.</p>
+      
+      <p>Anonym.to only disguises what page a visitor comes from. Surfers who don't want their IP 
+      address to appear in any logfile should have a look at the 
+      <a href="http://www.gulli.com/untergrund/tutorials/tor-anonym/">instructions for TOR</a>.</p>
+
+   </div>
+
+  </div>
+
+  <script type="text/javascript" src="//anonym.to/js/anonyminizerTool.js"></script>
+  <script type="text/javascript">generateCode("anonymizerForm", "embeddingCode")</script>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script><script src="https://ssl.google-analytics.com/ga.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3568475-1"); pageTracker._initData(); pageTracker._trackPageview();
+  </script>
+
+
+</body></html>

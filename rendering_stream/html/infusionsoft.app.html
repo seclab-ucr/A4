@@ -1,0 +1,145 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>Log in to Keap</title>
+    <meta charset="UTF-8" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="/themes/cas-theme-keap/img/favicon.ico" /><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" /><link rel="stylesheet" href="/infusionsoft/bootstrap-3.2.0-dist/css/bootstrap.min.css" /><link rel="stylesheet" href="/infusionsoft/infusionsoft-icon/style.css" /><link rel="stylesheet" href="/themes/cas-theme-keap/css/cas.css" /><!-- global java script files --><script type="text/javascript" src="/infusionsoft/js/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/infusionsoft/js/jquery-plugins/placeholder-0.2.4/jquery.placeholder.js"></script>
+<script type="text/javascript" src="/infusionsoft/js/jquery-plugins/validate-1.11.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/themes/cas-theme-keap/js/cas.js"></script>
+
+</head>
+<body>
+
+<div class="login-view full-screen-center-view">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h1>Log in</h1>
+        </div>
+        <div>
+            <form method="post" id="loginForm" role="form" data-toggle="validator" novalidate="novalidate">
+                <div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input class="required" id="username" size="25" type="email" accesskey="u" data-qa="username" name="username" value="" /><label for="username">Email address</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <img class="password-toggle" src="/themes/cas-theme-keap/img/icons/eye-show.svg" /><input class="required" id="password" size="25" type="password" accesskey="6-digit code" data-qa="password" name="password" value="" /><label id="passwordText" for="username">Password</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button id="btn-login" class="btn btn-primary btn-block login-btn" type="submit" data-qa="login">
+                        Log In
+                    </button>
+                </div>
+
+                <input type="hidden" name="execution" value="b4d42413-b37c-4646-8382-c9300c57ee31_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5Lm9BbGN2dUtDSWlQZjlKY3l3VGxpdlU0cXRUOUUwSXhRY3FTWnEzZlUzYTViT1VOb1RwRDRpdmYzeHlGQVNENExJTlhVTkd0YzR3OWZZSVZpM1JNdmNxMWUtUjEzSnZGWHVVR2R3U1J3eVVyTGoyOEhJM1pwYUFLUlo0cFhUV2I2X2VEQTl5MzhUMlVXZG52ZjZTTmxpeWdqN1BRQ0V0S2ppZGhOM2oxMGZIWmtfcWhOTUIwSTdZN2xkdFQzMmc0TV8tZUxqRXR0QmRWdnZDWFVreU93MGE0QUI3bmtaRm1XX0JtWU5FeGxJenZWSEJtYUoxbUQybElIMjZoWEd6RG5Id2JHUHA4T0JrUmRXWUY4TmJpelg1WkRsdnVSbWFJQklwakZnS2hBbU9EWjFhR0hYT0Y1em1DcERqZm9SSFpEX0JfemVURHBsRWM2dTBCc2dGMko2NWI3Q2gyNVhwZFFXRDFWZ1JHLVc4NjJWbWlocDd2b2VKQXBzeW9hZjBFQ2x2OGFpODZQQXhmLXk3QnM1clYtZkE4a09PNWFVUURuT3ZoMjc4R2c0V0ZyTmo4Z0ZQTHQ5eVFGQWJKcllyS2VKb2VtODJzajBzZE9xbXdCM1otdDRkZGJjeE5SV3JvekxpaUhFYUc5ZE5JbU5JQlBLQ3dtVURjQ0F2QlVDRWViZ0JlN01Fd05HMmsxUHk2QklVXzJrMWhrN2ZSMjVSdVNFTlAwVEdWYmRQOFZrdGNqSEJqWnV0WnlpaThRZzlwLV9nand3cW52UkIwS1Ntb0pvek1VYURqVEh6ZkQtaVdzeUJHTThacFBNSFZtcUUzWVlnMW1RbDBBRjZzVGUyR1N5N2dMcnRnTk5Ja1lCV1hMb0d4M3R3S0tGeDQ5VTBRR1ZiUlhwOU94bW9HT2JsSkQtVUUzV0dYOWFST1FERDc4TDFEV2EwVkpvN2oxZzNZbHNvb2pGU1l4Vi01NTZjaWx4Q1M5VXBFbGliYzkzMnlfV2RhMEJQTjBuOWx0ZDNHWVp4MFBOYVc4eGdKeHNHRFRXU25jeUFHaENBRGFVeWd6ZFZYajhDcnpuUjU1V2h0Rlc3Q0ljYndIM3F4ZUVtRmFMZ2RwS25YZ055NEwzSmI4Q2JxNXFSd2ZjTEJVSWhQRGpTRFFFSzdRRDNobzF2RWsydWk0eEE3XzRueWtMb2FmQVQtVS02NzVKU3U2MmpXOFlCbEVBOVh1TzYxUEw5Umd1WTRWWl84TEEwaG8wSHoyVUtRYW13ZGVyU1BOT2Z6dXN6QVgyd0QzRjR6QldwSWFHbkM4OWZwS2lNMWlEZmhHd3Q0enRMb3BWMDcyOWxBZkJ6OHB4bHU2N3NfUzFxejllaWJzcEItcnNSUGpiZmNGYndTTy1RTXZLbkRWX2QwQm0wVW1ZZGtNdXVuVFlsaUxfYUlSRGJ6S290bjBRUDhPT3RleG5yNVJlV0VOUkhvaDJEOFJVb3hpMFVTeGdPZXMwQURGN3o3bjUwdzZabUhOQXRrRnZZV3RSMnlzSFJ4OGRLdkQyY1AyQUR3aXVrQUlvQmFXeGNLbXo2MTAtZXUzZVNjV283dE5laGZ1NENSUDM1V0dRTzZkd2c1NG11OUEzd204UXZWOTBGY0NhTEFIaUZxNmQxRG53MWZmQmFqS1Zua3ktU3VlSGJ1YkdoODI4X0tsN0U0V3VtNlJKV1FDaGRrREZ4V3A5RkVXMF8zTEo3cmRpZHFxdk5yel9FTEpRR0ZTSmhwb01aM3hoV29IeDNlc3RVNnREMnJHcjVVanZtdHppcldtR1g3eUlkZkplQTZDb3AwNGNtLW1WMkhSWWY0T2NRaU9mR1BPMmNPNm1YYUE3bXREMmo0RF82Ry1VdVFJODBNdG55Wi1lSENKQ245Z3Vhb2ZKV1BFRXl2RUxRV1RqOXR3a1E4RGw3UFBnWHBzSkV3M0d1bWV4Uk05LThiN1RjQzUxbDNjRG5fakF5R0dVczVVTWh1ZUNqa21oeHdVT09mTDN4NGJoajVSdmVjb3JmcE42bmtnX0xkUnFqcGJmLUF2SW1GUTlOY3AtcVZfbE1hNkRDUmhiQVowamo4ZWc5SE9qZzVIR1cwcWE1cHZadHJOZWJDZ2RMQTh1UXZVUTh3TUM4NGV3VEFaQmhKcWk3WGQ5NDZTYklzMDNxcmtXdEhHTm1CM1RnY1pmTXZHSUlFUjNHaXNqZk00UzRwZTJwcmpqNEZyOFdOcFpnY1llMFpjaTJ4b3hqLVhpOXZMNEdycHJxY0hWSzA3T000MXE4WjBqWjE5eWxNMkl3enZuNU5BUjdZQUh2dWsxNkFxaHpwZkpNbG5WRTQ0dTZBTDdyUDBVdmZzWFQ0ZDJxWVg4N1M3ZnRVT29yNzNJMTQ2QTdJdG1YRUs1WDQtLTVaZVl2bVVqWkVfLUxvOUJsZjhNOG9Jdk81U2lzTUJ2VGlReVZnQVR6ZHZ6TVp3czlYQkprdGpuQWN0YTd0b2lPclBicUhIUFNDZGZjbW42TFo5OEZiSVZoWkR0UklnZlZDdnVHM1h0eVgzMmN3TU92X2xNakgtM3hicEdwZVNEOFpzM2xnOG9xYkhPV0ZxaXhISW0zVHdhbDNMVFR0RFJpYzQzMFRXWXQ5WEZybUFVUU0wVHJMZDRzTzhWWmN6VHBsUzhRVkxvVVpXb2pZbTJJT0dEYl9aSmVpSzFHdUViaXZ2TmhROVY5RzBZdTZBdmR2aUZoeVJLUGFOcFJtemdfZm0yLU5hNU43V1lNQjViWURlclZRMGdtMTJqWWROU19OYUxQM0czaE1CS1F3Z2ZOZ25kQWlkSmRKMVZUTTZ1TGJhcnhaWC1tS0ZPX01YZUtDVmlaVjlvZEQ2cV9pNTFxanRVQkpLdHFsMHpFeWVWU0tVdndJN0s2R2tXa09HbDI2UEJXTmpteW1XazhVd2Vzd2JJWEdYWUNZRVpFdmdveWtkeVo3ZjAwQnJxWGxkREFGTW43WGQ3VXgzTzVuRl9HaklNajFGUXRnZDhvNmhzLTlTaEc4OHVuTUVsdWFJNEZneEY2THlFNU8yUW16ZkpmZzNpWGNIdW9xNVU5clRUNkViZDVuT3VndnY1RzRwUEpFVFJIeU9mRk9PaVZ1SmRCb21Nc1dDOFctYXNxMjljaUpCcHFzTWJpQVJqbi1SNjFIUGtnTWV0enNMNmRxWjRaVXduYXpsbTRwSU55ank3R3AwYWR1c3V2SFA1QnRqc0pMZ1lXSDB3RzVITnpidXYxNnF2eVJOYWhBTldNdFBPSVQ2c3ZYYkwtQkxjYUs1ZS1Rbk05WmlXSGp0aV96LWRPQk5PaVNaUzdjODdhd3BwUEhON09oU3VMbE1qcERlNHc3T0FEaXNlYnNWVVpwc2tGT0psUDEzUlJaTE82U2xTRy1PREQ5dExOSS1ydWJkSE9sT18tRjR6NkNvdG5CTFpWaDhScFRZZHR2bWtfbnZsYlhuWVBnZjlndUJVZTFtVXFETTF1SW1ZaU5sM2MtZ3pKeGdiUnhsbDVMSmNSNW4zamZJZjlsNUdZWS13Umt2Y1M1Zl8zQVcxXzBvVHY1dFVWWXQtcGhaRWx0anNvblc3TTVXRFRsYlZITnBVZDFiSGhQVncwNFlLSERkQS1nZXFGU1U2bHFucFpDLS1FRThNaWFkNDhHMmZqNllKbk4wWEhiRG5YQnRhck5wRTJXbktYZWc2NV9PQ29QbzR1bkZjeEFkR0xNTm5vUlVNNWlaOFZraEwtSy0zSXdaV1pETWpUZHdBM1JMeVRxdENzZWVqWUdoVl9lWE9GMUkzeEM0MnFjWUlfRVdhdWZaeWRSQUI2R3lITU81WEctMk1TVEZ0N2M4SHNIZEFwWTY0b3dxS25ZcEp5SUlocmFhdVRGODAtOFJqdXZZaU1lUllDaURFMjhVdkIzT1N5MmhCV2RyNktUTzN6LUY1WjUwb3JSTy1sVFBFRWRQMlplaHNxRzVyNzNleE5ocE8zRF9NRl9SZ3h6ZkNKODBHRVh4TURpMFdaSXNzVXNiQk9SanlJZFVMZWZZS2lUd1pOZjdNSHhJTGRKRk0zVUVhd0dlUE5zTnZYWlYzbjJZaWRDc0JvRmJSUmIzeXRQZ2ktNTAwZkJvWXp4enp6T212eW1KYW9VUXdkQTBtUzRVdDQtand2VUYtZGRDOGFOSHFZeGd4RHBfd3FleXpYTjJfaVBJTWJaOE1ibWlobUxHbmNtcmJUd1o3Uk1VVmtxY2lFZWdkMTY3WmpHS3phQWRuNlc1ZzBhQTgzRzNoY0xmQjl1U3J2b05nTmhmdTM4OHBYYThaLVQ1VFNienlweUtsdEY1Z01nVHo5X1NxX1hXQ25GOVZsTUMyU1dOYjcyZE1OUGJRLTlOUl8wdGlIMjVWU24yUXlicnVlM084YmZLTGYzWTMwVjFFSm94Yk1BbEMzWWRJeUl0a0RxYjJ3c2VseFNHbEc0UEVUM2Y1WHAtVDlxMno0OTBfLThMWFlFMHZNR3NGT0N3RHBrbGt4eGFtaUYzckxWbXotMmU4VDRfcGtrVnprR3A2MkhzWjZYbVZRdWI5alJoTU9KUzk0SEhzVmdyNzA5dDlfUFdXeUwtUDBYcmJ4bFBIcjI3ZzFtZTRGUHJoRlVGeGdUV3c4Q1dVRkxWM1M1RFRQaTc5UkExbVFzcTdwcWExaGNCSHAxNVJaNUhXWmdCcHo1VlZKbHBUbnhFX2VldnNmQ0pFLU1oZ0ZDRE50bGhNMVpvYW9TOFB0RWFoWlFkcE9GYW95THlXN05Sczl5aGFPUTYwOU9oYWp2eDJzak1XM2xBd0tJVW9VRW5iTzZBTEhDR3dGWGNBOEhZQVVqWmF0ZzY4enIxNUFZblNKUUV4TUdnUjd3VzlYaGE4dzZGRDJBQzc5dTREcFlsVEpMNllzSEdlcUlhV25GLS1QUUVWMFNac2c1ZnZfWjktVTVsSHdGemJtNEtUNkVZbHRrcXZDM3ZWQ3pNYlV4OWxfcHM4VmEzQktOUHZZd1BBbmdialBUWGplTzZqZlBFbFZDVlNUVEZFSWlNRW5faXdUZEdZR21yMkxiaUw0TUVneGx6cTQ1TG1lN28wby1LczVaS1BNZk1OcS12N0EybkFKQmVwdktpNHlib0hqdFBERUlRaUh0WXZZeW9DcnU4aExiek0xTmptQk5Pa041amhGbkZacXpPV3JHVk96LVE1bzFlQUJ2NVNtSXRaMG05aWZtVlFZaEdBZnh4TGVYQlg0eEIwelBDRUFZYXZDbXF0WUt2VjUtc0RVTkJLbzNqRndqOThBaWpROTNJdVg1bUluZ0tIQXBwZVEzMGJGSnR5ZkdzYjNRbDAxX01oMHlpeklkZTFlaDVEdVBmV1FrX0k1NUlpRmF5X01PNjhONHlPVjRTWWhJY09kYkw5RlV6bWtwU1pPVkZXdVc1dzFYcnFsLTM1c3hBeEtfbGZaazlJMFladEpTMWZ5V0szRlhLOWpSVERpUUJ5WW5Ua1hZLWtTTkVXb1NxQjNpZlpaUU5GMmt3OHRZWjhyM3RSdy10YzZhMlI0Z0JYSzIzcTR0LWhQdmpic2RDWXNxTzNlZzN3M01SLXpqSF9QS2FZM3R3NXh6Zm8yUXhsd2VOOEdhT2ppek1heVEtMTRSV016eFFJakstUDcwVjNFNXI3TXhmQVdVYWZ3M0owYnBFUEFVM3F5dzMxcVdiOWNYdE9DamZGem53SlZjZ0x2cVhMb3ZpUmpQcXpPVDhSS0pBM3g3V28tbUM4NzhpOXlXb1VaWTZ5ZTlOV0EzRi1jenZDNjBvUS1USDNVTGY4RWdqQzJiVnQ3WllDamdwZWw0ei05b1FpdmwtclJsaFlqR0lPWVpJd1FEMU90eHp6ZjExcXVORUp5azRfNkFxcFU0RmlKMWJ2dy50Y2hmeE9DTkRzSS1QNUFDMmRZTnZpNHZMclo4dm1aMDU3Vy1VT3VvZ2o3WGxDay1mT1diazlfTjE2MFlEVVdJY2JjbTVRQ0FuZE5WUFVud2xmYzlOQQ==" /><input type="hidden" name="_eventId" value="submit" /><input type="hidden" name="geolocation" /><input type="hidden" name="free_trial" value="false" /><input type="hidden" name="app_version" value="2020.1029.1706+f02524676f" /></form>
+            <div id="login-with-okta" style="display:none;">
+                    <p id="okta-username"></p>
+                    <ul class="list-unstyled">
+                        <li>
+                                </li>
+                            <li>
+                                <a href="clientredirect?client_name=OktaClient&amp;service=https%3A%2F%2Finfusionsoft.app%2Fdashboard&amp;locale=en" data-qa="sign-in-okta">
+                                        <span class="btn btn-primary btn-block">Sign In with Okta</span>
+                                    </a>
+                                </li>
+                            <li>
+                                </li>
+                        </ul>
+                    <p style="display: none;"><a href="#" id="use-regular-login">Go back to using regular login.</a></p>
+                </div>
+            <div>
+                <p><a id="forgotPassword" href="/password/forgot?service=https://infusionsoft.app/dashboard">Forgot your password?</a></p>
+                <div class="row signUpRow">
+                    <p>Don't have an account? <a href="/registration/createInfusionsoftId?returnUrl=https%3A%2F%2Finfusionsoft.app%2Fdashboard" data-qa="sign-up">Sign Up</a></p>
+                </div>
+                </div>
+        </div>
+
+
+        <div class="page-footer">
+            <img class="logo keap-logo" src="/themes/cas-theme-keap/img/keap-logo-green.svg" /><p><a class="need-help" href="https://keap.com/help">Need help?</a></p>
+            <p><a class="privacy" href="https://keap.com/legal" data-qa="privacy">Privacy</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="/infusionsoft/js/password-utils.js"></script>
+    <script type="text/javascript">
+        $(document).ready(() =&gt; {
+          checkOktaLogin();
+          $("#username").on("focusout", function() {
+            checkOktaLogin();
+          });
+          $("#use-regular-login").on("click", function() {
+            $("#username").val("");
+            $("#login-with-okta").hide();
+            $("#loginForm").fadeIn();
+            $("#username").focus();
+          });
+
+        });
+        function checkOktaLogin() {
+            if($($("#username")).val().toLocaleLowerCase().includes("@keap.com")) {
+                $("#login-with-okta").fadeIn();
+            } else {
+                $("#login-with-okta").hide();
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#username").focus();
+            if(false) {
+                $("#username").val(null);
+                $("#password").val("testpasswordforsurrogate");
+            }
+            // Validate the form
+            $('#loginForm').validate({
+                errorElement: 'span',
+                errorClass: 'help-block',
+                errorPlacement: function (error, element) {
+                    element.after(error);
+                },
+                rules: {
+                    username: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        password: false
+                    }
+                },
+                messages: {
+                    username: {
+                        required: 'This is a required field',
+                        email: 'Please enter a valid email address (e.g. email@example.com)'
+                    },
+                    password: {
+                        required: 'This is a required field'
+                    }
+                },
+                highlight: function(element) {
+                    $(element).closest('.form-group').addClass('has-error has-feedback');
+                    $(".login-btn").prop("disabled", false);
+                },
+                success: function(element) {
+                    element.closest('.form-group').removeClass('has-error has-feedback');
+                },
+            });
+
+            $("#loginForm").submit(function(event) {
+                $(".login-btn").prop("disabled", true);
+                return event;
+            });
+        });
+    </script>
+
+
+</body></html>

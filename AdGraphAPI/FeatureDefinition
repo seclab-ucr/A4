@@ -1,0 +1,277 @@
+Feature list:
+    FEATURE_INBOUND_CONNECTIONS
+    FEATURE_OUTBOUND_CONNECTIONS
+    FEATURE_INBOUND_OUTBOUND_CONNECTIONS
+    FEATURE_KATZ_CENTRALITY
+    FEATURE_AVERAGE_DEGREE_CONNECTIVITY
+    FEATURE_SCRIPT_IS_ACTIVE
+    FEATURE_NODE_CATEGORY
+    FEATURE_DESCENDANTS
+    FEATURE_DESCENDANTS_OF_SCRIPT
+    FEATURE_ASCENDANTS_AD_KEYWORD
+    FEATURE_FIRST_PARENT_ASYNC
+    FEATURE_FIRST_PARENT_DEFER
+    FEATURE_FIRST_PARENT_TAG_NAME
+    FEATURE_FIRST_NUMBER_OF_SIBLINGS
+    FEATURE_FIRST_PARENT_NUMBER_OF_SIBLINGS
+    FEATURE_FIRST_PARENT_INBOUND_CONNECTIONS
+    FEATURE_FIRST_PARENT_OUTBOUND_CONNECTIONS
+    FEATURE_FIRST_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    FEATURE_FIRST_PARENT_KATZ_CENTRALITY
+    FEATURE_FIRST_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    FEATURE_FIRST_PARENT_NODE_ADDED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_NODE_REMOVED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_ATTR_ADDED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_ATTR_REMOVED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    FEATURE_FIRST_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_ASYNC
+    FEATURE_SECOND_PARENT_DEFER
+    FEATURE_SECOND_PARENT_TAG_NAME
+    FEATURE_SECOND_NUMBER_OF_SIBLINGS
+    FEATURE_SECOND_PARENT_NUMBER_OF_SIBLINGS
+    FEATURE_SECOND_PARENT_INBOUND_CONNECTIONS
+    FEATURE_SECOND_PARENT_OUTBOUND_CONNECTIONS
+    FEATURE_SECOND_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    FEATURE_SECOND_PARENT_KATZ_CENTRALITY
+    FEATURE_SECOND_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    FEATURE_SECOND_PARENT_NODE_ADDED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_NODE_REMOVED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_ATTR_ADDED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_ATTR_REMOVED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    FEATURE_SECOND_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT
+    FEATURE_AD_KEYWORD
+    FEATURE_SPECIAL_CHAR_AD_KEYWORD
+    FEATURE_SEMICOLON_PRESENT
+    FEATURE_VALID_QS
+    FEATURE_BASE_DOMAIN_IN_QS
+    FEATURE_AD_DIMENSIONS_IN_QS
+    FEATURE_AD_DIMENSIONS_IN_COMPLETE_URL
+    FEATURE_SCREEN_DIMENSIONS_IN_QS
+    FEATURE_DOMAIN_PARTY
+    FEATURE_SUB_DOMAIN_CHECK    
+
+Feature definitions:
+    FEATURE_FIRST_PARENT_ASYNC
+    If first parent of a node is a async script element. It is a binary feature and will only be available for script HTML element.
+
+    FEATURE_FIRST_PARENT_DEFER
+    If first parent of a node is a defer script element. It is a binary feature and will only be available for script HTML element.
+
+    FEATURE_FIRST_PARENT_TAG_NAME
+    It is the tag name of the first parent. It is a categorical feature.
+
+    FEATURE_FIRST_PARENT_NUMBER_OF_SIBLINGS
+    The number of siblings of the first parent of a node.
+
+    FEATURE_FIRST_NUMBER_OF_SIBLINGS
+    The number of siblings of a node. We count the children of the first parent of the node.
+
+    FEATURE_FIRST_PARENT_INBOUND_CONNECTIONS
+    The number of inbound connections to a node's first parent. We count all the incoming connections to the first parent of a node.
+
+    FEATURE_FIRST_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    The number of inbound+outbound connections from a node's first parent. We count all the incoming and outgoing connections from the first parent of a node.
+
+    FEATURE_FIRST_PARENT_OUTBOUND_CONNECTIONS
+    The number of outbound connections from a node's first parent. We count all the outgoing connections from the second parent of a node.
+
+    FEATURE_FIRST_PARENT_NODE_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the first parent of a node was added by a script.
+
+    FEATURE_FIRST_PARENT_NODE_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the first parent of a node was removed by a script.
+
+    FEATURE_FIRST_PARENT_ATTR_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of first parent of a node were added by a script.
+
+    FEATURE_FIRST_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of first parent of a node were modified by a script.
+
+    FEATURE_FIRST_PARENT_ATTR_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of first parent of a node were removed by a script.
+
+    FEATURE_FIRST_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the style attribute of first parent of a node was added by a script.
+
+    FEATURE_FIRST_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the style attribute of first parent of a node was removed by a script.
+
+    FEATURE_FIRST_PARENT_KATZ_CENTRALITY
+    It is the Katz centrality of the first parent of a node in the graph. We update Katz centrality incrementally.
+
+    FEATURE_FIRST_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    It is the average degree connectivity of the first parent of a node in the graph. We normalize it by the maximum node degree in the graph.
+
+    FEATURE_SECOND_PARENT_ASYNC
+    If second parent of a node is a async script element. It is a binary feature and will only be available for script HTML element.
+
+    FEATURE_SECOND_PARENT_DEFER
+    If second parent of a node is a defer script element. It is a binary feature and will only be available for script HTML element.
+
+    FEATURE_SECOND_PARENT_TAG_NAME
+    It is the tag name of the second parent. It is a categorical feature.
+
+    FEATURE_SECOND_PARENT_NUMBER_OF_SIBLINGS
+    The number of siblings of the second parent of a node.
+
+    FEATURE_SECOND_NUMBER_OF_SIBLINGS
+    The number of siblings of a node. We count the children of the second parent of the node.
+
+    FEATURE_SECOND_PARENT_INBOUND_CONNECTIONS
+    The number of inbound connections to a node's second parent. We count all the incoming connections to the second parent of a node.
+
+    FEATURE_SECOND_PARENT_OUTBOUND_CONNECTIONS
+    The number of outbound connections from a node's second parent. We count all the outgoing connections from the second parent of a node.
+
+    FEATURE_SECOND_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    The number of inbound+outbound connections from a node's second parent. We count all the incoming and outgoing connections from the second parent of a node.
+
+    FEATURE_SECOND_PARENT_NODE_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the second parent of a node was added by a script.
+
+    FEATURE_SECOND_PARENT_NODE_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the second parent of a node was removed by a script.
+
+    FEATURE_SECOND_PARENT_ATTR_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of second parent of a node were added by a script.
+
+    FEATURE_SECOND_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of second parent of a node were modified by a script.
+
+    FEATURE_SECOND_PARENT_ATTR_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the attributes of second parent of a node were removed by a script.
+
+    FEATURE_SECOND_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    This is a binary feature that indicates whether the style attribute of second parent of a node was added by a script.
+
+    FEATURE_SECOND_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT
+    This is a binary feature that indicates whether the style attribute of second parent of a node was removed by a script.
+    
+    FEATURE_SECOND_PARENT_KATZ_CENTRALITY
+    It is the Katz centrality of the second parent of a node in the graph. We update Katz centrality incrementally.
+
+    FEATURE_SECOND_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    It is the average degree connectivity of the second parent of a node in the graph. We normalize it by the maximum node degree in the graph.
+
+    FEATURE_AD_KEYWORD
+    For a node, we capture the number of ad-related keywords present in the node URL. 
+
+    FEATURE_SPECIAL_CHAR_AD_KEYWORD
+    We also capture the number of ad-related keywords that are followed by a special character in the node URL. 
+
+    FEATURE_SEMICOLON_PRESENT
+    We check whether the semicolon is present in query string of a URL.
+
+    FEATURE_VALID_QS
+    We check whether quey string is valid. i.e. it starts with '?' and parameters are separated with '&'.
+
+    FEATURE_BASE_DOMAIN_IN_QS
+    We check whether the base domain is passed as a parameter in query string.
+
+    FEATURE_AD_DIMENSIONS_IN_QS
+    For a node, we check whether the query string has ad dimensions. It is only checked if query string is valid.
+
+    FEATURE_AD_DIMENSIONS_IN_COMPLETE_URL
+    For a node, we check whether the query string has ad dimensions. It is checked even if the query string is invalid.
+
+    FEATURE_SCREEN_DIMENSIONS_IN_QS
+    We also capture the presence of screen dimension in a query string parameter.
+
+    FEATURE_DOMAIN_PARTY
+    For a node, the domain party feature describes whether the domain of the node URL is first-party or third-party
+
+    FEATURE_SUB_DOMAIN_CHECK
+    For  a  node,  the  sub-domain  feature  describes whether the domain of the node URL is a sub-domain of the first-party domain.
+
+    FEATURE_DESCENDANTS_OF_SCRIPT
+    For a node, we check whether a node is a descendant of a script node.
+
+    FEATURE_ASCENDANTS_AD_KEYWORD
+    For a node, we check whether any of the node ascendants have an ad keyword. We restrict to 3 levels of traversal.
+
+    FEATURE_DESCENDANTS
+    For a node, we count the number of descendants of a node. We restrict to 3 levels of traversal.
+
+    FEATURE_NODE_CATEGORY
+    For a node, we check the category of a node. For example if it is a image node, iframe node, etc.
+
+    FEATURE_SCRIPT_IS_ACTIVE
+    For a node, we check whether a script was active when a node was inserted.
+
+    FEATURE_INBOUND_CONNECTIONS
+    The number of inbound connections to a node. We count all the incoming connections to a node.
+
+    FEATURE_OUTBOUND_CONNECTIONS
+    The number of outbound connections from a node. We count all the outgoing connections from a node.
+
+    FEATURE_INBOUND_OUTBOUND_CONNECTIONS
+    The number of inbound+outbound connections from a node. We count all the incoming and outgoing connections from a node.
+    
+    FEATURE_KATZ_CENTRALITY
+    It is the Katz centrality of a node in the graph. We update Katz centrality incrementally.
+
+    FEATURE_AVERAGE_DEGREE_CONNECTIVITY
+    It is the average degree connectivity of a node in the graph. We normalize it by the maximum node degree in the graph.
+
+Parent info:
+    At the time of insertion, nodes will have at most two parents.
+
+Feature list (sorted by information gain):
+    0.1078802     1 FEATURE_NODE_CATEGORY
+    0.0824803     2 FEATURE_AVERAGE_DEGREE_CONNECTIVITY
+    0.0623102     3 FEATURE_KATZ_CENTRALITY
+    0.0609386     4 FEATURE_AD_KEYWORD
+    0.0585665     5 FEATURE_SUB_DOMAIN_CHECK
+    0.0584066     6 FEATURE_SPECIAL_CHAR_AD_KEYWORD
+    0.0502739     7 FEATURE_BASE_DOMAIN_IN_QS
+    0.0410758     8 FEATURE_SECOND_PARENT_KATZ_CENTRALITY
+    0.0403572     9 FEATURE_DOMAIN_PARTY
+    0.0395718    10 FEATURE_FIRST_PARENT_KATZ_CENTRALITY
+    0.0367239    11 FEATURE_SECOND_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    0.0365777    12 FEATURE_SECOND_PARENT_INBOUND_CONNECTIONS
+    0.0365456    13 FEATURE_SECOND_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    0.0362042    14 FEATURE_SECOND_PARENT_TAG_NAME
+    0.0358596    15 FEATURE_SECOND_PARENT_OUTBOUND_CONNECTIONS
+    0.0358596    16 FEATURE_SECOND_NUMBER_OF_SIBLINGS
+    0.0356966    18 FEATURE_INBOUND_CONNECTIONS
+    0.0356966    17 FEATURE_INBOUND_OUTBOUND_CONNECTIONS
+    0.0353222    19 FEATURE_SECOND_PARENT_NUMBER_OF_SIBLINGS
+    0.0283984    20 FEATURE_FIRST_PARENT_AVERAGE_DEGREE_CONNECTIVITY
+    0.0280992    21 FEATURE_SECOND_PARENT_ASYNC
+    0.0273476    22 FEATURE_FIRST_PARENT_ASYNC
+    0.026119     23 FEATURE_VALID_QS
+    0.0187074    24 FEATURE_SCRIPT_IS_ACTIVE
+    0.0165698    25 FEATURE_DESCENDANTS_OF_SCRIPT
+    0.0147205    26 FEATURE_AD_DIMENSIONS_IN_QS
+    0.0115704    27 FEATURE_FIRST_PARENT_NUMBER_OF_SIBLINGS
+    0.0042944    28 FEATURE_SCREEN_DIMENSIONS_IN_QS
+    0.0035744    29 FEATURE_FIRST_PARENT_INBOUND_OUTBOUND_CONNECTIONS
+    0.0033798    30 FEATURE_FIRST_PARENT_INBOUND_CONNECTIONS
+    0.0024312    31 FEATURE_SEMICOLON_PRESENT
+    0.0023884    32 FEATURE_FIRST_PARENT_TAG_NAME
+    0.0017683    33 FEATURE_SECOND_PARENT_NODE_ADDED_BY_SCRIPT
+    0.0016665    34 FEATURE_FIRST_PARENT_ATTR_ADDED_BY_SCRIPT
+    0.0012897    35 FEATURE_FIRST_PARENT_ATTR_REMOVED_BY_SCRIPT
+    0.0011851    36 FEATURE_FIRST_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    0.0008711    37 FEATURE_SECOND_PARENT_NODE_REMOVED_BY_SCRIPT
+    0.0007718    38 FEATURE_SECOND_PARENT_ATTR_ADDED_BY_SCRIPT
+    0.0007568    39 FEATURE_FIRST_NUMBER_OF_SIBLINGS
+    0.0007568    40 FEATURE_FIRST_PARENT_OUTBOUND_CONNECTIONS
+    0.0006288    41 FEATURE_SECOND_PARENT_ATTR_MODIFIED_BY_SCRIPT
+    0.0006145    42 FEATURE_FIRST_PARENT_NODE_REMOVED_BY_SCRIPT
+    0.0005817    43 FEATURE_SECOND_PARENT_DEFER
+    0.0003815    44 FEATURE_SECOND_PARENT_ATTR_REMOVED_BY_SCRIPT
+    0.0001098    45 FEATURE_FIRST_PARENT_NODE_ADDED_BY_SCRIPT
+    0.0000777    46 FEATURE_SECOND_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    0            52 FEATURE_FIRST_PARENT_DEFER
+    0            50 FEATURE_DESCENDANTS
+    0            51 FEATURE_FIRST_PARENT_STYLE_ATTR_ADDED_BY_SCRIPT
+    0            53 FEATURE_ASCENDANTS_AD_KEYWORD
+    0            49 FEATURE_SECOND_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT
+    0            48 FEATURE_OUTBOUND_CONNECTIONS
+    0            47 FEATURE_AD_DIMENSIONS_IN_COMPLETE_URL
+    0            54 FEATURE_FIRST_PARENT_STYLE_ATTR_REMOVED_BY_SCRIPT

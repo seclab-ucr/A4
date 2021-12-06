@@ -1,0 +1,858 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta charset="utf-8" />
+		<title>用户登录</title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css?2020091701" />
+			<script type="text/javascript">&lt;!--
+var xajaxConfig = {
+requestURI: "/",
+debug: false,
+statusMessages: false,
+waitCursor: true,
+version: "xajax 0.5 Beta 1",
+legacy: false
+};
+var xajaxLoaded=false;
+function xajax_check_login(){return xajax.call("check_login", {parameters: arguments});}
+function xajax_check_login2(){return xajax.call("check_login2", {parameters: arguments});}
+function xajax_send_dynamic(){return xajax.call("send_dynamic", {parameters: arguments});}
+function xajax_qrcode_login(){return xajax.call("qrcode_login", {parameters: arguments});}
+function xajax_restall_pwd(){return xajax.call("restall_pwd", {parameters: arguments});}
+function xajax_choice_work_login(){return xajax.call("choice_work_login", {parameters: arguments});}
+	--&gt;</script>
+	<script type="text/javascript" src="../lib/xajax_0.5b1/xajax_js/xajax.js"></script>
+	<script type="text/javascript">&lt;!--
+window.setTimeout(function () { if (!xajaxLoaded) { alert('Error: the xajax Javascript file could not be included. Perhaps the URL is incorrect?\nURL: ../lib/xajax_0.5b1/xajax_js/xajax.js'); } }, 6000);
+	--&gt;</script>
+
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/jquery.qrcode.min.js"></script>
+		<script type="text/javascript" src="js/md5.min.js?2015051401"></script>
+		<style>
+			.account_violation{
+				position: fixed;
+				top: 45%;
+				left: 50%;
+				z-index: 999;
+				background: #fff;
+				color: #28334B;
+				display: none;
+			}
+			.account_violation .popup_header{
+				height: 32px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #CED5E0;
+				line-height: 32px;
+				font-size: 14px;
+				padding: 0 10px;
+				position: relative;
+			}
+			.account_violation .popup_header .walnut_close{
+				position: absolute;
+				right: 10px;
+				width: 16px;
+				height: 16px;
+				top:8px;
+				background: url(../img/close.png) center no-repeat;
+				background-size: 100%;
+				cursor: pointer;
+			}
+			.account_violation .popup_body p{
+				line-height: 18px;height: 18px;
+				font-size: 12px;
+				text-align: center;
+			}
+			.account_violation .popup_body .go_check{
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+				color: #fff;
+				font-size: 14px;
+				background: #FF5B4D;
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+			}
+			.account_violation1{
+				width: 240px;
+				height: 132px;
+				margin-left: -120px;
+				margin-top: -66px;
+			}
+			.account_violation2{
+				width: 260px;
+				margin-left: -130px;
+				margin-top: -124px;
+			}
+			.account_select{
+				width: 300px;
+				background: #fff;
+				position: fixed;
+				top: 35%;
+				left: 50%;
+				z-index: 10;
+				margin-left: -150px;
+				transform: translateY(-35%);
+				display: none;
+			}
+			.account_select .account-select-title{
+				height: 32px;
+				line-height: 32px;
+				padding: 0 4px 0 10px;
+				background: #F7F8FA;
+				border-bottom: 1px solid #CED5E0;
+			}
+			.account_select .account-select-title span{font-size: 14px;}
+			.account_select .account-select-title i{
+				width: 26px;
+				height: 26px;
+				margin-top: 3px;
+				cursor: pointer;
+				background: url(img/icon-delete.svg) center no-repeat;
+				background-size: 100%;
+				float: right;
+			}
+			.account_select .account-select-title i:hover{
+				background: url(img/icon-delete-hover.svg) center no-repeat;
+    			background-size: 100%;
+			}
+			.account_select p{
+				line-height: 32px;
+				padding-left: 10px;
+				text-align: left;
+				background: #fff;
+				font-size: 12px;
+			}
+			.account_select .btn-red{
+				border: 1px solid #FF5B4D;
+				color: #fff;
+				background: #FF5B4D;
+				height: 32px;
+				line-height: 30px;
+				font-size: 14px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.account_select .btn-red:hover {
+				background: #FF6B5F;
+				border-color: #FF6B5F;
+			}
+			.account_select .btn-red:active {
+				background: #E55145;
+				border-color: #E55145;
+			}
+			.account_select ul,.account_select li{
+				list-style: none;
+			}
+			.account_select ul{
+				max-height: 208px;
+  				overflow-y: auto;
+			}
+			.account_select ul li{
+				height: 32px;
+				line-height: 32px;
+				padding: 0 10px 0 30px;
+				cursor: pointer;
+				background: url(img/radio.svg) 10px center no-repeat;
+				font-size: 14px;
+			}
+			.account_select li:hover{
+			background-color: #e7f4fd;
+			}
+			.account_select li.active{
+			background-image: url(img/radio-active.svg);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 账号涉嫌违禁弹窗 -->
+		<div class="account_violation account_violation1">
+			<div class="popup_header">
+				<label>温馨提示</label>
+				<a class="walnut_close"></a>
+			</div>
+			<div class="popup_body clearfix">
+				<p style="margin: 35px auto 30px;">账号涉嫌违规，无法登录</p>
+				<!-- <a class="go_check" href="https://tb.53kf.com/code/client/10000079/17?custom_channel=账号涉嫌违规" target="_blank">联系客服经理</a> -->
+			</div>
+		</div>
+		<div class="account_violation account_violation2">
+			<div class="popup_header">
+				<label>温馨提示</label>
+				<a class="walnut_close"></a>
+			</div>
+			<div class="popup_body clearfix">
+				<p style="margin: 20px auto 0px;">账号涉嫌违规</p>
+				<p>请扫码下载 53 快服 APP 完成实名认证</p>
+				<div style="border:1px solid #CED5E0;width: 100px;height: 100px;margin: 10px auto;"><img width="100" height="100" src="img/ios_android.png" alt="" /></div>
+				<p style="margin-bottom:20px;"><a style="color:#218BFC" href="https://www.yuque.com/aq0tf9/zvwfoc/nt9cwq">实名认证操作流程</a></p>
+			</div>
+		</div>
+
+		<div class="all">
+			<div class="content">
+
+				<div class="s1" style="display: none;">
+					<div class="qrdiv">
+						<p class="qrname"></p>
+						<p class="qrscan">请使用<label>掌上客服APP</label>扫描登录</p>
+						<div class="qrcode1" id="code"><table style="width: 174px; height: 174px; border: 0px; border-collapse: collapse; background-color: rgb(255, 255, 255);"><tbody><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr><tr style="height: 6px;"><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(0, 0, 0);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td><td style="width: 6px; background-color: rgb(255, 255, 255);"></td></tr></tbody></table></div>
+						<!-- <p class="rotate2"></p> -->
+					</div>
+					<p class="rotate2"></p>
+				</div>
+				
+				<div class="s3" style="display: none;">
+					<div class="message_denglu">
+						<div class="kf_img"></div>
+						<div class="username_login">账号密码登录</div>
+						<div class="message_username">
+							<span></span>
+							<input type="text" placeholder="账号或手机号" class="message_login_username" />
+						</div>
+						<!-- <div class="message_hint_bar_area" style="display:none">
+							<div class="hint_bar"><div class="message_hint_username">2272595@wqq.com</div><div class="message_hint_username_close"></div></div>
+						</div> -->
+						<div class="message_password">
+							<span></span>
+							<input type="text" placeholder="动态密码" class="message_login_password" />
+						</div>
+						
+						<div class="send_password" onclick="send_dynamic()">发送动态密码</div>
+						<div class="message_state">
+							<div class="online_state">
+								<div class="color_state"><div class="text_state">在线</div><img src="img/down.png" /></div>
+							</div>
+							<div class="choose_online" style="display:none">
+								<div class="online"><div class="online_text">在线</div></div>
+								<div class="left"><div class="left_text">离开</div></div>
+							</div>
+							<div class="forget_password">忘记密码？</div>
+						</div>
+						<div class="message_login" onclick="checkForm2()">登录</div>
+						<p class="kfkj">Copyright © 2005-2020 <label>快服科技</label> 版权所有</p>
+					</div>
+					<div class="popwrong2">
+						账号或动态密码输入有误！
+					</div>
+					<p class="message_rotate1">
+					</p>
+				</div>
+				<div class="s2 huiche" style="">
+					<div class="denglu">
+						<div class="kfname"></div>
+						<div class="quick_login">短信快捷登录</div>
+						<div class="username">
+							<span></span>
+							<input type="text" placeholder="账号" class="login_username" id="login_username" />
+							<!--<label for="">账号</label>-->
+						</div>
+						<!-- <div class="hint_bar_area" style="display:none">
+							<div class="hint_bar"><div class="hint_username">2272595@wqq.com</div><div class="hint_username_close"></div></div>
+						</div> -->
+						<div class="password">
+							<span></span>
+							<input type="password" placeholder="密码" class="login_password" id="login_password" />
+							<!--<label for="">密码</label>-->
+							<p class="e-pwd biyan"></p>
+						</div>
+						<div class="state">
+							<div class="online_state">
+								<div class="color_state"><div class="text_state">在线</div><img src="img/down.png" /></div>
+							</div>
+							<div class="choose_online" style="display:none">
+								<div class="online"><div class="online_text">在线</div></div>
+								<div class="left"><div class="left_text">离开</div></div>
+							</div>
+							<div class="btn">
+								<p class="checkbtn"></p>
+								记住密码
+							</div>
+							<div class="forget_password">忘记密码？</div>
+						</div>
+						<!-- 三次输错密码提示 -->
+						<div class="psd_error3">密码错误3次，账号已被锁定，请点击忘记密码↗</div>
+
+						<div class="login" onclick="checkForm()">
+							登录
+						</div>
+						<p class="kfkj">Copyright © 2005-2020 <label>快服科技</label> 版权所有</p>
+					</div>
+					<div class="popwrong">
+						账号或密码输入有误！
+					</div>
+					<p class="rotate1"></p>
+				</div>
+			</div>
+			<!-- 密码超过90天修改密码 -->
+			<div class="reset_psd">
+				<div class="reset_psd_box">
+					<p class="reset_psd_title">该密码已使用90天，请修改</p>
+					<div class="new_password" style="margin-bottom:5px">
+						<input id="new_password1" type="password" placeholder="新密码" class="login_password password90_input" />
+						<!--<label for="">密码</label>-->
+						<p class="e-pwd biyan"></p>
+					</div>
+					<p class="error_text">8-20位，需包含英文和数字，不能有符号和空格</p>
+					<div class="new_password" style="margin-top:10px;margin-bottom:5px">
+						<input id="new_password2" type="password" placeholder="再一次输入" class="login_password password90_input" />
+						<!--<label for="">密码</label>-->
+						<p class="e-pwd biyan"></p>
+					</div>
+					<p class="error_text"></p>
+					<div class="new_login allow_click" id="new_login">确定并登录</div>
+				</div>
+			</div>
+
+			<div class="bottom">
+				<div class="message">
+					<p class="mp1" style="top: 10.5875px; opacity: 0.15125;"></p>
+					<p class="mp2" style="top: 46.025px; opacity: 0.6575;"></p>
+					<p class="mp3"></p>
+				</div>
+				<div class="btoimg">
+				</div>
+			</div>
+			
+		</div>
+		<div class="blackbg"></div>
+		<!-- 多账号选择 -->
+		<div class="account_select">
+			<div class="account-select-title"><span>温馨提示</span><i></i></div>
+			<p>该手机绑定了多个账号，请选择：</p>
+			<ul id="account_ul"></ul>
+			<div class="btn btn-red">登录该账号</div>
+		</div>
+		<div class="popqr">
+			<p class="popqrp1">手机浏览器扫一扫，立即下载</p>
+			<p class="popqrp2"></p>
+			<p class="popqrp3">提醒：请勿使用微信扫描，推荐使用手机浏览器二维码扫描下载</p>
+			<div class="popclose"></div>
+		</div>
+	
+	<script src="js/denglu.js?2018092601"></script>
+	<script type="text/javascript">
+	var hw = "";
+	if(hw == 'hw'){
+		$("#login_password").attr("autocomplete","off");
+		$("#login_username").attr("autocomplete","off");
+	}
+	// var uniqueid = uuid(20,16);
+	var uniqueid = "b61a0ea32a4fd8ba_v2";
+	//二维码
+	$("#code").qrcode({ 
+	    render: "table", //table方式 
+	    width: 174, //宽度 
+	    height:174, //高度 
+	    text: uniqueid //任意内容 
+	}); 
+	var passwordFromCookie = null; //cookie获取的密码
+	getAuto();
+	document.onkeydown = function(event)
+	{
+	  var event = window.event || event;
+
+	  if(event.keyCode==13)
+	  {
+	  	if ($('.s2').hasClass('huiche')) {
+	  		checkForm();
+	  	}else{
+	  		checkForm2();
+	  	}
+	  }
+	}
+
+	//验证帐号和密码
+	function checkForm(){
+		$('.username').css('border-color','#dedede');
+		$('.password').css('border-color','#dedede');
+	  	var account = $(".login_username").val().replace(/^\s+|\s+$/g,'');
+	  	if (account==""){
+	  		show_msg('账号不能为空！');
+		  	$('.username').css('border-color','#f86b6b');
+		    return;
+	  	}
+	  	// var idtype = '';
+	  	// if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(account)) {
+	    // 	idtype = 'email';
+	  	// } 
+	  	// if (idtype == ''){ 
+		//     show_msg('账号输入有误！');
+		//     $('.username').css('border-color','#f86b6b');
+		//     return;
+	  	// }
+	  	var password = $("#login_password").val();
+	  	if (password==""){
+		  	show_msg('密码不能为空！');
+		  	$('.password').css('border-color','#f86b6b');
+		    return;
+	  	}
+
+	  	isRem = 0;
+	  	if($(".checkbtn").hasClass("checkblue")){
+	    	isRem = 1;
+	  	}
+	  	var state = 1;
+	  	if($(".state .color_state").hasClass("color_state_red")){
+	    	state = 2;
+	  	}
+	  	$(".login").text("登录中...");
+	  	$(".login").addClass('login_wait');
+	  
+	  	if( (password !== passwordFromCookie) || (null !== passwordFromCookie &amp;&amp; passwordFromCookie.length &lt; 32) ){
+			password = md5(password); //传输前先加密
+	  	}
+	  	xajax_check_login(account, password,isRem,state);
+	  	// setTimeout(function(){
+	    //
+	    // 	lgtimeout = setTimeout(function(){
+	    //   		bglogin('500', '', '');
+	    // 	}, 30000);
+	  	// },500);
+	}
+
+	//发送动态密码
+	function send_dynamic(){
+		if ($('.send_password').hasClass('send_password_wait')) {
+			return;
+		}
+		$('.message_username').css('border-color','#dedede');
+		$('.message_password').css('border-color','#dedede');
+		var account = $(".message_login_username").val().replace(/^\s+|\s+$/g,'');
+	  	if (account==""){
+	  		show_msg2('账号或手机号不能为空！');
+	  		$('.message_username').css('border-color','#f86b6b');
+	    	return;
+	  	}
+	  	// var idtype = '';
+	  	// if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(account)) {
+	    // 	idtype = 'email';
+	  	// } 
+	  	// if (idtype == ''){
+	    // 	show_msg2('账号输入有误！');
+	    // 	$('.message_username').css('border-color','#f86b6b');
+	    // 	return;
+	  	// }
+	  	xajax_send_dynamic(account);
+	}
+
+	//验证帐号和动态密码
+	function checkForm2(){
+		$('.message_username').css('border-color','#dedede');
+		$('.message_password').css('border-color','#dedede');
+	  	var account = $(".message_login_username").val().replace(/^\s+|\s+$/g,'');
+	  	if (account==""){
+	  		show_msg2('账号或手机号不能为空！');
+	  		$('.message_username').css('border-color','#f86b6b');
+	    	return;
+	  	}
+	  	// var idtype = '';
+	  	// if (/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(account)) {
+	    // 	idtype = 'email';
+	  	// } 
+	  	// if (idtype == ''){ 
+		//     show_msg2('账号输入有误！');
+		//     $('.message_username').css('border-color','#f86b6b');
+		//     return;
+	  	// }
+	  	var password = $(".message_login_password").val();
+	  	if (password==""){
+		  	show_msg2('动态密码不能为空！');
+		  	$('.message_password').css('border-color','#f86b6b');
+		    return;
+	  	}
+
+	  	var state = 1;
+	  	if($(".message_state .color_state").hasClass("color_state_red")){
+	    	state = 2;
+	  	}
+	  	$(".message_login").text("登录中...");
+	  	$(".message_login").addClass('message_login_wait');
+	  	setTimeout(function(){
+	    	xajax_check_login2(account, password, state);
+	  	},500);
+	}
+
+	function choice_worker(work_list,token){
+		$('.blackbg,.account_select').show();
+		var list_html='';
+		for(let i=0;i&lt;work_list.length;i++){
+			if(i==0){
+				list_html+='&lt;li class="active" data_value="'+work_list[i]+'"&gt;'+work_list[i]+'&lt;/li&gt;';
+			}else{
+				list_html+='&lt;li data_value="'+work_list[i]+'"&gt;'+work_list[i]+'&lt;/li&gt;';
+			}
+		}
+		$('#account_ul').html(list_html).attr('data_token',token);
+	}
+
+	function qrcode_login(){
+		xajax_qrcode_login(uniqueid);
+	}
+	$('#account_ul').on('click','li',function () {  
+		$(this).addClass('active').siblings().removeClass('active');
+	})
+	$('.account_select').on('click','.btn-red',function () {  
+		xajax_choice_work_login($('#account_ul').find('li.active').eq(0).attr('data_value'),$('#account_ul').attr('data_token'));
+	})
+
+	// 修改新密码按钮点击
+	$('#new_login.allow_click').click(function () {
+	    $("#new_login").removeClass('allow_click');
+		var new1=$('#new_password1').val();
+		var new2=$('#new_password2').val();
+		var reg = /^[\d]+$/;
+		var reg2=/^[a-zA-Z]+$/;
+		var pattern = new RegExp("[`~!@#$^&amp;*()=|{}':;',\\[\\].&lt;&gt;《》/?~！@#￥……&amp;*（）——|{}【】‘；：”“'。，、？]");
+		if(new1==''){
+			$('#new_password1').parent().css('border-color','#F44024');
+			$('#new_password1').parent().next('.error_text').addClass('red_error').text('密码不能为空');
+			return false;
+		}else if(new1.length&lt;8||new1.length&gt;20||new1.indexOf(" ") != -1||reg.test(new1)||pattern.test(new1)||reg2.test(new1)){
+			$('#new_password1').parent().css('border-color','#F44024');
+			$('#new_password1').parent().next('.error_text').addClass('red_error').text('8-20位，需包含英文和数字，不能有符号和空格');
+			return false;
+		}else if(new1==$("#login_password").val()){
+			$('#new_password1').parent().css('border-color','#F44024');
+			$('#new_password1').parent().next('.error_text').addClass('red_error').text('新密码与旧密码相同，请修改');
+			return false;
+		}else if(new2==''){
+			$('#new_password2').parent().css('border-color','#F44024');
+			$('#new_password2').parent().next('.error_text').addClass('red_error').text('密码不能为空');
+			return false;
+		}
+		
+		
+		if(new1!=new2){
+			$('#new_password2').parent().css('border-color','#F44024');
+			$('#new_password2').parent().next('.error_text').addClass('red_error').text('密码不一致，请重新输入');
+			return false;
+		}
+		// console.log('大功告成')
+		var account_restall=$('.login_username').val(); 
+		xajax_restall_pwd(account_restall,new1,$("#login_password").val());
+	})
+	//90天修改密码确定按钮点击的回调
+	function to_login(code,msg){
+		if(code==200){
+			var isRem = 0;
+			if($(".checkbtn").hasClass("checkblue")){
+				isRem = 1;
+			}
+			var state = 1;
+			if($(".state .color_state").hasClass("color_state_red")){
+				state = 2;
+			}
+			var account_restall=$('.login_username').val(); 
+			var password_restall=$('#new_password1').val();
+			var password = md5(password_restall); //传输前先加密
+			xajax_check_login(account_restall, password,isRem,state);
+		}else{
+		    $('#new_login').addClass('allow_click');
+			show_msg(msg);
+		}
+	}
+	//验证后返回结果
+	function bglogin(ecode, message, token, alias, state, protocol_mode){
+		$('.message_username').css('border-color','#dedede');
+		$('.state').removeClass('marginb7');
+		var err_msg = "";
+		switch(ecode){
+			case '201':
+				//message:restall_password 重置密码登录，请尽快修改;modify_password 账号密码超过90天未修改，请修改密码
+				if(message=='restall_password'){
+					$('.reset_psd_title').text('重置密码登录，请尽快修改');
+					$('.reset_psd').show();
+				}else if(message=='modify_password'){
+					$('.reset_psd_title').text('该密码已使用90天，请修改');
+					$('.reset_psd').show();
+				}else{
+					var address="";
+					if(protocol_mode == ''){protocol_mode = 'http';}
+					if (address == ""){
+						address=protocol_mode+'://'+alias+"/new_kf/bglogin_new.php?state="+state+"&amp;token="+token;
+					}
+					else{
+						address=protocol_mode+'://'+address+token;
+					}
+					location.href = address;
+				}
+				break;
+			case '209':
+				err_msg = "请使用专属客户端";
+				break;
+			case '401':
+				$('.password').css('border-color','#f86b6b');
+				$('.state').addClass('marginb7');
+				$('.psd_error3').show();
+				$(".login").removeClass('login_wait').text('登录');
+				break;
+			case '403':
+				err_msg = "连续三次登录错误，请在"+(parseInt(message)/60)+"分钟后重试";
+				break;
+			case '404':
+				err_msg = "账号或密码错误";
+				break;
+			case '406':
+				err_msg = "账号或密码错误";
+				break;
+			// case '422':
+			// 	err_msg = "开启MAC验证，不允许该登录方式";
+			// 	break;
+			case '423':
+				err_msg = "开启手机验证，请使用短信快捷登录";
+				break;
+			// case '428':
+			// 	err_msg = "你的公司仅支持「短信快捷登录」";
+			// 	break;
+			// case '429':
+			// 	err_msg = "你的公司「短信快捷登录」仅支持邮箱账号";
+			// 	break;
+			case '505':
+				err_msg = "账号已离职";
+				break;
+			case '506':
+				err_msg = "请使用掌上客服APP扫码登录";
+				break;
+			case '507':
+				$('.blackbg').show();
+				$('.account_violation1').show();
+				if($('.s3').hasClass('huiche')){
+					$('.account_select').css('display','none');
+				}
+				$(".login,.message_login").text("登录");
+				break;
+			case '508':
+				$('.blackbg').show();
+				$('.account_violation2').show();
+				if($('.s3').hasClass('huiche')){
+					$('.account_select').css('display','none');
+				}
+				$(".login,.message_login").text("登录");
+				// $('.account_violation .popup_body .go_check').attr('href',url);
+				break;
+			case '510':
+				err_msg = "该用户已被停用";
+				break;
+			case 'msg':
+				err_msg = message;
+				break;
+			default:
+				err_msg = "服务器请求超时["+ecode+"]，请稍后再试";
+				break;
+		}
+		if (err_msg!="") {
+			$(".login,.message_login").text("登录");
+			if ($('.s2').hasClass('huiche')) {
+				show_msg(err_msg);
+				return;
+			}else{
+				if(ecode == '406'){
+					err_msg = '验证码错误，请重新输入';
+				}else if(ecode == '402'){
+					err_msg = '获取验证码失败';
+				}else if(ecode == '404'){
+					err_msg = '该账号未绑定手机号';
+				}else if(ecode == '416'){
+					err_msg = '该手机未绑定账号';
+				}else if(ecode == '417'){
+					err_msg = '该账号不存在';
+				}else if(ecode == '505'){
+					err_msg = '账号已离职';
+				}
+			}
+			if($('.s3').hasClass('huiche')){
+				$('.account_select').css('display','none');
+				$('.blackbg').css('display','none');
+			}
+			show_msg2(err_msg);
+		}
+	}
+
+	$('.account_violation').on('click','.walnut_close',function () {  
+		$('.account_violation').hide();
+		$('.blackbg').hide();
+	})
+
+	function show_msg(msg){
+		$(".popwrong").html(msg);
+		$(".popwrong").css("display","block");
+	  	setTimeout(function(){
+			$(".popwrong").css("display","none")
+		},1000);
+	}
+
+	function show_msg2(msg){
+		$(".popwrong2").html(msg);
+		$(".popwrong2").css("display","block");
+	  	setTimeout(function(){
+			$(".popwrong2").css("display","none")
+		},1000);
+	}
+
+	//获取COOKIE
+	function getAuto(){
+	  	cookie = new Cookie();
+	  	cookie.Load();
+	  	arr1 = cookie.GetCookie("6dsrv");
+	  	if (arr1 != "")
+	  	{
+	    	var arr2 = arr1.split("+");
+			var ispassword = false;
+		    // $(".login_username").value=DecodeCookie(unescape(arr2[0]));
+		    $(".login_username").val(DecodeCookie(unescape(arr2[0])));
+		    try{
+		    	passwordFromCookie = DecodeCookie(unescape(arr2[1]));
+		      	// $(".login_password").value = passwordFromCookie;
+		      	$("#login_password").val(passwordFromCookie);
+			  	ispassword = true;
+		    }catch(e){
+		      	$(".login_username").value="";return;
+		    }
+		    if (ispassword) {
+		      	$(".checkbtn").addClass("checkblue");
+		      	$(".e-pwd").addClass("biyan");
+		      	$(".e-pwd").prev().attr("type", "password");
+		    }
+			else {
+		      	$(".checkbtn").removeClass("checkblue");
+		    }
+	  	}
+	}
+
+	function uuid(len, radix) {
+	    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+	    var uuid = [], i;
+	    radix = radix || chars.length;
+	 
+	    if (len) {
+	      for (i = 0; i &lt; len; i++) uuid[i] = chars[0 | Math.random()*radix];
+	    } else {
+	      var r;
+	      uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+	      uuid[14] = '4';
+	 
+	      for (i = 0; i &lt; 36; i++) {
+	        if (!uuid[i]) {
+	          r = 0 | Math.random()*16;
+	          uuid[i] = chars[(i == 19) ? (r &amp; 0x3) | 0x8 : r];
+	        }
+	      }
+	    }
+	    return uuid.join('');
+	}
+
+	//解码程序：
+	function DecodeCookie(str){
+	　var strArr;
+	　var strRtn=""; 
+	　strArr=str.split("a"); 
+	　for (var i=strArr.length-1;i&gt;=0;i--)
+	　strRtn+=String.fromCharCode(eval(strArr[i])); 
+	　return strRtn;
+	}
+
+	//获取cookie
+	function Cookie(){
+	    this._Cookie=[];
+	    
+	    this.Load=function(){
+	        if(document.cookie.indexOf(";")!=-1){
+	            var _sp,_name,_tp,_tars,_tarslength;
+	            var _item=document.cookie.split("; ");
+	            var _itemlength=_item.length;
+	            while(_itemlength&gt;0){
+	                _sp=_item[--_itemlength].split("=");
+	                _name=_sp[0];
+					if (_sp.length &lt;2 )
+					{
+						continue;
+					}
+	                _tp=_sp[1].split(",");
+	                _tars=_tp.slice(1,_tp.length);
+	                this._Cookie[_name]=[];
+	                this._Cookie[_name]=_tars;
+	                this._Cookie[_name]["timeout"]=_tp[0];
+	                }
+	            return true;
+	            }
+	        return false;
+	        }
+	        
+	    this.Save=function(){
+	        var _str,_ars,_mars,_marslength,timeout,i,key;
+	        for(key in this._Cookie){
+	            if(!this._Cookie[key])return;
+	            _str=[];
+	            _mars=this._Cookie[key];
+	            _marslength=_mars.length;
+	            for(i=0;i&lt;_marslength;i++)_str[_str.length]=escape(_mars[i]);
+	            document.cookie=key+"="+_mars["timeout"]+(_str.length&gt;0?",":"")+_str+(_mars["timeout"]==0?"":";expires="+new Date(parseInt(_mars["timeout"])).toGMTString());
+	            }        
+	        }
+	        
+	    this.Create=function(name,days){
+	        days=days?days:0;
+	        if(!this._Cookie[name])this._Cookie[name]=[];
+	        this._Cookie[name]["timeout"]=days!=0?new Date().getTime()+parseInt(days)*86400000:0;
+	        }    
+	        
+	    this.Modify=function(name,days){
+	        this.Create(name,days);
+	        }
+	        
+	    this.Delete=function(name){
+	        this.Create(name,0);
+	        }     
+	        
+	    this.AddItem=function(name,value){
+	        this._Cookie[name][this._Cookie[name].length]=value;
+	        }
+	        
+	    this.DelItem=function(name,index){
+	        var _ttime=this._Cookie[name]["timeout"];
+	        this._Cookie[name]=this._Cookie[name].slice(0,index).concat(this._Cookie[name].slice(parseInt(index)+1,this._Cookie[name].length));
+	        this._Cookie[name]["timeout"]=_ttime;
+	        }
+
+	    this.GetItem=function(name,index){
+	        return this._Cookie[name][index];
+	        }
+
+	    this.GetTime=function(name){
+	        return new Date(parseInt(this._Cookie[name]["timeout"]));
+	        }
+
+	    this.GetCount=function(name){
+	        return this._Cookie[name].length;
+	        }
+
+	    this.GetCookieCount=function(){
+	        var _length=0,key;
+	        for(key in this._Cookie)_length++;
+	        return _length;
+	        }
+	        
+		this.SetCookie=function(name,value){
+			var today = new Date()
+			var expires = new Date()
+			expires.setTime(today.getTime() + 1000*60*60*24*365)
+			document.cookie = name + "=" + escape(value)	+ "; expires=" + expires.toGMTString()
+		}
+		
+		this.GetCookie=function(Name){
+			var search = Name + "="
+			if(document.cookie.length &gt; 0) {
+				offset = document.cookie.indexOf(search)
+				if(offset != -1) {
+					offset += search.length
+					end = document.cookie.indexOf(";", offset)
+					if(end == -1) end = document.cookie.length
+					return unescape(document.cookie.substring(offset, end))
+				}	
+			}
+			return ""
+		}
+	}
+	</script>
+
+</body></html>

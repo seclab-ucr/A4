@@ -1,0 +1,2064 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+	<title>Engineering Simulation &amp; 3D Design Software | Ansys</title>
+	<meta name="keywords" content="engineering simulation software, 3d design software, simulation software, pervasive engineering simulation" />
+	<meta name="description" content="Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation." />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="VIcurrentDateTime" content="637425897495108457" />
+<script type="text/javascript" async="" src="https://static.hotjar.com/c/hotjar-605282.js?sv=7"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-MVFT24"></script><script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+			<meta name="robots" content="follow, index" />
+
+	
+
+	<!-- OneTrust Cookies Consent Notice (Production Standard, ansys.com, en-US) start -->
+	<script src="https://optanon.blob.core.windows.net/consent/197d2d2c-1a77-4311-bef1-5a59224e6d41.js" type="text/javascript" charset="UTF-8"></script><link type="text/css" href="https://optanon.blob.core.windows.net/skins/6.8.0/default_flat_top_two_button_black/v2/css/optanon.css" rel="stylesheet" /><style>#optanon ul#optanon-menu li { background-color:  !important }#optanon ul#optanon-menu li.menu-item-selected { background-color:  !important }#optanon #optanon-popup-wrapper .optanon-white-button-middle { background-color: #000000 !important }.optanon-alert-box-wrapper .optanon-alert-box-button-middle { background-color: #000000 !important; border-color: #000000 !important; }#optanon #optanon-popup-wrapper .optanon-white-button-middle button { color: #ffffff !important }.optanon-alert-box-wrapper .optanon-alert-box-button-middle button { color: #ffffff !important }#optanon #optanon-popup-bottom { background-color: #F2F2F2 !important }#optanon.modern #optanon-popup-top, #optanon.modern #optanon-popup-body-left-shading { background-color: #F2F2F2 !important }.optanon-alert-box-wrapper { background-color:#ffb71b !important }.optanon-alert-box-wrapper .optanon-alert-box-bg p { color:#000000 !important }.optanon-alert-box-body a
+{
+ color: #000000;
+}
+
+.optanon-alert-box-wrapper .optanon-alert-box-corner-close {
+left: 15px !important;
+}</style><script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function OptanonWrapper() { }
+	</script>
+	<!-- OneTrust Cookies Consent Notice (Production Standard, ansys.com, en-US) end -->
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="google-site-verification" content="rGQakbdLB3do7E4nJG0d4fpD7Mg0Won5QtQXb81T-ko" />
+	<style id="ansys-above-the-fold-css"></style>
+
+	<script>
+		/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+		(function (w) {
+			"use strict";
+			/* exported loadCSS */
+			var loadCSS = function (href, before, media) {
+				// Arguments explained:
+				// `href` [REQUIRED] is the URL for your CSS file.
+				// `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet &lt;link&gt; before
+				// By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+				// `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+				var doc = w.document;
+				var ss = doc.createElement("link");
+				var ref;
+				if (before) {
+					ref = before;
+				}
+				else {
+					var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+					ref = refs[refs.length - 1];
+				}
+
+				var sheets = doc.styleSheets;
+				ss.rel = "stylesheet";
+				ss.href = href;
+				// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+				ss.media = "only x";
+
+				// wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+				function ready(cb) {
+					if (doc.body) {
+						return cb();
+					}
+					setTimeout(function () {
+						ready(cb);
+					});
+				}
+				// Inject link
+				// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+				// Note: `insertBefore` is used instead of `appendChild`, for safety re: //www.paulirish.com/2011/surefire-dom-element-insertion/
+				ready(function () {
+					ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+				});
+				// A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+				var onloadcssdefined = function (cb) {
+					var resolvedHref = ss.href;
+					var i = sheets.length;
+					while (i--) {
+						if (sheets[i].href === resolvedHref) {
+							return cb();
+						}
+					}
+					setTimeout(function () {
+						onloadcssdefined(cb);
+					});
+				};
+
+				function loadCB() {
+					if (ss.addEventListener) {
+						ss.removeEventListener("load", loadCB);
+					}
+					ss.media = media || "all";
+				}
+
+				// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+				if (ss.addEventListener) {
+					ss.addEventListener("load", loadCB);
+				}
+				ss.onloadcssdefined = onloadcssdefined;
+				onloadcssdefined(loadCB);
+				return ss;
+			};
+			// commonjs
+			if (typeof exports !== "undefined") {
+				exports.loadCSS = loadCSS;
+			}
+			else {
+				w.loadCSS = loadCSS;
+			}
+		}(typeof global !== "undefined" ? global : this));
+	</script>
+
+	<script>
+		/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+		(function (w) {
+			// rel=preload support test
+			if (!w.loadCSS) {
+				return;
+			}
+			var rp = loadCSS.relpreload = {};
+			rp.support = function () {
+				try {
+					return w.document.createElement("link").relList.supports("preload");
+				} catch (e) {
+					return false;
+				}
+			};
+
+			// loop preload links and fetch using loadCSS
+			rp.poly = function () {
+				var links = w.document.getElementsByTagName("link");
+				for (var i = 0; i &lt; links.length; i++) {
+					var link = links[i];
+					if (link.rel === "preload" &amp;&amp; link.getAttribute("as") === "style") {
+						w.loadCSS(link.href, link, link.getAttribute("media"));
+						link.rel = null;
+					}
+				}
+			};
+
+			// if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS
+			if (!rp.support()) {
+				rp.poly();
+				var run = w.setInterval(rp.poly, 300);
+				if (w.addEventListener) {
+					w.addEventListener("load", function () {
+						rp.poly();
+						w.clearInterval(run);
+					});
+				}
+				if (w.attachEvent) {
+					w.attachEvent("onload", function () {
+						w.clearInterval(run);
+					});
+				}
+			}
+		}(this));
+	</script>
+	<link rel="shortcut icon" type="image/x-icon" href="//storage.ansys.com/staticfiles/ansys/favicon.ico" />
+					<link rel="canonical" href="https://www.ansys.com/" />
+					<link rel="alternate" href="https://www.ansys.com/" hreflang="x-default" />
+						<link rel="alternate" href="https://www.ansys.com/en-gb" hreflang="en-gb" />
+						<link rel="alternate" href="https://www.ansys.com/de-de" hreflang="de-de" />
+						<link rel="alternate" href="https://www.ansys.com/it-it" hreflang="it-it" />
+						<link rel="alternate" href="https://www.ansys.com/zh-cn" hreflang="zh-cn" />
+						<link rel="alternate" href="https://www.ansys.com/zh-tw" hreflang="zh-tw" />
+						<link rel="alternate" href="https://www.ansys.com/en-in" hreflang="en-in" />
+						<link rel="alternate" href="https://www.ansys.com/fr-fr" hreflang="fr-fr" />
+						<link rel="alternate" href="https://www.ansys.com/ja-jp" hreflang="ja-jp" />
+						<link rel="alternate" href="https://www.ansys.com/ko-kr" hreflang="ko-kr" />
+						<link rel="alternate" href="https://www.ansys.com/" hreflang="en" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link href="/bundles/RefreshBundlecss?v=eE8o2iDxIUwVBjFI686Tf_A2IfDKvm9mCstV-CdLEq01" rel="stylesheet" as="style" onload="this.rel='stylesheet'" type="text/css" media="all" />
+
+	<link href="/bundles/RefreshBundlecss?v=eE8o2iDxIUwVBjFI686Tf_A2IfDKvm9mCstV-CdLEq01" rel="stylesheet" />
+
+	<!--<link href="/assets/css/foundation-css/fonts-refresh.min.css?ver=2.0" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/foundation-css/foundation-refresh.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/foundation-css/ansys-refresh.css?ver=2.0" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/fancybox/jquery.fancybox-1.3.1.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/foundation-css/form.css?ver=2.0" rel="stylesheet" type="text/css" media="all" />-->
+	<!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" media="all" />-->
+
+	<noscript>
+		&lt;link href="/assets/css/foundation-css/ansys.css?ver=3.46" rel="stylesheet" type="text/css" media="all" /&gt;
+		&lt;link href="/assets/css/foundation-css/fonts.min.css?ver=1.1" rel="stylesheet" type="text/css" media="all" /&gt;
+		&lt;link rel="stylesheet" href="/assets/css/foundation-css/foundation.min.css" /&gt;
+		&lt;link href="/assets/css/foundation-css/ansys.css?ver=3.46" rel="stylesheet" type="text/css" media="all" /&gt;
+		&lt;link href="/assets/fancybox/jquery.fancybox-1.3.1.css" rel="stylesheet" type="text/css" media="all" /&gt;
+	</noscript>
+	<script src="/assets/js/foundation-js/modernizr.min.js" defer=""></script>
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" value="https://www.ansys.com/" />
+	<meta name="twitter:title" value="Engineering Simulation &amp; 3D Design Software | Ansys" />
+	<meta name="twitter:description" value="Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation." />
+	<meta name="twitter:image" value="https://www.ansys.com/-/media/ansys/corporate/social/products/products-1200x600.jpg" />
+	<meta name="twitter:site" value="https://www.ansys.com" />
+
+	<!-- Open Graph data -->
+
+	<meta property="og:title" content="Engineering Simulation &amp; 3D Design Software | Ansys" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.ansys.com/" />
+	<meta property="og:image" content="https://www.ansys.com/-/media/ansys/corporate/social/products/products-1200x630.jpg" />
+	<meta property="og:description" content="Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation." />
+
+
+	<!-- Schema.org markup for Google+ -->
+
+	<meta itemprop="name" content="Engineering Simulation &amp; 3D Design Software | Ansys" />
+	<meta itemprop="description" content="Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation." />
+	<meta itemprop="image" content="https://www.ansys.com/-/media/ansys/corporate/social/products/products-1200x630.jpg" />
+
+	<!-- Pinterest Domain Verification -->
+	<meta name="p:domain_verify" content="0f4d36984af520b6ebea16910121f2f5" />
+	<meta class="foundation-data-attribute-namespace" /><meta class="foundation-mq-xxlarge" /><meta class="foundation-mq-xlarge" /><meta class="foundation-mq-large" /><meta class="foundation-mq-medium" /><meta class="foundation-mq-small" /><style></style><meta class="foundation-mq-topbar" /><script type="application/ld+json">{"keywords":"ANSYS Discovery,ANSYS Discovery Live,Rossignol,skis,bikes, ski design, bike design, bicycle design,computational fluid dynamics,design iterations, cfd,ski simulation, bike simulation,simulation","thumbnailUrl":"https://play.vidyard.com/LKXUAJWqjKazDnAjEdaQtB.jpg","@context":"http://schema.org/","@type":"VideoObject","id":"LKXUAJWqjKazDnAjEdaQtB","description":"Rossignol has a team of engineers that work with skiers, designers and others to create new products. With ANSYS Discovery they realized that their engineers could assess changes in real-time and discuss them with the other team members to rapidly explore designs. What was previously a longer and more individual exercise became collaborative not just among engineers, but with every team member benefiting from simulation insight. The engineers could literally capture feedback from the skiers as they came off the slopes and Discovery gave them a joint language to explore product performance. \n\nLearn more at ansys.com/discovery","name":"Rossignol Uses ANSYS Discovery to Design Skis and Bikes","transcript":"","uploadDate":"2019-02-27T16:31:03.000Z","duration":"T3M26S","embedUrl":"https://play.vidyard.com/LKXUAJWqjKazDnAjEdaQtB","height":360,"width":640}</script><style type="text/css">.vidyard_wrapper {position: relative;float: left;cursor: pointer;}
+.play-btn, .vidyard_play_button {display: none;}
+@media (min-width: 0) { .vidyard_wrapper img {max-width: 100%;} }
+.vidyard_wrapper .play-btn {position: absolute;top: 50%;left: 50%;margin: -7.5% 0 0 -7.5%;width: 15%;height: auto;border-radius: 500px;border: none;cursor: pointer;background-color: #ffd563;opacity: 0.65;filter: alpha(opacity = 65);transition: opacity 0.2s linear;overflow: visible;font-size: 0px;padding: 0;}
+.vidyard_wrapper .play-btn .play-btn-size {padding-top: 100%;width: 100%;}
+.vidyard_wrapper .play-btn .arrow-size {position: absolute;top: 50%;left: 50%;width: 35%;height: auto;margin: -25% 0 0 -12%;overflow: hidden;}
+.vidyard_wrapper .play-btn .arrow-size-ratio {padding-top: 150%;width: 100%;}
+.vidyard_wrapper .play-btn .arrow {position: absolute;top: 50%;left: auto;right: 0px;bottom: auto;width: 0px;height: 0px;margin: -200px 0 -200px -300px;border: 200px solid transparent;border-left: 300px solid #ffffff;border-right: none;}
+.splash-screen-wrapper:hover .play-btn,
+.vidyard_wrapper:hover .play-btn {opacity: 1;filter: alpha(opacity = 100);zoom: 1;}
+</style><script type="application/ld+json">{"@context":"https://schema.org/","@type":"Organization","name":"Ansys","legalName":"ANSYS, Inc.","url":"https://www.ansys.com","address":{"@type":"PostalAddress","addressCountry":"United States","addressLocality":"Canonsburg","addressRegion":"Pennsylvania","postalCode":"15317","streetAddress":"2600 Ansys Dr.","email":"ansysinfo@ansys.com","faxNumber":"+1-724-514-9494","telephone":"+1-844-462-6797","alternateName":"Ansys","description":"ANSYS engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation.","mainEntityOfPage":"https://www.ansys.com/","name":"ANSYS Inc."},"duns":"063747653","email":"ansysinfo@ansys.com","faxNumber":"+1-724-514-9494","founder":{"@type":"Person","additionalName":"John A. Swanson","mainEntityOfPage":"https://www.ansys.com/"},"foundingDate":"1970","logo":"https://www.ansys.com/-/media/ansys/global/brandings/logo-ansys.jpg","naics":"541511","numberOfEmployees":{"@type":"QuantitativeValue","maxValue":"4000","minValue":"4000","mainEntityOfPage":"https://www.ansys.com/"},"sameAs":["https://www.facebook.com/Ansys/","https://www.linkedin.com/company/ansys-inc/","https://twitter.com/ANSYS","https://plus.google.com/u/1/+ansys","https://en.wikipedia.org/wiki/Ansys","https://www.youtube.com/user/ansysinc","https://www.youtube.com/user/ANSYSHowToVideos","https://www.youtube.com/user/ANSYSTechTips","https://www.instagram.com/ansys_inc/","https://www.g2crowd.com/products/ansys/reviews","https://www.gartner.com/reviews/market/data-center-infrastructure-management-tools/vendor/ansys/product/ansys-fluent","https://www.capterra.com/p/124168/ANSYS-mechanical-software-suite/","https://www.crunchbase.com/organization/ansys","https://twitter.com/ANSYS_germany","https://www.xing.com/companies/ansysgermanygmbh","https://twitter.com/ANSYS_Japan","https://weibo.com/ansyscn","https://www.instagram.com/ansys_inc/","https://www.pinterest.com/ansysinc/","https://www.semiwiki.com/forum/content/section/266-ansys-inc.html","https://www.linkedin.com/groups/114265/profile","https://www.linkedin.com/showcase/computational-fluid-dynamics/","https://www.linkedin.com/showcase/structural-analysis/","https://www.linkedin.com/showcase/model-based-systems-engineering/","https://www.linkedin.com/showcase/electronics-simulation/","https://www.linkedin.com/showcase/ansys-student/","https://www.linkedin.com/showcase/ansys-spaceclaim-3d-modeling/"],"taxID":"04-3219960","telephone":"+1-844-462-6797"}</script><script type="application/ld+json">{"@context":"https://schema.org/","@type":"Corporation","@id":"https://corporation.ansys.com","name":"Ansys","legalName":"ANSYS, Inc.","tickerSymbol":"ANSS","url":"https://www.ansys.com","address":{"@type":"PostalAddress","addressCountry":"United States","addressLocality":"Canonsburg","addressRegion":"Pennsylvania","postalCode":"15317","streetAddress":"2600 Ansys Dr.","email":"ansysinfo@ansys.com","faxNumber":"+1-724-514-9494","telephone":"+1-844-462-6797","alternateName":"Ansys","description":"Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation.","mainEntityOfPage":"https://www.ansys.com/","name":"ANSYS Inc."},"duns":"063747653","email":"ansysinfo@ansys.com","faxNumber":"+1-724-514-9494","founder":{"@type":"Person","additionalName":"John A. Swanson","mainEntityOfPage":"https://www.ansys.com/about-ansys"},"foundingDate":"1970","logo":"https://www.ansys.com/-/media/ansys/global/brandings/logo-ansys.jpg","naics":"541511","numberOfEmployees":{"@type":"QuantitativeValue","maxValue":"4000","minValue":"4000","mainEntityOfPage":"https://www.ansys.com/about-ansys"},"sameAs":["https://www.facebook.com/Ansys/","https://www.linkedin.com/company/ansys-inc/","https://twitter.com/ANSYS","https://plus.google.com/u/1/+ansys","https://en.wikipedia.org/wiki/Ansys","https://www.youtube.com/user/ansysinc","https://www.youtube.com/user/ANSYSHowToVideos","https://www.youtube.com/user/ANSYSTechTips","https://www.instagram.com/ansys_inc/","https://www.g2crowd.com/products/ansys/reviews","https://www.gartner.com/reviews/market/data-center-infrastructure-management-tools/vendor/ansys/product/ansys-fluent","https://www.capterra.com/p/124168/ANSYS-mechanical-software-suite/","https://www.crunchbase.com/organization/ansys","https://twitter.com/ANSYS_germany","https://www.xing.com/companies/ansysgermanygmbh","https://twitter.com/ANSYS_Japan","https://weibo.com/ansyscn","https://www.instagram.com/ansys_inc/","https://www.pinterest.com/ansysinc/","https://www.semiwiki.com/forum/content/section/266-ansys-inc.html","https://www.linkedin.com/groups/114265/profile","https://www.linkedin.com/showcase/computational-fluid-dynamics/","https://www.linkedin.com/showcase/structural-analysis/","https://www.linkedin.com/showcase/model-based-systems-engineering/","https://www.linkedin.com/showcase/electronics-simulation/","https://www.linkedin.com/showcase/ansys-student/","https://www.linkedin.com/showcase/ansys-spaceclaim-3d-modeling/"],"subOrganization":[{"@type":"Organization","legalName":"Optis","mainEntityOfPage":"https://www.optis-world.com/"},{"@type":"Organization","legalName":"Lumerical Inc.","mainEntityOfPage":"https://www.lumerical.com/"},{"@type":"Organization","legalName":"Livermore Software Technology Corporation","mainEntityOfPage":"https://www.lstc.com/"},{"@type":"Organization","legalName":"DfR Solutions","mainEntityOfPage":"https://www.dfrsolutions.com/"},{"@type":"Organization","legalName":"Helic","mainEntityOfPage":"http://www.helic.com/"},{"@type":"Organization","legalName":"Dynardo GmbH","mainEntityOfPage":"- https://www.dynardo.de"},{"@type":"Organization","legalName":"Granta Design, Ltd.","mainEntityOfPage":"https://grantadesign.com/"},{"@type":"Organization","legalName":"3DSIM"},{"@type":"Organization","legalName":"Computational Engineering International, Inc."},{"@type":"Organization","legalName":"CLK Design Automation"},{"@type":"Organization","legalName":"KPIT medini Technologies AG"},{"@type":"Organization","legalName":"Delcross Technologies"},{"@type":"Organization","legalName":"Gear Designs Solutions"},{"@type":"Organization","legalName":"Newmerical Technologies International"},{"@type":"Organization","legalName":"SpaceClaim Corporation"},{"@type":"Organization","legalName":"Reactions Design"},{"@type":"Organization","legalName":"EVEN - Evolutionary Engineering AG"},{"@type":"Organization","legalName":"Esterel Technologies"},{"@type":"Organization","legalName":"Apache Design Solutions, Inc."},{"@type":"Organization","legalName":"Ansoft Corporation"},{"@type":"Organization","legalName":"Ansys Fluent"},{"@type":"Organization","legalName":"Century Dynamics, Inc."},{"@type":"Organization","legalName":"CFX"},{"@type":"Organization","legalName":"CADOE S.A."},{"@type":"Organization","legalName":"ICEM CFD"}],"taxID":"04-3219960","telephone":"+1-844-462-6797"}</script><script type="application/ld+json">{"keywords":"covid,covid-19","thumbnailUrl":"https://play.vidyard.com/mdb4W3TAhg7vTmHZVrfYR2.jpg","@context":"http://schema.org/","@type":"VideoObject","id":"mdb4W3TAhg7vTmHZVrfYR2","description":"Wearing a face mask correctly for an extended period can be uncomfortable and cause irritation, however, it is necessary to ensure the effectiveness of the mask. Learn more: https://www.ansys.com/covid","name":"Facing COVID-19 Challenges: Fit the Mask Properly","transcript":"","uploadDate":"2020-04-03T12:15:10.000Z","duration":"T0M22S","embedUrl":"https://play.vidyard.com/mdb4W3TAhg7vTmHZVrfYR2","height":360,"width":640}</script><style type="text/css">.vidyard_wrapper {position: relative;float: left;cursor: pointer;}
+.play-btn, .vidyard_play_button {display: none;}
+@media (min-width: 0) { .vidyard_wrapper img {max-width: 100%;} }
+.vidyard_wrapper .play-btn {position: absolute;top: 50%;left: 50%;margin: -7.5% 0 0 -7.5%;width: 15%;height: auto;border-radius: 500px;border: none;cursor: pointer;background-color: #ffd563;opacity: 0.65;filter: alpha(opacity = 65);transition: opacity 0.2s linear;overflow: visible;font-size: 0px;padding: 0;}
+.vidyard_wrapper .play-btn .play-btn-size {padding-top: 100%;width: 100%;}
+.vidyard_wrapper .play-btn .arrow-size {position: absolute;top: 50%;left: 50%;width: 35%;height: auto;margin: -25% 0 0 -12%;overflow: hidden;}
+.vidyard_wrapper .play-btn .arrow-size-ratio {padding-top: 150%;width: 100%;}
+.vidyard_wrapper .play-btn .arrow {position: absolute;top: 50%;left: auto;right: 0px;bottom: auto;width: 0px;height: 0px;margin: -200px 0 -200px -300px;border: 200px solid transparent;border-left: 300px solid #ffffff;border-right: none;}
+.splash-screen-wrapper:hover .play-btn,
+.vidyard_wrapper:hover .play-btn {opacity: 1;filter: alpha(opacity = 100);zoom: 1;}
+</style><script charset="utf-8" src="https://assets.ubembed.com/universalscript/releases/v0.178.1/bundle.js"></script><style type="text/css">.ub-emb-iframe-wrapper{display:none;position:relative;vertical-align:middle}.ub-emb-iframe-wrapper.ub-emb-visible{display:inline-block}.ub-emb-iframe-wrapper .ub-emb-close{background-color:hsla(0,0%,100%,.6);border:0;border-radius:50%;color:#525151;cursor:pointer;font-family:Arial,sans-serif;font-size:20px;font-weight:400;height:20px;line-height:1;outline:none;padding:0;position:absolute;right:10px;text-align:center;top:10px;transition:transform .2s ease-in-out,background-color .2s ease-in-out;width:20px;z-index:1}.ub-emb-iframe-wrapper.ub-emb-mobile .ub-emb-close{transition:none}.ub-emb-iframe-wrapper .ub-emb-close:before{content:"";height:40px;position:absolute;right:-10px;top:-10px;width:40px}.ub-emb-iframe-wrapper .ub-emb-close:hover{-ms-transform:scale(1.2);background-color:#fff;transform:scale(1.2)}.ub-emb-iframe-wrapper .ub-emb-close:active,.ub-emb-iframe-wrapper .ub-emb-close:focus{background:hsla(0,0%,100%,.35);color:#444;outline:none}.ub-emb-iframe-wrapper .ub-emb-iframe{border:0;max-height:100%;max-width:100%}.ub-emb-overlay .ub-emb-iframe-wrapper .ub-emb-iframe{box-shadow:0 0 12px rgba(0,0,0,.3),0 1px 5px rgba(0,0,0,.2)}.ub-emb-overlay .ub-emb-iframe-wrapper.ub-emb-mobile{max-width:100vw}</style><style type="text/css">.ub-emb-overlay{transition:visibility .3s step-end;visibility:hidden}.ub-emb-overlay.ub-emb-visible{transition:none;visibility:visible}.ub-emb-overlay .ub-emb-backdrop,.ub-emb-overlay .ub-emb-scroll-wrapper{opacity:0;position:fixed;transition:opacity .3s ease,z-index .3s step-end;z-index:-1}.ub-emb-overlay .ub-emb-backdrop{background:rgba(0,0,0,.6);bottom:-1000px;left:-1000px;right:-1000px;top:-1000px}.ub-emb-overlay .ub-emb-scroll-wrapper{-webkit-overflow-scrolling:touch;bottom:0;box-sizing:border-box;left:0;overflow:auto;padding:30px;right:0;text-align:center;top:0;white-space:nowrap;width:100%}.ub-emb-overlay .ub-emb-scroll-wrapper:before{content:"";display:inline-block;height:100%;vertical-align:middle}.ub-emb-overlay.ub-emb-mobile .ub-emb-scroll-wrapper{padding:30px 0}.ub-emb-overlay.ub-emb-visible .ub-emb-backdrop,.ub-emb-overlay.ub-emb-visible .ub-emb-scroll-wrapper{opacity:1;transition:opacity .4s ease;z-index:2147483647}</style><style type="text/css">.ub-emb-bar{transition:visibility .2s step-end;visibility:hidden}.ub-emb-bar.ub-emb-visible{transition:none;visibility:visible}.ub-emb-bar .ub-emb-bar-frame{left:0;position:fixed;right:0;text-align:center;transition:bottom .2s ease-in-out,top .2s ease-in-out,z-index .2s step-end;z-index:-1}.ub-emb-bar.ub-emb-ios .ub-emb-bar-frame{right:auto;width:100%}.ub-emb-bar.ub-emb-visible .ub-emb-bar-frame{transition:bottom .3s ease-in-out,top .3s ease-in-out;z-index:2147483646}.ub-emb-bar .ub-emb-close{bottom:0;margin:auto 0;top:0}.ub-emb-bar:not(.ub-emb-mobile) .ub-emb-close{right:20px}</style><script async="" src="https://script.hotjar.com/modules.0607bc475b5a3c4f001b.js" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head><body id="mainbody" style="transform: translateY(178px);"><div class="optanon-alert-box-wrapper  " role="alertdialog" aria-labelledby="alert-box-title" aria-describedby="alert-box-message" style="top: -178px;"><div class="optanon-alert-box-bottom-top"><div class="optanon-alert-box-corner-close"><button class="optanon-alert-box-close banner-close-button" aria-label="Close" title="Close" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Banner Close Button');" tabindex="4"></button></div></div><div class="optanon-alert-box-bg"><div class="optanon-alert-box-logo"> </div><div class="optanon-alert-box-body"><p class="optanon-alert-box-title legacy-banner-title sr-only" id="alert-box-title" role="heading" aria-level="2">Cookie Notice</p><p class="banner-content" id="alert-box-message">We use cookies to personalize content and ads, provide social media features and analyze site traffic, and we may share this data with our partners, as outlined by our Cookie Policy. You may change your cookie preferences at any time using the Cookie Preference Center.         <a href="https://www.ansys.com/footer/cookie-policy" class="banner-policy-link" tabindex="1" aria-label="Cookie Policy">Cookie Policy</a></p></div><div class="optanon-clearfix"></div><div class="optanon-alert-box-button-container"><div class="optanon-alert-box-button optanon-button-close"><div class="optanon-alert-box-button-middle"><button class="optanon-alert-box-close" aria-label="Close">Close</button></div></div><div class="optanon-alert-box-button optanon-button-allow"><div class="optanon-alert-box-button-middle accept-cookie-container"><button class="optanon-allow-all accept-cookies-button" title="Accept All Cookies" aria-label="Accept All Cookies" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Banner Accept Cookies');" tabindex="3">Accept All Cookies</button></div></div><div class="optanon-alert-box-button optanon-button-more"><div class="optanon-alert-box-button-middle"><button class="optanon-toggle-display cookie-settings-button" title="Cookie Settings" aria-label="Cookie Settings" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Banner Open Preferences');" tabindex="2">Cookie Settings</button></div></div></div><div class="optanon-clearfix optanon-alert-box-bottom-padding"></div></div></div><div id="optanon" class="modern"><div id="optanon-popup-bg"></div><div id="optanon-popup-wrapper" role="dialog" aria-modal="true" tabindex="-1" lang="en-US"><div id="optanon-popup-top"><button onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Close Button');" aria-label="Close" class="optanon-close-link optanon-close optanon-close-ui" title="Close"><div id="optanon-close" style="background: url(https://optanon.blob.core.windows.net/skins/6.8.0/default_flat_top_two_button_black/v2/images/optanon-pop-up-close.png);width:34px;height:34px;"></div></button></div><div id="optanon-popup-body"><div id="optanon-popup-body-left"><div id="optanon-popup-body-left-shading"></div><div id="optanon-branding-top-logo" style="background-image: url('https://optanon.blob.core.windows.net/logos/6063/6063:ansys.com/ansys-logo-black-text.png') !important;"></div><ul id="optanon-menu" aria-label="Navigation Menu" role="tablist"><li class="menu-item-on menu-item-about" title="Your Privacy"><p class="preference-menu-item"><button role="tab" aria-selected="true" aria-controls="Your-Privacy" id="Your-Privacy">Your Privacy</button></p></li><li class="menu-item-necessary menu-item-on" title="Strictly Necessary Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Strictly-Necessary-Cookies" id="Strictly-Necessary">Strictly Necessary Cookies</button></p></li><li class="menu-item-on menu-item-performance" title="Performance Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Performance-Cookies" id="Performance-Cookies">Performance Cookies</button></p></li><li class="menu-item-on menu-item-functional" title="Functional Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Functional-Cookies" id="Functional-Cookies">Functional Cookies</button></p></li><li class="menu-item-off menu-item-advertising" title="Targeting Cookies"><p class="preference-menu-item"><button role="tab" aria-selected="false" aria-controls="Targeting-Cookies" id="Targeting-Cookies">Targeting Cookies</button></p></li><li class="menu-item-moreinfo menu-item-off" title="More Information"><p class="preference-menu-item"><a target="_blank" aria-label="More Information" href="https://www.ansys.com/footer/privacy-notice" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Cookie Policy');">More Information</a></p></li></ul></div><div><div id="optanon-popup-body-right"><p role="heading" aria-level="2" class="legacy-preference-banner-title h2" aria-label="Cookie Preference Center">Cookie Preference Center</p><div class="vendor-header-container"><p class="header-3" role="heading" aria-level="3"></p><div id="optanon-popup-more-info-bar"><div class="optanon-status"><div class="optanon-status-editable"><form><span class="fieldset"><p><input type="checkbox" value="check" id="chkMain" checked="checked" class="legacy-group-status optanon-status-checkbox" /><label for="chkMain">Active</label></p></span></form></div><div class="optanon-status-always-active optanon-status-on"><p>Always Active</p></div></div></div></div><div class="optanon-main-info-text" role="tabpanel"></div></div><div class="optanon-bottom-spacer"></div></div></div><div id="optanon-popup-bottom"> <a href="https://onetrust.com/poweredbyonetrust" target="_blank" rel="noopener"><div id="optanon-popup-bottom-logo" alt="OneTrust Website" style="background: url(https://optanon.blob.core.windows.net/skins/6.8.0/default_flat_top_two_button_black/v2/images/cookie-collective-top-bottom.png);width:155px;height:35px;" title="powered by OneTrust"></div></a><div class="optanon-button-wrapper optanon-save-settings-button optanon-close optanon-close-consent"><div class="optanon-white-button-left"></div><div class="optanon-white-button-middle"><button title="Save Settings" aria-label="Save Settings" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Save Settings');">Save Settings</button></div><div class="optanon-white-button-right"></div></div><div class="optanon-button-wrapper optanon-allow-all-button optanon-allow-all" style="display: block;"><div class="optanon-white-button-left"></div><div class="optanon-white-button-middle"><button title="Allow All" aria-label="Allow All" onclick="Optanon.TriggerGoogleAnalyticsEvent('OneTrust Cookie Consent', 'Preferences Allow All');">Allow All</button></div><div class="optanon-white-button-right"></div></div></div></div></div><span class="ProductInterest" style="display:none"></span>
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="/assets/css/IE-fix.css" />
+	<![endif]-->
+			<!-- Google Tag Manager -->
+			<script>
+				(function (w, d, s, l, i) {
+					w[l] = w[l] || []; w[l].push({
+						'gtm.start':
+							new Date().getTime(), event: 'gtm.js'
+					}); var f = d.getElementsByTagName(s)[0],
+						j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : ''; j.async = true; j.src =
+							'//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+				})(window, document, 'script', 'dataLayer', 'GTM-MVFT24');
+			</script>
+			<!-- End Google Tag Manager -->
+
+
+
+
+  <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="QFXTL-U4VQG-RNY3Q-4KTV5-RTZM3",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&amp;&amp;window.attachEvent&amp;&amp;navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(c){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("&lt;bo"+"dy onload='document._boomrl();'&gt;");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&amp;&amp;e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&amp;&amp;!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"QFXTL-U4VQG-RNY3Q-4KTV5-RTZM3";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&amp;&amp;"function"==typeof r.relList.supports&amp;&amp;r.relList.supports("preload")&amp;&amp;"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length&gt;0)if(e&amp;&amp;"performance"in e&amp;&amp;e.performance&amp;&amp;"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="vhvruz5ygidhmx6iyq2q-f-9c7d4887c-clientnsv4-s.akamaihd.net",i={"ak.v":"29","ak.cp":"192022","ak.ai":parseInt("180631",10),"ak.ol":"0","ak.cr":13,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"19501205","ak.r":39730,"ak.a2":n,"ak.m":"b","ak.n":"essl","ak.bpcip":"169.235.26.0","ak.cport":42334,"ak.gh":"23.58.92.71","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1606992949","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==8UDjgxA+Ln6WEK50A43usn9mjzdQkx9lep6sL+zoyZxihQUwkmw01DsDiBqKum4Yhhgl6+zKUNX0Cfs43GpWru2nBtCeLY8JqrbkL1JViyLwQ6snbj6fPTc0YfGT2xHjhh49kXrYhkzTfFoBiwzJNrB8wRi2fgrdQA0aR47IOt2ntawjMdvXaXrCZL9ZQBlOHvxah8AZK1n7w3w2v64sxwJfaBZSTHYiUPLuvw0m8POCKc/s2DBOAJmi6uMpO/lfC0eILgLywlpeJI2WhRiZJEDbGqliB4ct9pa2PptxK0hUyU96SwKleCXfMAP6JRA1TjKC4m13Ao0rGZi9qr82nHfTCEvylGeE5K+FT0KusrMf+CS3hGi2RcBgDbaoaCxaeBnSwHVZ6ekQHoEuwy+L0h3wcQ3NBzVJfTFFpvcPyOE=","ak.pv":"52","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var o={i:!1,av:function(n){var t="http.initiator";if(n&amp;&amp;(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!o.i){var e=BOOMR.subscribe;e("before_beacon",o.av,null,null),e("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><link href="https://s.go-mpulse.net/boomerang/QFXTL-U4VQG-RNY3Q-4KTV5-RTZM3" rel="preload" as="script" />
+
+            <!-- Google Tag Manager -->
+            <noscript>
+                &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-MVFT24"
+                        height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+            </noscript>
+            <!-- End Google Tag Manager -->
+
+    <!-- New Site Code -->
+    <div class="off-canvas-wrap" data-offcanvas="">
+        <div class="inner-wrap">
+            <!-- Off Canvas CONTENT -->
+            <aside class="right-off-canvas-menu">
+                
+
+<article class="row">
+    <div class="large-12 columns">
+        <!-- CallToAction URL -->
+                    <div id="sidecontent" theformurl="/contact-us"></div>
+
+    </div>
+</article>
+            </aside>
+
+            
+
+
+
+    <header class="row">
+        <div>
+            <div class="small-12 left">
+                <ul style="position: absolute; right: 30px; list-style: none; top: 0"><li class="showhide" style="display: list-item;"><span class="icon"><em></em><em></em><em></em></span></li></ul><div class="global">
+                    
+<div class="medium-4 left branding-col">
+    <a href="/" class="brand logobrand" style="border: none;"><img src="/-/media/ansys/global/brandings/ansys-logo-yellow-skew-white-text.svg?h=63&amp;la=en&amp;w=195&amp;hash=D273CEA103FDFB623AE8410295175A3C1D5953BC" alt="ANSYS Logo" width="195" height="63" /></a>
+</div>
+
+
+                    <!-- branding -->
+                    <!-- //branding -->
+                    <!--Search for Mobile-->
+                    <div class="mobileheader mobile-global small-12 left" style="display:none;">
+<form action="/api/sitecore/List/SiteHeader" method="post">                            <div class="headersearchbox mobile-only">
+                                <div class="large-1 columns trigger-search" id="headersearchbutton"></div>
+                                <input type="text" name="searchName" class="search-input large-8 columns" id="searchbox" placeholder="Search" autocomplete="off" />
+                                <div class="myButton large-1 columns" id="headerglobalicon">
+                                    <ul class="inline-list left mgtop10">
+
+                                                        <li class="hide-for-small hide-for-medium">
+                    <a href="/about-ansys/careers"> 
+                    
+                    Careers
+                    </a>
+                </li>
+                <li class="hide-for-small hide-for-medium">
+                    <a href="/academic"> 
+                    
+                    Academic
+                    </a>
+                </li>
+                <li class="hide-for-small hide-for-medium">
+                    <a href="https://support.ansys.com"> 
+                    
+                    Customer Portal
+                    </a>
+                </li>
+                <li class="hide-for-small hide-for-medium">
+                    <a href="https://www.ansys.com/resource-library"> 
+                    
+                    Resource Library
+                    </a>
+                </li>
+                <li class="hide-for-small hide-for-medium">
+                    <a href="https://www.ansys.com/blog"> 
+                    
+                    Blog
+                    </a>
+                </li>
+                <li class="hide-for-small hide-for-medium">
+                    
+                    
+                    
+                    
+                </li>
+
+
+                                        <!-- country selection dropdown -->
+                                        <li class="country-dropdown theflags">
+
+                                            <a href="#" class="button split countries" style="margin-top: 5px; padding-right: 5px; border: none;">
+                                                        <img src="/assets/images/icons/global-search-icon-new.png" alt="United States" />
+
+                                                <span data-dropdown="country-drop"></span>
+                                            </a>
+                                            <br />
+                                                <div id="country-drop" class="f-dropdown">
+                                                    <ul>
+
+                                                        <li><a id="languageButton-en-IN" href="/en-in" onclick="SwitchToLanguage('en-in', 'en'); return false;">English, India</a></li>
+                                                        <li><a id="languageButton-en-GB" href="/en-gb" onclick="SwitchToLanguage('en-gb', 'en'); return false;">English, UK</a></li>
+                                                        <li><a id="languageButton-en" href="/en" onclick="SwitchToLanguage('en', 'en'); return false;" style="color: rgb(170, 170, 170);">English, US</a></li>
+                                                        <li><a id="languageButton-fr-FR" href="/fr-fr" onclick="SwitchToLanguage('fr-fr', 'en'); return false;">Français</a></li>
+                                                        <li><a id="languageButton-de-DE" href="/de-de" onclick="SwitchToLanguage('de-de', 'en'); return false;">Deutsch</a></li>
+                                                        <li><a id="languageButton-it-IT" href="/it-it" onclick="SwitchToLanguage('it-it', 'en'); return false;">Italiano</a></li>
+                                                        <li><a id="languageButton-ja-JP" href="/ja-jp" onclick="SwitchToLanguage('ja-jp', 'en'); return false;">日本語</a></li>
+                                                        <li><a id="languageButton-ko-KR" href="/ko-kr" onclick="SwitchToLanguage('ko-kr', 'en'); return false;">한국어</a></li>
+                                                        <li><a id="languageButton-zh-CN" href="/zh-cn" onclick="SwitchToLanguage('zh-cn', 'en'); return false;">简体中文</a></li>
+                                                        <li><a id="languageButton-zh-TW" href="/zh-tw" onclick="SwitchToLanguage('zh-tw', 'en'); return false;">繁體中文</a></li>
+                                                    </ul>
+                                                </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+</form>                    </div>
+                    <!--//Search for Mobile-->
+                    <!-- global navigation - CMS driven -->
+                    
+                    <!-- //global navigation -->
+                </div>
+            </div> <!-- //Closure of 2 divs from main.cshtml -->
+            <!-- primary navigation -->
+            <div class="small-12 left">
+                <div class="floatnone">
+                    <div class="small-12 floatleft">
+                        <ul id="jetmenu" class="jetmenu text-right"><li class="thetopsearch hide-for-small hide-for-medium" style="">
+                                <span class="search-icons"></span>
+                                <form action="/api/sitecore/List/SiteHeader" method="post">
+                                    <a title="Search Ansys.com" class="trigger-search hide-for-small"><i class="fa fa-play search-icon displaynone"></i></a>
+                                    <input type="text" class="search-input" placeholder="Search" name="searchName" autocomplete="off" />
+                                </form>
+                            </li><li style="display: none;">
+                                                            <a href="/products/free-trials" class="button"><span> 
+                                                            Free Trials
+                                                            </span></a>
+                                                                    
+
+                                                            
+                                                        </li>
+                                                        <li style="display: none;">
+                                                            <a href="/products"><span> 
+                                                            ProductS
+                                                            </span></a>
+                                                                    <a href="javascript:;" class="show-more rotatedown rotateddown"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                            <div class="megamenu full-width small-push-0 ">
+                                                                <div class="row">
+                                                                    <div class="medium-4 small-6 columns medium-12 small-12">
+                                                                        <ul style="column-count: 3;">
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+
+                                                                        <li>
+                                                                                                <a href="/products/3d-design"> 
+                                                                                                3D Design
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/academic"> 
+                                                                                                Academic
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/electronics"> 
+                                                                                                Electronics
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/embedded-software"> 
+                                                                                                Embedded Software
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/fluids"> 
+                                                                                                Fluids
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/materials"> 
+                                                                                                Materials
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/missions"> 
+                                                                                                Missions
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/optical"> 
+                                                                                                Optical
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/photonics"> 
+                                                                                                Photonics
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/products/platform"> 
+                                                                                                Platform
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                            <a href="/products/semiconductors"> 
+                                                                                            Semiconductors
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/products/structures"> 
+                                                                                            Structures
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/products/systems"> 
+                                                                                            Systems
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/products"> 
+                                                                                            All Products
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/products/ansys-store"> 
+                                                                                            Ansys Store
+                                                                                            </a>
+                                                                                        </li></ul>
+                                                                    </div>
+
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </li>
+                                                    <li class="fix-sub" style="display: none;">
+                                                        <a href="/solutions"><span> 
+                                                        
+                                                        Solutions
+                                                        </span></a>
+
+                                                        <a href="javascript:;" class="show-more rotatedown rotateddown"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                        <div class="megamenu full-width small-push-0 ">
+                                                            <div class="row">
+                                                                    <div class="medium-4 small-6 columns medium-12 small-12">
+                                                                        <ul style="column-count: 3;">
+                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                        <li class="title">
+                                                                                <a href="/solutions/solutions-by-industry"> 
+                                                                                <h5>Solutions by Industry</h5>
+                                                                                </a>
+                                                                            </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/automotive"> 
+                                                                                    Automotive
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/aerospace"> 
+                                                                                    Aerospace
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/construction"> 
+                                                                                    Construction
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/consumer-goods"> 
+                                                                                    Consumer Goods
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/energy"> 
+                                                                                    Energy
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/healthcare"> 
+                                                                                    Healthcare
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/high-tech"> 
+                                                                                    High-Tech
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/industrial-equipment-and-rotating-machinery"> 
+                                                                                    Industrial Equipment &amp; Rotating Machinery
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/materials-and-chemical-processing"> 
+                                                                                    Materials &amp; Chemical Processing
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-industry/military"> 
+                                                                                    Military
+                                                                                    </a>
+                                                                                </li><li class="title">
+                                                                                <a href="/solutions/technology-trends"> 
+                                                                                <h5>Technology Trends</h5>
+                                                                                </a>
+                                                                            </li><li>
+                                                                                    <a href="/solutions/technology-trends/5g"> 
+                                                                                    5G
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/technology-trends/autonomous-engineering"> 
+                                                                                    Autonomous Engineering
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/technology-trends/electrification"> 
+                                                                                    Electrification
+                                                                                    </a>
+                                                                                </li><li class="title">
+                                                                                <a href="/solutions/solutions-by-role"> 
+                                                                                <h5>Solutions by Role</h5>
+                                                                                </a>
+                                                                            </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/engineers"> 
+                                                                                    Engineers
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/executives"> 
+                                                                                    Executives
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/it-professionals"> 
+                                                                                    IT Professionals
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/product-designers"> 
+                                                                                    Product Designers
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/managers"> 
+                                                                                    Managers
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/solutions/solutions-by-role/professors"> 
+                                                                                    Professors
+                                                                                    </a>
+                                                                                </li><li>
+                                                                                    <a href="/academic"> 
+                                                                                    Students
+                                                                                    </a>
+                                                                                </li></ul>
+                                                                    </div>
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                        <li style="display: none;">
+                                                            <a href="/services"><span> 
+                                                            Services
+                                                            </span></a>
+                                                                    <a href="javascript:;" class="show-more rotatedown rotateddown"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                            <div class="megamenu full-width small-push-0 ">
+                                                                <div class="row">
+                                                                    <div class="medium-4 small-6 columns medium-12 small-12">
+                                                                        <ul style="column-count: 3;">
+                                                                                            
+                                                                                            
+
+                                                                        <li>
+                                                                                                <a href="/services/training-center"> 
+                                                                                                Training
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/services/learning-hub"> 
+                                                                                                Ansys Learning Hub
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/services/consulting"> 
+                                                                                                Consulting &amp; Professional Services
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                            <a href="/services/reliability-engineering-services"> 
+                                                                                            Reliability Engineering Services
+                                                                                            </a>
+                                                                                        </li></ul>
+                                                                    </div>
+
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </li>
+                                                        <li style="display: none;">
+                                                            <a href="/support"><span> 
+                                                            Support
+                                                            </span></a>
+                                                                    <a href="javascript:;" class="show-more"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                            
+                                                        </li>
+                                                        <li style="display: none;">
+                                                            <a href="/about-ansys"><span> 
+                                                            About Ansys
+                                                            </span></a>
+                                                                    <a href="javascript:;" class="show-more rotatedown rotateddown"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                            <div class="megamenu full-width small-push-0 ">
+                                                                <div class="row">
+                                                                    <div class="medium-4 small-6 columns medium-12 small-12">
+                                                                        <ul style="column-count: 3;">
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+
+                                                                        <li>
+                                                                                                <a href="/about-ansys/advantage-magazine"> 
+                                                                                                Ansys Advantage Magazine
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/diversity-and-inclusion"> 
+                                                                                                Diversity &amp; Inclusion
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/business-ethics"> 
+                                                                                                Business Ethics
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/contact-us"> 
+                                                                                                Contacts &amp; Locations
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/dimensions-magazine"> 
+                                                                                                Dimensions Magazine
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/events"> 
+                                                                                                Events
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/investor-relations"> 
+                                                                                                Investor Relations
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a href="/about-ansys/news-center"> 
+                                                                                                News Center
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                            <a href="/about-ansys/partner-ecosystem"> 
+                                                                                            Ansys Partner Ecosystem
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/about-ansys/careers"> 
+                                                                                            Careers
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/about-ansys/quality-assurance"> 
+                                                                                            Quality Assurance
+                                                                                            </a>
+                                                                                        </li><li>
+                                                                                            <a href="/about-ansys/startup-program"> 
+                                                                                            Ansys Startup Program
+                                                                                            </a>
+                                                                                        </li></ul>
+                                                                    </div>
+
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+                                                                    <div class="medium-4 small-6 columns">
+                                                                        
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </li>
+                                                        
+                                                        
+
+                            <li class="" style="display: none;">
+                    <a href="/about-ansys/careers"> 
+                    
+                    Careers
+                    </a>
+                <a href="javascript:;" class="show-more" style="right: 43px;"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a></li><li class="" style="display: none;">
+                    <a href="/academic"> 
+                    
+                    Academic
+                    </a>
+                <a href="javascript:;" class="show-more" style="right: 43px;"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a></li><li class="" style="display: none;">
+                    <a href="https://support.ansys.com"> 
+                    
+                    Customer Portal
+                    </a>
+                <a href="javascript:;" class="show-more" style="right: 43px;"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a></li><li class="" style="display: none;">
+                    <a href="https://www.ansys.com/resource-library"> 
+                    
+                    Resource Library
+                    </a>
+                <a href="javascript:;" class="show-more" style="right: 43px;"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a></li><li class="" style="display: none;">
+                    <a href="https://www.ansys.com/blog"> 
+                    
+                    Blog
+                    </a>
+                <a href="javascript:;" class="show-more" style="right: 43px;"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a></li><li style="display: none;">
+                                                            <a href="/contact-us" class="move-to-last"><span> 
+                                                            Contact Us
+                                                            </span></a>
+                                                                    <a href="javascript:;" class="show-more"><span class="visuallyhidden"><i class="thersaquoright"></i></span></a>
+
+                                                            
+                                                        </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <span class="themegamenubg "></span>
+    </header>
+
+
+
+<!-- Homepage Content - Hero Slider -->
+
+    <div class="row row-full-width">
+        <div class="small-12 row banner-row-full-width">
+            <div class="homepage-hero-refresh productspagetopbanner slick-initialized slick-slider">
+                                <div class="slick-list draggable" tabindex="0"><div class="slick-track" style="opacity: 1; width: 6520px; transform: translate3d(-815px, 0px, 0px);"><div class="thebgimgbanner-refresh innerpage slick-slide slick-cloned" data-slick-index="-1" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19" disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/prith-mobile-banner.jpg?h=407&amp;la=en&amp;w=490&amp;hash=9587C5331EC39D2CD34472B1693439999499B962" class="mobile-only-banner" alt="Agile Engineering, COVID-19 and the Cloud" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/homepage/prith-thought-leadership-banner.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=A363C94BBF69E7EBEFAAE2AD7FF6CC691BED6E1F" class="desktop-only-banner" alt="Agile Engineering, COVID-19 and the Cloud" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><div class="show-for-small" style="text-align: left;">
+<!--<p class="banner-header" style="text-align:center;">Agile Engineering, COVID-19 and the Cloud</p>-->
+<p class="button button-black" style="margin-top:130px;"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<div class="show-for-medium">
+<p class="banner-header" style="text-align:center;">Agile Engineering, COVID-19 and the Cloud</p>
+
+<p class="button button-black mgtop20"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<div class="show-for-large-up">
+<p class="banner-header" style="color:#000; width:50%">Agile Engineering, COVID-19 and the Cloud </p>
+<p class="banner-text" style="color: rgb(0, 0, 0); display: none;">Thought Leadership from <br />Prith Banerjee </p>
+<p class="button button-black mgtop20 floatleft"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<!--<h2 class="banner-header hide-for-small"style="color:#000; width:50%">Agile Engineering, COVID-19 and the Cloud </h2>
+<p class="banner-text" style="color:#000">Thought Leadership from <br />Prith Banerjee </p>
+<p class="button button-black mgtop20 floatleft"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>--></div>
+                                        <div class="button btn-inverse displaynone" style="">
+<a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19"> </a>
+                                        </div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide slick-active" data-slick-index="0" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/ansys-dynardo-mobile-rebrand.png?h=407&amp;la=en&amp;w=490&amp;hash=AA6CF3FB67C2CE934C2E2D101D7BDB5E354CE60C" class="mobile-only-banner" alt="ANSYS Acquires Dynardo" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/agi-banner.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=4F1ECD75EC810EF94A881E7D17EA1219A8F5A27C" class="desktop-only-banner" alt="Ansys and Analytical Graphics, Inc. Sign Definitive Acquisition Agreement" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p class="banner-header">Ansys Acquires<br />
+Analytical Graphics, Inc.</p>
+<!--
+<p class="hide-for-small banner-text mgtop30">It&rsquo;s time to level up&hellip;for every engineer</p>
+<p class="hide-for-small banner-text " style="color: #ffb71b;">12 dynamic breakout sessions<br>
+Insightful Q&A with development</p>-->
+<p><a href="/products/missions" class="button button-dark mgtop10">Learn More</a></p></div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide" data-slick-index="1" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/ansys-dynardo-mobile-rebrand.png?h=407&amp;la=en&amp;w=490&amp;hash=AA6CF3FB67C2CE934C2E2D101D7BDB5E354CE60C" class="mobile-only-banner" alt="ANSYS Acquires Dynardo" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/homepage/ansys-r2-homepage-banner.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=7B0D3ACEFD20F9ABE47359C58DF1BCF08280A09A" class="desktop-only-banner" alt="Next-Generation Pervasive Engineering Simulation: Now Available" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p class="banner-header show-for-small">Ansys 2020 R2</p>
+<h2 class="banner-header">Next-Generation Pervasive Engineering Simulation:</h2>
+<p class="banner-text" style="display: none;">Ansys 2020 R2 delivers enhanced solving and collaboration capabilities to help our customers accelerate team-wide information sharing and innovation</p>
+<p class="button button-white mgtop10"><a href="/products/release-highlights">Now Available</a></p></div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide" data-slick-index="2" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/ansys-dynardo-mobile-rebrand.png?h=407&amp;la=en&amp;w=490&amp;hash=AA6CF3FB67C2CE934C2E2D101D7BDB5E354CE60C" class="mobile-only-banner" alt="ANSYS Acquires Dynardo" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/homepage/level-up-1950x675.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=E80B2B7AA8C5950E1E754A45080EE4B82910A32B" class="desktop-only-banner" alt="Level Up with Ansys Mechanical" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p class="banner-header">Think you know Ansys Mechanical? Think again.</p>
+<p class="hide-for-small banner-text mgtop30" style="display: none;">It’s time to level up…for every engineer</p>
+<p class="hide-for-small banner-text " style="color: rgb(255, 183, 27); display: none;">12 dynamic breakout sessions<br />
+Insightful Q&amp;A with development</p>
+<p><a href="/about-ansys/events/level-up-mechanical" class="button button-dark mgtop10">Register</a></p></div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide" data-slick-index="3" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/ansys-livermore-mobile-rebrand.png?h=407&amp;la=en&amp;w=490&amp;hash=E87A96041B00D5522B5E19C8B14F775176E356F5" class="mobile-only-banner" alt="ANSYS LSTC" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/homepage/simulation-world-banner-hp.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=4FA9AF2968AB7C733FE5530C7EAF683402170A3D" class="desktop-only-banner" alt="Simulation World" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p><img class="pdbottom10" height="96" alt="Simulation World" width="800" src="/-/media/ansys/corporate/banners/homepage/simulation-world-banner-v2.jpg?la=en&amp;hash=8DF106C77952E4970EC3B18A68453CDD88C38A55" /></p>
+<p class="banner-text" style="display: none;">The largest engineering simulation virtual event in the world.</p>
+<p>June 10-11, 2020 | <span style="color: #ffb71b;">Free Online Live Event</span></p>
+<p class="button button-dark mgtop10"><a href="https://www.simulationworld.com/?utm_medium=homepage-banner" target="_blank">Register</a></p>
+</div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide" data-slick-index="4" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/ansysrefresh/banner/solutions/mobile/default-mobile.jpg?h=407&amp;la=en&amp;w=409&amp;hash=2F04D81D17A52BC331A1DC4C98F040F38217024B" class="mobile-only-banner" alt="Banner Image" width="409" height="407" style="" /><img src="/-/media/ansys/corporate/banners/advatange-xiv-issue-1-2020.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=B04B532E5DA48AC41ACEEA99E4F064CFF7761516" class="desktop-only-banner" alt="FOCUS ON INTELLIGENT MOBILITY" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p class="banner-header">Ansys Advantage Magazine</p>
+<p class="hide-for-small">Focus on Intelligent Mobility</p>
+<p class="show-for-small"><strong>Focus on Intelligent Mobility</strong></p>
+<p class="button mgtop10"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-1-2020">Available Now</a></p></div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide" data-slick-index="5" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19" disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/prith-mobile-banner.jpg?h=407&amp;la=en&amp;w=490&amp;hash=9587C5331EC39D2CD34472B1693439999499B962" class="mobile-only-banner" alt="Agile Engineering, COVID-19 and the Cloud" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/homepage/prith-thought-leadership-banner.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=A363C94BBF69E7EBEFAAE2AD7FF6CC691BED6E1F" class="desktop-only-banner" alt="Agile Engineering, COVID-19 and the Cloud" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><div class="show-for-small" style="text-align: left;">
+<!--<p class="banner-header" style="text-align:center;">Agile Engineering, COVID-19 and the Cloud</p>-->
+<p class="button button-black" style="margin-top:130px;"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<div class="show-for-medium">
+<p class="banner-header" style="text-align:center;">Agile Engineering, COVID-19 and the Cloud</p>
+<p class="banner-text" style="text-align: center; display: none;">Thought Leadership from <br />Prith Banerjee</p>
+<p class="button button-black mgtop20"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<div class="show-for-large-up">
+<p class="banner-header" style="color:#000; width:50%">Agile Engineering, COVID-19 and the Cloud </p>
+<p class="banner-text" style="color: rgb(0, 0, 0); display: none;">Thought Leadership from <br />Prith Banerjee </p>
+<p class="button button-black mgtop20 floatleft"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>
+</div>
+
+<!--<h2 class="banner-header hide-for-small"style="color:#000; width:50%">Agile Engineering, COVID-19 and the Cloud </h2>
+<p class="banner-text" style="color:#000">Thought Leadership from <br />Prith Banerjee </p>
+<p class="button button-black mgtop20 floatleft"><a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19">Learn More</a></p>--></div>
+                                        <div class="button btn-inverse displaynone" style="">
+<a href="/about-ansys/advantage-magazine/volume-xiv-issue-2-2020/engineering-agility-covid-19"> </a>
+                                        </div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div><div class="thebgimgbanner-refresh innerpage slick-slide slick-cloned" data-slick-index="6" style="min-height: 0px; height: 100%; width: 815px;">
+                                    <div style="position: relative;" class="theimg">
+<a disablewebedit="False" style="border: none;"> <img src="/-/media/ansys/corporate/banners/homepage/ansys-dynardo-mobile-rebrand.png?h=407&amp;la=en&amp;w=490&amp;hash=AA6CF3FB67C2CE934C2E2D101D7BDB5E354CE60C" class="mobile-only-banner" alt="ANSYS Acquires Dynardo" width="490" height="407" style="" /><img src="/-/media/ansys/corporate/banners/agi-banner.jpg?h=675&amp;la=en&amp;w=1950&amp;hash=4F1ECD75EC810EF94A881E7D17EA1219A8F5A27C" class="desktop-only-banner" alt="Ansys and Analytical Graphics, Inc. Sign Definitive Acquisition Agreement" width="1950" height="675" /></a>
+                                    </div>
+
+                                    <div class="banner-information large-6 medium-12 small-12 small-only-text-center medium-only-text-center columns" style="left: 15px; display: block !important;">
+                                                                <div class="table">
+                            <div class="valign">
+
+
+                                <div style="" class="banner-description"><p class="banner-header">Ansys Acquires<br />
+Analytical Graphics, Inc.</p>
+<!--
+<p class="hide-for-small banner-text mgtop30">It&rsquo;s time to level up&hellip;for every engineer</p>
+<p class="hide-for-small banner-text " style="color: #ffb71b;">12 dynamic breakout sessions<br>
+Insightful Q&A with development</p>-->
+<p><a href="/products/missions" class="button button-dark mgtop10">Learn More</a></p></div>
+
+                            </div>
+                        </div>
+
+                                    </div>
+                                </div></div></div>
+                                
+                                
+                                
+                                
+                                
+
+            <button type="button" data-role="none" class="slick-prev" style="display: inline-block;"><img src="/assets/images/buttons/herobanner-leftarrow.png" /></button><button type="button" data-role="none" class="slick-next" style="display: inline-block;"><img src="/assets/images/buttons/herobanner-rightarrow.png" /></button><ul class="slick-dots" style="display: block;"><li class="slick-active"><a class="slider-node"></a></li><li><a class="slider-node"></a></li><li><a class="slider-node"></a></li><li><a class="slider-node"></a></li><li><a class="slider-node"></a></li><li><a class="slider-node"></a></li></ul></div>
+        </div>
+    </div>
+
+<!-- //Homepage Content - Hero Slider -->
+
+<section class="main-content">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="large-12 medium-12 columns">
+                <div class="row">
+                    
+
+
+
+
+    <article class="row thecontentimageblockrefresh" style="background: url(&quot;/-/media/ansys/hpfeatureboxes/innovation-hpbg.jpg&quot;) 0px 0px / cover repeat rgb(255, 255, 255); margin-bottom: 0px; max-width: 100% !important; height: auto;">
+            <div class="thebgimgbanner">
+
+                <div style="position: absolute;" class="theimg">
+                    
+                </div>
+
+                <div class="banner-information medium-6 small-12 small-only-text-center columns floatleft clear-both" style="height: auto; width: 100%; text-align: left; padding-top: 100px; display: block !important;">
+                    <div class="table">
+                        <div class="valign">
+                            <div class="large-12 columns">
+
+                                <div class="title">
+                                    <div class="row text-center">
+                                            <h2 class="component-header text-center pdbottom20" style="color: #222222;"><span class="titletilt">Facing COVID-19 Challenges With Our Customers and Partners</span></h2>
+                                        <div class="hpsection2rebrand">
+<p>To support the fight against COVID-19, Ansys is sharing key insights from our own analyses and those of our customers and partners. By understanding the physics of how it is spread and how it may be contained, we can all be a part of the solution.</p>
+</div>
+<p><div class="outer_vidyard_wrapper"><div class="vidyard_wrapper" onclick="fn_vidyard_mdb4W3TAhg7vTmHZVrfYR2();" style="float: none;"><a href="https://play.vidyard.com/mdb4W3TAhg7vTmHZVrfYR2" style="border: none;"><img height="339" alt="Fit Mask Properly" width="686" src="/-/media/ansys/corporate/images/about/covid/fit-properly-mask-simulation-1-v2.jpg?la=en&amp;hash=168E96A3CE1FB6D02C0EB22C62AF286968AECCC6" /><script src="//play.vidyard.com/mdb4W3TAhg7vTmHZVrfYR2.js?v=3.1.1&amp;type=lightbox" id="vidyard_embed_code_mdb4W3TAhg7vTmHZVrfYR2"></script></a></div></div><br />
+<span style="font-size: 1rem;"><em>Simulation shows how a properly fitted mask can help stem the spread of COVID-19</em></span></p>
+<p><a class="button max" style="display: block;" href="/about-ansys/covid-19-simulation-insights">Learn More</a></p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </article>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-12 columns">
+            
+        </div>
+
+        <div class="medium-12 columns">
+            
+        </div>
+    </div>
+
+
+    <div class="row hpsection2rebrand" data-equalizer="hpsection2rebrand">
+
+
+    <div class="small-12 columns">
+        <div class="small-12 medium-12 left">
+            
+            
+            <div class="text-center mgbottom30 mgleft15 mgright15">
+                <h3 class="mgtop30 mgbottom30"><span class="titletilt">Realize Your Product Promise</span></h3>
+                <h1 class="mgtop30 mgbottom30" style="font-size:1.75rem"><span class="titletilt">Realize Your Product Promise</span></h1>
+<p>Ansys offers a comprehensive software suite that spans the entire range of physics, providing access to virtually any field of engineering simulation that a design process requires. Organizations around the world trust Ansys to deliver the best value for their engineering simulation software investment.</p>
+            </div>
+        </div>
+
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/3d-design-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=818CFCEAA2F8EC03619EC332A0E9925330AE9EFA" alt="3d-design" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                3D Design
+                            </h4>
+
+                            <p>Rapidly explore ideas, iterate and innovate with Ansys Discovery 3D design software. With the easy-to-use tools, you can build and optimize lighter and smarter products.</p>
+
+                                        <p>
+                                            <a class="button realigned" href="/products/3d-design" style="margin-top: 97.8125px;">Learn More
+                                            </a>
+                                        </p>
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/electromagnetics-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=E26CFC58A6DD29F1D3451573FAA5F89BCAD4955A" alt="electromagnetic" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Electronics
+                            </h4>
+
+                            <p>Ansys software can uniquely simulate electromagnetic performance across component, circuit and system design, and can evaluate temperature, vibration and other critical mechanical effects. </p>
+
+                                        <p>
+                                            <a class="button realigned" href="/products/electronics" style="margin-top: 71.8125px;"> Learn More
+                                            </a>
+                                        </p>
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/embedded-software-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=C0DB24A689D4C1CD7A959AE703D643F195516BE2" alt="embedded software" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Embedded Software
+                            </h4>
+
+                            <p>Ansys provides a model-based embedded software development and simulation environment with a built-in automatic code generator to accelerate embedded software development projects.</p>
+<a href="/products/embedded-software" class="button realigned" style="margin-top: 71.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/fluids-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=BF7458BA7D61885F40443E8CDCF1B7A1CB77B5EC" alt="fluids" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Fluids
+                            </h4>
+
+                            <p>Ansys CFD goes beyond qualitative results to deliver accurate quantitative predictions of fluid interactions and trade-offs.</p>
+<a href="/products/fluids" class="button realigned" style="margin-top: 123.812px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/materials-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=6D3968CF63E1E9886C91498DBD7AB9D4BCB43357" alt="materials" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Materials
+                            </h4>
+
+                            <p>Ansys software ensures accurate, consistent, traceable materials information every time and provides the tools you need to support design, research and teaching.</p>
+<a href="/products/materials" class="button realigned" style="margin-top: 97.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/missions-hp-icon-yellow.png?h=70&amp;la=en&amp;w=70&amp;hash=484F7213ACA3739A225E9183D2E2B968C5FC7DB1" alt="" width="70" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Missions
+                            </h4>
+
+                            <p>AGI’s digital mission engineering software allows you to extend your analysis to every phase of the project life cycle.</p>
+<a href="/products/missions" class="button realigned" style="margin-top: 123.812px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/optical-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=BA6E19EC4E4DC4D83D6B7BE32A53A3075EC3B69D" alt="optical" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Optical
+                            </h4>
+
+                            <p>Ansys optical simulation software uniquely simulates a system’s optical performance and evaluates the final illumination effect.</p>
+<a href="/products/optical" class="button realigned" style="margin-top: 123.812px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/photonics-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=70105216CE3FCFC5416B8926AF142CB83F67A703" alt="photonics icon" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Photonics
+                            </h4>
+
+                            <p>Products, solvers and interoperability features that work together seamlessly to allow designers to model the most challenging problems in photonics that include interacting optical, electrical and thermal effects.</p>
+<a href="/products/photonics" class="button realigned" style="margin-top: 45.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/platform-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=887D0F726BEB6605F6D9AB56E1D920E199987410" alt="platform" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Platform
+                            </h4>
+
+                            <p>The Ansys simulation platform delivers the broadest suite of best-in-class simulation technology and unifies it with your custom applications, CAD software and enterprise business process tools such as PLM.</p>
+<a href="/products/platform" class="button realigned" style="margin-top: 71.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/semiconductors-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=84DFD08B4ED761F2D8823D2EC14E9FA966869558" alt="semiconductor" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Semiconductors
+                            </h4>
+
+                            <p>Ansys empowers customers with multiphysics simulations to simultaneously solve power, thermal, variability, timing, electromagnetics and reliability challenges across the spectrum of chip, package and system to promote first-time silicon and system success.</p>
+<a href="/products/semiconductors" class="button realigned" style="margin-top: 19.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/structures-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=CB4ED0A536FBEB039D7D133EE7896B10E23BB1AF" alt="structure" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Structures
+                            </h4>
+
+                            <p>With the finite element analysis (FEA) solvers available in the suite, you can customize and automate solutions for your structural mechanics problems and parameterize them to analyze multiple design scenarios. </p>
+<a href="/products/structures" class="button realigned" style="margin-top: 45.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+                    <div class="small-12 medium-6 large-3 columns">
+                        <div class="text-center" data-equalizer-watch="hpsection2rebrand" style="height: 409px;">
+                            <img src="/-/media/ansys/ansysrefresh/product-icons-yellow/systems-hp-icon-yellow.png?h=70&amp;la=en&amp;w=85&amp;hash=F6CD6B75F030E5208EA1F465BBC60B4A94EA47C7" alt="system" width="85" height="70" />
+                            
+
+                            <h4 class="equalizeheight" style="height: 70px; text-transform: uppercase;">
+                                Systems
+                            </h4>
+
+                            <p>As product complexity grows, so does the challenge of integrating individual components within a system to ensure they work together as expected.</p>
+<a href="/products/systems" class="button realigned" style="margin-top: 97.8125px;">Learn More</a>
+
+
+                        </div>
+                    </div>
+
+    </div>
+
+    <div class="small-12 medium-12 left">
+        <div class="text-center mgbottom30">
+                    <p><a class="button viewallbtn" href="/products">View All Products</a></p>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="small-12 row row-full-width">
+    <div class="small-12 customerspotlight-refresh left slick-initialized slick-slider" data-equalizer="customerspotlight">
+                    <div class="slick-list draggable" tabindex="0"><div class="slick-track" style="opacity: 1; width: 7065px; transform: translate3d(-785px, 0px, 0px);"><div class="customerspotlightbanner slick-slide slick-cloned" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="-1">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/grundfos-dimensions-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=63B585ABD8B2C6805F151B0DF3CA093E6FC82D53" alt="Grundfos" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Grundfos</h2>
+                                <p style="color:#000;">Grundfos – the global leader in pumps and systems – leverages Ansys’ Digital Twin technology to analyze real-time operational data to understand product performance in real-world operating conditions and gain better insight for faster decision making.
+<a href="/about-ansys/dimensions-magazine/spring-2018/pumped-up-innovating-mature-products" class="button button-black">LEARN MORE</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide slick-active" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="0">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/airbus-spacecraft-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=457F39E6BB304B6FF587BF32A2B427457BEB99D6" alt="Airbus spotlight" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Airbus</h2>
+                                <p style="color:#000;">Global aerospace leader Airbus used Ansys fluid–structure interaction and other multiphysics simulations to maximize the performance and minimize the cost and lead time of its cutting-edge spacecraft product.
+<a href="/about-ansys/advantage-magazine/volume-xi-issue-3-2017/decreasing-spacecraft-fuel-sloshing" class="button button-black">Learn More</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="1">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/rossignol-ansys-discovery-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=AB4B6EA5CA85B422EFBFDD657B9F434A10229C66" alt="Rossignol" width="837" height="494" title="Rossignol Ansys Discovery Optimized" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Rossignol</h2>
+                                <p style="color:#000;">Rossignol uses the near-instantaneous simulation speed and visualization capabilities of Ansys Discovery Live to involve more people in the design of next-generation snow skis that are “fastest in snow” while also having the fastest time between ideation and prototyping.
+<div class="outer_vidyard_wrapper"><div class="vidyard_wrapper" onclick="fn_vidyard_LKXUAJWqjKazDnAjEdaQtB();" style="float: none;"><a href="https://play.vidyard.com/LKXUAJWqjKazDnAjEdaQtB" class="button button-black">LEARN MORE<script src="//play.vidyard.com/LKXUAJWqjKazDnAjEdaQtB.js?v=3.1.1&amp;type=lightbox" id="vidyard_embed_code_LKXUAJWqjKazDnAjEdaQtB"></script></a></div></div></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="2">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a href="/about-ansys/advantage-magazine/volume-xii-issue-2-2018/pointing-rfids-in-the-right-direction" style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/honeywell-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=5554326E1D92D9B257E60BABD1465D15023B4459" alt="Honeywell Spotlight" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Honeywell</h2>
+                                <p style="color:#000;">Honeywell improved their RFID antenna systems with Ansys electromagnetic simulation software to virtually evaluate new designs in mere minutes, significantly reducing product development lead time.
+<a href="/about-ansys/advantage-magazine/volume-xii-issue-2-2018/pointing-rfids-in-the-right-direction" class="button button-black">Learn More</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="3">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/esilicon-voltage-plot-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=58921D906B1DBE3FA40B831848B146A04D974D8C" alt="eSilicon" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on eSilicon</h2>
+                                <p style="color:#000;">eSilicon relies on Ansys’ chip-package-system (CPS) modeling and simulation software to test and validate their 5G semiconductor designs while lowering risks and reducing time to market.
+<a href="/about-ansys/advantage-magazine/volume-xiii-issue-1-2019/speeding-5g-network-infrastructure-design" class="button button-black">LEARN MORE</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="4">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/motor-room-cfd-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=3B63E62F8B182CA1381437AAF8980B7A75CC4825" alt="Motor" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Marelli Motori</h2>
+                                <p style="color:#000;">Ansys multiphysics simulations helped Marelli Motori engineers to design the most efficient components for their customized electric motors and generators 60-70% faster, reducing development costs in the process.
+<a href="/about-ansys/advantage-magazine/volume-xiii-issue-1-2019/electrifying-solutions-for-motors-and-generators" class="button button-black">LEARN MORE</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="5">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a href="/about-ansys/advantage-magazine/volume-xiii-issue-1-2019/peak-performance-for-an-electric-vehicle" style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/volkswagen-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=AB238C0FDC063B6C13AA601E8EFD3755AC5A99C0" alt="Volkswagen" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Volkswagen Motorsport</h2>
+                                <p style="color:#000;"></p><p style="color:#000;">Using Ansys, VW optimized the battery cooling system with minimal weight and aerodynamic drag loss, and simulated the course’s extreme driving conditions, resulting in one incredible vehicle and one world record at the Pikes Peak International Hill Climb in 2018.</p>
+<a href="/about-ansys/advantage-magazine/volume-xiii-issue-1-2019/peak-performance-for-an-electric-vehicle" class="button button-black">LEARN MORE</a><p></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="6">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/grundfos-dimensions-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=63B585ABD8B2C6805F151B0DF3CA093E6FC82D53" alt="Grundfos" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Grundfos</h2>
+                                <p style="color:#000;">Grundfos – the global leader in pumps and systems – leverages Ansys’ Digital Twin technology to analyze real-time operational data to understand product performance in real-world operating conditions and gain better insight for faster decision making.
+<a href="/about-ansys/dimensions-magazine/spring-2018/pumped-up-innovating-mature-products" class="button button-black">LEARN MORE</a></p>
+                                
+                            </div>
+
+                    </div><div class="customerspotlightbanner slick-slide slick-cloned" style="background: rgb(255, 183, 27); height: 710px; width: 785px;" data-equalizer-watch="customerspotlight" data-slick-index="7">
+                            <div class="theimg small-12 medium-12 large-6 left">
+<a style="border: none;"> 
+                                <img src="/-/media/ansys/corporate/home-page-components/customer-spotlight/airbus-spacecraft-optimized.jpg?h=494&amp;la=en&amp;w=837&amp;hash=457F39E6BB304B6FF587BF32A2B427457BEB99D6" alt="Airbus spotlight" width="837" height="494" />
+                                </a>
+                            </div>
+                            <div class="customerspotlight-information small-12 medium-12 large-6 columns">
+                                <h2 style="color:#000;">Spotlight on Airbus</h2>
+                                <p style="color:#000;">Global aerospace leader Airbus used Ansys fluid–structure interaction and other multiphysics simulations to maximize the performance and minimize the cost and lead time of its cutting-edge spacecraft product.
+<a href="/about-ansys/advantage-magazine/volume-xi-issue-3-2017/decreasing-spacecraft-fuel-sloshing" class="button button-black">Learn More</a></p>
+                                
+                            </div>
+
+                    </div></div></div>
+                    
+                    
+                    
+                    
+                    
+                    
+
+    <button type="button" data-role="none" class="slick-prev" style="display: block; top: 211.5px;"><img src="/assets/images/buttons/herobanner-leftarrow.png" /></button><button type="button" data-role="none" class="slick-next" style="display: block; top: 211.5px;"><img src="/assets/images/buttons/herobanner-rightarrow.png" /></button></div>
+</div>
+
+
+    
+
+<div class="small-12 mgbottom30 mgtop30 left">
+    <h2 class="component-header pdbottom30 text-center"><span class="titletilt">Industry Recognition and Awards</span></h2>
+    <div class="basecarousal small-12 slick-initialized slick-slider">
+                    <div class="slick-list draggable" tabindex="0" style="padding: 0px 50px;"><div class="slick-track" style="opacity: 1; width: 13651px; transform: translate3d(-1550px, 0px, 0px);"><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="-7" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/iot-breakthrough-awards.jpg?la=en&amp;hash=B5BB0E366CCC0A391F02198C5CDAA375806DF95B" alt="IoT Breakthrough Awards" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="-6" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/avt-aces-autonomous.jpg?h=126&amp;la=en&amp;w=316&amp;hash=E98A6C4C4B3F5CD26DA3AC79A74778AEDFAD45A6" alt="AVT ACES" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="-5" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/fastcompany-best-workplaces-innovators.jpg?h=126&amp;la=en&amp;w=316&amp;hash=9ED9977FEA1A84BE858BAF8F2AEB719DBB8E53AC" alt="Fastcompany Best Workplaces for Innovators" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="-4" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/rnd100-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=A46CD4C226D9539D3E003DB47E63575E2BF3FE59" alt="rnd100" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned slick-active" data-slick-index="-3" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/pittsinnovator-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=94ED3AA7FCB398D25B3E8030731656D2CFADD4EA" alt="pittsinnovator" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned slick-active" data-slick-index="-2" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/edicon-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=96C7639CB3B95DFD09F979430711C92BF8E0FD7E" alt="edicon" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned slick-active" data-slick-index="-1" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/techbriefs-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=F508B2438AE47731C8D3C1D3E7B84FEFB876397D" alt="techbriefs" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-active slick-center" data-slick-index="0" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/iot-breakthrough-awards.jpg?la=en&amp;hash=B5BB0E366CCC0A391F02198C5CDAA375806DF95B" alt="IoT Breakthrough Awards" />
+                    </div><div class="thebgimgbanner slick-slide slick-active" data-slick-index="1" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/avt-aces-autonomous.jpg?h=126&amp;la=en&amp;w=316&amp;hash=E98A6C4C4B3F5CD26DA3AC79A74778AEDFAD45A6" alt="AVT ACES" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-active" data-slick-index="2" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/fastcompany-best-workplaces-innovators.jpg?h=126&amp;la=en&amp;w=316&amp;hash=9ED9977FEA1A84BE858BAF8F2AEB719DBB8E53AC" alt="Fastcompany Best Workplaces for Innovators" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-active" data-slick-index="3" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/rnd100-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=A46CD4C226D9539D3E003DB47E63575E2BF3FE59" alt="rnd100" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide" data-slick-index="4" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/pittsinnovator-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=94ED3AA7FCB398D25B3E8030731656D2CFADD4EA" alt="pittsinnovator" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide" data-slick-index="5" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/edicon-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=96C7639CB3B95DFD09F979430711C92BF8E0FD7E" alt="edicon" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide" data-slick-index="6" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/techbriefs-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=F508B2438AE47731C8D3C1D3E7B84FEFB876397D" alt="techbriefs" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned slick-center" data-slick-index="7" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/iot-breakthrough-awards.jpg?la=en&amp;hash=B5BB0E366CCC0A391F02198C5CDAA375806DF95B" alt="IoT Breakthrough Awards" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="8" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/avt-aces-autonomous.jpg?h=126&amp;la=en&amp;w=316&amp;hash=E98A6C4C4B3F5CD26DA3AC79A74778AEDFAD45A6" alt="AVT ACES" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="9" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/fastcompany-best-workplaces-innovators.jpg?h=126&amp;la=en&amp;w=316&amp;hash=9ED9977FEA1A84BE858BAF8F2AEB719DBB8E53AC" alt="Fastcompany Best Workplaces for Innovators" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="10" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/rnd100-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=A46CD4C226D9539D3E003DB47E63575E2BF3FE59" alt="rnd100" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="11" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/pittsinnovator-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=94ED3AA7FCB398D25B3E8030731656D2CFADD4EA" alt="pittsinnovator" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="12" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/edicon-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=96C7639CB3B95DFD09F979430711C92BF8E0FD7E" alt="edicon" width="316" height="126" />
+                    </div><div class="thebgimgbanner slick-slide slick-cloned" data-slick-index="13" style="min-height: 100px; height: 100%;">
+<img src="/-/media/ansys/ansysrefresh/basecarousal/techbriefs-logo.png?h=126&amp;la=en&amp;w=316&amp;hash=F508B2438AE47731C8D3C1D3E7B84FEFB876397D" alt="techbriefs" width="316" height="126" />
+                    </div></div></div>
+                    
+                    
+                    
+                    
+                    
+                    
+
+    <button type="button" data-role="none" class="slick-prev" style="display: block;"><img src="/assets/images/buttons/herobanner-leftarrow-grey.png" /></button><button type="button" data-role="none" class="slick-next" style="display: block;"><img src="/assets/images/buttons/herobanner-rightarrow-grey.png" /></button></div>
+</div>
+
+    
+
+
+
+
+    <article class="row thecontentimageblockrefresh" style="background: url(&quot;/-/media/ansys/hpfeatureboxes/ourteam-hp.jpg&quot;) 0px 0px / cover repeat rgb(255, 255, 255); margin-bottom: 0px; max-width: 100% !important; height: auto;">
+            <div class="thebgimgbanner"><p class="banner-text" style="color: rgb(51, 51, 51);">Thought Leadership from <br />Prith Banerjee</p>
+
+                <div style="position: absolute;" class="theimg">
+                    
+                </div>
+
+                <div class="banner-information medium-6 small-12 small-only-text-center columns floatleft clear-both" style="height: auto; width: 100%; text-align: left; padding-top: 100px; display: block !important;">
+                    <div class="table">
+                        <div class="valign">
+                            <div class="large-12 columns">
+
+                                <div class="title">
+                                    <div class="row text-center">
+                                            <h2 class="component-header text-center pdbottom20" style="color: #222222;"><span class="titletilt">Join Our Team</span></h2>
+                                        <p>At Ansys, we are committed to fostering a culture of diversity and inclusion. We strive to create a workplace where people from distinct backgrounds can come together to support each other and solve our customers’ problems. We respect, value, embrace and are strengthened by the unique perspectives that our employees bring to work each day to make us ONE Ansys.</p>
+<p><a href="/about-ansys/careers" class="button">view open careers</a></p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </article>
+
+
+    
+<div class="row row-full-width">
+    <div class="large-12 columns grey-band grey-band-light" data-equalizer="">
+        <div class="large-12 NewsEventsBlock">
+            <div class="large-4 medium-4 small-12  left condensed-news-list mgbottom30">
+                <h3>News</h3>
+                <dl class="news-list" data-equalizer-watch="" style="height: 309px;">
+                                <dt>November 18, 2020</dt>
+                            <dd>
+                                    <a href="/about-ansys/news-center/11-18-20-lg-electronics-drives-company-wide-remote-learning-speeds-product-development-ansys-learning-hub"> LG Electronics Drives Company-wide Remote Learning and Speeds Product Development with Ansys Learning Hub</a>
+                            </dd>
+                                <dt>November 4, 2020</dt>
+                            <dd>
+                                    <a href="https://investors.ansys.com/news/news-details/2020/Ansys-Announces-Financial-ResultsWith-Record-Q3-Revenue-and-ACV/default.aspx">Ansys Announces Financial Results With Record Q3 Revenue and ACV </a>
+                            </dd>
+
+                </dl>
+<a class="see-all" href="/about-ansys/news-center"> 
+                
+                see all news releases »
+                </a>
+            </div>
+            <div class="large-4 medium-4 small-12  left condensed-news-list mgbottom30">
+                <h3>Events</h3>
+                <dl class="news-list" data-equalizer-watch="" style="height: 309px;">
+                                <dt>December 10, 2020</dt>
+                            <dd>
+                                    <a href="https://simutechgroup.zoom.us/webinar/register/8215998493738/WN_eQFtu1uuQ_Sa3eKSxYXOCw" target="_blank">Understanding Motion with Multi-Body Dynamics </a>
+                            </dd>
+
+                </dl>
+<a class="see-all" href="/about-ansys/events"> 
+                
+                see all events »
+                </a>
+            </div>
+            <div class="large-4 medium-4 small-12  left condensed-news-list mgbottom30">
+                <h3>Webinars</h3>
+                <dl class="news-list" data-equalizer-watch="" style="height: 309px;">
+                                <dt>December 3, 2020</dt>
+                            <dd>
+                                    <a href="/about-ansys/events/20-12-03-using-azure-cloud-to-rapidly-simulate-layout-designs-in-hfss"> Using Azure Cloud to Rapidly Simulate Layout Designs in HFSS</a>
+                            </dd>
+                                <dt>December 3, 2020</dt>
+                            <dd>
+                                    <a href="/about-ansys/events/in-20-12-03-speeding-cae-turnaround-with-simulation-workflow-automation"> Speeding CAE Turnaround with Simulation Workflow Automation</a>
+                            </dd>
+
+                    
+                </dl>
+<a class="see-all" href="/about-ansys/events"> 
+                
+                see all webinars »
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+        <!-- Contact us Block -->
+        <div class="row contact-row text-center row-full-width" style="background-color:#ffb71b;">
+            <div class="medium-8 columns small-10 small-centered">
+                <h4 style="color: #000;">Start a conversation with Ansys</h4>
+<a class="button secondary contact-button" href="/contact-us?p=Engineering Simulation and 3D Design Software | Ansys"> 
+
+                Contact Us
+                </a>
+
+            </div>
+        </div>
+        <style>
+            a.button.secondary.contact-button {
+                background-color: #ffb71b;
+                color: #000;
+            }
+
+            a.button.secondary.contact-button:hover {
+                background-color: #000;
+                color: #ffb71b;
+            }
+        </style>
+        <!-- //Contact us Block -->
+
+
+    <div class="row pre-footer">
+
+        <div class="medium-12 columns medium-centered">
+            <ul class="small-block-grid-1 medium-block-grid-5 large-block-grid-5">
+                                <li>
+                                    <ul>
+                                        <li class="title">
+                                            <a href="/products"> 
+                                            <h5>Products</h5>
+                                            </a>
+                                        </li>
+                                            <li>
+                                                <a href="/products/3d-design"> 
+                                                3D Design
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/academic"> 
+                                                Academic
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/electronics"> 
+                                                Electronics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/embedded-software"> 
+                                                Embedded Software
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/fluids"> 
+                                                Fluids
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/materials"> 
+                                                Materials
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/photonics"> 
+                                                Photonics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/optical"> 
+                                                Optical
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/platform"> 
+                                                Platform
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/semiconductors"> 
+                                                Semiconductors
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/structures"> 
+                                                Structures
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/systems"> 
+                                                Systems
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products"> 
+                                                All Products
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/products/ansys-store"> 
+                                                Ansys Store
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="title">
+                                            <a href="/solutions"> 
+                                            <h5>Solutions</h5>
+                                            </a>
+                                        </li>
+                                            <li>
+                                                <a href="/solutions/solutions-by-industry"> 
+                                                Solutions by Industry
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/solutions/technology-trends"> 
+                                                Technology Trends
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/solutions/solutions-by-role"> 
+                                                Solutions by Role
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="title">
+                                            <a href="/services"> 
+                                            <h5>Services</h5>
+                                            </a>
+                                        </li>
+                                            <li>
+                                                <a href="/services/training-center"> 
+                                                Training
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/services/learning-hub"> 
+                                                Ansys Learning Hub
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/services/consulting"> 
+                                                Consulting &amp; Professional Services
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/services/reliability-engineering-services"> 
+                                                Reliability Engineering Services
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="title">
+                                            <a href="/about-ansys"> 
+                                            <h5>About Ansys</h5>
+                                            </a>
+                                        </li>
+                                            <li>
+                                                <a href="/about-ansys/advantage-magazine"> 
+                                                Ansys Advantage Magazine
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/diversity-and-inclusion"> 
+                                                Diversity &amp; Inclusion
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/business-ethics"> 
+                                                Business Ethics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/contacts-and-locations"> 
+                                                Contacts &amp; Locations
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/dimensions-magazine"> 
+                                                Dimensions Magazine
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/events"> 
+                                                Events
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/investor-relations"> 
+                                                Investor Relations
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/news-center"> 
+                                                News Center
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/partner-ecosystem"> 
+                                                Ansys Partner Ecosystem
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/careers"> 
+                                                Careers
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/quality-assurance"> 
+                                                Quality Assurance
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-ansys/startup-program"> 
+                                                Ansys Startup Program
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li class="title">
+                                            <a href="/support"> 
+                                            <h5>Support</h5>
+                                            </a>
+                                        </li>
+                                                        <li class="title">
+                    <a href="/about-ansys/careers"> 
+                    
+                    <h5>Careers</h5>
+                    </a>
+                </li>
+                <li class="title">
+                    <a href="/academic"> 
+                    
+                    <h5>Academic</h5>
+                    </a>
+                </li>
+                <li class="title">
+                    <a href="https://support.ansys.com"> 
+                    
+                    <h5>Customer Portal</h5>
+                    </a>
+                </li>
+                <li class="title">
+                    <a href="https://www.ansys.com/resource-library"> 
+                    
+                    <h5>Resource Library</h5>
+                    </a>
+                </li>
+                <li class="title">
+                    <a href="https://www.ansys.com/blog"> 
+                    
+                    <h5>Blog</h5>
+                    </a>
+                </li>
+                <li class="title">
+                    
+                    
+                    <h5></h5>
+                    
+                </li>
+                    <ul class="inline-list inline-list-social medium-centered">
+                            <li>
+                                <a href="https://www.youtube.com/ansysinc" rel="noopener noreferrer" target="_blank" style="border: none;"> 
+                                <img src="/-/media/ansys/ansysrefresh/youtube-icon-refresh.png?h=24&amp;la=en&amp;w=35&amp;hash=E986EE0521956BFE957B99F7B09CB33B59BF2107" alt="Youtube" width="35" height="24" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/ansys" style="border: none;"> 
+                                <img src="/-/media/ansys/ansysrefresh/facebook-icon-refresh.png?h=24&amp;la=en&amp;w=35&amp;hash=F0A5672FC5A20A4EF4EE2EA04730ABE3025705B5" alt="Facebook" width="35" height="24" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com/ansys" style="border: none;"> 
+                                <img src="/-/media/ansys/ansysrefresh/twitter-icon-refresh.png?h=24&amp;la=en&amp;w=35&amp;hash=B7BE6A66FFE4F98051DBFB2F6BDF95A41C795427" alt="Twitter" width="35" height="24" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/ansys-inc" style="border: none;"> 
+                                <img src="/-/media/ansys/ansysrefresh/linkedin-icon-refresh.png?h=24&amp;la=en&amp;w=35&amp;hash=C7D998F1AD5957971CF17834426219753899D9FB" alt="Linkedin" width="35" height="24" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/ansys_inc/" style="border: none;"> 
+                                <img src="/-/media/ansys/ansysrefresh/instagram-icon-refresh.png?h=24&amp;la=en&amp;w=35&amp;hash=192AEB6618B4E3F2C4A8347D2E0C003560B6A555" alt="Instagram" width="35" height="24" />
+                                </a>
+                            </li>
+                    </ul>
+                                    </ul>
+                                </li>
+
+            </ul>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="medium-12 medium-centered columns pdtop10">
+            <ul class="inline-list floatleft pdleft30">
+                <li>© 2020 ANSYS, Inc. All rights reserved.</li>
+            </ul>
+            <ul class="inline-list floatright pdleft10">
+                                <li><a href="https://www.ansys.com/footer/legal-notices" title="Legal Notices">Legal Notices</a> </li>
+                                <li><a href="https://www.ansys.com/footer/privacy-notice" title="Privacy Notice">Privacy Notice</a> </li>
+                                <li><a href="https://www.ansys.com/footer/cookie-policy" title="Cookie Policy">Cookie Policy</a> </li>
+                                <li><a href="https://www.ansys.com/footer/export-control-compliance" title="Export Compliance">Export Compliance</a> </li>
+                                <li><a href="https://www.ansys.com/footer/terms-and-conditions" title="Terms and Conditions">Terms and Conditions</a> </li>
+                                <li><a href="https://www.ansys.com/footer/piracy-policy" title="Report Piracy">Report Piracy</a> </li>
+                                <li><a href="https://www.ansys.com/footer/site-map" title="Site Map">Site Map</a> </li>
+
+            </ul>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+                <a class="right-off-canvas-toggle1" href="/contact-us?p=Engineering Simulation and 3D Design Software | Ansys"><span class="rotate" lang="en">Contact</span></a>
+                <a class="exit-off-canvas"></a>
+
+
+        </div>
+    </div>
+
+    <!-- New Site Code Ends -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/foundation-js/jquery.min.js"></script>
+    <script src="/assets/js/foundation-js/jquery-migrate-1.2.1.js?ver=1.1"></script>
+    <script type="text/javascript" src="/assets/js/foundation-js/jquery.fancybox-1.3.1.js?ver=1.1"></script>
+    <script src="/assets/js/foundation-js/foundation.min.js"></script>
+    <script src="/assets/js/foundation-js/ansys.fn.js?ver=2.0"></script>
+    <script src="/assets/js/foundation-js/ansys-refresh.js?ver=2.7"></script>
+    <script src="/assets/js/form.js?ver=2.7"></script>
+    
+
+    <script type="text/javascript">
+        (function defer() {
+            if (window.jQuery) {
+                jQuery(function () {
+                    if (jQuery(".iframe-form").length &gt; 0) {
+                        jQuery(".right-off-canvas-toggle").on("click", function (e) {
+                            jQuery(".iframe-form").each(function () {
+                                jQuery(this).attr("src", jQuery(this).attr("theformurl"));
+                            });
+                        });
+                    }
+
+
+                    if (jQuery(".lazyload").length &gt; 0) {
+                        jQuery(".lazyload").each(function () {
+                            jQuery(this).attr("src", jQuery(this).attr("data-src"));
+                        });
+                    }
+                });
+            }
+            else {
+                setTimeout(function () { defer() }, 50);
+            }
+        })();
+    </script>
+
+<style>@media only screen and (max-width: 600px) {#hof {    height: 185px;    width: 197px;  }}.thesubscriptionstrip {margin: auto;padding: 20px 0;}.thesubscriptiontext {color: #333;}.hpsection2rebrand h3 {display: none;}.hpsection2rebrand div [class*="column"] + [class*="column"]:last-child {    float: left;}</style><script>jQuery(function ($) {$(".condensed-news-list .news-list").find("a").each(function(){   if($(this).text().indexOf("Groundbreaking") &gt; -1) {        $(this).attr("target","_blank");   }   if($(this).text().indexOf("CWIEME") &gt; -1) {        $(this).attr("target","_blank");   }   if($(this).attr("href").indexOf("/about-ansys/events/uk-20-11-03-the-ansys-learning-hub-in-15") &gt; -1) {        $(this).parent().hide();        $(this).parent().prev().hide();   }   if($(this).attr("href").indexOf("invite-only") &gt; -1) {        $(this).parent().hide();        $(this).parent().prev().hide();   }});var thevidyardid = "";$("a[href*='thevidyard-']").each(function (index) {        $(this).on("click", function (e) {            e.preventDefault();        });        var thetempvidyardid = $(this).attr("href").split("http://thevidyard-")[1];        if (thetempvidyardid != thevidyardid) {            thevidyardid = thetempvidyardid;            $(this).append($('&lt;script /&gt;').attr('src','//play.vidyard.com/' + thevidyardid + '.js?v=3.1.1&amp;type=lightbox').attr('id','vidyard_embed_code_' + thevidyardid));        }        $(this).wrap('&lt;div class="outer_vidyard_wrapper"&gt;&lt;div class="vidyard_wrapper" onclick="fn_vidyard_' + thevidyardid + '();" style="float: none;"&gt;&lt;/div&gt;&lt;/div&gt;');    });});$(".component-header").wrapInner("&lt;span class='titletilt'&gt;&lt;/span&gt;");</script>
+
+
+    <!-- Webpage Schema -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "author": "ANSYS Inc.",
+        "copyrightYear": "2020",
+        "dateCreated": "2015-09-06",
+        "dateModified": "2020-11-02",
+        "datePublished": "2020-11-02",
+        "headline": "Home",
+        "keywords": "engineering simulation software, 3d design software, simulation software, pervasive engineering simulation",
+        "description": "Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation.",
+        "image": {
+        "@type": "ImageObject",
+        "contentUrl": "https://www.ansys.com/-/media/ansys/corporate/social/products/products-1200x630.jpg",
+        "name": "                ANSYS Inc."
+        },
+        "publisher": {
+        "@type": "Organization",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ansys.com/-/media/ansys/global/brandings/logo-ansys.jpg",
+        "width": "195",
+        "height": "60"
+        }
+        },
+        "mainEntityOfPage": "https://www.ansys.com/",
+        "name": "Home"
+        }
+    </script>
+
+    <script type="text/javascript">
+        function OptanonWrapper() {
+            setTimeout(function () {
+                if (readCookie("OptanonConsent").indexOf("%2C2%3A") &gt; -1) {
+                    if (readCookie("OptanonConsent").split("%2C2%3A")[1].split("%2C")[0] == "0") {
+                        eraseCookie("theutmparams");
+                        $(".theutmsource").find("input.form-control.text-box").attr("value", "");
+                        $(".theutmmedium").find("input.form-control.text-box").attr("value", "");
+                        $(".theutmcampaign").find("input.form-control.text-box").attr("value", "");
+                        $(".theutmterm").find("input.form-control.text-box").attr("value", "");
+                        $(".theutmcontent").find("input.form-control.text-box").attr("value", "");
+                        $(".hidden.form-group.theinput label:contains('Campaign Id')").parent().find("input.form-control.text-box").attr("value", "");
+                        $(".hidden.form-group.theinput label:contains('Member Status')").parent().find("input.form-control.text-box").attr("value", "");
+                    }
+                    if (readCookie("OptanonConsent").split("%2C2%3A")[1].split("%2C")[0] == "1") {
+                        if (window.location.href.indexOf("?") &gt; -1) {
+                            var theutmparametersaggregate = "";
+                            if (getParameterByName("utm_source")) {
+                                theutmparametersaggregate = "utm_source=" + getParameterByName("utm_source");
+                            }
+                            if (getParameterByName("utm_medium")) {
+                                theutmparametersaggregate += "&amp;utm_medium=" + getParameterByName("utm_medium");
+                            }
+                            if (getParameterByName("utm_campaign")) {
+                                theutmparametersaggregate += "&amp;utm_campaign=" + getParameterByName("utm_campaign");
+                            }
+                            if (getParameterByName("utm_term")) {
+                                theutmparametersaggregate += "&amp;utm_term=" + getParameterByName("utm_term");
+                            }
+                            if (getParameterByName("utm_content")) {
+                                theutmparametersaggregate += "&amp;utm_content=" + getParameterByName("utm_content");
+                            }
+                            if (getParameterByName("campaignid")) {
+                                theutmparametersaggregate += "&amp;campaignid=" + getParameterByName("campaignid");
+                            }
+                            if (theutmparametersaggregate) {
+                                if (theutmparametersaggregate.toLowerCase().indexOf("utm_source") &lt;= -1) {
+                                    theutmparametersaggregate = "utm_source=" + document.referrer.split('/')[2] + theutmparametersaggregate;
+                                }
+                                createCookie("theutmparams", theutmparametersaggregate);
+                            }
+                            else if (document.referrer.split('/')[2] != "" &amp;&amp; document.referrer.split('/')[2] != "undefined" &amp;&amp; document.referrer.split('/')[2] != window.location.hostname) {
+                                theutmparametersaggregate = "utm_source=" + document.referrer.split('/')[2];
+                                createCookie("theutmparams", theutmparametersaggregate);
+                            }
+                        }
+
+                        else if (document.referrer.split('/')[2] != "" &amp;&amp; document.referrer.split('/')[2] != undefined &amp;&amp; document.referrer.split('/')[2] != window.location.hostname) {
+                            theutmparametersaggregate = "utm_source=" + document.referrer.split('/')[2];
+                            createCookie("theutmparams", theutmparametersaggregate);
+                        }
+
+                        if (readCookie("theutmparams")) {
+                            var theutmparamscookieval = "?" + readCookie("theutmparams");
+                            $(".theutmsource").find("input.form-control.text-box").attr("value", getParameterByName("utm_source", theutmparamscookieval));
+                            $(".theutmmedium").find("input.form-control.text-box").attr("value", getParameterByName("utm_medium", theutmparamscookieval));
+                            $(".theutmcampaign").find("input.form-control.text-box").attr("value", getParameterByName("utm_campaign", theutmparamscookieval));
+                            $(".theutmterm").find("input.form-control.text-box").attr("value", getParameterByName("utm_term", theutmparamscookieval));
+                            $(".theutmcontent").find("input.form-control.text-box").attr("value", getParameterByName("utm_content", theutmparamscookieval));
+                            if(getParameterByName("campaignid", theutmparamscookieval) !== null) {
+                                $(".hidden.form-group.theinput label:contains('Campaign Id')").parent().find("input.form-control.text-box").attr("value", getParameterByName("campaignid", theutmparamscookieval));
+                            }
+                        }
+                    }
+                }
+            }, 2000);
+        }
+    </script>
+
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancy-bg" id="fancy-bg-n"></div><div class="fancy-bg" id="fancy-bg-ne"></div><div class="fancy-bg" id="fancy-bg-e"></div><div class="fancy-bg" id="fancy-bg-se"></div><div class="fancy-bg" id="fancy-bg-s"></div><div class="fancy-bg" id="fancy-bg-sw"></div><div class="fancy-bg" id="fancy-bg-w"></div><div class="fancy-bg" id="fancy-bg-nw"></div><div id="fancybox-inner"></div><a id="fancybox-close"></a><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><script id="boomr-scr-as" src="https://s.go-mpulse.net/boomerang/QFXTL-U4VQG-RNY3Q-4KTV5-RTZM3" async=""></script><script type="text/javascript" id="">(function(){var b={"@context":"https://schema.org/","@type":"Organization",name:"Ansys",legalName:"ANSYS, Inc.",url:"https://www.ansys.com",address:{"@type":"PostalAddress",addressCountry:"United States",addressLocality:"Canonsburg",addressRegion:"Pennsylvania",postalCode:"15317",streetAddress:"2600 Ansys Dr.",email:"ansysinfo@ansys.com",faxNumber:"+1-724-514-9494",telephone:"+1-844-462-6797",alternateName:"Ansys",description:"ANSYS engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation.",
+mainEntityOfPage:"https://www.ansys.com/",name:"ANSYS Inc."},duns:"063747653",email:"ansysinfo@ansys.com",faxNumber:"+1-724-514-9494",founder:{"@type":"Person",additionalName:"John A. Swanson",mainEntityOfPage:"https://www.ansys.com/"},foundingDate:"1970",logo:"https://www.ansys.com/-/media/ansys/global/brandings/logo-ansys.jpg",naics:"541511",numberOfEmployees:{"@type":"QuantitativeValue",maxValue:"4000",minValue:"4000",mainEntityOfPage:"https://www.ansys.com/"},sameAs:"https://www.facebook.com/Ansys/ https://www.linkedin.com/company/ansys-inc/ https://twitter.com/ANSYS https://plus.google.com/u/1/+ansys https://en.wikipedia.org/wiki/Ansys https://www.youtube.com/user/ansysinc https://www.youtube.com/user/ANSYSHowToVideos https://www.youtube.com/user/ANSYSTechTips https://www.instagram.com/ansys_inc/ https://www.g2crowd.com/products/ansys/reviews https://www.gartner.com/reviews/market/data-center-infrastructure-management-tools/vendor/ansys/product/ansys-fluent https://www.capterra.com/p/124168/ANSYS-mechanical-software-suite/ https://www.crunchbase.com/organization/ansys https://twitter.com/ANSYS_germany https://www.xing.com/companies/ansysgermanygmbh https://twitter.com/ANSYS_Japan https://weibo.com/ansyscn https://www.instagram.com/ansys_inc/ https://www.pinterest.com/ansysinc/ https://www.semiwiki.com/forum/content/section/266-ansys-inc.html https://www.linkedin.com/groups/114265/profile https://www.linkedin.com/showcase/computational-fluid-dynamics/ https://www.linkedin.com/showcase/structural-analysis/ https://www.linkedin.com/showcase/model-based-systems-engineering/ https://www.linkedin.com/showcase/electronics-simulation/ https://www.linkedin.com/showcase/ansys-student/ https://www.linkedin.com/showcase/ansys-spaceclaim-3d-modeling/".split(" "),
+taxID:"04-3219960",telephone:"+1-844-462-6797"},a=document.createElement("script");a.type="application/ld+json";a.innerHTML=JSON.stringify(b);document.getElementsByTagName("head")[0].appendChild(a)})(document);</script><script type="text/javascript" id="">(function(){var b={"@context":"https://schema.org/","@type":"Corporation","@id":"https://corporation.ansys.com",name:"Ansys",legalName:"ANSYS, Inc.",tickerSymbol:"ANSS",url:"https://www.ansys.com",address:{"@type":"PostalAddress",addressCountry:"United States",addressLocality:"Canonsburg",addressRegion:"Pennsylvania",postalCode:"15317",streetAddress:"2600 Ansys Dr.",email:"ansysinfo@ansys.com",faxNumber:"+1-724-514-9494",telephone:"+1-844-462-6797",alternateName:"Ansys",description:"Ansys engineering simulation and 3D design software delivers product modeling solutions with unmatched scalability and a comprehensive multiphysics foundation.",
+mainEntityOfPage:"https://www.ansys.com/",name:"ANSYS Inc."},duns:"063747653",email:"ansysinfo@ansys.com",faxNumber:"+1-724-514-9494",founder:{"@type":"Person",additionalName:"John A. Swanson",mainEntityOfPage:"https://www.ansys.com/about-ansys"},foundingDate:"1970",logo:"https://www.ansys.com/-/media/ansys/global/brandings/logo-ansys.jpg",naics:"541511",numberOfEmployees:{"@type":"QuantitativeValue",maxValue:"4000",minValue:"4000",mainEntityOfPage:"https://www.ansys.com/about-ansys"},sameAs:"https://www.facebook.com/Ansys/ https://www.linkedin.com/company/ansys-inc/ https://twitter.com/ANSYS https://plus.google.com/u/1/+ansys https://en.wikipedia.org/wiki/Ansys https://www.youtube.com/user/ansysinc https://www.youtube.com/user/ANSYSHowToVideos https://www.youtube.com/user/ANSYSTechTips https://www.instagram.com/ansys_inc/ https://www.g2crowd.com/products/ansys/reviews https://www.gartner.com/reviews/market/data-center-infrastructure-management-tools/vendor/ansys/product/ansys-fluent https://www.capterra.com/p/124168/ANSYS-mechanical-software-suite/ https://www.crunchbase.com/organization/ansys https://twitter.com/ANSYS_germany https://www.xing.com/companies/ansysgermanygmbh https://twitter.com/ANSYS_Japan https://weibo.com/ansyscn https://www.instagram.com/ansys_inc/ https://www.pinterest.com/ansysinc/ https://www.semiwiki.com/forum/content/section/266-ansys-inc.html https://www.linkedin.com/groups/114265/profile https://www.linkedin.com/showcase/computational-fluid-dynamics/ https://www.linkedin.com/showcase/structural-analysis/ https://www.linkedin.com/showcase/model-based-systems-engineering/ https://www.linkedin.com/showcase/electronics-simulation/ https://www.linkedin.com/showcase/ansys-student/ https://www.linkedin.com/showcase/ansys-spaceclaim-3d-modeling/".split(" "),
+subOrganization:[{"@type":"Organization",legalName:"Optis",mainEntityOfPage:"https://www.optis-world.com/"},{"@type":"Organization",legalName:"Lumerical Inc.",mainEntityOfPage:"https://www.lumerical.com/"},{"@type":"Organization",legalName:"Livermore Software Technology Corporation",mainEntityOfPage:"https://www.lstc.com/"},{"@type":"Organization",legalName:"DfR Solutions",mainEntityOfPage:"https://www.dfrsolutions.com/"},{"@type":"Organization",legalName:"Helic",mainEntityOfPage:"http://www.helic.com/"},
+{"@type":"Organization",legalName:"Dynardo GmbH",mainEntityOfPage:"- https://www.dynardo.de"},{"@type":"Organization",legalName:"Granta Design, Ltd.",mainEntityOfPage:"https://grantadesign.com/"},{"@type":"Organization",legalName:"3DSIM"},{"@type":"Organization",legalName:"Computational Engineering International, Inc."},{"@type":"Organization",legalName:"CLK Design Automation"},{"@type":"Organization",legalName:"KPIT medini Technologies AG"},{"@type":"Organization",legalName:"Delcross Technologies"},
+{"@type":"Organization",legalName:"Gear Designs Solutions"},{"@type":"Organization",legalName:"Newmerical Technologies International"},{"@type":"Organization",legalName:"SpaceClaim Corporation"},{"@type":"Organization",legalName:"Reactions Design"},{"@type":"Organization",legalName:"EVEN - Evolutionary Engineering AG"},{"@type":"Organization",legalName:"Esterel Technologies"},{"@type":"Organization",legalName:"Apache Design Solutions, Inc."},{"@type":"Organization",legalName:"Ansoft Corporation"},
+{"@type":"Organization",legalName:"Ansys Fluent"},{"@type":"Organization",legalName:"Century Dynamics, Inc."},{"@type":"Organization",legalName:"CFX"},{"@type":"Organization",legalName:"CADOE S.A."},{"@type":"Organization",legalName:"ICEM CFD"}],taxID:"04-3219960",telephone:"+1-844-462-6797"},a=document.createElement("script");a.type="application/ld+json";a.innerHTML=JSON.stringify(b);document.getElementsByTagName("head")[0].appendChild(a)})(document);</script><script type="text/javascript" id="gtm-jq-ajax-listen">(function(){function h(b){"undefined"!==typeof jQuery?(k=jQuery,n()):20&gt;b&amp;&amp;setTimeout(h,500)}function n(){k(document).bind("ajaxComplete",function(b,a,f){var c=document.createElement("a");c.href=f.url;var g="/"===c.pathname[0]?c.pathname:"/"+c.pathname,d="?"===c.search[0]?c.search.slice(1):c.search;d=l(d,"\x26","\x3d",!0);var e=l(a.getAllResponseHeaders(),"\n",":");dataLayer.push({event:"ajaxComplete",attributes:{type:f.type||"",url:c.href||"",queryParameters:d,pathname:g||"",hostname:c.hostname||
+"",protocol:c.protocol||"",fragment:c.hash||"",statusCode:a.status||"",statusText:a.statusText||"",headers:e,timestamp:b.timeStamp||"",contentType:f.contentType||"",response:a.responseJSON||a.responseXML||a.responseText||""}})})}function l(b,a,f,c){var g={};if(!b||!a||!f)return{};if(b=b.split(a))for(a=0;a&lt;b.length;a++){var d=c?decodeURIComponent(b[a]):b[a],e=d.split(f);d=m(e[0]);e=m(e[1]);d&amp;&amp;e&amp;&amp;(g[d]=e)}return g}function m(b){if(b)return b.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,"")}var k;h()})();</script><script type="text/javascript" id="" src="https://176f1a2a6fb745abaf26d3671d830064.js.ubembed.com"></script><div class="ub-emb-container"><div></div></div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

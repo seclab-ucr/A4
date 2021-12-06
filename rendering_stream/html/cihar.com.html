@@ -1,0 +1,347 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--! This is main page template used for all other pages. --><head profile="http://purl.org/uF/2008/03/ http://purl.org/uF/hAtom/0.1/">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Michal Čihař" />
+  <meta name="copyright" content="Copyright © 2003 - 2020 Michal Čihař" />
+
+
+<script type="text/javascript" defer="" async="" src="https://stats.cihar.com/piwik.js"></script><script>
+var _rollbarConfig = {
+    accessToken: "f37bf696fc0b426d8525b38b5401992d",
+    captureUncaught: true,
+    payload: {
+        environment: "production"
+    }
+};
+// Rollbar Snippet
+!function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&amp;&amp;(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&amp;&amp;e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&amp;&amp;(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&amp;&amp;e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&amp;&amp;e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o&lt;c.length;++o)a=c[o],r[a]&amp;&amp;r[a].prototype&amp;&amp;l(i,r[a].prototype)}return e.captureUnhandledRejections&amp;&amp;(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&amp;&amp;t&amp;&amp;(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i&lt;n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&amp;&amp;a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&amp;&amp;"loaded"!==this.readyState&amp;&amp;"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&amp;&amp;(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p&lt;d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&amp;&amp;!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
+// End Rollbar Snippet
+</script>
+
+  <meta name="google-site-verification" content="MMEu4KD3D2jLqHm-EkEizkdmw85brebSQnS-QhaxVjM" />
+  <meta name="wot-verification" content="e6f297d22350dc857b78" /> 
+  <meta name="msvalidate.01" content="C54E764ED13C79FE061624935A59B560" />
+  <meta name="description" content="Michal Čihař's website" />
+  <meta name="keywords" content="gammu,phpmyadmin,wammu,smsd,pentax,django,python" />
+  <link rel="copyright" href="/license/" />
+  <title>
+
+
+    cihar.com
+
+ - Michal Čihař</title>
+  <meta property="og:site_name" content="Michal Čihař" />
+  <meta property="og:title" content="&#10;&#10;&#10;    cihar.com&#10;&#10;" />
+  <meta property="article:author" content="https://www.facebook.com/michal.cihar" />
+  <meta property="og:type" content="article" />
+  
+  
+  <script type="text/javascript" src="/media/js/jquery-1.4.3.min.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.color.min.js"></script>
+  <script type="text/javascript" src="/media/js/jquery.lightbox.min.js"></script>
+  
+
+<link rel="openid.server" href="https://openid.cihar.com/" />
+<link rel="openid.delegate" href="https://openid.cihar.com/" />
+<link rel="openid2.provider" href="https://openid.cihar.com/" />
+<link rel="openid2.local_id" href="https://openid.cihar.com/" />
+<meta http-equiv="X-XRDS-Location" content="https://openid.cihar.com/index.php?q=xrds/nijel" />
+
+<link rel="alternate" type="application/rss+xml" href="https://blog.cihar.com/atom.xml" title="Michal Čihař's Weblog (Atom 1.0)" />
+<link rel="alternate" type="application/rss+xml" href="https://blog.cihar.com/rss.xml" title="Michal Čihař's Weblog (RSS 2.0)" />
+<link rel="alternate" type="application/rss+xml" href="https://blog.cihar.com/index.xml" title="Michal Čihař's Weblog (RSS 1.0)" />
+
+
+
+  
+  <link rel="stylesheet" type="text/css" href="/media/style.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/media/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/media/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/media/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/media/touch-icon-ipad-retina.png" />
+
+  <meta name="robots" content="index, follow" />
+  
+ <link type="text/css" rel="stylesheet" media="screen" href="/media/style.css" id="lightbox-stylesheet-lightbox" /></head>
+
+ <body>
+    <header>
+    <h1>Michal Čihař - 
+
+
+    cihar.com
+
+</h1>
+    <nav>
+    <ul class="menu">
+        <li><a href="https://cihar.com/">Home</a></li>
+        <li><a href="https://cihar.com/contact/">Contact</a></li>
+        <li><a href="https://blog.cihar.com/">Blog</a></li>
+        <li><a href="https://cihar.com/software/">Software</a></li>
+        <li><a href="https://cihar.com/publications/">Publications</a></li>
+        <li><a href="https://photos.cihar.com/gallery/">Photography</a></li>
+    </ul>
+    </nav>
+    </header>
+
+<div class="contentwrapper">
+<div class="content">
+
+
+
+<h2>About me</h2>
+
+<p>
+
+Welcome, my name Michal Čihař and I live in 
+<a href="https://www.praha.eu/">Prague</a> 
+(<a href="https://www.czechtourism.com/">Czech republic</a>).
+I contribute to various free software projects like
+<a href="https://www.debian.org/">Debian</a>, 
+<a href="https://weblate.org/">Weblate</a>, 
+<a href="https://www.phpmyadmin.net/">phpMyAdmin</a>
+or <a href="https://wammu.eu/">Gammu and Wammu</a>.
+Besides that I've also written some other 
+<a href="/software/">small tools</a>, 
+which you can find on this website.
+If you want to know what I'm working on currently, you can check
+my <a href="https://blog.cihar.com/">weblog</a>.
+
+</p>
+
+<h2>Recent blog posts</h2>
+
+<ul>
+
+<li><a href="https://blog.cihar.com/archives/2019/05/29/spring-cleanup/?utm_source=cihar.com">Spring cleanup</a>
+<div class="blogdate">May 29, 2019, 10 a.m.</div></li>
+
+<li><a href="https://blog.cihar.com/archives/2019/05/09/weblate-blog-moved/?utm_source=cihar.com">Weblate blog moved</a>
+<div class="blogdate">May 9, 2019, 2:21 p.m.</div></li>
+
+<li><a href="https://blog.cihar.com/archives/2019/04/26/weblate-361/?utm_source=cihar.com">Weblate 3.6.1</a>
+<div class="blogdate">April 26, 2019, 9:23 p.m.</div></li>
+
+<li><a href="https://blog.cihar.com/archives/2019/04/20/weblate-36/?utm_source=cihar.com">Weblate 3.6</a>
+<div class="blogdate">April 20, 2019, 12:46 p.m.</div></li>
+
+<li><a href="https://blog.cihar.com/archives/2019/03/20/translation-finder-11/?utm_source=cihar.com">translation-finder 1.1</a>
+<div class="blogdate">March 20, 2019, 2:40 p.m.</div></li>
+
+</ul>
+
+
+<h2><a href="/software/">Software</a></h2>
+
+<p>
+
+I've created various software during past years, some of these are still
+alive, while others are not really developed or used anymore:
+
+</p>
+
+
+
+<h3><a href="https://weblate.org/">Weblate</a></h3>
+
+<a class="smallshot" href="https://weblate.org/"><img src="/media/screenshots/weblate/tiny/main.png" alt="Weblate screenshot" /></a>
+
+<p>
+
+Weblate is web based translation tool with tight Git integration. It features simple and clean user interface, propagation of translations across subprojects or automatic linking to source files.
+
+</p>
+
+
+
+
+<h3><a href="https://www.phpmyadmin.net/">phpMyAdmin</a></h3>
+
+<a class="smallshot" href="https://www.phpmyadmin.net/try/"><img src="/media/screenshots/phpmyadmin/tiny/main-page.png" alt="phpMyAdmin screenshot" /></a>
+
+<p>
+
+<a href="https://www.phpmyadmin.net/">phpMyAdmin</a> is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web. phpMyAdmin supports a wide range of operations with MySQL. The most frequently used operations are supported by the user interface (managing databases, tables, fields, relations, indexes, users, permissions, etc), while you still have the ability to directly execute any SQL statement.
+
+</p>
+
+
+
+
+<h3><a href="/software/slovnik/">Dictionaries for StarDict</a></h3>
+
+<a class="smallshot" href="/software/slovnik/screenshots/"><img src="/media/screenshots/slovnik/tiny/stardict-1.png" alt="StarDict showing Czech-English dictionary" /></a>
+
+<p>
+
+As I like StarDict much, I decided to hack scripts that will convert some <a href="/software/slovnik/">useful dictionaries</a> to it's format.
+
+</p>
+
+
+
+
+<h3><a href="/software/gepes/">GePeS</a></h3>
+
+<a class="smallshot" href="/software/gepes/screenshots/"><img src="/media/screenshots/gepes/tiny/2011-10-27_10-56-53.png" alt="Compass showing sun azimuth" /></a>
+
+<p>
+
+Various GPS and compass based tools for Nokia N9 (Harmattan).
+
+</p>
+
+
+
+
+<h3><a href="/software/dofcalc/">DOF Calc</a></h3>
+
+<a class="smallshot" href="/software/dofcalc/screenshots/"><img src="/media/screenshots/dofcalc/tiny/2011-10-26_10-46-40.png" alt="Main screen" /></a>
+
+<p>
+
+Simple tool in Qt Quick to calculate depth of field for photographers for Nokia N9 (Harmattan)..
+
+</p>
+
+
+
+
+<h3><a href="https://wammu.eu/wammu/">Gammu, Gammu SMSD, Wammu and python-gammu</a></h3>
+
+<a class="smallshot" href="https://wammu.eu/screenshots/wammu/"><img src="/media/screenshots/wammu/tiny/wammu-displaysms.png" alt="Wammu screenshot" /></a>
+
+<p>
+
+<a href="https://wammu.eu/">Wammu</a> is a program to manage data in your cell phone such as contacts, calendar or messages. It is built on <a href="https://wammu.eu/libgammu/">Gammu library</a>, which provides abstraction layer to work with different cell phones from different vendors (including Nokia, Sony-Ericsson, Motorola, Samsung, Siemens, Huawei and others).
+
+</p>
+
+
+<h3><a href="/software/">See more…</a></h3>
+<p>
+
+Check out other <a href="/software/">my software</a>!
+
+</p>
+
+<h2>Other Contents</h2>
+
+<p>
+
+Besides above mentioned software, you can find here some 
+<a href="/publications/">publications</a> I've made or materials
+for my <a href="/talks/">presentations</a>.
+
+</p>
+
+
+<h2>Donate</h2>
+
+<p>
+
+Did I help you? Want to appreciate my work on free software? <a href="/donate">Donate to me</a>.
+
+</p>
+
+<p>
+Current supporters:
+</p>
+
+<ul>
+<li><a href="https://www.voetbalgokken.nl/bookmakers/">Bookmakers</a></li>
+<li>
+<a href="https://www.ecosecretariat.org/">The Economic Secretariat</a>
+</li>
+<li><a href="https://searchpromocodes.com/">SearchPromoCodes.com</a></li>
+<li><a href="https://mypromocode.com/">MyPromoCode</a></li>
+<li><a href="https://www.bestcasino.co.uk/">Bestcasino.co.uk</a></li>
+<li><a href="https://ingramer.com/direct-messages/">Instagram dm online</a></li>
+</ul>
+
+</div>
+</div>
+
+<aside>
+<div class="sidebar">
+
+
+<div class="sidebox">
+<div class="boxtitle">Translations</div>
+<div class="boxcontent">
+<ul>
+
+<li><a href="https://cs.cihar.com/">Česky</a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="sidebox">
+<div class="boxtitle">Follow me</div>
+<div class="boxcontent">
+<ul>
+<li><a href="https://blog.cihar.com/">Blog</a></li>
+<li><a href="https://blog.cihar.com/rss.xml">Blog RSS feed</a></li>
+<li><a href="https://blog.cihar.com/atom.xml">Blog Atom feed</a></li>
+<li><a href="https://twitter.com/mcihar">Twitter</a></li>
+<li><a href="https://twitter.com/WeblateOrg">Twitter for Weblate</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="sidebox">
+<div class="boxtitle">Support me</div>
+<div class="boxcontent">
+
+<a href="https://cihar.com/donate/">Donate</a> me to support my activities on free software.
+
+
+</div>
+</div>
+
+
+
+</div>
+</aside>
+
+<footer>
+  <ul id="footer">
+    <li>Copyright © 2001 - 2020 <span class="vcard"><a class="url fn" href="https://cihar.com/">Michal Čihař</a><a href="mailto:michal@cihar.com" class="email"></a></span></li>
+    <li><a href="/license/" rel="license">License</a></li>
+    <li><a href="https://cihar.com/donate/" rel="payment" title="Support me by donating money!">Donate</a></li>
+    <li><a href="/search/" title="Search this site">Search</a></li>
+
+    <li class="last">Powered by <a href="https://www.djangoproject.com/">Django</a></li>
+  </ul>
+</footer>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setCookieDomain", "*.cihar.com"]);
+  _paq.push(["setDomains", ["*.cihar.com","*.cz.cihar.com"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stats.cihar.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 6]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>&lt;p&gt;&lt;img src="https://stats.cihar.com/piwik.php?idsite=6" style="border:0;" alt="" /&gt;&lt;/p&gt;</noscript>
+<!-- End Piwik Code -->
+
+
+ 
+
+<div id="lightbox-overlay" style="width: 785px; height: 2229px; display: none;"><div id="lightbox-overlay-text"><p><span id="lightbox-overlay-text-about"><a href="#" title="Licenced under the GNU Affero General Public License.">jQuery Lightbox Plugin (balupton edition)</a></span></p><p> </p><p><span id="lightbox-overlay-text-close">Click to close</span><br /> <span id="lightbox-overlay-text-interact" style="display: none;">Hover to interact</span></p></div></div><div id="lightbox" style="display: none; left: 0px; top: 69.6px;"><div id="lightbox-imageBox"><div id="lightbox-imageContainer"><img id="lightbox-image" /><div id="lightbox-nav"><a href="#" id="lightbox-nav-btnPrev"></a><a href="#" id="lightbox-nav-btnNext"></a></div><div id="lightbox-loading"><a href="#" id="lightbox-loading-link"><img src="/media/lightbox/loading.gif" /></a></div></div></div><div id="lightbox-infoBox"><div id="lightbox-infoContainer"><div id="lightbox-infoHeader"><span id="lightbox-caption"><a href="#" title="Download." id="lightbox-caption-title"></a><span id="lightbox-caption-seperator"></span><span id="lightbox-caption-description"></span></span></div><div id="lightbox-infoFooter"><span id="lightbox-currentNumber"></span><span id="lightbox-close"><a href="#" id="lightbox-close-button" title="You can also click anywhere outside the image to close.">Close X</a></span></div><div id="lightbox-infoContainer-clear"></div></div></div></div></body></html>

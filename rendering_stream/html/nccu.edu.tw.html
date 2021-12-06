@@ -1,0 +1,88 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh" <head=""><head><meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!--[if lt IE 9]>
+   <script src="files/html5shiv.js"></script>
+<![endif]-->
+<title>國立政治大學Web Mail系統::NCCU Web Mail</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/default2.css" rel="stylesheet" type="text/css" />
+<!--[if (lt IE 9)&(!IEMobile)]>
+   <link href="css/ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<script type="text/javascript">
+
+function fl()
+{
+        var key=document.cookie;
+        var form=document.lf;
+
+        if ( key.match(/m2kuid=([^;]+)[;]*/) ){
+                form.USERID.value = RegExp.$1;
+                form.remember.checked = true;
+        }
+}
+
+function Init()
+{
+        fl();
+        document.lf.USERID.focus();
+        return true;
+}
+
+function DoSubmit(form)
+{
+        var f = document.lf;
+
+        tmp = f.USERID.value.split('@', 2);
+        f.USERID.value = tmp[0];
+}
+
+</script>
+</head>
+<body onload="return Init();">
+  <div id="content">
+        <nav role="navigation">
+            <ul>
+                <li><a href="http://www.nccu.edu.tw">政大首頁NCCU</a></li>
+                <li><a href="http://www.cc.nccu.edu.tw">電算中心Computer Center</a></li>
+            </ul>
+        </nav>
+        <header role="banner">          
+                  <h1>國立政治大學Web Mail系統</h1>
+                  <h2>NCCU Web Mail</h2>
+                  
+        </header>
+             <article>
+               <form onsubmit="return DoSubmit(this)" method="post" name="lf" action="https://nccu.edu.tw/cgi-bin/login" enctype="application/x-www-form-urlencoded">
+              <p>請登入帳號密碼<br />
+                <span class="sWord">Login with your NCCU mail account</span></p>
+              <p><input class="first" type="text" name="USERID" placeholder="帳號 Account" /></p>
+              <p><input class="word" type="password" name="PASSWD" placeholder="密碼 Password" /></p>
+              <p><input class="buttun" type="submit" value="Login" name="Submit" /></p>
+              <p class="sWord"><a href="http://www.cc.nccu.edu.tw/p/426-1001-75.php" target="_blank">忘記密碼 Need Help?</a></p>
+               </form>
+             </article>
+        <aside role="complementary">
+             <ul>
+               <li><a href="http://schwebap.nccu.edu.tw/LdapEar/login.aspx" target="_blank">建立帳號<br /><span>Registry</span></a></li>
+               <li><a href="http://www.cc.nccu.edu.tw/p/404-1001-242.php" target="_blank">信箱App<br /><span>Mail App</span></a></li>
+               <li><a href="https://nccu.edu.tw/sc-notice.htm" target="_blank">信箱安全<br /><span>Security</span></a></li>
+               <li><a href="https://nccu.edu.tw/m2kv7/sp1/tw/index.html" target="_blank">系統說明<br /><span>Manual</span></a></li>
+             </ul>
+          </aside>
+          <footer role="contentinfo">
+                <h3>聯絡我們Contact</h3>
+                <p><a href="mailto:help@nccu.edu.tw">help@nccu.edu.tw</a></p>
+             <p>(02)29393091#67157,#67185</p>
+           </footer>
+       </div><!--div.content!-->
+     <!--<div id="imgbanner">
+         <img src="images/bd.jpg" alt="四維堂 NCCU campus photo" width="100%">
+    </div>div.imgbanner!-->    
+       
+   
+
+
+</body></html>

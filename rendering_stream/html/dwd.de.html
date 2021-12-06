@@ -1,0 +1,906 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" class="js canvas no-touch geolocation multiplebgs backgroundsize boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage inlinesvg boxsizing mediaqueries cubicbezierrange display-table texttrackapi track formvalidation fieldsetdisabled styleableinputrange details no-mobile advancedcssanimation smaller-than-800 smaller-than-1024 em-increased-6 em-increased-5 em-increased-4 em-increased-3 em-increased-2 em-increased-1" style=""><head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+   <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apertoModules" src="SiteGlobals/Functions/JavaScript_Optimierung2/_standardlsg/../__modules%2Ejs.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apertoEnhanced" src="SiteGlobals/Functions/JavaScript_Optimierung2/_standardlsg/../__enhanced%2Ejs.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="Addon_Autosuggest" src="SiteGlobals/Functions/JavaScript_Optimierung2/_standardlsg/../autosuggestKomplett.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="Addon_Leistungssteckbrief" src="SiteGlobals/Functions/JavaScript_Optimierung2/_standardlsg/Addon_Leistungssteckbrief.js"></script><base href="https://www.dwd.de/" />
+   <meta charset="utf-8" />
+<meta name="twitter:dnt" content="on" />
+<meta name="twitter:widgets:csp" content="on" />
+   <meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Wetter und Klima - Deutscher Wetterdienst   -  Startseite</title>
+    <meta name="generator" content="Government Site Builder" />
+
+    <script type="text/javascript">//&lt;![CDATA[
+      // i18n
+        var PRINT_PAGE_TEXT = 'Seite drucken';
+        var PRINT_TOOLTIP = 'Seite drucken (öffnet Dialog)';
+        var MOBILENAVIGATION_JSON_URL = 'SiteGlobals/Functions/Navigation_Mobile/DE/mobile_navi_file.json?view=renderMobileNavigation';
+        var MOBILENAVIGATION_ACTIVENODE = 'node13790';
+           var UNWETTER_INTERVAL = 120000;
+        //constants
+        var CLINKS;
+        CLINKS = CLINKS || {};
+        CLINKS['calendar'] = "SiteGlobals/Functions/Kalender/DE/Kalender.html";
+        CLINKS['search'] = "SiteGlobals/Forms/Suche/Autosuggest_Formular.html";
+        CLINKS['search.json'] = "SiteGlobals/Forms/Suche/Autosuggest_Formular.json";
+        CLINKS['requirePath'] = "SiteGlobals/Functions/JavaScript_Optimierung2/_standardlsg";
+        CLINKS['html5player'] = "SiteGlobals/Functions/JavaScript_Optimierung2/libs/jwplayer.html5.js?v=1";
+        CLINKS['renderCityWeather.json?view=renderCityWeather'] = "SiteGlobals/Functions/CityWeather/RenderCityWeather.json?view=renderCityWeather";
+        CLINKS['RenderWeatherStatus.html?view=renderWeatherStatus'] = "SiteGlobals/Functions/Unwetterwarnung/RenderWeatherStatus.html?view=renderWeatherStatus";
+        CLINKS['CityWeatherCookiePath.value'] = "/SiteGlobals/";
+        CLINKS['CityWeatherSprite.normal'] = "/SiteGlobals/StyleBundles/Bilder/Allgemein/staedtewetter.svgz?__blob=normal&amp;amp;v=1";
+        CLINKS['ConsentBoxCookieExpiration.value'] = "360";
+        CLINKS['inkas_wirkungsanalyse'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['inkas_flaechenanalyse'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['inkasstart'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['inkas_wirkungsanalyse_en'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['inkas_flaechenanalyse_en'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['inkasstart_en'] = "_config/ConsentBoxCookieExpiration.html";
+        CLINKS['svgInlineCSS'] = "SiteGlobals/Frontend/inkas/css/inkas-svg.css?v=2";
+        CLINKS['inkasKomplett'] = "SiteGlobals/Frontend/inkas/js/inkasKomplett.js?v=1";
+        CLINKS['config.inkasJson'] = "/inkasbackend/inkas/config.json";
+        CLINKS['texts.inkasJson'] = "/inkasbackend/inkas/texts.json";
+        CLINKS['zeitlichewirkung.inkasCSV'] = "/inkasbackend/inkas/zeitlichewirkung.csv";
+        CLINKS['nrw/config-nrw.inkasJson'] = "/inkasbackend/inkas/nrw/config-nrw.json";
+        CLINKS['nrw/texts-nrw.inkasJson'] = "/inkasbackend/inkas/nrw/texts-nrw.json";
+        CLINKS.flashplayer = "/SiteGlobals/Functions/VideoPlayer/VideoPlayer.swf?__blob=value&amp;amp;v=2";
+        var RQNAMES;
+        RQNAMES = RQNAMES || {};
+        RQNAMES['app/modules/showbox.js'] = "app/modules/showbox%2Ejs";
+        RQNAMES['../__enhanced.js'] = "../__enhanced%2Ejs";
+        RQNAMES['../__modules.js'] = "../__modules%2Ejs";
+        RQNAMES['Addon_UnwetterForm'] = "Addon_UnwetterForm";
+        RQNAMES['Addon_mmenu'] = "Addon_mmenu";
+        RQNAMES['Addon_MobileNavigations'] = "Addon_MobileNavigations";
+        RQNAMES['Addon_Accordion'] = "Addon_Accordion";
+        RQNAMES['Addon_Autosuggest'] = "Addon_Autosuggest";
+        RQNAMES['Addon_StaedteWetter'] = "Addon_StaedteWetter";
+        RQNAMES['Addon_GlossarPopup'] = "Addon_GlossarPopup";
+        RQNAMES['Addon_Lightbox'] = "JQuery_PlugIn_Lightbox";
+        RQNAMES['Addon_Lightbox_a11y'] = "JQuery_PlugIn_a11y";
+        RQNAMES['jQuery_UI_Position'] = "JQuery_UI_Position";
+        RQNAMES['jQuery_UI_Autocomplete'] = "JQuery_UI_Autocomplete";
+        RQNAMES['jQuery_UI_Menu'] = "JQuery_UI_Menu";
+        RQNAMES['libs/hammer.js'] = "libs/hammer%2Ejs";
+        RQNAMES['libs/jquery.ui.mouse.js'] = "libs/jquery.ui.mouse%2Ejs";
+        RQNAMES['libs/jquery.ui.slider.js'] = "libs/jquery.ui.slider%2Ejs";
+        var LABELS;
+        LABELS = LABELS || {};
+        LABELS['MobilesMenueLaed'] = decodeURIComponent("Mobiles Men%C3%BC wird geladen. Bitte warten.");
+        LABELS['MenueAusblenden'] = decodeURIComponent("Men%C3%BC ausblenden");
+        LABELS['MenueEinblenden'] = decodeURIComponent("Men%C3%BC einblenden");
+        LABELS['Schliessen'] = decodeURIComponent("Schlie%C3%9Fen");
+        LABELS['MehrAnzeigen'] = decodeURIComponent("Mehr anzeigen");
+        LABELS['TeilenUeberschrift'] = decodeURIComponent("In sozialen Medien teilen");
+        LABELS['TeilenLink'] = decodeURIComponent("Diese Seite teilen");
+        LABELS['InkasVergleichenButton'] = decodeURIComponent("Auswahl");
+        LABELS['InkasVergleichEntfernenButton'] = decodeURIComponent("Auswahl aufheben");
+        LABELS['TeilenEmailBodytext'] = decodeURIComponent("Sie erhalten diese E-Mail%2C weil Ihnen jemand einen Artikel auf www.dwd.de empfohlen hat%3A%0A%7Burl%7D");
+      //]]&gt;
+    </script>
+
+    <meta name="keywords" content="Wetter, Wetterwarnungen, Unwetterwarnungen, Wetterdaten, Wettervorhersage, Städtewetter, Deutschlandwetter, Europawetter, Weltwetter, Wetterberichte, Schneehöhen, Pollenflug, Biowetter, Agrarwetter, Flugwetter,  Seewetter, Klima, Klimadaten, Klimaüberwachung, Klimaforschung, Klimaberatung, Klimawandel, Klimavorhersage, Klimawirkung " />
+
+    <meta name="description" content="Wetter und Klima aus einer Hand: Wetterwarnungen, Wetter, Klima, Biowetter, Agrarwetter, Flugwetter, Seewetter, Klimadaten, Klimakarten,  Klimaservices" />
+
+    <meta name="og:image" content="/SiteGlobals/StyleBundles/Bilder/Allgemein/OpenGraphImage-DWD-Logo.jpg?__blob=normal&amp;v=3" />
+
+
+    <link rel="canonical" href="https://www.dwd.de/DE/Home/home_node.html" />
+    <link rel="copyright" href="" type="text/html" title="Impressum" />
+    <link rel="glossary" href="" type="text/html" title="Glossar" />
+    <link rel="help" href="" type="text/html" title="Hilfe" />
+    <link rel="start" href="DE/Home/home_node.html" type="text/html" title="Homepage" />
+    <link rel="contents" href="" type="text/html" title="Übersicht" />
+    <link rel="search" href="" type="text/html" title="Suche" />
+    <link rel="shortcut icon" href="/SiteGlobals/StyleBundles/Bilder/favicon.ico?__blob=normal&amp;v=1" type="image/ico" />
+
+<link rel="alternate" type="application/rss+xml" title="DWD-RSS - Pressemitteilungen" href="SiteGlobals/Functions/RSSFeed/DE/pressemitteilungen/rssfeeds_pm.xml" />
+<link rel="alternate" type="application/rss+xml" title="DWD-RSS - Thema des Tages" href="SiteGlobals/Functions/RSSFeed/DE/themadestages/themadestages.xml" />
+<link rel="alternate" type="application/rss+xml" title="Neuigkeiten zu Open Data / DWD Open Data News (RSS)" href="SiteGlobals/Functions/RSSFeed/DE/opendata/opendata.xml" />
+<link rel="alternate" type="application/rss+xml" title="Neuigkeiten zu DWD-Geodaten / DWD Geodata-News (RSS)" href="SiteGlobals/Functions/RSSFeed/DE/geodienste/geodienste_lsb.xml" />
+<link rel="alternate" type="application/rss+xml" title="Neuste Nachrichten zum Thema Klimawandel" href="SiteGlobals/Functions/RSSFeed/DE/Klimawandel/RSSNewsfeed.xml" />
+<link rel="alternate" type="application/rss+xml" title="Neuste Nachrichten des DWD zum Thema Klima und Umwelt" href="SiteGlobals/Functions/RSSFeed/DE/Klima_aktuelles/RSSNewsfeed.xml" />
+
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/styles.css?v=15" type="text/css" media="screen" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/handheld/handheld_addon_mmenu.css?v=2" type="text/css" media="all and (max-width: 599px)" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/screen_addon_autosuggest.css?v=2" type="text/css" media="projection, screen, handheld" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/screen_addon_shariff.css?v=3" type="text/css" media="projection, screen, handheld" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/materna_additional_stylesheet.css?v=95" type="text/css" media="screen" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/mediaelementplayer.css?v=1" type="text/css" media="screen" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/mediaelementplayer_additional.css?v=1" type="text/css" media="screen" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/jquery.tablesorter.theme.default.css?v=1" type="text/css" media="screen" data-elementquery-processed="" />
+<!-- Additional IE/Win specific style sheet (Conditional Comments) --><!--[if IE 8]><link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/ie8.css?v=1" type="text/css" media="screen, projection" /><![endif]-->
+<!-- Additional IE/Win specific style sheet (Conditional Comments) --><!--[if lte IE 7]><link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/ie6-7.css?v=1" type="text/css" media="projection, screen" /><![endif]-->
+<!-- Additional IE/Win specific style sheet (Conditional Comments) --><!--[if lte IE 8]><link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/screen_iew.css?v=1" type="text/css" media="projection, screen" /><![endif]-->
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/print/print.css?v=5" type="text/css" media="print" data-elementquery-processed="" />
+<link rel="stylesheet" href="SiteGlobals/StyleBundles/CSS/screen/screen_addon_fontawesome.css?v=1" type="text/css" media="projection, screen, handheld" data-elementquery-processed="" />
+
+
+
+<!--[if IE 8]>
+ <script src="SiteGlobals/Functions/JavaScript/__ie8.js.js?v=1"></script>
+ <![endif]-->
+ <!--[if ! lte IE 7]><!--> 
+<!--
+    <script src="SiteGlobals/Functions/JavaScript/__base.js.js?v=1"></script>
+    <script src="SiteGlobals/Functions/JavaScript/__start.js.js?v=1"></script>
+-->
+    <script src="SiteGlobals/Functions/JavaScript_Optimierung2/__everything.js?v=13"></script>
+ <!--<![endif]-->
+<!--[if IE 8]>
+        <script src="SiteGlobals/Functions/JavaScript/html5shiv.js.js?v=1"></script>
+<![endif]-->
+  </head>
+  <body class="startseite  lang-de js-on" style="">
+
+
+<a name="Start"></a>
+ <div class="navSkip">
+<ul>
+   <li><a href="DE/Home/home_node.html#Inhalt">Inhalt</a></li>
+   <li><a href="DE/Home/home_node.html#Hauptmenu">Hauptmenu</a></li>
+   <li><a href="DE/Home/home_node.html#Suche">Suche</a></li>
+</ul>
+</div>
+<header role="banner" style="background-image: url(&quot;/SiteGlobals/StyleBundles/Bilder/Farbschema/bg/headerbild-2.jpg?__blob=normal&amp;v=3&quot;); min-height: 282px; height: auto;">
+  <div id="top-bar" class="slot noWarning">
+   <div class="row">
+  <nav id="nav-meta" role="navigation">
+        <h1>MetaNavigation</h1>
+<a href="#" class="menu-button" title="Menü einblenden"><span>zum Haupt-</span>Menü</a>
+
+<ul><li><a href="DE/presse/presseseite_node.html" title="Presse">Pres­se</a></li><li><a href="DE/service/kontakt/kontakt_node.html" title="Kontakt">Kon­takt</a></li><li><a title="English" class="languageLink lang_en" href="EN/Home/home_node.html" xml:lang="en" hreflang="en" lang="en">En</a></li><li class="icon lang-s"><a href="DE/service/gebaerdensprache/gebaerdenSprache_node.html" title="Gebärdensprache">Ge­bär­den­spra­che</a></li><li class="icon lang-e"><a href="DE/service/leichtesprache/leichte_sprache_home_node.html" title="Leichte Sprache">Leich­te Spra­che</a></li></ul>
+<div class="weather weather-data">
+     <p>
+<a href="DE/wetter/wetterundklima_vorort/_node.html" title="Zum Städtewetter" alt="Zum Städtewetter">
+
+      <span class="weather-location">Offenbach</span>
+      <span class="weather-icon icon-1" title="Regen" style="background-position: 50% -404px; background-image: url(&quot;/SiteGlobals/StyleBundles/Bilder/Allgemein/staedtewetter.svgz?__blob=normal&amp;amp;v=1&quot;);"></span>
+      <span class="weather-temp">2 °C</span>
+</a>
+     </p>
+</div>
+    </nav>
+<div class="search-btn">
+     <a href="#" title="Suche einblenden">zur Suche</a>
+    </div>
+
+
+<div class="target-audience">
+<form method="post">
+<div class="select-box">
+<fieldset>
+<label for="select-box-id" id="ID-1606993161662">Fachnutzer</label>
+
+<select id="select-box-id" class="target ui-replaced" name="navigateTo" style="display: none;">
+<option>Fachnutzer</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/forschung_lehre/forschung_lehre_node.html" data-href="https://www.dwd.de/DE/fachnutzer/forschung_lehre/forschung_lehre_node.html">Forschung und Lehre</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/freizeitgaertner/_node.html" data-href="https://www.dwd.de/DE/fachnutzer/freizeitgaertner/_node.html">Freizeitgärtner</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/geoinformationswirtschaft/geoinformationswirtschaft_node.html" data-href="https://www.dwd.de/DE/fachnutzer/geoinformationswirtschaft/geoinformationswirtschaft_node.html">Geoinformationswirtschaft</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/gesundheit/gesundheit_node.html" data-href="https://www.dwd.de/DE/fachnutzer/gesundheit/gesundheit_node.html">Gesundheit</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/hobbymet/hobbymet_node.html" data-href="https://www.dwd.de/DE/fachnutzer/hobbymet/hobbymet_node.html">Hobbymeteorologen</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/katastrophenschutz/katschutz_node.html" data-href="https://www.dwd.de/DE/fachnutzer/katastrophenschutz/katschutz_node.html">Katastrophenschutz</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/landwirtschaft/landwirtschaft_node.html" data-href="https://www.dwd.de/DE/fachnutzer/landwirtschaft/landwirtschaft_node.html">Land- und Forstwirtschaft</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/luftfahrt/luftfahrt_node.html" data-href="https://www.dwd.de/DE/fachnutzer/luftfahrt/luftfahrt_node.html">Luftfahrt</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/schifffahrt/schifffahrt_node.html" data-href="https://www.dwd.de/DE/fachnutzer/schifffahrt/schifffahrt_node.html">Schifffahrt</option>
+              <option value="https://www.dwd.de/DE/fachnutzer/wasserwirtschaft/wasserwirtschaft_node.html" data-href="https://www.dwd.de/DE/fachnutzer/wasserwirtschaft/wasserwirtschaft_node.html">Wasserwirtschaft</option>
+</select><span class="combobox combobox-closedtarget default-selected" tabindex="-1">  <input type="text" role="combobox" readonly="readonly" aria-readonly="false" unselectable="on" aria-labelledby="ID-1606993161662" aria-valuetext="Fachnutzer" /> <span>▾</span></span>
+
+<input type="submit" value="&gt;&gt;" class="non-js" />
+
+</fieldset>
+</div>
+</form>
+</div>
+
+<div class="weather weather-warning">
+            <p class="no-warning">
+            <a href="DE/wetter/warnungen/warnWetter_node.html" title="Zu den Wetterwarnungen" target="_blank">Kei­ne Un­wet­ter­war­nung</a>
+            </p>
+</div> 
+
+   </div><!-- row -->
+  </div><!-- slot -->  
+  <div id="search" class="slot extended hide">
+   <div class="row">
+    <div class="search-box" role="search">
+
+<form name="ServicebereichSuche" action="SiteGlobals/Forms/Suche/Servicesuche_Formular.html" method="get" enctype="application/x-www-form-urlencoded">
+  
+  <input type="hidden" name="nn" value="13790" />
+  <input type="hidden" name="resourceId" value="13898" />
+  <input type="hidden" name="input_" value="13790" />
+  <input type="hidden" name="pageLocale" value="de" />
+              
+<span class="formLabel">
+  <label for="f13898d20854">Suchtext </label></span>
+            
+  <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="f13898d20854" name="templateQueryString" value="" title="Suchtext" type="text" placeholder="Suche ..." size="26" maxlength="100" autocomplete="off" class="ui-autocomplete-input" />
+  <input id="f13898d22552" name="sortOrder" value="score desc" type="hidden" />
+            
+  <input type="submit" name="submitButton" value="Suchen" class="submit" />
+
+
+</form>
+    </div>
+   </div>
+  </div>    
+
+  <div id="nav" class="slot has-level-1">
+<div class="PrintLogo"><img src="/SiteGlobals/StyleBundles/Bilder/Farbschema/img/logo.png?__blob=normal&amp;v=3" alt="Government Site Builder Standardlösung" /></div>
+   <div class="row">
+    <nav role="navigation">
+     <h1 class="logo"><a href="DE/Home/home_node.html" title="zur Startseite">Deutscher Wetterdienst <em>Wetter und Klima aus einer Hand</em></a></h1>      
+     <section>
+      <h1>Navigationsmenue</h1>
+<ul class="level-1"><li class="has-flyout virgin "><a href="DE/wetter/wetter_node.html" title="Alles rund um das aktuelle Wetter und die Wettervorhersage">Wet­ter</a>
+      <div class="flyout">
+        <div class="flyout-box-group">
+                <div class="flyout-box">
+          <ul>
+                <li><a href="DE/wetter/warnungen_gemeinden/warnWetter_node.html" title="Amtliche Warnungen aktuell">War­nun­gen</a></li>
+                <li><a href="DE/wetter/wetterundklima_vorort/_node.html" title="lokale Wetter- und Klimawerte">Wet­ter und Kli­ma vor Ort</a></li>
+                <li class="last"><a href="DE/wetter/vorhersage_aktuell/vhs_brd_node.html" title="aktuelle Wetterberichte für die nächsten Tage für Deutschland und die Bundesländer">Wet­ter­be­rich­te</a></li>
+                <li><a href="DE/wetter/wetter_weltweit/wetter_weltweit_node.html" title="aktuelle Wetterdaten und Vorhersagen weltweit">Wet­ter Eu­ro­pa und welt­weit</a></li>
+                <li><a href="DE/wetter/schon_gewusst/schongewusst_node.html" title="Informationen über den Erstellung von Wettervorhersagen, das DWD-Warnmanagement etc.">Schon ge­wusst?</a></li>
+                <li class="last"><a href="DE/wetter/vorhersage_profis/vorhersageprofis_node.html" title="Wettervorhersagen für Profis">Wet­ter­vor­her­sa­gen für Pro­fis</a></li>
+          </ul></div></div></div></li><li class="has-flyout virgin "><a href="DE/klimaumwelt/klimaumwelt_node.html" title="Klima und Umwelt">Kli­ma und Um­welt</a>
+      <div class="flyout">
+        <div class="flyout-box-group">
+                <div class="flyout-box">
+          <ul>
+                <li><a href="DE/klimaumwelt/dkd/dkd_node.html" title="Deutscher Klimadienst (DKD) ">Deut­scher Kli­ma­di­enst (DKD) </a></li>
+                <li><a href="DE/klimaumwelt/klimaforschung/klimavhs/klimavhs_node.html" title="Klimavorhersage">Kli­ma­vor­her­sa­ge</a></li>
+                <li><a href="DE/klimaumwelt/cdc/cdc_node.html" title="CDC (Climate Data Center)">CDC (Cli­ma­te Da­ta Cen­ter)</a></li>
+                <li class="last"><a href="DE/klimaumwelt/klimaueberwachung/klimaueberwachung_node.html" title="Klimaüberwachung">Kli­ma­über­wa­chung</a></li>
+                <li><a href="DE/klimaumwelt/klimaforschung/klimaforschung_node.html" title="Klimaforschung">Kli­ma­for­schung</a></li>
+                <li><a href="DE/klimaumwelt/ku_beratung/ku_beratung_node.html" title="Klima- und Umweltberatung">Kli­ma- und Um­welt­be­ra­tung</a></li>
+                <li><a href="DE/klimaumwelt/klimawandel/klimawandel_node.html" title="Klimawandel">Kli­ma­wan­del</a></li>
+                <li class="last"><a href="DE/klimaumwelt/cap_build/cap_build_node.html" title="Capacity-Building">Ca­pa­ci­ty-Buil­ding</a></li>
+          </ul></div></div></div></li><li class="has-flyout virgin "><a href="DE/forschung/forschung_node.html" title="Forschung">For­schung</a>
+      <div class="flyout">
+        <div class="flyout-box-group">
+                <div class="flyout-box">
+          <ul>
+                <li><a href="DE/forschung/atmosphaerenbeob/atmosphaerenbeob_node.html" title="Atmosphärenbeobachtung">At­mo­sphä­ren­be­ob­ach­tung</a></li>
+                <li><a href="DE/forschung/wettervorhersage/wettervorhersage_node.html" title="Wettervorhersage">Wet­ter­vor­her­sa­ge</a></li>
+                <li><a href="DE/forschung/klima_umwelt/klimaumwelt_node.html" title="Klima und Umwelt">Kli­ma und Um­welt</a></li>
+                <li class="last"><a href="DE/forschung/forschungsprogramme/herz/herz_node.html" title="Hans-Ertel-Zentrum">Hans-Er­tel-Zen­trum</a></li>
+                <li><a href="DE/forschung/forschungsprogramme/forschungsprogramme_node.html" title="DWD-Forschungsprogramme">DWD-For­schungs­pro­gram­me</a></li>
+                <li><a href="DE/forschung/internationale_programme/internationale_programme_node.html" title="Internationale Programme">In­ter­na­tio­na­le Pro­gram­me</a></li>
+                <li class="last"><a href="DE/forschung/projekte/projekte_node.html" title="Projekte">Pro­jek­te</a></li>
+          </ul></div></div></div></li><li class="has-flyout virgin FlyoutLinks"><a href="DE/leistungen/_functions/Suche/Suche_Formular.html?nn=13790" title="Produkte und Leistungen des Deutschen Wetterdienstes">Leistungen</a></li><li class="has-flyout virgin FlyoutLinks"><a href="DE/derdwd/derdwd_node.html" title="Der Deutsche Wetterdienst - Aufgaben, Organisation, Standorte">Der DWD</a>
+      <div class="flyout">
+        <div class="flyout-box-group">
+                <div class="flyout-box">
+          <ul>
+                <li><a href="DE/derdwd/aufgaben/aufgaben_node.html" title="Aufgaben">Auf­ga­ben</a></li>
+                <li><a href="DE/derdwd/arbeitgeber/arbeitgeber_node.html" title="Arbeitgeber DWD">Ar­beit­ge­ber DWD</a></li>
+                <li><a href="DE/derdwd/organisation/organisation_node.html" title="Organisation">Or­ga­ni­sa­ti­on</a></li>
+                <li class="last"><a href="DE/derdwd/standorte/standorte_node.html" title="Standorte">Stand­orte</a></li>
+                <li><a href="DE/derdwd/koop/koop_node.html" title="Zusammenarbeit">Zu­sam­men­ar­beit</a></li>
+                <li><a href="DE/derdwd/messnetz/messnetz_node.html" title="Messnetz">Mess­netz</a></li>
+                <li class="last"><a href="DE/derdwd/bibliothek/bibliothek_node.html" title="Deutsche Meteorologische Bibliothek">Deut­sche Me­teo­ro­lo­gi­sche Bi­blio­thek</a></li>
+          </ul></div></div></div></li>
+</ul>
+     </section>
+    </nav>
+   </div><!-- row -->
+  </div><!-- slot -->     
+    
+
+ <div class="slot stage">
+   <div class="row">
+    <section>
+     <div class="row">
+      <div class="accordion">
+       <div class="content-wrapper">
+    <h3 class="accordionHeader">Wetter und Klima im Überblick</h3>
+        <div id="content-1" class="content on a11y-js-overflow" aria-expanded="true" role="group">
+       
+        <a class="big-img-link img-wrapper" href="https://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg"><img src="https://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg" alt="aktuelle Wetterwerte Deutschland" /></a>
+
+
+
+<div class="more"><a href="DE/wetter/wetter_node.html">
+            Mehr Informationen</a></div>
+        </div>
+        <div id="content-2" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-3" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-4" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-5" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-6" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-7" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+        <div id="content-8" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+       
+        </div>
+
+
+        <div id="content-9" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-10" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-11" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-12" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-13" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-14" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-15" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-16" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-17" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-18" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-19" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-20" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+
+        <div id="content-21" class="content a11y-js-overflow" aria-expanded="false" role="group" style="display: none;">
+
+        
+
+        </div>
+        </div>
+
+       <div class="toc-container">
+        <div class="toc-wrapper" data-scrollersize="8">
+<h2 data-collapse="{&quot;ref&quot;: &quot;toc-1&quot;}">Wetter</h2>
+<a data-collapse="{&quot;ref&quot;: &quot;toc-1&quot;}" href="#toc-1">Wetter</a>
+         <div class="toc-hide-wrapper" style="height: 146px; overflow: hidden; position: relative;">
+         <div class="toc-move-wrapper">
+          <ol class="toc" id="toc-1">
+           <li aria-controls="content-1" tabindex="-1" aria-disabled="true" class="ui-disabled on first-teaser" aria-expanded="true" role="button"><a href="#content-1" data-url="DE/Home/_functions/Stage/wetter/wx_brd.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Deutschland aktuell</a></li>
+           <li aria-controls="content-2" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-2" data-url="DE/Home/_functions/Stage/wetter/vhs_brd.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Deutschland morgen</a></li>
+           <li aria-controls="content-3" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-3" data-url="DE/Home/_functions/Stage/wetter/radar_brd.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Niederschlagsradar</a></li>
+           <li aria-controls="content-4" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-4" data-url="DE/Home/_functions/Stage/wetter/vhstrend_brd.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Deutschland  2.- 4. Tag</a></li>
+           <li aria-controls="content-5" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-5" data-url="DE/Home/_functions/Stage/wetter/vhs_europa_wolken.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Europa Wolken</a></li>
+           <li aria-controls="content-6" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-6" data-url="DE/Home/_functions/Stage/wetter/vhs_europa_wind.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Europa Wind</a></li>
+           <li aria-controls="content-7" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-7" data-url="DE/Home/_functions/Stage/wetter/vhs_europa.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Europa morgen</a></li>
+           <li aria-controls="content-8" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" class="last-teaser"><a href="#content-8" data-url="DE/Home/_functions/Stage/wetter/vhs_welt.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Weltweit morgen</a></li>
+          </ol>
+         </div>
+         </div>
+           <div class="pagination visible">
+                 <a href="#" title="Zurück" class="prev">Zurück</a>
+                <a href="#" title="Weiter" class="next show">Weiter</a>
+            </div>
+        </div>
+        <div class="toc-wrapper" data-scrollersize="13">
+<h2 data-collapse="{&quot;ref&quot;: &quot;toc-2&quot;}">Klima</h2>
+<a data-collapse="{&quot;ref&quot;: &quot;toc-2&quot;}" href="#toc-2">Klima</a>
+         <div class="toc-hide-wrapper" style="height: 146px; overflow: hidden; position: relative;">
+         <div class="toc-move-wrapper">
+          <ol class="toc" id="toc-2">
+
+           <li aria-controls="content-9" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" class="first-teaser"><a href="#content-9" data-url="DE/Home/_functions/Stage/klima/stage_mks_180214.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Monatlicher Klimastatus Deutschland</a></li>
+           <li aria-controls="content-10" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-10" data-url="DE/Home/_functions/Stage/klima/stage_klima_globaler_wasserkreislauf.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Globaler Wasserkreislauf</a></li>
+           <li aria-controls="content-11" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-11" data-url="DE/Home/_functions/Stage/klima/stage_klima_nationaler_klimareport.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Nationaler Klimareport - neue Auflage</a></li>
+           <li aria-controls="content-12" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-12" data-url="DE/Home/_functions/Stage/klima/stage_klima_phaenolog_aktuell.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Phänologische Jahreszeit</a></li>
+           <li aria-controls="content-13" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-13" data-url="DE/Home/_functions/Stage/klima/stage_klima_solarenergie.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Solarenergie</a></li>
+           <li aria-controls="content-14" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-14" data-url="DE/Home/_functions/Stage/klima/stage_ee_produktion_risiken_minimieren_ts_becker_180306.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Untersuchung zu erneuerbaren Energien</a></li>
+           <li aria-controls="content-15" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-15" data-url="DE/Home/_functions/Stage/klima/stage_klima_besondere_ereignisse.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Besondere Ereignisse</a></li>
+           <li aria-controls="content-16" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-16" data-url="DE/Home/_functions/Stage/klima/stage_klima_hitzetote_150715.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Mehr Hitzetote</a></li>
+           <li aria-controls="content-17" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-17" data-url="DE/Home/_functions/Stage/klima/stage_radarklimatologie_171020.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Radarklimatologie erfolgreich erstellt</a></li>
+           <li aria-controls="content-18" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-18" data-url="DE/Home/_functions/Stage/klima/stage_zugbahnen_wirbelstuerme_170906.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Zugbahnen tropischer Wirbelstürme</a></li>
+           <li aria-controls="content-19" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-19" data-url="DE/Home/_functions/Stage/klima/stage_unwetterklimatologie_180530.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Unwetterklimatologie für Deutschland</a></li>
+           <li aria-controls="content-20" tabindex="0" aria-disabled="false" aria-expanded="false" role="button"><a href="#content-20" data-url="DE/Home/_functions/Stage/klima/stage_ksb_2019_200316.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Klimastatusbericht Deutschland 2019</a></li>
+           <li aria-controls="content-21" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" class="last-teaser"><a href="#content-21" data-url="DE/Home/_functions/Stage/klima/stage_temperaturentwicklung_d_global_200129.html?view=render[Stage]&amp;nn=13790" tabindex="-1">Temperaturentwicklung in Deutschland und global</a></li>
+          </ol>
+         </div>
+         </div>
+           <div class="pagination visible">
+                 <a href="#" title="Zurück" class="prev">Zurück</a>
+                <a href="#" title="Weiter" class="next show">Weiter</a>
+            </div>
+        </div>
+
+        
+       </div><!-- nav-wrapper -->
+      </div><!-- multi-tab -->
+     </div><!-- row -->
+    </section>
+    <div class="sidebar">
+     <div class="row">
+      <div class="teaser type-4 warning">
+      <div class="teaser-box">
+        <h2>Amtliche Warnungen</h2><div style="margin-left:0;text-align:center">
+   <a href="DE/wetter/warnungen_gemeinden/warnWetter_node.html">
+     <img id="DE_teaser_x_x_0" height="280" src="/DWD/warnungen/warnapp_gemeinden/json/warnungen_gemeinde_map_de.png" alt="Amtliche Warnungen" align="middle" />
+   </a>
+ </div>
+<script type="text/javascript">
+                setInterval(function()
+                {
+                      $("#DE_teaser_x_x_0").attr("src", "/DWD/warnungen/warnapp_gemeinden/json/warnungen_gemeinde_map_de.png" + "?" + new Date().getTime());
+                }, 120000);                           
+</script><div class="img-container"></div><div class="more"><a href="DE/wetter/warnungen_gemeinden/warnWetter_node.html">
+Mehr Informationen</a></div>
+      </div><!-- teaser-box -->
+      </div><!-- teaser -->
+     </div><!-- row -->
+    </div>
+   </div>
+   </div> 
+    
+ </header>
+<main id="main" role="main">
+  <div class="slot content" id="buehneTop">
+   <div class="row">
+      
+           
+<section class="teaser imgmap type-2">
+    <h1>Wetter &amp; Klima vor Ort</h1>
+<div class="teaser-box" style="height: 684px;">
+                        <!-- ImageReady Slices (imagemap_deutschland.ai) -->
+<img src="DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal" width="220" height="350" border="0" alt="Deutschlandkarte" title="Die Navigation erfolgt über die jeweiligen Bundesländer" usemap="#imagemap_deutschland_Map" id="map" />
+<map name="imagemap_deutschland_Map">
+<area shape="rect" alt="Link zu Thüringen" title="Link zu Thüringen" coords="199,36,222,64" href="/DE/wetter/wetterundklima_vorort/thueringen/thu_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_thueringen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Schleswig-Holstein" title="Link zu Schleswig-Holstein" coords="171,37,197,65" href="/DE/wetter/wetterundklima_vorort/schleswig-holstein_hamburg/shh_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_schleswig.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Sachsen-Anhalt" title="Link zu Sachsen-Anhalt" coords="143,37,167,65" href="/DE/wetter/wetterundklima_vorort/sachsen-anhalt/saa_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_sachsen_anhalt.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Sachsen" title="Link zu Sachsen" coords="114,37,139,64" href="/DE/wetter/wetterundklima_vorort/sachsen/sac_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_sachsen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Saarland" title="Link zu Saarland" coords="86,36,110,65" href="/DE/wetter/wetterundklima_vorort/rheinland-pfalz-saarland/rps_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_saarland.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Rheinland-Pfalz" title="Link zu Rheinland-Pfalz" coords="57,36,81,65" href="/DE/wetter/wetterundklima_vorort/rheinland-pfalz-saarland/rps_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_rheinland.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Nordrhein-Westfalen" title="Link zu Nordrhein-Westfalen" coords="28,37,53,65" href="/DE/wetter/wetterundklima_vorort/nordrhein-westfalen/nrw_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_nordrhein.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Niedersachsen" title="Link zu Niedersachsen" coords="0,36,25,65" href="/DE/wetter/wetterundklima_vorort/niedersachsen_bremen/nib_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_niedersachsen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Mecklenburg-Vorpommern" title="Link zu Mecklenburg-Vorpommern" coords="198,11,222,37" href="/DE/wetter/wetterundklima_vorort/mecklenburg-vorpommern/mvp_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_meckpom.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Hessen" title="Link zu Hessen" coords="171,11,195,39" href="/DE/wetter/wetterundklima_vorort/hessen/hessen_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_hessen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />                           
+<area shape="rect" alt="Link zu Hamburg" title="Link zu Hamburg" coords="144,11,165,39" href="/DE/wetter/wetterundklima_vorort/schleswig-holstein_hamburg/shh_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_hamburg.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Brandenburg" title="Link zu Brandenburg" coords="86,11,110,38" href="/DE/wetter/wetterundklima_vorort/berlin-brandenburg/bbb_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_brandenburg.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Berlin" title="Link zu Berlin" coords="59,10,79,36" href="/DE/wetter/wetterundklima_vorort/berlin-brandenburg/bbb_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_berlin.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Bayern" title="Link zu Bayern" coords="29,11,51,39" href="/DE/wetter/wetterundklima_vorort/bayern/bayern_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_bayern.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Baden-Württemberg" title="Link zu Baden-Württemberg" coords="1,11,22,37" href="/DE/wetter/wetterundklima_vorort/baden-wuerttemberg/bawue_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_wuertt.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="rect" alt="Link zu Bremen" title="Link zu Bremen" coords="115,11,138,39" href="/DE/wetter/wetterundklima_vorort/niedersachsen_bremen/nib_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_bremen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+
+<area shape="poly" alt="Link zu Baden-Württemberg" title="Link zu Baden-Württemberg" coords="105,284,105,284,106,281,107,280,107,279,106,279,105,277,104,276,102,274,101,272,99,270,99,266,98,263,98,261,98,259,95,259,95,259,94,258,91,250,91,250,90,250,90,250,90,250,90,250,90,250,90,249,89,249,89,249,89,249,89,249,89,249,88,249,88,249,88,249,87,249,87,249,87,249,87,249,86,249,86,249,86,249,86,249,85,249,83,251,80,253,77,257,76,257,76,257,74,260,70,262,70,262,70,262,69,262,69,261,68,260,68,259,68,258,67,257,66,255,60,255,60,260,60,264,59,266,59,268,58,269,58,271,57,272,55,274,54,275,54,277,54,278,53,279,52,281,51,282,50,283,48,285,45,287,44,288,44,289,42,292,41,295,40,299,39,303,38,307,37,312,36,316,35,318,34,320,47,327,50,326,55,325,63,323,66,323,68,323,69,323,71,322,72,322,74,322,76,323,78,324,79,324,81,324,82,324,83,325,85,326,88,324,90,322,93,322,94,321,95,321,95,320,96,319,96,318,97,317,97,314,97,313,98,307,98,303,98,302,98,302,97,300,95,299,94,296,94,295,95,295,97,294,100,293,101,291,102,290,102,290,103,288,103,287,105,284,105,284,105,284" href="/DE/wetter/wetterundklima_vorort/baden-wuerttemberg/bawue_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_wuertt.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Bayern" title="Link zu Bayern" coords="192,285,192,285,192,284,191,284,190,283,188,282,187,281,184,280,182,279,178,277,177,277,175,276,174,275,172,273,171,272,170,269,169,268,167,267,166,266,164,265,162,265,161,264,160,263,158,261,157,260,156,258,155,256,155,254,154,252,154,250,154,249,154,247,155,246,155,246,155,245,154,243,152,240,149,237,149,237,148,236,148,236,143,227,140,227,136,227,135,227,134,226,132,225,131,224,130,223,129,223,129,230,129,232,128,231,122,229,121,228,119,228,119,229,118,229,118,229,117,230,117,231,116,231,115,232,114,232,113,232,112,231,111,230,110,229,109,227,108,226,105,224,103,222,102,221,101,221,100,221,98,222,94,226,86,237,85,238,85,237,84,237,83,237,81,237,78,237,77,237,77,238,76,238,76,239,76,240,76,240,76,242,76,244,77,245,77,246,77,247,77,249,77,251,77,254,81,251,83,249,85,248,86,247,87,247,88,247,89,247,90,248,91,248,92,249,92,249,92,249,96,257,99,257,100,257,100,258,100,259,100,262,100,265,101,267,101,269,102,271,104,273,105,275,106,276,108,278,108,278,109,279,109,280,108,281,107,284,105,287,104,289,104,290,104,291,103,292,102,293,101,294,98,295,96,296,98,299,98,300,99,300,99,301,100,302,100,303,100,304,100,308,99,313,99,315,99,317,98,318,98,320,97,321,96,322,95,323,93,323,91,324,89,325,86,327,89,328,91,328,92,328,93,328,94,328,95,329,96,330,97,331,99,333,100,335,101,336,102,336,103,337,103,337,104,336,105,336,105,336,106,335,107,334,107,332,107,330,108,329,108,328,109,328,109,328,110,327,111,327,112,328,113,328,115,329,118,331,121,334,122,334,123,335,124,335,126,334,128,334,130,333,132,332,134,330,136,328,137,328,138,327,141,327,144,326,148,326,150,326,152,326,154,325,155,325,160,324,163,324,166,324,166,324,166,324,168,327,169,329,170,330,170,331,171,331,172,331,175,323,172,319,169,315,167,311,166,310,166,309,166,308,166,307,167,306,168,305,169,304,170,303,173,302,177,301,180,300,181,299,182,299,182,298,182,297,182,294,182,293,182,291,183,291,183,290,183,290,184,289,185,289,186,289,187,290,189,291,190,292,192,285,192,285,192,285" href="/DE/wetter/wetterundklima_vorort/bayern/bayern_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_bayern.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Berlin" title="Link zu Berlin" coords="182,149,182,149,181,148,180,147,180,146,179,145,177,147,174,147,172,149,173,150,173,151,173,151,173,153,178,156,180,153,181,153,181,153,183,155,185,153,183,151,182,150,182,149,182,149,182,149" href="/DE/wetter/wetterundklima_vorort/berlin-brandenburg/bbb_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_berlin.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Brandenburg" title="Link zu Brandenburg" coords="212,177,211,171,210,164,208,157,207,153,206,150,205,148,205,147,204,145,203,145,200,143,198,142,195,140,194,138,193,137,193,137,193,136,193,135,193,134,194,134,194,133,196,131,197,131,197,130,198,129,198,127,199,125,199,123,199,122,194,122,193,122,193,121,193,117,191,116,189,116,187,116,186,116,185,116,184,116,184,116,183,118,181,121,180,123,180,123,179,124,176,124,172,126,170,127,168,127,168,127,167,127,165,127,163,127,161,126,157,125,155,124,147,121,146,123,145,124,145,124,142,124,139,125,137,126,137,126,137,127,136,127,136,128,135,128,135,129,133,129,131,129,131,130,137,130,138,130,138,130,140,132,142,134,143,135,144,136,145,136,147,136,149,137,150,137,151,136,152,136,152,137,152,141,152,144,152,146,151,147,151,147,151,149,151,153,152,163,153,165,154,166,154,167,155,167,157,167,161,168,161,168,174,173,174,173,174,173,175,175,175,177,176,178,175,179,175,180,173,182,177,189,181,190,183,191,184,191,185,192,188,191,191,191,193,191,193,190,193,188,193,187,194,186,194,186,195,185,196,185,197,185,199,185,201,185,202,185,202,184,204,184,207,183,213,183,212,177" href="/DE/wetter/wetterundklima_vorort/berlin-brandenburg/bbb_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_brandenburg.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Bremen" title="Link zu Bremen" coords="68,124,68,124,69,125,70,125,70,126,70,127,70,128,72,129,72,129,73,129,75,130,76,130,78,131,78,131,79,130,79,129,79,127,73,125,71,125,68,124,68,124,68,124" href="/DE/wetter/wetterundklima_vorort/niedersachsen_bremen/nib_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_bremen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Hamburg" title="Link zu Hamburg" coords="104,114,104,114,104,113,104,113,104,112,104,110,105,109,102,109,101,109,100,111,99,111,98,111,97,111,96,111,95,113,95,113,95,115,96,116,96,117,97,117,98,117,98,117,99,117,100,117,101,117,103,117,104,117,105,117,105,117,106,117,104,114,104,114,104,114" href="/DE/wetter/wetterundklima_vorort/schleswig-holstein_hamburg/shh_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_hamburg.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Hessen" title="Link zu Hessen" coords="96,195,96,195,96,195,96,194,95,193,95,192,94,191,92,191,91,190,91,190,91,190,90,190,90,189,90,188,89,187,89,186,89,186,89,184,89,184,89,183,88,183,87,183,85,183,83,183,82,186,81,188,81,189,80,189,80,190,79,189,76,188,75,189,74,190,73,191,73,192,72,192,71,192,69,192,68,192,67,193,67,194,68,195,68,196,69,197,69,198,69,198,68,199,67,200,66,201,65,202,64,202,64,202,63,204,61,206,60,208,60,208,60,208,58,209,57,209,56,210,55,210,55,210,54,213,55,214,55,215,55,216,55,217,54,220,53,222,52,224,53,226,54,226,53,227,51,230,49,233,48,234,45,237,45,237,46,238,46,239,47,239,48,239,49,239,51,238,53,237,54,237,54,236,55,237,59,239,59,239,59,239,62,247,63,247,62,248,62,248,61,249,61,251,61,252,61,253,66,253,66,253,66,253,67,254,68,255,69,257,69,258,70,259,70,260,75,256,75,253,76,250,76,248,76,247,75,246,75,244,74,242,74,241,74,240,74,239,74,238,75,237,76,237,77,236,78,236,80,235,82,235,83,235,85,236,93,225,93,225,96,222,98,221,100,220,100,218,98,217,97,217,97,216,96,216,96,215,95,214,95,214,96,212,97,211,97,210,97,209,96,208,95,207,96,207,100,203,102,200,96,195,96,195,96,195" href="/DE/wetter/wetterundklima_vorort/hessen/hessen_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_hessen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Mecklenburg-Vorpommern" title="Link zu Mecklenburg-Vorpommern" coords="194,120,199,121,198,119,198,118,197,115,196,111,195,108,194,104,194,102,194,100,192,98,190,96,187,94,185,93,184,91,183,92,181,92,179,93,177,93,176,92,175,92,174,92,173,91,172,90,170,89,169,87,168,85,167,83,165,82,163,81,162,81,160,82,159,83,157,83,155,86,152,89,150,90,149,91,147,92,144,93,142,93,139,93,135,96,135,96,135,96,128,98,128,98,126,99,124,99,122,100,120,103,120,105,120,106,120,106,121,107,122,107,123,108,124,108,124,109,124,109,123,113,123,114,123,114,119,116,118,118,116,119,118,121,119,121,119,121,120,121,122,120,123,120,123,121,125,124,127,126,128,127,129,127,130,128,130,128,131,128,131,128,131,128,132,128,132,128,133,128,133,128,133,128,134,127,134,127,134,127,134,127,134,127,134,127,135,127,135,126,136,125,137,124,139,124,142,123,144,122,146,119,146,119,147,119,156,123,159,124,163,125,166,126,166,126,167,126,167,126,168,126,168,126,168,126,168,125,168,125,169,125,169,125,169,125,170,125,170,125,170,125,170,125,170,125,171,125,171,125,176,123,178,123,179,121,180,119,181,117,182,115,183,115,184,114,185,114,187,114,188,114,190,115,192,115,193,116,194,116,194,117,194,120,194,120,194,120" href="/DE/wetter/wetterundklima_vorort/mecklenburg-vorpommern/mvp_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_meckpom.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Niedersachsen" title="Link zu Niedersachsen" coords="131,133,130,133,130,132,129,130,128,130,128,130,128,130,127,129,127,129,127,129,126,128,124,126,122,123,120,123,119,124,118,124,118,123,117,123,116,122,114,121,113,121,112,120,110,120,107,118,106,119,106,120,105,119,104,119,103,119,102,119,101,119,99,120,98,120,97,119,96,119,96,119,96,118,95,118,95,118,95,118,95,117,95,117,94,117,94,117,94,117,94,116,94,116,94,116,94,116,94,115,94,115,94,115,94,114,94,114,94,113,94,113,94,113,93,112,91,111,90,111,90,110,89,109,88,107,87,105,87,104,86,103,85,102,85,102,83,102,81,103,80,103,79,103,78,104,76,103,74,103,73,103,72,103,71,103,70,103,69,104,68,106,67,108,67,111,67,111,65,111,62,110,55,107,54,107,51,107,48,108,45,108,42,109,39,110,37,111,36,112,35,113,35,114,34,114,34,115,34,116,35,117,35,118,36,119,38,121,39,122,38,123,38,123,38,124,37,126,37,129,35,132,33,135,32,137,31,140,29,143,29,144,29,145,29,148,29,151,29,153,28,156,32,157,34,157,36,156,37,156,38,155,40,153,44,150,45,150,45,150,47,151,50,153,52,154,53,155,53,155,53,157,53,159,53,162,53,164,54,164,55,165,57,165,59,165,59,164,61,163,63,162,60,154,59,153,60,153,68,149,69,148,69,149,69,150,70,151,70,152,71,153,71,153,72,153,73,153,74,152,76,151,78,150,79,149,79,150,79,151,80,152,80,153,80,154,80,155,79,157,78,159,78,159,78,160,77,161,78,163,79,164,79,165,80,166,81,167,81,167,84,171,87,175,87,175,87,175,86,177,86,179,86,180,86,181,87,181,88,181,89,181,90,182,90,183,91,183,91,184,91,185,91,186,91,187,91,188,92,189,93,190,95,190,96,191,98,191,99,191,100,190,103,189,105,187,107,186,107,186,109,185,110,185,111,185,112,185,114,182,113,181,113,180,112,179,112,177,112,174,112,169,112,169,112,169,113,168,113,168,114,168,115,168,117,168,119,168,120,167,121,167,121,166,122,165,123,163,123,161,123,159,122,158,122,157,122,154,121,150,120,146,119,145,119,144,118,143,118,143,117,142,117,141,117,140,117,139,117,139,118,139,121,137,124,137,126,137,127,137,128,137,130,137,131,137,131,135,133,133,131,133" href="/DE/wetter/wetterundklima_vorort/niedersachsen_bremen/nib_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_niedersachsen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Nordrhein-Westfalen" title="Link zu Nordrhein-Westfalen" coords="83,172,80,168,79,167,78,166,77,164,76,163,76,161,76,160,76,159,76,158,77,157,78,155,78,154,78,153,78,152,77,153,75,153,74,154,72,155,71,155,70,154,70,154,69,153,68,152,68,151,62,154,65,161,65,162,64,162,63,163,62,164,60,165,59,166,58,166,57,166,55,166,53,165,52,165,51,165,51,164,51,164,51,163,51,163,51,161,52,159,52,157,52,155,51,155,49,154,47,153,45,152,41,155,39,157,38,157,36,158,36,158,34,158,32,158,30,158,28,157,27,160,26,162,25,164,25,165,25,167,24,168,23,169,22,170,21,171,20,172,18,172,17,173,15,173,13,172,10,172,10,172,8,172,7,173,5,172,6,173,6,174,6,176,7,178,8,179,10,181,10,182,11,184,11,186,11,187,11,188,10,190,9,192,10,194,10,195,10,195,8,197,7,198,6,200,6,201,5,203,5,204,5,206,5,207,6,210,7,212,8,215,9,217,11,220,12,222,12,224,14,223,16,222,18,222,19,222,20,222,20,222,21,222,21,222,22,222,22,221,22,219,22,219,22,218,23,218,26,216,29,215,30,214,32,214,34,213,37,212,39,210,41,209,42,208,43,207,43,207,43,206,44,206,44,205,45,205,46,205,47,206,47,206,47,206,48,206,48,206,50,208,52,210,53,211,54,210,54,209,55,208,56,208,58,207,59,207,60,205,61,202,63,201,63,200,64,200,65,200,66,199,67,198,67,197,67,197,66,196,65,194,64,194,65,193,65,193,66,192,67,191,68,191,69,190,71,190,71,190,72,190,73,189,73,188,74,187,74,186,75,186,75,186,80,188,80,186,81,185,82,181,82,180,83,180,83,180,84,180,84,180,84,178,84,177,85,176,85,175,83,172,83,172,83,172" href="/DE/wetter/wetterundklima_vorort/nordrhein-westfalen/nrw_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_nordrhein.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Rheinland-Pfalz" title="Link zu Rheinland-Pfalz" coords="59,254,59,254,59,252,59,251,60,249,61,247,58,240,54,238,53,239,51,240,49,240,48,241,47,241,46,240,45,240,45,239,44,239,43,237,43,237,43,236,44,236,45,235,47,233,49,230,52,226,50,224,50,224,50,223,51,221,52,219,53,217,53,216,53,215,53,214,53,214,51,212,49,209,46,207,45,207,45,207,45,207,44,208,44,208,43,210,42,211,40,212,38,214,36,214,34,215,32,216,30,216,27,218,25,219,24,219,24,220,23,221,23,223,22,223,22,224,21,224,20,224,19,224,18,224,17,224,16,224,14,225,13,225,12,226,12,226,12,226,10,227,9,227,8,229,6,230,6,231,5,232,5,233,5,235,5,236,6,237,7,239,8,240,9,241,11,242,12,243,14,243,16,244,15,245,13,247,12,248,11,249,10,251,10,251,10,252,10,253,11,252,13,252,14,252,16,252,17,252,17,252,18,251,18,250,20,250,21,250,23,250,25,250,26,251,26,251,28,252,28,253,28,253,29,258,32,260,32,260,33,261,33,261,33,262,33,263,32,264,32,265,31,267,31,268,31,269,35,270,39,271,46,273,50,273,52,274,54,273,55,270,57,268,57,267,58,266,58,263,58,259,59,254,59,254,59,254" href="/DE/wetter/wetterundklima_vorort/rheinland-pfalz-saarland/rps_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_rheinland.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Saarland" title="Link zu Saarland" coords="28,260,27,259,26,253,26,253,25,252,24,252,21,252,20,252,19,252,19,252,19,252,18,253,18,254,17,254,16,254,14,253,13,254,12,254,10,254,12,257,13,259,15,261,17,263,20,264,22,266,26,267,30,269,30,267,30,266,30,265,31,263,31,262,31,261,28,260,28,260,28,260,28,260" href="/DE/wetter/wetterundklima_vorort/rheinland-pfalz-saarland/rps_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_saarland.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Sachsen" title="Link zu Sachsen" coords="216,194,216,194,215,193,214,191,213,188,213,185,207,185,204,186,203,186,202,186,201,187,199,187,196,187,195,187,194,188,194,188,194,189,194,190,194,191,194,192,194,192,192,193,189,194,187,194,186,194,184,194,182,193,178,192,176,191,176,191,176,191,176,191,171,183,170,183,159,184,153,187,151,188,150,189,150,190,150,193,152,200,154,201,156,202,157,202,158,202,159,203,159,204,160,205,161,208,161,209,161,210,161,210,152,214,152,216,151,217,150,218,150,219,149,219,148,220,147,220,146,221,145,222,145,223,144,224,144,226,145,226,150,234,151,233,151,233,152,233,152,233,153,233,153,232,154,230,155,229,155,229,156,228,157,228,159,227,161,227,163,227,165,226,169,224,179,218,189,213,196,210,196,209,197,208,199,207,200,205,201,204,202,203,203,203,204,203,205,203,206,204,207,205,208,206,209,207,210,208,210,209,212,209,212,209,213,209,214,208,216,207,216,204,216,201,216,197,216,194,216,194,216,194,216,194" href="/DE/wetter/wetterundklima_vorort/sachsen/sac_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_sachsen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Sachsen-Anhalt" title="Link zu Sachsen-Anhalt" coords="172,174,160,170,157,169,155,169,153,168,153,168,152,167,151,166,150,164,150,163,149,155,149,150,149,148,149,147,150,145,150,143,150,139,149,139,147,139,145,139,143,138,141,136,139,135,138,133,137,132,135,132,133,135,133,136,133,137,132,137,132,138,131,138,130,138,128,138,127,138,125,138,123,138,119,140,119,140,119,141,119,142,120,143,121,144,122,145,122,147,123,149,123,154,124,156,124,158,124,159,125,160,125,160,125,161,125,162,124,165,123,166,123,167,122,168,121,168,120,169,119,169,117,169,115,169,114,169,114,174,114,177,114,178,114,178,115,180,116,181,116,182,115,182,114,184,118,186,122,189,124,190,125,191,125,190,126,191,129,192,132,192,133,193,133,193,133,194,133,196,134,196,134,198,135,199,137,200,140,201,143,203,144,203,145,204,146,204,147,204,148,203,149,203,150,202,150,201,150,200,149,197,149,193,148,190,148,189,148,188,149,187,150,186,153,185,156,183,159,182,159,182,170,181,170,181,172,181,173,179,174,178,173,177,172,174,172,174,172,174" href="/DE/wetter/wetterundklima_vorort/sachsen-anhalt/saa_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_sachsen_anhalt.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Schleswig-Holstein" title="Link zu Schleswig-Holstein" coords="122,93,122,93,123,93,125,91,125,88,123,85,119,88,119,88,118,88,118,87,111,85,105,81,104,82,103,81,102,81,101,80,101,80,101,79,101,78,101,77,101,73,99,71,97,70,94,69,92,68,91,68,91,68,90,69,90,69,89,70,89,70,87,69,84,68,81,67,77,66,75,66,74,65,74,67,74,69,75,70,76,72,78,75,80,77,81,79,82,79,81,80,80,81,78,82,76,83,74,84,77,87,77,88,79,99,82,100,83,100,85,100,86,101,87,101,87,101,88,103,89,104,89,106,90,108,91,109,92,110,93,110,94,111,94,110,95,109,95,109,95,109,97,110,98,109,99,109,101,108,101,107,101,107,102,107,106,107,107,108,107,109,106,111,106,112,106,113,107,115,108,116,108,116,111,118,112,118,113,119,114,118,115,118,117,117,118,115,118,115,121,113,122,109,121,109,120,108,119,108,119,107,118,107,118,106,118,104,119,103,120,99,119,99,119,98,119,97,119,96,119,95,120,95,122,93,122,93,122,93" href="/DE/wetter/wetterundklima_vorort/schleswig-holstein_hamburg/shh_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_schleswig.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+<area shape="poly" alt="Link zu Thüringen" title="Link zu Thüringen" coords="148,205,148,205,147,205,146,206,144,205,142,205,140,204,137,202,136,201,134,200,133,199,133,198,132,197,131,196,131,194,128,194,128,194,128,194,126,193,125,193,124,192,123,192,121,190,117,187,113,185,113,186,113,187,112,186,110,186,109,186,109,187,108,187,106,188,103,190,102,191,101,192,99,192,98,192,97,192,97,194,97,194,101,197,104,199,104,199,104,200,102,204,102,205,98,208,99,209,99,210,99,211,99,211,98,212,97,214,97,214,97,215,99,216,99,216,100,216,101,216,101,217,101,219,103,220,104,220,107,223,110,226,111,227,111,228,112,229,113,230,113,230,114,230,114,230,115,230,115,230,116,229,116,228,117,228,118,227,119,227,120,227,121,227,122,227,123,227,127,229,127,223,127,222,128,222,131,221,131,221,132,222,132,222,133,223,133,224,134,224,135,225,137,225,140,226,142,226,142,225,143,223,144,221,144,220,146,219,147,218,148,218,149,217,149,216,150,216,150,214,150,214,150,213,151,213,159,209,159,207,158,205,157,204,157,204,156,204,155,203,154,203,152,202,151,202,150,204,149,204,148,205,148,205,148,205" href="/DE/wetter/wetterundklima_vorort/thueringen/thu_node.html" onmouseover="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_thueringen.png?__blob=normal';" onmouseout="document.getElementById('map').src='DE/Home/_functions/WetterKlimaVorOrt/Bilder/imagemap_deutschland.png?__blob=normal';" />
+</map>
+<!-- End ImageReady Slices -->
+<p>Aktuelle Wetterwerte, Vorhersagen und ausgesuchte Klimadaten deutscher Wetterstationen </p>
+    <div class="more">
+<a href="DE/wetter/wetterundklima_vorort/_node.html" title="lokale Wetter- und Klimawerte">
+Mehr Informationen</a></div>
+</div>
+</section>
+           
+<section class="teaser latest latest-top type-2">
+    <h1>Aktuelles &amp; Interessantes</h1>
+<div class="teaser-box" style="height: 684px;">
+      <ul>
+                        
+<li><a href="DE/Home/_functions/aktuelles/2020/20201127_temperaturtrend.html" title="Lesen Sie den Artikel &quot;Temperatur- und Niederschlagstrend&quot;"><div class="date">
+    <p>
+     Meldung 02.12.2020
+    </p>
+  </div></a><h2><a href="DE/Home/_functions/aktuelles/2020/20201127_temperaturtrend.html" title="Lesen Sie den Artikel &quot;Temperatur- und Niederschlagstrend&quot;"></a><a class="RichTextIntLink Flyer" href="DE/leistungen/trendvorhersage_regional/trendvorhersage_regional.html" target="_blank" title="Trendvorhersage - regional (Öffnet neues Fenster)">Temperatur- und Niederschlagstrend</a></h2><p>10-Tage-Vorhersage der Tageshöchst- und Tiefsttemperaturen sowie der Niederschlagssummen</p></li>
+                        
+<li><a href="DE/Home/_functions/aktuelles/2020/20201202_agrarklima_monatsrueckblick.html" title="Lesen Sie den Artikel &quot;Agrarklima Monatsrückblick&quot;"><div class="date">
+    <p>
+     Meldung 02.12.2020
+    </p>
+  </div></a><h2><a href="DE/Home/_functions/aktuelles/2020/20201202_agrarklima_monatsrueckblick.html" title="Lesen Sie den Artikel &quot;Agrarklima Monatsrückblick&quot;"></a><a class="RichTextIntLink Flyer" href="DE/leistungen/agrarklima_mo/agrarklimamo.html" target="_blank" title="Agrarklima Monatsrückblick (Öffnet neues Fenster)">Agrarklima Monatsrückblick</a></h2><p>Statistischer Monatsrückblick von verschiedenen agrarmeteorologischen Elementen (flächenbezogen)</p></li>
+                        
+<li><a href="DE/presse/pressemitteilungen/DE/2020/20201130_deutschlandwetter_herbst2020_news.html" title="Lesen Sie den Artikel &quot;Deutschlandwetter im Herbst 2020&quot;"><div class="date">
+    <p>
+     Pressemitteilung 30.11.2020
+    </p>
+  </div><h2>Deutschlandwetter im Herbst 2020</h2></a><p>Einer der wärmsten, ein zu trockener und ein sonnenscheinreicher Herbst</p></li>
+    <li class="more"><a href="DE/service/archiv/archiv_node.html" title="Zum Archiv ''DWD Aktuell''">Weitere Meldungen</a></li>
+      </ul>
+</div>
+</section>
+           
+<div class="multi-tab leistungsteaser">
+    <h1>Klimaüberwachung</h1>
+<div class="content-wrapper light">
+        <div id="170921" class="content-container js-expanded a11y-js-overflow" aria-expanded="true" role="group" style="height: 618px;">
+             <div class="content"><figure class="picture linksOhne"><img src="/DE/Home/_functions/Multi-Tab/tab_klimavorhersagen_bild.jpg?__blob=normal&amp;v=4" title="Klimaatlas (Quelle DWD)" alt="Klimaatlas (Quelle DWD)" /></figure></div><div class="content"><p>Jetzt faktengestützt auf den Klimawandel reagieren: Klimavorhersagen für die kommenden zehn Jahre ermöglichen Anpassungen an den Klimawandel.</p>
+<div class="more"><a href="/DE/leistungen/klimavorhersagen/start.html" target="_blank" rel="noopener noreferrer">
+Zu den Klimavorhersagen</a></div></div>
+        </div><!--content-container-->
+        <div id="170922" class="content-container a11y-js-overflow" aria-expanded="false" role="group" style="display: none; height: 618px;">
+        </div><!--content-container-->
+        <div id="170923" class="content-container a11y-js-overflow" aria-expanded="false" role="group" style="display: none; height: 618px;">
+        </div><!--content-container-->
+        <div id="170924" class="content-container a11y-js-overflow" aria-expanded="false" role="group" style="display: none; height: 618px;">
+        </div><!--content-container-->
+        <div id="170925" class="content-container a11y-js-overflow" aria-expanded="false" role="group" style="display: none; height: 618px;">
+        </div><!--content-container-->
+        <div id="170926" class="content-container a11y-js-overflow" aria-expanded="false" role="group" style="display: none; height: 618px;">
+        </div><!--content-container-->
+   
+</div><!--content-wrapper-->
+<div class="tab-nav-wrapper">
+      <div class="tab-hide-wrapper">
+       <div class="tab-move-wrapper">
+        <ol class="tab-toc">
+          <li><a href="DE/Home/home_node.html#170921" aria-controls="170921" tabindex="-1" aria-disabled="true" class="ui-disabled on" aria-expanded="true" role="button" data-href="DE/Home/home_node.html#170921">Klimavorhersagen</a></li>
+          <li><a href="DE/Home/home_node.html#170922" data-url="DE/Home/_functions/Multi-Tab/tab_klimaatlas.html?view=render[MultiTab]&amp;nn=13790" aria-controls="170922" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" data-href="DE/Home/home_node.html#170922">Deutscher Klimaatlas</a></li>
+          <li><a href="DE/Home/home_node.html#170923" data-url="DE/Home/_functions/Multi-Tab/tab_klimadaten_deutschland.html?view=render[MultiTab]&amp;nn=13790" aria-controls="170923" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" data-href="DE/Home/home_node.html#170923">Klimadaten Deutschland</a></li>
+          <li><a href="DE/Home/home_node.html#170924" data-url="DE/Home/_functions/Multi-Tab/tab_monatl_klimastatus.html?view=render[MultiTab]&amp;nn=13790" aria-controls="170924" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" data-href="DE/Home/home_node.html#170924">Monatlicher Klimastatus</a></li>
+          <li><a href="DE/Home/home_node.html#170925" data-url="DE/Home/_functions/Multi-Tab/tab_klimamoni_europa.html?view=render[MultiTab]&amp;nn=13790" aria-controls="170925" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" data-href="DE/Home/home_node.html#170925">Europa-Klima</a></li>
+          <li><a href="DE/Home/home_node.html#170926" data-url="DE/Home/_functions/Multi-Tab/tab_klimadaten_weltweit.html?view=render[MultiTab]&amp;nn=13790" aria-controls="170926" tabindex="0" aria-disabled="false" aria-expanded="false" role="button" data-href="DE/Home/home_node.html#170926">Klimadaten weltweit</a></li>
+        </ol>
+       </div>
+      </div>
+      <div class="pagination">
+       <div class="prev">
+        <div class="gradient"></div>
+        <div class="arrow"></div>
+        <span></span>
+       </div>
+       <div class="next">
+        <div class="gradient"></div>
+        <div class="arrow"></div>
+        <span></span>
+       </div>
+      </div><!-- pagination -->
+     </div><!-- nav-wrapper -->
+<div style="visibility: hidden; overflow: hidden; width: 0px; height: 0px;"></div></div><!--multitab-->
+           
+<section class="teaser latest latest-top newsoftheday type-2">
+    <h1>Thema des Tages</h1>
+<div class="teaser-box" style="height: 505px;">
+      <ul>
+                        
+
+<li><a href="DE/wetter/thema_des_tages/2020/12/3.html"><h2>
+Deutschlandwetter im Herbst 2020</h2>
+<div class="docData news"><span class="label">Datum</span> <span class="value">03.12.2020</span></div><p>
+Erste Auswertungen der Ergebnisse der rund 2000 Messstationen des DWD in Deutschland.</p></a></li>
+    <li class="more"><a href="DE/wetter/thema_des_tages/thema_des_tages_uebersicht_node.html" title="Thema des Tages - Übersicht">The­ma des Ta­ges - Über­sicht</a> </li>
+      </ul>
+</div>
+</section>
+           
+<section class="teaser latest latest-top newsoftheday type-2">
+    <h1>Aktuelle Wetterlage</h1>
+<div class="teaser-box" style="height: 505px;">
+      <ul>
+                        
+
+<li><a href="DE/wetter/vorhersage_aktuell/vhs_brd_node.html"><p></p><p>
+<strong style="font-size:80%">aktualisiert: 03.12.2020 / 10:52 Uhr</strong><br />
+<br /></p><pre style="font-family: sans-serif">Während in den Westen und Nordwesten mit Annäherung eines Tiefausläufers etwas mildere Luft sickert, bleibt der Großteil des Landes im Einflussbereich recht kalter und teils auch feuchter Luftmassen. 
+</pre>
+<p></p><p></p></a></li>
+    <li class="more"><a href="DE/wetter/vorhersage_aktuell/vhs_brd_node.html" title="aktuelle Wetterberichte für die nächsten Tage für Deutschland und die Bundesländer">Wet­ter­be­rich­te</a> </li>
+      </ul>
+</div>
+</section>
+           
+<section class="teaser twitter type-2">
+      <h1>DWD-Twitter-Kanal</h1>
+  <div class="teaser-box materna-consent-box-twitter" style="height: 505px;">
+   <div class="consent-infotext">
+     <p>Die direkte Anzeige der DWD-Twitter-Informationen ist  aus Datenschutzgründen zunächst deaktiviert. Hier können Sie diese Funktionalität aktivieren. Die Aktivierung führt dazu, dass personenbezogene Daten (wie z.B. die IP-Adresse) an Twitter übertragen werden.</p>
+
+   </div>
+    <a class="twitter-timeline" data-height="460" data-chrome="noheader noheader nofooter transparent" href="https://twitter.com/DWD_presse">
+       <img src="/SiteGlobals/StyleBundles/Bilder/Allgemein/Twitter-Box-Bild.png?__blob=normal&amp;v=1" alt="Twitter-Plugin aktivieren" />
+    </a>
+<div class="consent-byline">
+   <a class="consent-infolink" href="DE/service/datenschutz/datenschutz_twitterbox_node.html" title="Mehr zum Datenschutz" target="_blank" rel="noopener noreferrer">Mehr zum Datenschutz
+   </a><a class="consent-control-revoke" title="Hier klicken, um den Social-Media-Dienst wieder abzuschalten."><span class="aural">Hier klicken, um den Social-Media-Dienst wieder abzuschalten.</span></a>
+</div>
+  </div>
+</section>
+     </div><!-- row -->
+     </div><!-- slot content -->
+</main>
+
+ <footer role="contentinfo" class="dwd-services">
+<section class="materna-shariff-bar">
+  <div class="row">
+      <div class="materna-shariff subtle" data-lang="de">
+        <a id="materna-shariff-bar-opener" href="#" aria-haspopup="true" aria-owns="share" title="Mehr anzeigen"><span>Diese Seite teilen</span></a>
+      <div id="share" aria-hidden="true" style="top: 0px; display: none;"><div class="shariff"><h3>In sozialen Medien teilen</h3><ul class="theme-color orientation-horizontal col-3"><li class="shariff-button twitter"><a href="https://twitter.com/intent/tweet?text=Wetter%20und%20Klima%20-%20Deutscher%20Wetterdienst%20%20%20-%20%20Startseite&amp;url=https%3A%2F%2Fwww.dwd.de%2FDE%2FHome%2Fhome_node.html" data-rel="popup" title="Externer Link: Bei Twitter teilen (Öffnet neues Fenster)" role="button" aria-label="Externer Link: Bei Twitter teilen (Öffnet neues Fenster)"><span class="fa fa-twitter"></span><span class="share_text">twittern</span></a></li><li class="shariff-button facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.dwd.de%2FDE%2FHome%2Fhome_node.html" data-rel="popup" title="Externer Link: Bei Facebook teilen (Öffnet neues Fenster)" role="button" aria-label="Externer Link: Bei Facebook teilen (Öffnet neues Fenster)"><span class="fa fa-facebook"></span><span class="share_text">teilen</span></a></li><li class="shariff-button mail"><a href="mailto:?subject=Link%3A%20Wetter%20und%20Klima%20-%20Deutscher%20Wetterdienst%20%20%20-%20%20Startseite&amp;body=Sie%20erhalten%20diese%20E-Mail%2C%20weil%20Ihnen%20jemand%20einen%20Artikel%20auf%20www.dwd.de%20empfohlen%20hat%3A%0Ahttps%3A%2F%2Fwww.dwd.de%2FDE%2FHome%2Fhome_node.html" title="Externer Link: Per E-Mail versenden (Öffnet neues Fenster)" role="button" aria-label="Externer Link: Per E-Mail versenden (Öffnet neues Fenster)"><span class="fa fa-envelope"></span><span class="share_text">mailen</span></a></li></ul></div></div></div>
+   </div>
+</section>
+  <section class="services">
+   <div class="slot">
+    <div class="row">
+     <nav role="navigation">
+      <h1>Service-Navigations-<em> Menü</em></h1>
+      <ul>
+<li class="service-1">
+       <a href="DE/derdwd/bibliothek/bibliothek_node.html" title="Deutsche Meteorologische Bibliothek"><span><span>Deutsche Meteorologische Bibliothek</span></span></a>
+</li>
+<li class="service-2">
+       <a href="DE/presse/mediathek_socialmedia/mediathek_node.html" title="Mediathek"><span><span>Mediathek</span></span></a>
+</li>
+<li class="service-3">
+       <a class="external" href="/DE/service/lexikon/lexikon_node.html" title="Externer Link Wetter-Lexikon (Öffnet neues Fenster)" target="_blank" rel="noopener noreferrer"><span><span>Wetter-<br />
+Lexikon</span></span></a>
+</li>
+<li class="service-4">
+       <a class="external" href="https://www.dwd-shop.de/" title="Externer Link WetterShop (Öffnet neues Fenster)" target="_blank" rel="noopener noreferrer"><span><span>WetterShop</span></span></a>
+</li>
+<li class="service-5">
+       <a href="DE/derdwd/arbeitgeber/arbeitgeber_node.html" title="Arbeitgeber DWD"><span><span>Arbeitgeber DWD</span></span></a>
+</li>
+      </ul>
+     </nav>
+    </div><!-- row -->
+   </div><!-- slot -->
+  </section>
+</footer>
+<footer role="contentinfo">
+<section class="site-index">
+   <h1>Inhatsverzeichnis</h1>
+   <div class="slot">
+    <div class="row">
+         <nav class="box mod teaser type-2 link-list">
+      <div class="teaser-box">
+       <h1>DWD-Services</h1>
+       <ul>
+<li>
+       <a href="DE/service/archiv/archiv_node.html" title="Zum Archiv ''DWD Aktuell''">Zum Archiv ''DWD Aktuell''</a>
+</li>
+<li>
+       <a href="DE/service/termine/termine_node.html" title="Termine, Veranstaltungen">Termine, Veranstaltungen</a>
+</li>
+<li>
+       <a href="DE/service/dwd-apps/dwdapps_node.html" title="DWD-Apps">DWD-Apps</a>
+</li>
+<li>
+       <a href="DE/service/newsletter/newsletter_node.html" title="Newsletter">Newsletter</a>
+</li>
+<li>
+       <a href="DE/service/kurzadressen/kurzadressen_node.html" title="Kurzadressen">Kurzadressen</a>
+</li>
+       </ul>
+      </div>
+     </nav>
+     <nav class="box" role="navigation">
+      <div class="box-box">
+            <h1><a href="DE/wetter/wetter_node.html" title="Alles rund um das aktuelle Wetter und die Wettervorhersage">Wet­ter</a></h1>
+            <ul id="footer-links-1">
+              <li><a href="DE/wetter/warnungen_gemeinden/warnWetter_node.html" title="Amtliche Warnungen aktuell"><span><span>Warnungen</span></span></a></li>
+              <li><a href="DE/wetter/wetterundklima_vorort/_node.html" title="lokale Wetter- und Klimawerte"><span><span>Wetter und Klima vor Ort</span></span></a></li>
+              <li><a href="DE/wetter/vorhersage_aktuell/vhs_brd_node.html" title="aktuelle Wetterberichte für die nächsten Tage für Deutschland und die Bundesländer"><span><span>Wetterberichte</span></span></a></li>
+              <li><a href="DE/wetter/wetter_weltweit/wetter_weltweit_node.html" title="aktuelle Wetterdaten und Vorhersagen weltweit"><span><span>Wetter Europa und weltweit</span></span></a></li>
+              <li><a href="DE/wetter/schon_gewusst/schongewusst_node.html" title="Informationen über den Erstellung von Wettervorhersagen, das DWD-Warnmanagement etc."><span><span>Schon gewusst?</span></span></a></li>
+              <li><a href="DE/wetter/vorhersage_profis/vorhersageprofis_node.html" title="Wettervorhersagen für Profis"><span><span>Wettervorhersagen für Profis</span></span></a></li>
+              </ul>
+        </div><!-- box-box -->
+     </nav><!-- box -->
+     <nav class="box" role="navigation">
+      <div class="box-box">
+            <h1><a href="DE/klimaumwelt/klimaumwelt_node.html" title="Klima und Umwelt">Kli­ma und Um­welt</a></h1>
+            <ul id="footer-links-2">
+              <li><a href="DE/klimaumwelt/dkd/dkd_node.html" title="Deutscher Klimadienst (DKD) "><span><span>Deutscher Klimadienst (DKD) </span></span></a></li>
+              <li><a href="DE/klimaumwelt/klimaforschung/klimavhs/klimavhs_node.html" title="Klimavorhersage"><span><span>Klimavorhersage</span></span></a></li>
+              <li><a href="DE/klimaumwelt/cdc/cdc_node.html" title="CDC (Climate Data Center)"><span><span>CDC (Climate Data Center)</span></span></a></li>
+              <li><a href="DE/klimaumwelt/klimaueberwachung/klimaueberwachung_node.html" title="Klimaüberwachung"><span><span>Klimaüberwachung</span></span></a></li>
+              <li><a href="DE/klimaumwelt/klimaforschung/klimaforschung_node.html" title="Klimaforschung"><span><span>Klimaforschung</span></span></a></li>
+              <li><a href="DE/klimaumwelt/ku_beratung/ku_beratung_node.html" title="Klima- und Umweltberatung"><span><span>Klima- und Umweltberatung</span></span></a></li>
+              <li><a href="DE/klimaumwelt/klimawandel/klimawandel_node.html" title="Klimawandel"><span><span>Klimawandel</span></span></a></li>
+              <li><a href="DE/klimaumwelt/cap_build/cap_build_node.html" title="Capacity-Building"><span><span>Capacity-Building</span></span></a></li>
+              </ul>
+        </div><!-- box-box -->
+     </nav><!-- box -->
+     <nav class="box" role="navigation">
+      <div class="box-box">
+            <h1><a href="DE/forschung/forschung_node.html" title="Forschung">For­schung</a></h1>
+            <ul id="footer-links-3">
+              <li><a href="DE/forschung/atmosphaerenbeob/atmosphaerenbeob_node.html" title="Atmosphärenbeobachtung"><span><span>Atmosphärenbeobachtung</span></span></a></li>
+              <li><a href="DE/forschung/wettervorhersage/wettervorhersage_node.html" title="Wettervorhersage"><span><span>Wettervorhersage</span></span></a></li>
+              <li><a href="DE/forschung/klima_umwelt/klimaumwelt_node.html" title="Klima und Umwelt"><span><span>Klima und Umwelt</span></span></a></li>
+              <li><a href="DE/forschung/forschungsprogramme/herz/herz_node.html" title="Hans-Ertel-Zentrum"><span><span>Hans-Ertel-Zentrum</span></span></a></li>
+              <li><a href="DE/forschung/forschungsprogramme/forschungsprogramme_node.html" title="DWD-Forschungsprogramme"><span><span>DWD-Forschungsprogramme</span></span></a></li>
+              <li><a href="DE/forschung/internationale_programme/internationale_programme_node.html" title="Internationale Programme"><span><span>Internationale Programme</span></span></a></li>
+              <li><a href="DE/forschung/projekte/projekte_node.html" title="Projekte"><span><span>Projekte</span></span></a></li>
+              </ul>
+        </div><!-- box-box -->
+     </nav><!-- box -->
+     <nav class="box" role="navigation">
+      <div class="box-box">
+            <h1><a href="DE/derdwd/derdwd_node.html" title="Der Deutsche Wetterdienst - Aufgaben, Organisation, Standorte">Der DWD</a></h1>
+            <ul id="footer-links-4">
+              <li><a href="DE/derdwd/aufgaben/aufgaben_node.html" title="Aufgaben"><span><span>Aufgaben</span></span></a></li>
+              <li><a href="DE/derdwd/arbeitgeber/arbeitgeber_node.html" title="Arbeitgeber DWD"><span><span>Arbeitgeber DWD</span></span></a></li>
+              <li><a href="DE/derdwd/organisation/organisation_node.html" title="Organisation"><span><span>Organisation</span></span></a></li>
+              <li><a href="DE/derdwd/standorte/standorte_node.html" title="Standorte"><span><span>Standorte</span></span></a></li>
+              <li><a href="DE/derdwd/koop/koop_node.html" title="Zusammenarbeit"><span><span>Zusammenarbeit</span></span></a></li>
+              <li><a href="DE/derdwd/messnetz/messnetz_node.html" title="Messnetz"><span><span>Messnetz</span></span></a></li>
+              <li><a href="DE/derdwd/bibliothek/bibliothek_node.html" title="Deutsche Meteorologische Bibliothek"><span><span>Deutsche Meteorologische Bibliothek</span></span></a></li>
+              </ul>
+        </div><!-- box-box -->
+     </nav><!-- box -->
+    </div><!-- row -->
+   </div><!-- slot -->
+</section>
+<section class="social-services">
+   <div class="slot">
+    <div class="row">
+     <div class="box youtube">
+      <div class="box-box">
+       <a href="http://www.youtube.com/user/DWDderWetterdienst" target="_blank" rel="noopener noreferrer" title="Externer Link zur DWD-YouTube-Seite (Öffnet neues Fenster)">
+        <span class="logo">You Tube</span>
+        <p>
+          Warn-Videos und viel mehr
+        </p>
+       </a>
+      </div><!-- box-box -->
+     </div><!-- box -->
+     <div class="box facebook">
+      <div class="box-box">
+       <a href="https://www.facebook.com/DeutscherWetterdienst" target="_blank" rel="noopener noreferrer" title="Externer Link zur DWD-Facebook-Seite (Öffnet neues Fenster)">
+        <span class="logo">Facebook</span>
+        <p>
+          Wetter und Klima aktuell und unterhaltend
+        </p>
+       </a>
+      </div><!-- box-box -->
+     </div><!-- box -->
+     <div class="box flickr">
+      <div class="box-box">
+       <a href="http://www.flickr.com/deutscherwetterdienst" target="_blank" rel="noopener noreferrer" title="Externer Link zur DWD-Flickr-Seite (Öffnet neues Fenster)">
+        <span class="logo">Flickr</span>
+        <p>
+          Wetter­phänomene vor der Kamera
+        </p>
+       </a>
+      </div><!-- box-box -->
+     </div><!-- box -->
+     <div class="box twitter">
+      <div class="box-box">
+       <a href="http://www.twitter.com/dwd_presse" target="_blank" rel="noopener noreferrer" title="Externer Link zur DWD-Twitter-Seite (Öffnet neues Fenster)">
+        <span class="logo">Twitter</span>
+        <p>
+          In bis zu 280 Zeichen Wetter und Klima weltweit
+        </p>
+       </a>
+      </div><!-- box-box -->
+     </div><!-- box -->
+     <div class="box instagram">
+      <div class="box-box">
+       <a href="https://www.instagram.com/deutscherwetterdienst/" target="_blank" rel="noopener noreferrer" title="Externer Link zur DWD-Instagram-Seite (Öffnet neues Fenster)">
+        <span class="logo">Instagram</span>
+        <p>
+          #ichliebewetter – Schnappschüsse und Videos
+        </p>
+       </a>
+      </div><!-- box-box -->
+     </div><!-- box -->
+    </div><!-- row -->
+   </div><!-- slot -->
+</section>
+<section class="legal">
+   <div class="slot">
+    <div class="row">
+     <div class="box info">
+      <div class="box-box">
+       <p>
+        Der Deutsche Wetterdienst ist eine Bundesoberbehörde im Geschäftsbereich des Bundesministeriums für Verkehr und digitale Infrastruktur.
+       </p>
+       <address>Deutscher Wetterdienst, Frankfurter Straße 135, 63067 Offenbach</address>
+      </div><!-- box-box -->
+     </div><!-- box -->
+<div class="box links">
+      <div class="box-box">
+       <ul>
+<li>
+       <a href="DE/service/impressum/impressum_node.html" title="Impressum">Impressum</a>
+</li>
+<li>
+       <a href="DE/service/datenschutz/datenschutz_node.html" title="Datenschutz">Datenschutz</a>
+</li>
+<li>
+       <a href="DE/service/disclaimer/disclaimer_node.html" title="Disclaimer">Disclaimer</a>
+</li>
+<li>
+       <a href="DE/service/agb/agb_node.html" title="AGB">AGB</a>
+</li>
+<li>
+       <a href="DE/service/qm/qm_node.html" title="Qualitätsmanagement">QM</a>
+</li>
+<li>
+       <a href="DE/service/copyright/copyright_node.html" title="Copyright">Copyright</a>
+</li>
+<li>
+       <a href="DE/service/barrierefrei/barrierefrei_node.html" title="Erklärung zur Barrierefreiheit">Erklärung zur Barrierefreiheit</a>
+</li>
+       </ul>
+      </div><!-- box-box -->
+     </div><!-- box -->
+    </div><!-- row -->
+   </div><!-- slot -->
+  </section>
+ </footer>
+
+
+
+ <!--[if ! lte IE 8]><!--> 
+<!--
+ <script type="text/javascript">
+  preloader.modules = "SiteGlobals/Functions/JavaScript/__modules.js.js?v=3";
+  preloader.enhanced= "SiteGlobals/Functions/JavaScript/__enhanced.js.js?v=4";
+  preloader.everything = "SiteGlobals/Functions/JavaScript_Optimierung2/__everything.js?v=13";
+  preloader.loadEverything = true;
+ </script>
+ <script src="SiteGlobals/Functions/JavaScript/__preload.js.js?v=1"></script>
+-->
+
+ <!--<![endif]-->
+
+  
+<div style="position: absolute; width: 1px; height: 1px; overflow: hidden; margin: 0px; padding: 0px; top: 0px; left: -99999em; background-color: rgb(255, 255, 255);"></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all catcomplete-list" id="ui-id-1" tabindex="0" style="display: none;"></ul></body></html>

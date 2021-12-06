@@ -1,0 +1,1051 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=""><head>
+    <base href="https://www.openstack.org/" /><!--[if lte IE 6]></base><![endif]-->
+    <title>Open Source Cloud Computing Infrastructure - OpenStack</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="globalsign-domain-verification" content="tWFOHNAA_WMHmHfBMq38uTgupHFugV_dZ2rqyRxNMx" />
+    <meta name="title" content="Open Source Cloud Computing Infrastructure - OpenStack" />
+<meta name="generator" content="SilverStripe - http://silverstripe.org" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="OpenStack is an open source cloud computing infrastructure software project and is one of the three most active open source projects in the world. " />
+<meta property="og:title" content="Open Source Cloud Computing Infrastructure - OpenStack" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.openstack.org/" />
+<link rel="image_src" href="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg" type="image/jpeg" />
+<meta property="og:image" content="http://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg" />
+<meta property="og:image:secure_url" content="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Uploads/openstack-vert.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:height" content="135" />
+<meta property="og:image:width" content="240" />
+<meta property="og:description" content="OpenStack is an open source cloud computing infrastructure software project and is one of the three most active open source projects in the world." />
+<meta property="og:site_name" content="OpenStack" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="209869746011654" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@openstack" />
+
+
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.openstack.org/blog/feed/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" /> 
+    <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32" /> 
+    <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" /> 
+    <link rel="manifest" href="/favicon/manifest.json" /> 
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+
+    <!-- Cookie Bot -->
+    <script src="https://rules.quantcount.com/rules-p-fM0cfazHHeyRH.js" async=""></script><script type="text/javascript" charset="UTF-8" async="" src="https://consent.cookiebot.com/e11e4375-71b9-426d-a76d-61eae3ddc08f/cc.js?renew=false&amp;referer=www.openstack.org&amp;dnt=false&amp;forceshow=false&amp;cbid=e11e4375-71b9-426d-a76d-61eae3ddc08f&amp;whitelabel=false&amp;brandid=Cookiebot&amp;framework="></script><script async="" src="https://snap.licdn.com/li.lms-analytics/insight.beta.min.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script async="" src="//static.ads-twitter.com/uwt.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script async="" src="https://snap.licdn.com/li.lms-analytics/insight.beta.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/gtm/js?id=GTM-5F7R6N4&amp;cid=716620964.1606992825"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script src="//bat.bing.com/bat.js" async=""></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e11e4375-71b9-426d-a76d-61eae3ddc08f" type="text/javascript" async=""></script>
+    <!-- End Cookie Bot -->
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+
+// Used to record outbound links before the browser resets to the new site
+
+function recordOutboundLink(link, category, action) {
+  try {
+      ga('send', 'event', {
+          eventCategory: category,
+          eventAction: 'click',
+          eventLabel: link.href
+      });
+      setTimeout('document.location = "' + link.href + '"', 100)
+  }
+  catch(err){}
+}
+</script>
+
+<style>.async-hide { opacity: 0 !important} </style>
+<script>
+// Used to minimize flickering during GA A/B testing
+  (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-5F7R6N4':true});
+</script>
+
+<script>
+// Google Analytics tracking script
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-17511903-1', 'auto');
+    ga('require', 'linker');
+    ga('linker:autoLink', ['openstack.org', 'eventbrite.com'] );
+    ga('require', 'GTM-5F7R6N4');
+    ga('send', 'pageview');
+
+    ga(function(tracker) {
+        var googleClientID = tracker.get('clientId');
+
+        $("a.eventbrite-register-link").each(function() {
+            var href = $(this).attr("href");
+            $(this).attr("href", href + '&amp;_eboga=' + googleClientID);
+        });
+    });
+
+</script>
+
+    <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"56279414"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&amp;&amp;s!=="loaded"&amp;&amp;s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+    <script type="text/javascript">
+    _linkedin_data_partner_id = "36268";
+</script><script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);})();
+</script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
+<link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.min.css?m=1477344801" />
+<link rel="stylesheet" type="text/css" href="/node_modules/@fortawesome/fontawesome-pro/css/all.min.css?m=499162500" />
+<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css?m=499162500" />
+<link rel="stylesheet" type="text/css" href="/themes/openstack/css/home-page.css?m=1606767656" />
+<link rel="stylesheet" type="text/css" href="/themes/openstack/css/navigation_menu.css?m=1606767657" />
+<link rel="stylesheet" type="text/css" href="/themes/openstack/css/dropdown.css?m=1606767656" />
+<link rel="stylesheet" type="text/css" href="/themes/openstack/css/home.css?m=1606767656" />
+<style type="text/css" id="CookieConsentStateDisplayStyles">.cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}</style><style type="text/css">
+.ossw-search-bar-wrapper {
+	position: relative;
+}
+
+#search-bar-input {
+	width: 100%;
+	border: 2px solid #dae5ee;
+	border-radius: 4px;
+	height: 37px;
+	padding: 0 0 0 10px;
+	background: #fff;
+	color: #30739C;
+	font-size: 12px;
+	text-transform: lowercase;
+	font-weight: 400;
+}
+
+#search-bar-input::placeholder {
+	color: #C7CAE0;
+}
+
+#search-bar-input:focus {
+	border-color: #30739C;
+	outline: none;
+}
+
+.ossw-search-bar-close {
+	cursor:	pointer;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #dae5ee;
+	z-index: 1001;
+	font-size: 16px;
+}
+
+.ossw-search-bar-close:hover {
+	color: #30739C;
+}
+
+.ossw-no-results {
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+	color: #8B9BAD;
+}
+
+.ossw-search-suggestions-wrapper {
+	display: none;
+}
+
+.ossw-search-suggestions {
+	border: 1px solid #DDDDDD;
+	padding: 5px;
+	position: relative;
+	top: 10px;
+	z-index: 9999;
+	background: white;
+	width: 100%;
+}
+
+.ossw-result-item {
+	padding:10px 5px;
+	display:block;
+	position:relative;
+	cursor:pointer;
+	border-bottom:1px solid #E9EDF2;
+	text-align:left;
+	text-decoration:none
+}
+
+.ossw-result-item:before{
+	right:22px;
+	top:50%;
+	margin-top:-3px;
+	width:6px;
+	height:6px;
+	border-style:solid;
+	border-width:1px 1px 0 0;
+	border-color:#C5D1DE;
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+	display:block;
+	position:absolute;
+	content:""
+}
+
+.ossw-result-item:after{
+	display:table;
+	content:"";
+	width:0;
+	height:0;
+	clear:both
+}
+
+.ossw-result-item:hover {
+	background-color: rgba(0,0,0,0.05);
+}
+.ossw-result-item:hover:before {
+	border-color:#8B9BAD
+}
+.ossw-result-item:hover .ossw-result-detail {
+	color:#3B454F
+}
+
+.ossw-result-item em{
+	font-style:normal;
+	-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1);
+	-moz-box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1);
+	box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1);
+	font-weight: bold;
+	background-color: #f6fcfe;
+}
+
+.ossw-result-heading {
+	width: 90%;
+	font-weight:500;
+	font-size:13px;
+	line-height:1.2;
+	margin-bottom:4px;
+	color:#258BF8;
+	white-space:nowrap;
+	overflow:hidden;
+	-ms-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+}
+
+
+.ossw-result-detail {
+	width: 90%;
+	max-height:31px;
+	overflow:hidden;
+	font-size:12px;
+	font-weight:400;
+	line-height:1.4;
+	color:#8B9BAD
+}
+
+.ossw-search-results {
+	display: none;
+}
+
+.ossw-search-results .ossw-overlay {
+	position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99999991
+}
+
+.ossw-search-results .ossw-overlay.ossw-dismiss {
+	display:none
+}
+
+.ossw-search-results .ossw-overlay.ossw-dismiss .ossw-container {
+	opacity:0;
+	-webkit-animation:st-ui-fade-out ease-in-out 0.5s;
+	-moz-animation:st-ui-fade-out ease-in-out 0.5s;
+	animation:st-ui-fade-out ease-in-out 0.5s
+}
+
+.ossw-search-results .ossw-container {
+	position: fixed;
+	top: 0;
+	margin: 64px 0 0 0;
+	width: 60%;
+	height: 80%;
+	max-width: 800px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+	z-index: 99999992;
+	-webkit-animation: st-ui-fade-in ease-in-out 0.5s;
+	-moz-animation: st-ui-fade-in ease-in-out 0.5s;
+	animation: st-ui-fade-in ease-in-out 0.5s;
+	overflow: hidden;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+@media (max-width: 660px) {
+	.ossw-pagination .ossw-page-link:not(.ossw-active):not(.next) {
+		display: none !important;
+	}
+}
+
+@media only screen and (orientation: portrait) {
+	.ossw-search-results .ossw-container {
+		height: 60%;
+	}
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+	font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header {
+	position: relative;
+	width: 100%;
+	height: 49px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	z-index: 99999997;
+	background: #F9FAFB;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header input{
+	padding: 0 120px 0 36px;
+	width: 100%;
+	height: 48px;
+	background: transparent;
+	border: 0;
+	outline: none;
+	color: #3B454F;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 19px;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header input:focus{
+	height:50px;border-bottom:2px solid #33AAFF
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header .ossw-search-icon {
+	display: block;
+	position: absolute;
+	top: 18px;
+	left: 15px;
+	width: 13px;
+	height: 13px;
+	pointer-events: none;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header .ossw-search-icon .fa {
+	opacity: 0.6;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header .ossw-close-icon {
+	display: block;
+	position: absolute;
+	top: 16px;
+	right: 14px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header .ossw-close-icon .fa {
+	opacity: 0.6;
+}
+
+.ossw-search-results .ossw-container .ossw-header-wrapper .ossw-header .ossw-close-icon .fa:hover {
+	opacity: 1;
+}
+
+.ossw-search-results .ossw-suggestions-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 68px 10px;
+	width: 50%;
+	height: 100%;
+	z-index: 99999995;
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 0;
+	-webkit-animation: st-ui-slide-in ease-in-out 0.5s;
+	-moz-animation: st-ui-slide-in ease-in-out 0.5s;
+	animation: st-ui-slide-in ease-in-out 0.5s;
+	-webkit-box-shadow: 1px 0 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 0 3px rgba(0,0,0,0.2);
+	box-shadow: 1px 0 3px rgba(0,0,0,0.2);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.ossw-search-results .ossw-suggestions-wrapper .ossw-heading {
+	margin-bottom: 0;
+	padding: 6px 18px 14px 0;
+	border-bottom: 1px solid #E9EDF2;
+	color: rgba(0,0,0,0.4);
+}
+
+.ossw-search-results .ossw-results-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 50px 0px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.ossw-search-results .ossw-results-wrapper .ossw-results {
+	padding: 0 10px 50px 10px;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 49px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	background: #F9FAFB;
+	z-index: 99999996;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer .ossw-summary {
+	display: block;
+	position: absolute;
+	width: 65%;
+	top: 18px;
+	left: 16px;
+	float: left;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+	color: #8B9BAD;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer .ossw-pagination {
+	display: block;
+	padding-right: 9px;
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	font-weight: 500;
+	color: #8B9BAD;
+	line-height: 1;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer .ossw-pagination .ossw-page-link {
+	display: inline-block;
+	padding: 18px 7px;
+	text-decoration: none;
+	color: #258BF8;
+	text-transform: uppercase;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer .ossw-pagination .ossw-page-link.ossw-active {
+	color: #8B9BAD;
+}
+
+.ossw-search-results .ossw-footer-wrapper .ossw-footer .ossw-pagination .ossw-page-link .ossw-right-arrow {
+	display: inline-block;
+	position: relative;
+	width: 6px;
+	height: 6px;
+	margin: 0 0 0 2px;
+}
+</style><style type="text/css" id="CookiebotDialogStyle">#CybotCookiebotDialog,#CybotCookiebotDialogBodyContentTitle{visibility:visible;letter-spacing:normal;float:none;text-align:left}#CybotCookiebotDialog,#CybotCookiebotDialog ::after,#CybotCookiebotDialog ::before,#CybotCookiebotDialog::after,#CybotCookiebotDialog::before,#CybotCookiebotDialogBody *,#CybotCookiebotDialogDetail *,.CybotCookiebotDialogBodyButton,.CybotCookiebotDialogBodyButton::after,.CybotCookiebotDialogBodyButton::before{box-sizing:content-box}#CybotCookiebotDialog a,#CybotCookiebotDialog a:hover{text-decoration:underline;color:#2a2a2a}#CybotCookiebotDialog{animation:none;animation-delay:0;animation-direction:normal;animation-duration:0;animation-fill-mode:none;animation-iteration-count:1;animation-name:none;animation-play-state:running;animation-timing-function:ease;backface-visibility:visible;background:#ffffff;background-clip:border-box;background-origin:padding-box;background-position-x:0;background-position-y:0;background-size:auto auto;border:0;border-width:medium;border-color:inherit;border-bottom:0;border-bottom-color:inherit;border-collapse:separate;border-image:none;border-left:0;border-left-color:inherit;border-radius:0;border-right:0;border-right-color:inherit;border-spacing:0;border-top:0;border-top-color:inherit;bottom:auto;caption-side:top;clear:none;clip:auto;columns:auto;column-count:auto;column-fill:balance;column-gap:normal;column-rule:medium none currentColor;column-rule-color:currentColor;column-rule-style:none;column-rule-width:none;column-span:1;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;display:inline;empty-cells:show;font:400;font-style:normal;font-variant:normal;font-weight:400;hyphens:none;list-style:disc;max-height:none;max-width:none;min-height:0;min-width:0;orphans:0;outline:0;outline-width:medium;overflow:visible;overflow-x:visible;overflow-y:visible;page-break-after:auto;page-break-before:auto;page-break-inside:auto;perspective:none;perspective-origin:50% 50%;right:auto;tab-size:8;table-layout:auto;text-align-last:auto;text-decoration:none;text-decoration-color:inherit;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-shadow:none;text-transform:none;transform:none;transform-style:flat;transition:none;transition-delay:0s;transition-duration:0s;transition-property:none;transition-timing-function:ease;vertical-align:baseline;white-space:normal;widows:0;word-spacing:normal;position:fixed;z-index:2147483645;top:-800px;left:0;width:100%;height:auto;opacity:1;filter:Alpha(opacity=100);color:#2a2a2a;font-family:'Segoe UI',Arial,Helvetica,Verdana,sans-serif;font-size:8pt;box-shadow:#121212 2px 2px 14px 2px;padding:0 0 8px;line-height:1.231;margin:0;text-rendering:geometricPrecision}#CybotCookiebotDialog a,#CybotCookiebotDialog div,#CybotCookiebotDialogBodyContentControls,#CybotCookiebotDialogBodyContentTitle{font-family:'Segoe UI',Arial,Helvetica,Verdana,sans-serif}#CybotCookiebotDialog[dir=rtl]{text-align:right}#CybotCookiebotDialog a{line-height:1.231}#CybotCookiebotDialog br,#CybotCookiebotDialog div,#CybotCookiebotDialog td{line-height:1.231}#CybotCookiebotDialogDetailBodyContentCookieContainerAdvertising,#CybotCookiebotDialogDetailBodyContentCookieContainerNecessary,#CybotCookiebotDialogDetailBodyContentCookieContainerPreference,#CybotCookiebotDialogDetailBodyContentCookieContainerStatistics,#CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified{margin:0}#CybotCookiebotDialogPoweredbyLink{position:absolute;z-index:2147483646;width:48px;height:36px;margin-left:6px;margin-right:0;margin-top:12px}div[dir=rtl] #CybotCookiebotDialogPoweredbyLink{margin-left:0;margin-right:6px}#CybotCookiebotDialogPoweredbyImage{border:none;padding:0;margin:2px 0 0 3px;width:46px}#CybotCookiebotDialogBody{max-width:640px;margin-left:auto;margin-right:auto;vertical-align:top;padding-right:8px;padding-left:0;overflow:hidden}div[dir=rtl] #CybotCookiebotDialogBody{padding-right:0;padding-left:8px}#CybotCookiebotDialogBodyContent{min-height:32px;font-size:9.5pt;font-weight:400;line-height:130%;padding:12px 0 8px 80px}div[dir=rtl] #CybotCookiebotDialogBodyContent,div[dir=rtl] #CybotCookiebotDialogBodyContentControls{padding-left:0;padding-right:80px}#CybotCookiebotDialogBodyContentControls{min-height:10px;font-size:9.5pt;font-weight:400;line-height:130%;padding:12px 0 8px 80px}.CybotCookiebotDialogBodyContentControlsWrapper{display:inline-block;position:relative;margin-right:14px;margin-left:0;line-height:16px}div[dir=rtl] .CybotCookiebotDialogBodyContentControlsWrapper{margin-right:0;margin-left:14px}#CybotCookiebotDialogBodyContentTitle{padding:0;font-size:12pt;font-weight:700;line-height:100%;color:#2a2a2a;display:block;position:static;margin:2px 0 6px}div[dir=rtl] #CybotCookiebotDialogBodyContentText,div[dir=rtl] #CybotCookiebotDialogBodyContentTitle{text-align:right}#CybotCookiebotDialogBodyContentText{text-align:left}#CybotCookiebotDialogBodyContentText ul{display:block;list-style-type:disc;margin:1em 0 1.25em;padding:0 0 0 40px}#CybotCookiebotDialogBodyContentText ul li{display:list-item;list-style-type:disc;padding:0;margin:0}#CybotCookiebotDialogBodyButtons{display:block;margin:0 0 6px 6px;z-index:10;padding-left:63px;padding-right:0}div[dir=rtl] #CybotCookiebotDialogBodyButtons{margin:0 6px 6px 0;padding-left:0;padding-right:63px}#CybotCookiebotDialogBodyButtons a,#CybotCookiebotDialogBodyButtons a:hover{text-decoration:none;color:#ffffff}.CybotCookiebotDialogBodyButton{display:inline-block;padding:1px 4px 3px;z-index:10;font-size:9.5pt;font-weight:600;margin-left:12px;margin-right:0;margin-top:8px;text-align:center;white-space:nowrap;min-width:80px}div[dir=rtl] .CybotCookiebotDialogBodyButton{margin-left:0;margin-right:12px}#CybotCookiebotDialogBodyButtonAccept{background-color:#188600;border:1px solid #188600}#CybotCookiebotDialogBodyButtonDecline{background-color:#333333;border:1px solid #333333}#CybotCookiebotDialogBodyButtons .CybotCookiebotDialogBodyLink,#CybotCookiebotDialogBodyLevelDetailsButton{display:inline-block;color:#2a2a2a;text-decoration:none;font-size:9pt;margin-top:8px;text-align:right;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAMAAAAmGUT3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI3NDEyNDEwNzk0MjExRTQ5RUE5RkRFMUQ3MEU1NTZDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI3NDEyNDExNzk0MjExRTQ5RUE5RkRFMUQ3MEU1NTZDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Qjc0MTI0MEU3OTQyMTFFNDlFQTlGREUxRDcwRTU1NkMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Qjc0MTI0MEY3OTQyMTFFNDlFQTlGREUxRDcwRTU1NkMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz70ohqeAAAABlBMVEVgYGAAAAAPhzbbAAAAAnRSTlP/AOW3MEoAAAAjSURBVHjaYmBkYAQBBkYGIAAxQBQcQ/ggCiLFCGFBCIAAAwADkwAg7Yr51AAAAABJRU5ErkJggg==);background-repeat:no-repeat;background-position-x:right;background-position-y:12px;background-position:right 12px;border-left:0;border-right:5px solid transparent;padding:7px 19px 0 0}div[dir=rtl] #CybotCookiebotDialogBodyButtons .CybotCookiebotDialogBodyLink,div[dir=rtl] #CybotCookiebotDialogBodyLevelDetailsButton{padding-left:19px;padding-right:0;background-position-x:left;background-position-y:12px;background-position:left 12px;border-left:5px solid transparent;border-right:0}div[dir=rtl] #CybotCookiebotDialogBodyLevelDetailsButton,div[dir=rtl] .CybotCookiebotDialogBodyLevelDetailsButtonExpanded{background-position-x:left!important;background-position-y:5px!important;background-position:left 5px!important}#CybotCookiebotDialogBodyButtons .CybotCookiebotDialogBodyLink:hover,#CybotCookiebotDialogBodyLevelDetailsButton:hover{color:#2a2a2a;text-decoration:underline}.CybotCookiebotDialogBodyLevelDetailsButtonExpanded,.CybotCookiebotDialogBodyLinkExpanded{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU0QzAwODExNzk0MjExRTQ4QzBERTBGMTkxMUY2M0M0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU0QzAwODEyNzk0MjExRTQ4QzBERTBGMTkxMUY2M0M0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTRDMDA4MEY3OTQyMTFFNDhDMERFMEYxOTExRjYzQzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTRDMDA4MTA3OTQyMTFFNDhDMERFMEYxOTExRjYzQzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz576KdnAAAATklEQVR42kyO2xEAMQgCJZ3afxFcyGRz+uMD3EHdXbYrJSltrz4Dt4UBNfsWPG614oRwO2Q/Eg+IwvnDj8kjk+48MzmZeNYI/4jRPwEGAFy/MS7NcXxJAAAAAElFTkSuQmCC)!important}a#CybotCookiebotDialogBodyLevelDetailsButton{text-decoration:none;padding-top:0;padding-left:4px;margin:1px 0 0;background-position-x:right;background-position-y:5px;background-position:right 5px;text-align:left;color:#2a2a2a;line-height:16px}div[dir=rtl] a#CybotCookiebotDialogBodyLevelDetailsButton{text-align:right}a#CybotCookiebotDialogBodyLevelDetailsButton:hover{text-decoration:none;color:#2a2a2a}#CybotCookiebotDialogBodyButtonDetails{display:inline-block;float:right;outline:0}div[dir=rtl] #CybotCookiebotDialogBodyButtonDetails{float:left}#CybotCookiebotDialogBodyButtonDetails:focus,#CybotCookiebotDialogBodyLevelDetailsButton:focus{text-decoration:underline}#CybotCookiebotDialogBodyLevelWrapper{display:none;text-align:right;pointer-events:none}div[dir=rtl] #CybotCookiebotDialogBodyLevelWrapper{text-align:left}#CybotCookiebotDialogBodyLevelButtons{font-size:9pt;float:left;margin-left:8px;margin-right:0;pointer-events:auto}div[dir=rtl] #CybotCookiebotDialogBodyLevelButtons{float:right;margin-left:0;margin-right:8px}#CybotCookiebotDialogBodyLevelButtonsTable{display:inline-table;margin:5px 0}div[dir=rtl] #CybotCookiebotDialogBodyLevelButtonsTable{margin-left:16px;margin-right:0}#CybotCookiebotDialogBodyLevelButtonsRow{display:table-row}#CybotCookiebotDialogBodyLevelButtonsSelectPane{display:table-cell;border:1px solid #cccccc;padding:4px 3px 3px 9px;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px;text-align:left;vertical-align:top}a#CybotCookiebotDialogBodyLevelButtonAccept,a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll{background-color:#188600;border:1px solid #188600}#CybotCookiebotDialogBodyLevelButtonAcceptWrapper{display:inline-block;float:right;margin-left:0;margin-right:0;pointer-events:auto}div[dir=rtl] #CybotCookiebotDialogBodyLevelButtonAcceptWrapper{display:inline-block;float:left;margin-left:0;margin-right:0}a#CybotCookiebotDialogBodyLevelButtonAccept{display:inline-block;padding:3px 10px;min-width:80px;color:#ffffff;text-decoration:none;margin-left:0;margin-top:6px;z-index:10;font-size:9.5pt;font-weight:600;margin-right:0;text-align:center;white-space:nowrap}a#CybotCookiebotDialogBodyLevelButtonAccept:hover,a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover,a#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll:hover{color:#ffffff;text-decoration:none}#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelectionWrapper{display:inline-block;float:right;margin-left:0;margin-right:0;pointer-events:auto;padding-bottom:2px}div[dir=rtl] #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelectionWrapper{display:inline-block;float:left;margin-left:0;margin-right:0;padding-bottom:2px}a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,a#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll{display:inline-block;padding:1px 4px 3px;color:#ffffff;text-decoration:none;margin-top:6px;height:16px;z-index:10;font-size:9.5pt;font-weight:600;text-align:center;white-space:nowrap}a#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll{background-color:#333333;border:1px solid #333333}a#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection{background-color:#188600;border:1px solid #188600}div[dir=rtl] #CybotCookiebotDialogBodyLevelButtonsSelectPane{text-align:right;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0}.CybotCookiebotDialogBodyLevelButtonWrapper{display:inline-block;position:relative;margin-right:14px;margin-left:0;line-height:16px}div[dir=rtl] .CybotCookiebotDialogBodyLevelButtonWrapper{margin-right:0;margin-left:14px}.CybotCookiebotDialogBodyLevelButtonWrapper:last-of-type{margin-right:7px;margin-left:0}div[dir=rtl] .CybotCookiebotDialogBodyLevelButtonWrapper:last-of-type{margin-right:0;margin-left:7px}.CybotCookiebotDialogBodyLevelButtonWrapper label{white-space:nowrap}input[type=checkbox].CybotCookiebotDialogBodyLevelButton{opacity:0;position:absolute;top:0;left:0;z-index:2;cursor:pointer}input[type=checkbox].CybotCookiebotDialogBodyLevelButton+label:after,input[type=checkbox].CybotCookiebotDialogBodyLevelButton+label:before{content:normal}input [type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled{cursor:default}input[type=checkbox].CybotCookiebotDialogBodyLevelButton+label{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjYxNkU3NEJGQkJDMjExRTNCMzA3ODU5MUUzMDlDM0FDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjYxNkU3NEMwQkJDMjExRTNCMzA3ODU5MUUzMDlDM0FDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjE2RTc0QkRCQkMyMTFFM0IzMDc4NTkxRTMwOUMzQUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjE2RTc0QkVCQkMyMTFFM0IzMDc4NTkxRTMwOUMzQUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz71Yc/eAAAAOklEQVR42mL8//8/AzmAkf4aL1y4QLROfX19RjgHpBFkKyGMro6JgUwwqnFQaWQBERcvXiQ53QEEGADSSDs5lXMYKAAAAABJRU5ErkJggg==);background-repeat:no-repeat;height:auto;min-height:14px;width:auto;display:inline-block;padding:1px 0 0 17px;position:relative;top:0;left:0;z-index:1;cursor:pointer;margin-top:0;margin-bottom:0;background-position:left 1px;vertical-align:top;line-height:16px;font-size:inherit;color:inherit}div[dir=rtl] input[type=checkbox].CybotCookiebotDialogBodyLevelButton+label{background-position:right 1px;padding:2px 17px 0 0}input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked+label{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNGMUE0MkE1QkJDMjExRTM5QUIxQzQwRjkwREYzMUIyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNGMUE0MkE2QkJDMjExRTM5QUIxQzQwRjkwREYzMUIyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0YxQTQyQTNCQkMyMTFFMzlBQjFDNDBGOTBERjMxQjIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0YxQTQyQTRCQkMyMTFFMzlBQjFDNDBGOTBERjMxQjIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4IZcVrAAAA5UlEQVR42mL8//8/AyMjIwMxQHwRgwOQAuEJjMRqBGoSAFL3gRhEf2BiIB7Mh2oCgQ+MFy5c+E9Ix/o3SxlmPOtGFnJkAZEGBgaMeJyoAKTOI9k24WUcwwEmNEUGBJx4AaipEMRgQtIEUnAeSCcgiRVAQxEGEmEMsB/dLxk4Atn70RRcgDoRDGLEMxh63WfAvQSz8QIUIztvPRL/QixQIzIAawS6+wMopNA0K8CCHogD0T0O9yMOzSDQCJR7gFMjmuYFUKEDQLEJ2KKJBV0AqjkRGKILsdiOqhFv6kHSCkrXMAAQYACIkU0SIPgtxAAAAABJRU5ErkJggg==);background-repeat:no-repeat;height:auto;width:auto;min-height:14px;display:inline-block;padding:1px 0 0 17px;background-position:left 1px;vertical-align:top;line-height:16px}div[dir=rtl] input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked+label{background-position:right 1px;padding:2px 17px 0 0}input[type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled+label{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgzMjc3NEM2QkJDMjExRTNBN0ExOUJFMzFCMzdBRjdEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgzMjc3NEM3QkJDMjExRTNBN0ExOUJFMzFCMzdBRjdEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODMyNzc0QzRCQkMyMTFFM0E3QTE5QkUzMUIzN0FGN0QiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODMyNzc0QzVCQkMyMTFFM0E3QTE5QkUzMUIzN0FGN0QiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz54CbH2AAABFElEQVR42oxSLQ/CQAy9I6hZMrVgQW4aCdnvGIoER8Lm+AcbWBIcFo0cFuw0dkxMMAlyvC69y/hek6VN19e+16ssy1JIKUUTC8Owh9o+wkNbNDSADICmCA18w1ZTIEAeg8juMkmS8h+oKAqR57nIsmzD0pYVVcdx5A+KHRQuLMuaEYj0+b5/br0UdT9QHANgcJwGQbCjWAOjKPKoM/yglhvB9dTW0WCrG5LGOI77SM5rz0IFKXILniRs2564rqsL2tzpQjQQKqoectdao9Q0zScJFVXwvsGteIr612F/Q279ql1rxKYqME8WNV17NL5+BSowCmnykUFngA6fnunt5Jj2Fhs9wV++XlKTy1GGzeptPQQYAF1/e0nsKZ1HAAAAAElFTkSuQmCC);background-repeat:no-repeat;height:auto;width:auto;min-height:14px;display:inline-block;padding:1px 0 0 17px;position:relative;top:0;left:0;z-index:1;cursor:default;background-position:left 1px;vertical-align:top;line-height:16px}div[dir=rtl] input[type=checkbox].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled+label{background-position:right 1px;padding:2px 17px 0 0}input[type=checkbox].CybotCookiebotDialogBodyLevelButton:focus+label{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkUwQkVDMzlCQkQ4NTExRTM5RTEwRUIwNUNENTg2N0Q4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkUwQkVDMzlDQkQ4NTExRTM5RTEwRUIwNUNENTg2N0Q4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTBCRUMzOTlCRDg1MTFFMzlFMTBFQjA1Q0Q1ODY3RDgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTBCRUMzOUFCRDg1MTFFMzlFMTBFQjA1Q0Q1ODY3RDgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7Y0XwIAAAAOElEQVR42mL8//8/AzmAiYFMQLZGxtLSUqLd2tXVxQhjs8AMIELf/4H146hGWmhkwRa5xACAAAMAL2gJGKxaSssAAAAASUVORK5CYII=);background-repeat:no-repeat;height:auto;width:auto;min-height:14px;display:inline-block;padding:1px 0 0 17px;background-position:left 1px;vertical-align:top;line-height:16px}div[dir=rtl] input[type=checkbox].CybotCookiebotDialogBodyLevelButton:focus+label{background-position:right 1px;padding:2px 17px 0 0}input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked:focus+label{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjk3MjVBRTM5QkQ4MDExRTM4RDBEOTEzMTQxN0RDRjc0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjk3MjVBRTNBQkQ4MDExRTM4RDBEOTEzMTQxN0RDRjc0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTcyNUFFMzdCRDgwMTFFMzhEMEQ5MTMxNDE3RENGNzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTcyNUFFMzhCRDgwMTFFMzhEMEQ5MTMxNDE3RENGNzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7V1txIAAAA6UlEQVR42mL8//8/AyMjIwMxQHwRgwOQAuEJjMRqBGoSAFL3gRhEf2BiIB7Mh2oCgQ+MpaWl/wnpuC5yluG05D5kIUcWENnd3c2Ix4kKQOo8km0TXsYxHGBCU2RAwIkXgJoKQQwmJE0gBeeBdAKSWAE0FGEgEcZgQQpmmIb5QD7YdCDuhynUf2XFsKvk2AUYH2bjBShGdt56JP4F/ZfWKO4HawS6+wMopNA0K8CCHogD0T0O9yMOzSDQCJR7gFMjmuYFUKEDQLEJ2KKJBV0AqjkRGEALsdiOqhFr6rkMpUsRQqB0DQMAAQYAX31KK0vr8I0AAAAASUVORK5CYII=);background-repeat:no-repeat;height:auto;width:auto;min-height:14px;display:inline-block;padding:1px 0 0 17px;background-position:left 1px;vertical-align:top;line-height:16px}div[dir=rtl] input[type=checkbox].CybotCookiebotDialogBodyLevelButton:checked:focus+label{background-position:right 1px;padding:2px 17px 0 0}#CybotCookiebotDialogBodyLevelDetailsWrapper{display:table-cell;background-color:#f6f6f9;border:1px solid #cccccc;border-left:none;height:14px;padding:4px 0 4px 4px;text-align:left;vertical-align:top;cursor:pointer}div[dir=rtl] #CybotCookiebotDialogBodyLevelDetailsWrapper{border:1px solid #cccccc;border-right:none;text-align:right;padding:4px 4px 4px 0}#CybotCookiebotDialogDetail{display:none;background-color:#ffffff;padding-top:0;padding-bottom:1px;overflow:auto}#CybotCookiebotDialogDetailBody{width:100%;max-width:632px;margin-left:auto;margin-right:auto;vertical-align:top}div[dir=rtl] #CybotCookiebotDialogDetailBody{text-align:right}#CybotCookiebotDialogDetailBodyContent{background-color:#ffffff;color:#2a2a2a;border:1px solid #cccccc;border-bottom:4px solid #cccccc;height:170px}#CybotCookiebotDialogDetailBodyContent a{font-size:9pt}#CybotCookiebotDialogDetailBodyContentTabs a{font-size:10.5pt}#CybotCookiebotDialogDetailBodyContentText{padding:8px;font-size:10pt}#CybotCookiebotDialogDetailBodyContentTabs{position:relative;height:auto;display:inline-block;white-space:nowrap}.CybotCookiebotDialogDetailBodyContentTabsItem,.CybotCookiebotDialogDetailBodyContentTabsItemSelected{border-right:1px solid #cccccc;position:relative;top:1px;z-index:10;white-space:normal;line-height:100%;border-top:1px solid #cccccc;font-weight:400}a.CybotCookiebotDialogDetailBodyContentTabsItem{text-decoration:none!important;margin:0}a.CybotCookiebotDialogDetailBodyContentTabsItem:focus,a.CybotCookiebotDialogDetailBodyContentTabsItem:hover{text-decoration:none!important;background-color:#ffffff!important;color:#2a2a2a!important;opacity:.9;border-top:1px solid #cccccc;border-right:1px solid #cccccc}a.CybotCookiebotDialogDetailBodyContentTabsItemSelected{margin:0;text-decoration:none!important;color:#2a2a2a!important;opacity:1}a.CybotCookiebotDialogDetailBodyContentTabsItemSelected:focus,a.CybotCookiebotDialogDetailBodyContentTabsItemSelected:hover{text-decoration:none!important;color:#2a2a2a!important;cursor:default;border-top:1px solid #cccccc;border-right:1px solid #cccccc}.CybotCookiebotDialogDetailBodyContentTabsItem{background:#f6f6f9;color:#2a2a2a!important;opacity:.85;font-size:10.5pt;display:inline-block;margin:1px 0 0;cursor:pointer;padding:7px 18px 5px}.CybotCookiebotDialogDetailBodyContentTabsItem:first-of-type{border-left:1px solid #cccccc}.CybotCookiebotDialogDetailBodyContentTabsItemSelected{background:#ffffff;color:#2a2a2a;font-size:10.5pt;display:inline-block;opacity:1;padding:8px 18px 6px}.CybotCookiebotDialogDetailBodyContentTab:first-child{border-left:1px solid #cccccc;-webkit-border-radius:4px 0 0 0;-moz-border-radius:4px 0 0;border-radius:4px 0 0}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentTab:first-child{border-left:none;-webkit-border-radius:0 4px 0 0;-moz-border-radius:0 4px 0 0;border-radius:0 4px 0 0}.CybotCookiebotDialogDetailBodyContentTab{border-left:none}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentTab{border-left:1px solid #cccccc}#CybotCookiebotDialogDetailFooter{padding-top:4px;padding-right:2px;color:#2a2a2a;text-align:right;opacity:.85;background-color:#ffffff}div[dir=rtl] #CybotCookiebotDialogDetailFooter{text-align:left}#CybotCookiebotDialogDetailFooter a{color:#2a2a2a}#CybotCookiebotDialogDetailBodyContentTextAbout{padding:18px 12px 12px;font-size:9pt;height:140px;overflow:auto;display:none}#CybotCookiebotDialogDetailBodyContentTextOverview{display:inline-block}#CybotCookiebotDialogDetailBodyContentTextIABv2{text-overflow:ellipsis;word-wrap:break-word}#CybotCookiebotDialogDetailBodyContentTabsIABv2,#CybotCookiebotDialogDetailBodyContentTextIABv2{display:none}#CybotCookiebotDialogDetailBodyContentCookieContainerTypes,#CybotCookiebotDialogDetailBodyContentIABv2Tabs{float:left;white-space:nowrap;padding:0;background-color:#f6f6f9;font-size:9pt}div[dir=rtl] #CybotCookiebotDialogDetailBodyContentCookieContainerTypes,div[dir=rtl] #CybotCookiebotDialogDetailBodyContentIABv2Tabs{float:right}#CybotCookiebotDialogDetailBodyContentCookieContainerTypeDetails,#CybotCookiebotDialogDetailBodyContentIABv2Details{padding:12px;font-size:9pt;overflow:auto;height:146px;max-height:146px}.CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected,.CybotCookiebotDialogDetailBodyContentIABv2TabSelected{padding:8px;background-color:#ffffff;border-bottom:1px solid #cccccc;border-left:none;border-right:1px solid #ffffff;display:block;text-decoration:none!important;color:#2a2a2a!important}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected,div[dir=rtl] .CybotCookiebotDialogDetailBodyContentIABv2TabSelected{border-left:1px solid #ffffff;border-right:none}.CybotCookiebotDialogDetailBodyContentCookieContainerTypes,.CybotCookiebotDialogDetailBodyContentIABv2Tab{padding:8px;cursor:pointer;background-color:#f6f6f9;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;border-left:none;display:block;text-decoration:none!important;color:#2a2a2a!important;opacity:1}.CybotCookiebotDialogDetailBodyContentCookieContainerTypes:first-child,.CybotCookiebotDialogDetailBodyContentIABv2Tab:first-child{border-top:1px solid #cccccc}.CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected:first-child{border-top:1px solid #ffffff}#CybotCookiebotDialogDetailBodyContentIABv2Tabs a:first-child{border-top:0}.CybotCookiebotDialogDetailBodyContentCookieContainerTypes label,.CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected label,.CybotCookiebotDialogDetailBodyContentIABv2Tab label,.CybotCookiebotDialogDetailBodyContentIABv2TabSelected label{cursor:pointer;display:none;margin:0}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentCookieContainerTypes,div[dir=rtl] .CybotCookiebotDialogDetailBodyContentIABv2Tab{border-left:1px solid #cccccc;border-right:none}a.CybotCookiebotDialogDetailBodyContentCookieContainerTypes:focus,a.CybotCookiebotDialogDetailBodyContentCookieContainerTypes:hover,a.CybotCookiebotDialogDetailBodyContentIABv2Tab:focus,a.CybotCookiebotDialogDetailBodyContentIABv2Tab:hover{text-decoration:none!important;background:#ffffff!important;color:#2a2a2a!important;opacity:1;border-bottom:1px solid #cccccc;border-right:1px solid #cccccc;border-left:none}a.CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected:focus,a.CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected:hover,a.CybotCookiebotDialogDetailBodyContentIABv2TabSelected:focus,a.CybotCookiebotDialogDetailBodyContentIABv2TabSelected:hover{text-decoration:none!important;color:#2a2a2a!important;cursor:default;border-bottom:1px solid #cccccc;border-left:none;border-right:1px solid #ffffff}#CybotCookiebotDialogDetailBodyContentCookieTabsAdvertising,#CybotCookiebotDialogDetailBodyContentCookieTabsPreference,#CybotCookiebotDialogDetailBodyContentCookieTabsStatistics,#CybotCookiebotDialogDetailBodyContentCookieTabsUnclassified,#CybotCookiebotDialogDetailBodyContentIABv2TabFeatures,#CybotCookiebotDialogDetailBodyContentIABv2TabPartners{display:none}.CybotCookiebotDialogBodyLevelButtonIABContainer{border:1px solid #ccc;padding:4px 4px 4px 8px;margin-bottom:8px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;overflow:hidden}.CybotCookiebotDialogBodyLevelButtonIABContainerCollapsed{border:1px solid #ccc;padding:4px 4px 4px 8px;margin-bottom:8px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;height:18px;overflow:hidden}.CybotCookiebotDialogBodyLevelButtonIABContainerToggleHide,.CybotCookiebotDialogBodyLevelButtonIABContainerToggleShow{display:inline-block;position:relative;height:20px;width:16px;background-repeat:no-repeat;background-position-x:left;background-position-y:6px;background-position:left 6px;float:right}.CybotCookiebotDialogBodyLevelButtonIABContainerToggleShow{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAMAAAAmGUT3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI3NDEyNDEwNzk0MjExRTQ5RUE5RkRFMUQ3MEU1NTZDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI3NDEyNDExNzk0MjExRTQ5RUE5RkRFMUQ3MEU1NTZDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Qjc0MTI0MEU3OTQyMTFFNDlFQTlGREUxRDcwRTU1NkMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Qjc0MTI0MEY3OTQyMTFFNDlFQTlGREUxRDcwRTU1NkMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz70ohqeAAAABlBMVEVgYGAAAAAPhzbbAAAAAnRSTlP/AOW3MEoAAAAjSURBVHjaYmBkYAQBBkYGIAAxQBQcQ/ggCiLFCGFBCIAAAwADkwAg7Yr51AAAAABJRU5ErkJggg==)}.CybotCookiebotDialogBodyLevelButtonIABContainerToggleHide{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU0QzAwODExNzk0MjExRTQ4QzBERTBGMTkxMUY2M0M0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU0QzAwODEyNzk0MjExRTQ4QzBERTBGMTkxMUY2M0M0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTRDMDA4MEY3OTQyMTFFNDhDMERFMEYxOTExRjYzQzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTRDMDA4MTA3OTQyMTFFNDhDMERFMEYxOTExRjYzQzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz576KdnAAAATklEQVR42kyO2xEAMQgCJZ3afxFcyGRz+uMD3EHdXbYrJSltrz4Dt4UBNfsWPG614oRwO2Q/Eg+IwvnDj8kjk+48MzmZeNYI/4jRPwEGAFy/MS7NcXxJAAAAAElFTkSuQmCC)}.CybotCookiebotDialogDetailBodyContentCookieTypeTable{padding:0;margin:8px 0 0;font-size:9pt;border-spacing:0;border-collapse:collapse;width:100%}.CybotCookiebotDialogDetailBodyContentCookieTypeTable thead td,.CybotCookiebotDialogDetailBodyContentCookieTypeTable thead th{background-color:#f6f6f9!important;color:#2a2a2a!important;text-align:left;vertical-align:top;padding:2px;border-bottom:1px solid #cccccc;font-weight:400}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentCookieTypeTable thead td,div[dir=rtl] .CybotCookiebotDialogDetailBodyContentCookieTypeTable thead th{text-align:right}.CybotCookiebotDialogDetailBodyContentCookieTypeTable tbody td{border-bottom:1px solid #cccccc;border-right:1px solid #f6f6f9;text-align:left;vertical-align:top;padding:4px;max-width:72px;overflow:hidden;font-size:9pt;color:#2a2a2a!important}.CybotCookiebotDialogDetailBodyContentCookieTypeTable tbody td:last-child{border-right:0}div[dir=rtl] .CybotCookiebotDialogDetailBodyContentCookieTypeTable tbody td{text-align:right}.CybotCookiebotDialogDetailBodyContentCookieTypeTable tbody td.CybotCookiebotDialogDetailBodyContentCookieTypeTableEmpty{border:none;border-top:1px solid #cccccc;padding:4px 0 0}.CybotCookiebotDialogBodyLevelButtonIABHeader,.CybotCookiebotDialogBodyLevelSectionIAB{margin-top:2px;padding-top:8px;border-top:1px solid #cccccc;margin-bottom:12px}#CybotCookiebotDialogBodyIABIntro,.CybotCookiebotDialogBodyIABIntroContainer{margin-bottom:12px}.CybotCookiebotDialogBodyLevelButtonIABHeader{font-weight:700;text-transform:uppercase}.CybotCookiebotDialogBodyLevelButtonIABDescription{margin-top:8px;margin-bottom:12px}.CybotCookiebotDialogBodyLevelButtonIABLabel{font-weight:700}ul.CybotCookiebotDialogBodyLevelButtonIABBullet{list-style-type:disc;margin:3px 0 0;padding-inline-start:18px}.CybotCookiebotDialogBodyLevelButtonIABHeaderToggle{float:right}.CybotCookiebotDialogBodyContentLabelPersonalInformation{font-weight:400!important}</style></head>
+
+  <body id="home"><div id="CybotCookiebotDialog" name="CybotCookiebotDialog" role="dialog" aria-describedby="CybotCookiebotDialogBodyContentTitle" lang="en" dir="ltr" ng-non-bindable="" style="display: block; padding-bottom: 18px; opacity: 1; top: 552px;"><div id="CybotCookiebotDialogBody"><div id="CybotCookiebotDialogPoweredbyLink"><img id="CybotCookiebotDialogPoweredbyImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA9KSURBVGhD7VmJU5VXlud/mOpK3I2dmJlyOj1V0zPT0zXdiQuIommN0bTRENvEEAVE0KgxJrE1tprELSaKwRU3BAWXoKKAijsKssNjUZB9eTvw9veb37nf9yHJ2ErXVE1VquaU593t3Ht/99xzzzkfhvxsqScYjPf7g/FBrz8+6CcHvSy98d6gP76HLGNqXNgtzHH2/5T9ZJnj1tkr65KDwsZ8Wcvol7ZX9pK5bsq54/1ell59zJj7NzgEP1MK8cuv/HikDADBAIIIwMtfdzAIno4tdotcIAh/hxWe5k54DW7qhK9RZ7Z90jb4URf7u5SMV5VmeFqtnGeFr8HCMbMaC5rtsji8QQ/83F8QPIs0jYucgCcwImUzCB+rHllEDiLs8aPr3A2ULl6HksiPUPnuSlS9swLVc5ejds4K1Oks9dq5K1DDsoZl9TvLURW5jPLLUP7uRyievwIVkSvw8G2OzV6GKs43xaxDx4WrCPj8au9nwzaA9yeZJYpn6QsQOFnIc68S9377DsoGh6J++EQ0Dp2I5iFhaBmkcRu5/fmJLCeiZXAYxzSZR+SGYePRMHw8HpJrR7LOdttg8qBQtA0JR8XzE5A7PhK9hdWaAgdAylQM7jMJ+VEH4OnFfAJ+WI6cRtno12EZNhlWAncMDYdjWDgsw8PRNZI8Ihxm9tsI1Moxq5TDhMNgGxZKnqDYPGICZcezHA/b8FA4efiOwZOQ/8/T0HMkC/BS67zhZ1GIruA+8Aq4lNKpmD0+D2xHTqFq9FSYCcg8gkCGhilQnQTd8sJEtI4KRyfBy0GsPJCZpbTNIwiedYscgHPsBGt7QeaN5/hYyofCMmIyyv/xdbgST/Fq5bENALgGTmv0ka5x7eCsBLywHs5A9egp6CLwzuEEQVOwD49AK0HVDpmAB+xrpPaaaSaN5Dq2q0eGwUSu5k3UUf4RuXlIKLrIzqE8wPAJsHC8jeOml6bAszPj7wCuq1nHqs0x7EZI0Pu9sB1IR/2o19E9OAIW2qVjxFTa7WRU/8dstM7/BA3Ra9D44Ro0RbFcuAZ1bNfErEEtuS56HR4t2sCxdWj88yeo+be30Ck3R1MSM2sdORlVL/8Rnt3UuM/LTQXA0ylEgSYbpqLQsxIQt6LaAtyPjv3pyB81CQ+em4CH1FzVoPG4MSoUrTtPAG12BNs7EWjvQqDNrHEH68LtFgRbbQg2k6XsdKL1u1QU0t6raUblg15DOW8n78Vw2HdzraCPEAYAXM7nI4uoUfaRci3sJfC2rKu4RTdYPjMBpjeXonR6Aorf/wT2/DJNVM1WFY0N0hUhpTg6uUjHfRNd6iqUT49H1ZvLUDEjAQVzlsOemUeh/4HiiaS8irGPCj0Clix1H7UtTXh4PJsLqLcCNV06W4CHZsDaw0vxMmDJDJIsSHRSF5DCDPGMbX7FPjKcXO+hA6jgfJMNqOZadaybezVT0R7XU0nz4/oOmvOXCkHIJrKhbiqOggo0bD+Cpq0HUb/tAJq2JONBUiq66xrVEhJpFVpRmDDrsqzcqJusFCIdLLprWlC36wSaNh9F8+bDqP/mKEy7jqOnwMS5so4s9HQKUW9Y5BRwUZhEL+4cpGZkAb8w0HnoFAp+NYWvP4wPKRQ1oybi9m/fREf2Tc6S44qqSQLOYJKsKQoI6OsIWXILkf+vb6GMnkS8STn5+r/MQPe+c30yz6IQpRxZnRvJHB9/FfAA2S8HYKc3CEfyaW4yicFirBZEnhuH0lemwXxRgIuYtqOIKxJFsCH4BbMKwEpDtJSLt1A7ZgaaGIXtIyIYRcNQ8mIE3Ek/6MD7VvmbpLyKWl3fRFIcbbaf++h2y+tzHDqj/HiHCjr05UMnofw3s2C5dEck1DxjppRCUopixE+oDdTDo6lcvI6GX89EOwOSky5RglXFP02Faw/9OIPdgLyKegiyrsgqlEJiMLRx1pSSaKiOvadQwaDR8Vwo2gczUv5iIu7/6g10XdCACzgNpLaUWstgWcSwR5Ij6xZv73W0/2IcrP8wlrc3AaU0vd5EukPesqaCpxNDvg5cZNVG8iOgJbXVtyKSjlMXUTBpHkyvzYFpXCRqfh+J/OnR6LpdLBLKqxjalhX6QAtLp65EqTpvlaJySjRMf5iLurFc79U5uD/xPbjSLqn9xVifRXycsqEmqO0jv9oTVZeghpibW7vgLC5Gb0Eh3AXF8HLznqIq+KwMKpSUdRRpiyg2quqHw2LryhmYnXDfroQrvxiuwmL05BehN78CeESXyE3VnGdQiNsALtKK5UcHLljk7sW11jXBl3EJwROXEEjLQSDlMnyZ1xFobuegOENlWNp8YXmN4plkhE2+byUhwIMtFgRO3+Q6uVyPnMa1Uq8iWNYqSw2IGIB0TUkhmA3gtH2JFWq3niAshzKR/5s3UDlmGqpeeZMeZQZu/dfbsGXfpYCQbgsDICfdYcF/vo2iV6aj4tdvoGTMH5H/739CT/IFtZ8geBYxAIlmWNM1ovkRuS+WgkVUxIBm23caxS9PQfuwCHQNm4pHgyej+MXJqIvbBGfOPdivkW8UwnazSOdC1bZfL4Djxj04rt1Fb14BerLz0Rj3JUxMZ5uYp7cyX2lgeXf0ZPTSAchN6b7sqUSNa1YtpJQuDVE1X7d8b4rTkRNZ6Q4rCdw2ZBLsTPy7h05F24gpqPxlOKp+NxvFfGDFr76DklcjFRe9JnV+Mb06F2W/n4WK383Egz/MYTY5E9WjwmCWjw9+EXXyg6Kd+XwZgbsS6Q75ITGQ21MBqJ+n4iHkvATNAKTXlID18GlUvxwBK3Nu23ACHzZJ5eSWkRFopG9/RJ/czHS3TVwlWerNg5myMri0DRnPHHwCP+3Go5WyZn5gOJgRtr8wjintOLQzLlS/PJX5uHxICGgdzFNIy1X0Q0rh5q+bcDXnRtByKJ7OuT8DD16KQCfT2S5uZOHGjhHUvvra4Scb6w7eRjdvw8nSKgdjkFJfQwQqn3tW5u+dPGgXx2SelZrukgMM5q29OA3uREZOYpadn0X046JR1nTg8qglm1NegSmtkS32ZOSiih8SFtq2mRq3UNs2atZOFs3bqFkH685B4XASiI0at7MUs7JxThcP087w3vxCBNo5X40/z085jjfz3dwaMx296deVqQocZaY6P4mYj9MgdGmZIKy0zEcZ9EoQEr9DftiOhrc+RdmoqSr01/yIpz6uv2TUtbKW7fpR09g/DWUM60VjpqBsTIQaq//lFDwYPQ3XR0fg/oJP4X/QqRQWYDaqMAgUHbz8taH/IZQfV6+YiKVb8yxSYYsRQ0D7gpRizh142AZr6nl0JqXAvDdtQGzZewLOpAw4vz8J6540WPemwka2s24jd5LNJy/C38B44OHOvGUFUP6x9PMQwgZ4g1Tk1MxFYD82F2nJnyYC9DCSALgCLnUIdSzRiGSOA2Uf5YW9rAt7pOQu+teV2kyIGCT9DbA0QAvYn2pbSMtVDOaYfliuT5gyWYAzAnp4HJcyHB288pPGvCfUpdTrkiobqZPGSlUaqQ31NgcFuNQNoFIaLAcxKITHURuoA6gZZFmApxZXKMFcpbf80g/Klek3o+QMMuYJGfV+ff2B6sfWxqShvAFZTFP2lUKA0h37mOK6XL3E8gRT0eL64w5tpl7VWZEkLnLFBnChftUfkfT3H2O9o60dFRWV1Bob/cdlAy6rSoJ7TEFczs3G4UMHCfhxAmPchBbySXa7jeYo8Z09BOlxa3WrTbK//gsy/Nv50azP83hp+/xA8HrdcDj44atktbHubgc8Hn5kk7JOn0L0ggVoa2pWbSGH08lAaVy/tofL3aPmCR05nIxVH6/giNi4Hz093UrrAj7EH/Tg6JGDiI6KUkIFhQVoaW3BV3/dgO93fIf42Fhs+nIj7FzM5XYh+cA+LIldyPF16Opoxb38m9j0179gwxdrEBcdhZvXrvCrz4XT6WlYGheDjev/guqyEiRu/RqTx76GTevWorW5CWlpqVi8JBYfr16Jm3euK6DXruVixbI4JCxehKxzPyDl2BGsp7zb1YMd32zDWR6+T+M5uVlYFLUAhXfuIPngPiQkLEFe3mW8+9afkPTNDpTwIFFR7+N46jFkn8/E8iWLUVFahK83rEPSrh04dSIFc2YxwyvIx9avNmDl0jhUV5Ziwby5SEs5jKoy5tpOK86kp2Lh+/NQWniXt+NFWel9XM/LxebNG7B06WKUUy42Jgqpxw7i9o08lBffR+rxo1i3dg12J+7Ep6tXob29jZC1hxqyce1aHEjarU5hNXcggVo4kJSIpTEL0VhjUv3JB/Zg7aqVSNywEStiY3Au8zTWr1+Dzz/9mDa4n4uuVHJ5V3MQvyQGzU312L7ta0Qv+gA5uUxVSdk5F5FAgG63U5nPubPpOJi0C1s2fIGPuGdS4rdUWhwlH5vl6ZPHETEpDHGLY1FZof/hiSYjf80N2U6T2P7Vl6qzo7UJcYuicCx5P5bGLkIZtSO0a8dWbFr7GW9gG+I+/AC5BJGbfRHl5aU4eugAVq9aoeSuXb1MM4qG3WpWHiEnOwsL3puHvCtX+NByER8Xq7xFyf27iJoXiXt3biDzVDoSohcheS9NMCYWTov874RGGWkpmD1rBpL378HWLV+jt8dJ5JqHCTEVlyBq/nzs2b0Laz9bja82rkclTWF+5Nv4nID2sv/Pc2fj5o0rKCop4OYxOHk8hYCTad/5OHfmDD5etkxtdDUnB8sTElBWVIRd336LMxnpiI+Job2ex/17hZgzcxbSjh7FzctXEP3B+7iQeRZ7v9+NhXy0VSVl+Hzlanyxiqbx7U6cPZvBPQ7iizWfoaWxAR/SnDPST6K2porar9Cyw/t3C7Bt82Yc3L8fToedg9V4b948/HAqA99t34ZLWRfU9QgV3LuH7Vu3YW/SHuXiTFUmXLyQpcbqamqRdf4CTc5CbWdTS1uQfjKdj8sNV68Lx44cxcF9+3kjNt5YNnbycOcyM5F59gd0O5xobWnF7l2J2LZlK0ymKpSWlODK5ctq7du3b+P8+fOor69XrKW1P6Ha2los/2g52lrlMfz99GPn+b8nw5MIGdEzxIhG/X11b2+vOpXL5VKTnpQrCEmfwUZeIWTIG3P6ywn1lxX66bhQ/z37143yiRr/OZBoPMXn86XwJH2l2+3uqxvcX65/W0qj/SRZoy5rPklWmH69T77/vP44RMaQlz79P8b/n/6PKCTkvwEreO6bsz9BZwAAAABJRU5ErkJggg==" alt="logo" /></div><div id="CybotCookiebotDialogBodyContent"><h2 id="CybotCookiebotDialogBodyContentTitle" lang="en">This website uses cookies</h2><div id="CybotCookiebotDialogBodyContentText" lang="en">We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services. You consent to our cookies if you continue to use our website.</div></div><div id="CybotCookiebotDialogBodyContentControls" style="display: none;"><div class="CybotCookiebotDialogBodyContentControlsWrapper"><input type="checkbox" id="CybotCookiebotDialogBodyContentCheckboxPersonalInformation" class="CybotCookiebotDialogBodyLevelButton" tabindex="0" /><label class="CybotCookiebotDialogBodyContentLabelPersonalInformation" for="CybotCookiebotDialogBodyContentCheckboxPersonalInformation">[#OOI_PERSONAL_INFORMATION#]</label></div></div><div id="CybotCookiebotDialogBodyButtons" style="display: none;"><a id="CybotCookiebotDialogBodyButtonDecline" class="CybotCookiebotDialogBodyButton" href="javascript: void(0);" tabindex="0" lang="en"> Use necessary cookies only </a><a id="CybotCookiebotDialogBodyButtonAccept" class="CybotCookiebotDialogBodyButton" href="javascript: void(0);" tabindex="0" lang="en"> Allow all cookies </a><a id="CybotCookiebotDialogBodyButtonDetails" class="CybotCookiebotDialogBodyLink" href="javascript: void(0);" tabindex="0" lang="en"> Show details </a></div><div id="CybotCookiebotDialogBodyLevelWrapper" style="display: block;"><div id="CybotCookiebotDialogBodyLevelButtonAcceptWrapper" style="display: block;"><a id="CybotCookiebotDialogBodyLevelButtonAccept" href="javascript: void(0);" tabindex="0" lang="en"> OK </a></div><div id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelectionWrapper" style="display: none;"><a id="CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll" class="CybotCookiebotDialogBodyButton" href="javascript: void(0);" tabindex="0" lang="en"> Use necessary cookies only </a><a id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection" class="CybotCookiebotDialogBodyButton" href="javascript: void(0);" tabindex="0" lang="en"> Allow selection </a><a id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll" class="CybotCookiebotDialogBodyButton" href="javascript: void(0);" tabindex="0" lang="en"> Allow all cookies </a></div><!--Checkboxes--><div id="CybotCookiebotDialogBodyLevelButtons" style="float: left; pointer-events: auto; margin-left: 8px; margin-right: 0px;"><div id="CybotCookiebotDialogBodyLevelButtonsTable" style="width: auto;"><div id="CybotCookiebotDialogBodyLevelButtonsRow"><div id="CybotCookiebotDialogBodyLevelButtonsSelectPane"><div class="CybotCookiebotDialogBodyLevelButtonWrapper" title="Mandatory - can not be deselected. Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies."><input type="checkbox" id="CybotCookiebotDialogBodyLevelButtonNecessary" class="CybotCookiebotDialogBodyLevelButton CybotCookiebotDialogBodyLevelButtonDisabled" disabled="disabled" checked="checked" /><label for="CybotCookiebotDialogBodyLevelButtonNecessary">Necessary</label></div><div class="CybotCookiebotDialogBodyLevelButtonWrapper" title="Preference cookies enable a website to remember information that changes the way the website behaves or looks, like your preferred language or the region that you are in."><input type="checkbox" id="CybotCookiebotDialogBodyLevelButtonPreferences" class="CybotCookiebotDialogBodyLevelButton" checked="checked" tabindex="0" /><label for="CybotCookiebotDialogBodyLevelButtonPreferences">Preferences</label></div><div class="CybotCookiebotDialogBodyLevelButtonWrapper" title="Statistic cookies help website owners to understand how visitors interact with websites by collecting and reporting information anonymously."><input type="checkbox" id="CybotCookiebotDialogBodyLevelButtonStatistics" class="CybotCookiebotDialogBodyLevelButton" checked="checked" tabindex="0" /><label for="CybotCookiebotDialogBodyLevelButtonStatistics">Statistics</label></div><div class="CybotCookiebotDialogBodyLevelButtonWrapper" title="Marketing cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers."><input type="checkbox" id="CybotCookiebotDialogBodyLevelButtonMarketing" class="CybotCookiebotDialogBodyLevelButton" checked="checked" tabindex="0" /><label for="CybotCookiebotDialogBodyLevelButtonMarketing">Marketing</label></div></div><div id="CybotCookiebotDialogBodyLevelDetailsWrapper"><a id="CybotCookiebotDialogBodyLevelDetailsButton" class="CybotCookiebotDialogBodyLink" href="javascript: void(0);" tabindex="0" lang="en"> Show details </a></div></div></div></div></div></div><div id="CybotCookiebotDialogDetail"><div id="CybotCookiebotDialogDetailBody"><div id="CybotCookiebotDialogDetailBodyContentTabs"><a id="CybotCookiebotDialogDetailBodyContentTabsOverview" class="CybotCookiebotDialogDetailBodyContentTab CybotCookiebotDialogDetailBodyContentTabsItemSelected" href="javascript: CookieConsent.dialog.showDetailPane('overview');" lang="en"> Cookie declaration </a><a id="CybotCookiebotDialogDetailBodyContentTabsIABv2" class="CybotCookiebotDialogDetailBodyContentTab CybotCookiebotDialogDetailBodyContentTabsItem" href="javascript: CookieConsent.dialog.showDetailPane('iabv2');" lang="en" style="display: none;"> [#IABV2SETTINGS#] </a><a id="CybotCookiebotDialogDetailBodyContentTabsAbout" class="CybotCookiebotDialogDetailBodyContentTab CybotCookiebotDialogDetailBodyContentTabsItem" href="javascript: CookieConsent.dialog.showDetailPane('about');" lang="en"> About cookies </a></div><div id="CybotCookiebotDialogDetailBodyContent"><div id="CybotCookiebotDialogDetailBodyContentTextOverview" lang="en"><div id="CybotCookiebotDialogDetailBodyContentCookieContainer"><div id="CybotCookiebotDialogDetailBodyContentCookieContainerTypes"><a id="CybotCookiebotDialogDetailBodyContentCookieContainerNecessary" href="javascript: CookieConsent.dialog.showCookieContainerDetailPane('necessary');" class="CybotCookiebotDialogDetailBodyContentCookieContainerTypesSelected" lang="en" aria-label="Necessary (15)" style="border-top: 0px;"><label for="CybotCookiebotDialogDetailBodyContentCookieContainerNecessary" aria-hidden="true"> </label>Necessary (15)</a><a id="CybotCookiebotDialogDetailBodyContentCookieContainerPreference" href="javascript: CookieConsent.dialog.showCookieContainerDetailPane('preference');" class="CybotCookiebotDialogDetailBodyContentCookieContainerTypes" lang="en" aria-label="Preferences (10)"><label for="CybotCookiebotDialogDetailBodyContentCookieContainerPreference" aria-hidden="true"> </label>Preferences (10)</a><a id="CybotCookiebotDialogDetailBodyContentCookieContainerStatistics" href="javascript: CookieConsent.dialog.showCookieContainerDetailPane('statistics');" class="CybotCookiebotDialogDetailBodyContentCookieContainerTypes" lang="en" aria-label="Statistics (15)"><label for="CybotCookiebotDialogDetailBodyContentCookieContainerStatistics" aria-hidden="true"> </label>Statistics (15)</a><a id="CybotCookiebotDialogDetailBodyContentCookieContainerAdvertising" href="javascript: CookieConsent.dialog.showCookieContainerDetailPane('advertising');" class="CybotCookiebotDialogDetailBodyContentCookieContainerTypes" lang="en" aria-label="Marketing (31)"><label for="CybotCookiebotDialogDetailBodyContentCookieContainerAdvertising" aria-hidden="true"> </label>Marketing (31)</a><a id="CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified" href="javascript: CookieConsent.dialog.showCookieContainerDetailPane('unclassified');" class="CybotCookiebotDialogDetailBodyContentCookieContainerTypes" lang="en" aria-label="Unclassified (6)"><label for="CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified" aria-hidden="true"> </label>Unclassified (6)</a></div><div id="CybotCookiebotDialogDetailBodyContentCookieContainerTypeDetails"><div id="CybotCookiebotDialogDetailBodyContentCookieTabsNecessary"><div class="CybotCookiebotDialogDetailBodyContentCookieTypeIntro">Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.</div><div class="CybotCookiebotDialogDetailBodyContentCookieTypeTableContainer"> <table id="CybotCookiebotDialogDetailTableNecessary" class="CybotCookiebotDialogDetailBodyContentCookieTypeTable"><thead><tr><th scope="col">Name</th><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Expiry</th><th scope="col">Type</th></tr></thead><tbody><tr><td title="st_samesite">st_samesite</td><td>c.sharethis.mgr.consensu.org</td><td title="Used by ShareThis to track visitor’s website navigation and preferences - This is used for internal statistics and marketing.">Used by ShareThis to track visitor’s website navigation and preferences - This is used for internal statistics and marketing.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="JSESSIONID">JSESSIONID [x5]</td><td><a href="https://www.adobe.com/dk/privacy.html" target="_blank" rel="noopener noreferrer nofollow" title="Adobe Inc's privacy policy">Adobe Inc</a><br /><a href="https://newrelic.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="New Relic's privacy policy">New Relic</a></td><td title="Preserves users states across page requests.">Preserves users states across page requests.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="csrftoken">csrftoken</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Helps prevent Cross-Site Request Forgery (CSRF) attacks.">Helps prevent Cross-Site Request Forgery (CSRF) attacks.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="__cfduid">__cfduid</td><td><a href="https://www.openstack.org/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Openstack's privacy policy">Openstack</a></td><td title="Used by the content network, Cloudflare, to identify trusted web traffic.">Used by the content network, Cloudflare, to identify trusted web traffic.</td><td title="29 days">29 days</td><td title="HTTP">HTTP</td></tr><tr><td title="__sharethis_cookie_test__">__sharethis_cookie_test__</td><td><a href="https://www.sharethis.com/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Sharethis's privacy policy">Sharethis</a></td><td title="This cookie determines whether the browser accepts cookies.">This cookie determines whether the browser accepts cookies.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="CookieConsent">CookieConsent</td><td><a href="https://www.cookiebot.com/goto/privacy-policy/" target="_blank" rel="noopener noreferrer nofollow" title="Cookiebot's privacy policy">Cookiebot</a></td><td title="Stores the user's cookie consent state for the current domain">Stores the user's cookie consent state for the current domain</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="PHPSESSID">PHPSESSID [x2]</td><td><a href="https://www.openstack.org/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Openstack's privacy policy">Openstack</a></td><td title="Preserves user session state across page requests.">Preserves user session state across page requests.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="local_storage_support_test">local_storage_support_test</td><td><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Twitter's privacy policy">Twitter</a></td><td title="The cookie is used in context with the local-storage function in the browser. This function allows the website to load faster by pre-loading certain procedures. ">The cookie is used in context with the local-storage function in the browser. This function allows the website to load faster by pre-loading certain procedures. </td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="ECHOSIGN_ID">ECHOSIGN_ID</td><td><a href="https://www.adobe.com/dk/privacy.html" target="_blank" rel="noopener noreferrer nofollow" title="Adobe Inc's privacy policy">Adobe Inc</a></td><td title="Pending">Pending</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="debug">debug</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Pending">Pending</td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr></tbody></table> </div></div><div id="CybotCookiebotDialogDetailBodyContentCookieTabsPreference"><div class="CybotCookiebotDialogDetailBodyContentCookieTypeIntro">Preference cookies enable a website to remember information that changes the way the website behaves or looks, like your preferred language or the region that you are in.</div><div class="CybotCookiebotDialogDetailBodyContentCookieTypeTableContainer"> <table id="CybotCookiebotDialogDetailTablePreference" class="CybotCookiebotDialogDetailBodyContentCookieTypeTable"><thead><tr><th scope="col">Name</th><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Expiry</th><th scope="col">Type</th></tr></thead><tbody><tr><td title="lang">lang [x2]</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Remembers the user's selected language version of a website">Remembers the user's selected language version of a website</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="SS">SS</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Necessary for the functionality of the website's chat-box function. ">Necessary for the functionality of the website's chat-box function. </td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="yt-remote-cast-installed">yt-remote-cast-installed</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Session">Session</td><td title="HTML">HTML</td></tr><tr><td title="yt-remote-connected-devices">yt-remote-connected-devices</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="yt-remote-device-id">yt-remote-device-id</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="yt-remote-fast-check-period">yt-remote-fast-check-period</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Session">Session</td><td title="HTML">HTML</td></tr><tr><td title="yt-remote-session-app">yt-remote-session-app</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Session">Session</td><td title="HTML">HTML</td></tr><tr><td title="yt-remote-session-name">yt-remote-session-name</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Stores the user's video player preferences using embedded YouTube video">Stores the user's video player preferences using embedded YouTube video</td><td title="Session">Session</td><td title="HTML">HTML</td></tr><tr><td title="GetTextLocale">GetTextLocale</td><td><a href="https://www.openstack.org/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Openstack's privacy policy">Openstack</a></td><td title="Pending">Pending</td><td title="3 months">3 months</td><td title="HTTP">HTTP</td></tr></tbody></table> </div></div><div id="CybotCookiebotDialogDetailBodyContentCookieTabsStatistics"><div class="CybotCookiebotDialogDetailBodyContentCookieTypeIntro">Statistic cookies help website owners to understand how visitors interact with websites by collecting and reporting information anonymously.</div><div class="CybotCookiebotDialogDetailBodyContentCookieTypeTableContainer"> <table id="CybotCookiebotDialogDetailTableStatistics" class="CybotCookiebotDialogDetailBodyContentCookieTypeTable"><thead><tr><th scope="col">Name</th><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Expiry</th><th scope="col">Type</th></tr></thead><tbody><tr><td title="kampyle_userid">kampyle_userid</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.">Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.</td><td title="1 year">1 year</td><td title="HTML">HTML</td></tr><tr><td title="kampyleSessionPageCounter">kampyleSessionPageCounter</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.">Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.</td><td title="1 year">1 year</td><td title="HTML">HTML</td></tr><tr><td title="kampyleUserSession">kampyleUserSession</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.">Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.</td><td title="1 year">1 year</td><td title="HTML">HTML</td></tr><tr><td title="kampyleUserSessionsCount">kampyleUserSessionsCount</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.">Collects data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.</td><td title="1 year">1 year</td><td title="HTML">HTML</td></tr><tr><td title="__qca">__qca</td><td><a href="https://www.quantcast.com/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Quantcast's privacy policy">Quantcast</a></td><td title="Collects anonymous data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.">Collects anonymous data on the user's visits to the website, such as the number of visits, average time spent on the website and what pages have been loaded with the purpose of generating reports for optimising the website content.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="_dlt">_dlt</td><td><a href="https://www.quantcast.com/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Quantcast's privacy policy">Quantcast</a></td><td title="Sets a unique ID for the session. This allows the website to obtain data on visitor behaviour for statistical purposes.">Sets a unique ID for the session. This allows the website to obtain data on visitor behaviour for statistical purposes.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="_ga">_ga</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Registers a unique ID that is used to generate statistical data on how the visitor uses the website.">Registers a unique ID that is used to generate statistical data on how the visitor uses the website.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="_gat">_gat</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Used by Google Analytics to throttle request rate">Used by Google Analytics to throttle request rate</td><td title="1 day">1 day</td><td title="HTTP">HTTP</td></tr><tr><td title="_gid">_gid</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Registers a unique ID that is used to generate statistical data on how the visitor uses the website.">Registers a unique ID that is used to generate statistical data on how the visitor uses the website.</td><td title="1 day">1 day</td><td title="HTTP">HTTP</td></tr><tr><td title="ReturningVisitor">ReturningVisitor</td><td><a href="https://www.openstack.org/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Openstack's privacy policy">Openstack</a></td><td title="Used to determine if the user has visited the website previously.">Used to determine if the user has visited the website previously.</td><td title="3 months">3 months</td><td title="HTTP">HTTP</td></tr><tr><td title="slideshare.experiments">slideshare.experiments</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used by SlideShare to determine if the visitor is participating in a design experiment.">Used by SlideShare to determine if the visitor is participating in a design experiment.</td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="personalization_id">personalization_id</td><td><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Twitter's privacy policy">Twitter</a></td><td title="This cookie is set by Twitter. The cookie allows the visitor to share content from the website on his/her Twitter profile.">This cookie is set by Twitter. The cookie allows the visitor to share content from the website on his/her Twitter profile.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="p.gif">p.gif</td><td><a href="https://www.adobe.com/privacy.html" target="_blank" rel="noopener noreferrer nofollow" title="Adobe Inc's privacy policy">Adobe Inc</a></td><td title="Keeps track of special fonts used on the website for internal analysis. The cookie does not register any visitor data.  ">Keeps track of special fonts used on the website for internal analysis. The cookie does not register any visitor data.  </td><td title="Session">Session</td><td title="Pixel">Pixel</td></tr><tr><td title="vuid">vuid</td><td><a href="https://vimeo.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Vimeo's privacy policy">Vimeo</a></td><td title="Collects data on the user's visits to the website, such as which pages have been read.">Collects data on the user's visits to the website, such as which pages have been read.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="jserrors/1/#">jserrors/1/#</td><td><a href="https://newrelic.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="New Relic's privacy policy">New Relic</a></td><td title="Pending">Pending</td><td title="Session">Session</td><td title="Pixel">Pixel</td></tr></tbody></table> </div></div><div id="CybotCookiebotDialogDetailBodyContentCookieTabsAdvertising"><div class="CybotCookiebotDialogDetailBodyContentCookieTypeIntro">Marketing cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.</div><div class="CybotCookiebotDialogDetailBodyContentCookieTypeTableContainer"> <table id="CybotCookiebotDialogDetailTableAdvertising" class="CybotCookiebotDialogDetailBodyContentCookieTypeTable"><thead><tr><th scope="col">Name</th><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Expiry</th><th scope="col">Type</th></tr></thead><tbody><tr><td title="MUID">MUID</td><td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer nofollow" title="Microsoft's privacy policy">Microsoft</a></td><td title="Used widely by Microsoft as a unique user ID. The cookie enables user tracking by synchronising the ID across many Microsoft domains.">Used widely by Microsoft as a unique user ID. The cookie enables user tracking by synchronising the ID across many Microsoft domains.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="IDE">IDE</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Used by Google DoubleClick to register and report the website user's actions after viewing or clicking one of the advertiser's ads with the purpose of measuring the efficacy of an ad and to present targeted ads to the user.">Used by Google DoubleClick to register and report the website user's actions after viewing or clicking one of the advertiser's ads with the purpose of measuring the efficacy of an ad and to present targeted ads to the user.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="test_cookie">test_cookie</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Used to check if the user's browser supports cookies.">Used to check if the user's browser supports cookies.</td><td title="1 day">1 day</td><td title="HTTP">HTTP</td></tr><tr><td title="AN">AN</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. ">Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. </td><td title="29 days">29 days</td><td title="HTTP">HTTP</td></tr><tr><td title="EB.fonts.neueplak.03-19-2019">EB.fonts.neueplak.03-19-2019</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. ">Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. </td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="ebEventToTrack">ebEventToTrack</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. ">Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. </td><td title="29 days">29 days</td><td title="HTTP">HTTP</td></tr><tr><td title="eblang">eblang</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. ">Implements and collects data on the user’s interaction with the EventBrite-integration. This service is used to promote and sell tickets to events across multiple websites. </td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="mgref">mgref</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects information on user preferences and/or interaction with web-campaign content - This is used on CRM-campaign-platform used by website owners for promoting events or products.">Collects information on user preferences and/or interaction with web-campaign content - This is used on CRM-campaign-platform used by website owners for promoting events or products.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="mgrefby">mgrefby</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Collects information on user preferences and/or interaction with web-campaign content - This is used on CRM-campaign-platform used by website owners for promoting events or products.">Collects information on user preferences and/or interaction with web-campaign content - This is used on CRM-campaign-platform used by website owners for promoting events or products.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="SP">SP</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Used to implement audio-content from Spotify on the website. Can also be used to register user interaction and preferences in context with audio-content - This can serve statistics and marketing purposes.  ">Used to implement audio-content from Spotify on the website. Can also be used to register user interaction and preferences in context with audio-content - This can serve statistics and marketing purposes.  </td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="ads/ga-audiences">ads/ga-audiences</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Used by Google AdWords to re-engage visitors that are likely to convert to customers based on the visitor's online behaviour across websites.">Used by Google AdWords to re-engage visitors that are likely to convert to customers based on the visitor's online behaviour across websites.</td><td title="Session">Session</td><td title="Pixel">Pixel</td></tr><tr><td title="NID">NID</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Google's privacy policy">Google</a></td><td title="Registers a unique ID that identifies a returning user's device. The ID is used for targeted ads.">Registers a unique ID that identifies a returning user's device. The ID is used for targeted ads.</td><td title="6 months">6 months</td><td title="HTTP">HTTP</td></tr><tr><td title="bcookie">bcookie</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used by the social networking service, LinkedIn, for tracking the use of embedded services.">Used by the social networking service, LinkedIn, for tracking the use of embedded services.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="bscookie">bscookie</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used by the social networking service, LinkedIn, for tracking the use of embedded services.">Used by the social networking service, LinkedIn, for tracking the use of embedded services.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="lidc">lidc</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used by the social networking service, LinkedIn, for tracking the use of embedded services.">Used by the social networking service, LinkedIn, for tracking the use of embedded services.</td><td title="1 day">1 day</td><td title="HTTP">HTTP</td></tr><tr><td title="lissc">lissc</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used by the social networking service, LinkedIn, for tracking the use of embedded services.">Used by the social networking service, LinkedIn, for tracking the use of embedded services.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="UserMatchHistory">UserMatchHistory</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer nofollow" title="LinkedIn's privacy policy">LinkedIn</a></td><td title="Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences.  ">Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences.  </td><td title="29 days">29 days</td><td title="HTTP">HTTP</td></tr><tr><td title="_uetsid">_uetsid</td><td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer nofollow" title="Microsoft's privacy policy">Microsoft</a></td><td title="Collects data on visitor behaviour from multiple websites, in order to present more relevant advertisement - This also allows the website to limit the number of times that they are shown the same advertisement. ">Collects data on visitor behaviour from multiple websites, in order to present more relevant advertisement - This also allows the website to limit the number of times that they are shown the same advertisement. </td><td title="1 day">1 day</td><td title="HTML">HTML</td></tr><tr><td title="_uetsid_exp">_uetsid_exp</td><td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer nofollow" title="Microsoft's privacy policy">Microsoft</a></td><td title="Contains the expiry-date for the cookie with corresponding name. ">Contains the expiry-date for the cookie with corresponding name. </td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="_uetvid">_uetvid</td><td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer nofollow" title="Microsoft's privacy policy">Microsoft</a></td><td title="Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences. ">Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences. </td><td title="16 days">16 days</td><td title="HTML">HTML</td></tr><tr><td title="_uetvid_exp">_uetvid_exp</td><td><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer nofollow" title="Microsoft's privacy policy">Microsoft</a></td><td title="Contains the expiry-date for the cookie with corresponding name. ">Contains the expiry-date for the cookie with corresponding name. </td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="mc">mc</td><td><a href="https://www.quantcast.com/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Quantcast's privacy policy">Quantcast</a></td><td title="Collects data on the user's visits to the website, such as what pages have been loaded. The registered data is used for targeted ads.">Collects data on the user's visits to the website, such as what pages have been loaded. The registered data is used for targeted ads.</td><td title="13 months">13 months</td><td title="HTTP">HTTP</td></tr><tr><td title="UID">UID</td><td><a href="http://www.scorecardresearch.com/privacy.aspx?newlanguage=1" target="_blank" rel="noopener noreferrer nofollow" title="Scorecardresearch's privacy policy">Scorecardresearch</a></td><td title="Collects information of the user and his/her movement, such as timestamp for visits, most recently loaded pages and IP address. The data is used by the marketing research network, Scorecard Research, to analyse traffic patterns and carry out surveys to help their clients better understand the customer's preferences.">Collects information of the user and his/her movement, such as timestamp for visits, most recently loaded pages and IP address. The data is used by the marketing research network, Scorecard Research, to analyse traffic patterns and carry out surveys to help their clients better understand the customer's preferences.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="UIDR">UIDR</td><td><a href="http://www.scorecardresearch.com/privacy.aspx?newlanguage=1" target="_blank" rel="noopener noreferrer nofollow" title="Scorecardresearch's privacy policy">Scorecardresearch</a></td><td title="Collects information of the user and his/her movement, such as timestamp for visits, most recently loaded pages and IP address. The data is used by the marketing research network, Scorecard Research, to analyse traffic patterns and carry out surveys to help their clients better understand the customer's preferences.">Collects information of the user and his/her movement, such as timestamp for visits, most recently loaded pages and IP address. The data is used by the marketing research network, Scorecard Research, to analyse traffic patterns and carry out surveys to help their clients better understand the customer's preferences.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="attr_multitouch">attr_multitouch</td><td><a href="https://da.surveymonkey.com/mp/policy/privacy-policy/" target="_blank" rel="noopener noreferrer nofollow" title="Surveymonkey's privacy policy">Surveymonkey</a></td><td title="Used in context with SEO and conversion optimization. Gathers any user reports or behavioral data into reports for the website operator. This service is provided by a third-party analysis-service.">Used in context with SEO and conversion optimization. Gathers any user reports or behavioral data into reports for the website operator. This service is provided by a third-party analysis-service.</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="ep#">ep#</td><td><a href="https://da.surveymonkey.com/mp/policy/privacy-policy/" target="_blank" rel="noopener noreferrer nofollow" title="Surveymonkey's privacy policy">Surveymonkey</a></td><td title="Saves user states across page requests when completing a web-based survey.">Saves user states across page requests when completing a web-based survey.</td><td title="1 day">1 day</td><td title="HTTP">HTTP</td></tr><tr><td title="i/adsct">i/adsct</td><td><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Twitter's privacy policy">Twitter</a></td><td title="The cookie is used by Twitter.com in order to determine the number of visitors accessing the website through twitter advertisement content. ">The cookie is used by Twitter.com in order to determine the number of visitors accessing the website through twitter advertisement content. </td><td title="Session">Session</td><td title="Pixel">Pixel</td></tr><tr><td title="__widgetsettings">__widgetsettings</td><td><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Twitter's privacy policy">Twitter</a></td><td title="Collects data on user behaviour and interaction in order to optimize the website and make advertisement on the website more relevant. ">Collects data on user behaviour and interaction in order to optimize the website and make advertisement on the website more relevant. </td><td title="Persistent">Persistent</td><td title="HTML">HTML</td></tr><tr><td title="guest_id">guest_id</td><td><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener noreferrer nofollow" title="Twitter's privacy policy">Twitter</a></td><td title="Collects anonymous data related to the user's visits to the website, such as the number of visits, average time spent on the website and which pages have been loaded, with the purpose of personalising and improving the Twitter service.">Collects anonymous data related to the user's visits to the website, such as the number of visits, average time spent on the website and which pages have been loaded, with the purpose of personalising and improving the Twitter service.</td><td title="2 years">2 years</td><td title="HTTP">HTTP</td></tr><tr><td title="VISITOR_INFO1_LIVE">VISITOR_INFO1_LIVE</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Tries to estimate the users' bandwidth on pages with integrated YouTube videos.">Tries to estimate the users' bandwidth on pages with integrated YouTube videos.</td><td title="179 days">179 days</td><td title="HTTP">HTTP</td></tr><tr><td title="YSC">YSC</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="YouTube's privacy policy">YouTube</a></td><td title="Registers a unique ID to keep statistics of what videos from YouTube the user has seen.">Registers a unique ID to keep statistics of what videos from YouTube the user has seen.</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr></tbody></table> </div></div><div id="CybotCookiebotDialogDetailBodyContentCookieTabsUnclassified"><div class="CybotCookiebotDialogDetailBodyContentCookieTypeIntro">Unclassified cookies are cookies that we are in the process of classifying, together with the providers of individual cookies.</div><div class="CybotCookiebotDialogDetailBodyContentCookieTypeTableContainer"> <table id="CybotCookiebotDialogDetailTableUnclassified" class="CybotCookiebotDialogDetailBodyContentCookieTypeTable"><thead><tr><th scope="col">Name</th><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Expiry</th><th scope="col">Type</th></tr></thead><tbody><tr><td title="events/1/91ac5ec757">events/1/91ac5ec757</td><td><a href="https://newrelic.com/privacy" target="_blank" rel="noopener noreferrer nofollow" title="New Relic's privacy policy">New Relic</a></td><td title="Pending">Pending</td><td title="Session">Session</td><td title="Pixel">Pixel</td></tr><tr><td title="AS">AS</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Pending">Pending</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="G">G</td><td><a href="https://www.eventbrite.co.uk/support/articles/en_US/Troubleshooting/eventbrite-privacy-policy?lg=en_GB" target="_blank" rel="noopener noreferrer nofollow" title="Eventbrite's privacy policy">Eventbrite</a></td><td title="Pending">Pending</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="user_date">user_date</td><td><a href="https://www.openstack.org/privacy/" target="_blank" rel="noopener noreferrer nofollow" title="Openstack's privacy policy">Openstack</a></td><td title="Pending">Pending</td><td title="1 year">1 year</td><td title="HTTP">HTTP</td></tr><tr><td title="DWRSESSIONID">DWRSESSIONID</td><td><a href="https://www.adobe.com/dk/privacy.html" target="_blank" rel="noopener noreferrer nofollow" title="Adobe Inc's privacy policy">Adobe Inc</a></td><td title="Pending">Pending</td><td title="Session">Session</td><td title="HTTP">HTTP</td></tr><tr><td title="cdp_seg">cdp_seg</td><td><a href="https://da.surveymonkey.com/mp/policy/privacy-policy/" target="_blank" rel="noopener noreferrer nofollow" title="Surveymonkey's privacy policy">Surveymonkey</a></td><td title="Pending">Pending</td><td title="3 months">3 months</td><td title="HTTP">HTTP</td></tr></tbody></table> </div></div></div></div></div><div id="CybotCookiebotDialogDetailBodyContentTextIABv2" lang="en"><div id="CybotCookiebotDialogDetailBodyContentIABContainer"><div id="CybotCookiebotDialogDetailBodyContentIABv2Tabs"><a id="CybotCookiebotDialogDetailBodyContentIABv2Purposes" href="javascript: CookieConsent.dialog.showCookieContainerIABv2DetailPane('purposes');" class="CybotCookiebotDialogDetailBodyContentIABv2TabSelected" lang="en" aria-label="[#IABV2_LABEL_PURPOSES#]"><label for="CybotCookiebotDialogDetailBodyContentIABv2Purposes" aria-hidden="true"> </label>[#IABV2_LABEL_PURPOSES#]</a><a id="CybotCookiebotDialogDetailBodyContentIABv2Features" href="javascript: CookieConsent.dialog.showCookieContainerIABv2DetailPane('features');" class="CybotCookiebotDialogDetailBodyContentIABv2Tab" lang="en" aria-label="[#IABV2_LABEL_FEATURES#]"><label for="CybotCookiebotDialogDetailBodyContentIABv2Features" aria-hidden="true"> </label>[#IABV2_LABEL_FEATURES#]</a><a id="CybotCookiebotDialogDetailBodyContentIABv2Partners" href="javascript: CookieConsent.dialog.showCookieContainerIABv2DetailPane('partners');" class="CybotCookiebotDialogDetailBodyContentIABv2Tab" lang="en" aria-label="[#IABV2_LABEL_PARTNERS#]"><label for="CybotCookiebotDialogDetailBodyContentIABv2Partners" aria-hidden="true"> </label>[#IABV2_LABEL_PARTNERS#]</a></div><div id="CybotCookiebotDialogDetailBodyContentIABv2Details"><div id="CybotCookiebotDialogDetailBodyContentIABv2TabPurposes"><div class="CybotCookiebotDialogDetailBodyContentIABv2PurposesBody"> [#IABV2_BODY_PURPOSES#] </div></div><div id="CybotCookiebotDialogDetailBodyContentIABv2TabFeatures"><div class="CybotCookiebotDialogDetailBodyContentIABv2FeaturesBody"> [#IABV2_BODY_FEATURES#] </div></div><div id="CybotCookiebotDialogDetailBodyContentIABv2TabPartners"><div class="CybotCookiebotDialogDetailBodyContentIABv2PartnersBody"> [#IABV2_BODY_PARTNERS#] </div></div></div></div></div><div id="CybotCookiebotDialogDetailBodyContentTextAbout" lang="en"> Cookies are small text files that can be used by websites to make a user's experience more efficient.<br style="" /><br style="" />The law states that we can store cookies on your device if they are strictly necessary for the operation of this site. For all other types of cookies we need your permission.<br style="" /><br style="" />This site uses different types of cookies. Some cookies are placed by third party services that appear on our pages.<br style="" /><br style="" />You can at any time change or withdraw your consent from the Cookie Declaration on our website.<br style="" /><br style="" />Learn more about who we are, how you can contact us and how we process personal data in our Privacy Policy. </div></div><div id="CybotCookiebotDialogDetailFooter" lang="en"> Cookie declaration last updated on 25/11/2020 by <a href="https://www.cookiebot.com" target="_blank" rel="noopener" title="Cookiebot">Cookiebot</a> </div></div></div></div>
+      
+
+<!-- Top Site Banner -->
+<div class="top-site-banner">
+    <div class="container">
+        <p>
+            <span>OpenStack is one of the top 3 most active open source projects and manages 15 million compute cores</span>    
+            <a href="https://www.openstack.org/software" class="top-site-banner-button">Learn more</a>
+        </p>
+    </div>
+</div>
+<!-- End Site Banner -->
+
+      <nav class="navbar navbar-default" role="navigation">
+
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="brand-wrapper">
+                <a class="navbar-brand" href="/"></a>
+            </div>
+            <div class="search-icon show"><i class="fa fa-search"></i> <span class="header-search-text">Search</span></div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="search-container tiny">
+                <div class="openstack-search-bar" data-baseurl="search.openstack.org" data-context="www-openstack"><div class="ossw-search-wrapper"><div class="ossw-search-bar-wrapper"><input type="text" id="search-bar-input" placeholder="Search OpenStack" value="" /> <i class="fa fa-times ossw-search-bar-close"></i></div> <div class="ossw-search-suggestions-wrapper"></div> <div class="ossw-search-results"><div class="ossw-overlay"></div> <div class="ossw-container"> <div class="ossw-header-wrapper"><section class="ossw-header"><input type="text" placeholder="Search OpenStack" id="search-popup-input" value="" /> <span class="ossw-search-icon"><i class="fa fa-search"></i></span> <a class="ossw-close-icon"><i class="fa fa-times"></i></a></section></div> <div><section style="display: none;" class="ossw-suggestions-wrapper"><div class="ossw-heading">suggested results</div> <div class="ossw-suggestions"></div></section> <section class="ossw-results-wrapper"><div style="display: block;" class="ossw-results"></div></section></div> <div class="ossw-footer-wrapper"><section class="ossw-footer"><span class="ossw-summary"><div>No results found for “”</div></span></section></div></div></div></div></div>
+           </div>
+           <ul class="nav navbar-nav navbar-main show">
+            <li>
+                <div class="openstack-search-bar ossw-mobile" data-baseurl="search.openstack.org" data-context="www-openstack"><div class="ossw-search-wrapper"><div class="ossw-search-bar-wrapper"><input type="text" id="search-bar-input" placeholder="Search OpenStack" value="" /> <i class="fa fa-times ossw-search-bar-close"></i></div> <div class="ossw-search-suggestions-wrapper"></div> <div class="ossw-search-results"><div class="ossw-overlay"></div> <div class="ossw-container"> <div class="ossw-header-wrapper"><section class="ossw-header"><input type="text" placeholder="Search OpenStack" id="search-popup-input" value="" /> <span class="ossw-search-icon"><i class="fa fa-search"></i></span> <a class="ossw-close-icon"><i class="fa fa-times"></i></a></section></div> <div><section style="display: none;" class="ossw-suggestions-wrapper"><div class="ossw-heading">suggested results</div> <div class="ossw-suggestions"></div></section> <section class="ossw-results-wrapper"><div style="display: block;" class="ossw-results"></div></section></div> <div class="ossw-footer-wrapper"><section class="ossw-footer"><span class="ossw-summary"><div>No results found for “”</div></span></section></div></div></div></div></div>
+            </li>
+
+            <li>
+    <a href="https://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i>
+    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuSoftware">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/">Overview</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/openstack-components">OpenStack Components</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/sdks">SDKs</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/project-navigator/deployment-tools">Deployment Tools</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/assets/software/projectmap/openstack-map.pdf" target="_blank">OpenStack Map</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+    </ul>
+</li>
+<li>
+    <a href="https://www.openstack.org/use-cases/" class="drop" id="dropdownMenuUsers">Use Cases <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i>
+    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuUsers">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/">Users in Production</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/bare-metal/">Ironic Bare Metal</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/edge-computing/">Edge Computing</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/telecoms-and-nfv/">Telecom &amp; NFV</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/science/">Science and HPC</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/containers/">Containers</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/use-cases/enterprise/">Enterprise</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/surveys/landing">User Survey</a></li>
+    </ul>
+</li>
+<li>
+    <a class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i>
+    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">Open Infrastructure Summits</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/ptg/">Project Teams Gathering</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/opendev-2020/">OpenDev</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/community-events/">Community Events</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/events/openstackdays">OpenStack &amp; OpenInfra Days</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/videos/">Summit Videos</a></li>
+    </ul>
+</li>
+
+<li>
+    <a href="https://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i>
+    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuCommunity">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/">Welcome! Start Here</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/tech-committee">OpenStack Technical Committee</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://wiki.openstack.org">OpenStack Wiki</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/coa/">Get Certified (COA)</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/jobs/">Jobs</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketing/">Marketing Resources</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/news/">Community News</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org">Superuser Magazine</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/community/supporting-organizations/">OIF Supporting Organizations</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev">Open Infrastructure Foundation (OIF)</a></li>
+    </ul>
+</li>
+<li>
+    <a href="https://www.openstack.org/marketplace/" class="drop" id="dropdownMenuCommunity">Marketplace <i class="fa fa-caret-down"></i></a><i class="mobile-expand"></i>
+    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/training/">Training</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/distros/">Distros &amp; Appliances</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/public-clouds/">Public Clouds</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/hosted-private-clouds/">Hosted Private Clouds</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/remotely-managed-private-clouds/">Remotely Managed Private Clouds</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/consulting/">Consulting &amp; Integrators</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/marketplace/drivers/">Drivers</a></li>
+    </ul>
+</li>
+<li>
+    <a href="https://www.openstack.org/blog/">Blog</a>
+</li>
+<li>
+    <a href="http://docs.openstack.org/">Docs</a>
+</li>
+<li>
+
+</li>
+
+
+            <li>
+            
+                </li><li class="join-nav-section">
+                    <a href="#" id="dropdownMenuJoin">Join <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuJoin" style="display: none;">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev/join">Sign up for Foundation Membership</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev/join">Sponsor the Foundation</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="https://openinfra.dev">More about the Foundation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Security/login/?BackURL=/home/" class="sign-in-btn">Log In</a>
+                </li>
+            
+            
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+
+      
+      <!-- Page Content -->
+      <div class="container">
+                
+        </div>
+<!-- Page Content -->
+<div class="container">
+
+</div>
+<div class="intro-header featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-sm-6" style="padding-left: 0px; padding-right: 0px">
+        <div class="intro-message">
+          <h1>The Most Widely Deployed Open Source Cloud Software in the World</h1>
+        </div>
+        <p>
+          Deployed by thousands. Proven production at scale. OpenStack is a set of software components that provide common services for cloud infrastructure.
+        </p>
+        <div class="promo-btn-wrapper">
+          <a href="/software/project-navigator/" class="promo-btn">browse openstack components</a>
+        </div>
+        <p>
+          OpenStack is developed by the community. For the community. <a class="intro-header-link" href="/community/">Learn how to contribute</a> <i class="fa fa-arrow-right"></i>
+        </p>
+      </div>
+      <div class="col-lg-3 col-lg col-sm-6" style="padding-left: 0px; padding-right: 0px">
+        <img src="/themes/openstack/home_images/Hero/OpenStack_SFAs.svg" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.intro-header -->
+
+<!-- Page Content -->
+
+<div class="news-anniversary">
+  <h3>VIRTUAL</h3>
+  <div class="anniversary-text">
+    <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/Summit-Logo-Web-w.svg" />
+    <p>Learn about the launch of the Open Infrastructure Foundation and its 60+ founding members as well as open source, production use cases from Workday, Ant Group, Volvo Cars, Verizon, and AT&amp;T.</p>
+  </div>
+  <div class="anniversary-btn-wrapper">
+    <p>October 19-23, 2020</p>
+    <a href="https://www.youtube.com/playlist?list=PLKqaoAnDyfgq5YNWZ3Pk9vXf9Smo-gFxw" class="anniversary-btn">Watch Now</a>
+  </div>
+</div>
+
+<!-- /.news-anniversary -->
+
+<!-- Page Content -->
+
+<div class="diagram-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-sm-12 col-xs-12">
+<img width="100%" src="/themes/openstack/home_images/Diagram/overview-diagram-new.svg" />
+</div>
+<div class="col-lg-6 col-sm-12">
+<h2>Cloud Infrastructure for Virtual Machines, Bare Metal, and Containers</h2>
+<p>
+</p><p>Openstack controls large pools of compute, storage, and networking resources, all managed through APIs or a dashboard.</p><p>Beyond standard infrastructure-as-a-service functionality, additional components provide orchestration, fault management and service management amongst other services to ensure high availability of user applications.</p>
+<p></p>
+<div class="diagram-btn-wrapper">
+<a href="https://www.openstack.org/software/" class="diagram-btn">read more</a>
+</div>
+</div>
+</div>
+<div class="row diagram-icons">
+<div class="col-lg-4 col-xs-12 col-md-4 col-sm-4">
+<a href="/marketplace/remotely-managed-private-clouds/"><img src="/themes/openstack/home_images/Icons/SVG/On-Premises-Icon.svg" /></a>
+<a href="/marketplace/remotely-managed-private-clouds/" style="text-decoration:none;"><h2>On-Premises</h2></a>
+<a href="/marketplace/remotely-managed-private-clouds/"><p>Host your cloud infrastructure internally or find an OpenStack partner in the Marketplace</p></a>
+</div>
+<div class="col-lg-4 col-xs-12 col-md-4 col-sm-4">
+<a href="/marketplace/public-clouds/">
+<img src="/themes/openstack/home_images/Icons/SVG/Public-Cloud-Icon.svg" /></a>
+<a href="/marketplace/public-clouds/" style="text-decoration:none;"><h2>Public Cloud</h2></a>
+<a href="/marketplace/public-clouds/"><p>Leverage one of the 70+ OpenStack powered public cloud data centers</p></a>
+</div>
+<div class="col-lg-4 col-xs-12 col-md-4 col-sm-4">
+<a href="/edge-computing/">
+<img src="/themes/openstack/home_images/Icons/SVG/At-theEdge-Icon.svg" /></a>
+<a href="/edge-computing/" style="text-decoration:none;"><h2>At the Edge</h2></a>
+<a href="/edge-computing/"><p>Telecoms and retailers rely on OpenStack for their distributed systems</p></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- /.diagram-section -->
+
+<!-- Latest Release Block -->
+
+<div class="section-ussuri">
+  <div class="container">
+    <h2>Latest Release: OpenStack Victoria</h2>
+    <div class="video-container">
+      <img class="ussuri-video" src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/homepage/Victoria-release-logo-web2.png" />
+      <a href="https://youtu.be/kY0tVhnOCkk"><i class="fa btn-play fa-play-circle" aria-hidden="true" title="Play it"></i></a>
+    </div>
+    <!-- <p>Watch the Ussuri Community Meeting</p> -->
+    <div class="ussuri-btn-wrapper">
+    <a href="https://releases.openstack.org/victoria/" class="ussuri-btn">LATEST RELEASE: Victoria</a>
+    <a href="https://releases.openstack.org/wallaby/schedule.html" class="ussuri-btn">UNDER DEVELOPMENT: Wallaby</a>
+    </div>
+  </div>
+</div>
+
+<!-- /.Latest Release Block -->
+
+<!-- SPOTLIGHT-->
+
+<div class="section-spotlight">
+<div class="container">
+<div class="row">
+    <div class="col-lg-6 col-sm-12 col-xs-12 marketplace">
+        <h2>Marketplace Spotlight</h2>
+        <p>The OpenStack Marketplace is filled with experts working across industries, use cases, and regions to help
+        your organization achieve your goals.</p>
+        
+        
+        <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/companies/main_logo/sardina-lg.png" alt="company_logo" class="spotlight-marketplace-logo" />
+        <p class="clamp1 clamp" title="read more" style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3;">FishOS delivers a full-lifecycle view on OpenStack deployment, allowing to its customers to benefit of Zero-downtine Cloud Operations. FishOS product is an automated, energy-optimizing, scalable and pay-as-you grow enterprise OpenStack model.</p>
+        <div class="spotlight-btn-wrapper">
+            <a href="/marketplace/remotely-managed-private-clouds/sardina-systems/fishos" class="spotlight-btn">learn more</a>
+        </div>
+        
+        
+    </div>
+    <div class="col-lg-6 col-sm-12 col-xs-12 osf-member">
+      <h2>OIF Member Spotlight</h2>
+      
+      
+      <p class="p1">Founded in 2012, 99Cloud Inc. is the Evangelist of OpenStack Best Practices in China, focusing on solving the last kilometer problems for enterprise in OpenStack adoption. 99Cloud provides clients with flexible, open, stable, reliable and high performance enterprise-level cloud solutions covering FSI, Gov., Power etc.</p>
+      
+      <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/osf-members/99cloud-new-lg.jpg" alt="company_logo" />
+      
+      <p class="clamp2 clamp" title="read more" style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3;">
+        99Cloud is Gold member of OpenStack Foundation, and ranked Top 10 in OpenStack Code contribution, worldwide, and world's Top10 in projects including Horizon, Murano, Tacker, Kolla, Senlin, Sahara, Trove and Tempest etc.
+      </p>
+      <div class="spotlight-btn-wrapper">
+          <a href="http://www.99cloud.net/" class="spotlight-btn">learn more</a>
+      </div>
+      
+      
+    </div>
+</div>
+</div>
+</div>
+
+<!-- /.SPOTLIGHT -->
+
+<!-- User Stories -->
+
+<div class="twros-section">
+<div class="container">
+<h2>The World Runs on OpenStack</h2>
+<p>OpenStack is trusted to manage 20 Million+ cores around the world, across dozens of industries.</p>
+<div class="twros-example">
+  
+    <div class="twros-row">
+      
+      <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/homepage/blizzard.jpg" alt="" class="twros-img" />
+      
+      <div class="twros-text">
+      <h2>Blizzard Entertainment</h2>
+      <p>
+      </p><p><span style="font-size: 10pt; font-family: Arial; font-style: normal;" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Video game developer, Blizzard Entertainment, implements OpenStack autoscaling to support running video games, like best-selling game Overwatch, in the cloud.&quot;}" data-sheets-userformat="{&quot;2&quot;:769,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0}">Video game developer, Blizzard Entertainment, implements OpenStack autoscaling to support running video games, like best-selling game Overwatch, in the cloud.</span></p>
+      <p></p>
+      <div class="twros-btn-wrapper">
+      <a href="https://www.openstack.org/videos/summits/denver-2019/how-blizzard-entertainment-uses-autoscaling-with-overwatch" class="twros-btn">WATCH VIDEO</a>
+      </div>
+      </div>
+    </div>
+  
+    <div class="twros-row">
+      
+      <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/homepage/walmart-sm.jpg" alt="" class="twros-img" />
+      
+      <div class="twros-text">
+      <h2>Walmart</h2>
+      <p>
+      </p><p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Walmart has developed and is currently using a product called Galaxy, which is a multi-cloud validation tool that minimizes the mean time to detect issues on any OpenStack cloud. Galaxy performs the validation checks required to declare the health of all OpenStack clouds. &quot;}" data-sheets-userformat="{&quot;2&quot;:769,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0}">Walmart has developed and is currently using a product called Galaxy, which is a multi-cloud validation tool that minimizes the mean time to detect issues on any OpenStack cloud. Galaxy performs the validation checks required to declare the health of all OpenStack clouds. </span></p>
+      <p></p>
+      <div class="twros-btn-wrapper">
+      <a href="https://www.openstack.org/videos/vancouver-2018/cloud-operational-data-at-your-finger-tips" class="twros-btn">READ MORE</a>
+      </div>
+      </div>
+    </div>
+  
+    <div class="twros-row">
+      
+      <img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/homepage/chinatelecom.jpg" alt="" class="twros-img" />
+      
+      <div class="twros-text">
+      <h2>China Mobile</h2>
+      <p>
+      </p><p><span>China Mobile’s telecom network has more than 800 million subscribers and 3 million base stations. China Mobile is now building up the biggest NFV network based on OpenStack with more than 50,000 servers in the network. </span></p>
+      <p></p>
+      <div class="twros-btn-wrapper">
+      <a href="https://01.org/sites/default/files/performance_analysis_and_tuning_in_china_mobiles_openstack_production_cloud_2.pdf" class="twros-btn">Read More</a>
+      </div>
+      </div>
+    </div>
+  
+</div>
+
+</div>
+<p><a href="/user-stories">SEE MORE CASE STUDIES   <i class="fa fa-arrow-right"></i></a></p>
+</div>
+
+
+<!-- /.twros-section -->
+
+<!-- Page Content -->
+
+<div class="osf-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-sm-12" style="text-align: center;">
+<img src="/themes/openstack/home_images/Logos/OpenInfrastructureFoundation-logo-RGB-horiz2.svg" alt="Open Infrastructure Foundation Logo" />
+<p>OpenStack is a top-level open infrastructure project supported by the <a href="https://openinfra.dev" target="_blank">Open Infrastructure Foundation</a> (OIF)</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- /.osf-section -->
+
+<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js?m=1465497172"></script><iframe name="__uspapiLocator" tabindex="-1" role="presentation" aria-hidden="true" title="Blank" style="display: none; position: absolute; width: 1px; height: 1px; top: -9999px;"></iframe><iframe tabindex="-1" role="presentation" aria-hidden="true" title="Blank" style="position: absolute; width: 1px; height: 1px; top: -9999px;" src="https://consentcdn.cookiebot.com/sdk/bc.min.html"></iframe><script type="text/javascript" src="/node_modules/jquery-migrate-legacy/dist/jquery-migrate.min.js?m=1463707066"></script><script type="text/javascript" src="/node_modules/jquery-migrate/dist/jquery-migrate.min.js?m=499162500"></script><script type="text/javascript" src="/framework/thirdparty/jquery-entwine/dist/jquery.entwine-dist.js?m=1557447099"></script><script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js?m=499162500"></script><script type="text/javascript" src="/node_modules/js-cookie/src/js.cookie.js?m=1509169675"></script><script type="text/javascript" src="/themes/openstack/javascript/querystring.jquery.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/shadowbox/shadowbox.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/jquery.ticker.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/jquery.tools.min.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/jcarousellite.min.js?m=1606767586"></script><script type="text/javascript" src="/themes/openstack/javascript/navigation.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/filetracking.jquery.js?m=1606767586"></script><script type="text/javascript" src="/themes/openstack/javascript/updateProfileModal.js?m=1606767587"></script><script type="text/javascript" src="/themes/openstack/javascript/home.js?m=1606767586"></script><script type="text/javascript">//&lt;![CDATA[
+jQuery(document).ready(function($) {
+
+    var d         = new Date();
+    var user_date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    Cookies.set('user_date', user_date, { expires: 360, path: '/' });
+
+    $('body').filetracking();
+
+    $(document).on("click", ".outbound-link", function(event){
+        var href = $(this).attr('href');
+        recordOutboundLink(this,'Outbound Links',href);
+        event.preventDefault();
+        event.stopPropagation()
+        return false;
+    });
+
+    var use_shadow_box = false;
+    if(use_shadow_box)
+        Shadowbox.init();
+});
+
+//]]&gt;</script><script src="themes/openstack/javascript/clamp.min.js"></script>
+<script src="themes/openstack/javascript/new-home-page.js"></script>
+
+      
+
+    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("e2ma_signup").submit();
+       }
+</script>
+<div class="footer-bottom">
+  <h3 style="color:#fff;">Subscribe to News About OpenStack</h3>
+  <p>Stay up to date on OpenStack and the Open Infrastructure community.</p>
+    <div class="container">
+        <div class="form-group">
+  <form method="post" id="e2ma_signup" onsubmit="return signupFormObj.checkForm(this)" action="https://app.e2ma.net/app2/audience/signup/1900249/1771360/">
+    <input id="id_prev_member_email" name="prev_member_email" type="hidden" />
+    <input id="id_source" name="source" type="hidden" />
+    <input id="id_group_4036448" name="group_4036448" type="hidden" value="4036448" />
+    <input type="hidden" name="private_set" value="{num_private}" />
+    <input placeholder="Email Address" id="id_email" name="email" type="email" required="" class="feedback-input" size="is-large" />
+    
+      <!-- <button class="search-container-submit">Search</button> -->
+      <a href="#" class="feedback-btn" onclick="document.getElementById('e2ma_signup').submit();" data-sitekey="6LeKvr0UAAAAAItxLgobGpatgngglauCXrZw2Yw4" data-callback="onSubmit">
+        <span>SUBMIT</span>
+        <i class="fa fa-chevron-right"></i>
+      </a>
+  </form>
+</div>
+
+
+
+      
+    </div>
+</div>
+<footer>
+        <div class="container">
+        <div class="row footer-links">
+            <div class="col-lg-2 col-sm-2">
+                <h3>OpenStack</h3>
+                <ul>
+                    <li><a href="//openstack.org/projects/">Projects</a></li>
+                    <li><a href="//openstack.org/software/security/">OpenStack Security</a></li>
+                    <li><a href="https://openstack.org/blog/">Blog</a></li>
+                    <li><a href="//openstack.org/news/">News</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="//openstack.org/community/">User Groups</a></li>
+                    <li><a href="//openstack.org/community/events/">Events</a></li>
+                    <li><a href="//openstack.org/community/jobs/">Jobs</a></li>
+                    <li><a href="//openstack.org/foundation/companies/">Companies</a></li>
+                    <li><a href="http://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="http://docs.openstack.org">OpenStack Manuals</a></li>
+                    <li><a href="//openstack.org/software/start/">Getting Started</a></li>
+                    <li><a href="http://developer.openstack.org">API Documentation</a></li>
+                    <li><a href="https://wiki.openstack.org">Wiki</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+                <h3>Branding &amp; Legal</h3>
+                <ul>
+                    <li><a href="//openstack.org/brand/">Logos &amp; Guidelines</a></li>
+                    <li><a href="//openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+                    <li><a href="//openstack.org/privacy/">Privacy Policy</a></li>
+                    <li><a href="https://docs.openstack.org/contributors/common/setup-gerrit.html#individual-contributor-license-agreement">OpenStack CLA</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <h3>Stay In Touch</h3>
+                <a href="https://twitter.com/OpenStack" target="_blank"><i class="fab fa-twitter-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a>
+                <a href="https://www.facebook.com/openinfradev/" target="_blank"><i class="fab fa-facebook-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a>
+                <a href="https://www.linkedin.com/groups/3239106/" target="_blank"><i class="fab fa-linkedin" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a>
+                <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank"><i class="fab fa-youtube-square" style="font-size: 36px;color:#eaeaea;padding-right:10px;"></i></a>
+                <a href="" data-toggle="modal" data-target="#wechat-modal"><i style="font-size: 36px;color:#eaeaea;padding-right:10px;" class="fab fa-weixin"></i></a>
+                <!-- <form class="form-inline">
+                    <div class="form-group newsletter-form">
+                        <label>Join Our Newsletter</label>
+                        <input class="newsletter-input" type="input" placeholder="Email">
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </div>
+                </form> -->
+                <p class="fine-print">
+                    The OpenStack project is provided under the Apache 2.0 license. The project is supported by the <a href="https://openinfra.dev">Open Infrastructure Foundation (OIF)</a>. Openstack.org is powered by <a href="https://vexxhost.com" target="_blank">VEXXHOST</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wechat-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <img width="150" src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-assets-prod/summits/shanghai/qrcode-for-gh-5cc38c749efd-1280.jpg" />
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-fM0cfazHHeyRH"
+});
+</script>
+
+<noscript>
+&lt;div style="display:none;"&gt;
+&lt;img src="//pixel.quantserve.com/pixel/p-fM0cfazHHeyRH.gif" border="0" height="1" width="1" alt="Quantcast"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- End Quantcast tag -->
+    <!-- Twitter universal website tag code -->
+<script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+            a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init','nxuu6');
+    twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+    <script src="//search.openstack.org/widget/embed.min.js"></script>
+  
+    <script type="text/javascript">
+    _linkedin_data_partner_id = "36268";
+</script><script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);})();
+</script>
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon704130421620"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon592355660545" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=56279414&amp;Ver=2&amp;mid=d92f4f2d-6f0a-43bf-beb7-d62c5aae393c&amp;sid=d0b9b320355511eb9acf2151a7ee8358&amp;vid=d0ba0530355511eb89c67b169fc66476&amp;vids=1&amp;pi=0&amp;lg=en-US&amp;sw=800&amp;sh=600&amp;sc=24&amp;tl=Open%20Source%20Cloud%20Computing%20Infrastructure%20-%20OpenStack&amp;p=https%3A%2F%2Fwww.openstack.org%2F&amp;r=&amp;lt=1030&amp;evt=pageLoad&amp;msclkid=N&amp;sv=1&amp;rn=607450" /></div><script src="https://analytics.twitter.com/i/adsct?type=javascript&amp;version=1.1.0&amp;p_id=Twitter&amp;p_user_id=0&amp;txn_id=nxuu6&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Fwww.openstack.org%2F" type="text/javascript"></script></body></html>

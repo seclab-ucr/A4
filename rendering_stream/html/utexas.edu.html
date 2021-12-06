@@ -1,0 +1,746 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr" style="" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths tablesaw-enhanced"><head><meta class="foundation-mq-small" /><meta class="foundation-mq-small-only" /><meta class="foundation-mq-medium" /><meta class="foundation-mq-medium-only" /><meta class="foundation-mq-large" /><meta class="foundation-mq-large-only" /><meta class="foundation-mq-xlarge" /><meta class="foundation-mq-xlarge-only" /><meta class="foundation-mq-xxlarge" /><meta class="foundation-data-attribute-namespace" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script async="" src="https://fullstory.com/s/fs.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=006470498568929423894:etsxpcor8wm"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-W2FKXC"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"581f614197",applicationID:"55667040"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<link rel="alternate" type="application/rss+xml" title="The University of Texas at Austin RSS" href="https://www.utexas.edu/rss.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="mask-icon" href="https://www.utexas.edu//safari-pinned-tab.svg" color="#bf5700" />
+<link rel="manifest" href="https://www.utexas.edu/manifest.json" />
+<link rel="shortcut icon" sizes="32x32" href="https://www.utexas.edu/favicon-32x32.png" />
+<link rel="shortcut icon" sizes="16x16" href="https://www.utexas.edu/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.utexas.edu/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="UT Austin" />
+<meta name="google-site-verification" content="J_xomjj4rfDA-fOSaht7A4E-FmnUgb59sR5ovD9KUho" />
+<meta name="description" content="The University of Texas at Austin provides public access to a first-class education and the tools of discovery. This has resulted in a culture of ambition and leadership, where physical scale is matched by bold goals and achievements. UT provides economic stimulus, an educated workforce, applied research, and basic research to solve societal problems and push the knowledge frontier." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.utexas.edu" />
+<link rel="shortlink" href="https://www.utexas.edu" />
+<meta property="og:site_name" content="The University of Texas at Austin" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.utexas.edu" />
+<meta property="og:title" content="The University of Texas at Austin" />
+<meta property="og:description" content="Like the state it calls home, The University of Texas at Austin is a bold, ambitious leader, home to more than 51,000 students and 3,000 teaching faculty." />
+<meta property="og:image" content="https://www.utexas.edu/sites/default/files/styles/utexas_hero_photo_image/public/tower_hero_v2.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1740" />
+<meta property="og:image:height" content="940" />
+  <title>The University of Texas at Austin</title>
+  <link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_cXW90akjxNqo-g-Z2snVBmrKOKMWM9ZLkVzAJPqrPsk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_FGBE_B7JIuk5pnNkJIj98E8gzEiqeI6QkffS9sQ5S7c.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://p.typekit.net/p.css?s=1&amp;k=cdl6mlo&amp;ht=tk&amp;f=30818&amp;a=9606145&amp;app=typekit&amp;e=css&amp;qkmban" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_tPuFuY_HUSrtrt08uRWtdbk6k_1i0N781G47AzGEqts.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_JLt8Br4AW3qMH-kqlicO_Qn8YqYzDTL2yoEChVHnNpE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.utexas.edu/sites/default/files/css/css_GINGAjXhXmeeu1mkHb89KAZ5vP-2AThuCrPcXQ_RBOY.css" media="print" />
+  <script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_8uX6DolHeG1Xu9DqfNqW_J-djdWcQ9wCxPiG9nQqYjU.js"></script>
+<style></style><script src="https://www.google.com/cse/static/element/921554e23151c152/cse_element__en.js?usqp=CAI%3D" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/element/921554e23151c152/default+en.css" /><link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/style/look/v4/default.css" /><style type="text/css">.gsc-control-cse{font-family:verdana, arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:verdana, arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}.gsc-control-cse{border-color:#000000;background-color:#FFFFFF}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#BCCDF0}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#666666;background-color:#CECECE;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#BF5700}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#BF5700}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#0000CC}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#0000CC}.gsc-cursor-page{color:#BF5700}a.gsc-trailing-more-results:link{color:#BF5700}.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,.gs-fileFormatType{color:#000000}.gs-webResult div.gs-visibleUrl{color:#336699}.gs-webResult div.gs-visibleUrl-short{color:#336699}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-webResult.gsc-result.gsc-promotion{border-color:#FFFFDD;background-color:#FFFFDD}.gsc-completion-title{color:#BF5700}.gsc-completion-snippet{color:#000000}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#BF5700}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#BF5700}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#333333}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#336699}.gcsc-find-more-on-google{color:#BF5700}.gcsc-find-more-on-google-magnifier{fill:#BF5700}</style></head>
+
+<body class="html front not-logged-in no-sidebars page-node" style="">
+  <div id="skip-link">
+    <a accesskey="C" href="#ut-page-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+  <header class="UT-header">
+    <div class="container container-announcement-bar">
+  <div class="row">
+    <div class="announcement-bar"><span class="icon-alert"></span>Campus Open Status: Level Three - Ultralow Density</div>
+          <div class="announcement-cta-wrapper">
+        <a href="https://protect.utexas.edu/campus-operations/#campus-open-status" class="cta"><span>Campus Open Status</span></a>      </div>
+              <div class="announcement-cta-wrapper2">
+        <a href="https://coronavirus.utexas.edu/campus-announcements" class="cta"><span>COVID-19 Updates</span></a>      </div>
+      </div>
+</div>
+    <div class="container container-logo">
+      <div class="row">
+        <div class="column small-12">
+          <h1 class="UT-logo"><a href="https://www.utexas.edu" class="UT-logo-link"><span class="hiddenText">The University of Texas at Austin</span></a></h1>        </div>
+      </div>
+      <a href="#" class="UT-nav-hamburger icon-menu" id="menu-icon"><span class="hiddenText">Menu</span></a>
+    </div> <!-- /logo -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    <div class="nav-wrapper">
+      <div class="container container-topnav">
+        <div class="row">
+          <div class="column small-12">
+            <div class="topnav" role="navigation">
+              <p class="hiddenText">Header Helpful Links</p><ul class="topnav-constituents"><li class="nav-item"><a href="https://my.utexas.edu/" title="" class="nav-link" tabindex="-1" aria-hidden="true">Current Students</a></li>
+<li class="nav-item"><a href="/faculty-and-staff-resources" class="nav-link" tabindex="-1" aria-hidden="true">Faculty &amp; Staff</a></li>
+<li class="nav-item"><a href="/alumni-resources" class="nav-link" tabindex="-1" aria-hidden="true">Alumni</a></li>
+<li class="nav-item"><a href="/visitor-resources" title="" class="nav-link" tabindex="-1" aria-hidden="true">Families &amp; Visitors</a></li>
+</ul>              <ul class="topnav-links">
+                <li class="nav-item nav-item-search hide-for-large-up">
+                  <div class="nav-search-container">
+                    <label for="search-mobile" class="hiddenText" id="mobileSearchLabel">Search</label><div class="nav-search-container">
+  <form action="/search/results" method="get" id="cse_mobile_searchbox" class="cse_searchbox">
+    <input type="text" name="query" placeholder="Search" class="nav-search-input" title="Search this site" aria-labelledby="mobileSearchLabel" tabindex="-1" aria-hidden="true" />
+    <button class="nav-search-button" tabindex="-1" aria-hidden="true"><span class="hiddenText">Search</span><span class="icon-search"></span></button>
+  </form></div>                  </div>
+                </li>
+                <li class="nav-item nav-item-info first"><a href="http://maps.utexas.edu/" title="" class="nav-link" tabindex="-1" aria-hidden="true">Maps</a></li>
+<li class="nav-item nav-item-info mid"><a href="http://www.utexas.edu/directory/" title="" class="nav-link" tabindex="-1" aria-hidden="true">Directory</a></li>
+<li class="nav-item nav-item-info last"><a href="https://utdirect.utexas.edu" title="" class="nav-link" tabindex="-1" aria-hidden="true">UT Direct</a></li>
+                <li class="nav-item nav-item-button"><a href="https://giving.utexas.edu/" title="" class="nav-link nav-link-button" tabindex="-1" aria-hidden="true">Give</a></li>
+<li class="nav-item nav-item-button"><a href="/apply" class="nav-link nav-link-button" tabindex="-1" aria-hidden="true">Apply</a></li>
+                <li class="nav-item nav-item-search show-for-large-up">
+                  <div class="nav-search-container">
+                    <label for="search-desktop" class="hiddenText" id="desktopSearchLabel">Search</label><div class="nav-search-container">
+  <form action="/search/results" method="get" id="cse_desktop_searchbox" class="cse_searchbox">
+    <input type="text" name="query" placeholder="Search" class="nav-search-input" title="Search this site" aria-labelledby="desktopSearchLabel" tabindex="-1" aria-hidden="true" />
+    <button class="nav-search-button" tabindex="-1" aria-hidden="true"><span class="hiddenText">Search</span><span class="icon-search"></span></button>
+  </form></div>                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div><!-- /topnav -->
+      <div class="container container-nav">
+        <div class="row">
+          <div class="column small-12">
+            <nav role="navigation">
+              <ul class="nav accessible-megamenu" id="main-nav">
+            <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="/about" class="nav-link " id="accessible-megamenu-1606992232565-1" tabindex="-1" aria-hidden="true">About</a>              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="#" class="nav-link has-child nolink" id="accessible-megamenu-1606992232567-2" aria-haspopup="true" aria-controls="accessible-megamenu-1606992232567-3" aria-expanded="false" tabindex="-1" aria-hidden="true">Academics</a>                  <div class="sub-nav-wrapper accessible-megamenu-panel" id="accessible-megamenu-1606992232567-3" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1606992232567-2">
+            <div class="sub-nav-row">
+                                          <ul class="sub-nav">
+                                                      <li class="sub-nav-item">
+                      <a href="/academics/academic-experience" class="sub-nav-link"><span>Academic Experience</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/academics/areas-of-study" class="sub-nav-link"><span>Areas of Study</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://extendedcampus.utexas.edu" class="sub-nav-link"><span>Extended Campus</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="//www.engr.utexas.edu/" class="sub-nav-link"><span>Cockrell School of Engineering</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="//education.utexas.edu/" class="sub-nav-link"><span>College of Education</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://finearts.utexas.edu/" class="sub-nav-link"><span>College of Fine Arts</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://liberalarts.utexas.edu/" class="sub-nav-link"><span>College of Liberal Arts</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://cns.utexas.edu/" class="sub-nav-link"><span>College of Natural Sciences</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://pharmacy.utexas.edu/" class="sub-nav-link"><span>College of Pharmacy</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://dellmed.utexas.edu/" class="sub-nav-link"><span>Dell Medical School</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://gradschool.utexas.edu/" class="sub-nav-link"><span>Graduate School</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://www.jsg.utexas.edu/" class="sub-nav-link"><span>Jackson School of Geosciences</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://lbj.utexas.edu/" class="sub-nav-link"><span>LBJ School of Public Affairs</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://www.mccombs.utexas.edu/" class="sub-nav-link"><span>McCombs School of Business</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://moody.utexas.edu/" class="sub-nav-link"><span>Moody College of Communication</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://soa.utexas.edu/" class="sub-nav-link"><span>School of Architecture</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://www.ischool.utexas.edu/" class="sub-nav-link"><span>School of Information</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://law.utexas.edu/" class="sub-nav-link"><span>School of Law</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://nursing.utexas.edu/" class="sub-nav-link"><span>School of Nursing</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://socialwork.utexas.edu/" class="sub-nav-link"><span>Steve Hicks School of Social Work</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="https://ugs.utexas.edu/" class="sub-nav-link"><span>School of Undergraduate Studies</span></a>                    </li>
+                                                                                                                    </ul>
+            </div>
+          </div>
+              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="#" class="nav-link has-child nolink" id="accessible-megamenu-1606992232570-4" aria-haspopup="true" aria-controls="accessible-megamenu-1606992232570-5" aria-expanded="false" tabindex="-1" aria-hidden="true">Admissions &amp; Aid</a>                  <div class="sub-nav-wrapper accessible-megamenu-panel" id="accessible-megamenu-1606992232570-5" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1606992232570-4">
+            <div class="sub-nav-row">
+                                              <div class="sub-nav-feature show-for-large-up">
+          <div class="feature-image">
+        <img class="utexas-flex-content-area-image" typeof="foaf:Image" src="https://www.utexas.edu/sites/default/files/styles/menu_content_block/public/utexas_menu_block/admissions_menucontentblock.jpg?itok=4IkKoPxN" alt="Image of a happy Long Horn student holding a Longhorn banner." />      </div>
+        <div class="feature-content">
+      <h3 class="feature-headline">Be a Longhorn</h3>
+      <div class="feature-text"><p><em>What Starts Here Changes the World.</em> It's more than a motto. It’s what we prove each and every day, as Texas and its Exes advance discovery and innovation on a global stage. Join us. </p>
+</div>
+          </div>
+  </div>
+                            <ul class="sub-nav sub-nav-has-feature">
+                                                      <li class="sub-nav-item">
+                      <a href="http://admissions.utexas.edu/" class="sub-nav-link"><span>Undergraduate Admissions</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://gradschool.utexas.edu/admissions" class="sub-nav-link"><span>Graduate Admissions</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://law.utexas.edu/admissions/" class="sub-nav-link"><span>School of Law Admissions</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://dellmedschool.utexas.edu/prospective-students" class="sub-nav-link"><span>Dell Medical School Admissions</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://admissions.utexas.edu/tuition" class="sub-nav-link"><span>Tuition &amp; Costs</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://finaid.utexas.edu" class="sub-nav-link"><span>Financial Aid</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://admissions.utexas.edu/visit" class="sub-nav-link"><span>Campus Visits</span></a>                    </li>
+                                                                                                                    </ul>
+            </div>
+          </div>
+              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="#" class="nav-link has-child nolink" id="accessible-megamenu-1606992232571-6" aria-haspopup="true" aria-controls="accessible-megamenu-1606992232571-7" aria-expanded="false" tabindex="-1" aria-hidden="true">Campus &amp; Community</a>                  <div class="sub-nav-wrapper accessible-megamenu-panel" id="accessible-megamenu-1606992232571-7" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1606992232571-6">
+            <div class="sub-nav-row">
+                                              <div class="sub-nav-feature show-for-large-up">
+          <div class="feature-image">
+        <img class="utexas-flex-content-area-image" typeof="foaf:Image" src="https://www.utexas.edu/sites/default/files/styles/menu_content_block/public/utexas_menu_block/towerandstudents_menucontentblock.jpg?itok=trvj8GYC" alt="Students walking along the steps in front of the Tower on a sunny day." />      </div>
+        <div class="feature-content">
+      <h3 class="feature-headline">Explore Your Passions</h3>
+      <div class="feature-text"><p>Thousands of events, from concerts and film screenings to readings and lectures. More than 1,100 student organizations. Incredible facilities and special attractions. And it's all set in the heart of one of the world's greatest cities. Welcome home.</p>
+</div>
+          </div>
+  </div>
+                            <ul class="sub-nav sub-nav-has-feature">
+                                                      <li class="sub-nav-item">
+                      <a href="/campus-life/arts-and-culture" class="sub-nav-link"><span>Arts &amp; Culture</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/campus-destinations" class="sub-nav-link"><span>Campus Destinations</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/entrepreneurship-and-innovation" class="sub-nav-link"><span>Entrepreneurship &amp; Innovation</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/health-and-wellness" class="sub-nav-link"><span>Health &amp; Wellness</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/housing-and-dining" class="sub-nav-link"><span>Housing &amp; Dining</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/life-in-austin" class="sub-nav-link"><span>Life in Austin</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/report-misconduct" class="sub-nav-link"><span>Report Misconduct</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/safety-and-security" class="sub-nav-link"><span>Safety &amp; Security</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/campus-life/student-involvement" class="sub-nav-link"><span>Student Involvement</span></a>                    </li>
+                                                                                                                    </ul>
+            </div>
+          </div>
+              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="#" class="nav-link has-child nolink" id="accessible-megamenu-1606992232572-8" aria-haspopup="true" aria-controls="accessible-megamenu-1606992232572-9" aria-expanded="false" tabindex="-1" aria-hidden="true">Research</a>                  <div class="sub-nav-wrapper accessible-megamenu-panel" id="accessible-megamenu-1606992232572-9" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1606992232572-8">
+            <div class="sub-nav-row">
+                                              <div class="sub-nav-feature show-for-large-up">
+          <div class="feature-image">
+        <img class="utexas-flex-content-area-image" typeof="foaf:Image" src="https://www.utexas.edu/sites/default/files/styles/menu_content_block/public/utexas_menu_block/researcher_menucontentblock.jpg?itok=trPZejP9" alt="Young female research student filling trays of samples to be processed." />      </div>
+        <div class="feature-content">
+      <h3 class="feature-headline">Change the World</h3>
+      <div class="feature-text"><p>Longhorns are passionate about making the world a better place, united by the belief that creating and sharing knowledge can save lives and transform society. Come explore our vast research enterprise — or better yet, create, innovate and discover with us.</p>
+</div>
+          </div>
+  </div>
+                            <ul class="sub-nav sub-nav-has-feature">
+                                                      <li class="sub-nav-item">
+                      <a href="/research/overview" class="sub-nav-link"><span>Overview</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/research/student-research" class="sub-nav-link"><span>Student Research</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/research/units-and-centers" class="sub-nav-link"><span>Units &amp; Centers</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/research/off-campus-research-sites" class="sub-nav-link"><span>Off-Campus Research Sites</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="/research/libraries" class="sub-nav-link"><span>Libraries</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://experts.utexas.edu/" class="sub-nav-link"><span>Experts Guide</span></a>                    </li>
+                                                                                                                    </ul>
+            </div>
+          </div>
+              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="#" class="nav-link has-child nolink" id="accessible-megamenu-1606992232572-10" aria-haspopup="true" aria-controls="accessible-megamenu-1606992232572-11" aria-expanded="false" tabindex="-1" aria-hidden="true">Athletics</a>                  <div class="sub-nav-wrapper accessible-megamenu-panel" id="accessible-megamenu-1606992232572-11" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="accessible-megamenu-1606992232572-10">
+            <div class="sub-nav-row">
+                                              <div class="sub-nav-feature show-for-large-up">
+          <div class="feature-image">
+        <img class="utexas-flex-content-area-image" typeof="foaf:Image" src="https://www.utexas.edu/sites/default/files/styles/menu_content_block/public/utexas_menu_block/basketballfans_menucontentblock_v3_0.jpg?itok=I024hE6Y" alt="Longhorns fans cheering for the team in a packed stadium." />      </div>
+        <div class="feature-content">
+      <h3 class="feature-headline">Get Your Horns Up</h3>
+      <div class="feature-text"><p>There’s no better time to show your true colors than at one of our many sporting events. Put on some burnt orange, raise your Horns high and join Longhorn Nation in a "Texas Fight" chant. It's game time.</p>
+</div>
+          </div>
+  </div>
+                            <ul class="sub-nav sub-nav-has-feature">
+                                                      <li class="sub-nav-item">
+                      <a href="/athletics/overview" class="sub-nav-link"><span>Overview</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://www.texassports.com/" class="sub-nav-link"><span>TexasSports.com</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://ev9.evenue.net/cgi-bin/ncommerce3/EVExecMacro?linkID=tex-ath&amp;evm=main" class="sub-nav-link"><span>Ticket Office</span></a>                    </li>
+                                                                        <li class="sub-nav-item">
+                      <a href="http://shop.texassports.com/" class="sub-nav-link"><span>Texas Longhorns Official Shop</span></a>                    </li>
+                                                                                                                    </ul>
+            </div>
+          </div>
+              </li>
+                <li class="nav-item accessible-megamenu-top-nav-item">
+        <a href="https://news.utexas.edu/" class="nav-link " id="accessible-megamenu-1606992232573-12" tabindex="-1" aria-hidden="true">News</a>              </li>
+                  </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header><div class="UT-page" id="ut-page-content" role="main" style="padding-top: 121px;">
+  <a><img id="scroll-hint" style="position:absolute;" alt="scroll icon" src="sites/all/themes/utexas/assets/scroll_hint.svg" /></a>
+  
+  <div class="site-tabs row">
+    <div class="column small-12">
+          </div>
+  </div>
+      <div id="homepage-hero">
+  <h1 class="homepage-hero__headline">
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <span>What</span><br />
+          <span>starts</span><br />
+          <span>here</span><br />
+          <span>changes</span><br />
+          <span>the world</span>
+        </div>
+      </div>
+    </div>
+  </h1>
+  <div style="height:50vh;"></div>
+  <div class="homepage-hero__image--fixed">
+    <div class="image-wrapper">
+      <picture>
+        <source srcset="https://www.utexas.edu/sites/default/files/styles/utexas_home_hero_1x/public/homepage_hero_images/homepage_background_image_-_julius_whittier_statue_bkgd_-_1.jpg?itok=7o5cI_Ft 1x" />
+        <img alt="Julius Whittier" src="https://www.utexas.edu/sites/default/files/styles/utexas_home_hero/public/homepage_hero_images/homepage_background_image_-_julius_whittier_statue_bkgd_-_1.jpg?itok=EGnNk0Di" />
+      </picture>
+    </div>
+  </div>
+  <div class="homepage-hero__video">
+    <div id="video-wrapper" class="video-wrapper" style="width: 853.333px; height: 480px; margin-top: 0px; margin-left: -34.1667px;">
+      <video id="ut-video" autoplay="" loop="" muted="" playsinline="" preload="auto" poster="sites/all/themes/utexas/assets/homepage-video-poster-winter-2020.jpg" title="The University of Texas at Austin campus">
+        <!--
+        Full description of update steps at https://wikis.utexas.edu/display/WCMS/Updating+Homepage+Hero+video
+        -->
+        <source type="video/mp4" src="/sites/default/files/homepage-videos/homepage-video-20201123.mp4" />
+        <track label="English" kind="descriptions" srclang="en" src="/sites/all/themes/utexas/assets/descriptions.vtt" default="" />
+      </video>
+      <div id="video-controls" style="left: 665px; top: 380px;">
+        <button type="button" id="play-pause">
+          <p class="hiddenText">Pause button</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+            <title>Pause button</title>
+            <path d="M25,50A25.007,25.007,0,0,1,15.269,1.965,25.006,25.006,0,0,1,34.731,48.035,24.844,24.844,0,0,1,25,50Zm3.907-37.5a.71.71,0,0,0-.781.6V36.9a.71.71,0,0,0,.781.6h4.688a.71.71,0,0,0,.781-.6V13.1a.71.71,0,0,0-.781-.6Zm-12.5,0a.71.71,0,0,0-.781.6V36.9a.71.71,0,0,0,.781.6h4.688a.71.71,0,0,0,.781-.6V13.1a.71.71,0,0,0-.781-.6Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    var videoWrapper = document.getElementById('video-wrapper');
+    var videoButtons = document.getElementById('video-controls');
+    sizeVideoContainer = function() {
+      var currentHeight = window.innerHeight;
+      var currentWidth = document.documentElement.clientWidth;
+      var header = document.getElementsByClassName("UT-header");
+      var headerHeight = header[0].clientHeight;
+      // initialize videoWidth and videoHeight
+      var videoWidth, videoHeight;
+      // if overflowContainer is taller than 16:9 then add negative margin-top to videoWrapper
+      // calculate the natural height of a 16:9 video based on the current width
+      if ((currentWidth / (currentHeight - headerHeight)) &gt; 1.7777777778) {
+        // console.log('this screen is wider than 16:9');
+        videoWidth = currentWidth;
+        videoHeight = ((currentWidth * 9) / 16);
+        videoWrapper.style.width = videoWidth + 'px';
+        videoWrapper.style.height = videoHeight + 'px';
+        videoWrapper.style.marginLeft = 0;
+        videoWrapper.style.marginTop = '-' + ((videoHeight - (currentHeight - headerHeight)) / 2) + 'px';
+      }
+      // if overflowContainer is wider than 16:9 then add negative margin-left to videoWrapper
+      // calculate the natural width of a 16:9 video based on the current height
+      else {
+        // console.log('this screen is taller than 16:9');
+        videoHeight = (currentHeight - headerHeight);
+        videoWidth = ((videoHeight) * 16) / 9;
+        videoWrapper.style.width = videoWidth + 'px';
+        videoWrapper.style.height = videoHeight + 'px';
+        videoWrapper.style.marginTop = 0;
+        videoWrapper.style.marginLeft = '-' + ((videoWidth - currentWidth) / 2) + 'px';
+      }
+      // position the video controls
+      videoButtons.style.left = (currentWidth - 120) + 'px';
+      videoButtons.style.top = (currentHeight - headerHeight - 100) + 'px';
+    }
+    sizeVideoContainer();
+    window.addEventListener('resize', function() {
+      setTimeout(function() {
+        sizeVideoContainer();
+      }, 500)
+    })
+  </script>
+</div>
+
+  <div id="university-stories">
+  <div class="container">
+    <div class="row flex-parent">
+      <div class="column large-6 large-push-6">
+                  <a href="https://utex.as/3o3A5XK" class="university-stories__linked-box" id="right-square">
+            <div class="card prominent">
+              <div class="image-wrapper">
+                <img alt="Julius Whittier statue outside DKR-Memorial Stadium" src="https://www.utexas.edu/sites/default/files/styles/home_story_main/public/home_highlight/homepage_large_story-julius_whittier_statue_-_1.jpg?itok=tO8rD9T_" "="" />
+              </div>
+              <div class="content-wrapper">
+                                <span class="headline">
+                  Longhorn Trailblazer Julius Whittier’s Statue Unveiled                 </span>
+              </div>
+            </div>
+          </a>
+              </div>
+      <div class="column large-6 large-pull-6 flex-parent secondary-column">
+                  <a href="https://news.utexas.edu/2020/11/24/this-longhorn-startup-is-bridging-the-generation-gap-to-combat-loneliness/" class="university-stories__linked-box" id="top-left">
+            <div class="card secondary">
+              <div class="image-wrapper">
+                <img alt="UT student entrepreneurs Allen Zhou, Aditi Merchant and Anthony Zhou" src="https://www.utexas.edu/sites/default/files/styles/home_story/public/home_highlight/homepage_small_story1-big_and_mini_founders.jpg?itok=SJTN5Z6e" />
+              </div>
+              <div class="content-wrapper">
+                                <span class="headline">
+                  Bridging the Generation Gap to Combat Loneliness                </span>
+              </div>
+            </div>
+          </a>
+                          <a href="https://news.utexas.edu/2020/11/05/outstanding-in-his-field/" class="university-stories__linked-box" id="bottom-left">
+            <div class="card secondary">
+              <div class="image-wrapper">
+                <img alt="UT math professor Bill Wolesensky" src="https://www.utexas.edu/sites/default/files/styles/home_story/public/home_highlight/homepage_small_story2-bill_wolesensky.jpg?itok=2kOwTA_d" />
+              </div>
+              <div class="content-wrapper">
+                                <span class="headline">
+                  Outstanding in His Field                </span>
+              </div>
+            </div>
+          </a>
+              </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="column large-6">
+        <div class="action-links">
+          <a href="https://www.news.utexas.edu">UT News</a>
+          <a href="https://calendar.utexas.edu">Texas Today Calendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="ut-intro" class="container">
+  <div class="row">
+    <div class="column small-12 medium-9 medium-centered large-7">
+      <h2 class="section-title">
+        A University of the First Class
+      </h2>
+      <p>We started with a constitutional mandate to be “a university of the first class.” Since 1883, we’ve been refining and updating what that means, but we’ve never stopped pursuing that ideal.</p>
+      <p>We say, “What starts here changes the world.”</p>
+      <p class="last">But, what makes <span class="bold">here</span> so special?</p>
+    </div>
+  </div>
+</div>
+  <div id="public" class="container differentiator public">
+    <div class="row">
+        <div class="column small-12 large-5 image-wrapper">
+            <picture id="public-image-wrapper">
+                <source srcset="sites/all/themes/utexas/assets/public-image_585x768@1x.jpg 1x, sites/all/themes/utexas/assets/public-image_1170x1537@2x.jpg 2x" media="all and (min-width: 64.063em)" />
+                <source srcset="sites/all/themes/utexas/assets/public-image_1025x683@1x.jpg 1x, sites/all/themes/utexas/assets/public-image_2050x1367@2x.jpg 2x" media="all and (min-width: 40.063em) and (max-width: 64em)" />
+                <source srcset="sites/all/themes/utexas/assets/public-image_640x427@1x.jpg 1x, sites/all/themes/utexas/assets/public-image_1280x853@2x.jpg 2x" media="(max-width: 40em)" />
+                <img alt="Classroom full of students listening to professor" src="sites/all/themes/utexas/assets/public-image_1170x1537@2x.jpg" />
+            </picture>
+        </div>
+        <div class="column small-12 large-7">
+            <div class="content-wrapper">
+                <h2>Here,<br />First Class is Public</h2>
+                <p>Texas means top national programs with a public mission, an affordable cost, and a culture that welcomes talented, diverse students with unlimited potential.</p>
+                <div class="stats">
+                    <div class="fade-in">
+                        <span class="counter" id="undergrad">156</span>
+                        <span>Undergrad</span>
+                        <span>Degree Programs</span>
+                    </div>
+                    <div class="fade-in">
+                        <span class="counter" id="grad">237</span>
+                        <span>Graduate</span>
+                        <span>Degree Programs</span>
+                    </div>
+                    <div class="fade-in">
+                        <span class="counter" aria-hidden="true" id="courses">12</span>
+                        <span class="show-for-sr">12 thousand plus</span>
+                        <span>Courses</span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="differentiator-link-wrapper">
+                    <a href="/first-class-is-public" class="cta">A UNIVERSITY OF THE FIRST CLASS</a>
+                </div>
+            </div>
+            <div class="background-gradient"></div>
+        </div>
+    </div>
+</div>
+  <div id="research" class="container differentiator research">
+    <div class="row">
+        <div class="column small-12 large-5 image-wrapper">
+            <picture id="research-image-wrapper">
+                <source srcset="sites/all/themes/utexas/assets/research-image_585x768@1x.jpg 1x, sites/all/themes/utexas/assets/research-image_1170x1536@2x.jpg 2x" media="all and (min-width: 64.063em)" />
+                <source srcset="sites/all/themes/utexas/assets/research-image_1025x683@1x.jpg 1x, sites/all/themes/utexas/assets/research-image_2050x1367@2x.jpg 2x" media="all and (min-width: 40.063em) and (max-width: 64em)" />
+                <source srcset="sites/all/themes/utexas/assets/research-image_640x427@1x.jpg 1x, sites/all/themes/utexas/assets/research-image_1280x853@2x.jpg 2x" media="(max-width: 40em)" />
+                <img alt="Female students in UT Austin lab" src="sites/all/themes/utexas/assets/research-image_1170x1536@2x.jpg" />
+            </picture>
+        </div>
+        <div class="column small-12 large-7">
+            <div class="content-wrapper">
+                <h2>Here,<br />We Do High-Impact Research</h2>
+                <p>At Texas, we’re contributing to technological revolutions and a safer and healthier future. Here, our faculty and students are working to find energy solutions, to increase national security, and to deepen our sense of history and culture.</p>
+                <div class="stats">
+                    <div class="fade-in">
+                        <span class="counter" id="patents">786</span>
+                        <span>U.S. &amp; INTERNATIONAL PATENTS SINCE 2008</span>
+                    </div>
+                    <div class="fade-in">
+                        <span class="counter" id="projects">6237</span>
+                        <span>EXTERNALLY SPONSORED PROJECTS</span>
+                    </div>
+                    <div class="fade-in">
+                        <span class="counter millions dollars" id="research-dollars" aria-hidden="true">652</span>
+                        <span>TOTAL RESEARCH EXPENDITURES</span>
+                        <span class="show-for-sr">652 million dollars</span>
+                    </div>
+                </div>
+                <div class="differentiator-link-wrapper">
+                    <a href="/high-impact-research" class="cta">FOCUSED ON HIGH-IMPACT RESEARCH</a>
+                </div>
+            </div>
+            <div class="background-gradient"></div>
+        </div>
+    </div>
+</div>
+  <div id="health-care" class="container differentiator health-care">
+    <div class="row">
+        <div class="column small-12 large-5 image-wrapper">
+            <picture id="health-care-image-wrapper">
+                <source srcset="sites/all/themes/utexas/assets/health-care-image_585x768@1x.jpg 1x, sites/all/themes/utexas/assets/health-care-image_1170x1536@2x.jpg 2x" media="all and (min-width: 64.063em)" />
+                <source srcset="sites/all/themes/utexas/assets/health-care-image_1025x683@1x.jpg 1x, sites/all/themes/utexas/assets/health-care-image_2050x1367@2x.jpg 2x" media="all and (min-width: 40.063em) and (max-width: 64em)" />
+                <source srcset="sites/all/themes/utexas/assets/health-care-image_640x427@1x.jpg 1x, sites/all/themes/utexas/assets/health-care-image_1280x853@2x.jpg 2x" media="(max-width: 40em)" />
+                <img alt="Dell Medical School building" src="sites/all/themes/utexas/assets/health-care-image_1170x1536@2x.jpg" />
+            </picture>
+        </div>
+        <div class="column small-12 large-7">
+            <div class="content-wrapper">
+                <h2>Here,<br />We’re Transforming Health Care</h2>
+                <p>Health care costs too much and moves too slowly. We’re attacking these and other problems with the urgency they deserve. Whether you’re in medicine, engineering, business or design, you can be part of the solution.</p>
+                <div class="blockquote">
+                    <blockquote>
+                        UT has an amazing combination of scientists and engineers addressing critical challenges in human health. The technology being developed at UT will not only save lives but transform patient care and medicine.”
+                    </blockquote>
+                    <div class="credit">
+                        Assistant Chemistry Professor Livia S. Eberlin
+                        <div class="credit-italicized">
+                            Inventor of the MasSpec Pen, 2018 MacArthur Fellow
+                        </div>
+                    </div>
+                </div>
+                <div class="differentiator-link-wrapper">
+                    <a href="/transforming-health-care" class="cta">CHANGING THE GAME FOR HEALTH CARE</a>
+                </div>
+            </div>
+            <div class="background-gradient"></div>
+        </div>
+    </div>
+</div>
+  <div id="texas" class="container differentiator texas">
+    <div class="row">
+        <div class="column small-12 large-5 image-wrapper">
+            <picture id="texas-image-wrapper">
+                <source srcset="sites/all/themes/utexas/assets/texas-image_585x768@1x.jpg 1x, sites/all/themes/utexas/assets/texas-image_1170x1536@2x.jpg 2x" media="all and (min-width: 64.063em)" />
+                <source srcset="sites/all/themes/utexas/assets/texas-image_1025x683@1x.jpg 1x, sites/all/themes/utexas/assets/texas-image_2050x1367@2x.jpg 2x" media="all and (min-width: 40.063em) and (max-width: 64em)" />
+                <source srcset="sites/all/themes/utexas/assets/texas-image_640x427@1x.jpg 1x, sites/all/themes/utexas/assets/texas-image_1280x853@2x.jpg 2x" media="(max-width: 40em)" />
+                <img alt="View of people on south mall of University of Texas campus from UT Tower" src="sites/all/themes/utexas/assets/texas-image_1170x1536@2x.jpg" />
+            </picture>
+        </div>
+        <div class="column small-12 large-7">
+            <div class="content-wrapper">
+                <h2>Here,<br />We Create a More Vibrant Texas</h2>
+                <p class="no-bottom-margin">UT was built by and for the people of Texas to make this a more vibrant state culturally, scientifically and economically. When you place that in America’s No. 1 city to live, you have The University of Texas at Austin.</p>
+                <p>What starts here changes the world.</p>
+                <div class="stats">
+                    <div class="fade-in">
+                        <img class="texas" alt="State of Texas" src="sites/all/themes/utexas/assets/serving-the-state.svg" />
+                    </div>
+                    <div class="fade-in">
+                        <span>UT Austin strengthens the Texas economy</span>
+                        <span class="counter billions dollars" id="texas-dollars" aria-hidden="true">8.8</span>
+                        <span class="show-for-sr">8.8 billion dollars</span>
+                        <span>PER YEAR</span>
+                    </div>
+                    <div class="fade-in">
+                        <img class="hookem" alt="Hook'em hand sign" src="sites/all/themes/utexas/assets/hookem.svg" />
+                    </div>
+                </div>
+                <div class="differentiator-link-wrapper">
+                    <a href="/creating-more-vibrant-texas" class="cta">OUR IMPACT ON TEXAS</a>
+                </div>
+            </div>
+            <div class="background-gradient"></div>
+        </div>
+    </div>
+</div>
+  <div id="be-a-leader">
+  <div class="container">
+    <div class="row">
+      <div class="column small-12">
+        <h2 class="title-text">Be a Leader.<br /> Be a Longhorn.</h2>
+      </div>
+    </div>
+    <div class="row section-prominent">
+      <div class="column small-12 medium-6 large-3">
+        <a class="prominent" href="https://admissions.utexas.edu">
+          <span class="external">Earn a Bachelor’s<br /> Degree</span>
+          <p>Discover your possibilities with an undergraduate degree from Texas.</p>
+        </a>
+      </div>
+      <div class="column small-12 medium-6 large-3">
+        <a class="prominent" href="https://admissions.utexas.edu/explore">
+          <span class="external">Life at<br /> TEXAS</span>
+          <p>Eating, sleeping, working, playing. What is life like at Texas’ premier university?</p>
+        </a>
+      </div>
+      <div class="column small-12 medium-6 large-3">
+        <a class="prominent" href="https://finaid.utexas.edu/costs/">
+          <span class="external">Tuition and<br /> Costs</span>
+          <p>Get a world-class education at an affordable cost.</p>
+        </a>
+      </div>
+      <div class="column small-12 medium-6 large-3">
+        <a class="prominent" href="https://admissions.utexas.edu/visit">
+          <span class="external">Visit<br /> TEXAS</span>
+          <p>Everything you need for a successful campus visit.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column large-10 large-centered">
+        <div class="row section-basic">
+          <div class="column small-12 medium-4">
+            <a href="https://gradschool.utexas.edu">
+              <span class="external">Earn a Graduate Degree</span>
+              <p>Come to Texas a grad student. Leave an international expert.</p>
+            </a>
+          </div>
+          <div class="column small-12 medium-4">
+            <a href="https://diversity.utexas.edu/">
+              <span class="external">Diversity at UT</span>
+              <p>We're creating an inclusive campus culture that engages diverse people, ideas, and perspectives to create a vibrant learning and working environment.</p>
+            </a>
+          </div>
+          <div class="column small-12 medium-4">
+            <a href="https://facultyjobs.utexas.edu/">
+              <span class="external">Search for Faculty Jobs</span>
+              <p>A university is only as good as its faculty, so we want the best.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="column small-12 medium-10 large-6 medium-centered large-centered">
+        <label for="search-main" class="hiddenText" id="mainSearchLabel">Search</label>
+  <form action="/search/results" method="get" id="cse_main_searchbox" class="cse_searchbox">
+    <input type="text" name="query" id="search" placeholder="Search" class="search-page-input" title="Search this site" aria-labelledby="mainSearchLabel" />
+    <button class="nav-search-button" tabindex="-1" aria-hidden="true"><span class="hiddenText">Search</span><span class="icon-search"></span></button>
+  </form>      </div>
+    </div>
+  </div>
+</div>
+  <div class="animated-gif">
+  <img alt="View of the UT Tower from south mall" style="width:100%" src="sites/all/themes/utexas/assets/Tower-Main-Mall-Illustration-animation.svg" />
+</div>
+  <div class="container container-footer">
+  <div class="row">
+    <div class="column small-12 medium-4">
+      <div class="footer-primary">
+        <div class="connect">
+          <div class="footer-headline">Connect with UT Austin</div>
+          <div class="newsletter-form">
+            <a href="http://econnect.utexas.edu/utexas-newsletter-signup" class="cta sidebar-cta"><span>Subscribe to our newsletter</span></a>
+          </div>
+          <ul class="connect-links">
+<li><a href="http://www.facebook.com/UTAustinTX" class="connect-link"><span class="icon-facebook"><span class="hiddenText">Facebook</span></span></a></li>
+<li><a href="http://twitter.com/utaustin" class="connect-link"><span class="icon-twitter"><span class="hiddenText">Twitter</span></span></a></li>
+<li><a href="https://instagram.com/utaustintx" class="connect-link"><span class="icon-instagram"><span class="hiddenText">Instagram</span></span></a></li>
+<li><a href="https://www.linkedin.com/edu/the-university-of-texas-at-austin-19518" class="connect-link"><span class="icon-linkedin"><span class="hiddenText">LinkedIn</span></span></a></li>
+<li><a href="http://www.youtube.com/utaustintexas" class="connect-link"><span class="icon-youtube3"><span class="hiddenText">YouTube</span></span></a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+    <div class="column small-12 medium-8">
+      <div class="footer-secondary" role="navigation">
+        <p class="hiddenText">Footer Helpful Links</p>
+        <ul class="helpful-links"><li class="helpful-link-item"><a href="https://onestop.utexas.edu/cares-act-compliance/" title="" class="helpful-link">CARES Act Compliance</a></li>
+<li class="helpful-link-item"><a href="/contact-us" class="helpful-link">Contact</a></li>
+<li class="helpful-link-item"><a href="https://cmhc.utexas.edu/" title="" class="helpful-link">Counseling and Mental Health</a></li>
+<li class="helpful-link-item"><a href="https://diversity.utexas.edu/diversity-and-inclusion-action-plan/" title="" class="helpful-link">Diversity and Inclusion Action Plan</a></li>
+<li class="helpful-link-item"><a href="https://diversity.utexas.edu/disability-resources/" title="" class="helpful-link">Diversity, Equity, and Disability Resources ♿</a></li>
+<li class="helpful-link-item"><a href="http://emergency.utexas.edu/" class="helpful-link">Emergency Information</a></li>
+<li class="helpful-link-item"><a href="/fraud-waste-or-abuse" title="" class="helpful-link">Fraud, Waste, or Abuse</a></li>
+<li class="helpful-link-item"><a href="https://hazing.utexas.edu" title="" class="helpful-link">Hazing Prevention and Response</a></li>
+<li class="helpful-link-item"><a href="/jobs" class="helpful-link">Jobs</a></li>
+<li class="helpful-link-item"><a href="http://www.thecb.state.tx.us/apps/resumes/" class="helpful-link">Online Institutional Resumes</a></li>
+<li class="helpful-link-item"><a href="/public-forum" title="" class="helpful-link">Public Forum On Campus</a></li>
+<li class="helpful-link-item"><a href="/site-policies" class="helpful-link">Site Policies</a></li>
+<li class="helpful-link-item"><a href="http://www.texas.gov/en/Pages/default.aspx" class="helpful-link">State of Texas</a></li>
+<li class="helpful-link-item"><a href="https://www.tsl.texas.gov/trail/index.html" class="helpful-link">Statewide Search</a></li>
+<li class="helpful-link-item"><a href="http://gov.texas.gov/" class="helpful-link">Texas Homeland Security</a></li>
+<li class="helpful-link-item"><a href="https://veterans.portal.texas.gov/" title="" class="helpful-link">Texas Veterans Portal</a></li>
+<li class="helpful-link-item"><a href="https://titleix.utexas.edu/file-a-report/" title="" class="helpful-link">Title IX Reporting (Sexual Misconduct)</a></li>
+<li class="helpful-link-item"><a href="http://www.utsystem.edu/" class="helpful-link">UT System</a></li>
+<li class="helpful-link-item"><a href="https://www.utexas.edu/web-accessibility-policy" title="" class="helpful-link">Web Accessibility Policy</a></li>
+<li class="helpful-link-item"><a href="https://www.utexas.edu/web-privacy-policy" title="" class="helpful-link">Web Privacy Policy</a></li>
+</ul>      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12">
+      <div class="copyright">© The University of Texas at Austin 2020</div>
+    </div>
+  </div>
+</div>
+</div>  <!--[if lt IE 9]>
+    <script src="/sites/all/themes/utexas/js/polyfill.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+window.jQuery || document.write("&lt;script src='/sites/all/modules/custom/utexas_admin/js/replace/backup/jquery.min.js'&gt;\x3C/script&gt;")
+//--&gt;&lt;!]]&gt;
+</script>
+<script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_38VWQ3jjQx0wRFj7gkntZr077GgJoGn5nv3v05IeLLo.js"></script>
+<script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_zk6E_FWvKA4Ku6JSXY-F0oYo3Ck75G98FoGpm7ybyds.js"></script>
+<script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_nqYXTQqQmww0EtueD3uTrl3fcUWX07bySQWVCXsoL4k.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"utexas","theme_token":"3tKSQs9-Yd9b4dWk43lFs5lxDJMS4Zro6mBfq9jhhBg","js":{"https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/custom\/utexas_google_cse\/js\/utexas_google_cse.js":1,"sites\/all\/themes\/utexas\/js\/custom.accordion.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/custom\/features\/content_types\/content_type_twitter_widget\/theme\/twitter-widget.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/custom\/localist_integration\/css\/localist.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/custom\/utexas_fonts\/css\/fonts.css":1,"sites\/all\/modules\/custom\/utexas_google_cse\/css\/utexas_google_cse.css":1,"sites\/all\/modules\/contrib\/video_filter\/video_filter.css":1,"sites\/all\/modules\/custom\/features\/views\/views_utexas_localist_widget\/theme\/utexas-localist-widget.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/custom\/utexas_tablesaw_filter\/theme\/utexas_tablesaw_filter.css":1,"sites\/all\/libraries\/tablesaw\/dist\/stackonly\/tablesaw.stackonly.css":1,"sites\/all\/themes\/utexas\/css\/base.css":1,"sites\/all\/themes\/utexas\/css\/core.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/utexas\/css\/core_home.css":1,"https:\/\/p.typekit.net\/p.css?s=1\u0026k=cdl6mlo\u0026ht=tk\u0026f=30818\u0026a=9606145\u0026app=typekit\u0026e=css":1,"sites\/all\/themes\/utexas\/css\/foundation.accordion.css":1,"sites\/all\/themes\/utexas\/css\/temporary_css.css":1,"sites\/all\/themes\/utexas\/css\/custom.accordion.css":1,"sites\/all\/themes\/utexas\/css\/print.css":1}},"cseId":"006470498568929423894:etsxpcor8wm","video_filter":{"url":{"ckeditor":"\/video_filter\/dashboard\/ckeditor"},"instructions_url":"\/video_filter\/instructions","modulepath":"sites\/all\/modules\/contrib\/video_filter"}});
+//--&gt;&lt;!]]&gt;
+</script>
+  <script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_dgTaqxMriwUc2It_FW-X18lJCasw4vEyRMclMPvs1no.js"></script>
+<script type="text/javascript" src="https://www.utexas.edu/sites/default/files/js/js_PzVZHRQ-qDbdUE1kMNy1eb68lMjs43b_rMyduDrCVgM.js"></script>
+    <div class="region region-page-bottom">
+    <!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-W2FKXC"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W2FKXC');</script>
+<!-- End Google Tag Manager -->  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"581f614197","applicationID":"55667040","transactionName":"NVBabRdUDRICWkwIWwwabUsMGkwIDV1dGRoSXUg=","queueTime":0,"applicationTime":40,"atts":"GRdZG19OHhw=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<script type="text/javascript" id="">window._fs_debug=!1;window._fs_host="fullstory.com";window._fs_org="64W8A";window._fs_namespace="FS";
+(function(e,f,k,l,g,c,b,h){k in e?e.console&amp;&amp;e.console.log&amp;&amp;e.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'):(b=e[k]=function(d,a){b.q?b.q.push([d,a]):b._api(d,a)},b.q=[],c=f.createElement(l),c.async=1,c.src="https://"+_fs_host+"/s/fs.js",h=f.getElementsByTagName(l)[0],h.parentNode.insertBefore(c,h),b.identify=function(d,a){b(g,{uid:d});a&amp;&amp;b(g,a)},b.setUserVars=function(d){b(g,d)},b.identifyAccount=function(d,a){c="account";a=a||{};a.acctId=d;b(c,a)},b.clearUserCookie=
+function(b,a,c){if(!b||document.cookie.match("fs_uid\x3d[`;`]*`[`;`]*`[`;`]*`"))for(a=f.domain;;){f.cookie="fs_uid\x3d;domain\x3d"+a+";path\x3d/;expires\x3d"+(new Date(0)).toUTCString();c=a.indexOf(".");if(0&gt;c)break;a=a.slice(c+1)}})})(window,document,window._fs_namespace,"script","user");</script></body></html>

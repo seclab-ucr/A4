@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/1">
+<link rel="openid.server" href="https://indieauth.com/openid" />
+<link rel="openid.delegate" href="http://meyerweb.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="home" href="http://meyerweb.com/" title="Home" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://emeyer.myopenid.com/" />
+<meta name="google-site-verification" content="I_JFi4WrY6bW7AE2ya5sSlruVvgvrIeRa1IsqO0GB78" />
+<link rel="alternate" type="application/rss+xml" title="Thoughts From Eric" href="/eric/thoughts/rss2/full" />
+<link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only technical posts)" href="/eric/thoughts/category/tech/rss2/full" />
+<link rel="alternate" type="application/rss+xml" title="Thoughts From Eric (only personal posts)" href="/eric/thoughts/category/personal/rss2/full" />
+<link rel="alternate" type="application/rss+xml" title="Excuse of the Day" href="/feeds/excuse/rss20.xml" />
+<link rel="stylesheet" href="/ui/meyerweb.css" type="text/css" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@meyerweb" />
+<meta name="twitter:title" content="meyerweb.com" />
+<meta name="twitter:description" content="The web home of Eric A. Meyer, CSS guy; and his wife Kathryn, doctor of nursing." />
+<meta name="twitter:url" content="https://meyerweb.com/" />
+<meta name="twitter:image" content="https://meyerweb.com/ui/i/heart/663399love.png" />
+<meta name="twitter:image:width" content="192" />
+<meta name="twitter:image:height" content="192" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://meyerweb.com/ui/i/hamonshu/fb-og-image.png" />
+<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/thoughts/wp-content/themes/meyerweb-2020/style.css" />
+<title>meyerweb.com</title>
+</head>
+<body id="www-meyerweb-com" class="hpg">
+
+<header role="banner" id="sitemast">
+<h1><a href="/">meyerweb.com</a></h1>
+<nav role="navigation" aria-label="page" id="skiplinks">
+<a href="#main">Main content</a>
+<a href="#navigate">Navigation links</a>
+<a href="#footer">Footer</a>
+</nav>
+</header>
+
+<nav role="navigation" aria-label="site" id="navigate">
+<ul id="navlinks">
+<li id="archLink"><a href="/eric/thoughts/">Post Archives</a></li>
+<li id="cssLink"><a href="/eric/css/">CSS Work</a></li>
+<li id="toolsLink"><a href="/eric/tools/">Toolbox</a></li>
+<li id="writeLink"><a href="/eric/writing.html">Writing</a></li>
+<li id="speakLink"><a href="/eric/talks/">Speaking</a></li>
+<li id="otherLink"><a href="/other/">Other Stuff</a></li>
+<li id="aboutsite"><a href="/ui/about.html">About this site</a></li>
+</ul>
+</nav>
+
+<div id="main">
+
+<main role="main" id="thoughts">
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/09/29/polite-bash-commands/" rel="bookmark" title="Permanent Link: Polite Bash Commands">Polite Bash Commands</a></h2>
+<em class="pubtime">Published  2 months, 3 days past</em>
+</header>
+
+<div class="text">
+<p>For years, I’ve had a bash alias that re-runs the previous command via <code>sudo</code>.  This is useful in situations where I try to do a thing that requires root access, and I’m not root (because I am <em>never</em> root).  Rather than have to retype the whole thing with a <code>sudo</code> on the front, I just type <kbd>please</kbd> and it does that for me.  It looked like this in my <code>.bashrc</code> file:</p>
+
+<pre class="bash"><code>alias please='sudo "$BASH" -c "$(history -p !!)"'
+</code></pre>
+
+<p>But then, the other day, I saw <a href="https://twitter.com/ctrlshifti/status/1160812366293901314">Kat Maddox’s tweet</a> about how she aliases <code>please</code> straight to <code>sudo</code>, so to do things as root, she types <kbd>please apt update</kbd>, which is equivalent to <kbd>sudo apt update</kbd>.  Which is pretty great, and I want to do that!  Only, I already have that word aliased.</p>
+<p>What to do?  A bash function!  After commenting out my old alias, here’s what I added to <code>.bash_profile</code>:</p>
+
+<pre class="bash"><code>please() {
+	if [ "$1" ]; then
+		sudo $@
+	else
+		sudo "$BASH" -c "$(history -p !!)"
+	fi
+}
+</code></pre>
+
+<p>That way, if I remember to type <kbd>please apachectl restart</kbd>, as in Kat’s setup, it will ask for the root password and then execute the command as root; if I forget my manners and simply type <kbd>apachectl restart</kbd>, then when I’m told I don’t have privileges to do that, I just type <kbd>please</kbd> and the old behavior happens.  Best of both worlds!</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/09/29/polite-bash-commands/">Polite Bash Commands</a></cite> was published on <time>Tuesday, September 29th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/hacks/" rel="category tag">Hacks</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/tools/" rel="category tag">Tools</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/09/29/polite-bash-commands/#comments">seven replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/09/04/reply-links-in-rss-items/" rel="bookmark" title="Permanent Link: Reply links in RSS items">Reply links in RSS items</a></h2>
+<em class="pubtime">Published  2 months, 4 weeks past</em>
+</header>
+
+<div class="text">
+<p>
+Inspired by <a href="https://destroytoday.com/blog/reply-link-in-rss-feed-posts">Jonnie Hallman</a>, I’ve added a couple of links to the bottom of <acronym title="Really Simple Syndication">RSS</acronym> items here on meyerweb: a link to the commenting form on the post, and a <code>mailto:</code> link to send me an email reply.  I prefer that people comment, so that other readers can gain from the reply’s perspective, but not all comments are meant to be public.  Thus, the direct-mail option.
+</p>
+<p>
+As Jonnie says, it would be ideal if all RSS readers just used the value of the <code>author</code> element (assuming it’s an email address) to provide an email action; if they did, I’d almost certainly add mine to my posts.  Absent that, adding a couple of links to the bottom of RSS items is a decent alternative.
+</p>
+<p>
+Since the blog portion of meyerweb (and therefore its RSS) are powered by WordPress, I added these links programmatically via the <code>functions.php</code> file in the site’s theme.  It took me a bit to work out how to do that, so here it is in slightly simplified form (<ins>update: there’s an even more simplified and efficient version later in the post</ins>):
+</p>
+<pre class="php"><code>function add_contact_links ( $text ) {
+   if (is_feed()) {
+      $text .= '
+      &lt;hr&gt;&lt;p&gt;&lt;a href="' . get_permalink($post) . '#commentform"&gt;Add a comment to the post, or &lt;a href="mailto:admin@example.com?subject=In%20reply%20to%20%22' . str_replace(' ', '%20', get_the_title()) . '%22"&gt;email a reply&lt;/a&gt;.&lt;/p&gt;';
+   }
+   return $text;
+}
+add_filter('the_content', 'add_contact_links');
+</code></pre>
+
+<p>If there’s a more efficient way to do that in WordPress, please leave a comment to tell the world, or email me if you just want me to know.  Though I’ll warn you, a truly better solution will likely get blogged here, so if you want credit, say so in the email.  Or just leave a comment!  You can even use Markdown to format your code snippets.</p>
+
+<hr />
+
+<p class="update"><strong>Update 2020-09-10:</strong> <a href="https://meyerweb.com/eric/thoughts/2020/09/04/reply-links-in-rss-items/#comment-3711850">David Lynch shared</a> a more efficient way to do this, using the WordPress hook <code>the_feed_content</code> instead of plain old <code>the_content</code>.  That removes the need for the <code>is_feed()</code> check, so the above becomes the more compact:</p>
+
+<pre class="php"><code>function add_contact_links ( $text ) {
+   $text .= '
+   &lt;hr&gt;&lt;p&gt;&lt;a href="' . get_permalink($post) . '#commentform"&gt;Add a comment to the post, or &lt;a href="mailto:admin@example.com?subject=In%20reply%20to%20%22' . str_replace(' ', '%20', get_the_title()) . '%22"&gt;email a reply&lt;/a&gt;.&lt;/p&gt;';
+   return $text;
+}
+add_filter('the_feed_content', 'add_contact_links');
+</code></pre>
+
+<p>
+Thanks, David!
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/09/04/reply-links-in-rss-items/">Reply links in RSS items</a></cite> was published on <time>Friday, September 4th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/hacks/" rel="category tag">Hacks</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/09/04/reply-links-in-rss-items/#comments">three replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/07/01/accordion-rows-in-css-grid/" rel="bookmark" title="Permanent Link: Accordion Rows in CSS Grid">Accordion Rows in CSS Grid</a></h2>
+<em class="pubtime">Published  5 months, 2 days past</em>
+</header>
+
+<div class="text">
+<style type="text/css">
+figure.standalone img {max-width: 75%;}
+</style>
+
+<p>Another aspect of <a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/">the meyerweb redesign</a> I’d like to explore is the way I’m using CSS Grid rows to give myself more layout flexibility.</p>
+<p>First, let’s visualize the default layout of a page here on meyerweb.  It looks something like this:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig01.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig01.png" alt="A page layout diagram showing a header stretching across the top of the page, a footer stretching across the bottom of the page, and three columns of content between them: two sidebars to either side, and a main content column in the middle." /></a></figure>
+
+<p>So simple, even flexbox could do it!  But that’s only if things always stay this simple.  I knew they probably wouldn’t, because the contents in those two sidebars were likely to vary from one part of the site to another—and I would want, in some cases, for the sidebar pieces to line up vertically.  Here’s an example:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig02.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig02.png" alt="A page layout diagram showing a header stretching across the top of the page, a footer stretching across the bottom of the page, and three columns of content between them. There is a main content column in the middle which stretches full-height between the header and footer. In the right sidebar, there are three boxes, labeled 'navigation', 'feeds', and 'categories', arranged in that order, top to bottom. In the left sidebar, there is a single box labeled 'archives' that isn’t as tall as the main content column. Its top edge is vertically aligned with the top edge of 'feeds', the second box in the right-hand sidebar." /></a></figure>
+
+<p>That’s the basic layout of <a href="https://meyerweb.com/eric/thoughts/">archive pages</a>.  See how the left sidebar’s Archives lines up with the top of the Feeds box in the right sidebar?  That’s Grid for you.  I thought about lumping the Feeds and Categories into a the same grid cell (thus making them part of the same grid row), which would have meant wrapping them in a <code>&lt;div&gt;</code>, but decided keeping them separate allows more flexibility in terms of responsive rearrangement of content.  I can, for example, assign the Feeds to be followed by Archives and then Categories at mobile sizes.  Or to reverse that order.</p>
+<p>More to the point, I also wanted the ability to place things along the <em>bottoms</em> of the sidebars, down near the footer but still next to the main content column, like so:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig03.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig03.png" alt="A page layout diagram similar to the previous diagram, with header and footer, main content column, and the 'archives' box in the left sidebar; and 'navigation, 'feeds', and 'categories' in the right sidebar. This figure adds 'box1' and 'box2' to the bottom of the left sidebar, and 'box3' to the bottom of the right sidebar. The bottom edges of 'box2' and 'box3' are vertically aligned with the bottom of the main column." /></a></figure>
+
+<p>An early design prototype for the blog archives put the “Next post” and “Previous post” links in some of those spots, before I moved the links into the bottom of the main content column.  So at the moment, I don’t have anything making use of those spots, although the capability is there.  I could cluster content along the tops <em>and</em> the bottoms of the sidebars, as needed.</p>
+<p>But here’s the important thing, and really the point of this article: I’m not rewriting the row structure and grid cell assignments for each page type.  There’s a unified row template applied to the <code>body</code> on every page that uses the Hamonshū design.  It is:</p>
+<pre class="css"><code>grid-template-rows: repeat(7,min-content) 1fr repeat(3,min-content);
+</code></pre>
+<p>The general idea here is, the first seven rows are sized to be the minimum necessary to contain content inside those rows.  This is also true of the last three rows.  And in between those sets, a <code>1fr</code> row that takes up the rest of the grid container’s height, pushing the two sets apart.</p>
+<p>In the simplest case, where there’s just a header, main content column, and a footer, with nothing in the sidebars (the layout has three columns, remember), the content will fill the rows like so:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig04.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig04.png" alt="A page layout diagram showing a header stretching across the top of the page, a footer stretching across the bottom of the page, and a main content column. There is open space to the sides of the main content column." /></a></figure>
+
+<p>Here’s the Grid CSS to make that happen:</p>
+<pre class="css"><code>header {grid-row: 1; grid-column: 1 / -1;}
+footer {grid-row: -2; grid-column: 1 / -1;}
+main {grid-row: 2; grid-column: 2;}
+</code></pre>
+<p>Thus: The header fills all of row one.  The content expands row two from its placement in the center column.  The footer fills all of the last row, which is specified via <code>grid-row: -2</code> (because <code>grid-row: -1</code> would align its top with the bottom edge of the grid container).  There’s no more content, so all the other <code>min-content</code> rows have no content, so their height is zero.  And there’s no leftover height to soak up, so the <code>1fr</code> row also has a height of zero.  Seems like a lot of rows specified to no real purpose, doesn’t it?</p>
+<p>But now, let’s add some sidebar content to columns one and three; that is, the sidebars.  For example, you might remember this layout from before:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig02.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig02.png" alt="The same as figure 2. To recap: A page layout diagram showing a header stretching across the top of the page, a footer stretching across the bottom of the page, and three columns of content between them. There is a main content column in the middle which stretches full-height between the header and footer. In the right sidebar, there are " /></a></figure>
+
+<p>Given this setup, we can’t just assign the main content column to <code>grid-row: 2</code> and leave it at that—it’s going to have to span rows.  Really, it needs to span all but the last, thus ensuring it reaches down to the footer.  So the CSS ends up like this:</p>
+<pre class="css"><code>header, footer {grid-row: 1; grid-column: 1/-1;}
+footer {grid-row: -2;}
+main {grid-column: 2; grid-row: 2/-2;}
+nav {grid-row: 2; grid-column: 3;}
+.archives {grid-row: 3 / span 3;}
+.feeds {grid-row: 3; grid-column: 3;}
+.categories {grid-row: 4; grid-column: 3;}
+</code></pre>
+<p>And as a result, the rows end up like this:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig06.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig06.png" alt="The same as the previous diagram, but in this case the main content column is taller. Purple dashed lines show where the grid lines are placed in this layout; in particular, they make it clear that the 'navigation', 'feeds', 'categories' boxes in the right-hand sidebar are placed in separate grid rows, and the 'archives' box in the left-hand sidebar spans three grid rows." /></a>
+<figcaption>Grid-line visualization courtesy the Firefox Web Inspector.</figcaption>
+</figure>
+
+<p>The first set of <code>min-content</code> rows are all gathered up against the bottom of the top part of the layout, and the second set are all pushed down at the bottom.  Between them, the <code>1fr</code> row eats up all the leftover space, which is what pushes the two sets of <code>min-content</code> rows apart.</p>
+<p>I <em>like</em> this pattern.  It feels good to me, having two sets of rows where the individual rows accordion open to accept content when needed, and collapse to zero height when not, with a “blank” row in between the sets that pushes them apart.  It’s flexible, and even allows me to add more rows to the sets without having to rewrite all my layout styles.</p>
+<p>As an example, suppose I decided I needed to add a few more rows to the bottom set, for use in a few specialty templates.  Because of the way things are set up, all I have to do is change the row template like this:</p>
+<pre class="css"><code>grid-template-rows: repeat(7,min-content) 1fr repeat(5,min-content);
+</code></pre>
+<p>That’s everything. I just changed the number of repeats in the second set of rows.  All the existing pages will continue on just fine, no layout changes, no CSS changes.  In the few (currently hypothetical) pages where I need to put a bunch of stuff along the bottom of the main content column, I just plug them in using <code>grid-row</code> values, whether positive or negative.  It all just works.</p>
+<p>The same is true if more rows are added to the first set, for whatever reason.  Everything gets managed in a single CSS rule, where you can add rows for the whole site instead of having to write, track, and maintain a bunch of variants for various page types.  (Subtracting rows is harder without causing layout upset, but could still be done in some scenarios.)</p>
+<p>As a final note, you’re probably wondering: Is that one <code>1fr</code> row actually <em>necessary</em> to get a layout like this one?  Not really, no.  Let’s take it out, like this:</p>
+<pre class="css"><code>grid-template-rows: repeat(11,min-content);
+</code></pre>
+<p>What happens as a result is the rows that aren’t directly occupied by content (the ones that previously collapsed to zero height), but are still spanned by content (the center column), divvy up the leftover space the <code>1fr</code> row used to consume.  This leads to a situation like so:</p>
+
+<figure class="standalone"><a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig07.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/fig07.png" alt="The same layout diagram as the previous figure, but with some of the grid rows placed differently." /></a></figure>
+
+<p>To the user, there’s no practical difference.  Things go to the same places either way.  You just get the “extra” rows stretching out, instead of being pushed apart by the <code>1fr</code> row.</p>
+<p>I certainly could have left it at that, and it arguably would have been cleaner to do so.  But something about this approach doesn’t sit quite right with me; there’s a tickly feeling in the back of my instinct that tells me there’s a downside to this.  Admittedly, it could be a vestigial instinct from the Age of Floats; I doubtless have many things I still have not unlearned.  On the other hand, it could be something about Grid I’ve picked up on subconsciously but haven’t yet brought into full realization.</p>
+<p>If I ever pin the tickle down enough to articulate it, I’ll update the post to include it.</p>
+
+
+<p class="note">Thanks to <a href="https://kitt.hodsden.org/">Kitt Hodsden</a> and <a href="https://laurakalbag.com/">Laura Kalbag</a> for their assistance with this article.</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/07/01/accordion-rows-in-css-grid/">Accordion Rows in CSS Grid</a></cite> was published on <time>Wednesday, July 1st, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> category.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/07/01/accordion-rows-in-css-grid/#comments">six replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/06/07/forever-and-ever/" rel="bookmark" title="Permanent Link: Forever and Ever">Forever and Ever</a></h2>
+<em class="pubtime">Published  5 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p>We had been awake since one in the morning.  She had been unconscious since three in the morning.</p>
+<p>We’d been taking turns sleeping with Rebecca in the nights leading up to that day, six years ago today, and on the final night it had been my turn.  I was woken by a sound, from her or by her I still don’t know, and I saw that she was awake.  And had vomited.  And still could barely move.  And I knew this was it.</p>
+<p>Kat called the hospice nurse to come and give her the drugs to take away the pain, and we waited, sick with despair and doing everything we could not to show it.</p>
+<p>We gently held her as she trembled.  We kissed her head through her curly hair, told her that we were here with her and that she could go, not to be afraid, we’d be there with her soon.  Lying to her, now, finally, so far past the point where truth was kind or helpful, telling her whatever we thought would take away even a tiny slice of the fear.  Shamelessly, literally shamelessly, weaponizing all the trust we had built up over the years by telling her the truth her whole life, to ease, if we could, the last hours of it.</p>
+<p>Her eyes were wide, even for her.  They barely blinked.  We could still catch her attention, but it was so much harder now.  The trembling increased, and then, eyes somehow still wider, she started to claw frantically at her temples, trying to dig out the thing that was killing her.  Or just to somehow relieve the pain.</p>
+<p>I had to restrain her, catch her small wrists in my hands, wrap my arms around her arms and shaking small body and brokenly tell her <em>no, stop, I know, I know, I’m so sorry, we want it to stop too, I know, we love you.</em></p>
+<p>The nurse was finally there and administered a lot of narcotics.  Not enough to kill her outright, but enough to take away the pain.  And consciousness.  I almost asked him to double the dose, or triple it, whatever was necessary to end things quickly and painlessly.  I stopped only because I realized the position that would put him in.  And that if it were an option, he’d already have offered it.</p>
+<p>Waiting for the drugs to work, we read her her favorite stories, holding books up one at a time and asking if she wanted this one, this one, this one.  Her head would jerk in a prototype of a nod, and we’d open that book and read, taking turns, voices somehow as clear and steady as if we were doing normal bedtime stories.  I made a list as we went, because I knew I’d want to know later.</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Mike_Mulligan_and_His_Steam_Shovel"><cite>Mike Mulligan and His Steam Shovel</cite></a></li>
+<li><a href="https://www.goodreads.com/book/show/1572485.How_the_Sun_Was_Brought_Back_to_the_Sky"><cite>How the Sun Was Brought Back to the Sky</cite></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Madeline"><cite>Madeline</cite></a></li>
+<li><a href="https://www.goodreads.com/book/show/1870274.Jump_Rope_Magic"><cite>Jump Rope Magic</cite></a></li>
+</ol>
+<p>Halfway through that last, the drugs finally took hold, and she slipped into unconsciousness.</p>
+<p>Or really, semi-consciousness: some part of her was still aware of her surroundings.  Every time Kat shifted or drew away for a moment, Rebecca would whimper quietly, and only stop when she could hear and feel Kat reassuring her.  She only did so for me when I got up from the bed entirely.  I would assure her that I would be back in a minute or two, that I wasn’t going away for good.  That was enough to quiet her.  She trusted us so much.</p>
+<p>Shortly before dawn, we started sending texts to loved ones.  <em>This is it.  If you want to say goodbye, you need to come today.  She has hours left.</em>  And asked them to spread the word, so others would know to come.</p>
+<p>Just after dawn, at 7:22 in the morning, she crossed another threshold.</p>
+<p><em>Happy birthday, Rebecca</em>, we told her with quietly trembling voices.  <em>You made it.  You really did.  You’re a great big six year old now.  We love you so much.</em></p>
+<p>There was no response.</p>
+<p>So many people came to see her one last time on her sixth birthday, drifted in and out of her room, a slowly shifting cast of characters supporting her, us, each other, themselves.  I don’t really remember how it felt then, barely remember who was there and who was not, but looking back now it’s like those movie scenes where one person is still, sharply in focus, while long-exposure blurs of people moving around them draw a contrast between what matters and what is incidental, between transience and permanence.</p>
+<p>Sometimes, what is still is the most transient of all.</p>
+<p>By late afternoon, there were signs the drugs weren’t enough, that she was going to start seizing despite everything.  Which in turn meant there was a risk she’d come back to a consciousness filled with nothing but incomprehensible pain.  We weren’t sure what we could do.  She’d been lying on her back all day, so nearly motionless, body flaring with fever, shallow breaths coming and going in a rhythm I kept falling into, the way you do when your child is in distress.</p>
+<p>Kat looked across at me and said, <em>She’s a side sleeper.</em></p>
+<p>We rolled Rebecca onto her sleeping side, her right side, and her breath hitched, drew in slowly, and then flowed out deeply, contentedly.  Her breathing stayed slow and deep, the rhythm of sleep, comforting, except it gradually got slower and slower and slower.  Stretched out more and more over half an hour, eventually slow enough that when it stopped altogether, we almost didn’t notice.</p>
+<p>We checked for pulse.  Breath.  Pulse again.  Nothing.  For a minute.  Two.</p>
+<p>A sound came from my throat that I know now is the true sound of ultimate suffering—and as if startled by it, she drew in another breath, choking me off.</p>
+<p>We begged her to stop fighting, told her it was okay to go, we loved her, we loved her, we loved her.</p>
+<p>A few minutes later, pulse and breath stopped again.  And Rebecca was gone forever.</p>
+<p>Rebecca, who we knew so well.</p>
+<p>Rebecca, who we had barely gotten to know.</p>
+<p>Rebecca, who we will never get to know.</p>
+<p>Time has moved on, as we have, and yet some parts of us have not.  Some parts of us are caught there, six years ago today, able to do nothing but watch her slowly slip away, literally helpless to do anything except try to soothe her through the haze of drugs and thickening darkness with our words, our touch, our presence, our love.  Parts of us frozen in that passage, unchanging.</p>
+<p>Like Rebecca is now, forever, and should not be.</p>
+<blockquote class="poem">When I was One,
+I had just begun.
+When I was Two,
+I was nearly new.
+When I was Three
+I was hardly me.
+When I was Four,
+I was not much more.
+When I was Five,
+I was just alive.
+But now I am Six,
+I’m as clever as clever,
+So I think I’ll be six now for ever and ever.
+<p class="attrib">—‘Now We Are Six’, A.A. Milne</p></blockquote><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/06/07/forever-and-ever/">Forever and Ever</a></cite> was published on <time>Sunday, June 7th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/personal/" rel="category tag">Personal</a> and <a href="https://meyerweb.com/eric/thoughts/category/personal/rebecca/" rel="category tag">Rebecca</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/06/07/forever-and-ever/#comments">thirty-four replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/04/22/better-image-optimization-by-restricting-the-color-index/" rel="bookmark" title="Permanent Link: Better Image Optimization by Restricting the Color Index">Better Image Optimization by Restricting the Color Index</a></h2>
+<em class="pubtime">Published  7 months, 1 week past</em>
+</header>
+
+<div class="text">
+<p>Let’s talk about image optimization.  There are a few images used in <a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/">meyerweb’s new design</a>, and while I wanted them to be pleasing to the eye, I also wanted them to be lightweight.   My rough goal was to not have the design elements (images plus CSS) be more than half the total page weight for a typical blog post, <em>not</em> counting any post-specific images like photos or diagrams.  Thus, if a typical blog post’s page weight was 500KB, I didn’t want the images and CSS to add up to more than 250KB or so.</p>
+
+<p><strong>Spoiler:</strong> I achieved my goal, but at the same time fell short.  What I had overlooked was custom fonts, which I’ll get to in a later post.</p>
+
+<p>I found out that how you optimize images matters a whole lot.  Let’s consider one example: the spiral-like image (which, yes, is a quiet callback to <a href="https://meyerweb.com/eric/css/edge/complexspiral/glassy.html">past work</a>) at the center of the previous-next links at the bottom of blog posts and archive pages.  After I extracted a full-resolution copy of that particular sketch from <a href="https://archive.org/details/hamonshuyv1mori/page/13/mode/1up">pages 13-14 of <cite>Hamonshū, Vol. 1</cite></a> and did a little cleanup with filters and so on, it became a 1.4MB <a href="https://flyingmeat.com/acorn/">Acorn</a> file.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-acorn-pn-center.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-acorn-pn-center.png" alt="" class="framed" /></a>
+<figcaption>The full-size image in Acorn.</figcaption>
+</figure>
+
+<p>(Side note: Acorn’s “Transparentomatic” filter was an <em>enormous</em> time-saver on this project—it made dropping out the page texture a breeze, and easily adjustable, without forcing me to create and retouch mask layers and whatnot.  Thanks, Flying Meat!)</p>
+
+<p>With the image ready to be tested in-browser, I would use Acorn’s Web Export dialog to save it as a PNG.  The nice thing about this dialog is its built-in Resize feature, which let me keep the Acorn file at its native size (almost a thousand pixels on each side) and export it to the size I wanted—in this case, 200 pixels across.  I did this sort of thing a lot, because I tested a variety of images for every design element.</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-acorn-resize.png"><img loading="lazy" src="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-acorn-resize.png" alt="" width="169" height="119" class="alignnone size-full wp-image-4749" /></a>
+</figure>
+
+<p>Once I settled on the image I wanted, I’d drop it on <a href="https://imageoptim.com/">ImageOptim</a> to optimize it.  This usually slammed all eight cores in my aged laptop’s CPU for a good few seconds, and resulted in up to 5% size savings.</p>
+
+<p>That last paragraph probably looks like an indictment of ImageOptim, but wait!  It’s fully redeemed by the end of the post, by which time I will have indicted myself instead.</p>
+
+<p>At this point, my spiral image had gone from a 1.4MB Acorn file to a 30KB PNG.  That’s pretty good, even if 30KB feels a tad bulky for a 200×200 image.  I just assumed, what with all the transparency and shades of color and all that, it wasn’t too far out of line.  But as the whole design started to come together, I discovered that when you added up all the illustration images on, say, the home page, I’d let image bloat sneak up on me in the worst way.  They were totalling close to a megabyte, and they’d all been through ImageOptim already.</p>
+
+<p>I went back to Acorn to see if I could squeeze any more out of the file size, maybe convert some of the images to JPGs if they didn’t need the transparency.  As I flipped between file formats in the Web Export dialog, I noticed something I’d previously overlooked in the PNG export options: a bit depth slider.  I’d been saving the PNGs with no bit depth restrictions, meaning the color table was holding space for 2<sup>24</sup> colors.  That’s… a lot of colors, roughly 2<sup>24</sup> of which I wasn’t actually using.</p>
+
+<p>When I clicked the “Index PNG Colors” checkbox and changed the slider until I started getting dithers or obvious color loss, then brought it up a notch or two, the difference was astounding.  Instead of a 30KB file, I got a 4.4 KB file.  Instead of saving at 75% the original size, it was now 11%.</p>
+
+<figure class="standalone">
+<video controls="" poster="https://meyerweb.com/media/2020/acorn-png02.png">
+<source src="https://meyerweb.com/media/2020/acorn-png02.mp4" type="video/mp4" />
+<source src="https://meyerweb.com/media/2020/acorn-png02.mov" type="video/mov" />
+<p>The video couldn’t be loaded inline for some reason. Here’s <a href="https://meyerweb.com/media/2020/acorn-png02.mp4">a link directly to the video file</a> (MP4, no audio).</p>
+</video>
+<figcaption>Wait a second… how long has THAT been there?</figcaption>
+</figure>
+
+<p>So I went back through the directory with all my design elements and repeated the process.  I do have <a href="https://flyingmeat.com/retrobatch/">batch image processing software</a> installed, but I elected to do this manually so I could pick the best color depth for each file by eye.  It could be that some would be okay at 4 colors instead of 8; others might need 16 or 32 to retain visual fidelity.  Fortunately for me, I only had a couple dozen images to go through, but it would have been worth it even at 10 times that many.</p>
+
+<p>Once I’d gone through all the images and saved them with restricted color depth, my theme’s image directory was down to 242KB <em>total</em>.  The biggest of them, the <a href="https://meyerweb.com/eric/thoughts/2020/04/15/pseudo-randomly-adding-illustrations-with-css/">separator wave illustrations</a>, had gone from being ~150KB each to ~25KB each—all five of them together now totalled less than just one of them had before I did the color indexing.</p>
+
+<figure>
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-imageoptim.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/hamonshu-imageoptim.png" class="framed" /></a>
+<figcaption>The directory, well and fully smooshed.</figcaption>
+</figure>
+
+<p>At this point, I thought, “All right, let’s see what ImageOptim does with these.”  It squeezed them down even further, taking my total from 242KB to 222KB, a nine percent reduction.  Which is to say, the percentage savings I got on these already-small files was larger than I’d been getting on the much bigger files—plus, ImageOptim processed them quickly and with a minimum of CPU slamming.  Which is honestly pretty great, given the age of my laptop (about seven years).</p>
+
+<p>So: did I meet my performance goal?  As I said at the outset, yes, but also no.  For a single blog post with around 10KB of text content and no embedded media, the page weight is around 460KB, with the size varying a bit depending on how much markup is needed for the 10KB of text.  (Here’s <a href="https://meyerweb.com/eric/thoughts/2020/02/10/preventing-commits-to-the-master-branch-in-os-x-mojave/">one recent example</a> with some content variety.)  Of that, the CSS, split across two files, totals 35.2KB.  The images add up to 102.9KB.  Add them together, and you get just a hair over 138KB, or right around 30%.  Huge success!</p>
+
+<p>Except I hadn’t factored in custom fonts, which all by themselves currently total 203.6KB (44% total page weight), mostly due to the three faces of IM Fell I’m using.  That’s right: The fonts weigh more than the CSS and images put together.  Once they’re added in with the CSS and images, the design elements end up being almost 75% the total page weight—about 341.6KB of the 460KB total.  Most of the rest is the 104.4KB chewed up by <a href="http://showdownjs.com/"><tt>showdown.js</tt></a>, the enhancement script I’m using to allow the use of Markdown in post comments.</p>
+
+<p>Thus, next up on my performance quest is looking into subsetting the fonts I’m using in order to get their weight down, and finding out if there’s anything I can do to subset Showdown as well.</p>
+
+<p>But as of now, I’m well pleased with where I ended up on image optimization.  I just need to go back and do the same for post-specific images I’d left at unrestricted color depths, where I anticipate a similar 90% savings in file sizes.  If you’ve got a lot of images, particularly PNGs, try running them through a process that lets you restrict the color depth, and see how much it saves.  The results might surprise you!</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/04/22/better-image-optimization-by-restricting-the-color-index/">Better Image Optimization by Restricting the Color Index</a></cite> was published on <time>Wednesday, April 22nd, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/design/" rel="category tag">Design</a> and <a href="https://meyerweb.com/eric/thoughts/category/tech/web/" rel="category tag">Web</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/04/22/better-image-optimization-by-restricting-the-color-index/#comments">two replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/04/15/pseudo-randomly-adding-illustrations-with-css/" rel="bookmark" title="Permanent Link: Pseudo-Randomly Adding Illustrations with CSS">Pseudo-Randomly Adding Illustrations with CSS</a></h2>
+<em class="pubtime">Published  7 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>I’ve been incredibly gratified and a bit humbled by the responses to <a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/">the new design</a>.  So first of all, thank you to everyone who shared their reactions!  I truly appreciate your kindness, and I’d like to repay that kindness a bit by sharing some of the techniques I used to create this design.  Today, let’s talk about the ink-study illustrations placed between entries on the site, as well as one other place I’ll get to later.</p>
+
+<p>Very early in the process, I knew I wanted to separate entries with decorations of some sort, as a way of breaking up the stream of text.  Fortunately, <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22"><cite>Hamonshū</cite></a> provided ample material.  A little work in <a href="https://flyingmeat.com/acorn/">Acorn</a> and I had five candidate illustrations ready to go.</p>
+
+<figure class="standalone">
+<a href="https://meyerweb.com/eric/thoughts/wp-content/uploads/separators-five.png"><img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/separators-five.png" alt="" class="" /></a>
+<figcaption>The five illustrations.</figcaption>
+</figure>
+
+<p>The thing was, I wanted to use all five of them, and I wanted them to be picked on a random-ish basis.  I could have written PHP or JS or some such to inject a random pick, but that felt a little too fiddly.  Fortunately, I found a way to use plain old CSS to get the result I wanted, even if it isn’t truly random.  In fact, its predictability became an asset to me as a designer, while still imparting the effect I wanted for readers.</p>
+
+<p>(Please note that in this article, I’ve simplified some aspects of my actual CSS for clarity’s sake; e.g., removing the directory path from <code>url()</code> values and just showing the filenames, or removing declarations not directly relevant to the discussion here.  I mention this so that you’re prepared for the differences in the CSS shown in this piece versus in your web inspector and/or the raw stylesheet.)</p>
+
+<p>Here’s how it starts out:</p>
+
+<pre class="css"><code>#thoughts .entry + .entry::before {
+   content: "";
+   display: block;
+   height: 10em;
+   background:
+      url(separator-big-05.png) 50% 100% / contain no-repeat;
+}
+</code></pre>
+
+<p>That means, for every blog entry <em>except</em> the first, a block-level bit of generated content is inserted at the beginning of the entry, given a height, and the image <code>separator-big-05.png</code> is dropped into the generated box and sized to be contained within it, which means no part of the image will spill outside the background area and thus be clipped off.  (The file has the number <code>05</code> because it was the fifth I produced.  It ended up being my favorite, so I made it the default.)</p>
+
+<p>With that in place, all that remains is to switch up the background image that’s used for various entries.  I do it like this:</p>
+
+<pre class="css"><code>#thoughts .entry:nth-of-type(2n+1)::before {
+   background-image: url(separator-big-02.png);
+}
+#thoughts .entry:nth-of-type(3n+1)::before {
+   background-image: url(separator-big-03.png);
+}
+#thoughts .entry:nth-of-type(4n+1)::before {
+   background-image: url(separator-big-04.png);
+}
+#thoughts .entry:nth-of-type(5n+1)::before {
+   background-image: url(separator-big-01.png);
+}
+</code></pre>
+
+<p>So every second-plus-one entry (the third, fifth, seventh, etc.) that isn’t the first entry will use <code>separator-big-02.png</code> instead of <code>-05.png</code>.  Unless the entry is an every-third-plus-one (fourth, seventh, tenth, etc.), in which case <code>separator-big-03.png</code> is used instead.  And so on, up through every-fifth-plus-one.  And as you can see, the first image I produced (<code>separator-big-01.png</code>) is used the least often, so you can probably guess where it stands in my regard.</p>
+
+<p>This technique does produce a predictable pattern, but one that’s unlikely to seem too repetitious, because it’s used to add decoration separated by a fair amount of text content, plus there are enough alternatives to keep the mix feeling fresh.  It also means, given how the technique works, that the first separator image on the home page (and on archive pages) is always my favorite.  That’s where the predictability of the approach helped me as a designer.</p>
+
+<p>I use a similar approach for the separator between posts’ text and their comments, except in that case, I add a generated box to the end of the last child element in a given entry:</p>
+
+<pre class="css"><code>.single #thoughts article .text &gt; *:last-child:after {
+   content: "";
+   display: block;
+   height: 10em;
+   background:
+      url(separator-big-05.png) 50% 100% / contain no-repeat;
+}
+</code></pre>
+
+<p>That is, on any page classed <code>single</code> (which is all individual post pages) after the last child element of a <code>.text</code> element (which holds the text of a post), the decoration box is generated.  The default, again, is <code>separator-big-05.png</code>—but here, I vary the image based on the number of elements in the post’s body:</p>
+
+<pre class="css"><code>.single #thoughts article .text &gt; *:nth-child(2n+1)::after {
+   background-image: url(separator-big-02.png);
+}
+.single #thoughts article .text &gt; *:nth-child(3n+1)::after {
+   background-image: url(separator-big-03.png);
+}
+.single #thoughts article .text &gt; *:nth-child(4n+1)::after {
+   background-image: url(separator-big-04.png);
+}
+.single #thoughts article .text &gt; *:nth-child(5n+1)::after {
+   background-image: url(separator-big-01.png);
+}
+</code></pre>
+
+<p>In other words: if the last child element of the post text is a second-plus-one, <code>separator-big-02.png</code> is used.  If there are <em>3n+1</em> (one, four, seven, ten, thirteen, …) HTML elements in the post, <code>separator-big-03.png</code> is used.  And so on.  This is an effectively random choice from among the five images, since I don’t count the elements in my posts as I write them.  And it also means that if I edit a piece enough to change the number of elements, the illustration will change!  (To be clear, I regard this as a feature.  It lends a slight patina of impermanence that fits well with the overall theme.)</p>
+
+<p>I should note that in the actual CSS, the two sets of rules above are merged into one, so the selectors are actually like so:</p>
+
+<pre class="css"><code>#thoughts .entry + .entry::before,
+   .single #thoughts article .text &gt; *:last-child:after {…}
+
+#thoughts .entry:nth-of-type(2n+1)::before,
+   .single #thoughts article .text &gt; *:nth-child(2n+1)::after {…}
+
+#thoughts .entry:nth-of-type(3n+1)::before,
+   .single #thoughts article .text &gt; *:nth-child(3n+1)::after {…}
+</code></pre>
+
+<p>In all honesty, this technique really satisfies me.  It makes use of document structure while having a random feel, and is easily updated by simply replacing files or changing URLs.  It’s also simple to add more rules to bring even more images to the mix, if I want.</p>
+
+<p>And since we’re talking about using structure to vary layout, I also have this <code>@media</code> block, quoted here verbatim and in full:</p>
+
+<pre class="css"><code>@media (min-width: 50em) {
+   #thoughts .entry:nth-of-type(2n) {
+      transform: translate(-1vw,0);
+   }
+   #thoughts .entry:nth-of-type(3n) {
+      transform: translate(3vw,0);
+   }
+}
+</code></pre>
+
+<p>This means on the home page and blog archive pages, but only at desktop-browser widths, some entries are shifted a bit to the left or right by fractions of the viewport width, which subtly breaks up the strict linearity of the content column on long pages, keeping it from feeling too grid-like.</p>
+
+<p>To be honest, I have no idea if that side-shifting effect actually affects visitors’ experience of using meyerweb, but I like it.  Sometimes the inter-entry wave art fits together with the side-shift so that it looks like the art flows into the content.  That kind of serendipity always delights me, whether it comes by my hand or someone else’s.  With luck, it will have delighted one or two of you as well.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/04/15/pseudo-randomly-adding-illustrations-with-css/">Pseudo-Randomly Adding Illustrations with CSS</a></cite> was published on <time>Wednesday, April 15th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a> and <a href="https://meyerweb.com/eric/thoughts/category/design/" rel="category tag">Design</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/04/15/pseudo-randomly-adding-illustrations-with-css/#comments">seven replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/" rel="bookmark" title="Permanent Link: Hamonshu">Hamonshu</a></h2>
+<em class="pubtime">Published  7 months, 2 weeks past</em>
+</header>
+
+<div class="text">
+<p>I ended <a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/">my observance of CSS Naked Day 2020</a> by launching an entirely new design for meyerweb.  I’m calling it <strong>Hamonshū</strong> after the source from which I adapted most of the graphic elements.  I’ve been working on it sporadically in my free time since mid-January, finally coming to a place I thought was ready to launch in late March.</p>
+
+<p>Naked Day was a convenient way to change over the structure of pages while there was no design, which probably makes it sound like that’s the only reason I even observed it.  To the contrary, I hadn’t planned to launch the new design until June 8th of this year—but once I decided on going style-naked, I realized it was the perfect opportunity to make the switch.</p>
+
+<p>I might still have delayed, if not for everything happening in the world right now.  But Cameron Moll <a href="https://twitter.com/cameronmoll/status/1239971692144807938">said it best</a> as he recently launched a new design: “Deploying in the middle of a pandemic seems so unimportant at the moment. Or maybe there’s no better time for it.”  That last sentence resonated with me unexpectedly deeply, and came to mind again as I took the CSS away for Naked Day.</p>
+
+<p>I’ll have quite a few things to say about the design in the future: things I learned, techniques I used, bits I really like, that sort of thing.  In this post, I want to say a bit about its genesis.</p>
+
+<p>It all started when someone—I’ve since lost track of who, or even where it happened—brought my attention to <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22"><cite>Hamonshū</cite>, Vols. 1-3</a>, available on the Internet Archive thanks to the Smithsonian Institution.  <cite>Hamonshū</cite>, a word which I understand roughly translates into English as “wave forms” or “wave design”, is a three-volume set of art studies of water.  Created by Yūzan Mori and published in 1903, I had never heard of it before, but the sketches immediately appealed to me.  You can get an preview of some of Yūzan’s art in this <a href="https://publicdomainreview.org/collection/hamonshu-a-japanese-book-of-wave-and-ripple-designs-1903">article from Public Domain Review</a>, or just go to the source (linked previously, as well as in the footer of the site) and immerse yourself in it.</p>
+
+<p>As I absorbed Yūzan’s ink studies of ocean waves, rivers, fountains, and more, the elements of a design began to form in my head.  I won’t say I <em>saw</em> it—being <a href="https://en.wikipedia.org/wiki/Aphantasia">aphantasic</a>, I couldn’t—but certain sketches suggested themselves as components of a layout, and stuck with me.</p>
+
+<figure>
+<img src="https://meyerweb.com/eric/thoughts/wp-content/uploads/1953.629_web.jpg" alt="" />
+<figcaption><cite>Tall Bamboo and Distant Mountains, after Wang Meng</cite>, Wang Hui 王翬, 1694</figcaption>
+</figure>
+
+<p>Early on, I had thought to combine elements from <cite>Hamonshū</cite> with other artwork, primarily ink landscape paintings from the Qing Dynasty and Edo periods: two such examples being <a href="https://www.clevelandart.org/art/1953.629"><cite>Tall Bamboo and Distant Mountains, after Wang Meng</cite></a> (Wang Hui 王翬, 1694) and <a href="https://www.clevelandart.org/art/1970.69"><cite>View of West Lake</cite></a> (Ike Taiga, 1700s).  I made attempts, but the elements never really combined properly.  I eventually realized I was trying to combine close-up studies of water with adaptations of much larger works, and the scale of the brush strokes was clashing.  At that point, I abandoned the paintings and concentrated exclusively on <cite>Hamonshū</cite>.</p>
+
+<p>As the various design elements came together, I went looking for fonts to use.  I originally thought to use variable fonts, but I kept coming back to <a href="https://fonts.google.com/?query=im+fell">IM Fell</a>, a typeface I’d seen <a href="http://simonstl.com/">Simon St. Laurent</a> use and had put to my own purposes in an experimental typeset of Neal Stephenson’s <cite>Mother Earth Mother Board</cite>.  IM Fell has a sort of nautical feel to it, at least to me, which fit nicely with the water elements I was adapting from <cite>Hamonshū</cite>, so I ended up using it as a “site elements” typeface.  It’s what’s used for the site name in the header, the main navigation links, metadata for posts, sidebar heading text, the <code>h1</code> on most pages, and so on.</p>
+
+<p>Originally I used IM Fell for the titles of blog posts like this one, but it didn’t feel quite right.  I think it caused the titles to blend into the rest of the design a little too much unless I kept it relatively huge.  I needed something that felt consistent, but distinguished itself at the smaller sizes I needed for post titles.  I went back to Google Fonts and scrolled through the choices until I narrowed down to a few faces, of which <a href="https://fonts.google.com/?query=eczar&amp;selection.family=Eczar:400,500,600,700,800|IM+Fell+English+SC|IM+Fell+English:400,400i">Eczar</a> was the eventual winner.  In addition to using Eczar for post titles, I also employ it in the site’s footer, at least wherever IM Fell <em>isn’t</em> used.  The general body copy of the site is Georgia Pro, falling back to Georgia or a generic serif as needed.</p>
+
+<p>One of the limitations I set for myself was to be reasonably lightweight, and that was a major part of the process.  The details merit a post or two of their own, but my overall goal was to get even the post archive pages under a megabyte in total.  I’m pleased to say I was able to get there, for the most part.  As an example, the <a href="https://meyerweb.com/eric/thoughts/">main post archive page</a> is, as I write this (but before I posted it) 910.98KB, and that includes the various photographs and other images embedded in posts.  The time to <code>DOMContentLoaded</code> over WiFi is consistently below 200<abbr title="milliseconds">ms</abbr>, 400-500ms on “Regular 3G”, and 500-600ms on “Regular 2G”, all with the local cache disabled, at least when the server is responding well.  I still have work to do in this area, but I was comfortable enough with the current state to launch the design publicly.</p>
+
+<p>Since I was redesigning anyway, I did some sprucing up of various subpages.  Most notable are the <a href="https://meyerweb.com/eric/tools/">Toolbox</a> and <a href="https://meyerweb.com/eric/writing.html">Writing</a> pages, which use a number of techniques to improve organization and appearance.  I still think the top part of the Writing page could use some work, but it’s leagues better than it used to be.  The one major page I’d like to further upgrade is <a href="https://meyerweb.com/eric/css/">CSS Work</a>, but I’m still looking for an approach that is distinct from the other pages, yet thematically consistent.  If I can’t find one, I’ll probably take the same general approach I did for Toolbox.  I also rewrote some of the microcopy, such as the metadata (publication date, categories, etc.) at the bottom of blog posts, to be more evocative of the feel I was going for.</p>
+
+<p>Late in the process, I got a welcome assist from <a href="https://plasticmind.com">Jesse Gardner</a>, who had seen a preview of article design.  He had the idea to make a traced SVG version of the “Hand Made With Love” necklace charm from the masthead of the previous design, and then he just up and did it and sent me the file.  You’ll find it in the footer of the site.  It isn’t interactive, although it may in the future.  I haven’t decided yet.</p>
+
+<p>I really hope you enjoy the new look.  It’s the first design I’ve done that wasn’t cribbed off someone else’s site in, oh, 15-20 years, give or take, and I’m rather proud of it.  It won’t win any awards, but it makes the statement I want it to make, and visiting my own site gives me a little glow of satisfaction.  I don’t know if I could ask for more than that.</p>
+<ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/">Hamonshu</a></cite> was published on <time>Monday, April 13th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/design/" rel="category tag">Design</a>, <a href="https://meyerweb.com/eric/thoughts/category/personal/projects/" rel="category tag">Projects</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/redesign/" rel="category tag">Redesign</a> categories.</li>
+<li class="cmt">There have been <a href="https://meyerweb.com/eric/thoughts/2020/04/13/hamonshu/#comments">ten replies</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+<article role="article" class="entry">
+<header>
+<h2 class="title"><a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/" rel="bookmark" title="Permanent Link: CSS Naked Day 2020">CSS Naked Day 2020</a></h2>
+<em class="pubtime">Published  7 months, 3 weeks past</em>
+</header>
+
+<div class="text">
+<p>
+If you’re here on meyerweb on April 9th, 2020, then you’re seeing the site without the CSS I wrote for its design and layout.  Why?  It’s <a href="https://css-naked-day.github.io/">CSS Naked Day</a>!  To quote that site:
+</p>
+
+<blockquote><p>The idea behind this event is to promote Web Standards. Plain and simple. This includes proper use of HTML, semantic markup, a good hierarchy structure, and of course, a good old play on words. It’s time to show off your &lt;body&gt; for what it really is.</p></blockquote>
+
+<p>
+So last night, I removed the links to the main stylesheets for the site.  There are, I should note, scattered pages where local CSS is still in play. I could have tracked them all down and removed their CSS as well, and I considered doing so, but in the end I decided against it.
+</p>
+<p>
+There’s a history to this day.  In the late Aughts, it was an annual thing, not unlike <a href="https://en.wikipedia.org/wiki/Blue_Beanie_Day">Blue Beanie Day</a>, to draw attention to web standards and reinforce among the community that good, solid, robust development practices are a good thing.  Because after all, if your site isn’t usable without the CSS, then it almost certainly has structure and accessibility problems you probably haven’t been thinking about.
+</p>
+<p>
+In all honesty, I had forgotten about it until just a couple of days prior, I suddenly thought, “Wait, early April, isn’t that when CSS Naked Day was observed?”  I went looking, and discovered that yes, it was.  I had remembered April 7th, but apparently April 9th was the actual date.  Or became it over time.  Either way, here we are, feeling fancy-free!
+</p>
+<p>
+What’s been interesting has been what CSS Naked Day has revealed about browsers as well as about our HTML.  To pick one example, suppose you have a very large SVG logo, which you size to where you want it with CSS.  This is ordinarily a best practice: the SVG is the same file size whether it renders huge or tiny, so there’s no downside to having an SVG that renders 1200 x 1000 when you view it directly—thus allowing you to see all the little details—but is sized to 120 x 100 via CSS for layout purposes.
+</p>
+<p>
+But take away the CSS, and the SVG will become 1200 x 1000 again.  That might tell you to resize it for production, sure, and you probably should.  But it also points out that browsers will not constrain that image, not even to the viewport.  If your window is only 900 pixels wide, the SVG could well spill outside, forcing a horizontal scrollbar.  Is that good?  Maybe!  Maybe not!  We might wish browsers would bake something like <code>img {max-width: 100%; height: auto;}</code> into their user-agent stylesheet(s), but maybe that would have unforeseen downsides.  The point is, this is a thing about browsers that CSS Naked Day reveals, and it’s worth knowing.
+</p>
+<p>
+Similarly, this reveals that browsers don’t have a way to restrict the width of lines of text.  Thus, if the browser window is wide, the lines get very long—long enough to make reading more difficult.  This isn’t a problem on handheld devices like smartphones, but on desktop (use of which has risen significantly in areas locked down to limit the spread of SARS-CoV-2) it can be a problem.  Again, if browsers had something like <code>body {max-width: 70em;}</code> or <code>max-width: 100ch</code> or suchlike, this wouldn’t be a problem.  Should they?  Maybe!  It’s worth thinking about for your own work, if nothing else.
+</p>
+<p>
+(For much more thinking about these kinds of browser behaviors and how to address them, you should absolutely check out the <a href="https://github.com/jensimmons/cssremedy">CSS Remedy</a> project.  “CSS Remedy sets CSS properties or values to what they would be if the CSSWG were creating the CSS today, from scratch, and didn’t have to worry about backwards compatibility.”)
+</p>
+<p>
+If I’d remembered sooner, I might have contacted the maintainers of the CSS Naked Day site and posted about it ahead of time and thought about stuff like a hashtag to spread the word.  Maybe that will happen next year.  Until then, enjoy all the nudity!
+</p><ul class="meta">
+<li class="date"><cite><a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/">CSS Naked Day 2020</a></cite> was published on <time>Thursday, April 9th, 2020</time>.</li>
+<li class="cat">It was assigned to the <a href="https://meyerweb.com/eric/thoughts/category/tech/browsers/" rel="category tag">Browsers</a>, <a href="https://meyerweb.com/eric/thoughts/category/tech/css/" rel="category tag">CSS</a>, and <a href="https://meyerweb.com/eric/thoughts/category/tech/standards/" rel="category tag">Standards</a> categories.</li>
+<li class="cmt">There has been <a href="https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/#comments">one reply</a>.</li>
+</ul>
+</div>
+<hr class="fallback" />
+</article>
+
+
+</main>
+
+<div class="prev-next book" id="posts-pn">
+<h4>Browse <a href="/eric/thoughts/">the Archive</a></h4>
+<p class="prev"><a href="https://meyerweb.com/eric/thoughts/page/2/">Earlier Entries</a></p>
+<p class="next"></p>
+</div>
+
+</div>
+
+<footer id="global">
+
+<div>
+
+<div id="archipelago">
+<h4>Identity Archipelago</h4>
+<ul>
+<li><a rel="me" href="https://twitter.com/meyerweb"><img src="/pix/icons/twitter.png" alt="Twitter" /></a></li>
+<li><a rel="me" href="https://github.com/meyerweb"><img src="/pix/icons/github.png" alt="GitHub" /></a></li>
+<li><a rel="me" href="https://flickr.com/photos/meyerweb/"><img src="/pix/icons/flickr.png" alt="Flickr" /></a></li>
+<li><a rel="me" href="https://dribbble.com/meyerweb"><img src="/pix/icons/dribbble.png" alt="Dribbble" /></a></li>
+<li><a rel="me" href="https://facebook.com/meyerweb"><img src="/pix/icons/facebook.png" alt="Facebook" /></a></li>
+<li><a rel="me" href="https://www.linkedin.com/in/meyerweb"><img src="/pix/icons/linkedin.png" alt="LinkedIn" /></a></li>
+</ul>
+</div>
+
+<div id="excuse">
+<div class="panel" id="excuse">
+<h4>The <a href="/feeds/excuse/">excuse of the day</a> is</h4>
+<p>someone turned on mod_rewrite</p>
+</div>
+<!--#include virtual="/feeds/excuse/current.html" -->
+</div>
+
+<div class="sosumi">
+All contents of this site, unless otherwise noted, are ©1993-2020<!--#config timefmt="%Y" --><!--#echo var="DATE_LOCAL" --> <strong>Eric A. and Kathryn S. Meyer</strong>.  All Rights Reserved.</div>
+
+<div id="wordpress" class="credits">"<a href="/eric/thoughts/">Thoughts From Eric</a>" is powered by <a href="http://wordpress.org/">WordPress</a>.  Most of the rest of the site is hand-authored.</div>
+
+<div id="design" class="credits">The ink-sketch images used in this site’s design are adapted from <a href="https://archive.org/search.php?query=creator%3A%22Mori%2C+Yu%CC%84zan%2C+-1917%22">Yūzan Mori’s <cite><dfn title="In English: Wave Forms">Hamonshū</dfn></cite>, Volumes 1-3</a>, published in 1903 and made available for public use by the <a href="https://library.si.edu/">Smithsonian Libraries</a> and the <a href="https://archive.org/">Internet Archive</a>.</div>
+
+</div>
+
+</footer>
+
+
+
+
+<!-- Dynamic page generated in 0.191 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-12-03 05:28:33 -->
+
+<!-- Compression = gzip --></body></html>

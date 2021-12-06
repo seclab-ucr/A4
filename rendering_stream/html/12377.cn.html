@@ -1,0 +1,537 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>违法和不良信息举报中心</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<script src="/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="/js/jquery_cookie_min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/my.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var harmcategory = ""
+    $(function () {
+        // if (harmcategory == "") {
+            $.ajax({
+                type: "get",
+                url: BS_URL+"/rpapi/portal/harmtype/get",
+                dataType: 'json',
+                success: function (data) {
+                    var z = eval(data)["result"]
+                    harmcategory=eval(JSON.stringify(z))
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+        // }
+    })
+
+
+
+
+    //获取危害大类
+    function setbigharmcategory(category) {
+        $.each(harmcategory, function (i) {
+            var parentId = harmcategory[i]["parentId"]
+            if (parentId == 0 || parentId == "0") {
+                if (harmcategory[i]["id"] == ("00" + category)) {
+                    $.cookie('bigHarmType', "00" + category, {expires: date, path: '/', secure:true})
+                    return;
+                }
+            }
+        })
+    }
+
+
+
+
+    //获取危害小类
+    function getbigharmchildren() {
+        $.ajax({
+            type: "get",
+            url: BS_URL+"/rpapi/portal/harmtype/get",
+            dataType: 'json',
+            async:false,
+            success: function (data) {
+                var z = eval(data)["result"]
+                harmcategory=eval(JSON.stringify(z))
+
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+
+        var parentId = $.cookie('bigHarmType')
+        var smallharmlist = new Array()
+        $.each(harmcategory, function (i) {
+            var pId = harmcategory[i]["parentId"]
+            if (pId != 0 || pId != "0") {
+                if (parentId == pId) {
+                    var obj = new Object()
+                    obj.name = harmcategory[i]["typeName"]
+                    obj.value = harmcategory[i]["id"]
+                    console.log("危害小类："+harmcategory[i]["typeName"]+"........."+harmcategory[i]["id"])
+
+                    smallharmlist.push(obj)
+                }
+            }
+        })
+
+        return smallharmlist
+    }
+
+
+    //设置cookie失效时间
+    var date = new Date();
+    var minutes = 30;
+    date.setTime(date.getTime() + (minutes * 60 * 1000));
+
+    var searchtime = new Date();
+    var mm = 1;
+    searchtime.setTime(searchtime.getTime() + (mm * 60 * 1000));
+
+    function getParam(paramName) {
+        paramValue = "", isFound = !1;
+        if (this.location.search.indexOf("?") == 0 &amp;&amp; this.location.search.indexOf("=") &gt; 1) {
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&amp;"), i = 0;
+            while (i &lt; arrSource.length &amp;&amp; !isFound) arrSource[i].indexOf("=") &gt; 0 &amp;&amp; arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() &amp;&amp; (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+        }
+        return paramValue == "" &amp;&amp; (paramValue = null), paramValue
+    }
+
+    var tab = getParam("tab")
+
+
+    function toSearch() {
+        var condition=getVal("searchCondition")
+        if (condition.length&gt;0){
+            $.cookie('mySearchCondition', condition,  {expires: date,path: '/', secure:true})
+        }
+
+        // $.ajax({
+        //     type:"get",
+        //     url:'',
+        //     data:{},
+        //     success:function(data){
+        window.location.href = "/search/search.html"
+
+        //     },
+        //     error:function(data,type, err){
+        //         console.log(data +" - "+type + ": " + err)
+        //     }
+        //
+        // });
+    }
+
+    function limitinput(ele, len) {
+        $(ele).bind('input propertychange', function () {
+            var tvalmum;
+            tvalnum = $(this).val().length;
+            if (tvalnum &gt; len) {
+                var tval = $(this).val();
+                tval = tval.substring(0, len);
+                $(this).val(tval);
+            }
+        });
+    }
+
+
+
+    function to_notifition(obj) {
+        var wxxx=document.getElementById("wxxx")
+        var tzgg=document.getElementById("tzgg")
+
+        if (obj=="wxxx"){
+            $.cookie('wxxx', 'wxxx', {expires: date, path: '/', secure:true})
+            wxxx.className="lv1 focus"
+            tzgg.className=""
+        }if (obj==tzgg) {
+            wxxx.className=""
+            tzgg.className="lv1 focus"
+        }
+    }
+
+
+</script>
+<div class="header">
+    <div class="wrap">
+        <ul class="nav">
+            <script type="text/javascript">
+                if (tab == null){
+                    document.write('&lt;li class="focus"&gt;&lt;a href="/index.html"&gt;首页&lt;/a&gt;&lt;/li&gt;')
+                }else{
+                    document.write('&lt;li&gt;&lt;a href="/index.html"&gt;首页&lt;/a&gt;&lt;/li&gt;')
+                }           
+
+                if (tab == 2){
+                    document.write('&lt;li class="focus"&gt;&lt;a href="/wxxx/list1.html?tab=2"&gt;网信信息&lt;/a&gt;&lt;/li&gt;')
+                }else{
+                    document.write('&lt;li&gt;&lt;a href="/wxxx/list1.html?tab=2"&gt;网信信息&lt;/a&gt;&lt;/li&gt;')
+                }
+
+                if (tab == 3){
+                    document.write('&lt;li class="focus"&gt;&lt;a href="/tzgg/list1.html?tab=3"&gt;通知公告&lt;/a&gt;&lt;/li&gt;')
+                }else{
+                    document.write('&lt;li&gt;&lt;a href="/tzgg/list1.html?tab=3"&gt;通知公告&lt;/a&gt;&lt;/li&gt;')
+                }
+
+                if (tab == 4){
+                    document.write('&lt;li class="focus"&gt;&lt;a href="/jbzn.html?tab=4"&gt;举报指南&lt;/a&gt;&lt;/li&gt;')
+                }else{
+                    document.write('&lt;li&gt;&lt;a href="/jbzn.html?tab=4"&gt;举报指南&lt;/a&gt;&lt;/li&gt;')
+                }
+
+                if (tab == 5){
+                    document.write('&lt;li class="focus"&gt;&lt;a href="/jgjj.html?tab=5"&gt;机构简介&lt;/a&gt;&lt;/li&gt;')
+                }else{
+                    document.write('&lt;li&gt;&lt;a href="/jgjj.html?tab=5"&gt;机构简介&lt;/a&gt;&lt;/li&gt;')
+                }
+            </script><li class="focus"><a href="/index.html">首页</a></li><li><a href="/wxxx/list1.html?tab=2">网信信息</a></li><li><a href="/tzgg/list1.html?tab=3">通知公告</a></li><li><a href="/jbzn.html?tab=4">举报指南</a></li><li><a href="/jgjj.html?tab=5">机构简介</a></li>
+        </ul>
+        <form class="search" action="" method="GET" autocomplete="off">
+            <input type="text" id="searchCondition" name="" />
+            <button class="btn default" id="search" name="search" type="button" onclick="toSearch()">搜索</button>
+        </form>
+    </div>
+</div>
+<div class="wrap unscroll pl20 pr20">
+    <div class="f-l w65p">
+        <h1 class="article-title wing ta-c">
+            <div>举报入口
+                <div class="subtitle">您可选相应入口，举报网上有害信息</div>
+            </div>
+        </h1>
+        <ul class="btns_dual_ring">
+            <li class="politic" id="zzl"><a onmouseover="setbigharmcategory(1)" href="jbxzxq/zzljbxzxq.html" id="zzl_a">政治类</a>
+            </li>
+            <li class="violent" id="bkl"><a onmouseover="setbigharmcategory(2)" href="jbxzxq/bkljbxzxq.html" id="bkl_a">暴恐类</a>
+            </li>
+            <li class="swindle" id="zpl"><a onmouseover="setbigharmcategory(3)" href="jbxzxq/zpljbxzxq.html" id="zpl_a">诈骗类</a>
+            </li>
+            <li class="porn" id="sql"><a onmouseover="setbigharmcategory(4)" href="jbxzxq/sqljbxzxq.html" id="sql_a">色情类</a></li>
+            <li class="pulp" id="dsl"><a onmouseover="setbigharmcategory(5)" href="jbxzxq/dsljbxzxq.html" id="dsl_a">低俗类</a></li>
+            <li class="gamble" id="dbl"><a onmouseover="setbigharmcategory(6)" href="jbxzxq/dbljbxzxq.html" id="dbl_a">赌博类</a>
+            </li>
+            <li class="tort" id="qql"><a onmouseover="setbigharmcategory(7)" href="jbxzxq/qqljbxzxq.html" id="qql_a">侵权类</a></li>
+            <li class="rumor" id="yyl"><a onmouseover="setbigharmcategory(8)" href="jbxzxq/yyljbxzxq.html" id="yyl_a">谣言类</a>
+            </li>
+            <li class="other" id="qtl"><a onmouseover="setbigharmcategory(9)" href="jbxzxq/jbxx/qt.html" id="qtl_a">其他类</a></li>
+        </ul>
+    </div>
+    <div class="f-l w35p">
+        <div class="ml20 mt30 bg-light-gray">
+            <div class="ta-c">
+                <a class="btn simple circle report-tel" target="_blank" href="jbdh12377ztym.html">12377举报电话</a>
+                <a class="btn simple circle report-app" target="_blank" href="node_548446.htm">举报APP</a>
+            </div>
+            <div class="bt-dashed-blue pb30">
+                <a class="btn simple report-guide" href="/jbzn.html?tab=4">举报指南</a>
+                <a class="btn simple report-find" href="jbcx.html">举报查询</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="adbox">
+        <div class="adboximg">
+            <ul>
+                <li>
+	<a href="#"><img src="/app/2/19.jpg" onclick="javascript:window.open('https://new.12377.cn/jbxzxq/bf83d0897fbb11eaadee3dafd7f65ee4_web.html?smallHarmType=bf83d0897fbb11eaadee3dafd7f65ee4')" alt="https://new.12377.cn/jbxzxq/bf83d0897fbb11eaadee3dafd7f65ee4_web.html?smallHarmType=bf83d0897fbb11eaadee3dafd7f65ee4" /></a>
+</li>
+
+            </ul>
+        </div>
+        <div class="adboxcp">
+            <ul><li class="on">1</li></ul>
+        </div>
+        <div class="adboxbtn">
+            <span class="prev"> ⟨ </span>
+            <span class="next"> ⟩ </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrap unscroll pl20">
+    <div class="f-l w65p unscroll pt30">
+    <div class="list mini f-l w50p">
+    <a class="header" href="wxxx/list1.html">
+        <strong>网信信息</strong>
+        <span class="more">更多 &gt;</span></a>
+    <ul class="bg-light-gray">
+			<li><a href="/wxxx/2020/4cae08d3_web.html"><p><span style="font-size: 18px;">互联网联合辟谣工作研讨会在京召开</span></p></a></li>
+			<li><a href="/wxxx/2020/18001e2c_web.html"><p><span style="font-size: 18px;">第七批500家网站公布举报受理方式</span></p></a></li>
+			<li><a href="/wxxx/2020/049d786c_web.html"><p><span style="font-size: 18px;">国家网信办集中整治网络“有偿删帖”“软色情”问题</span></p></a></li>
+			<li><a href="/wxxx/2020/f30f090e_web.html"><p><span style="font-size: 18px;">国家网信办开展移动应用程序信息内容乱象专项整治</span></p></a></li>
+			<li><a href="/wxxx/2020/b651ad78_web.html"><p><span style="font-size: 18px;">国家网信办深入推进“知识社区问答”行业规范管理</span></p></a></li>
+    </ul>
+</div>
+    <div class="list mini f-l w50p">
+    <a class="header" href="tzgg/list1.html">
+        <strong>通知公告</strong>
+        <span class="more">更多 &gt;</span></a>
+    <ul class="bg-light-gray">
+			<li><a href="/tzgg/2020/28104ab1_web.html"><p><span style="font-size: 18px;">2020年10月全国网络举报受理情况</span></p></a></li>
+			<li><a href="/tzgg/2020/e21f5cf2_web.html"><p><span style="font-size: 18px;">2020年9月全国网络举报受理情况</span></p></a></li>
+			<li><a href="/tzgg/2020/b02f40d1_web.html"><p><span style="font-size: 18px;">2020年8月全国网络举报受理情况</span></p></a></li>
+			<li><a href="/tzgg/2020/4c7eee0f_web.html"><p><span style="font-size: 18px;">2020年7月全国网络举报受理情况</span></p></a></li>
+			<li><a href="/tzgg/2020/8fe410ea_web.html"><p><span style="font-size: 18px;">2020年6月全国网络举报受理情况</span></p></a></li>
+    </ul>
+</div>
+    <div class="list mini f-l w50p">
+    <a class="header" href="aqyj/list1.html">
+        <strong>安全警示</strong>
+        <span class="more">更多 &gt;</span></a>
+    <ul class="bg-light-gray">
+			<li><a href="/aqyj/2020/1cd913c4_web.html"><p><span style="font-size: 18px;">擦除不良信息铲除网络暴力 未成年网民需长期守护</span><br /></p></a></li>
+			<li><a href="/aqyj/2020/2d94b6b3_web.html"><p><span style="font-size: 18px;">疫期宅家需提防各类电信诈骗：刷单、赌博投资</span></p></a></li>
+			<li><a href="/aqyj/2020/a3fde269_web.html"><p><span style="font-size: 18px;">"云生活"消费陷阱：防疫用品"坑"多多 直播产品涉违规诱导</span></p></a></li>
+			<li><a href="/aqyj/2020/f1bac479_web.html"><p><span style="font-size: 18px;">跨境赌博“十赌九输” 电信网络诈骗全是“陷阱”</span></p></a></li>
+			<li><a href="/jsal/2020/46203902_web.html"><p><span style="font-size: 18px;">特大涉疫电信网络诈骗案侦破</span><br /></p></a></li>
+    </ul>
+</div>
+    <div class="list mini f-l w50p">
+    <a class="header" href="fl/list1.html">
+        <strong>法律法规</strong>
+        <span class="more">更多 &gt;</span></a>
+    <ul class="bg-light-gray">
+			<li><a href="/bmgz/2020/f2ffc58e_web.html"><p><span style="font-size: 18px;">网络信息内容生态治理规定</span></p></a></li>
+			<li><a href="/fl/2020/57895973_web.html"><p><span style="font-size: 18px;">中华人民共和国网络安全法</span></p></a></li>
+			<li><a href="/fl/2020/1ad65089_web.html"><p><span style="font-size: 18px;">中华人民共和国电子签名法</span></p></a></li>
+			<li><a href="/fl/2020/24082ae1_web.html"><p><span style="font-size: 18px;">中华人民共和国电子商务法</span></p></a></li>
+			<li><a href="/fl/2020/fe8b5813_web.html"><p><span style="font-size: 18px;">中华人民共和国侵权责任法（节选）</span></p></a></li>
+    </ul>
+</div>
+</div>
+<div class="f-l w35p pt30">
+    <div class="pr20">
+        <a class="btn report-locals" href="allreportcentertel/allreportcentertel.html">
+            <span class="v-hidden">各地网信部门<br />举报网站电话</span>
+        </a>
+        <a class="btn report-webs" href="allreportcentertel/zywztel.html">
+            <span class="v-hidden">各地网信部门<br />举报网站电话</span>
+        </a>
+        <a class="btn report-piyao" href="http://www.piyao.org.cn/">
+            <span class="v-hidden">中国互联网联合辟谣平台</span>
+        </a>
+    </div>
+</div>
+</div>
+<div class="wrap pb30">
+    <div class="title report-orgs"><span>相关部门举报机构</span></div>
+    <div class="list report-orgs">
+	<a class="btn simple" href="http://www.cyberpolice.cn/wfjb/" target="_blank">公安部：110</a>
+	<a class="btn simple" href="https://www.12321.cn/" target="_blank">工信部：12321</a>
+	<a class="btn simple" href="http://jbts.mct.gov.cn/" target="_blank">文化和旅游部：12318</a>
+	<a class="btn simple" href="http://www.shdf.gov.cn/shdf/channels/740.html" target="_blank">"扫黄打非"办公室：12390</a>
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="/js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/jquery_cookie_min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    $.cookie("from", "/index.html", {expires: date, path: '/',secure:true});
+
+    function limitinput(ele, len) {
+        $(ele).bind('input propertychange', function () {
+            var tvalmum;
+            tvalnum = $(this).val().length;
+            if (tvalnum &gt; len) {
+                var tval = $(this).val();
+                tval = tval.substring(0, len);
+                $(this).val(tval);
+            }
+        });
+    }
+
+
+    window.onload = function () {
+        function $(param) {
+            if (arguments[1] == true) {
+                return document.querySelectorAll(param);
+            } else {
+                return document.querySelector(param);
+            }
+        }
+        var $box = $(".adbox");
+        var $box1 = $(".adboximg ul li", true);
+        var $box2 = $(".adboxcp ul");
+        var $box3 = $(".adboxbtn");
+        var $length = $box1.length;
+
+        var str = "";
+        for (var i = 0; i &lt; $length; i++) {
+            if (i == 0) {
+                str += "&lt;li class='on'&gt;" + (i + 1) + "&lt;/li&gt;";
+            } else {
+                str += "&lt;li&gt;" + (i + 1) + "&lt;/li&gt;";
+            }
+        }
+        $box2.innerHTML = str;
+
+        var current = 0;
+
+        var timer;
+        timer = setInterval(go, 3000);
+
+        function go() {
+            for (var j = 0; j &lt; $length; j++) {
+                $box1[j].style.display = "none";
+                $box2.children[j].className = "";
+            }
+            if ($length == current) {
+                current = 0;
+            }
+            $box1[current].style.display = "block";
+            $box2.children[current].className = "on";
+            current++;
+        }
+
+        for (var k = 0; k &lt; $length; k++) {
+            $box1[k].onmouseover = function () {
+                clearInterval(timer);
+            }
+            $box1[k].onmouseout = function () {
+                timer = setInterval(go, 3000);
+            }
+        }
+        for (var p = 0; p &lt; $box3.children.length; p++) {
+            $box3.children[p].onmouseover = function () {
+                clearInterval(timer);
+            };
+            $box3.children[p].onmouseout = function () {
+                timer = setInterval(go, 3000);
+            }
+        }
+
+        for (var u = 0; u &lt; $length; u++) {
+            $box2.children[u].index = u;
+            $box2.children[u].onmouseover = function () {
+                clearInterval(timer);
+                for (var j = 0; j &lt; $length; j++) {
+                    $box1[j].style.display = "none";
+                    $box2.children[j].className = "";
+                }
+                this.className = "on";
+                $box1[this.index].style.display = "block";
+                current = this.index + 1;
+            }
+            $box2.children[u].onmouseout = function () {
+                timer = setInterval(go, 3000);
+            }
+        }
+
+        $box3.children[0].onclick = function () {
+            back();
+        }
+        $box3.children[1].onclick = function () {
+            go();
+        }
+
+        function back() {
+            for (var j = 0; j &lt; $length; j++) {
+                $box1[j].style.display = "none";
+                $box2.children[j].className = "";
+            }
+            if (current == 0) {
+                current = $length;
+            }
+            $box1[current - 1].style.display = "block";
+            $box2.children[current - 1].className = "on";
+            current--;
+        }
+    }
+
+</script>
+<div class="footer">中央网信办（国家互联网信息办公室）违法和不良信息举报中心 版权所有 <a>京ICP备15022452号</a></div>
+<script type="text/javascript">
+    //添加cookie
+    function setCookie(name,value){ 
+        var Days = 30;
+        var exp = new Date(); 
+        exp.setTime(exp.getTime() + Days*24*60*60*1000);
+        //document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        $.cookie(name, value, {expires: exp, path: '/', domain: '12377.cn', secure:true})
+    }
+
+	function getCookie(name){
+		var strcookie = document.cookie;//获取cookie字符串
+		var arrcookie = strcookie.split("; ");//分割
+		//遍历匹配
+		for ( var i = 0; i &lt; arrcookie.length; i++) {
+		var arr = arrcookie[i].split("=");
+		if (arr[0] == name){
+		return arr[1];
+		}
+		}
+		return "";
+	}
+
+    var ck = getCookie("12377.cn");
+    if(ck == "undefined" || ck == null || ck == ''){
+        var std = new Date().getTime();
+        var rd = Math.floor(Math.random()*100);
+        setCookie("12377.cn",std + '' + rd );
+    }
+    
+    function pad2(n) { return n &lt; 10 ? '0' + n : n }
+    function generateTimeReqestNumber() {
+    var date = new Date();
+    return date.getFullYear().toString() + pad2(date.getMonth() + 1) + pad2(date.getDate()) + pad2(date.getHours()) + pad2(date.getMinutes()) + pad2(date.getSeconds());
+    }
+
+    function guid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r &amp; 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    var code;
+    function createCode() {
+        //var codeInput = document.getElementsByClassName("code")[0];
+        var codeArr = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        var length = 6;
+        code = "";
+        for (var i = 0; i &lt; length; i++) {
+            randomI = Math.floor(Math.random() * 36);
+            code += codeArr[randomI];
+        }
+        return code;
+    }
+    
+    userKey = guid();
+    console.log(userKey);
+    var ckguestkey = getCookie("guestKey");
+    console.log('======'+generateTimeReqestNumber());
+    if(ckguestkey == "undefined" || ckguestkey == null || ckguestkey == ''){
+         guestKey = generateTimeReqestNumber()+createCode();
+         setCookie("guestKey",guestKey);
+         console.log(guestKey);
+         //setCookie("userKey",userKey);
+         //console.log(userKey);
+    }
+   
+    t = new Date().getTime()+Math.random();
+    vist = '&lt;script src="https://stats.12377.cn/js/visitor.js?time='+t+'"&gt;&lt;//script&gt;';
+    document.write(vist);
+    console.log(vist)
+</script><script src="https://stats.12377.cn/js/visitor.js?time=1606992409036.1526">&lt;//script&gt;
+
+  &lt;script src="libs/jquery-nice-select-1.1.0/js/jquery.nice-select.js"&gt;</script>
+  <script src="js/common.js"></script>
+
+<div class="aside">
+    <a href="https://weibo.com/12377jbzx?sudaref=www.12377.cn&amp;display=0&amp;retcode=6102&amp;is_hot=1"><img class="qr" src="style/qr_wb.png" />官方微博</a>
+    <div><img class="qr" src="style/qr_wx.png" />微信公众号</div>
+    <a href="#" class="back">回顶部</a>
+</div>
+
+</body></html>

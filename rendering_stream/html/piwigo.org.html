@@ -1,0 +1,436 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"><head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Piwigo - Manage your photo collection</title>
+
+    <meta name="google-site-verification" content="ZtCOdnWB4uApRb14TLrXoJHIbzGpowhoCEoN4xYWTB4" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="http://piwigo.org/./plugins/piwigo-piwigodotorg/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://piwigo.org/./plugins/piwigo-piwigodotorg/vendor/fontello/css/fontello.css" />
+    <link rel="stylesheet" type="text/css" href="http://piwigo.org/./plugins/piwigo-piwigodotorg/fonts/open-sans/open-sans.css" />
+    <link rel="stylesheet" type="text/css" href="http://piwigo.org/./plugins/piwigo-piwigodotorg/css/piwigodotorg.css?202001311424" />
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/js/jquery-3.2.1.min.js"></script>
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/vendor/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/vendor/clipboard/clipboard.min.js"></script>
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/js/validator.min.js"></script>
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://piwigo.org/./plugins/piwigo-piwigodotorg/js/piwigodotorg.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="themes/default/icon/favicon.ico" />
+
+
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+  <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/piwigo.org.svg" alt="Piwigo.org" title="go to Piwigo.org home page" /></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span>  Discover <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="https://piwigo.org/what-is-piwigo">What is Piwigo?</a></li>
+            <li><a href="https://piwigo.org/features">Features</a></li>
+            <li><a href="https://piwigo.org/changelogs">Changelogs</a></li>
+            <li><a href="https://piwigo.org/testimonials">Testimonials</a></li>
+            <li><a href="https://piwigo.org/examples">Examples</a></li>
+          </ul>
+        </li>
+        <li class=""><a href="//piwigo.org/ext"><i class="icon-puzzle"></i>Extensions</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-wrench"></span>Support <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="https://piwigo.org/get-started">Get Started</a></li>
+            <li><a href="https://piwigo.org/guides">Guides</a></li>
+            <li><a href="//piwigo.org/forum/">Forum</a></li>
+            <li><a href="//piwigo.org/doc/">Documentation</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> About <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="https://piwigo.org/about-us">About us</a></li>
+
+            <li><a href="https://piwigo.org/get-involved">Get Involved</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-comment"></span> News <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="https://piwigo.org/news">Latest news</a></li>
+            <li><a href="https://piwigo.org/newsletter">Newsletters</a></li>
+          </ul>
+        </li>
+        <li class="pwg-navbar-button">
+          <a href="//piwigo.org/demo/" class="pwg-navbar-button-demo"><span>Demo</span></a>
+          <a href="https://piwigo.org/get-piwigo" class="pwg-navbar-button-get-piwigo"><span>Get Piwigo</span></a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.btn-refresh .refresh-showcases').click(function() {
+      /* get the list of showcase to exclude */
+      var excludes = [];
+      jQuery(".showcase").each(function() {
+        excludes.push(jQuery(this).data('showcaseid'));
+      });
+
+      var basesrc = jQuery(".showcases-home").data('basesrc');
+
+      $.ajax({
+        type: "POST",
+        url: "ws.php?method=porg.home.refresh_showcases&amp;format=json",
+        dataType: "json",
+        data: {
+          exclude: excludes,
+        },
+        success: function(response) {
+          var showcases = jQuery.parseJSON(response['result']);
+          showcases.forEach(function (item, index) {
+            $('.showcase'+(index+1)).data('showcaseid', item.id);
+            $('.showcase'+(index+1)+' img').attr("src", basesrc+item.id+".jpg").attr("title", item.name);
+          });
+        },
+      });
+    });
+});
+</script>
+
+
+<section class="pwg-banner container-fluide">
+      <div class="container">
+        <div class="row">
+          <div class="pwg-tagline col-sm-12 col-md-6">
+            <h1>Manage your photo collection with Piwigo</h1>
+            <p id="homepage-intro-para">Piwigo is open source photo gallery software for the web. Designed for organisations, teams and individuals.</p>
+            <div class="col-sm-12 get-piwigo-button visible">
+              <a class="btn btn-default" href="https://piwigo.org/get-piwigo" role="button">Get Piwigo</a>
+              <p class="pwg-release-date">version 2.10.2 <span class="release-date">March 27th, 2020</span></p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 get-piwigo-button not-visible">
+            <a class="btn btn-default" href="https://piwigo.org/get-piwigo" role="button">Get Piwigo</a>
+            <p class="col-xs-12 pwg-release-date">version 2.10.2 <span class="release-date">March 27th, 2020</span></p>
+          </div>
+
+          <div class="col-sm-12 col-md-6 responsive-image">
+            <img class="img-fluid" src="http://piwigo.org/./plugins/piwigo-piwigodotorg//images/home/responsive-screens.jpg" />
+          </div>
+
+        </div>
+
+        
+
+      </div>
+  </section>
+
+<img class="border-colors" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/border-top1.svg" />
+  <div class="container-fluide container-piwigo-users">
+    <div class="container">
+      <h3>Thousands of organizations and millions of individuals love using Piwigo</h3>
+      <div class="equal text-center organization-content">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="helper"></span><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/arles_logo.svg" />
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="helper"></span><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/s3v.png" class="logo-societe-3-vallees" />
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="helper"></span><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/logo-paris1-pantheon-sorbonne.png" />
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <span class="helper"></span><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/logo-federation-francaise-natation.png" class="logo-federation-francaise-natation" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="border-colors" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/border-bottom1.svg" />
+
+
+  <div class="container-fluide">
+    <div class="container">
+      <div class="row text-center fact-content">
+        <h2>Why choose Piwigo?</h2>
+        <div class="col-md-4">
+          <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/high-volume.svg" />
+          <h3>High Volume</h3>
+          <p>Piwigo shines when it comes to classifying thousands or even hundreds of thousands of photos.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/sustainable.svg" />
+          <h3>Sustainable</h3>
+          <p>Born in 2002, Piwigo has been supporting its users for more than 18 years. Always evolving!</p>
+        </div>
+        <div class="col-md-4">
+          <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/open-source.svg" />
+          <h3>Open Source</h3>
+          <p>Source code is available, editable, auditable and extendable thanks to plugins and themes.</p>
+        </div>
+      </div>
+     
+      <div class="row text-center btn-know-content">
+        <div class="col-md-12">
+          <a class="btn btn-know-more" href="https://piwigo.org/what-is-piwigo">Discover Piwigo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<img class="border-colors" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/border-top2.svg" />
+  <div class="container-fluide container-organization">
+    <div class="container">
+      <div class="row text-center take-control">
+        <h2>Powerful features for your photo gallery</h2>
+        <div>
+          <div class="col col-sm-6 col-md-3 feature-content">
+            <a href="https://piwigo.org/features"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/content-01.svg" alt="A piwigo feature" /><br />
+            <p>Albums Hierarchy</p></a>
+          </div>
+          <div class="col col-sm-6 col-md-3 feature-content">
+            <a href="https://piwigo.org/features"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/content-02.svg" alt="A piwigo feature" /><br />
+            <p>Batch Management</p></a>
+          </div>
+        </div>
+        <div>
+          <div class="col col-sm-6 col-md-3 feature-content">
+            <a href="//piwigo.org/ext/"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/content-03.svg" alt="A piwigo feature" /><br />
+            <p>Themes &amp; Plugins</p></a>
+          </div>
+          <div class="col col-sm-6 col-md-3 feature-content">
+            <a href="https://piwigo.org/features"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/content-04.svg" alt="A piwigo feature" /><br />
+            <p>Permissions Control</p></a>
+          </div>
+        </div>
+
+        </div>
+        <div class="row text-center btn-know-content">
+          <div class="col-sm-12">
+            <a class="btn btn-discover-features" href="https://piwigo.org/features">Explore more features</a>
+          </div>
+        </div>
+    </div>
+  </div>
+<img class="border-colors" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/border-bottom2.svg" />
+
+  <section class="container container-showcase">
+
+    <div class="row text-center">
+      <h2>Beautiful photo galleries created with Piwigo</h2>
+      <div class="showcases-home" data-basesrc="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/showcases/">
+        <div class="col-md-3 col-xs-12 showcases-content">
+          <div class="showcase showcase1" data-showcaseid="photolib">
+            <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/showcases/photolib.jpg" alt="Photolib" title="Photolib" />
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12 showcases-content">
+          <div class="showcase showcase2" data-showcaseid="ffn">
+            <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/showcases/ffn.jpg" alt="French swimming federation" title="French swimming federation" />
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12 showcases-content">
+          <div class="showcase showcase3" data-showcaseid="societe3vallees">
+            <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/showcases/societe3vallees.jpg" alt="Société des 3 vallées" title="Société des 3 vallées" />
+          </div>
+        </div>
+        <div class="col-md-3 col-xs-12 showcases-content">
+          <div class="showcase showcase4" data-showcaseid="gerarddubouloz">
+            <img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/showcases/gerarddubouloz.jpg" alt="Instant Photos" title="Instant Photos" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="row text-center showcase-refresh">
+        <div class="col-md-7 col-xs-12 showcase-button">
+            <a type="button" class="btn btn-view-more-showcases" href="https://piwigo.org/examples">See more showcases</a>
+        </div>
+        <div class="col-md-5 col-xs-12 btn-refresh">
+            <a type="button" class="refresh-showcases"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/refresh.svg" /></a>
+        </div>
+      </div>
+  </section>
+
+  <div class="jelly-fish">
+    <div class="container">
+      <div class="row row-advice">
+        <h2>They love Piwigo</h2>
+        <div class="col col-md-6">
+          <div class="content-advice-box">
+            <img class="home-quotes" alt"quotes"="" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/quotes.svg" />
+            <p class="user-advice">
+I have been using Piwigo since April 2013 for a family photo album.
+
+It is so powerful, uses a tagging system to share photos across albums and is so easy to use.
+
+I love Piwigo.
+</p>
+            <p class="user-advice-name">Peter Preneas, Individual, Australia</p>
+          </div>
+          <div class="content-advice-box">
+            <img class="home-quotes" alt"quotes"="" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/quotes.svg" />
+            <p class="user-advice">Just want to add my "props" to the folks at Piwigo for the great product they have put out for their clients. I create a Piwigo photo album for each of the websites I create and walk each client through the "how to's" of Piwigo, which is very user friendly. I have tried other photo albums in the past and have always come back to Piwigo not just because it's free, but because it is honestly... the... <a href="testimonials">see more</a></p>
+            <p class="user-advice-name">Bill Gowacki, Professional, USA</p>
+          </div>
+        </div>
+        <div class="col col-md-6">
+          <div class="content-advice-box">
+            <img class="home-quotes" alt"quotes"="" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/quotes.svg" />
+            <p class="user-advice">I'm using Piwigo now for 2 years now to host my private collection of about 9000 photos. For me its the perfect way to show my pictures since its 1) easy to use 2) comes with a number of plugins, themes, ... to adapt to my needs 3) gives me the chance to tweak things on a low level if I feel like it 4) has an active community with great support in case of questions.
+
+And of course its FREE to use!... <a href="testimonials">see more</a></p>
+            <p class="user-advice-name">Thomas Feuster, Individual, Germany</p>
+          </div>
+          <div class="content-advice-box">
+            <img class="home-quotes" alt"quotes"="" src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/home/quotes.svg" />
+            <p class="user-advice">I've tried other platforms before and found myself limited by either being restricted to a single brand of computer/tablet/phone equipment, or by not being able to define myself the access rules.
+
+Then I found Piwigo. It is accessible on all platforms, so when I upload new pictures, I can tell my mom to have a look and although she is 94, she can use her tablet to immediately look at the new... <a href="testimonials">see more</a></p>
+            <p class="user-advice-name">Christian Lempereur, Individual, Belgium</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="container-fluide get-started">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>Get started with Piwigo</h2>
+          <p>Ready to start managing your photos with Piwigo? Join our community!</p>
+          <a class="btn" href="https://piwigo.org/get-piwigo">Get Piwigo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container-fluide footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="text-center icon-social-media">
+              <a href="https://www.facebook.com/Piwigo"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/footer/facebook.svg" class="icon-facebook" alt="Facebook icon" /></a>
+              <a href="https://twitter.com/piwigo"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/footer/twitter.svg" class="icon-twitter" alt="Twitter icon" /></a>
+              <a href="https://github.com/Piwigo"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/footer/github.svg" class="icon-github" alt="Github icon" /></a>
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-xs-6">
+                <div class="footer-donate-content">
+                  <a type="button" class="btn" href="https://piwigo.org/get-involved#donate"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/footer/donate.svg" alt="Donate to Piwigo" />Donate</a>
+                </div>
+              </div>
+              <div class="col-md-12 col-xs-6">
+                <div class=" footer-newspaper-content">
+                  <a type="button" class="btn" href="https://piwigo.org/newsletter"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/footer/newsletters.svg" alt="Newsletter from Piwigo" />Newsletters</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 equal footer-list">
+            <div class="col-md-15 col-xs-6">
+              <h5>Discover</h5>
+                <ul>
+                  <li><a href="//piwigo.org/demo/">Demo</a></li>
+                  <li><a href="https://piwigo.org/what-is-piwigo">What is Piwigo?</a> </li>
+                  <li><a href="https://piwigo.org/features">Features</a> </li>
+                  <li><a href="https://piwigo.org/examples">Examples</a></li>
+                  <li><a href="https://piwigo.org/changelogs">Changelogs</a></li>
+                  <li><a href="https://piwigo.org/testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="col-md-15 col-xs-6">
+              <h5>Extensions</h5>
+                <ul>
+                  <li><a href="//piwigo.org/ext/">Themes</a></li>
+                  <li><a href="//piwigo.org/ext/">Plugins</a> </li>
+                  <li><a href="//piwigo.org/ext/">Languages</a></li>
+                </ul>
+            </div>
+            <div class="col-md-15 col-xs-6">
+              <h5>Support</h5>
+                <ul>
+                  <li><a href="//piwigo.org/forum/">Forum</a></li>
+                  <li><a href="//piwigo.org/doc/">Documentation</a> </li>
+                  <li><a href="https://piwigo.org/guides">Guides</a></li>
+                  <li><a href="https://piwigo.org/get-started">Get Started</a></li>
+                </ul>
+            </div>
+            <div class="col-md-15 col-xs-6">
+              <h5>About</h5>
+                <ul>
+                  <li><a href="https://piwigo.org/about-us">About us</a></li>
+
+                  <li><a href="https://piwigo.org/get-involved">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="col-md-15 col-xs-6">
+              <h5>News</h5>
+                <ul>
+                  <li><a href="https://piwigo.org/news">What's new?</a></li>
+                  <li><a href="https://piwigo.org/newsletter">Newsletters</a> </li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="row">
+              <div class="col-xs-12 footer-piwigo-logo">
+                <a href="/"><img src="http://piwigo.org/./plugins/piwigo-piwigodotorg/images/piwigo.org.svg" alt="Piwigo.org" title="go to Piwigo.org home page" /></a>
+              </div>
+              <div class="col-xs-12 footer-language">
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span>Languages</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://da.piwigo.org">Dansk</a></li>
+                    <li><a href="https://de.piwigo.org">Deutsch</a></li>
+                    <li><a href="https://piwigo.org">English</a></li>
+                    <li><a href="https://es.piwigo.org">Español</a></li>
+                    <li><a href="https://fr.piwigo.org">Français</a></li>
+                    <li><a href="https://it.piwigo.org">Italiano</a></li>
+                    <li><a href="https://nl.piwigo.org">Nederlands</a></li>
+                    <li><a href="https://pl.piwigo.org">Polski</a></li>
+                    <li><a href="https://br.piwigo.org">Português Brasil</a></li>
+                    <li><a href="https://tr.piwigo.org">Türkçe</a></li>
+                    <li><a href="https://ru.piwigo.org">Русский</a></li>
+                    <li><a href="https://cn.piwigo.org">简体中文</a></li>
+                  </ul>
+                </li>
+              </div>
+              <div class="footer-contact col-md-12 col-xs-6">
+                <a href="https://piwigo.org/contact"><span class="glyphicon glyphicon-envelope"></span>Contact</a>
+              </div>
+              <div class="footer-copyright col-md-12 col-xs-6">
+                <p>Piwigo.org <span title="0.008 s">©</span><br />2002 - 2020</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+</body></html>

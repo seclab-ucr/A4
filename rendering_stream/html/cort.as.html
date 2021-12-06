@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>cort.as || acorta URLs largas</title>
+<link href="//crt00.epimg.net/estilos/cortas.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="url, cortas, url corta, acortar url, uri corta, acortar uri, urls para twitter, short urls, tiny urls" />
+<meta name="description" content="Servicio para acortar URLs desde elpais.com" />
+<link rel="icon" href="//crt00.epimg.net/favicon.png" type="image/png" />
+<link rel="shortcut icon" href="//crt00.epimg.net/favicon.png" type="image/png" />
+<script type="text/javascript">
+//&lt;![CDATA[
+    function SelectCopy(obj)
+    {
+        var text_val = eval(obj);
+        text_val.focus();
+        text_val.select();
+        if (!document.all) return; // IE only
+        r = text_val.createTextRange();
+        r.execCommand('Copy');
+    }
+
+    function showCount(obj, max) {
+        var t = obj.value;
+        t = t.replace(/&lt;\/?[bi]&gt;/ig, '');
+        t = t.replace(/((https?|ftp):\/\/[\w\.\-\:/\%\~\?\#\[\]\@\!\$\&amp;\'\(\)\*\+,;=]+)/ig, function($1) {
+                if ($1.length&gt;=30) {  // si URL &lt; 30 =&gt; la dejamos tal cual
+                    // si &gt;= 30 =&gt; cort.as la acorta a 20 caracteres
+                    return '12345678901234567890';
+                }
+                return($1);
+            }
+        );
+        var c = max - t.length;
+        var p = document.getElementById("contador");
+        if (c &gt; 20)
+            p.innerHTML = '&lt;span class="normal"&gt;'+c+'&lt;/span&gt;';
+        else
+            if (c &gt; 0)
+                p.innerHTML = '&lt;span class="casi"&gt;'+c+'&lt;/span&gt;';
+            else
+                p.innerHTML = '&lt;span class="tehaspasao"&gt;'+c+'&lt;/span&gt;';
+    }
+
+
+    function activaPestana(cual) {
+        if ( cual == 2 ) {
+            document.getElementById('boton_acortar').className        = "inactivo";
+            document.getElementById('boton_pensamientos').className   = "activo";
+            document.getElementById('pestana_acortar').className      = "oculto";
+            document.getElementById('pestana_pensamientos').className = "alavista";
+        }else{
+            document.getElementById('boton_acortar').className        = "activo";
+            document.getElementById('boton_pensamientos').className   = "inactivo";
+            document.getElementById('pestana_acortar').className      = "alavista";
+            document.getElementById('pestana_pensamientos').className = "oculto";
+        }
+    }
+
+    function testUri() {
+        var re = new RegExp('^(http|https|ftp)://');
+        if (document.getElementById('cajaurl').value.match(re)) {
+            return true;
+        } else {
+            window.location = '/errorLlamada.html';
+        }
+        return false;
+    }
+//]]&gt;
+</script>
+</head>
+<body id="home1"><script type="text/javascript">PEPuidEnv='W9g/81/IwlJOoQ2mA8DWAg==';</script><div id="pxlhddncntrl" style="display:none"><script src="//ep00.epimg.net/js/prisa/user.js?i=1"></script><script src="//ep00.epimg.net/js/comun/comun.js&#10;"></script><script src="https://ep00.epimg.net/js/comun/avisopcgdpr.js?u=2018"></script><script src="https://gdpr.prisa.com/cmp.bundle.js?u=2018"></script></div>
+<div class="contenedor1">
+<div class="contenedor2">
+<div class="cabecera">
+<h1><strong>cort<em>.</em>as</strong> <span class="ofrecidopor">ofrecido por <a href="http://www.elpais.com/"><img src="//crt00.epimg.net/img/logo_elpaiscom.png" /></a></span> </h1>
+<div class="navegacion">
+<div class="quees"><a href="/que-es-cortas.html">¿qué es?</a> // <a href="/formularioCortas.pl">informar abuso</a> // <a href="/api-cortas.html">api</a></div>
+<div class="usuario"> ¿Quieres estadísticas de tus URLs?: <a href="https://plus.elpais.com/clientes2/registro/registroUsuario.html?prod=ESKUP&amp;backURL=http%3A%2F%2Fcort.as%2F">regístrate</a> // <a href="https://plus.elpais.com/clientes2/registro/conectar.html?prod=ESKUP&amp;backURL=http%3A%2F%2Fcort.as%2F">inicia sesión</a></div>
+</div>
+</div>
+<div class="acortar1">
+<div class="recuadro">
+<div id="boton_acortar" class="activo"><a href="javascript:void(0)" onmousedown="activaPestana(1)">Recortar URL:</a></div>
+<div id="boton_pensamientos"><a href="http://eskup.com/" title="ir a ESKUP">Mensajes:</a></div>
+<div id="pestana_acortar">
+<form method="get" action="/encode.pl" onsubmit="return testUri()">
+<label for="u" class="recortar">URL a recortar:</label>
+<input autocomplete="off" id="cajaurl" class="caja" name="u" size="60" type="text" value="" />
+<input value="acortar" name="botoncortar" class="boton" type="submit" />
+<div class="inferior">
+</div>
+</form>
+</div>
+<div id="pestana_pensamientos" class="oculto">
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//&lt;![CDATA[
+//]]&gt;
+</script>
+
+
+</body></html>

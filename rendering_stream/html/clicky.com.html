@@ -1,0 +1,442 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Web Analytics in Real Time | Clicky</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Clicky Web Analytics is simply the best way to monitor, analyze, and react to your blog or web site's traffic in real time." />
+<meta name="keywords" content="web analytics, real time web analytics, web stats, web statistics, blog stats, blog statistics" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="//con.tent.network/inc/min/stuff20190820.js"></script>
+<link href="//con.tent.network/inc/min/style20190820.css" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="http://clicky.com/" />
+<!-- favicon and mobile os theme matching (╯°□°）╯︵ ┻━┻ -->
+<link rel="apple-touch-icon" sizes="180x180" href="//con.tent.network/media/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="//con.tent.network/media/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="//con.tent.network/media/favicon/favicon-16x16.png" />
+<link rel="manifest" href="//con.tent.network/media/favicon/site.webmanifest" />
+<link rel="mask-icon" href="//con.tent.network/media/favicon/safari-pinned-tab.svg" color="#3a506F" />
+<link rel="shortcut icon" href="//con.tent.network/media/favicon/favicon.ico" />
+<meta name="msapplication-TileColor" content="#3a506F" />
+<meta name="msapplication-config" content="//con.tent.network/media/favicon/browserconfig.xml" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="theme-color" content="#3a506F" />
+</head>
+
+<body>
+<div class="hideme" id="cdnfailtest"></div>
+<script>
+if( !window.jQuery ) document.write('&lt;scr'+'ipt src="/inc/min/stuff20190820.js"&gt;&lt;/scr'+'ipt&gt;');
+setTimeout( function(){
+	var cssbackup = 0;
+	if( window.jQuery ) {
+		if( $('#cdnfailtest:visible').length ) cssbackup=1;
+	}
+	else cssbackup=1;
+
+	if( cssbackup ) {
+		(function(){
+			var s = document.createElement('link');
+			s.type = 'text/css';
+			s.rel = 'stylesheet';
+			s.href = '/inc/min/style.css';
+			( document.body || document.getElementsByTagName('head')[0] ).appendChild( s );
+		})();
+	}
+}, 500 );
+</script><script src="/inc/min/stuff20190820.js"></script>
+<script>notify.domain='clicky.com';</script>
+<script>iface.no_ajax=1;</script>
+<div id="themebase" class="hideme"><style>html{--c:#333;--c-light:#999;--c-nav:#fff;--c-badnews:#f77;--c-goodnews:#5c5;--c-message:#666;--c-link:#2e7bc9;--c-link-hover:#000;--c-link-domain:#0060BF;--c-body-bg:#fff;--c-body-bg-large:#f3f3f3;--c-main-bg:var(--c-body-bg);--c-nav-bg:#3a506F;--c-dropdown-display-nav-bg:#444;--c-dropdown-display-nav-bg-hover:var(--c-nav-bg);--c-dropdown-display-nav-border:#aaa;--c-message-bg:#ffffd5;--c-message-badnews-bg:#fff5f5;--c-message-border:#fda;--c-border:#eee;--c-border-darker:#ddd;--c-shadow:0px 2px 3px #ccc;--c-shadow-micro:0px 1px 1px #aaa;--c-tabs:var(--c-light);--c-tabs-current:#fff;--c-tabs-current-bg:#88c4ff;--c-tabs-border-fixed:var(--c-tabs-current-bg);--c-subtabs:var(--c-tabs);--c-subtabs-current-bg:var(--c-main-bg);--c-subtabs-current:#fa5;--c-trend:var(--c-light);--c-trend-up:var(--c-goodnews);--c-trend-down:var(--c-badnews);--c-dropdown-border:var(--c-border);--c-dropdown-bg:var(--c-main-bg);--c-dropdown-item-bg-hover:var(--c-tabs-current-bg);--c-dropdown-item-hover:var(--c-tabs-current);--c-dropdown-display:var(--c-tabs-current);--c-dropdown-display-bg:var(--c-tabs-current-bg);--c-dropdown-display-bg-hover:var(--c-link);--c-dropdown-nav-border:var(--c-dropdown-display-nav-border);--c-dropdown-nav-bg:var(--c-dropdown-display-nav-bg);--c-dropdown-nav-item-border:var(--c-dropdown-display-nav-border);--c-dropdown-nav-item-bg-hover:var(--c-nav-bg);}</style></div>
+<div id="theme" class="hideme"></div>
+
+<nav id="nav" class="fixed">
+	<div class="content">
+		<div class="flex" style="flex-wrap: nowrap; justify-content: space-between">
+			<div class="nowrap">
+				<a id="brand" href="/" class="no-target no-ajax mr10" style="--bg: url(//con.tent.network/media/logo-icon-64.png)">clicky</a>
+			
+	<a id="site-select-display" class="dropdown-display-nav" href="#" onclick="dropdown.open( 'site-select', event ); return false;" style="display: none;"> ▼</a>
+	<div id="site-select" name="site-select" class="dropdown">
+
+	</div>
+<a id="date-select-display" class="dropdown-display-nav" href="#" onclick="dropdown.open( 'date-select', event ); return false;" style="display: none;">Dec 3 ▼</a>
+		<div id="date-select" name="date-select" class="dropdown">
+<a href="#" onclick="stats.set_date('today'); iface.set_dropdown( 'date-select-display', 'Today' ); return false;">Today</a>
+<a href="#" onclick="stats.set_date('yesterday'); iface.set_dropdown( 'date-select-display', 'Yesterday' ); return false;">Yesterday</a>
+<a href="#" onclick="stats.set_date('2-days-ago'); iface.set_dropdown( 'date-select-display', '2 days ago' ); return false;">2 days ago</a>
+<a class="bordertop" href="#" onclick="stats.set_date('last-7-days'); iface.set_dropdown( 'date-select-display', 'Last 7 days' ); return false;">Last 7 days</a>
+<a href="#" onclick="stats.set_date('last-14-days'); iface.set_dropdown( 'date-select-display', 'Last 14 days' ); return false;">Last 14 days</a>
+<a href="#" onclick="stats.set_date('last-28-days'); iface.set_dropdown( 'date-select-display', 'Last 28 days' ); return false;">Last 28 days</a>
+<a href="#" onclick="stats.set_date('last-60-days'); iface.set_dropdown( 'date-select-display', 'Last 60 days' ); return false;">Last 60 days</a>
+<a href="#" onclick="stats.set_date('last-90-days'); iface.set_dropdown( 'date-select-display', 'Last 90 days' ); return false;">Last 90 days</a>
+<a class="bordertop" href="#" onclick="stats.set_date('this-month'); iface.set_dropdown( 'date-select-display', 'Dec 2020' ); return false;">Dec 2020</a>
+<a href="#" onclick="stats.set_date('last-month'); iface.set_dropdown( 'date-select-display', 'Nov 2020' ); return false;">Nov 2020</a>
+<a href="#" onclick="stats.set_date('2-months-ago'); iface.set_dropdown( 'date-select-display', 'Oct 2020' ); return false;">Oct 2020</a>
+<a href="#" class="bordertop" onclick="cal_show('cal-dropdown', event, this, false ); return false;">Custom date range...</a>
+		</div>
+<a id="trend-select-display" href="#" onclick="dropdown.open( 'trend-select', event ); return false;" title="Trend" style="display: none;"><img height="16" src="//con.tent.network/media/icons/trend.png" /></a>  
+<div id="trend-select" name="trend-select" class="dropdown">
+<div class="bold borderbottom">Single day trend:</div>
+<a href="#" onclick="$(&quot;#trend-select img&quot;).hide(); $(this).find(&quot;img&quot;).removeClass(&quot;hideme&quot;).show(); go(url_var(&quot;trend&quot;, &quot;yesterday&quot;)); return false;">The previous day <img src="//con.tent.network/media/icons/check.png" /></a>
+<a href="#" onclick="$(&quot;#trend-select img&quot;).hide(); $(this).find(&quot;img&quot;).removeClass(&quot;hideme&quot;).show(); go(url_var(&quot;trend&quot;, &quot;lastweek&quot;)); return false;">Same day last week <img class="hideme" src="//con.tent.network/media/icons/check.png" /></a>
+<a href="#" onclick="$(&quot;#trend-select img&quot;).hide(); $(this).find(&quot;img&quot;).removeClass(&quot;hideme&quot;).show(); go(url_var(&quot;trend&quot;, &quot;last-year&quot;)); return false;">Same day last year <img class="hideme" src="//con.tent.network/media/icons/check.png" /></a>
+<a href="#" onclick="$(&quot;#trend-select img&quot;).hide(); $(this).find(&quot;img&quot;).removeClass(&quot;hideme&quot;).show(); go(url_var(&quot;trend&quot;, &quot;samedays&quot;)); return false;">Same day of week average <img class="hideme" src="//con.tent.network/media/icons/check.png" /></a>
+<a class="bordertop" target="_blank" href="/help/faq/features/trends"><i>What is this?</i></a>
+</div>
+
+				<span id="stats-header-container" style="display: none;">
+		<span id="stats-header-online" class="bold">0</span> <span class="small microhide">online</span>
+		<span id="stats-header-bonus">
+			<span id="stats-header-visitors" class="bold ml5">0</span> <span class="small">visitors</span>
+			<span id="stats-header-actions" class="bold ml5">0</span> <span class="small">actions</span>
+		</span>
+		<script>$(function(){ stats.set_visitors_online( '0' ); });</script>
+</span>
+			</div>
+			<div class="nowrap nooverflow iframe-hideme">
+				<span class="microhide">
+					<a href="/user/login">Login</a> <a id="register" href="/user/register">Register</a> 
+					<a href="/help/">Help</a>
+				</span>
+				
+				<a href="#" id="nav-user-menu-display" title="Menu" onclick="dropdown.open( 'nav-user-menu', event ); return false;"><img height="16" src="//con.tent.network/media/icons/menu.png" /></a> 
+				<div id="nav-user-menu" name="nav-user-menu" class="dropdown"><a href="/user/login">Login</a> <a id="register" href="/user/register">Register</a> 
+							
+					<a href="#" onclick="_genericStats.log(&quot;#theme-toggle&quot;, &quot;Theme toggle&quot;); $.get(&quot;/ajax/theme&quot;, null, function( data ){ $(&quot;#main&quot;).append( data ) }); return false;">Dark mode <img height="16" src="//con.tent.network/media/icons/theme.png" /></a>
+					
+					<a class="bordertop" href="/help/">Help</a>
+<a href="/help/apps-plugins">Apps &amp; Plugins</a> <a href="/whitelabel/">White label</a> <a href="/marketshare/">Marketshare</a> <a href="/translate/">Translate</a> <a href="/terms/">Terms</a><a class="bordertop" target="_blank" href="https://blog.clicky.com/">Blog</a> <a target="_blank" href="http://twitter.com/clicky">Twitter</a> 
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<header id="header"></header>
+
+<main id="main-container">
+	<div class="content">
+		<div id="loading"></div>
+		<div id="main">
+<nav id="tabs-container" style="display: none;"></nav>
+<div id="main-ajax">
+<style>
+/* THE BUTTON */
+
+button.red {
+	background-color: #ee432e;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ee432e 0%), to(#c63929 50%));
+	background-image: -webkit-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	background-image: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	background-image:      linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+	border: 1px solid #951100;
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333;
+	color: #fff !important;
+	font: bold 2.4em "helvetica neue", helvetica, arial, sans-serif;
+	line-height: 1;
+	padding: 1.3rem;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+}
+	
+button.red:hover {
+	background-color: #f37873;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f37873 0%), to(#db504d 50%));
+	background-image: -webkit-linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 50%, #a20601 100%);
+	background-image: -moz-linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 50%, #a20601 100%);
+	background-image:      linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 50%, #a20601 100%);
+	cursor: pointer; 
+}
+button.red:active {
+	background-color: #d43c28;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d43c28 0%), to(#ad3224 50%));
+	background-image: -webkit-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image: -moz-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image:      linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4); 
+}
+
+
+
+
+
+/* dark blue footer */
+
+.landing-darkblue {
+	background: var(--c-nav-bg);
+	color: var(--c-nav);
+	padding: 5rem;
+}
+
+.landing-darkblue a, .landing-darkblue a:hover, .landing-darkblue a:visited {
+	color: white !important;
+}
+
+
+
+
+/* screenshots */
+
+.grid-auto.screenies &gt; div {
+	height: 25rem;
+	padding: 1rem;
+	background: var(--bg) 4rem 0 no-repeat;
+	opacity: 0.9;
+}
+.grid-auto.screenies &gt; div div {
+	padding: 1rem;
+	border: 1px solid var(--c-link);
+	border-radius: 3px;
+	color: var(--c); /* was 333 - must leave hard-coded since we have semi-transparent white background hard-coded below. no biggie. */
+	background: var(--c-main-bg); /* rgba(255,255,255,0.9); */
+	opacity: 0.9;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<section>
+
+	<h1>Real Time Web Analytics</h1>
+	
+	<div class="pl20">
+	
+		<div class="mb20"><h4 class="inline">1,290,170 web sites</h4> depend on Clicky to monitor, analyze, and react to their traffic in real time.</div>
+		
+		<div class="grid-auto">
+			
+			<div class="flex">
+				<button class="red" onclick="document.location.href='/user/register';">Register now</button>
+				<div class="p15 medium">
+					<a href="/user/login">Login</a>  
+					<a href="/demo">Demo</a>  
+					<a href="/help/">Learn more</a>  
+					<a href="/compare/">Compare</a>
+				</div>
+			</div>
+			
+			
+			<!-- TESTIMONIALS -->
+			<div class="medium">
+				
+						<i class="light">"What we love the most about Clicky is the tracking of the actions and visitors clicks and in particular the downloads summary. Our ordering system is a bit old fashion and requires the download of PDFs. With Clicky we know exactly how many orders to expect and can plan the workflow accordingly."</i><br />
+						-- Keith, <a rel="nofollow" href="http://accountantwebsmiths.co.uk" target="_blank">accountantwebsmiths.co.uk</a> -- <i><a href="/testimonials">More testimonials »</a></i>
+ 
+			</div>
+		</div>
+	</div>
+	
+</section>
+
+<br /><br />
+
+
+
+
+
+<section class="grid-auto screenies">
+
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/spy.png)">
+		<div>
+			<h3>Everything is real time</h3>
+			Every report in Clicky is up-to-the-minute real time.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/segments.png)">
+		<div>
+			<h3>Ridiculous detail</h3>
+			Most reports contain high detail on every segment.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/visitors.png)">
+		<div>
+			<h3>Individual visitors and actions</h3>
+			See every individual visitor and page view / event.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/bots.png)">
+		<div>
+			<h3>No bots or referrer spam</h3>
+			Our bot detection and blocking is the best in the biz.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/heatmaps.png)">
+		<div>
+			<h3>Heatmaps</h3>
+			View heatmaps by page, visitor, or segment.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/osa.png)">
+		<div>
+			<h3>On-site analytics</h3>
+			See how many visitors are on your site and on the page you're viewing. You can also launch heatmaps from the widget, all without leaving your site.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/uptime.png)">
+		<div>
+			<h3>Uptime monitoring</h3>
+			Receive alerts when your site goes offline so you can react immediately. Your site's uptime is monitored from 7 locations around the world.
+		</div>
+	</div>
+	
+	<div class="flex" style="flex-direction: column-reverse; --bg: url(//con.tent.network/media/screenshots/landing/bigscreen.png)">
+		<div>
+			<h3>And so much more...</h3>
+			The list of features is nearly endless. <a href="/compare/">Compare</a> Clicky vs the competition!
+		</div>
+	</div>
+	
+</section>
+
+
+
+
+
+
+
+
+
+<section class="grid-auto centered" style="border-top: 1px solid var(--c-border);  margin-top: 5rem;  padding-top: 5rem;">
+	
+	<div>
+		<h3>Blog</h3>
+		<div class="shorten">Dec 1 2020: <a target="_blank" title="Tracking Digital Payment Security: Are We Ready for a Cashless Society?" href="https://blog.clicky.com/tracking-digital-payment-security-are-we-ready-for-a-cashless-society/?utm_campaign=landingpage">Tracking Digital Payment Security: Are We Ready for a Cashless Society?</a></div>
+<div class="shorten">Sep 15 2020: <a target="_blank" title="Bug fixes for IP address tags &amp; filters when anonymization is enabled" href="https://blog.clicky.com/bug-fixes-for-ip-address-tags-filters-when-anonymization-is-enabled/?utm_campaign=landingpage">Bug fixes for IP address tags &amp; filters when anonymization is enabled</a></div>
+<div class="shorten">Sep 9 2020: <a target="_blank" title="Responsive vs. Adaptive: Which Mobile Design Strategy Should You Prioritize For Your App?" href="https://blog.clicky.com/responsive-vs-adaptive-which-mobile-design-strategy-should-you-prioritize-for-your-app/?utm_campaign=landingpage">Responsive vs. Adaptive: Which Mobile Design Strategy Should You Prioritize For Your App?</a></div>
+<div class="shorten">Aug 19 2020: <a target="_blank" title="6 Overlooked Ways To Make Your Content Strategy More Data-Driven To Increase Conversion Rates" href="https://blog.clicky.com/6-overlooked-ways-to-your-content-strategy-more-data-driven-to-increase-conversion-rates/?utm_campaign=landingpage">6 Overlooked Ways To Make Your Content Strategy More Data-Driven To Increase Conversion Rates</a></div>
+<div class="shorten">Aug 18 2020: <a target="_blank" title="5 Exciting Design Trends in Mobile App Design (and How They Impact Your Online Business)" href="https://blog.clicky.com/the-top-five-trends-in-mobile-app-design-and-how-they-impact-your-online-business/?utm_campaign=landingpage">5 Exciting Design Trends in Mobile App Design (and How They Impact Your Online Business)</a></div>
+<div class="shorten">Aug 16 2020: <a target="_blank" title="How MarTech Analytics Can Help You Boost Your eCommerce Marketing Campaigns" href="https://blog.clicky.com/how-martech-analytics-can-help-you-boost-your-ecommerce-marketing-campaigns/?utm_campaign=landingpage">How MarTech Analytics Can Help You Boost Your eCommerce Marketing Campaigns</a></div>
+<div class="shorten">Jul 23 2020: <a target="_blank" title="Help with our Twitter account [Update: we’re back]" href="https://blog.clicky.com/suspended-twitter-account/?utm_campaign=landingpage">Help with our Twitter account [Update: we’re back]</a></div>
+		<br />
+		<a target="_blank" href="https://blog.clicky.com/?utm_campaign=landingpage">Read more »</a><br /><br />
+	</div>
+	
+	
+	
+		
+	
+	<div>
+		<h3>Twitter</h3>
+		
+					<div class="borderbottom" style="padding: 1rem 0;">@GlobalQALtd Please send an email for support, thanks.
+
+<a rel="nofollow" target="_blank" href="https://t.co/N7PrHBvEBa">https://t.co/N7PrHBvEBa</a> 
+						<br /><i>via <a rel="nofollow" target="_blank" href="http://twitter.com/clicky/status/1331677194158915584">clicky, Nov 25</a></i>
+					</div>
+		<br />
+		<a target="_blank" href="http://twitter.com/clicky">Follow @clicky »</a>  
+		<a target="_blank" href="https://twitter.com/search?q=from%3Aclicky%20OR%20%40clicky%20OR%20clicky.com%20OR%20getclicky%20-premium&amp;src=typed_query&amp;f=live">See what others are saying »</a><br /><br />
+	</div>
+	
+		
+	
+	<div class="flexx">
+		<button class="red" onclick="document.location.href='/user/register';">Register now</button>
+		<div class="p15 medium">
+			<a href="/user/login">Login</a>  
+			<a href="/demo">Demo</a>  
+			<a href="/help/">Learn more</a>  
+			<a href="/compare/">Compare</a>
+		</div>
+	</div>
+	
+</section>
+
+
+</div><br />
+</div><br />
+</div><br />
+
+
+
+
+
+
+
+
+
+<!-- FOOTER NAV -->
+
+<footer class="landing-darkblue">
+	
+	<nav class="centered" style="max-width: 80rem;">
+		
+		<div class="grid-auto" style="--min: 20rem;">
+			
+			<div>
+				<a href="/user/register">Register</a><br />
+				<a href="/help/pricing">Pricing</a><br />
+				<a href="/whitelabel/">White label analytics</a><br />
+				<a href="/marketshare/">Marketshare</a><br />
+			</div>
+			
+			<div>
+				<a href="/help/">Help</a><br />
+				<!-- <a href="/forums/">Forums</a><br> -->
+				<a href="/contact">Contact</a><br />
+				<a target="_blank" href="http://clicky.com/blog/">Blog</a><br />
+				<a target="_blank" rel="nofollow" href="http://twitter.com/clicky">Twitter</a><br />
+			</div>
+			
+			<div>
+				<a href="/terms/">Terms of service</a><br />
+				<a href="/terms/privacy">Privacy policy</a><br />
+				<a href="/optout">Do not sell my personal information</a><br />
+				<a href="/optout">Opt out</a><br />
+			</div>
+			
+		</div>
+		
+		<br /><br />
+		Copyright © 2020, Roxr Software Ltd
+		<br /><br />
+	</nav>
+	
+</footer>
+
+
+</main>
+
+
+	<script>
+		var cal;
+		$(function(){ cal = new calendar( '2020-12-03', '2020-12-03' ); });
+	</script>
+	
+	<div class="dropdown" id="cal-dropdown" rel="false">
+		<div class="grid-table basic" style="grid-gap: 1rem;">
+			<div class="center"><h3 class="mb10">Start date</h3><div id="cal1"><div class="calendar"><table class="entbox" cellpadding="0px" cellspacing="0px" width="100%"><tbody><tr><td><table cellpadding="1px" cellspacing="0px" width="100%" align="center" class="dxcalmonth"><tbody><tr><td align="left" class="month_btn_left"><span>«</span></td><td align="center"><table cellpadding="0px" cellspacing="0px" align="center"><tbody><tr><td><div class="planeMonth">December</div></td><td class="comma">,</td><td><div class="planeYear">2020</div></td></tr></tbody></table></td><td align="right" class="month_btn_right"><span>»</span></td></tr></tbody></table></td></tr><tr><td><table cellpadding="0px" cellspacing="0px" width="100%" align="center" class="dxcaldlabel"><tbody><tr class="daynames"><td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td></tr></tbody></table></td></tr><tr><td><table cellpadding="1px" cellspacing="0px" width="100%" align="center" class="dxcaldays"><tbody><tr><td id="sc&amp;Cal90798220201029" class="othermonth">29</td><td id="sc&amp;Cal90798220201030" class="othermonth">30</td><td id="sc&amp;Cal9079822020111" class="thismonth">1</td><td id="sc&amp;Cal9079822020112" class="thismonth">2</td><td id="sc&amp;Cal9079822020113" class="current selected">3</td><td id="sc&amp;Cal9079822020114" class="thismonth">4</td><td id="sc&amp;Cal9079822020115" class="weekend">5</td></tr><tr><td id="sc&amp;Cal9079822020116" class="weekend">6</td><td id="sc&amp;Cal9079822020117" class="thismonth">7</td><td id="sc&amp;Cal9079822020118" class="thismonth">8</td><td id="sc&amp;Cal9079822020119" class="thismonth">9</td><td id="sc&amp;Cal90798220201110" class="thismonth">10</td><td id="sc&amp;Cal90798220201111" class="thismonth">11</td><td id="sc&amp;Cal90798220201112" class="weekend">12</td></tr><tr><td id="sc&amp;Cal90798220201113" class="weekend">13</td><td id="sc&amp;Cal90798220201114" class="thismonth">14</td><td id="sc&amp;Cal90798220201115" class="thismonth">15</td><td id="sc&amp;Cal90798220201116" class="thismonth">16</td><td id="sc&amp;Cal90798220201117" class="thismonth">17</td><td id="sc&amp;Cal90798220201118" class="thismonth">18</td><td id="sc&amp;Cal90798220201119" class="weekend">19</td></tr><tr><td id="sc&amp;Cal90798220201120" class="weekend">20</td><td id="sc&amp;Cal90798220201121" class="thismonth">21</td><td id="sc&amp;Cal90798220201122" class="thismonth">22</td><td id="sc&amp;Cal90798220201123" class="thismonth">23</td><td id="sc&amp;Cal90798220201124" class="thismonth">24</td><td id="sc&amp;Cal90798220201125" class="thismonth">25</td><td id="sc&amp;Cal90798220201126" class="weekend">26</td></tr><tr><td id="sc&amp;Cal90798220201127" class="weekend">27</td><td id="sc&amp;Cal90798220201128" class="thismonth">28</td><td id="sc&amp;Cal90798220201129" class="thismonth">29</td><td id="sc&amp;Cal90798220201130" class="thismonth">30</td><td id="sc&amp;Cal90798220201131" class="thismonth">31</td><td id="sc&amp;Cal907982202101" class="othermonth">1</td><td id="sc&amp;Cal907982202102" class="othermonth">2</td></tr><tr><td id="sc&amp;Cal907982202103" class="othermonth">3</td><td id="sc&amp;Cal907982202104" class="othermonth">4</td><td id="sc&amp;Cal907982202105" class="othermonth">5</td><td id="sc&amp;Cal907982202106" class="othermonth">6</td><td id="sc&amp;Cal907982202107" class="othermonth">7</td><td id="sc&amp;Cal907982202108" class="othermonth">8</td><td id="sc&amp;Cal907982202109" class="othermonth">9</td></tr></tbody></table></td></tr></tbody></table></div></div></div>
+			<div class="center"><h3 class="mb10">End date</h3><div id="cal2"><div class="calendar"><table class="entbox" cellpadding="0px" cellspacing="0px" width="100%"><tbody><tr><td><table cellpadding="1px" cellspacing="0px" width="100%" align="center" class="dxcalmonth"><tbody><tr><td align="left" class="month_btn_left"><span>«</span></td><td align="center"><table cellpadding="0px" cellspacing="0px" align="center"><tbody><tr><td><div class="planeMonth">December</div></td><td class="comma">,</td><td><div class="planeYear">2020</div></td></tr></tbody></table></td><td align="right" class="month_btn_right"><span>»</span></td></tr></tbody></table></td></tr><tr><td><table cellpadding="0px" cellspacing="0px" width="100%" align="center" class="dxcaldlabel"><tbody><tr class="daynames"><td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td></tr></tbody></table></td></tr><tr><td><table cellpadding="1px" cellspacing="0px" width="100%" align="center" class="dxcaldays"><tbody><tr><td id="sc&amp;Cal97283020201029" class="othermonth">29</td><td id="sc&amp;Cal97283020201030" class="othermonth">30</td><td id="sc&amp;Cal9728302020111" class="thismonth">1</td><td id="sc&amp;Cal9728302020112" class="thismonth">2</td><td id="sc&amp;Cal9728302020113" class="current selected">3</td><td id="sc&amp;Cal9728302020114" class="thismonth">4</td><td id="sc&amp;Cal9728302020115" class="weekend">5</td></tr><tr><td id="sc&amp;Cal9728302020116" class="weekend">6</td><td id="sc&amp;Cal9728302020117" class="thismonth">7</td><td id="sc&amp;Cal9728302020118" class="thismonth">8</td><td id="sc&amp;Cal9728302020119" class="thismonth">9</td><td id="sc&amp;Cal97283020201110" class="thismonth">10</td><td id="sc&amp;Cal97283020201111" class="thismonth">11</td><td id="sc&amp;Cal97283020201112" class="weekend">12</td></tr><tr><td id="sc&amp;Cal97283020201113" class="weekend">13</td><td id="sc&amp;Cal97283020201114" class="thismonth">14</td><td id="sc&amp;Cal97283020201115" class="thismonth">15</td><td id="sc&amp;Cal97283020201116" class="thismonth">16</td><td id="sc&amp;Cal97283020201117" class="thismonth">17</td><td id="sc&amp;Cal97283020201118" class="thismonth">18</td><td id="sc&amp;Cal97283020201119" class="weekend">19</td></tr><tr><td id="sc&amp;Cal97283020201120" class="weekend">20</td><td id="sc&amp;Cal97283020201121" class="thismonth">21</td><td id="sc&amp;Cal97283020201122" class="thismonth">22</td><td id="sc&amp;Cal97283020201123" class="thismonth">23</td><td id="sc&amp;Cal97283020201124" class="thismonth">24</td><td id="sc&amp;Cal97283020201125" class="thismonth">25</td><td id="sc&amp;Cal97283020201126" class="weekend">26</td></tr><tr><td id="sc&amp;Cal97283020201127" class="weekend">27</td><td id="sc&amp;Cal97283020201128" class="thismonth">28</td><td id="sc&amp;Cal97283020201129" class="thismonth">29</td><td id="sc&amp;Cal97283020201130" class="thismonth">30</td><td id="sc&amp;Cal97283020201131" class="thismonth">31</td><td id="sc&amp;Cal972830202101" class="othermonth">1</td><td id="sc&amp;Cal972830202102" class="othermonth">2</td></tr><tr><td id="sc&amp;Cal972830202103" class="othermonth">3</td><td id="sc&amp;Cal972830202104" class="othermonth">4</td><td id="sc&amp;Cal972830202105" class="othermonth">5</td><td id="sc&amp;Cal972830202106" class="othermonth">6</td><td id="sc&amp;Cal972830202107" class="othermonth">7</td><td id="sc&amp;Cal972830202108" class="othermonth">8</td><td id="sc&amp;Cal972830202109" class="othermonth">9</td></tr></tbody></table></td></tr></tbody></table></div></div></div>
+			<div class="colspan centered">
+				<h2><a href="#" onclick="if( $('#cal-dropdown').attr('rel') == 'false'){ stats.set_date( cal.get_date(), 1);} else { fix_dates_and_chart_it(cal.get_date());} return false;">Apply date range</a></h2>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+if( !window.clicky_custom ) var clicky_custom = {};
+clicky_custom.title = document.title.replace(/^(\([0-9]+\) ?)+/,'');
+clicky_custom.timer = 200;
+clicky_custom.timeout = 240;
+clicky_custom.history_disable = 1;
+clicky_custom.cookie_domain = '.clicky.com';
+var clicky_site_ids = clicky_site_ids || []; 
+clicky_site_ids.push( 10 );
+</script>
+<script async="" src="//static.getclicky.com/js?20190116"></script>
+<noscript>&lt;img width=1 height=1 src="//in.getclicky.com/10ns.gif" /&gt;</noscript>
+<script>setTimeout( function(){ if( !window._genericStats ) document.write('&lt;scr'+'ipt async src="/js?20181126"&gt;&lt;/'+'script&gt;'); }, 1000 );</script>
+
+
+</body></html>

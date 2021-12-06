@@ -1,0 +1,292 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndexMundi - Country Facts</title>
+    <meta property="fb:admins" content="696085087" />
+    <meta property="fb:app_id" content="477929958891399" />
+    <meta property="og:url" content="https://www.indexmundi.com/" />
+    <meta property="og:title" content="IndexMundi - Country Facts" />
+    <meta property="og:description" content="IndexMundi is a data portal that gathers facts and statistics from multiple sources and turns them into easy to use visuals." />
+    <meta property="og:image" content="https://www.indexmundi.com/img/indexmundi-200x200.jpg" />
+    <!--<link href="https://plus.google.com/115218639719240717313/" rel="publisher" />-->
+    <link rel="icon" href="/img/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="/img/favicon-57.png" sizes="57x57" />
+    <link rel="icon" href="/img/favicon-128.png" sizes="128x128" />
+    <link rel="icon" href="/img/favicon-152.png" sizes="152x152" />
+    <link rel="icon" href="/img/favicon-167.png" sizes="167x167" />
+    <link rel="icon" href="/img/favicon-180.png" sizes="180x180" />
+    <link rel="icon" href="/img/favicon-192.png" sizes="192x192" />
+    <link rel="icon" href="/img/favicon-196.png" sizes="196x196" />
+    <link href="/s/bootstrap-readable.min.css" rel="stylesheet" />
+    <link href="/s/site.css" rel="stylesheet" />
+    <script src="https://rules.quantcount.com/rules-p-faY0WvYrqielI.js" async=""></script><script async="" src="https://buttons-config.sharethis.com/js/5eb2b3f77525e90012616cce.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/js/modernizr-2.8.3.js"></script>
+    <script type="text/javascript">
+        function maind() {
+            startdate = new Date()
+            now(startdate.getFullYear(), startdate.getMonth(), startdate.getDate(), startdate.getHours(), startdate.getMinutes(), startdate.getSeconds())
+        }
+
+        function ChangeValue(number, pv) {
+            numberstring = ""
+            var j = 0
+            var i = 0
+            while (number &gt; 1) {
+
+                numberstring = (Math.round(number - 0.5) % 10) + numberstring
+                number = number / 10
+                j++
+                if (number &gt; 1 &amp;&amp; j == 3) {
+                    numberstring = "," + numberstring
+                    j = 0
+                }
+                i++
+            }
+
+            numberstring = numberstring
+
+            if (pv == 1) { document.getElementById("worldpop").innerHTML = numberstring }
+        }
+
+        function nowPop(year, month, date, hours, minutes, seconds) {
+            startdate = new Date(year, month, date, hours, minutes, seconds)
+
+            var now = 7466964280.0
+            var now2 = 7550262101.0
+            var growthrate = (now2 - now) / now * 100
+            var growthpersecond = (now * (growthrate / 100)) / 365.0 / 24.0 / 60.0 / 60.0
+            nu = new Date()
+            refdate = new Date(2016, 5, 21)
+            timediff = (nu.getTime() - startdate.getTime()) / 1000
+            estimatedval = (nu.getTime() - refdate.getTime()) / 1000 * growthpersecond + now
+            ChangeValue(estimatedval, 1);
+
+            timerID = setTimeout("now(startdate.getYear(),startdate.getMonth(),startdate.getDate(),startdate.getHours(),startdate.getMinutes(),startdate.getSeconds())", 200)
+        }
+
+        function now(year, month, date, hours, minutes, seconds) {
+            startdate = new Date(year, month, date, hours, minutes, seconds)
+
+            var now = 528019.0
+            var now2 = 591971.0
+            var growthrate = (now2 - now) / now * 100
+            var growthpersecond = (now * (growthrate / 100)) / 365.0 / 24.0 / 60.0 / 60.0
+            nu = new Date()
+            refdate = new Date(2020, 2, 27) //2 in JS is March
+            timediff = (nu.getTime() - startdate.getTime()) / 1000
+            estimatedval = (((nu.getTime() - refdate.getTime()) / 1000) * growthpersecond) + now2
+            ChangeValue(estimatedval, 1);
+
+            timerID = setTimeout("now(startdate.getFullYear(),startdate.getMonth(),startdate.getDate(),startdate.getHours(),startdate.getMinutes(),startdate.getSeconds())", 200)
+        }
+
+        //    window.onload = maind
+    </script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5eb2b3f77525e90012616cce&amp;product=inline-share-buttons&amp;cms=sop" async="async"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/"><img src="//www.indexmundi.com/img/logo-sm.gif" alt="IndexMundi Home" border="0" width="159" height="40" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="jumbotron">
+            <h1 id="worldpop">63,821,835</h1>
+            <p class="lead">
+                The current worldwide number of reported coronavirus (COVID-19) cases has increased by 552,078 with respect to yesterday, according to the European Center for Disease Prevention and Control (ECDC).
+            </p>
+            <p><a href="/coronavirus/" class="btn btn-primary btn-lg">View more »</a></p>
+        </div>
+
+        <!--<div class="jumbotron">
+            <h1 id="worldpop">7.5 Billion</h1>
+            <p class="lead">Current world population has already passed the 7.5 billion mark. Our world population clock shows our estimate based on UN numbers.</p>
+            <p><a href="/clocks/" class="btn btn-primary btn-lg">View more &raquo;</a></p>
+        </div>-->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Welcome</h2>
+                <p>IndexMundi contains detailed country statistics, charts, and maps compiled from multiple sources.</p>
+                <p>You can explore and analyze thousands of indicators organized by region, country, topic, industry sector, and type.</p>
+
+                <h2>Sectors</h2>
+                <ul>
+                    <li><a href="/commodities/">Commodities</a></li>
+                    <li><a href="/xrates/">Exchange Rates</a></li>
+                    <li><a href="/agriculture/">Agriculture</a></li>
+                    <li><a href="/energy/">Energy</a></li>
+                    <li><a href="/minerals/">Mining</a></li>
+                    <li><a href="/trade/">Trade</a></li>
+                </ul>
+                <h2>Charts &amp; Maps</h2>
+                <ul>
+                    <li><a href="/map/">Comparative world maps</a></li>
+                    <li><a href="/g/rank.html">Country rankings</a></li>
+                    <li><a href="/g/">Country comparisons and historical data</a></li>
+                </ul>
+                <h2>Spotlight</h2>
+                <ul>
+                    <li><a href="/factbook/compare">Compare countries side by side</a></li>
+                    <li><a href="/facts/united-states/quick-facts">US Quick Facts</a> - Key indicators for states, counties, and cities</li>
+                    <li><a href="/facts/united-states/quick-facts/compare">State comparisons</a> - side by side comparison of any two states in the US</li>
+                    <li><a href="/facts/united-states/quick-facts/counties/compare">County comparisons</a> - side by side comparison of any two counties in the US</li>
+                    <li><a href="/facts/united-states/quick-facts/cities/compare">City comparisons</a> - side by side comparison of any two cities in the US</li>
+                    <li><a href="/facts/united-states/state-taxes/">Tax revenues by state</a></li>
+                    <li><a href="/facts/united-states/state-finances/">Revenues and expenditures by state</a></li>
+                    <li><a href="/agricultural-prices/">Wholesale prices of agricultural products</a></li>
+                    <li><a href="/clocks/">Live population clocks</a> for every country in the world</li>
+                    <li><a href="/surveys/">Global surveys</a></li>
+                    <li><a href="/unemployment/">US unemployment dashboard</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>Countries</h2>
+                <ul>
+                    <li><a href="/united_states/">United States</a></li>
+                    <li><a href="/china/">China</a></li>
+                    <li><a href="/germany/">Germany</a></li>
+                    <li><a href="/india/">India</a></li>
+                    <li><a href="/japan/">Japan</a></li>
+                    <li><a href="/brazil/">Brazil</a></li>
+                    <li><a href="/mexico/">Mexico</a></li>
+                    <li><a href="/australia/">Australia</a></li>
+                    <li><a href="/russia/">Russia</a></li>
+                    <li><a href="/factbook/countries">More...</a></li>
+                </ul>
+                <h2>Regions</h2>
+                <ul>
+                    <li><a href="africa.html">Africa</a></li>
+                    <li><a href="asia.html">Asia</a></li>
+                    <li><a href="central_america_and_the_caribbean.html">Central America and the Caribbean</a></li>
+                    <li><a href="europe.html">Europe</a></li>
+                    <li><a href="middle_east.html">Middle East</a></li>
+                    <li><a href="north_america.html">North America</a></li>
+                    <li><a href="oceania.html">Oceania</a></li>
+                    <li><a href="south_america.html">South America</a></li>
+                    <li><a href="southeast_asia.html">Southeast Asia</a></li>
+                    <li><a href="arctic_region.html">Arctic Region</a></li>
+                    <li><a href="antarctic_region.html">Antarctic Region</a></li>
+                    <li><a href="world/">The World</a></li>
+                </ul>
+                <h2>Country Facts Explorer</h2>
+                <p>Explore, visualize, and compare <a href="/facts/">over 1200 indicators</a> published by the World Bank. The indicators are grouped under the following <a href="/facts/topics">topics</a>:</p>
+                <ul>
+                    <li><a href="/facts/topics/economic-policy-and-debt">Economic Policy &amp; Debt</a></li>
+                    <li><a href="/facts/topics/education">Education</a></li>
+                    <li><a href="/facts/topics/environment">Environment</a></li>
+                    <li><a href="/facts/topics/financial-sector">Financial Sector</a></li>
+                    <li><a href="/facts/topics/health">Health</a></li>
+                    <li><a href="/facts/topics/infrastructure">Infrastructure</a></li>
+                    <li><a href="/facts/topics/labor-and-social-protection">Labor &amp; Social Protection</a></li>
+                    <li><a href="/facts/topics/poverty">Poverty</a></li>
+                    <li><a href="/facts/topics/private-sector-and-trade">Private Sector &amp; Trade</a></li>
+                    <li><a href="/facts/topics/public-sector">Public Sector</a></li>
+                </ul>
+                <p>World Bank indicators are also available in <a href="/es/datos/">Spanish</a>.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Topics</h2>
+                <ul>
+                    <li><a href="/factbook/topics/introduction">Introduction</a></li>
+                    <li><a href="/factbook/topics/geography">Geography</a></li>
+                    <li><a href="/factbook/topics/demographics">Demographics</a></li>
+                    <li><a href="/factbook/topics/government">Government</a></li>
+                    <li><a href="/factbook/topics/economy">Economy</a></li>
+                    <li><a href="/factbook/topics/energy">Energy</a></li>
+                    <li><a href="/factbook/topics/telecommunications">Telecommunications</a></li>
+                    <li><a href="/factbook/topics/transportation">Transportation</a></li>
+                    <li><a href="/factbook/topics/military">Military</a></li>
+                    <li><a href="/factbook/topics/transnational-issues">Transnational Issues</a></li>
+                </ul>
+                <h2>Visualizations</h2>
+                <ul>
+                    <li><a href="/facts/visualizations/age-distribution/">Age distributions</a></li>
+                    <li><a href="/facts/visualizations/electricity-production/">Electricity production</a></li>
+                    <li><a href="/facts/visualizations/gdp-composition-by-sector/">GDP composition</a></li>
+                    <li><a href="/facts/visualizations/income-distribution/">Income distribution</a></li>
+                    <li><a href="/facts/visualizations/merchandise-exports/">Merchandise exports</a></li>
+                    <li><a href="/facts/visualizations/merchandise-imports/">Merchandise imports</a></li>
+                    <li><a href="/facts/visualizations/treemap">Treemap of World indicators</a></li>
+                </ul>
+                <h2>Gazetteer</h2>
+                <p>Maps and elevation data of all the world's <a href="zp/">cities</a>, <a href="zl/">lakes</a>, and <a href="zm/">mountains</a>.</p>
+                <h2>Languages</h2>
+                <ul>
+                    <li><a href="es/">Spanish</a></li>
+                    <li><a href="fr/">French</a></li>
+                    <li><a href="de/">German</a></li>
+                    <li><a href="pt/">Portuguese</a></li>
+                    <li><a href="it/">Italian</a></li>
+                    <li><a href="nl/">Dutch</a></li>
+                    <li><a href="ru/">Russian</a></li>
+                    <li><a href="zh/">Chinese</a></li>
+                    <li><a href="ja/">Japanese</a></li>
+                    <li><a href="ko/">Korean</a></li>
+                    <li><a href="tr/">Turkish</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p><span style="font-size:small"><a href="help/terms/">Terms of Use</a> | <a href="help/privacy/">Privacy Notice</a> | © 2020 - IndexMundi</span></p>
+        </footer>
+    </div>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <!-- Start Tracker Code -->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-70578-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    <!-- Quantcast Tag -->
+    <script type="text/javascript">
+        var _qevents = _qevents || [];
+
+        (function () {
+            var elem = document.createElement('script');
+            elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+            elem.async = true;
+            elem.type = "text/javascript";
+            var scpt = document.getElementsByTagName('script')[0];
+            scpt.parentNode.insertBefore(elem, scpt);
+        })();
+
+        _qevents.push({
+            qacct: "p-faY0WvYrqielI"
+        });
+    </script>
+
+    <noscript>
+        &lt;div style="display:none;"&gt;
+            &lt;img src="//pixel.quantserve.com/pixel/p-faY0WvYrqielI.gif" border="0" height="1" width="1" alt="Quantcast" /&gt;
+        &lt;/div&gt;
+    </noscript>
+    <!-- End Quantcast tag -->
+
+
+<iframe src="https://c.sharethis.mgr.consensu.org/portal-v2.html" id="st_gdpr_iframe" title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe></body></html>

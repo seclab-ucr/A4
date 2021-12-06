@@ -1,0 +1,454 @@
+<!DOCTYPE html><!--M2KExpire--><!--var stInfo={job_id: "", pre_cmd: "https://mail.ncku.edu.tw/cgi-bin/login", uid: "", hint: "", szReason: "", crumb: "0", lang: "tw" };--><!--M2KExpire--><html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="tpl_revision" content="$Revision: 27364:0eb8118d587c $" />
+	<meta name="msg_revision" content="$Revision: 26158:12ea38616694 $" />
+	<title>NCKU Mail 2.0</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+	
+	<!-- Bootstrap -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+	<!-- For-Mobile-Apps-and-Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script src="/j70/libm2k.js?m=1711271814"></script>
+	<script src="/lib/jquery/jquery-1.12.4.js?m=1711271814"></script>
+	<script src="/j70/m2k_adm.js?m=1711271814"></script>
+	<script src="/j70/m2k_ui_dialog.js?m=1711271814"></script>
+	<script src="/cht/j70/msgtw.js?m=1711271814"></script>
+	<script src="/j70/OnScreenKeyboard.js?m=1711271814"></script>
+	<script src="/j70/session.js?m=1711271814"></script>
+	<script type="application/x-javascript"> 
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+		
+		var g_bOtpLogin= false ;
+var g_szErrMsg="";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fl()
+{
+     var key=(true ? "" : document.cookie);
+     var form=document.login;
+	  if ( key.match(/m2kuid=([^;]+)[;]*/) ){ 
+		  form.USERID.value = RegExp.$1; 
+		  form.remember.checked = true;
+     }
+}
+
+var g_bKeyBoardEnabled = true;
+var stBoard = null;
+
+function keyboardSwitch()
+{
+	stBoard.open();
+}
+
+
+
+function SetOtpHint()
+{
+	var otpHint = document.getElementById('otpHint');
+	if (otpHint) {
+		otpHint.style.visibility = "visible";
+	}
+}
+
+function GetReloginUserID()
+{
+	var szUserID = "";
+
+	// for standard
+	try {
+		stMainWnd = GetMainWindow();
+		if (stMainWnd &amp;&amp; 'undefined' != typeof(stMainWnd.M2K_RELOGIN_USERID)) {
+			szUserID = stMainWnd.M2K_RELOGIN_USERID;
+
+			if ("" != szUserID) {
+				return szUserID;
+			}
+		}
+	}
+	catch (e) {}
+
+	// for simple
+	try {
+		var stTop = PageOrTop('HeadFrm');
+
+		if (stTop &amp;&amp; 'undefined' != typeof(stTop.M2K_RELOGIN_USERID)) {
+			szUserID = stTop.M2K_RELOGIN_USERID;
+
+			if ("" != szUserID) {
+				return szUserID;
+			}
+		}
+	}
+	catch (e) {}
+
+	return szUserID;
+}
+
+function Init()
+{
+   window.setupM2KSessionSetting({
+      crumb: 0,
+      httpOnlyEnabled: true
+   });
+   
+	
+	fl();
+	
+
+	var normal_div, ajax_div;
+	var pMainWnd = GetMainWindow(true);
+	var fnLoginDlg, fnLogin, stInfo;	
+	var szUserID;
+
+	normal_div = document.getElementById('normal_div');
+	ajax_div = document.getElementById('ajax_div');
+
+	if (pMainWnd &amp;&amp; "function" == typeof(pMainWnd.fnExpireHandleCB)) {
+		pMainWnd.fnExpireHandleCB(null, null);
+		return true;
+	}
+
+	if (g_bOtpLogin){
+		fnLoginDlg = (pMainWnd &amp;&amp; pMainWnd.ShowOtpLoginDlg)?pMainWnd.ShowOtpLoginDlg:null;
+		fnLogin = DoOtpLogin;
+		stInfo={job_id: "", pre_cmd: "https://mail.ncku.edu.tw/cgi-bin/login", uid: "", szReason: g_szErrMsg, crumb: "0", lang: "tw", otptkn: ""};
+		document.ajax_login.action = "/cgi-bin/login.otp";
+		document.login.action = "/cgi-bin/login.otp";
+		if (g_szErrMsg == "") {
+			setTimeout('SetOtpHint()', 20000);
+		} else {
+			var stdLogin = document.getElementById('stdLogin');
+			var otpErr = document.getElementById('otpErr');
+			if (stdLogin &amp;&amp; otpErr) {
+				stdLogin.style.display = "none";
+				otpErr.style.display = "block";
+			}
+		}
+	} else {
+		fnLoginDlg = (pMainWnd &amp;&amp; pMainWnd.ShowLoginDlg)?pMainWnd.ShowLoginDlg:null;
+		fnLogin = DoLogin;
+		stInfo={job_id: "", pre_cmd: "https://mail.ncku.edu.tw/cgi-bin/login", uid: "", hint: "", szReason: g_szErrMsg, crumb: "0", lang: "tw" };
+		document.ajax_login.action = "/cgi-bin/login";
+		document.login.action = "/cgi-bin/login";
+	}
+
+	var bInDialog = (function() {
+      for(var w = window; w !== top; w = w.parent) {
+         try {
+            if(w.m2k.ui.dialog.isInDialog()) {
+               return true;
+            }
+         } catch(e) {}
+      }
+      
+      try {
+         if(w.m2k.ui.dialog.isInDialog()) {
+            return true;
+         }
+      } catch(e) {}
+      
+      return false;
+	})();
+
+	if (fnLoginDlg &amp;&amp; !bInDialog) {
+		if (normal_div)
+			normal_div.style.display = 'none';
+
+		$("body &gt; div.footer").hide();
+
+		if (ajax_div)
+			ajax_div.style.display = '';
+
+		fnLoginDlg(stInfo, fnLogin);
+	} else {
+		if(m2k.tool.isInAdmIframe()){
+			m2k.adm.frameResize();
+		}
+
+		if (normal_div) {
+			normal_div.style.display = '';
+		}
+		
+		$("body &gt; div.footer").show();
+		
+		if (ajax_div) {
+			ajax_div.style.display = 'none';
+		}
+
+		if (g_bKeyBoardEnabled) {
+			stBoard = new Board({
+				szBoardId: "board",
+				szFormID: "login"
+			});
+		} else {
+			document.getElementById("keyboardDisp").style.display = "none";
+		}
+
+
+
+		if (typeof(document.login.USERID) != 'undefined' &amp;&amp; document.login.USERID) {
+			if (g_bKeyBoardEnabled) {
+				stBoard.setTarget(document.login.USERID);
+			}
+			document.login.USERID.focus();
+		}
+
+
+
+		m2k.ui.dialog.init({
+			title: "Mail2000 Message System"
+		});
+	}
+
+	return true;
+}
+
+function CheckSubmit()
+{
+
+
+
+	if(document.login.opennw.checked){
+		var stWnd=window.open("/blank.html", "M2KAW", "fullscreen=yes,resizable=yes,status=yes");
+		document.login.target="M2KAW";
+		stWnd.focus();
+	} else {
+		document.login.target="_self";
+	}
+
+   
+   window.startM2KSessionMonitor();
+   
+	return true;
+}
+
+function DoLogin(szUserID, szPasswd, szCaptCode, szCaptAns)
+{
+	var form;
+
+	form = document.ajax_login;
+
+	form.USERID.value = szUserID;
+	form.PASSWD.value = szPasswd;
+
+
+	if (CheckSubmit()) {
+	   window.startM2KSessionMonitor();
+	   
+		form.submit();
+	}
+}
+
+function DoOtpLogin(szOtpCode)
+{
+	var form;
+
+	form = document.ajax_login;
+
+	form.OTPCODE.value = szOtpCode;
+
+	if (CheckSubmit()) {
+	   window.startM2KSessionMonitor();
+	   
+		form.submit();
+	}
+}
+
+function OpenOtpManual()
+{
+	return HelpManualOpen('http://manual.openfind.com.tw/m2kv7/sp1/otp/tw/index.html', true, false);
+}
+
+$(Init);
+//--&gt;
+		
+	</script>
+	<!-- //For-Mobile-Apps-and-Meta-Tags -->
+	<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+	<div class="bg animated fadeIn">
+	</div>
+	<div class="container">
+		<h1>
+			<a href="#" title="" id="logo">成功大學郵件信箱</a>
+		</h1>
+		<div class="row contact">
+			<div class="col-sm-7">
+			</div>
+			<div class="col-md-5 col-xs-12 text-right animated fadeInDown">
+				<form name="login" id="login" action="/cgi-bin/login" method="post" onsubmit="return CheckSubmit();&gt;&#10;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;input type=hidden value=" 7.5"="">
+
+
+ 
+
+
+
+					<div class="btn-group language">
+						<input id="lang" type="hidden" name="lang" value="tw" />
+						<button id="lang_btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+							<img src="/images/ch.png" />
+							中文 / 語言 <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a onclick="selectLang(&quot;tw&quot;,this)"><img src="/images/ch.png" /> 中文 </a></li>
+							<li><a onclick="selectLang(&quot;en&quot;,this)"><img src="/images/en.png" /> English </a></li>
+							<li><a onclick="selectLang(&quot;jp&quot;,this)"><img src="/images/jp.png" /> Japan </a></li>
+						</ul>
+					</div>
+					<div class="left">
+						<div class="contact_form">
+							<div class="name nudge row">
+								<div class="col-md-8 col-xs-7">
+									<input type="text" name="USERID" class="name" placeholder="帳號" required="" />
+								</div>
+								<div class="col-md-4 col-xs-5 right-div">
+									<span>@ncku.edu.tw</span>
+								</div>
+							</div>
+							<div class="email nudge">
+								<input type="password" name="PASSWD" class="" placeholder="密碼" required="" />
+							</div>
+
+							<button type="submit" class="btn btn-primary btn-lg btn-block">登入</button>
+
+
+							<p class="note">109學年度新生請使用G Suite信箱 <a href="https://www.gs.ncku.edu.tw/%E5%95%9F%E7%94%A8%E6%95%99%E5%AD%B8/%E5%AD%B8%E7%94%9F" target="_blank" title="啟用教學">*啟用教學*</a><p>(本郵件系統不提供109年度入學新生使用)</p><p><a href="https://m2k.cc.ncku.edu.tw/" target="_blank" title="新版郵件系統教學專區">新版郵件系統教學專區<br /></a>舊版個人、學生郵件系統登入網址<a href="http://oldmail.ncku.edu.tw" target="_blank" title="舊版個人郵件">http://oldmail.ncku.edu.tw/<br /></a>舊版公務郵件系統登入網址<a href="http://oldemail.ncku.edu.tw" target="_blank" title="舊版公務郵件">http://oldemail.ncku.edu.tw/</a></p><p><a href="https://mail.ncku.edu.tw/sp.html" target="_blank" title="行動裝置">行動裝置版-Webmail(適用於iOS與Android作業系統)</a></p><p><a href="http://manual.openfind.com.tw/m2kv7/sp1/tw/index.html" target="_blank" title="系統使用&gt;手冊">#系統使用手冊</a><br />如登入有問題，請洽詢 計網中心 分機61010<br />Email: mailservice@ncku.edu.tw</p></p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="right-w3">
+				<div class="lang lang-tw" style="display: block;">
+					<h2><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+						計算機與網路中心公告
+					</h2>
+					<hr />
+					<p>請防範病毒郵件及釣魚郵件詐騙，防範方法如下:</p>
+					<ul>
+						<li>
+							勿輕易提供個人資料： 不要理會任何要求提供個人資料(如：帳號、密碼)的郵件。
+						</li>
+						<li>
+							避免開啟可疑附檔： 因為病毒檔可能偽裝成各種檔案，如.doc、.pdf、.jpg等， 並隱藏在壓縮檔內。
+						</li>
+						<li>
+							安裝防毒軟體並定期更新 ：萬一誤開了病毒檔，防毒軟體可以提供多一層保護。
+						</li>
+						<li>
+							勿開啟、點閱來路不明的電子郵件。
+						</li>
+						<li>
+							不要隨便點選郵件內的連結：如有必要，自行從瀏覽器內輸入真正的單位網址，進入真正的單位網站。
+						</li>
+						<li>
+							必要時與寄件者連絡，確認郵件的真實性： 校園的惡意信件常常假冒計網中心、政府機關及學術單位的名義散播，請提高警覺。
+						</li>
+					</ul>
+					<p>如有任何問題，歡迎來電本中心諮詢服務台(分機61010)洽詢。計網中心 敬上</p>
+					<hr />
+				</div>
+				<div class="lang lang-en lang-jp" style="display: none;">
+					<p>Protection against malicious emails</p>
+					<p>Many “spam” emails received on campus are often disguised as having been sent from the Information
+						Technology
+						Center, various government agencies, or academic institutions to lure recipients into disclosing sensitive
+						information. Follow these steps to minimize your risk:</p>
+					<ul>
+						<li>
+							Never disclose sensitive information online or respond to any email requesting personal information.
+						</li>
+						<li>
+							Do not open any suspicious attachments, because viruses can be disguised as .doc, .pdf or .jpg files, or
+							hidden in compressed files.
+						</li>
+						<li>
+							Install and update anti-virus software regularly to provide extra protection should any suspicious email
+							be
+							accidentally opened.
+						</li>
+						<li>
+							Do not open any email from unknown sources.
+						</li>
+						<li>
+							Avoid clicking on links in an email to prevent from being directed to malicious websites. It is safer to
+							type the URL directly into your browser.
+						</li>
+						<li>
+							If necessary, contact the sender to verify the validity of the email.
+						</li>
+					</ul>
+					<p>Should you have any questions or concerns, please contact our help desk (ext. 61010) for further
+						information.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>限系統使用者登入。非法的入侵或存取將承擔起相關的法律刑責。</p>
+			<p class="agileinfo"> Copyright© Computer and Network Center, NCKU All Rights Reserved.</p>
+		</div>
+	</div>
+	<!-- jQuery (Bootstrap 所有外掛均需要使用) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/lang.js"></script>
+	<script>
+		// 載入頁面先切換預設語系
+		changeLang();
+
+		function selectLang(lang, elem) {
+			document.getElementById('lang').value = lang;
+			document.getElementById('lang_btn').innerHTML = elem.innerHTML + '&lt;span class="caret"&gt;&lt;/span&gt;';
+			changeLang();
+		}
+
+		//切換語系
+		function changeLang() {
+			let lang = document.getElementById('lang').value;
+			//底部的文字隱藏+顯示
+			$('.lang').hide();
+			$('.lang-' + lang).show();
+			//登入框的文字修改 修改的內容在 js/lang.js 裡面
+			$(".contact_form input[name=USERID]").attr('placeholder', accPlaceholder[lang]);
+			$(".contact_form input[name=PASSWD]").attr('placeholder', pwdPlaceHolder[lang]);
+			$(".contact_form button[type=submit]").html(loginBtn[lang]);
+			$(".contact_form p.note").html(note[lang]);
+			//驗證碼文字修改
+			$("#captcha").html(captcha[lang]);
+		}
+	</script>
+
+
+
+</body></html>

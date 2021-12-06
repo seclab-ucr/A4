@@ -1,0 +1,825 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class=""><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="//bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-P7ZWNPP"></script><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://img.en25.com/i/elqCfg.min.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"cd0676da66",applicationID:"607061006"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+		<title>Bloomberg Industry Group</title>
+<link rel="manifest" crossorigin="use-credentials" href="https://www.bloombergindustry.com/wp-json/bloomberg/v1/manifest" />
+<meta name="theme-color" content="#17509f" /><meta name="description" content="Bloomberg Industry Group provides guidance, grows your business, and remains compliant with trusted resources that deliver results for legal, tax, compliance, government affairs, and government contracting professionals." />
+<link rel="canonical" href="https://www.bloombergindustry.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bloomberg Industry Group" />
+<meta property="og:description" content="Bloomberg Industry Group provides guidance, grows your business, and remains compliant with trusted resources that deliver results for legal, tax, compliance, government affairs, and government contracting professionals." />
+<meta property="og:url" content="https://www.bloombergindustry.com/" />
+<meta property="og:site_name" content="Bloomberg Industry" />
+<meta property="og:image" content="https://assets.bbhub.io/bna/sites/10/2020/10/bloombergindustry.png" />
+<meta property="og:image:secure_url" content="https://assets.bbhub.io/bna/sites/10/2020/10/bloombergindustry.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Bloomberg Industry Group provides guidance, grows your business, and remains compliant with trusted resources that deliver results for legal, tax, compliance, government affairs, and government contracting professionals." />
+<meta name="twitter:title" content="Bloomberg Industry Group" />
+<meta name="twitter:image" content="https://data.bloomberglp.com/bna/sites/10/2020/04/covid_icon-150x150.png" />
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.bloombergindustry.com/#website","url":"https://www.bloombergindustry.com/","name":"Bloomberg Industry","potentialAction":{"@type":"SearchAction","target":"https://www.bloombergindustry.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.bloombergindustry.com/#primaryimage","url":"https://data.bloomberglp.com/bna/sites/10/2020/04/covid_icon-150x150.png"},{"@type":"WebPage","@id":"https://www.bloombergindustry.com/#webpage","url":"https://www.bloombergindustry.com/","inLanguage":"en-US","name":"Bloomberg Industry Group","isPartOf":{"@id":"https://www.bloombergindustry.com/#website"},"primaryImageOfPage":{"@id":"https://www.bloombergindustry.com/#primaryimage"},"datePublished":"2019-05-06T20:23:05-04:00","dateModified":"2020-07-07T20:57:50-04:00","description":"Bloomberg Industry Group provides guidance, grows your business, and remains compliant with trusted resources that deliver results for legal, tax, compliance, government affairs, and government contracting professionals."}]}</script>
+<link rel="dns-prefetch" href="//www.bbthat.com" />
+<link rel="dns-prefetch" href="//www.bloombergindustry.com" />
+<link rel="dns-prefetch" href="//polyfill.bbhub.io" />
+<link rel="dns-prefetch" href="//assets.adobedtm.com" />
+<link rel="dns-prefetch" href="//assets.bwbx.io" />
+<link rel="dns-prefetch" href="//s.w.org" />
+<link rel="stylesheet" id="that-data-0-css" href="https://assets.bwbx.io/font-service/css/AvenirNextPForBBG:400,600/styled-font-face.css" type="text/css" media="all" />
+<link rel="stylesheet" id="that-data-1-css" href="https://www.bbthat.com/assets/v2.5.3/that.css" type="text/css" media="all" />
+<link rel="stylesheet" id="bbgfb-forms-css" href="https://www.bloombergindustry.com/content/plugins/bloomberg-form-builder/dist/forms.css?rel=45f7e683d7&amp;ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582" type="text/css" media="all" />
+<link rel="stylesheet" id="bbgcc-css" href="https://www.bloombergindustry.com/content/plugins/bloomberg-cookie-consent/assets/cookie_frontend.css?ver=6760121244" type="text/css" media="all" />
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.bloombergindustry.com/wp-includes/css/dist/block-library/style.min.css?ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582" type="text/css" media="all" />
+<link rel="stylesheet" id="font-service-css" href="https://assets.bwbx.io/font-service/css/AvenirNextPForBBG:400,400i,600,600i,700,700i%7COpenSans:400,400i,600,600i,700,700i/styled-font-face.css?ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582" type="text/css" media="all" />
+<link rel="stylesheet" id="main-css-css" href="https://www.bloombergindustry.com/content/themes/bna2018/dist/main.b4dac6c3.css?ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582" type="text/css" media="all" />
+<link rel="stylesheet" id="brand-color-css" href="https://www.bloombergindustry.com/wp-admin/admin-ajax.php?action=brand_color_stylesheet&amp;brand_color=bna-blue&amp;ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582" type="text/css" media="all" />
+<script defer="" type="text/javascript" src="https://www.bbthat.com/assets/v2.5.3/that.js"></script>
+<script defer="" type="text/javascript" src="https://www.bloombergindustry.com/content/plugins/bloomberg-cookie-consent/assets/cookie_scripts.min.js?ver=761d174fce"></script>
+<script type="text/javascript" src="https://polyfill.bbhub.io/v3/polyfill.min.js?features=Array.from%2CArray.of%2CArray.prototype.%40%40iterator%2CArray.prototype.entries%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.flatMap%2CArray.prototype.includes%2CArray.prototype.keys%2CArray.prototype.slice%2CArray.prototype.values%2CArrayBuffer%2CCustomEvent%2CDOMTokenList.prototype.%40%40iterator%2CDataView%2CDocumentFragment.prototype.append%2CDocumentFragment.prototype.prepend%2CElement.prototype.append%2CElement.prototype.classList%2CElement.prototype.closest%2CElement.prototype.dataset%2CElement.prototype.matches%2CElement.prototype.prepend%2CElement.prototype.remove%2CFunction.prototype.bind%2CFunction.prototype.name%2CIntersectionObserver%2CMap%2CMath.acosh%2CMath.asinh%2CMath.atanh%2CMath.expm1%2CMath.fround%2CMath.imul%2CMath.log1p%2CMath.sign%2CMutationObserver%2CNode.prototype.contains%2CNodeList.prototype.%40%40iterator%2CNodeList.prototype.forEach%2CNumber.parseFloat%2CNumber.parseInt%2CObject.assign%2CObject.entries%2CObject.is%2CObject.isExtensible%2CObject.keys%2CObject.preventExtensions%2CObject.setPrototypeOf%2CObject.values%2CPromise%2CPromise.prototype.finally%2CRegExp.prototype.flags%2CString.fromCodePoint%2CString.prototype.%40%40iterator%2CString.prototype.includes%2CString.prototype.padEnd%2CString.prototype.padStart%2CSymbol%2CSymbol.iterator%2CSymbol.toStringTag%2CURL%2CUint16Array%2CUint8Array%2CWeakMap%2Cconsole.error%2Cconsole.warn%2CrequestAnimationFrame%2CsetImmediate&amp;flags=gated"></script>
+<script type="text/javascript" src="//assets.adobedtm.com/launch-EN0c110e52b3d944698f59559f7c3a1932.min.js" async="async"></script>
+<link rel="https://api.w.org/" href="https://www.bloombergindustry.com/wp-json/" />
+
+<link rel="shortlink" href="https://www.bloombergindustry.com/" />
+<!-- Google Tag Manager -->
+
+<style>.async-hide { opacity: 0 !important; }</style>
+<script>
+(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-P7ZWNPP':true});
+</script>
+
+<script>
+window.addEventListener("load", function() {
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P7ZWNPP');
+});
+</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+
+// Industry Group: Eloqua toggle
+// runs eloqua script unless cPixel cookie has 'eloqua' while cookieConsent cookie does not
+var eloquaCPMFlag   = true;
+
+(function() {
+	var cookies       = decodeURIComponent(document.cookie).split(';');
+	var cookieConsent = [];
+	var cPixel        = [];
+	for (var i = 0; i &lt; cookies.length; i++) {
+		var cookieKey = cookies[i].split('=')[0].trim();
+		if (cookieKey === 'cookieConsent') {
+			cookieConsent = cookies[i].split('=')[1].split('|');
+		} else if (cookieKey === 'cPixel') {
+			cPixel = cookies[i].split('=')[1].split('|');
+		}
+	}
+	var cookieConsentFiltered = filterEloqua(cookieConsent);
+	var cPixelFiltered        = filterEloqua(cPixel);
+	function filterEloqua(cookieArr) {
+		return cookieArr.filter( function(item) {
+			if (item.trim().toLowerCase() === 'eloqua') { return item; }
+		})
+	}
+	/* If cPixel contains eloqua &amp;&amp; cookieconsent does not contain eloqua
+	Eloqua is active, User is deactivating Eloqua Cookies, Eloqua will not run */
+	if (cPixelFiltered.length &gt; 0 &amp;&amp; cookieConsentFiltered.length &lt; 1) { eloquaCPMFlag = false; }
+})();
+
+if (eloquaCPMFlag) {
+var _elqQ = _elqQ || [];
+_elqQ.push(['elqSetSiteId', "1424104964"]);
+	_elqQ.push(["elqUseFirstPartyCookie", "tracking.bloombergindustry.com"]);
+_elqQ.push(['elqTrackPageView']);
+_elqQ.push(['elqGetCustomerGUID']);
+(function () {
+	function async_load() {
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = 'https://img.en25.com/i/elqCfg.min.js';
+		var x = document.getElementsByTagName('script')[0];
+		x.parentNode.insertBefore(s, x);
+	}
+
+	if (window.addEventListener) {
+		window.addEventListener('DOMContentLoaded', async_load);
+	} else if (window.attachEvent) {
+		window.attachEvent('onload', async_load);
+	}
+})();
+
+	(function () {
+		var elqGetGuidCookieValue = function () {
+			var name, value, index, cookies=document.cookie.split(';');
+			for (var i = 0; i &lt; cookies.length; i++) {
+				index = cookies[i].indexOf('=');
+				if (index &gt; 0 &amp;&amp; cookies[i].length &gt; index + 1) {
+					name = cookies[i].substr(0, index).trim();
+					if (name == 'ELOQUA') {
+						value = cookies[i].substr(index + 1);
+						var subCookie = value.split("=");
+						if (subCookie.length == 2 &amp;&amp; subCookie[0] == 'GUID') {
+							return subCookie[1];
+						}
+					}
+				}
+			}
+			return '';
+		};
+
+		var timerId = null, timeout = 5;
+
+		var waitUntilCustomerGUIDIsRetrieved = function () {
+			var elqCustomerGUID = document.querySelector('input[name="elqCustomerGUID"]');
+
+			if (!elqCustomerGUID) {
+				return;
+			}
+
+			if (!!(timerId)) {
+				if (timeout == 0) {
+					return;
+				}
+				if (typeof window.GetElqCustomerGUID === 'function') {
+					elqCustomerGUID.value = window.GetElqCustomerGUID();
+					return;
+				} else {
+					var cookieValue = elqGetGuidCookieValue();
+					if (cookieValue &amp;&amp; !elqCustomerGUID.value) {
+						elqCustomerGUID.value = cookieValue;
+					}
+				}
+				timeout -= 1;
+			}
+			timerId = setTimeout(waitUntilCustomerGUIDIsRetrieved, 500);
+			return;
+		}
+		window.onload = waitUntilCustomerGUIDIsRetrieved;
+	})();
+}
+</script>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+<link rel="icon" href="https://assets.bbhub.io/bna/sites/10/2019/05/favicon-228-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://assets.bbhub.io/bna/sites/10/2019/05/favicon-228.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://assets.bbhub.io/bna/sites/10/2019/05/favicon-228-180x180.png" />
+<meta name="msapplication-TileImage" content="https://assets.bbhub.io/bna/sites/10/2019/05/favicon-228.png" />
+		<style type="text/css" id="wp-custom-css">
+			.bgov-header__logo__image{
+	max-height: 40px;
+}
+
+.categories-dropdown {
+	font-size: 1.2em;
+}		</style>
+		<noscript>&lt;style&gt; .wpb_animate_when_almost_visible { opacity: 1; }&lt;/style&gt;</noscript><style type="text/css">@media (min-width: 752px) { #bb-that .bb-that-header.bb-that--container { width: 678px; } }@media (min-width: 1008px) { #bb-that .bb-that-header.bb-that--container { width: 922px; } }@media (min-width: 1440px) { #bb-that .bb-that-header.bb-that--container { width: 1170px; } }</style>	<script src="https://assets.adobedtm.com/extensions/EPbde2f7ca14e540399dcc1f8208860b7b/AppMeasurement.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EPbde2f7ca14e540399dcc1f8208860b7b/AppMeasurement_Module_ActivityMap.min.js" async=""></script><script type="text/javascript" src="https://s1424104964.t.eloqua.com/visitor/v200/svrGP?pps=70&amp;siteid=1424104964&amp;ms=813&amp;firstPartyCookieDomain=tracking.bloombergindustry.com"></script></head>
+
+	<body class="home page-template-default page page-id-3 bloomberg-industry has-breaking-news header-nav-complex wpb-js-composer js-comp-ver-6.4.1 vc_responsive has-bb-that">
+		<!-- Google Tag Manager -->
+<noscript>
+	&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7ZWNPP" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+</noscript>
+<!-- End Google Tag Manager -->
+<style>#bb-that a{text-decoration:none}#bb-that .bb-that__sitemap{overflow:hidden;position:relative;max-height:0;visibility:hidden;-webkit-transition:max-height 0.6s ease-in-out,visibility 0.6s ease-in-out;-o-transition:max-height 0.6s ease-in-out,visibility 0.6s ease-in-out;transition:max-height 0.6s ease-in-out,visibility 0.6s ease-in-out}#bb-that{font-family:AvenirNextPForBBG,"Helvetica Neue",Helvetica,Arial,sans-serif;background:#000;position:relative}@media (max-width: 759px){#bb-that .bb-that{display:none}}#bb-that *{font-family:AvenirNextPForBBG,"Helvetica Neue",Helvetica,Arial,sans-serif !important}#bb-that .bb-that--container{margin:0 auto;padding:0 30px;box-sizing:content-box}@media (min-width: 1020px){#bb-that .bb-that--container{padding:0}}#bb-that .bb-that--container:before,#bb-that .bb-that--container:after{content:" ";display:table}#bb-that .bb-that--container:after{clear:both}@media (min-width: 760px){#bb-that .bb-that--container{width:700px}}@media (min-width: 1020px){#bb-that .bb-that--container{width:980px}}@media (min-width: 1280px){#bb-that .bb-that--container{width:1160px}}#bb-that .bb-that-header{font-weight:600;font-size:15px;line-height:30px;padding:15px}@media (min-width: 760px){#bb-that .bb-that-header{font-size:12px;height:30px;padding:0}}#bb-that .bb-that-header__link{position:relative;display:block;outline-offset:2px}@media (min-width: 760px){#bb-that .bb-that-header__link{display:inline-block;padding:0 10px}}#bb-that .bb-that-header__link,#bb-that .bb-that-header__link&gt;span{color:#f3f4ef;font-family:inherit;font-size:inherit;line-height:inherit}@media (min-width: 760px){#bb-that .bb-that-header__link,#bb-that .bb-that-header__link&gt;span{line-height:1;-webkit-font-smoothing:subpixel-antialiased;-moz-osx-font-smoothing:auto}}@media (max-width: 1019px){#bb-that .bb-that-header__link,#bb-that .bb-that-header__link&gt;span{font-size:11px}}#bb-that .bb-that-header__link[href*="bba.bloomberg.net"]:before{display:inline-block;content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25.32 19'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;stroke:%23fff;stroke-miterlimit:10;stroke-width:.5px%7D%3C/style%3E%3C/defs%3E%3Cpath d='M0 0h25.32v19H0z'/%3E%3Crect class='cls-1' x='.32' y='1.81' width='11.74' height='9.39' rx='.47' ry='.47'/%3E%3Crect class='cls-1' x='13.23' y='1.8' width='11.74' height='9.39' rx='.47' ry='.47'/%3E%3Cpath class='cls-1' d='M11.4 13.75v.8c0 .29.53.53 1.18.53s1.17-.24 1.17-.53v-.8h.06c1.83.2 3.11.87 3.11 1.68 0 1-1.93 1.76-4.31 1.76s-4.32-.79-4.32-1.76c0-.8 1.3-1.47 3.09-1.69z'/%3E%3C/svg%3E");height:16px;width:16px;line-height:initial;right:3px;top:2px;position:relative}#bb-that .bb-that-header__link[href*="bba.bloomberg.net"],#bb-that .bb-that-header__link[href*="bba.bloomberg.net"]&gt;span{color:#FFA028}#bb-that .bb-that-header__link[href*="/service"]:before{display:inline-block;content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'%3E%3Cpath fill='%23231f20' d='M0 0h25v25H0z'/%3E%3Crect x='1.53' y='1.33' width='21.91' height='21.91' rx='2.63' ry='2.63' fill='%231bbc3c'/%3E%3Ctext transform='translate(1.53 19.79)' style='isolation:isolate' font-size='10.19' font-family='AvenirNextPForBBG-Medium,Avenir Next P for BBG' letter-spacing='-.02em' fill='%23231f20'%3EHelp%3C/text%3E%3C/svg%3E");height:16px;width:16px;line-height:initial;right:3px;top:2px;position:relative}#bb-that .bb-that-header__link:first-child{padding-left:0}#bb-that .bb-that-header__link:after{font-size:9px;position:absolute}@media (min-width: 760px){#bb-that .bb-that-header__link+.bb-that-header__link{border-left:1px solid #b3b3b3}#bb-that .bb-that-header__link+.bb-that-header__link:after{top:-3px}}#bb-that .bb-that-header__link&gt;span{pointer-events:none}#bb-that .bb-that-header__link&gt;span:first-of-type{display:inline}#bb-that .bb-that-header__link&gt;span:first-of-type+span{display:none}@media (max-width: 1019px){#bb-that .bb-that-header__link&gt;span:first-of-type{display:none}#bb-that .bb-that-header__link&gt;span:first-of-type+span{display:inline}}#bb-that .bb-that-header--sitemap-trigger{padding:0 27px 0 10px}#bb-that .bb-that-header--sitemap-trigger:after{display:inline-block;content:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2015%2015%27%3E%3Cpath%20d%3D%27M0,2.5l7.5,10l7.5-10H0z%27%20fill%3D%27%23fff%27%2F%3E%3C%2Fsvg%3E");height:9px;width:9px;line-height:initial;opacity:0.7;-webkit-transition:opacity 0.1s ease-out;-o-transition:opacity 0.1s ease-out;transition:opacity 0.1s ease-out}#bb-that .bb-that-header--sitemap-trigger:hover:after{opacity:1}#bb-that .bb-that-header--sitemap-trigger:after{height:9px;width:9px;-webkit-transform:rotate(0);-ms-transform:rotate(0);-o-transform:rotate(0);transform:rotate(0);-webkit-transition:transform 0.35s ease;-o-transition:transform 0.35s ease;transition:transform 0.35s ease}@media (min-width: 760px){#bb-that .bb-that-header--sitemap-trigger:after{right:12px;top:2px;line-height:1}}@media (min-width: 1020px){#bb-that .bb-that--open{border-bottom:1px solid #474747}}#bb-that .bb-that--open .bb-that-header--sitemap-trigger:after{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg)}
+</style>
+<div id="bb-that" data-alert-service="https://www.bbthat.com/api/alerts?site=bna">
+	<nav class="bb-that">
+		<a href="#that-jump-content--default" class="bb-that__skip-to-content" aria-label="Skip to content" role="button" tabindex="0">Skip to content</a>
+    <div class="bb-that-header bb-that--container">
+        <a class="bb-that-header__link bb-that-header--sitemap-trigger" href="http://www.bloomberg.com/company/?utm_source=bloomberg-menu&amp;utm_medium=bna" role="button" aria-controls="bb-that--container" aria-expanded="false" data-element="tophat-link" data-description="Bloomberg the Company &amp; Its Products" data-label="bna"><span>Bloomberg the Company &amp; Its Products</span><span>The Company &amp; its Products</span></a><a class="bb-that-header__link" href="http://www.bloomberg.com/professional/contact-menu/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-DEMO-bbgmenu" data-element="tophat-link" data-description="Bloomberg Terminal Demo Request" data-label="bna">Bloomberg Terminal Demo Request</a><a class="bb-that-header__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Anywhere Remote Login" data-label="bna"><span>Bloomberg Anywhere Remote Login</span><span>Bloomberg Anywhere Login</span></a><a class="bb-that-header__link" href="https://service.bloomberg.com/service?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Customer Support" data-label="bna"><span>Bloomberg Customer Support</span><span>Customer Support</span></a>    </div>
+		<div id="bb-that--container" class="bb-that__sitemap bb-that--container" tabindex="-1" role="dialog">
+    
+    <ul class="bb-that__sitemap-sections bb-that--visible-md bb-that--visible-lg">
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h3 id="that-list--bloomberg--1" class="bb-that-category__title">Bloomberg</h3><div class="bb-that-category__content"><p class="bb-that-category__text">Connecting decision makers to a dynamic network of information, people and ideas, Bloomberg quickly and accurately delivers business and financial information, news and insight around the world.</p></div></section>            <section class="bb-that-category">
+    <h3 id="that-list--for_customers--2" class="bb-that-category__title">For Customers</h3><ul class="bb-that-category__content" aria-labelledby="that-list--for_customers--2"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Anywhere Remote Login" data-label="bna" tabindex="0">Bloomberg Anywhere Remote Login</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/downloads/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Software Updates" data-label="bna" tabindex="0">Software Updates</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://service.bloomberg.com/portal/sessions/new?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Manage Products and Account Information" data-label="bna" tabindex="0">Manage Products and Account Information</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--support--3" class="bb-that-category__title">Support</h3><div class="bb-that-category__content"><p class="bb-that-category__text"><span>Americas</span>+1 212 318 2000</p><p class="bb-that-category__text"><span>EMEA</span>+44 20 7330 7500</p><p class="bb-that-category__text"><span>Asia Pacific</span>+65 6212 1000</p></div></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h3 id="that-list--company--4" class="bb-that-category__title">Company</h3><ul class="bb-that-category__content" aria-labelledby="that-list--company--4"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="About" data-label="bna" tabindex="0">About</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/what-we-do/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Careers" data-label="bna" tabindex="0">Careers</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/diversity-inclusion/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Diversity and Inclusion" data-label="bna" tabindex="0">Diversity and Inclusion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/innovation/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Innovation" data-label="bna" tabindex="0">Innovation</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/philanthropy/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Philanthropy" data-label="bna" tabindex="0">Philanthropy</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/sustainability/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Sustainability" data-label="bna" tabindex="0">Sustainability</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/london/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg London" data-label="bna" tabindex="0">Bloomberg London</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/beta/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Beta" data-label="bna" tabindex="0">Bloomberg Beta</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/gei?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Gender-Equality Index" data-label="bna" tabindex="0">Gender-Equality Index</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--communications--5" class="bb-that-category__title">Communications</h3><ul class="bb-that-category__content" aria-labelledby="that-list--communications--5"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/announcements/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Press Announcements" data-label="bna" tabindex="0">Press Announcements</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/press-contacts/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Press Contacts" data-label="bna" tabindex="0">Press Contacts</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--follow--6" class="bb-that-category__title">Follow</h3><ul class="bb-that-category__content" aria-labelledby="that-list--follow--6"><li class="bb-that-category__item"><a href="http://www.facebook.com/Bloomberglp" class="bb-that-category__social-link bb-that--icon-facebook" data-element="tophat-link" data-description="Facebook" data-label="bna" target="_blank" rel="noopener" tabindex="0">Facebook</a></li><li class="bb-that-category__item"><a href="https://twitter.com/bloomberg" class="bb-that-category__social-link bb-that--icon-twitter" data-element="tophat-link" data-description="Twitter" data-label="bna" target="_blank" rel="noopener" tabindex="0">Twitter</a></li><li class="bb-that-category__item"><a href="https://www.linkedin.com/company/2494" class="bb-that-category__social-link bb-that--icon-linkedin" data-element="tophat-link" data-description="LinkedIn" data-label="bna" target="_blank" rel="noopener" tabindex="0">LinkedIn</a></li><li class="bb-that-category__item"><a href="https://www.instagram.com/bloomberg/" class="bb-that-category__social-link bb-that--icon-instagram" data-element="tophat-link" data-description="Instagram" data-label="bna" target="_blank" rel="noopener" tabindex="0">Instagram</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h3 id="that-list--products--7" class="bb-that-category__title">Products</h3><ul class="bb-that-category__content" aria-labelledby="that-list--products--7"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/solution/bloomberg-terminal/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-TERMINAL-bbgmenu" data-element="tophat-link" data-description="Bloomberg Terminal" data-label="bna" tabindex="0">Bloomberg Terminal</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/execution-order-management/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-EXORDMGMT-bbgmenu" data-element="tophat-link" data-description="Execution and Order Management" data-label="bna" tabindex="0">Execution and Order Management</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/data-and-content/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-DATACONT-bbgmenu" data-element="tophat-link" data-description="Content and Data" data-label="bna" tabindex="0">Content and Data</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/financial-data-management/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-FINDATA-bbgmenu" data-element="tophat-link" data-description="Financial Data Management" data-label="bna" tabindex="0">Financial Data Management</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/integration-and-distribution/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-INTEGDIST-bbgmenu" data-element="tophat-link" data-description="Integration and Distribution" data-label="bna" tabindex="0">Integration and Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/tradebook/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-TBOOK-bbgmenu" data-element="tophat-link" data-description="Bloomberg Tradebook" data-label="bna" tabindex="0">Bloomberg Tradebook</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--industry_products--8" class="bb-that-category__title">Industry Products</h3><ul class="bb-that-category__content" aria-labelledby="that-list--industry_products--8"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://pro.bloomberglaw.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Law" data-label="bna" tabindex="0">Bloomberg Law</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://pro.bloombergtax.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Tax" data-label="bna" tabindex="0">Bloomberg Tax</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bgov.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Government" data-label="bna" tabindex="0">Bloomberg Government</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bnef.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="BloombergNEF" data-label="bna" tabindex="0">BloombergNEF</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h3 id="that-list--media--9" class="bb-that-category__title">Media</h3><ul class="bb-that-category__content" aria-labelledby="that-list--media--9"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/markets/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Markets" data-label="bna" tabindex="0">Bloomberg Markets</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/technology/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Technology" data-label="bna" tabindex="0">Bloomberg Technology</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/pursuits/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Pursuits" data-label="bna" tabindex="0">Bloomberg Pursuits</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/politics/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Politics" data-label="bna" tabindex="0">Bloomberg Politics</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/opinion/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Opinion" data-label="bna" tabindex="0">Bloomberg Opinion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/businessweek/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Businessweek" data-label="bna" tabindex="0">Bloomberg Businessweek</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberglive.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Live Conferences" data-label="bna" tabindex="0">Bloomberg Live Conferences</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloombergapps.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Apps" data-label="bna" tabindex="0">Bloomberg Apps</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloombergradio.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Radio" data-label="bna" tabindex="0">Bloomberg Radio</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/live?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Television" data-label="bna" tabindex="0">Bloomberg Television</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/news-bureaus/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="News Bureaus" data-label="bna" tabindex="0">News Bureaus</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--media_services--10" class="bb-that-category__title">Media Services</h3><ul class="bb-that-category__content" aria-labelledby="that-list--media_services--10"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/distribution?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Media Distribution" data-label="bna" tabindex="0">Bloomberg Media Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergmedia.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Advertising" data-label="bna" tabindex="0">Advertising</a></li></ul></section>    </li>
+            </ul>
+
+        <ul class="bb-that__sitemap-sections bb-that--visible-sm">
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h3 id="that-list--company--11" class="bb-that-category__title">Company</h3><ul class="bb-that-category__content" aria-labelledby="that-list--company--11"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="About" data-label="bna" tabindex="0">About</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/what-we-do/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Careers" data-label="bna" tabindex="0">Careers</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/diversity-inclusion/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Diversity and Inclusion" data-label="bna" tabindex="0">Diversity and Inclusion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/innovation/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Innovation" data-label="bna" tabindex="0">Innovation</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/philanthropy/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Philanthropy" data-label="bna" tabindex="0">Philanthropy</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/sustainability/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Sustainability" data-label="bna" tabindex="0">Sustainability</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/london/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg London" data-label="bna" tabindex="0">Bloomberg London</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/company/beta/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Beta" data-label="bna" tabindex="0">Bloomberg Beta</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/gei?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Gender-Equality Index" data-label="bna" tabindex="0">Gender-Equality Index</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--communications--12" class="bb-that-category__title">Communications</h3><ul class="bb-that-category__content" aria-labelledby="that-list--communications--12"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/announcements/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Press Announcements" data-label="bna" tabindex="0">Press Announcements</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/press-contacts/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Press Contacts" data-label="bna" tabindex="0">Press Contacts</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--follow--13" class="bb-that-category__title">Follow</h3><ul class="bb-that-category__content" aria-labelledby="that-list--follow--13"><li class="bb-that-category__item"><a href="http://www.facebook.com/Bloomberglp" class="bb-that-category__social-link bb-that--icon-facebook" data-element="tophat-link" data-description="Facebook" data-label="bna" target="_blank" rel="noopener" tabindex="0">Facebook</a></li><li class="bb-that-category__item"><a href="https://twitter.com/bloomberg" class="bb-that-category__social-link bb-that--icon-twitter" data-element="tophat-link" data-description="Twitter" data-label="bna" target="_blank" rel="noopener" tabindex="0">Twitter</a></li><li class="bb-that-category__item"><a href="https://www.linkedin.com/company/2494" class="bb-that-category__social-link bb-that--icon-linkedin" data-element="tophat-link" data-description="LinkedIn" data-label="bna" target="_blank" rel="noopener" tabindex="0">LinkedIn</a></li><li class="bb-that-category__item"><a href="https://www.instagram.com/bloomberg/" class="bb-that-category__social-link bb-that--icon-instagram" data-element="tophat-link" data-description="Instagram" data-label="bna" target="_blank" rel="noopener" tabindex="0">Instagram</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h3 id="that-list--products--14" class="bb-that-category__title">Products</h3><ul class="bb-that-category__content" aria-labelledby="that-list--products--14"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/solution/bloomberg-terminal/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-TERMINAL-bbgmenu" data-element="tophat-link" data-description="Bloomberg Terminal" data-label="bna" tabindex="0">Bloomberg Terminal</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/execution-order-management/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-EXORDMGMT-bbgmenu" data-element="tophat-link" data-description="Execution and[br] Order Management" data-label="bna" tabindex="0">Execution and<br /> Order Management</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/data-and-content/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-DATACONT-bbgmenu" data-element="tophat-link" data-description="Content and Data" data-label="bna" tabindex="0">Content and Data</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/financial-data-management/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-FINDATA-bbgmenu" data-element="tophat-link" data-description="Financial Data[br] Management" data-label="bna" tabindex="0">Financial Data<br /> Management</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/integration-and-distribution/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-INTEGDIST-bbgmenu" data-element="tophat-link" data-description="Integration and[br] Distribution" data-label="bna" tabindex="0">Integration and<br /> Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/professional/solution/tradebook/?utm_source=bloomberg-menu&amp;utm_medium=bna&amp;bbgsum=DG-WS-PROF-SOLU-TBOOK-bbgmenu" data-element="tophat-link" data-description="Bloomberg[br] Tradebook" data-label="bna" tabindex="0">Bloomberg<br /> Tradebook</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--industry_products--15" class="bb-that-category__title">Industry Products</h3><ul class="bb-that-category__content" aria-labelledby="that-list--industry_products--15"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://pro.bloomberglaw.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Law" data-label="bna" tabindex="0">Bloomberg Law</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://pro.bloombergtax.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Tax" data-label="bna" tabindex="0">Bloomberg Tax</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bgov.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Government" data-label="bna" tabindex="0">Bloomberg Government</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://pro.bloombergenvironment.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Environment" data-label="bna" tabindex="0">Bloomberg Environment</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bnef.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="BloombergNEF" data-label="bna" tabindex="0">BloombergNEF</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h3 id="that-list--media--16" class="bb-that-category__title">Media</h3><ul class="bb-that-category__content" aria-labelledby="that-list--media--16"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/markets/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Markets" data-label="bna" tabindex="0">Bloomberg Markets</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/technology/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg[br] Technology" data-label="bna" tabindex="0">Bloomberg<br /> Technology</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/pursuits/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Pursuits" data-label="bna" tabindex="0">Bloomberg Pursuits</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/politics/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Politics" data-label="bna" tabindex="0">Bloomberg Politics</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/opinion/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Opinion" data-label="bna" tabindex="0">Bloomberg Opinion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/businessweek/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg[br] Businessweek" data-label="bna" tabindex="0">Bloomberg<br /> Businessweek</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberglive.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Live Conferences" data-label="bna" tabindex="0">Bloomberg Live Conferences</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloombergapps.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Apps" data-label="bna" tabindex="0">Bloomberg Apps</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloombergradio.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Radio" data-label="bna" tabindex="0">Bloomberg Radio</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/live?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Television" data-label="bna" tabindex="0">Bloomberg Television</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/news-bureaus/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="News Bureaus" data-label="bna" tabindex="0">News Bureaus</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--media_services--17" class="bb-that-category__title">Media Services</h3><ul class="bb-that-category__content" aria-labelledby="that-list--media_services--17"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/distribution?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Media Distribution" data-label="bna" tabindex="0">Bloomberg Media Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergmedia.com/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Advertising" data-label="bna" tabindex="0">Advertising</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h3 id="that-list--bloomberg--18" class="bb-that-category__title">Bloomberg</h3><div class="bb-that-category__content"><p class="bb-that-category__text">Connecting decision makers to a dynamic network of information, people and ideas, Bloomberg quickly and accurately delivers business and financial information, news and insight around the world.</p></div></section>            <section class="bb-that-category">
+    <h3 id="that-list--for_customers--19" class="bb-that-category__title">For Customers</h3><ul class="bb-that-category__content" aria-labelledby="that-list--for_customers--19"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Bloomberg Anywhere Remote Login" data-label="bna" tabindex="0">Bloomberg Anywhere Remote Login</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/downloads/?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Software Updates" data-label="bna" tabindex="0">Software Updates</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://service.bloomberg.com/portal/sessions/new?utm_source=bloomberg-menu&amp;utm_medium=bna" data-element="tophat-link" data-description="Manage Contracts and Orders" data-label="bna" tabindex="0">Manage Contracts and Orders</a></li></ul></section>            <section class="bb-that-category">
+    <h3 id="that-list--support--20" class="bb-that-category__title">Support</h3><div class="bb-that-category__content"><p class="bb-that-category__text"><span>Americas</span>+1 212 318 2000</p><p class="bb-that-category__text"><span>EMEA</span>+44 20 7330 7500</p><p class="bb-that-category__text"><span>Asia Pacific</span>+65 6212 1000</p></div></section>    </li>
+            </ul>
+
+    <button class="bb-that__close" aria-label="Close" tabindex="0"></button>
+</div>	</nav>
+</div>
+<div id="that-jump-content--default" tabindex="-1"></div>
+
+<!-- Begin header -->
+<header id="header" class="bgov-header ft-container ft-fluid">
+	<nav class="bgov-header__navbar ft-container ft-row-flex">
+	
+		
+		<!-- Custom mobile menu toggler -->
+		<div class="bgov-header__mobile-menu-toggler" aria-checked="false" tabindex="0">
+			<div class="bgov-header__toggle-menu">
+				<img src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=menu&amp;c=777c7f&amp;s=24" alt="" class="bna-icon" width="24" height="24" />			</div>
+			<div class="bgov-header__toggle-close">
+				<img src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=close&amp;c=777c7f&amp;s=24" alt="" class="bna-icon" width="24" height="24" />			</div>
+		</div>
+
+		
+		<!-- Site logo -->
+		<div class="bgov-header__logo bgov-header__logo--image ft-col-xs6 ft-col-md2">
+			<a class="bgov-header__logo__link" href="https://www.bloombergindustry.com/" rel="home">
+				<img class="bgov-header__logo__image" src="https://data.bloomberglp.com/bna/sites/10/2019/08/234x57-BIG_Logo-2.svg" alt="Bloomberg BNA" />			</a>
+		</div>
+
+		<!-- Wrapper for wp_nav_menu links & custom data links -->
+		<div class="bgov-header__menu">
+			<!-- Site default wp_nav_menu for width > 1439px -->
+			<ul id="menu-header" class="bgov-header__menu ft-row-flex"><li id="menu-item-264" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-264 bgov-header__menu__item"><a href="https://bloombergindustry.com/#products" class="bgov-header__menu__link" data-element="menu-header" data-description="Products">Products</a>
+<ul class="sub-menu">
+	<li id="menu-item-1213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1213 bgov-header__menu__item"><a href="https://pro.bloomberglaw.com/" class="bgov-header__menu__link" data-element="menu-header" data-description="Bloomberg Law">Bloomberg Law</a></li>
+	<li id="menu-item-1214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1214 bgov-header__menu__item"><a href="https://pro.bloombergtax.com/" class="bgov-header__menu__link" data-element="menu-header" data-description="Bloomberg Tax &amp; Accounting">Bloomberg Tax &amp; Accounting</a></li>
+	<li id="menu-item-1216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1216 bgov-header__menu__item"><a href="https://about.bgov.com/" class="bgov-header__menu__link" data-element="menu-header" data-description="Bloomberg Government">Bloomberg Government</a></li>
+</ul>
+</li>
+<li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14 bgov-header__menu__item"><a href="https://www.bloombergindustry.com/about-us/" class="bgov-header__menu__link" data-element="menu-header" data-description="About Us">About Us</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15 bgov-header__menu__item"><a href="https://www.bloombergindustry.com/careers/" class="bgov-header__menu__link" data-element="menu-header" data-description="Careers">Careers</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16 bgov-header__menu__item"><a href="https://www.bloombergindustry.com/contact-us/" class="bgov-header__menu__link" data-element="menu-header" data-description="Contact Us">Contact Us</a></li>
+<li class="bgov-header__menu__item menu-item menu-item-search">			<button class="menu__button--search" aria-label="Search">
+				<svg class="menu__button--icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" alt="Search">
+					<path d="M20.21 18.79l-2.5-2.5a1 1 0 0 0-1-.25l-1.47-1.47a7 7 0 1 0-.71.71L16 16.75a1 1 0 0 0 .25 1l2.5 2.5a1 1 0 0 0 1.41-1.41zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"/>
+				</svg>
+				<a class="bgov-header__menu__link menu__button--label" href="https://www.bloombergindustry.com/?s">Search</a>
+			</button>			<div class="bgov-header__search-bar">
+				<form class="search__container">
+					<img class="search__icon" src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=search&amp;s=24&amp;c=777c7f" alt="Search" aria-label="Search" width="24" height="24" />
+					<input class="search__input" type="text" placeholder="Search for news, reports, events and portfolios" />
+					<button class="search__button" type="submit">Go</button>
+				</form>
+				<button class="search__close" aria-label="close">✕</button>
+			</div></li></ul>
+			<!-- Additional header links for width > 1439px -->
+			
+			<!-- Header links -->
+			<div class="bgov-header__links ft-row-flex">
+				<a href="https://webutil.bna.com/profile/subscription" class="bgov-header__links__item bgov-header__links__item--type-sign-in">Sign In</a>			</div>
+
+		</div>
+	</nav>
+</header>
+<!-- End header -->
+
+<nav class="custom-mobile-menu"> 
+	<div class="custom-mobile-menu__container">
+		<div class="custom-mobile-menu__menu-item" id="264" data-has-children="true" aria-checked="false" tabindex="0"> 
+										Products  <span class="custom-mobile-menu__menu-toggle-icon menu-toggle-icon-plus icon-plus-264">+</span>
+								<span class="custom-mobile-menu__menu-toggle-icon menu-toggle-icon-minus icon-minus-264">-</span>
+							  
+									</div><a class="custom-mobile-menu__sub-menu-item menu-link sub-menu-item-264" href="https://pro.bloomberglaw.com/" tabindex="0" style="display: none;"> Bloomberg Law </a><a class="custom-mobile-menu__sub-menu-item menu-link sub-menu-item-264" href="https://pro.bloombergtax.com/" tabindex="0" style="display: none;"> Bloomberg Tax &amp; Accounting </a><a class="custom-mobile-menu__sub-menu-item menu-link sub-menu-item-264" href="https://about.bgov.com/" tabindex="0" style="display: none;"> Bloomberg Government </a><a class="custom-mobile-menu__menu-item" id="14" href="https://www.bloombergindustry.com/about-us/" tabindex="0"> 
+								About Us
+							</a><a class="custom-mobile-menu__menu-item" id="15" href="https://www.bloombergindustry.com/careers/" tabindex="0"> 
+								Careers
+							</a><a class="custom-mobile-menu__menu-item" id="16" href="https://www.bloombergindustry.com/contact-us/" tabindex="0"> 
+								Contact Us
+							</a>	</div>
+	<a href="https://webutil.bna.com/profile/subscription" class="bgov-header__links__item bgov-header__links__item--type-sign-in">Sign In</a></nav>
+
+
+		<!-- content wrapper -->
+		<div id="content" class="bgov-content ft-fluid">
+			
+<div class="ft-container breaking-news" role="banner">
+	<div class="ft-row-flex">
+		<div class="ft-col-xs12 breaking-news__container">
+			<p class="breaking-news__content">Access news, analysis, reports, and more – all to navigate and plan for Covid-19 impacts now.</p><a class="breaking-news__link button--outline button--outline-small" href="https://www.bloombergindustry.com/covid-19-resources/">Read More</a>		</div>
+	</div>
+</div>
+
+	<div class="content__page">
+		<div class="bb-row bb-bg--image bb-text--black" data-anchor-label="row-5fc8c2228336d" data-anchor="row-5fc8c2228336d" id="mb-home-hero">
+  <style>
+  div[data-anchor=row-5fc8c2228336d] {
+    background-image: url(https://assets.bbhub.io/bna/sites/10/2019/05/BNA_Main-hero.jpg);
+  }
+  @media screen and ( min-width: 752px ) and ( max-width: 1007px ) {
+    div[data-anchor=row-5fc8c2228336d] {
+        background-image: url(https://assets.bbhub.io/bna/sites/10/2019/08/MB_Home_Hero_Clouds.jpg);
+    }
+  }
+  @media screen and ( max-width: 751px ) {
+    div[data-anchor=row-5fc8c2228336d] {
+        background-image: url(https://assets.bbhub.io/bna/sites/10/2019/08/MB_Home_Hero_Clouds.jpg);
+    }
+  }
+</style>
+
+	
+	<div class="bb-row__content bb-height--100 ft-container">
+		<div class="bb-column bb-column--width-1_2">
+	<div class="bb-wysiwyg">
+    
+    <h1>The Intelligence to Shape a Changed World.</h1>
+<p>The right information. The relevant information. The information that matters. For the professionals who need it most.</p>
+
+</div>
+
+
+</div>
+<div class="bb-column bb-column--width-1_2">
+	
+</div>
+
+	</div>
+</div>
+<div class="bb-row bb-bg--grey bb-row--reduce-gutters" data-anchor-label="row-5fc8c22284b08" data-anchor="row-5fc8c22284b08" id="products">
+  
+	
+	<div class="bb-row__content ft-container">
+		<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c22284cda" class="tile tile--color-white" style="border-top-color: rgb(0, 168, 143); height: 395px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h2 style="text-align: center">Bloomberg Law</h2>
+<p><code></code></p>
+<p>Deliver expert counsel with smarter legal intelligence.</p>
+<div class="button button--align-center button--color-gray button--snap-to-bottom">
+	<a class="button__link" href="https://pro.bloomberglaw.com/" data-element="button" data-description="https://pro.bloomberglaw.com/" data-row-id="products" target="_blank" rel="noopener">Learn More</a>
+</div>
+
+	</div>
+	<style>
+		#tile_5fc8c22284cda .tile__image img {
+								}
+
+		#tile_5fc8c22284cda {
+					}
+
+		#tile_5fc8c22284cda {
+					}
+
+		#tile_5fc8c22284cda .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22284cda .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22284cda .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c22285282" class="tile tile--color-white" style="border-top-color: rgb(39, 133, 214); height: 395px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h2 style="text-align: center">Bloomberg Tax &amp; Accounting</h2>
+<p>Develop ideal tax strategies to crack the code for your clients.</p>
+<div class="button button--align-center button--color-gray button--snap-to-bottom">
+	<a class="button__link" href="https://pro.bloombergtax.com" data-element="button" data-description="https://pro.bloombergtax.com/" data-row-id="products" target="_blank" rel="noopener">Learn More</a>
+</div>
+
+	</div>
+	<style>
+		#tile_5fc8c22285282 .tile__image img {
+								}
+
+		#tile_5fc8c22285282 {
+					}
+
+		#tile_5fc8c22285282 {
+					}
+
+		#tile_5fc8c22285282 .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22285282 .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22285282 .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c222857e1" class="tile tile--color-white" style="border-top-color: rgb(153, 51, 204); height: 395px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h2 style="text-align: center">Bloomberg Government</h2>
+<p><code></code></p>
+<p>Direct the story while filling your pipeline with opportunity.</p>
+<div class="button button--align-center button--color-gray button--snap-to-bottom">
+	<a class="button__link" href="https://about.bgov.com" data-element="button" data-description="https://about.bgov.com/" data-row-id="products" target="_blank" rel="noopener">Learn More</a>
+</div>
+
+	</div>
+	<style>
+		#tile_5fc8c222857e1 .tile__image img {
+								}
+
+		#tile_5fc8c222857e1 {
+					}
+
+		#tile_5fc8c222857e1 {
+					}
+
+		#tile_5fc8c222857e1 .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c222857e1 .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c222857e1 .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+
+	</div>
+</div>
+<div class="bb-row bb-bg--image bb-text--white" data-anchor-label="row-5fc8c22285e94" data-anchor="row-5fc8c22285e94">
+  <style>
+  div[data-anchor=row-5fc8c22285e94] {
+    background-image: url(https://assets.bbhub.io/bna/sites/10/2020/04/blue-background-image.png);
+  }
+  @media screen and ( min-width: 752px ) and ( max-width: 1007px ) {
+    div[data-anchor=row-5fc8c22285e94] {
+        
+    }
+  }
+  @media screen and ( max-width: 751px ) {
+    div[data-anchor=row-5fc8c22285e94] {
+        
+    }
+  }
+</style>
+
+	
+	<div class="bb-row__content ft-container">
+		<div class="bb-column">
+	<div class="bb-wysiwyg">
+    
+    <h1 style="text-align: center"><strong><a href="https://data.bloomberglp.com/bna/sites/10/2020/04/covid_icon.png" data-element="textlink" data-description="https://data.bloomberglp.com/bna/sites/10/2020/04/covid_icon.png"><img class="aligncenter wp-image-1877 size-thumbnail" src="https://data.bloomberglp.com/bna/sites/10/2020/04/covid_icon-150x150.png" alt="" width="150" height="150" srcset="https://assets.bbhub.io/bna/sites/10/2020/04/covid_icon-150x150.png 150w, https://assets.bbhub.io/bna/sites/10/2020/04/covid_icon-180x180.png 180w" sizes="(max-width: 150px) 100vw, 150px" /></a></strong></h1>
+<h1 style="text-align: center"><strong>The Only Solution for<br />
+Industry-Specific Covid-19 News.</strong></h1>
+<p style="text-align: center">Access our timely coronavirus coverage, analysis, and unmatched thought leadership.</p>
+<div class="button button--align-center button--color-white button--snap-to-bottom">
+	<a class="button__link" href="https://www.bloombergindustry.com/covid-19-resources/" data-element="button" data-description="https://www.bloombergindustry.com/covid-19-resources/" data-row-id="" target="_self">Learn More</a>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+	</div>
+</div>
+<div class="bb-row bb-bg--black bb-text--white bb-row--collapse-bottom" data-anchor-label="row-5fc8c22286eae" data-anchor="row-5fc8c22286eae" id="mb-home-intel">
+  
+	
+	<div class="bb-row__content ft-container">
+		<div class="bb-column">
+	<div class="headline ft-container ft-row-flex">
+	<div class="headline__container ft-col-md8 ft-col-xs12">
+		
+<h1 style="text-align: center">Bringing It All Together.</h1>
+	</div>
+</div>
+
+
+</div>
+
+
+	</div>
+</div>
+<div class="bb-row bb-bg--black bb-text--white bb-row--reduce-gutters" data-anchor-label="row-5fc8c2228749d" data-anchor="row-5fc8c2228749d" id="mb-home-intel-tiles">
+  
+	
+	<div class="bb-row__content ft-container">
+		<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c22287678" class="tile tile--color-black" style="border-color: rgb(23, 80, 159); height: 410px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h3 style="text-align: center"><strong>Tech on the Cutting Edge</strong></h3>
+<p style="text-align: left">Future-ready innovations that get you to the news, analysis, and research solutions you need faster.</p>
+	</div>
+	<style>
+		#tile_5fc8c22287678 .tile__image img {
+								}
+
+		#tile_5fc8c22287678 {
+					}
+
+		#tile_5fc8c22287678 {
+					}
+
+		#tile_5fc8c22287678 .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287678 .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287678 .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c22287ad0" class="tile tile--color-black" style="border-color: rgb(23, 80, 159); height: 410px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h3 style="text-align: center">Authoritative Analysis</h3>
+<p>In-depth, practitioner-written analysis on the industry topics that matter most to you and your clients.</p>
+	</div>
+	<style>
+		#tile_5fc8c22287ad0 .tile__image img {
+								}
+
+		#tile_5fc8c22287ad0 {
+					}
+
+		#tile_5fc8c22287ad0 {
+					}
+
+		#tile_5fc8c22287ad0 .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287ad0 .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287ad0 .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+<div class="bb-column bb-column--width-1_3">
+	<div id="tile_5fc8c22287f0e" class="tile tile--color-black" style="border-color: rgb(23, 80, 159); height: 410px;">
+	<div class="tile__image-container">
+		<div class="tile__image">
+						<div class="tile__image-caption"></div>
+		</div>
+	</div>
+	<div class="tile__content">
+		
+<h3 style="text-align: center">Unequaled Editorial Quality</h3>
+<p>A strategically placed global network of seasoned and brilliant reporters, analysts, editors, and correspondents.</p>
+	</div>
+	<style>
+		#tile_5fc8c22287f0e .tile__image img {
+								}
+
+		#tile_5fc8c22287f0e {
+					}
+
+		#tile_5fc8c22287f0e {
+					}
+
+		#tile_5fc8c22287f0e .icon__container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287f0e .tile__image-container {
+			justify-content: flex-start;		}
+
+		#tile_5fc8c22287f0e .tile__image-caption {
+								}
+	</style>
+</div>
+
+
+
+</div>
+
+	</div>
+</div>
+<div class="bb-row bb-bg--image" data-anchor-label="row-5fc8c222883dd" data-anchor="row-5fc8c222883dd" id="mb-home-work">
+  
+	
+	<div class="bb-row__content ft-container">
+		<div class="bb-column">
+	<div class="bb-wysiwyg">
+    
+    <h1 style="text-align: center"><strong>Work That’s Worth It.</strong></h1>
+<p style="text-align: center">From breaking the latest scoop to providing thoughtful clarity on emerging challenges and beyond, what we do every day matters to our clients. Check out our open positions and make a difference with us.</p>
+
+</div>
+
+<div class="button button--align-center button--color-gray button--snap-to-bottom">
+	<a class="button__link" href="https://www.bloombergindustry.com/careers/" data-element="button" data-description="Learn More" data-row-id="mb-home-work" target="_self">Learn More</a>
+</div>
+
+
+</div>
+
+
+	</div>
+</div>
+			</div>
+		</div>
+		<!-- end main content area -->
+
+
+		<!-- begin site footer -->
+		<footer id="footer" class="site-footer ft-fluid">
+			<div class="site-footer__container ft-container">
+				<div class="site-footer__about ft-row-flex">
+					
+<div class="site-footer__sitemap site-footer__sitemap--number-of-menus-3 ft-row-flex">
+	<ul class="ft-row-flex">
+		<li class="footer-logo">
+			<div class="logo">
+	<img class="logo__image" alt="Bloomberg BNA" src="https://data.bloomberglp.com/bna/sites/10/2019/08/234x57-BIG_Logo-2.svg" /></div>
+		</li>
+
+		<li class="site-footer__sitemap__item"><h3>Solutions</h3><ul id="menu-solutions" class="site-footer__sitemap__submenu"><li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="https://pro.bloomberglaw.com" data-element="menu-footer" data-description="Bloomberg Law" class="site-footer__sitemap__link">Bloomberg Law</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="https://pro.bloombergtax.com" data-element="menu-footer" data-description="Bloomberg Tax &amp; Accounting" class="site-footer__sitemap__link">Bloomberg Tax &amp; Accounting</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="https://about.bgov.com" data-element="menu-footer" data-description="Bloomberg Government" class="site-footer__sitemap__link">Bloomberg Government</a></li>
+</ul></li><li class="site-footer__sitemap__item"><h3>Policies</h3><ul id="menu-policies" class="site-footer__sitemap__submenu"><li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://www.bloombergindustry.com/accessibility/" data-element="menu-footer" data-description="Accessibility" class="site-footer__sitemap__link">Accessibility</a></li>
+<li id="menu-item-862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-862"><a href="https://www.bloombergindustry.com/policies-and-terms/" data-element="menu-footer" data-description="Policies and Terms" class="site-footer__sitemap__link">Policies and Terms</a></li>
+</ul></li><li class="site-footer__sitemap__item"><h3>About</h3><ul id="menu-about" class="site-footer__sitemap__submenu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="https://www.bna.com/payment/" data-element="menu-footer" data-description="My Invoice" class="site-footer__sitemap__link">My Invoice</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="https://www.bloombergindustry.com/events/" data-element="menu-footer" data-description="Events" class="site-footer__sitemap__link">Events</a></li>
+<li id="menu-item-698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-698"><a href="/pr/" data-element="menu-footer" data-description="Press Releases" class="site-footer__sitemap__link">Press Releases</a></li>
+<li id="menu-item-1074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1074"><a href="https://www.bloombergindustry.com/in-the-news/" data-element="menu-footer" data-description="In the News" class="site-footer__sitemap__link">In the News</a></li>
+<li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-237"><a href="https://www.bloombergindustry.com/about-us/#executive-team" data-element="menu-footer" data-description="Executive Team" class="site-footer__sitemap__link">Executive Team</a></li>
+</ul></li>	</ul>
+</div>
+					
+<aside class="site-footer__callout ft-col-md2 ft-col-sm12">
+	<div class="social-icons">
+		<a class="social-icon social-icon--linkedin" href="https://www.linkedin.com/company/bloomberg-industry-group/about/" target="_blank" rel="noopener" data-element="social-follow" data-description="LinkedIn"><img class="social-icon__image" src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=linkedin&amp;c=0077b5&amp;s=32" alt="LinkedIn" aria-label="LinkedIn" width="32" height="32" /></a><a class="social-icon social-icon--twitter" href="https://twitter.com/BBGIndustry" target="_blank" rel="noopener" data-element="social-follow" data-description="Twitter"><img class="social-icon__image" src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=twitter&amp;c=429cd6&amp;s=32" alt="Twitter" aria-label="Twitter" width="32" height="32" /></a><a class="social-icon social-icon--instagram" href="https://instagram.com/bloombergindustry" target="_blank" rel="noopener" data-element="social-follow" data-description="Instagram"><img class="social-icon__image" src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=instagram&amp;c=ed2024&amp;s=32" alt="Instagram" aria-label="Instagram" width="32" height="32" /></a>	</div>
+	<div class="site-footer__description">
+			</div>
+</aside>
+				</div>
+				
+<div class="site-footer__footnote">
+
+			<div class="copyright">
+			<p>© 2020 The Bureau of National Affairs, Inc. All Rights Reserved</p>
+		</div>
+	
+	<div class="footer-links ft-row-flex">
+		<div class="menu-more-legal-footer-items-container"><ul id="menu-more-legal-footer-items" class="site-footer__footnote-menu"><li id="menu-item-1644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1644"><a href="https://www.bloombergindustry.com/privacy-policy/">Privacy Policy</a></li><li class="cookie-consent-footer__li" data-cookie-footer="footer" id="cookie-consent-link-footer" data-element="cookie-banner" data-description="Footer Link Click" style="display: block;"><a href="#" class="cookie-consent-footer__link">Do Not Sell My Info (CA)</a></li>
+<li class="cookie-consent-footer__li" data-cookie-footer="footer" id="cookie-consent-link-footer" data-element="cookie-banner" data-description="Footer Link Click" style="display: block;"><a href="#" class="cookie-consent-footer__link">Cookie Preferences</a></li></ul></div><a href="https://www.bloombergindustry.com/terms-and-conditions/">Terms of Service</a><a href="https://www.bloombergindustry.com/trademarks/">Trademarks</a>	</div>
+
+</div>
+			</div>
+		</footer>
+		<!-- end site footer -->
+
+				
+<div class="fab-container">
+
+	
+	<!-- Scroll to top fab -->
+	<a href="#top" class="fab fab__scrollTop" style="background: linear-gradient(0deg, #17509F, #17509F);" data-element="fab" data-description="Top">
+		<img src="https://www.bloombergindustry.com/content/themes/bna2018/public/assets/icon.php?i=arrow-up&amp;c=fff&amp;s=24" alt="" class="bna-icon" width="24" height="24" />		Top	</a>
+
+</div>
+
+	
+		<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent_desc" class="cookie-consent" style="background-color: rgb(23, 80, 159); display: block;" data-isindustrygroup="true" data-geolocation="false" data-countries="">
+	<div class="cookie-consent__wrapper">
+		<div class="cookie-consent__description">
+			<span class="cookie-consent__banner-title"></span>
+			<span class="cookie-consent__banner-text">We, and third parties, use cookies to provide website functionality, improve your user experience and to serve tailored advertisements. By clicking “Accept,” you agree to the use of cookies. Change your settings anytime by updating your
+<a href="#" aria-label="change your preferences" tabindex="0" id="cookie-consent-link" role="button" data-element="cookie-banner" data-description="cookie preferences"> Cookie Preferences</a>.
+For more information, see our <a href="https://www.bloombergindustry.com/privacy-policy/" aria-label="privacy policy" tabindex="0" id="privacy-policy-link" role="button" data-element="cookie-banner" data-description="privacy policy"> Privacy Policy</a>.</span>
+		</div>
+		<div class="cookie-consent__accept-wrapper">
+			
+			<a aria-label="Accept cookies" role="button" tabindex="0" class="cookie-consent__button" id="cookie-consent-optin" data-element="cookie-banner" data-description="Accept Cookies">ACCEPT</a>
+		</div>
+	</div>
+</div>
+<div id="cookie-settings" class="cookie-settings">
+	<div class="cookie-settings__wrapper">
+		<div aria-label="Close Window" role="button" tabindex="0" class="cookie-settings__xbutton" id="cookie-settings-xbutton" data-element="cookie-banner" data-description="Close Window"></div>
+		<p class="cookie-settings__description">
+			We, and third parties, use cookies and other electronic tools to enhance your experience, analyze site usage, and deliver advertisements tailored to your interests. For more information, please read our <a href="https://www.bloombergindustry.com/privacy-policy/" aria-label="privacy policy" tabindex="0" id="privacy-policy-link" role="button" data-element="cookie-banner" data-description="privacy policy" style="color:#000"> Privacy Policy</a>. By clicking "Save Settings", you agree to the use of these tools.
+<br /><br />
+
+<b><u>California Residents</u></b><br /> <br />
+To opt out of sharing your information for advertising purposes you can choose below under “<b>Advertising</b>” to opt-out of all or adjust your specific choices. You may also submit a request via this Do Not Sell My Personal Info <a href="https://profile.bna.com/profile/datafeedback " aria-label="ccpa" tabindex="0" id="ccpa-link" role="button" data-element="cookie-modal" data-description="ccpa-link" style="color:#000"> link</a>.
+		</p>
+		<h3 class="cookie-settings__title">
+			<b>Your choice regarding cookies on this website:</b>
+		</h3>
+
+		<h4 class="cookie-settings__category"> Required <input type="checkbox" id="cookie-settings-option-required" name="cookie-settings-option-required" data-cookie-optin="required" data-cookie-default-optin="1" class="cookie-settings-option__checkbox cookie-settings__category__checkbox" /><label for="cookie-settings-option-required" class="cookie-settings__category__label" data-element="cookie-banner" data-description="Toggle Required"></label> </h4><p class="cookie-settings__category-description">These cookies are required to enable core site functionality.</p><ul class="cookie-settings__items"><li><a href="https://www.adobe.com/privacy/policy.html" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Adobe Experience Platform Launch">Adobe Experience Platform Launch</a></li><li><a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Google Tag Manager">Google Tag Manager</a></li></ul><h4 class="cookie-settings__category cookie-settings__category-optional"> Performance <input type="checkbox" id="cookie-settings-option-performance" name="cookie-settings-option-performance" data-cookie-optin="performance" data-cookie-default-optin="1" class="cookie-settings-option__checkbox cookie-settings__category__checkbox" /><label for="cookie-settings-option-performance" class="cookie-settings__category__label" data-element="cookie-banner" data-description="Toggle Performance"></label> </h4><p class="cookie-settings__category-description">These cookies allow us to analyze site usage so we can measure and improve performance. They collect information in a way that does not directly identify individuals.</p><ul class="cookie-settings__items"><li><input type="checkbox" id="cookie-settings-option-google-analytics" name="cookie-settings-option-google-analytics" data-cookie-optin="google-analytics" data-cookie-category="performance" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-google-analytics"><a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Google Analytics">Google Analytics</a></label></li><li><input type="checkbox" id="cookie-settings-option-adobe-analytics" name="cookie-settings-option-adobe-analytics" data-cookie-optin="adobe-analytics" data-cookie-category="performance" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-adobe-analytics"><a href="https://www.adobe.com/privacy/policy.html" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Adobe Analytics">Adobe Analytics</a></label></li></ul><h4 class="cookie-settings__category cookie-settings__category-optional"> Advertising <input type="checkbox" id="cookie-settings-option-advertising" name="cookie-settings-option-advertising" data-cookie-optin="advertising" data-cookie-default-optin="1" class="cookie-settings-option__checkbox cookie-settings__category__checkbox" /><label for="cookie-settings-option-advertising" class="cookie-settings__category__label" data-element="cookie-banner" data-description="Toggle Advertising"></label> </h4><p class="cookie-settings__category-description">We and our advertising partners use electronic technologies to collect certain types of personal information through our digital properties in order to provide you with relevant advertisements. Personal information may include your IP address, digital identifiers, and your interactions with digital properties.</p><ul class="cookie-settings__items"><li><input type="checkbox" id="cookie-settings-option-bing-ads" name="cookie-settings-option-bing-ads" data-cookie-optin="bing-ads" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-bing-ads"><a href="https://privacy.microsoft.com/en-US/" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Bing Ads &amp; Remarketing">Bing Ads &amp; Remarketing</a></label></li><li><input type="checkbox" id="cookie-settings-option-twitter-tracking" name="cookie-settings-option-twitter-tracking" data-cookie-optin="twitter-tracking" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-twitter-tracking"><a href="https://twitter.com/en/privacy" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Twitter Tracking and Advertising">Twitter Tracking and Advertising</a></label></li><li><input type="checkbox" id="cookie-settings-option-eloqua" name="cookie-settings-option-eloqua" data-cookie-optin="eloqua" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-eloqua"><a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Eloqua">Eloqua</a></label></li><li><input type="checkbox" id="cookie-settings-option-google-adwords-conversion" name="cookie-settings-option-google-adwords-conversion" data-cookie-optin="google-adwords-conversion" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-google-adwords-conversion"><a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Google Ads">Google Ads</a></label></li><li><input type="checkbox" id="cookie-settings-option-linkedin-marketing-solutions" name="cookie-settings-option-linkedin-marketing-solutions" data-cookie-optin="linkedin-marketing-solutions" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-linkedin-marketing-solutions"><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener" data-element="cookie-banner" data-description="LinkedIn Marketing Solutions">LinkedIn Marketing Solutions</a></label></li><li><input type="checkbox" id="cookie-settings-option-linkedin-ads" name="cookie-settings-option-linkedin-ads" data-cookie-optin="linkedin-ads" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-linkedin-ads"><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener" data-element="cookie-banner" data-description="LinkedIn Ads">LinkedIn Ads</a></label></li><li><input type="checkbox" id="cookie-settings-option-facebook-custom-audience" name="cookie-settings-option-facebook-custom-audience" data-cookie-optin="facebook-custom-audience" data-cookie-category="advertising" class="cookie-settings__items__checkbox cookie-settings-option__checkbox" />
+							<label for="cookie-settings-option-facebook-custom-audience"><a href="https://www.facebook.com/about/privacy" target="_blank" rel="noopener" data-element="cookie-banner" data-description="Facebook Custom Audience">Facebook Custom Audience</a></label></li></ul>
+
+		<div class="cookie-settings__save-wrapper">
+			<a aria-label="Save Settings" role="button" tabindex="0" class="cookie-consent__button" id="cookie-settings-save" data-element="cookie-banner" data-description="Save Settings">Save Settings</a>
+		</div>
+		<p class="cookie-settings__thankyou">
+			Thank you, your preferences have been saved. You can change your settings anytime using the Cookie Preferences link in the footer of the website.
+		</p>
+		<p class="cookie-settings__reject">
+			Thank you, your preferences have been saved. You can change your settings anytime using the Cookie Preferences link in the footer of the website.
+		</p>
+		<p class="cookie-settings__disclosure">
+			By saving your settings you are agreeing to the use of these tools. You can change your settings at anytime using the Cookie Preferences link in the footer of this website.
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var bbgfb_cookies = {"host":"www.bloombergindustry.com","path":"\/","per_page":"trackingcode-page","campaign":"trackingcode","per_page_mpam":"mpam-page","campaign_mpam":"mpam","per_page_tactic":"tactic-page","campaign_tactic":"tactic","additional_persistent_tracking":"trackingcode,promocode,utm_medium,utm_source,elqCampaignId,app","additional_persistent_tracking_addendums":"-cta","expires":"0.0208"};
+/* ]]&gt; */
+</script>
+<script type="text/javascript" src="https://www.bloombergindustry.com/content/plugins/bloomberg-form-builder/dist/cookies.js?rel=2a46e1b3ac"></script>
+<script type="text/javascript">
+!function(e){function r(r){for(var n,i,a=r[0],c=r[1],f=r[2],p=0,s=[];p&lt;a.length;p++)i=a[p],Object.prototype.hasOwnProperty.call(o,i)&amp;&amp;o[i]&amp;&amp;s.push(o[i][0]),o[i]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&amp;&amp;(e[n]=c[n]);for(l&amp;&amp;l(r);s.length;)s.shift()();return u.push.apply(u,f||[]),t()}function t(){for(var e,r=0;r&lt;u.length;r++){for(var t=u[r],n=!0,a=1;a&lt;t.length;a++){var c=t[a];0!==o[c]&amp;&amp;(n=!1)}n&amp;&amp;(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={5:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,a=document.createElement("script");a.charset="utf-8",a.timeout=120,i.nc&amp;&amp;a.setAttribute("nonce",i.nc),a.src=function(e){return i.p+""+({}[e]||e)+"."+{7:"d9cf0414",8:"bf6fbbf8"}[e]+".js"}(e);var c=new Error;u=function(r){a.onerror=a.onload=null,clearTimeout(f);var t=o[e];if(0!==t){if(t){var n=r&amp;&amp;("load"===r.type?"missing":r.type),u=r&amp;&amp;r.target&amp;&amp;r.target.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,t[1](c)}o[e]=void 0}};var f=setTimeout((function(){u({type:"timeout",target:a})}),12e4);a.onerror=a.onload=u,document.head.appendChild(a)}return Promise.all(r)},i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&amp;&amp;Symbol.toStringTag&amp;&amp;Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&amp;r&amp;&amp;(e=i(e)),8&amp;r)return e;if(4&amp;r&amp;&amp;"object"==typeof e&amp;&amp;e&amp;&amp;e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&amp;r&amp;&amp;"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&amp;&amp;e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="dist/",i.oe=function(e){throw console.error(e),e};var a=window.webpackJsonp=window.webpackJsonp||[],c=a.push.bind(a);a.push=r,a=a.slice();for(var f=0;f&lt;a.length;f++)r(a[f]);var l=c;t()}([]);
+</script>
+<script type="text/javascript" src="https://www.bloombergindustry.com/content/themes/bna2018/dist/vendors~main.c0b7540b.js"></script>
+<script type="text/javascript">
+window.__SITE_URL__ = "";
+window.__PUBLIC_PATH__ = "https://www.bloombergindustry.com/content/themes/bna2018/dist/";
+</script>
+<script type="text/javascript" src="https://www.bloombergindustry.com/content/themes/bna2018/dist/main.f663fbf6.js"></script>
+<script type="text/javascript" src="https://www.bloombergindustry.com/wp-includes/js/wp-embed.min.js?ver=198e0971cfcd832279c7d4ee3db0d2d3e17b5d2b46603ca2f3553b043596b582"></script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cd0676da66","applicationID":"607061006","transactionName":"YQEHZRZXWkpVVhVbWlhLJFIQX1tXG0UAVVA=","queueTime":0,"applicationTime":197,"atts":"TUYEE15NSUQ=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div class="person-modal-backdrop modal-fade"></div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","3235961046470759");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3235961046470759&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+</body></html>

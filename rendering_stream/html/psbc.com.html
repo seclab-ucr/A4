@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " 
+http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>中国邮政储蓄银行</title>
+<link href="/data/tosend/resource/template/cn/style/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/data/tosend/resource/template/cn/script/jquery.min.js"></script>
+<script type="text/javascript" src="/data/tosend/resource/template/cn/script/jquery.jcarousellite.js"></script>
+<script type="text/javascript" src="/data/tosend/resource/template/cn/script/main.js"></script>
+<script type="text/javascript" src="/data/tosend/resource/template/cn/script/slider.js"></script>
+<script>tabIndex=0;</script>
+<script language="javascript">
+// open the related site windows 
+function mbar(sobj) { 
+var docurl =sobj.options[sobj.selectedIndex].value; 
+if (docurl != "") { 
+open(docurl,'_blank'); 
+sobj.selectedIndex=0; 
+sobj.blur(); 
+} 
+} 
+//
+</script> 
+</head>
+<body>
+<div id="page">
+<!--header start-->
+
+<!--  一级导航  -->
+<!--一级导航公共部分-->
+<div class="top">
+<div class="container gray_txt clearfix">
+<div class="float_left top_contact">
+<em>客服与投诉热线：  </em><span class="top_highlight green_txt">95580</span>  |  
+<em>信用卡客服与投诉热线： </em><span class="top_highlight green_txt">40088-95580</span>
+</div>
+<div class="float_right top_links">
+<span style="float: left;color:#000;font-size: 14px;margin-left: 42px;">本网站支持IPv6</span>
+<a href="/cn/index/rczp/index.html" target="_blank">人才招聘 </a><span>|</span>
+<a href="/en/index.html" target="_blank">English  </a><span>|</span>
+<a href="/big5/index.html" target="_blank">繁体中文  </a><span>|</span>
+<a href="http://95580.psbc.com/psbc_webchat/main.jsp" target="_blank">在线客服 </a>
+</div>
+</div>
+</div>
+<div class="nav">
+<div class="container">
+<img src="/data/tosend/resource/upload/20200824/aeefad5b-a154-423e-ac50-b8db1e00fd58.jpg" class="header_logo" />
+<div class="top_schbox">
+<form id="form9" name="form9" onsubmit="return chkchk()" onkeydown="return chkchk()">
+		<input name="firstChannel" id="firstChannel" type="hidden" value="" />
+	<input name="channelUrl" id="channelUrl" type="hidden" />
+	<input name="scope" id="scope" type="hidden" value="title" />
+	<input name="siteUrl" id="siteUrl" type="hidden" />
+	<input name="url" id="url" type="hidden" value="/cn/index/siteseach/index.html" />
+	<input type="text" class="top_schtxt" name="keyWord" id="keyWord" onkeydown="doIt()" />
+	<input type="button" value="" class="top_schbtn" id="button" onclick="KeyWordsSearch();" name="button" />
+	<input style="display:none" type="submit" />
+</form> 
+</div>
+<div class="clr"></div>
+
+<ul id="nav" class="clearfix">
+	     <li id="menu_0" class="menuitem selected" onmouseout="HideMenu(0)" onmouseover="SelectMenu(0)"><a href="/cn/index.html" class="menu_txt">首页</a></li>
+    <li id="menu_1" class="menuitem" onmouseout="HideMenu(1)" onmouseover="SelectMenu(1)"><a href="/cn/PsbcDemeanour/index.html" class="menu_txt">邮储风采</a></li>
+    <li id="menu_2" class="menuitem" onmouseout="HideMenu(2)" onmouseover="SelectMenu(2)"><a href="/cn/PersonalBanking/index.html" class="menu_txt">个人业务</a></li>
+    <li id="menu_3" class="menuitem" onmouseout="HideMenu(3)" onmouseover="SelectMenu(3)"><a href="/cn/CorporateBanking/index.html" class="menu_txt">公司业务</a></li>
+    <li id="menu_4" class="menuitem" onmouseout="HideMenu(4)" onmouseover="SelectMenu(4)"><a href="/cn/tab/index.html" class="menu_txt">三农业务</a></li>
+    <li id="menu_5" class="menuitem" onmouseout="HideMenu(5)" onmouseover="SelectMenu(5)"><a href="/cn/investment/index.html" class="menu_txt">投资理财</a></li>
+    <li id="menu_6" class="menuitem" onmouseout="HideMenu(6)" onmouseover="SelectMenu(6)"><a href="/cn/CreditCard/index.html" class="menu_txt">信用卡</a></li>
+    <li id="menu_7" class="menuitem" onmouseout="HideMenu(7)" onmouseover="SelectMenu(7)"><a href="/cn/EBanking/index.html" class="menu_txt">电子银行</a></li>
+    <li id="menu_8" class="menuitem" onmouseout="HideMenu(8)" onmouseover="SelectMenu(8)"><a href="/cn/tzzgx/index.html" class="menu_txt">投资者关系</a></li>
+    <li id="menu_9" class="menuitem" onmouseout="HideMenu(9)" onmouseover="SelectMenu(9)"><a href="/cn/BranchChannel/index.html" class="menu_txt">分行频道</a></li>
+</ul>
+
+<script type="text/javascript">
+function KeyWordsSearch()
+{
+	var url =document.getElementById("url").value; 
+	var headUrl=document.URL;
+	var siteUrl;
+	var channelUrl;
+	var str=headUrl.substring(headUrl.indexOf("//")+2); 
+	var strs = str.split("/");  
+	if(strs[1]=="cms"){ 
+		siteUrl = strs[2];
+		channelUrl = strs[3]=="index.html"?"":strs[3];
+	}else{
+		siteUrl = strs[1];
+		channelUrl = strs[2]=="index.html"?"":strs[2]; 
+	}
+	var keyWord=document.getElementById("keyWord").value;
+	var scope="title";
+	if(document.getElementById("scope")!=null)
+	{
+	scope=document.getElementById("scope").value;
+	}
+	var path=url+"?keyWord="+encodeURI(keyWord)+"&amp;siteUrl="+siteUrl+"&amp;channelUrl="+channelUrl+"&amp;scope="+scope;
+	window.open(path,"_self");
+}
+function doIt(){
+	if(event.keyCode == 13){
+		KeyWordsSearch();
+	}
+}
+
+ function chkchk()
+{
+	if (event.keyCode==13)
+	{
+		return false;
+	}
+	return true;
+}
+</script>
+<!--  一级导航 结束 --> 
+
+<div class="nav_line"></div>
+</div>
+</div>
+
+
+<div class="kv container">
+<!--  二级导航  6个submenu的div对应除home外的6个一级导航  -->
+<div class="smenu" id="subMenuItems">
+<div class="submenu" id="sub_menu_1" onmouseout="HideMenu(1)" onmouseover="SelectMenu(1)">
+<ul>
+<li><a href="/cn/PsbcDemeanour/AboutPSBC/1939.html">关于邮储</a></li>
+<li><a href="/cn/PsbcDemeanour/PSBCDynamic/index.html">邮储动态</a></li>
+<li><a href="/cn/PsbcDemeanour/AuthoritativeVoice/index.html">权威发声</a></li>
+<li><a href="/cn/PsbcDemeanour/WealthMatch/index.html">创富大赛</a></li>
+<li><a href="/cn/PsbcDemeanour/PartyConstruction/index.html">党建工作</a></li>
+<li><a href="/cn/PsbcDemeanour/StaffStyle/index.html">职工文化</a></li>
+<li class="last"><a href="/cn/PsbcDemeanour/VideoPart/index.html">视频专区</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_2" onmouseout="HideMenu(2)" onmouseover="SelectMenu(2)">
+<ul>
+<li><a href="/cn/PersonalBanking/grbmjr/grcxck/index.html">储蓄存款</a></li>
+<li><a href="/cn/PersonalBanking/grbmjr/grzfjs/index.html">支付结算</a></li>
+<li><a href="/cn/PersonalBanking/bankka/index.html">银行卡</a></li>
+<li><a href="/cn/PersonalBanking/WH/index.html">外汇</a></li>
+<li><a href="/cn/PersonalBanking/GRYWXD/index.html">信贷业务</a></li>
+<li>
+<a href="/cn/investment/index.html">
+投资理财</a>
+</li>
+<li><a href="/cn/PersonalBanking/gbfuwu/index.html">贵宾服务</a></li>
+<li class="last"><a href="https://pbank.psbc.com/perbank/portalPersonProductManageQuery.gate">个人产品信息查询平台</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_3" onmouseout="HideMenu(3)" onmouseover="SelectMenu(3)">
+<ul>
+<li><a href="/cn/CorporateBanking/gongsicunkuan/index.html">公司存款</a></li>
+<li><a href="/cn/CorporateBanking/gongsijiesuan/index.html">公司结算</a></li>
+<li><a href="/cn/CorporateBanking/piaojuyewutwo/index.html">现金管理</a></li>
+<li><a href="/cn/CorporateBanking/piaojuyewu/index.html">票据业务</a></li>
+<li><a href="/cn/CorporateBanking/rongzirongxin/index.html">公司融资融信</a></li>
+<li><a href="/cn/CorporateBanking/xiaoweiqiye/index.html">小微企业（小微E创富）</a></li>
+<li><a href="/cn/CorporateBanking/gsywGslc/index.html">公司理财</a></li>
+<li><a href="/cn/CorporateBanking/GSYWtuoguanyewu/index.html">托管业务</a></li>
+<li><a href="/cn/CorporateBanking/maoyijinrong/index.html">贸易金融（国际业务）</a></li>
+<li class="last"><a href="/cn/CorporateBanking/jrsc/index.html">金融市场</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_4" onmouseout="HideMenu(4)" onmouseover="SelectMenu(4)">
+<ul>
+<li><a href="/cn/tab/ThreeAgrMessage/index.html">三农讯息</a></li>
+<li class="last"><a href="/cn/tab/ThreeAgrPro/ThreeAgrPer/index.html">邮储三农产品</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_5" onmouseout="HideMenu(5)" onmouseover="SelectMenu(5)">
+<ul>
+<li><a href="/cn/investment/transactions/index.html">理财</a></li>
+<li><a href="/cn/investment/foundation/index.html">基金</a></li>
+<li><a href="/cn/investment/insurance/index.html">保险</a></li>
+<li><a href="/cn/investment/preciousmetal/index.html">贵金属</a></li>
+<li><a href="/cn/investment/nationalz/index.html">国债</a></li>
+<li class="last">
+<a href="/cn/investment/zqzjcg/index.html">资金存管</a>
+</li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_6" onmouseout="HideMenu(6)" onmouseover="SelectMenu(6)">
+<ul>
+<li><a href="/cn/CreditCard/xykindex/xykqjf/cpjs/index.html">信用卡全家福</a></li>
+<li><a href="https://pbank.psbc.com/">申请进度查询  </a></li>
+<li><a href="/cn/CreditCard/xykindex/xykthgl/index.html">特惠活动</a></li>
+<li><a href="/cn/CreditCard/xinyongkafenqi/index.html">信用卡分期</a></li>
+
+   <li>
+	<a href=" http://shop.psbc.com/index.html">
+	积分商城</a>
+	</li>
+
+<li class="last"><a href="/cn/CreditCard/khufwu/index.html">信用卡服务</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_7" onmouseout="HideMenu(7)" onmouseover="SelectMenu(7)">
+<ul>
+<li><a href="/cn/EBanking/Announcements/index.html">优惠活动</a></li>
+<li><a href="/cn/EBanking/LifeService/index.html">生活服务</a></li>
+<li><a href="/cn/EBanking/BrandServe/index.html">业务公告</a></li>
+<li><a href="/cn/EBanking/mobilebank/index.html">手机银行</a></li>
+<li><a href="/cn/EBanking/PersonalEBanking/index.html">个人网银</a></li>
+<li><a href="/cn/EBanking/CorporateEBanking/index.html">企业网银</a></li>
+<li><a href="/cn/EBanking/TelephoneBanking/index.html">电话银行</a></li>
+<li><a href="/cn/EBanking/TvEBanking/index.html">储蓄短信服务</a></li>
+<li><a href="/cn/EBanking/TinyEBanking/index.html">自助银行</a></li>
+<li class="last"><a href="https://pbank.psbc.com">自助填单</a></li>
+</ul>
+</div>
+<div class="submenu" id="sub_menu_8" onmouseout="HideMenu(8)" onmouseover="SelectMenu(8)">
+<ul>
+<li>
+ <a href="/cn/tzzgx/tzjz/index.html">投资价值</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/index.html#gsgg">公司公告</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/gszl/index.html">公司治理</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/cwxx/index.html">财务信息</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/jgzb/index.html">监管资本</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/csr/index.html">企业社会责任</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/yjfb/index.html">公司推介</a>
+</li>
+<li>
+ <a href="/cn/tzzgx/tzzfw/index.html">投资者服务</a>
+</li>
+<li class="last">
+</li>
+</ul>
+</div>
+</div>
+<!--  二级导航 结束  -->
+<div class="ebanking_title">
+<!--安全提示图标公共模板-->
+<a href="/cn/EBanking/PersonalEBanking/1108.html"><img src="/data/tosend/resource/upload/20160326/safetytips.jpg" /></a>
+</div>
+
+<!---kv图切换--->
+<div class="flexslider" style="height:431px;">
+  <ul>
+    <li style="display: none;">
+      <a href="/cn/index/ggl/75648.html"><img src="/data/tosend/resource/upload/20201128/ckbx-sy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none" style="display: list-item; opacity: 0.585965;">
+      <a href="https://mp.weixin.qq.com/s/_kEG8iDE-aS5kmvEPBz9-w"><img src="/data/tosend/resource/upload/20201120/ycshtzs202011-sy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none" style="display: list-item; opacity: 0.414035;">
+      <a href="/cn/EBanking/Announcements/75894.html"><img src="/data/tosend/resource/upload/20201201/电子银行内部banner.png" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="/cn/EBanking/Announcements/73340.html"><img src="/data/tosend/resource/upload/20200930/jsxgwsy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="https://mp.weixin.qq.com/s/pH8Dm6V4dDHxOxgRyQGlVw"><img src="/data/tosend/resource/upload/20201019/nmfsk202010.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="https://mp.weixin.qq.com/s/o4QaII04ZoJByoHaLCRtzg"><img src="/data/tosend/resource/upload/20201016/ydzf2020-sy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/74788.html"><img src="/data/tosend/resource/upload/20201110/jds112020-sy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="https://openpayment.psbc.com/"><img src="/data/tosend/resource/upload/20191018/jfpt-sy.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycvisa/index.html"><img src="/data/tosend/resource/upload/20200723/官网首页banner.jpg" width="992" height="431" /></a>
+    </li>
+    <li class="none">
+      <a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/75781.html"><img src="/data/tosend/resource/upload/20201130/didi-sy.jpg" width="992" height="431" /></a>
+    </li>
+  </ul>
+  <p>
+  <span class=""></span>
+  <span class=""></span>
+  <span class="current"></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  </p>
+</div>
+<!----kv图切换  结束--->
+
+</div>
+
+
+<!--header end-->
+
+<!--section 1 start-->
+<div class="section1 container">
+<div class="leftside">
+<div class="mobile_area">
+<!--???Ebanking ???--->
+<div class="mobile_btn" id="m1">
+<a href="https://pbank.psbc.com/perbank/" target="_blank" class="clearfix"><img src="/data/tosend/resource/upload/20160401/mobile_btn1.jpg" class="float_left" /><span>个人网上银行登录    </span></a>
+<div class="mobile m1" id="mobile1">
+<a href="https://pbank.psbc.com/perbank/Demo/index_demo.html" target="_blank">演示    </a> | 
+<a href="/cn/EBanking/PersonalEBanking/xzq/index.html" target="_blank">下载   </a>
+</div>
+</div>
+<div class="mobile_btn" id="m2">
+<a href="https://corpebankq.psbc.com/bankGuide/index.html" target="_blank" class="clearfix"><img src="/data/tosend/resource/upload/20160401/mobile_btn2.jpg" class="float_left" /><span>企业网上银行登录      </span></a>
+<div class="mobile m2" id="mobile2">
+<a href="/data/corpbank/movie/main.html" target="_blank">演示   </a> | 
+<a href="/cn/EBanking/CorporateEBanking/qyxzq/index.html" target="_blank">下载     </a>
+</div>
+</div>
+<div class="mobile_btn" id="m3">
+<a class="clearfix" target="_blank"><img src="/data/tosend/resource/upload/20160803/1bb4a6f4-8be9-4c05-a86b-f90113759468.jpg" class="float_left" /><span>个人手机银行       </span></a>
+<div class="mobile m3" id="mobile3">
+<a href="/cn/EBanking/mobilebank/1084.html" target="_blank">下载</a> | 
+<a href="/cn/EBanking/mobilebank/1099.html" target="_blank">安全提示</a>
+</div>
+</div>
+<div class="mobile_btn" id="m4">
+<a href="https://pbank.psbc.com/perbank/index.html?ZmFxVGFnPXBvc3RPbmxpbmU=" class="clearfix" target="_blank"><img src="/data/tosend/resource/upload/20160401/mobile_btn3.jpg" class="float_left" /><span>邮政网上汇款登录   </span></a>
+<div class="mobile m4" id="mobile4">
+<a href="https://pbank.psbc.com/perbank/Demo/index_demo.html" target="_blank">演示   </a>
+</div>
+</div>
+
+</div>
+<!-- ?????????-->
+
+<div id="demo01" class="flslider moneynews">
+	
+<div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1000%; transition-duration: 0.4s; transform: translate3d(-828px, 0px, 0px);"><li class="clone" style="width: 276px; float: left; display: block;"><div class="img"><a href="http://shop.psbc.com/index.html" target="_blank"><img src="/data/tosend/resource/upload/20171106/jifen.jpg" height="150" width="276" alt="" /></a></div></li>
+		<li class="" style="width: 276px; float: left; display: block;"><div class="img"><a href="https://openpayment.psbc.com/" target="_blank"><img src="/data/tosend/resource/upload/20190710/jiaofeifuwu-sy.jpg" height="150" width="276" alt="" /></a></div></li>
+		
+		<li class="" style="width: 276px; float: left; display: block;"><div class="img"><a href="http://www.ule.com/event/2016/0307/index.html?adid=mas_quanqiang" target="_blank"><img src="/data/tosend/resource/upload/20160921/youle.jpg" height="150" width="276" alt="" /></a></div></li>
+		
+		<li class="flex-active-slide" style="width: 276px; float: left; display: block;"><div class="img"><a href="http://shop.psbc.com/index.html" target="_blank"><img src="/data/tosend/resource/upload/20171106/jifen.jpg" height="150" width="276" alt="" /></a></div></li>
+		
+	<li class="clone" style="width: 276px; float: left; display: block;"><div class="img"><a href="https://openpayment.psbc.com/" target="_blank"><img src="/data/tosend/resource/upload/20190710/jiaofeifuwu-sy.jpg" height="150" width="276" alt="" /></a></div></li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="flex-active">3</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>	
+	<div class="clearfix sylbt">
+	<a href="http://ju.ule.com/?adid=mas_psbcleft" target="_blank" class="w1">邮乐网 </a>
+	<a href="http://shop.psbc.com/index.html" target="_blank" class="w2">积分商城 </a>
+	<a href="https://pbank.psbc.com/" target="_blank" class="w3">我要办卡  </a>
+	<a href="https://openpayment.psbc.com/" target="_blank" class="w4">缴费平台服务 </a>
+</div>
+
+
+<!-- ???????????? -->
+<div class="ser_fast_acess">
+<h5 class="cat_tit">
+
+	服务快捷通道
+</h5>
+	<ul class="clearfix">
+
+    <li><a href="/cn/CreditCard/xykthsh/index.html" target="_blank" class="sicon3">信用卡特惠商户 </a></li>
+
+
+    <li><a href="/cn/investment/transactions/index.html" target="_blank" class="sicon4">理财产品查询 </a></li>
+
+
+    <li><a href="/cn/investment/foundation/funddts/index.html" target="_blank" class="sicon5">基金产品查询    </a></li>
+
+
+    <li><a href="https://pbank.psbc.com/" target="_blank" class="sicon6">信用卡进度查询  </a></li>
+
+
+    <li><a href="https://pbank.psbc.com/" target="_blank" class="sicon8">E捷贷   </a></li>
+
+
+    <li><a href="/cn/index/Inquiries/index.html" target="_blank" class="sicon9">网点机构查询 </a></li>
+
+
+    <li><a href="https://pbank.psbc.com/perbank/loanPersonApplication.gate" target="_blank" class="sicon10">贷款在线申请    </a></li>
+
+
+    <li><a href="https://pbank.psbc.com/" target="_blank" class="sicon11">网贷通(消贷支用)   </a></li>
+
+
+    <li><a href="/cn/CorporateBanking/gongsicunkuan/41731.html" target="_blank" class="sicon13">单位大额存单 </a></li>
+
+
+    <li><a href="https://corpebankq.psbc.com/#/BankpreAcc" target="_blank" class="sicon10">单位开户申请 </a></li>
+
+
+    <li><a href="https://corpebankq.psbc.com/#/BankpreAccQry" target="_blank" class="sicon6 ">开户进度查询 </a></li>
+
+
+    <li><a href="https://corpebankq.psbc.com/#/PrefilledEnter" target="_blank" class="sicon5">企业网银自助填单录入</a></li>
+
+
+    <li><a href="https://corpebankq.psbc.com/#/Prefilled" target="_blank" class="sicon5">企业网银自助填单查询及修改 </a></li>
+
+
+    <li><a href="https://openpayment.psbc.com/cup/internet/view/index/index.html" target="_blank" class="sicon5">对公在线缴费  </a></li>
+
+    </ul>
+</div>
+<!-- ????????????? -->
+
+<div class="moneynews">
+<h5 class="cat_tit">
+
+	商户快捷登录
+</h5>
+<div class="clearfix moneynewslist">
+<a href="https://pbank.psbc.com/perbank/login_por.gate" target="_blank" class="w1">特约商户  </a>
+<a href="/data/corpbank/index.html" target="_blank" class="w2">网上支付商户   </a>
+<a href="https://dealer.psbc.com/remitmerchant" target="_blank" class="w3">汇款商户 </a>
+<a href="https://query.psbc.com/shanghufuwu/prelogin.do?_locale=zh_CN&amp;BankId=9999&amp;LoginType=F" target="_blank" class="w4">商户服务    </a>
+
+</div>
+<div><img src="/data/tosend/resource/upload/20180627/3216602f-cbaa-4d4c-8112-774ebec14ded.jpg" /></div>
+</div>
+<p class="pt12"><!--客服图标公共模板-->
+<a href="http://95580.psbc.com/psbc_webchat/main.jsp" target="_blank"><img src="/data/tosend/resource/upload/20200405/support1.jpg" /></a>
+</p>
+</div>
+
+
+
+<!--?????????-->
+<div class="news">
+<div id="newslist">
+<img src="/data/tosend/resource/template/cn/images/arrow_top.jpg" class="prev" />
+		<div class="viewport" style="visibility: visible; overflow: hidden; position: relative; z-index: 2; left: 0px; height: 45px;">
+			<ul class="overview" style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1; height: 315px; top: -134.811px;"><li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/index/ggl/75589.html">2020-11-23  |  关于开展个人长期不动户清理工作的公告</a></li>
+			<li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/index/rczp/zpxx/qtzp/75900.html">2020-12-01  |  中国邮政储蓄银行博士后科研工作站20...</a></li>                        
+			<li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/EBanking/BrandServe/75777.html">2020-11-30  |  关于发布个人电子渠道交易限额标准的...</a></li>                        
+			<li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/investment/preciousmetal/ywgg/gjsyhhd/75743.html">2020-11-27  |  关于暂停办理代理贵金属通用类业务开...</a></li>                        
+			<li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/PersonalBanking/WH/YWGGao/75644.html">2020-11-27  |  2020年第十二期美元、欧元、港币、澳...</a></li>                        
+			<li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/index/ggl/75589.html">2020-11-23  |  关于开展个人长期不动户清理工作的公告</a></li>                        
+        <li style="overflow: hidden; float: left; width: 450px; height: 45px;"><a href="/cn/index/rczp/zpxx/qtzp/75900.html">2020-12-01  |  中国邮政储蓄银行博士后科研工作站20...</a></li></ul>
+		</div>
+		<img src="/data/tosend/resource/template/cn/images/arrow_bottom.jpg" class="next" />
+	</div>
+<a href="/cn/index/ggl/index.html" class="more_btn">了解更多</a>
+</div>
+
+
+<div class="rightmain">
+	<div class="sale_act_box">
+    	<h5 class="cat_tit tabs_tit">
+		<a href="/cn/index/yhhd/index.html" class="active">优惠活动</a>
+		<!--<span>|</span>
+		<a href="/cn/index/hdhj/index.html">活动获奖</a>
+		-->
+		</h5>
+        <div class="sale_act_tabs clearfix">
+        	<img src="/data/tosend/resource/upload/20160513/8b2d7a72-60e4-4a98-9c74-09092dadb24c.jpg" class="float_left" />
+            <div>
+            <ul class="listul">
+				<li><a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/75934.html"><span>2020-12-01</span>邮储信用卡领支付宝5元红包—优惠减五元，处处能省钱</a></li>
+				<li><a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/75933.html"><span>2020-12-01</span>京东双12 好礼'邮'惠不断</a></li>
+				<li><a href="/cn/EBanking/Announcements/75894.html"><span>2020-12-01</span>邮惠欢乐付 年末享惊喜</a></li>
+				<li><a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/75781.html"><span>2020-11-30</span>邮储信用卡滴滴优惠立减活动二期</a></li>
+				<li><a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/75681.html"><span>2020-11-23</span>中国邮政储蓄银行鼎致/鼎雅白金信用卡开卡礼活动</a></li>
+				<li><a href="/cn/EBanking/Announcements/75090.html"><span>2020-11-04</span>邮惠欢乐付，嗨翻双十一 </a></li>
+				<li><a href="/cn/CreditCard/xykindex/xykthgl/qgthhd/74788.html"><span>2020-10-28</span>京东支付双11“邮”惠不断 钜惠来袭</a></li>
+            </ul>
+            </div>
+        </div>
+        
+        <!--<div class="sale_act_tabs clearfix none">
+        	<img src="/data/tosend/resource/upload/20160329/9a4d205d-2c76-4ab3-9fe8-fa0c15272a1d.jpg" class="float_left" />
+            <div>
+            <ul class="listul">
+				<li><a href="/cn/index/hdhj/1342.html"><span>2016-03-29</span>中国邮政储蓄银行亮相第为“双创”创建十...</a></li>
+				<li><a href="/cn/index/hdhj/1344.html"><span>2016-03-29</span>邮储银行个人网银推为“双创”创建为“双...</a></li>
+            </ul>
+            </div>
+        </div>-->
+        
+    </div>
+    
+
+<!--?????????-->
+<div class="lineblock">
+<h5 class="cat_tit"><a href="/cn/index/focuson/index.html">重点推荐</a></h5>
+<div id="recommandlist">
+<img src="/data/tosend/resource/template/cn/images/left_arrow.jpg" class="prev" />
+		<div class="viewport" style="visibility: visible; overflow: hidden; position: relative; z-index: 2; left: 0px; width: 636px;">
+			<ul class="overview" style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1; width: 4876px; left: -1058.88px;"><li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2179.html"><img src="/data/tosend/resource/upload/20160422/xiangqing.gif" width="195" height="121" /><br />绿卡通（乡情卡）        </a></li><li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2924.html"><img src="/data/tosend/resource/upload/20160503/+xinka.jpg" width="195" height="121" /><br />绿卡通（+薪卡）</a></li><li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/GRYWXD/SmallERich/SmallCompany/index.html"><img src="/data/tosend/resource/upload/20160422/重点推荐（中文）.jpg" width="195" height="121" /><br />小微企业运行指数</a></li>
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/lmka/64471.html"><img src="/data/tosend/resource/upload/20201020/txk202010.jpg" width="195" height="121" /><br />绿卡通（腾讯联名卡） </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2180.html"><img src="/data/tosend/resource/upload/20200106/snsxk1.jpg" width="195" height="121" /><br />绿卡通（生肖卡）    </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycdy/index.html#card_tabs_ban"><img src="/data/tosend/resource/upload/20171226/dingyabai.jpg" width="195" height="121" /><br />鼎雅白金卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycbj/index.html"><img src="/data/tosend/resource/upload/20171226/dingzhibai.jpg" width="195" height="121" /><br />鼎致白金卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycxxk/index.html"><img src="/data/tosend/resource/upload/20190118/xiaoxiong1.jpg" width="195" height="121" /><br />轻松小熊卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycEMS/index.html"><img src="/data/tosend/resource/upload/20190617/EMS-ZD.jpg" width="195" height="121" /><br />EMS联名卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycczk/index.html"><img src="/data/tosend/resource/upload/20190703/czk-zdtj.jpg" width="195" height="121" /><br />车主卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycsjk/index.html"><img src="/data/tosend/resource/upload/20201030/诗经金卡周南·关雎4.jpg" width="195" height="121" /><br />诗经卡    </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycsx/index.html"><img src="/data/tosend/resource/upload/20191230/gzsx33.jpg" width="195" height="121" /><br />生肖信用卡  </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/yczdfq/index.html"><img src="/data/tosend/resource/upload/20171226/fenqichengzhang.jpg" width="195" height="121" /><br />自动分期卡成长卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/yczdfq/index.html"><img src="/data/tosend/resource/upload/20171226/fenqihongyun.jpg" width="195" height="121" /><br />自动分期卡鸿运卡</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2175.html"><img src="/data/tosend/resource/upload/20160422/yihuitong.gif" width="195" height="121" /><br />绿卡通（易汇通卡）   </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2172.html"><img src="/data/tosend/resource/upload/20160422/youcard1.gif" width="195" height="121" /><br />绿卡通（青年卡）    </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2177.html"><img src="/data/tosend/resource/upload/20160422/jinhui.gif" width="195" height="121" /><br />绿卡通（金晖卡）    </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2179.html"><img src="/data/tosend/resource/upload/20160422/xiangqing.gif" width="195" height="121" /><br />绿卡通（乡情卡）        </a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2924.html"><img src="/data/tosend/resource/upload/20160503/+xinka.jpg" width="195" height="121" /><br />绿卡通（+薪卡）</a></li>                        
+            <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/GRYWXD/SmallERich/SmallCompany/index.html"><img src="/data/tosend/resource/upload/20160422/重点推荐（中文）.jpg" width="195" height="121" /><br />小微企业运行指数</a></li>                        
+        <li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/lmka/64471.html"><img src="/data/tosend/resource/upload/20201020/txk202010.jpg" width="195" height="121" /><br />绿卡通（腾讯联名卡） </a></li><li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/PersonalBanking/bankka/tska/titleka/2180.html"><img src="/data/tosend/resource/upload/20200106/snsxk1.jpg" width="195" height="121" /><br />绿卡通（生肖卡）    </a></li><li style="overflow: hidden; float: left; width: 200px; height: 160px;"><a href="/cn/CreditCard/xykindex/xykqjf/xykxq/ycdy/index.html#card_tabs_ban"><img src="/data/tosend/resource/upload/20171226/dingyabai.jpg" width="195" height="121" /><br />鼎雅白金卡</a></li></ul>
+		</div>
+		<img src="/data/tosend/resource/template/cn/images/right_arrow.jpg" class="next" />
+	</div>
+</div>
+
+
+<div class="lineblock idx_banknews clearfix">
+<div class="idx_banknews_box">
+<h5 class="cat_tit tabs_tit">
+<a href="/cn/index/syycxw/index.html" class="active">邮储新闻</a>
+<span>|</span>
+<a href="/cn/index/gysgl/index.html">采购信息</a>
+</h5>
+
+<!--?????????-->
+<div class="idx_banknews_info">
+<div class="clearfix">
+<img src="/data/tosend/resource/upload/20201126/VCG41103922157-1.jpg" class="float_left" />
+<div class="idx_banknews_first">
+<h6><a href="/cn/index/syycxw/75669.html">“邮你同行”银保合作发展...</a></h6>
+<p><a href="/cn/index/syycxw/75669.html">近日，由中国邮政储蓄银行（以下简称“邮储银行”）主办、大成基金管理有限公司（以下简称“大成基金”）协办的“邮你同行”银保合作发展论坛深圳峰会成功举行。</a></p>
+</div>
+</div>
+<ul class="listul">
+<li><a href="/cn/index/syycxw/74995.html"><span>2020-10-29</span>邮储银行强化金融科技赋能 深入推进零售...</a></li>
+<li><a href="/cn/index/syycxw/75029.html"><span>2020-10-16</span>邮储银行携手中国银联首批推出数字银行卡...</a></li>
+<li><a href="/cn/index/syycxw/74237.html"><span>2020-10-12</span>邮储银行加大金融支持力度全力服务雄安新...</a></li>
+</ul>
+</div>
+
+
+<!--?????????-->
+<div class="idx_banknews_info none">
+<div class="clearfix">
+<img src="/data/tosend/resource/upload/20200814/VCG41545863075-1.jpg" class="float_left" />
+<div class="idx_banknews_first">
+<h6><a href="/cn/index/gysgl/72248.html"> </a></h6>
+<p><a href="/cn/index/gysgl/72248.html">中国邮政储蓄银行2021-2025年度会计师事务所选聘采购项目选聘结果公示    </a></p>
+</div>
+</div>
+<ul class="listul">
+<li><a href="/cn/index/gysgl/69962.html"><span>2020-06-09</span>中国邮政储蓄银行2021-2025年度会计师事...</a></li>
+</ul>
+</div>
+
+</div>
+<!--?????????-->
+<div class="actline"></div>
+<div class="idx_banknotice_box">
+<h5 class="cat_tit"><a href="/cn/index/ggl/index.html">公告栏</a></h5>
+<div style="padding:10px 0;"><img src="/data/tosend/resource/upload/20160329/820d55aa-1cde-4782-bdee-967f205b11b7.jpg" /></div>
+<ul class="listul">
+<li><a href="/cn/index/rczp/zpxx/qtzp/75900.html"><span>2020-12-01</span>中国邮政储蓄银行博士后科...</a></li>
+<li><a href="/cn/EBanking/BrandServe/75777.html"><span>2020-11-30</span>关于发布个人电子渠道交易...</a></li>
+<li><a href="/cn/investment/preciousmetal/ywgg/gjsyhhd/75743.html"><span>2020-11-27</span>关于暂停办理代理贵金属通...</a></li>
+<li><a href="/cn/PersonalBanking/WH/YWGGao/75644.html"><span>2020-11-27</span>2020年第十二期美元、欧元...</a></li>
+<li><a href="/cn/index/ggl/75589.html"><span>2020-11-23</span>关于开展个人长期不动户清...</a></li>
+</ul>
+</div>
+</div>
+
+<!--??????????-->
+<div class="lineblock">
+<h5 class="cat_tit"><a href="/cn/index/syjrzx/index.html">金融资讯</a><em>金融信息尽在掌握</em></h5>
+<div class="idx_money_news">
+<ul class="clearfix">
+<li><a href="/cn/CorporateBanking/yewuzhinan/XXSJfabu/956.html" class="icon1">人民币利率</a></li>
+<li><a href="/cn/investment/transactions/index.html" class="icon2">理财产品净值</a></li>
+<li><a href="/cn/investment/foundation/index.html" class="icon3">基金净值</a></li>
+<li><a href="/cn/PersonalBanking/WH/XXCX/WHPJ/index.html" class="icon4">外汇牌价</a></li>
+<li><a href="/cn/PersonalBanking/WH/XXCX/WBXECKLL/5050.html" class="icon5">外币存款利率</a></li>
+<li><a href="/cn/index/ggl/65059.html" class="icon6">收费标准</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<br class="clr" />
+
+<div class="clearfix" style="padding-bottom:90px;">
+<div class="bom_select_box">
+<select onchange="mbar(this);" name="select">
+<option selected="">- 请选择 -</option>
+<option value="/cn/index/yzcxcne/calculator/index.html" target="_blank">- 个人汇款计算器      -</option>
+<option value="/cn/index/yzcxcne/fundCaculate/index.html" target="_blank">- 基金买卖计算器   -</option>
+<option value="/cn/index/yzcxcne/yzcxdaikuan/index.html" target="_blank">- 贷款计算器     -</option>
+</select>
+
+</div>
+<a href="/cn/index.html"><img src="/data/tosend/resource/upload/20170609/youyinlicai20170609.jpg" class="float_left" /></a>
+<a href="http://95580.psbc.com/psbc_webmail/"><img src="/data/tosend/resource/upload/20160401/idx_bom_pic3.jpg" class="float_right" /></a>
+</div>
+
+</div>
+
+
+
+<!-- 
+  -->
+
+
+
+<!--footer start-->
+<!--底部公共模板-->
+<div class="footer">
+<div class="container">
+<div class="footer_left" style="width:312px;">
+<img src="/data/tosend/resource/upload/20160331/footer.png" />
+</div>
+<div style="width:203px;float:left;margin:-20px 0 0 25px;">
+		<img src="/data/tosend/resource/upload/20180710/code_bank.png" width="203" height="125" border="0" />
+</div>
+<div class="footer_right" style="width:44%;">
+<p>
+<a href="/cn/index/wzdt/index.html">网站地图  </a>|
+
+<a href="/cn/index/Inquiries/index.html">网点机构查询     </a>|
+
+<a href="/cn/index/youqinglianjie/30329.html">友情链接    </a>|
+
+<a href="/cn/index/ContactUs/index.html">联系我们  </a>|
+
+
+
+<a href="/cn/index/ggl/63987.html" style="margin-right:0;">投诉指南 </a>
+</p>
+<div>
+<div style="width:99px;float:right;">
+<a href="http://ss.knet.cn/verifyseal.dll?sn=e13030611010039406xj0y000000&amp;pa=500867" target="_blank"><img src="/data/tosend/resource/upload/20161130/verify.png" width="99" height="37" border="0" /></a>
+</div>	
+<span class="copyright" style="float:right;padding-right:20px;">Copyright(C)2007 psbc.com 　All Rights Reserved<br />
+中国邮政储蓄银行 版权所有 京ICP备07021605号</span>
+</div>
+</div>
+</div>
+</div>
+<!--footer end-->
+</div>
+
+
+<script>
+$("#newslist .viewport").jCarouselLite({
+		btnNext: "#newslist .next",
+		btnPrev: "#newslist .prev",
+		vertical: true,
+		speed: 800,
+		visible: 1,
+		auto:2000
+	});
+$("#recommandlist .viewport").jCarouselLite({
+					   btnNext: "#recommandlist .next",
+					   btnPrev: "#recommandlist .prev",
+					  
+					   visible: 3
+					  });  	
+					  
+$(".sale_act_box .cat_tit a").mouseover(function(){
+	var num=$(".sale_act_box .cat_tit a").index(this);
+	$(this).addClass('active').siblings('a').removeClass('active');
+	$(".sale_act_tabs").eq(num).show().siblings('.sale_act_tabs').hide();
+})			
+
+$(".idx_banknews_box .cat_tit a").mouseover(function(){
+	var num=$(".idx_banknews_box .cat_tit a").index(this);
+	$(this).addClass('active').siblings('a').removeClass('active');
+	$(".idx_banknews_info").eq(num).show().siblings('.idx_banknews_info').hide();
+})	
+	   $(function(){
+
+	$('#demo01').flslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing"
+	});
+	
+}); 
+</script>
+<!--
+<script type="text/javascript">
+	window.onload=function(){
+		if (true==true){ 
+			$.get('/cms/StatisticAdd.do?type=1&siteUrl=/cn&siteName='+encodeURI('cn')+'&channelName='+encodeURI('')+'&channelUrl=&articleName='+encodeURI('')+'&articleId='); 
+		}
+	}
+</script>
+-->
+
+
+</body></html>

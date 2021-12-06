@@ -1,0 +1,86 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8" />
+<style>
+body{ background:#fff; font-family: microsoft yahei; color:#969696; font-size:14px;}
+.online-desc-con { text-align:center; }
+.r-tip01 { color: #333; font-size: 18px; display: block; text-align: center; width: 500px; padding: 0 10px; overflow: hidden; text-overflow: ellipsis; margin: 0 auto 15px; }
+.r-tip02 { color: #585858; font-size: 14px; display: block; margin-top: 20px; margin-bottom: 20px; }
+#notice-jiasule {
+  word-wrap: break-word;
+  word-break: normal;
+  color:#585858;
+  border:1px solid #ddd;
+  padding:0px 20px 0px 20px
+}
+img { border: 0; }
+.u-ico{ vertical-align: middle; margin-right: 12px;}
+.btn{ padding: 8px 22px; border-radius: 3px; border: 0; display: inline-block;vertical-align: middle;text-decoration: none;}
+.btn-g{ background-color: #61b25e; color: #fff;}
+.report {color: #858585; text-decoration: none;}
+.report:hover {text-decoration: underline; color: #0088CC;}
+hr{ border-top: 1px dashed #ddd;}
+center{ line-height: 48px; color: #919191;}
+</style>
+<script src="https://ada.baidu.com/phone-tracker/getjs_bdtj?sid=8302907"></script><script charset="utf-8" src="http://ada.baidu.com/phone-tracker/insert_bdtj?sid=8302907"></script><script type="text/template" id="content_tpl">
+    &lt;span class="r-tip01"&gt;&lt;%= error_403 %&gt;&lt;/span&gt;
+    &lt;div id='notice-jiasule'&gt;
+        &lt;p&gt;当前网址：&lt;%- url %&gt;&lt;/p&gt;
+        &lt;p&gt;客户端特征：&lt;%- user_agent %&gt;&lt;/p&gt;
+        &lt;p&gt;拦截时间：&lt;%- now %&gt;&amp;nbsp;&amp;nbsp;本次事件ID&amp;nbsp;&lt;%- rule_id %&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class='r-tip02'&gt;
+        &lt;img class='u-ico' alt='' src='/cdn-cgi/image/guest.png' /&gt;如果您是网站管理员，请登录知道创宇云安全&amp;nbsp;
+        &lt;a class='btn btn-g' href='http://help.yunaq.com/feedback.html?from=&lt;%- from %&gt;&amp;rule_id=&lt;%- rule_id %&gt;&amp;client_ip=&lt;%- client_ip %&gt;&amp;referrer=&lt;%- ref %&gt;#pus' target='_blank'&gt;查看详情&lt;/a&gt;
+        &amp;nbsp;或者&amp;nbsp;
+        &lt;a class='report' href='http://help.yunaq.com/feedback.html?from=&lt;%- from %&gt;&amp;rule_id=&lt;%- rule_id %&gt;&amp;client_ip=&lt;%- client_ip %&gt;&amp;referrer=&lt;%- ref %&gt;#hus' target='_blank'&gt;反馈误报&lt;/a&gt;
+    &lt;/span&gt;
+</script>
+<script type="text/javascript" src="/cdn-cgi/js/underscore_min_1.8.3.js"></script>
+</head>
+<body>
+<div class="online-desc-con" style="width:640px;padding-top:15px;margin:34px auto;">
+    <img id="wafblock" alt="" style="margin: 0 auto 17px auto;" src="/cdn-cgi/image/hacker.png" />
+    <script type="text/javascript">
+        var pic = '' || 'hacker';
+        document.getElementById("wafblock").src = '/cdn-cgi/image/' + pic + '.png';
+    </script>
+    <div id="content_rendered">
+    <span class="r-tip01">当前访问疑似黑客攻击，已被网站管理员设置为拦截</span>
+    <div id="notice-jiasule">
+        <p>当前网址：http://www.cac.gov.cn/</p>
+        <p>客户端特征："Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3441.0 Safari/537.36"</p>
+        <p>拦截时间：2020-12-03 18:49:21  本次事件ID 80026</p>
+    </div>
+    <span class="r-tip02">
+        <img class="u-ico" alt="" src="/cdn-cgi/image/guest.png" />如果您是网站管理员，请登录知道创宇云安全 
+        <a class="btn btn-g" href="http://help.yunaq.com/feedback.html?from=&amp;rule_id=80026&amp;client_ip=169.235.26.103&amp;referrer=http%3A%2F%2Fwww.cac.gov.cn%2F#pus" target="_blank">查看详情</a>
+         或者 
+        <a class="report" href="http://help.yunaq.com/feedback.html?from=&amp;rule_id=80026&amp;client_ip=169.235.26.103&amp;referrer=http%3A%2F%2Fwww.cac.gov.cn%2F#hus" target="_blank">反馈误报</a>
+    </span>
+</div>
+    <hr />
+    <center>client: 169.235.26.103, server: 2e2d327, time: 03/Dec/2020:18:49:21 +0800</center>
+</div>
+<script>
+void(function fuckie6(){if(location.hash &amp;&amp; /MSIE 6/.test(navigator.userAgent) &amp;&amp; !/jsl_sec/.test(location.href)){location.href = location.href.split('#')[0] + '&amp;jsl_sec' + location.hash}})();
+var content = _.template(document.getElementById('content_tpl').innerHTML)({
+    error_403: '' || '当前访问疑似黑客攻击，已被网站管理员设置为拦截',
+    url: document.URL.replace(/\&lt;/g,"%3C").replace(/\&gt;/g,"%3E"),
+    user_agent: navigator.userAgent,
+    now: new Date(new Date() - -8 * 3600000).toISOString().substr(0, 19).replace('T', ' '),
+    rule_id: parseInt('[80026]'.replace(/\[|\]/g, '')) || '',
+    from: encodeURIComponent(document.referrer.substr(0, 1024)),
+    client_ip: '169.235.26.103',
+    ref: encodeURIComponent(document.URL.substr(0, 1024))
+});
+document.getElementById('content_rendered').innerHTML = content;
+</script>
+<div style="display:none;">
+    <script>
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd7682ab43891c68a00de46e9ce5b76aa' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src=" http://hm.baidu.com/h.js?d7682ab43891c68a00de46e9ce5b76aa" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=d7682ab43891c68a00de46e9ce5b76aa" target="_blank"><img border="0" src="https://hmcdn.baidu.com/static/hmt/icon/21.gif" width="20" height="20" /></a>
+</div>
+
+
+</body></html>

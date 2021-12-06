@@ -1,0 +1,783 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><script src="https://hm.baidu.com/hm.js?d2eddf9b155bdbd9ea015490aef570fa"></script><script type="text/javascript" charset="gb2312" src="http://j.ssajax.cn/js/ai/countimg.1.0.js"></script><script type="text/javascript" charset="gb2312" src="http://j.ssajax.cn/js/lib/jquery-1.8.3.min.js"></script><script type="text/javascript" charset="gb2312" src="http://j.ssajax.cn/js/lib/StockSuggest.min.1.8.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+    <title>证券之星 - 聚焦中国好投资，提供大盘指数、行情数据、财经、股票、基金、期货、外汇、黄金等多种信息服务</title>
+    <meta name="keywords" content="股票,投资,交易,行情,上市公司,大盘,上证指数,基金,直播,股评,荐股,博客 ,外汇,黄金,期货,港股,美股, 财经日历,银行,新闻, 证券" />
+    <meta name="description" content="证券之星——专为华人交易者提供服务的财经门户网站；作为资深交易者门户，证券之星是全球华人交易者获取全方位海量金融资讯信息、交流投资经验的平台。" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="//i.ssimg.cn" />
+    <link rel="dns-prefetch" href="//l.ssimg.cn" />
+    <link rel="dns-prefetch" href="//j.ssajax.cn" />
+    <link rel="dns-prefetch" href="//info.stockstar.com" />    
+    <link rel="stylesheet" href="//j.ssajax.cn/css/www/style2019.v.1.15.css" />
+    <base target="_blank" />
+    <style type="text/css">
+    .footer i{display: inline-block;width: 14px;height: 16px;margin-right: 6px;background: url(http://l.ssimg.cn/images/www2013/icon-police.png) 0 0 no-repeat;vertical-align: middle;margin-top: -4px;}
+    </style>
+</head>
+<body>
+<!-- 头部登录注册等 -->
+<div class="top_box">
+	<div class="top" style="overflow:hidden">
+		<div class="aside">
+			<a id="indexMyLogin" class="my" href="http://my.stockstar.com/">我的证券之星</a> | 
+			<a target="_self" href="javascript:void(0)" onclick="setHomePage(this,'http://www.stockstar.com/');">设为首页</a> | 
+			<a target="_self" href="javascript:void(0)" onclick="addBookmark(top.location.href,document.title)">加入收藏</a>
+		</div>
+		<div class="login" id="indexLoginAlready">
+		尊敬的用户 您好，欢迎您使用证券之星。 |  
+			<a href="https://member.stockstar.com/logon/log_in.aspx?via=aHR0cDovL3d3dy5zdG9ja3N0YXIuY29t">登录</a> 
+			<a href="https://member.stockstar.com/logon/registe.aspx">注册</a>
+		</div>
+	</div>
+</div>
+<!-- end 头部登录注册等 -->
+<!--顶部背景广告  NULL -->
+<div class="top_ad" id="top_div_small"><!-- Ad: 证券之星 / 证券之星首页 / 首页顶通 Begin -->
+<!-- Ad: 证券之星 / 证券之星首页 / 首页顶通 End --></div>
+<div id="Header">
+	<!-- 栏目 -->
+	<div id="nav" class="nav">
+		<a class="logo" title="证券之星首页" href="http://www.stockstar.com/" target="_self">证券之星</a>
+		<!-- 搜索区 -->
+		<div class="search">
+			<div class="fr">
+				<a href="http://weibo.com/stock666666" class="icon">证券之星官方微博</a>
+				<a id="Weibo" href="http://weibo.com/stock666666" title="证券之星官方微博"></a>
+			</div>
+			<span id="ssTypeRadio" class="fl region">
+			<label><input name="sear" type="radio" checked="true" /> 行情 </label>
+			<label><input name="sear" type="radio" /> 资讯</label>
+			</span>
+			<div id="ssType_0" class="fl w365">
+				<form method="post">
+					<input name="code" type="text" class="text" id="ajaxinput_q" value="代码/简称/拼音" autocomplete="off" style="color: rgb(153, 153, 153);" /><input type="button" class="sear_btn" id="ajaxinputquery_q" value="" />
+				</form>
+			</div>
+			<div id="ssType_1" class="fl w365" style="display:none;">
+				<form method="post">
+					<input name="code" type="text" class="text" id="ajaxinput_n" value="代码/简称/拼音" autocomplete="off" style="color: rgb(153, 153, 153);" /><input type="button" class="sear_btn" id="ajaxinputquery_n" value="" />
+				</form>
+			</div>
+			<span class="funds_ad" style="display:none;"></span>
+		</div>
+		<!-- end 搜索区 -->
+	</div>
+	<div class="module_box">
+		<div class="module1">
+			<p>
+				<a href="//stock.stockstar.com/" class="font_bold">股票</a><a href="//stock.stockstar.com/list/10.shtml" class="cRed">公司</a><a href="//stock.stockstar.com/list/main.htm">主力</a><a href="//stock.stockstar.com/ipo/">新股</a><a href="//stock.stockstar.com/star/">科创板</a>
+			</p>
+			<p>
+				<a href="//quote.stockstar.com/" class="font_bold">行情</a><a href="//quote.stockstar.com/stock/industry.shtml">板块</a><a href="//quote.stockstar.com/stock/blockrank_5.shtml">概念</a><a href="//quote.stockstar.com/BlockTrade/">大宗</a><a href="//quote.stockstar.com/Financing/">融资融券</a>
+			</p>
+		</div>
+		<div class="module2">
+			<p>
+				<a href="http://vip.stockstar.com/" class="font_bold">专栏</a><a href="http://t.stockstar.com/" class="cRed">导师邦</a><a href="//vip.stockstar.com/vipreport">脱水研报</a><a href="//vip.stockstar.com/homeVip/allcolumn">热门人物</a>
+			</p>
+			<p>
+				<a href="//resource.stockstar.com/" class="font_bold">数据</a><a href="//quote.stockstar.com/BillBoard/">龙虎榜</a><a href="//resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_zc.aspx">机构动向</a><a href="//quote.stockstar.com/Comment/">千股千评</a>
+			</p>
+		</div>
+		<div class="module3">
+			<p>
+				<a href="//fund.stockstar.com/" class="font_bold">基金</a><a href="//fund.stockstar.com/list/1943.shtml">私募</a><a href="//fund.stockstar.com/netvalue.htm">净值</a><a href="//hk.stockstar.com/">港股</a><a href="//futures.stockstar.com/">期货</a><a href="//bond.stockstar.com/">债券</a>
+			</p>
+			<p>
+				<a href="//finance.stockstar.com/" class="font_bold">财经</a><a href="//money.stockstar.com/">理财</a><a href="//bank.stockstar.com/">银行</a><a href="//insurance.stockstar.com/">保险</a><a href="//gold.stockstar.com/">黄金</a><a href="//forex.stockstar.com/">外汇</a>
+			</p>
+		</div>
+		<div class="module4">
+			<p>
+				<a href="//stock.stockstar.com/list/opportunity.htm" class="font_bold">金股</a><a href="//stock.stockstar.com/list/4007.shtml">解盘</a><a href="//stock.stockstar.com/daily/">公告</a><a href="//stock.stockstar.com/report/">研报</a><a href="//school.stockstar.com/" style="margin-right: 0;">学堂</a>
+			</p>
+			<p>
+				<a href="//focus.stockstar.com/" class="font_bold">热点</a><a href="//house.stockstar.com/" class="cRed">地产</a><a href="//auto.stockstar.com/">汽车</a><a href="//bank.stockstar.com/list/4145.shtml">商业</a><a href="//express.stockstar.com/" style="margin-right: 0;">快讯</a>
+			</p>
+		</div>
+	</div>
+	<div class="subnav">
+		<div class="fr">
+		<a href="//fupin.stockstar.com/">金融扶贫</a>
+		<a href="//test.stockstar.com/">财商测试</a>
+		<a href="//survey.stockstar.com/">股市调查</a>
+		</div>
+<!--		<a href="http://www.szzy888.com/" class="t_jrj">上证综研</a>┆<a href="http://www.szzy888.com/product/idea/">锦囊妙计</a>┆<a href="http://www.szzy888.com/product/alpha?pub=1">Alpha量化</a>	-->
+		<a href="//resource.stockstar.com/Datacenter/PrivateData/" class="t_jrj">特色数据</a>┆<a href="//finance.stockstar.com/finance/macrodata/gdp.htm">GDP</a>┆<a href="//finance.stockstar.com/finance/macrodata/cpi.htm">CPI</a>
+	</div>
+	<!-- end 栏目 -->
+	<!-- 广告区 -->
+	<div class="much_ad" style="border-bottom: 1px solid #ebebeb;">
+		<ul>
+			<li id="ad_left" class="adv_01"><iframe width="320" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=163&amp;ruleid=184&amp;type=1"></iframe></li>
+			<li id="ad_mid" class="adv_01"><iframe width="320" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=163&amp;ruleid=185&amp;type=1"></iframe></li>
+			<li id="ad_right" class="adv_01 nosps"><iframe width="320" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=163&amp;ruleid=186&amp;type=1"></iframe></li>
+		</ul>
+	</div>
+	
+	<!-- end 广告区 -->
+</div>
+<!-- end 头 --><!-- 正文 -->
+<div id="Wapper">
+	<div class="h10">
+	</div>
+	<!-- 模块一 -->
+	<div id="m_focus" class="module">
+		<!-- 左 -->
+		<div class="left pub hot_news">
+			<!-- 热点题材 -->
+			<div class="title">
+				<h2 class="red"><a href="http://stock.stockstar.com/list/sectors.htm">热点题材</a></h2>
+			</div>
+			<div id="rdtc" class="content">
+				<ul><li><a href="http://stock.stockstar.com/SS2020120300000180.shtml" class="cBold">多份榜单集中看 陆股通增仓排行榜（附股）</a></li><li><a href="http://stock.stockstar.com/SS2020120300000501.shtml">周四机构一致看好的十大金股</a> <a href="http://stock.stockstar.com/SS2020120300000492.shtml" class="hot">六股成摇钱树</a></li><li><a href="http://stock.stockstar.com/SS2020120300000504.shtml" class="hot">券商评级：三大指数震荡 九股迎来掘金良机</a></li><li><a href="http://finance.stockstar.com/SS2020120300000085.shtml" class="hot">国内铁矿石创七年新高 四股腾飞在即掘良机</a></li><li><a href="http://stock.stockstar.com/SS2020120300000075.shtml">PCB关键材料第五轮涨价 核心概念股出炉(名单)</a></li><li><a href="http://stock.stockstar.com/SS2020120300000266.shtml" class="cBold">国常会部署加快落实RCEP  这些股望迎脉冲</a></li><li><a href="http://stock.stockstar.com/SS2020120300000717.shtml">液化天然气先抑后扬 区域性供应偏紧（附股）</a></li><li><a href="http://stock.stockstar.com/SS2020120300000081.shtml">苹果Mini LED出货量增长可期 行业空间广阔</a></li><li><a href="http://stock.stockstar.com/SS2020120300000077.shtml">工程机械高景气延续 龙头望迎来业绩与估值双击</a></li><li><a href="http://stock.stockstar.com/SS2020120300000196.shtml" class="cRed">机构近期抢筹这些股</a> <a href="http://news.stockstar.com/SS2020082400001147.shtml">股民必看两大公众号</a></li></ul>
+
+			</div>
+			<!-- end 热点题材 -->
+			<!-- 交易策略 -->
+			<div class="title">
+				<h2><a href="http://vip.stockstar.com/">专栏推荐</a></h2>
+			</div>
+			<div id="jycl" class="content">
+				<ul><li><a href="http://t.stockstar.com/live/liveroom/1888" class="cBold">趋势亮剑：市场风险已在路上 且行且珍惜</a></li><li><a href="http://t.stockstar.com/live/liveroom/8001">洪发：双星预示变盘 明日走势会否出人意料？</a></li><li><a href="http://t.stockstar.com/Live/LiveRoom/8008">股海一叶舟：大盘区间横盘为主 保持好耐心！</a></li><li><a href="http://t.stockstar.com/live/liveroom/8007">不贪常乐：一根长阳后开启调整 很熟悉的配方</a></li><li><a href="http://vip.stockstar.com/board.shtml" class="cRed">龙虎榜分析：政策风口下 一板块拥抱重磅利好</a></li><li><a href="http://t.stockstar.com/live/liveroom/8005">涨停集结：创业板大幅上涨 大盘或面临调整！</a></li><li><a href="http://t.stockstar.com/live/liveroom/1212">大道易简：关口蓄势正常整理 市场将缓慢上攻</a></li><li><a href="http://t.stockstar.com/live/liveroom/0019">博识财经：大盘新高后双十字星形态 谨慎为上</a></li><li><a href="http://t.stockstar.com/live/liveroom/8003">宁静的光：行情继续偏强震荡 跨年行情才开始</a></li></ul>
+
+			</div>
+			<!-- end 交易策略 -->
+		</div>
+		<!-- end 左 -->
+		<!-- 中 -->
+		<div class="finance pub">
+			<!-- 财经聚集 -->
+			<div class="title">
+				<h2><a href="http://www.stockstar.com/roll/finance.shtml">财经报道</a></h2>
+			</div>
+			<div id="cjjj" class="content">
+				<div id="focus" class="focus">
+                    <h2><a href="http://stock.stockstar.com/SS2020120300000699.shtml" class="cRed cBold">疫苗股又火了 突然暴涨5% A股谁最牛</a></h2>
+
+                    <ul><li><a href="http://stock.stockstar.com/SS2020120300000110.shtml">[百亿定增终止 这家A股公司怎么了？]</a> <a href="http://finance.stockstar.com/SS2020120300000137.shtml">[证监会通报6大V]</a></li><li><a href="http://stock.stockstar.com/SS2020120300000467.shtml">[芯片龙头一度闪崩]</a> <a href="http://stock.stockstar.com/SS2020120300000165.shtml">[蚂蚁集团全资子公司增资东港瑞宏]</a></li></ul>
+					
+					<h2><a href="http://stock.stockstar.com/SS2020120300000677.shtml" class="cRed cBold">创业板涨逾1% 北向资金净流入36亿元</a></h2>
+
+					<ul><li><a href="http://stock.stockstar.com/SS2020120300000209.shtml">[美国通过对中企最新打压]</a> <a href="http://stock.stockstar.com/SS2020120300000178.shtml">[天风委派4名高管赴任恒泰]</a></li><li><a href="http://stock.stockstar.com/SS2020120300000182.shtml">[这只昔日明星股怎么了？]</a> <a href="http://finance.stockstar.com/SS2020120300000168.shtml">[美国众议院矛头直指中国？]</a></li></ul>
+			
+				</div>
+                <div id="cjjj_1" class="focus">
+                    <h3><a href="http://t.stockstar.com/Live/LiveRoom/9188" class="cBlack cBold">嘉哥说股：黑周四大盘将考验此点位支撑力度！</a></h3>
+
+					<ul><li><a href="http://stock.stockstar.com/SS2020120300000107.shtml">炸雷！科技白马涨停后宣布债券违约，牛散小鳄鱼踩雷！</a></li><li><a href="http://stock.stockstar.com/SS2020120300000502.shtml" class="cRed">明日最具爆发力六大黑马</a> <a href="http://stock.stockstar.com/SS2020120300000500.shtml" class="cRed">五大券商周四看好的六大板块</a></li><li><a href="http://stock.stockstar.com/SS2020120300000121.shtml">一批中概股暴跌后疯狂反弹，更有造车新势力狂拉15%</a></li><li><a href="http://t.stockstar.com/live/liveroom/8025">股票心理学教学：市场对于经济复苏的预期持续向好！</a></li><li><a href="http://t.stockstar.com/live/liveroom/8024">罗老师聊筹码：等待上证指数选择方向 重点关注创业板</a></li></ul>
+
+                </div>	
+                <div id="cjjj_2" class="focus">
+                    <h3><a href="http://t.stockstar.com/live/liveroom/5188" class="cBlack cBold">解读龙虎榜：“核按钮”又来了 尾盘惊险一幕</a></h3>
+
+					<ul><li><a href="http://t.stockstar.com/live/liveroom/1666">板板聊股市：划重点 大盘蓄势充分后才会挑战3587点！</a></li><li><a href="http://stock.stockstar.com/SS2020120300000135.shtml" class="cRed">OLED板块大火！龙头涨停新高 两个原因让它成为香饽饽</a></li><li><a href="http://stock.stockstar.com/SS2020120300000124.shtml">深夜重磅！6位知名财经大V被证监会通报，存在极高风险</a></li><li><a href="http://fund.stockstar.com/">【基金】</a> <a href="http://fund.stockstar.com/SS2020120300000109.shtml">大爆发！公募基金获配74亿，浮盈23亿！</a></li><li><a href="http://stock.stockstar.com/list/5379.shtml">【科创板】</a> <a href="http://stock.stockstar.com/SS2020120300000199.shtml">科创板高价股排行榜，石头科技股价最高</a></li><li><a href="http://finance.stockstar.com/">【财经】</a> <a href="http://finance.stockstar.com/SS2020120300000145.shtml">银行增资AIC！建行先行，多家银行将跟进！</a></li></ul>
+
+                </div>
+		</div>
+		<!-- end 财经聚集 -->
+		<!-- 滚动新闻 -->
+		<div id="gdxw" class="focus_scroll">
+			<div class="page">
+				<span class="prv"></span>
+				<span class="next"></span>
+			</div>
+			<strong><a href="http://www.stockstar.com/roll/">滚动新闻</a>：</strong>
+			<div class="cnt">
+					<span><a href="http://stock.stockstar.com/SS2020120300001177.shtml">获13亿增持   恒大汽车股价两天大涨14%</a> <a href="http://hk.stockstar.com/IG2020120300001103.shtml">比亚迪股份(01211)11月汽车销量同比增长约30.63% 新能源汽车销量同比增长1.38倍</a> <a href="http://stock.stockstar.com/IG2020120300001080.shtml">中飞股份(300489.SZ)：范长龙接替潘苏滨担任职工代表监事</a> <a href="http://stock.stockstar.com/IG2020120300001082.shtml">万润股份(002643.SZ)股东鲁银投资解除质押2500万股</a> <a href="http://hk.stockstar.com/IG2020120300001101.shtml">复星国际(00656)12月3日斥4347.05万港元回购400万股</a> <a href="http://stock.stockstar.com/IG2020120300001083.shtml">惠云钛业(300891.SZ)即日起上调钛白粉销售价格</a> <a href="http://stock.stockstar.com/IG2020120300001085.shtml">中大力德(002896.SZ)股东华慈创业减持168万股  减持计划已完成</a> <a href="http://stock.stockstar.com/IG2020120300001084.shtml">山石网科(688030.SH)拟授出450.55万股限制性股票 授予价为21.06元/股</a> <a href="http://stock.stockstar.com/IG2020120300001089.shtml">久远银海(002777.SZ)获得信息系统建设和服务能力等级证书</a> <a href="http://hk.stockstar.com/IG2020120300001175.shtml">IGG(00799)12月3日斥918.65万港元回购114.5万股</a> <a href="http://stock.stockstar.com/IG2020120300001092.shtml">三晖电气(002857.SZ)收到政府补助资金352.49万元</a> <a href="http://stock.stockstar.com/IG2020120300001093.shtml">硕贝德(300322.SZ)控股股东硕贝德控股解质420万股</a> <a href="http://stock.stockstar.com/IG2020120300001095.shtml">鹏鼎控股(002938.SZ)子公司庆鼎精密注册资本增至26.5亿元</a> <a href="http://stock.stockstar.com/IG2020120300001097.shtml">维信诺(002387.SZ)主要股东集体资产公司未减持股份 减持计划时间过半</a> <a href="http://stock.stockstar.com/IG2020120300001099.shtml">广联达(002410.SZ)完成注销44.936万份股票期权</a> <a href="http://stock.stockstar.com/IG2020120300001100.shtml">青鸟消防(002960.SZ)控股股东北大青鸟环宇质押470万股</a> <a href="http://house.stockstar.com/CP2020120300001070.shtml">正荣地产：前11月合约销售金额约1248.12亿元</a> <a href="http://hk.stockstar.com/IG2020120300001098.shtml">正荣地产(06158)前11月合约销售金额1248.12亿元</a> <a href="http://stock.stockstar.com/IG2020120300001102.shtml">伟隆股份(002871.SZ)31.86万股限制性股票将于12月7日上市流通</a> <a href="http://stock.stockstar.com/IG2020120300001104.shtml">兆威机电(003021.SZ)将于12月4日深交所上市</a></span>
+					<span><a href="http://stock.stockstar.com/SS2020120300001177.shtml">获13亿增持   恒大汽车股价两天大涨14%</a> <a href="http://hk.stockstar.com/IG2020120300001103.shtml">比亚迪股份(01211)11月汽车销量同比增长约30.63% 新能源汽车销量同比增长1.38倍</a> <a href="http://stock.stockstar.com/IG2020120300001080.shtml">中飞股份(300489.SZ)：范长龙接替潘苏滨担任职工代表监事</a> <a href="http://stock.stockstar.com/IG2020120300001082.shtml">万润股份(002643.SZ)股东鲁银投资解除质押2500万股</a> <a href="http://hk.stockstar.com/IG2020120300001101.shtml">复星国际(00656)12月3日斥4347.05万港元回购400万股</a> <a href="http://stock.stockstar.com/IG2020120300001083.shtml">惠云钛业(300891.SZ)即日起上调钛白粉销售价格</a> <a href="http://stock.stockstar.com/IG2020120300001085.shtml">中大力德(002896.SZ)股东华慈创业减持168万股  减持计划已完成</a> <a href="http://stock.stockstar.com/IG2020120300001084.shtml">山石网科(688030.SH)拟授出450.55万股限制性股票 授予价为21.06元/股</a> <a href="http://stock.stockstar.com/IG2020120300001089.shtml">久远银海(002777.SZ)获得信息系统建设和服务能力等级证书</a> <a href="http://hk.stockstar.com/IG2020120300001175.shtml">IGG(00799)12月3日斥918.65万港元回购114.5万股</a> <a href="http://stock.stockstar.com/IG2020120300001092.shtml">三晖电气(002857.SZ)收到政府补助资金352.49万元</a> <a href="http://stock.stockstar.com/IG2020120300001093.shtml">硕贝德(300322.SZ)控股股东硕贝德控股解质420万股</a> <a href="http://stock.stockstar.com/IG2020120300001095.shtml">鹏鼎控股(002938.SZ)子公司庆鼎精密注册资本增至26.5亿元</a> <a href="http://stock.stockstar.com/IG2020120300001097.shtml">维信诺(002387.SZ)主要股东集体资产公司未减持股份 减持计划时间过半</a> <a href="http://stock.stockstar.com/IG2020120300001099.shtml">广联达(002410.SZ)完成注销44.936万份股票期权</a> <a href="http://stock.stockstar.com/IG2020120300001100.shtml">青鸟消防(002960.SZ)控股股东北大青鸟环宇质押470万股</a> <a href="http://house.stockstar.com/CP2020120300001070.shtml">正荣地产：前11月合约销售金额约1248.12亿元</a> <a href="http://hk.stockstar.com/IG2020120300001098.shtml">正荣地产(06158)前11月合约销售金额1248.12亿元</a> <a href="http://stock.stockstar.com/IG2020120300001102.shtml">伟隆股份(002871.SZ)31.86万股限制性股票将于12月7日上市流通</a> <a href="http://stock.stockstar.com/IG2020120300001104.shtml">兆威机电(003021.SZ)将于12月4日深交所上市</a></span>
+			</div>
+		</div>
+		<!-- end 滚动新闻 -->
+	</div>
+	<!-- end 中 -->
+	<!-- 右 -->
+	<div class="stock_aside">
+		<!-- 幻灯片 -->
+		<div id="slides" class="slides">
+			<div class="show-pic"><ul><li><a href="http://zbll.stockstar.com/select2020/"><img src="//i.ssimg.cn/ssupload/2020/11/06/1b98da815bbd42b48453c0ca8d521d83.png" alt="2020年资本力量年度评选正式启动" /></a></li><li><a href="http://finance.stockstar.com/IG2020120300000041.shtml"><img src="//i.ssimg.cn/ssupload/2020/12/03/8cf50241abaa44698d70db849803052e.jpg" alt="八千亿GDP城市断档，寻找准万亿GDP城市后备力量" /></a></li><li><a href="http://futures.stockstar.com/SS2020120300000211.shtml"><img src="//i.ssimg.cn/ssupload/2020/12/03/39e8c2c49568462bb4464068ceec23b0.jpg" alt="又上调？国内油价大概率两连涨 加满一箱多花9块钱" /></a></li></ul></div>
+<ul class="num"><li class=""></li><li class="active"></li><li></li></ul>
+<ul class="txt"><li class=""><a href="http://zbll.stockstar.com/select2020/">2020年资本力量年度评选正式启动</a></li><li class="active"><a href="http://finance.stockstar.com/IG2020120300000041.shtml">八千亿GDP城市断档</a></li><li><a href="http://futures.stockstar.com/SS2020120300000211.shtml">国内油价大概率两连涨</a></li></ul>
+
+		</div>
+		<!-- end 幻灯片 -->
+		<!--证券之星特色服务-->
+		<div class="spser" id="sstsfw">
+			<div class="spuhead">证券之星特色服务</div>
+			<div class="spucontent" style="height:190px">
+				<ul style="height:190px;"><li><a href="http://resource.stockstar.com/" class="cBold">数据</a><a href="http://quote.stockstar.com/Comment/">千股千评</a><a href="http://quote.stockstar.com/BillBoard/">龙虎榜</a><a href="http://resource.stockstar.com/DataCenter/StockData/GetMainForceStats.aspx">主力统计</a><div class="spuitem dishd item01">
+    <div class="spubox">
+	    <div class="itmbg"></div>
+	    <h3><a href="http://resource.stockstar.com/">数据</a></h3>
+	    <div class="sdboxa">
+<a href="http://quote.stockstar.com/Comment/">千股千评</a><a href="http://quote.stockstar.com/BillBoard/">龙虎榜</a><a href="http://resource.stockstar.com/DataCenter/StockData/GetMainForceStats.aspx">主力统计</a><a href="http://resource.stockstar.com/DataCenter/stockdata/FSL.htm">融资融券</a><br />
+<a href="http://resource.stockstar.com/DataCenter/PrivateData/GetStockLimitSaleSummary.aspx">限售解禁</a><a href="http://resource.stockstar.com/DataCenter/StockData/GetStockSeat.aspx">大宗交易</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_zc.aspx">机构动向</a><a href="http://stock.stockstar.com/report_list/report3.htm">趋势策略</a><br />
+<a href="http://stock.stockstar.com/report_list/report1.htm">公司研报</a><a href="http://stock.stockstar.com/report_list/report2.htm">行业研报</a><a href="http://stock.stockstar.com/report_list/report4.htm">券商晨会</a><a href="http://stock.stockstar.com/report_list/report5.htm">宏观研究</a><br />
+<a href="http://finance.stockstar.com/finance/macrodata/gdp.htm">GDP</a><a href="http://finance.stockstar.com/finance/macrodata/cpi.htm">CPI</a><a href="http://finance.stockstar.com/finance/macrodata/ppi.htm">PPI</a><a href="http://finance.stockstar.com/finance/macrodata/cci.htm">CCI</a><a href="http://finance.stockstar.com/finance/macrodata/credit.htm">新增信贷数据一览</a><br />
+<a href="http://finance.stockstar.com/finance/macrodata/gupiaokaihu_n.htm">股票开户数一览</a><a href="http://finance.stockstar.com/finance/macrodata/shibor.htm">上海银行间同业拆放利率(Shibor)</a><br />
+<a href="http://finance.stockstar.com/finance/industrialdata/Default.aspx?code=ZZSSJG">70个大中城市住宅销售价格</a><br />
+        	    </div>
+    </div>
+</div></li><li><a href="http://stock.stockstar.com/ipo/" class="cBold">新股</a><a href="http://stock.stockstar.com/ipo/ipo_8_1_1.htm">新股申购</a><a href="http://stock.stockstar.com/ipo/kzz_7_1_1.html">可转债申购</a><a href="http://stock.stockstar.com/ipo/zf_7_1_1.html">增发申购</a><div class="spuitem dishd item02">
+	<div class="spubox">
+		<div class="itmbg"></div>
+		<h3><a href="http://stock.stockstar.com/ipo/">新股</a></h3>
+		<div class="sdboxa">
+<a href="http://stock.stockstar.com/ipo/ipo_8_1_1.htm">新股申购</a><a href="http://stock.stockstar.com/ipo/kzz_7_1_1.html">可转债申购</a><a href="http://stock.stockstar.com/ipo/zf_7_1_1.html">增发申购</a><br />
+<a href="http://stock.stockstar.com/ipo/sh_1_1_1.html">新股上会一览</a><a href="http://stock.stockstar.com/ipo/apply_1.html">新股预披露一览</a><a href="http://stock.stockstar.com/ipo/analysis_8_1_1.html">新股数据全解析</a><br />
+<p> </p>
+		</div>
+		<div class="bxad" id="feature_item02"><iframe width="300" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=167&amp;type=1"></iframe></div>
+	</div>
+</div></li><li><a href="http://fund.stockstar.com/" class="cBold">基金</a><a href="http://fund.stockstar.com/rank/ranking.htm">基金排行</a><a href="http://fund.stockstar.com/netvalue/openfund.htm">基金净值</a><a href="http://fund.stockstar.com/notes/newissue.htm">新基发行</a><div class="spuitem dishd item03">
+							<div class="spubox">
+							    <div class="itmbg"></div>
+								<h3><a href="http://fund.stockstar.com/">基金</a></h3>
+								<div class="sdboxa">
+<a href="http://fund.stockstar.com/netvalue/openfund.htm">基金净值</a><a href="http://fund.stockstar.com/rank/ranking.htm">基金排行</a><a href="http://fund.stockstar.com/rank/rate.htm">基金评级</a><a href="http://fund.stockstar.com/notes/newissue.htm">新基发行</a><br />
+<a href="http://fund.stockstar.com/pool/zchy.htm">基金重仓行业</a><a href="http://fund.stockstar.com/pool/zcg.htm">基金重仓股</a><a href="http://fund.stockstar.com/pool/stock.htm">基金股票池</a><br />
+<a href="http://fund.stockstar.com/netvalue/openfund_stock.htm">股票型</a><a href="http://fund.stockstar.com/netvalue/openfund_bond.htm">债券型</a><a href="http://fund.stockstar.com/netvalue/openfund_mixed.htm">混合型</a><a href="http://fund.stockstar.com/netvalue/openfund_trade.htm">交易型</a><a href="http://fund.stockstar.com/netvalue/openfund_qdii.htm">QDII</a><br />
+<a href="http://fund.stockstar.com/netvalue/closefund.htm">封基折价</a><a href="http://fund.stockstar.com/netvalue/monetaryfund.htm">货币基金</a><a href="http://fund.stockstar.com/netvalue/financialfund.htm">理财基金</a><a href="http://fund.stockstar.com/netvalue/privatefund.htm">私募基金</a><br />
+<a href="http://fund.stockstar.com/archives/manager.htm">基金经理</a><a href="http://fund.stockstar.com/archives/jjgs.htm">基金公司档案</a><a href="http://fund.stockstar.com/archives/agents.htm">代销机构档案</a><br />
+<a href="http://fund.stockstar.com/notes/dividend.htm">基金分红</a><br />
+								</div>
+							</div>
+						</div></li><li><a href="http://money.stockstar.com/" class="cBold">理财</a><a href="http://money.stockstar.com/ProductList/bank.htm">理财产品筛选器</a><a href="http://money.stockstar.com/tools/caltools.htm">理财工具箱</a><div class="spuitem dishd item05">
+							<div class="spubox">
+							    <div class="itmbg"></div>
+								<h3><a href="http://money.stockstar.com/">理财</a></h3>
+<div class="sdboxa">
+<a href="http://money.stockstar.com/ProductList/bank.htm">理财产品筛选器</a><a href="http://money.stockstar.com/tools/caltools.htm">理财工具箱</a><br />
+<a href="http://money.stockstar.com/ProductList/insurance.htm">保险理财产品</a><a href="http://money.stockstar.com/ProductList/bank_currence_1.html">人民币理财</a><a href="http://money.stockstar.com/ProductList/bank_currence_3.html">外币理财</a><br />
+<a href="http://quote.stockstar.com/bond/repurchase.shtml">回购</a><a href="http://quote.stockstar.com/bond/national.shtml">国债</a><a href="http://quote.stockstar.com/bond/corp.shtml">企债</a><a href="http://quote.stockstar.com/bond/convertible.shtml">可转债</a><a href="http://quote.stockstar.com/bond/bankrepurchase.shtml">银行间</a><br />
+								</div>
+								<div class="bxad" id="feature_item05"><iframe width="300" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=168&amp;type=1"></iframe></div>
+							</div>
+						</div></li><li class="lstitem"><a href="http://resource.stockstar.com/DataCenter/PrivateData/" class="cBold">特色</a><a href="http://express.stockstar.com/" class="cRed">快讯</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_zc.aspx">机构增仓</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_jc.aspx">机构减仓</a><div class="spuitem dishd item06">
+	<div class="spubox">
+		<div class="itmbg"></div>
+		<h3><a href="http://resource.stockstar.com/DataCenter/PrivateData/">特色</a></h3>
+		<div class="sdboxa">
+<a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_zc.aspx">机构增仓</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_jc.aspx">机构减仓</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/OneStockHolder.aspx">同一股东</a><br />
+<a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_xz.aspx">机构新增股</a><a href="http://resource.stockstar.com/DataCenter/PrivateData/GetOrgHoldStockList_tc.aspx">机构剔除股</a><a href="http://fund.stockstar.com/pool/zcg.htm">隐形重仓股</a>
+		</div>
+		<div class="spwx">
+			<p class="ewmsps"><img src="//www.stockstar.com/img/static/qr-zqzx-wx.jpg" alt="" /><em>证券之星微信公众号</em></p>
+			<p><img src="//www.stockstar.com/img/static/qr-zqzx-wx-servics.jpg" alt="" /><em>证券之星微信服务号</em></p>
+		</div>
+	</div>
+</div></li></ul>	
+			</div>
+		</div>
+		<!--end 证券之星特色服务-->
+		
+<!-- 行情 期指 环球 期货 -->
+		<div id="zst" class="switch small">
+			<div class="title">
+				<ul>
+					<li class="current"><a href="//resource.stockstar.com/DataCenter/PrivateData/ztgm.htm">市场</a></li>
+					<li><a href="http://quote.stockstar.com/global/">环球</a></li>
+					<li><a href="http://quote.stockstar.com/futures/">期货</a></li>
+				</ul>
+			</div>
+			<div class="content">
+			    <div class="cnt">
+				    <div class="tabs">
+					    <div class="tab"><table cellspacing="0" cellpadding="0"><tbody><tr><th align="center">统计名称</th><th align="center">沪市A股</th><th align="center">深市A股</th></tr><tr><td align="left"> 股票家数</td><td align="right">1563 </td><td align="right">2329 </td></tr><tr><td align="left"> 总市值</td><td align="right">41.63万亿 </td><td align="right">33.31万亿 </td></tr><tr><td align="left"> 流通市值</td><td align="right">36.15万亿 </td><td align="right">25.77万亿 </td></tr><tr><td align="left"> 总股本</td><td align="right">4.15万亿 </td><td align="right">2.25万亿 </td></tr><tr><td align="left"> 流通股本</td><td align="right">3.66万亿 </td><td align="right">1.85万亿 </td></tr><tr><td align="left"> 7日内新股数</td><td align="right">2 </td><td align="right">4 </td></tr><tr><td align="left"> 每股收益</td><td align="right">0.69 </td><td align="right">0.58 </td></tr></tbody></table></div>
+				    </div>
+				    <div class="tabs" style="display:none">
+					    <div class="tab"><table cellspacing="0" cellpadding="0"><tbody><tr><th align="center">名称</th><th align="center">最新指数</th><th align="center">涨跌额</th><th align="center">涨跌幅</th></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">道琼工业</a></td><td align="center"><span class="cGreen">29883.79</span></td><td align="center"><span class="cGreen">59.87</span></td><td align="center"><span class="cGreen">0.20%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">标普500</a></td><td align="center"><span class="cGreen">3669.01</span></td><td align="center"><span class="cGreen">6.56</span></td><td align="center"><span class="cGreen">0.18%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">日经指数</a></td><td align="center"><span class="cGreen">26809.37</span></td><td align="center"><span class="cGreen">8.39</span></td><td align="center"><span class="cGreen">0.03%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">澳洲综合</a></td><td align="center"><span class="cGreen">6615.30</span></td><td align="center"><span class="cGreen">25.10</span></td><td align="center"><span class="cGreen">0.38%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">瑞士SSMI</a></td><td align="center"><span class="cRed">10373.86</span></td><td align="center"><span class="cRed">-61.50</span></td><td align="center"><span class="cRed">-0.59%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/global/">巴黎证商</a></td><td align="center"><span class="cRed">5559.46</span></td><td align="center"><span class="cRed">-23.55</span></td><td align="center"><span class="cRed">-0.42%</span></td></tr><tr class="solid"><td align="center"><a href="http://quote.stockstar.com/global/">波罗地海</a></td><td align="center"><span class="cRed">1201.00</span></td><td align="center"><span class="cRed">-10.00</span></td><td align="center"><span class="cRed">-0.83%</span></td></tr></tbody></table></div>
+				    </div>
+				    <div class="tabs" style="display:none">
+					    <div class="tab"><table cellspacing="0" cellpadding="0"><tbody><tr><th align="center">名称</th><th align="center">最新指数</th><th align="center">涨跌额</th><th align="center">涨跌幅</th></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">NYMEX原油</a></td><td align="center"><span class="cGreen">45.12</span></td><td align="center"><span class="cGreen">0.04</span></td><td align="center"><span class="cGreen">0.09%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">COMEX黄金</a></td><td align="center"><span class="cGreen">1492.70</span></td><td align="center"><span class="cGreen">5.20</span></td><td align="center"><span class="cGreen">0.35%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">COMEX白银</a></td><td align="center"><span class="cGreen">17.60</span></td><td align="center"><span class="cGreen">0.10</span></td><td align="center"><span class="cGreen">0.57%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">LmeS_铝3</a></td><td align="center"><span class="cRed">2033.50</span></td><td align="center"><span class="cRed">-27.50</span></td><td align="center"><span class="cRed">-1.33%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">LmeS_锌3</a></td><td align="center"><span class="cGreen">2768.00</span></td><td align="center"><span class="cGreen">18.50</span></td><td align="center"><span class="cGreen">0.67%</span></td></tr><tr><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">LmeS_铜3</a></td><td align="center"><span class="cGreen">7676.00</span></td><td align="center"><span class="cGreen">1.00</span></td><td align="center"><span class="cGreen">0.01%</span></td></tr><tr class="solid"><td align="center"><a href="http://quote.stockstar.com/futures/futuresglobal.shtml">LD布油指</a></td><td align="center"><span class="cRed">47.78</span></td><td align="center"><span class="cRed">-0.08</span></td><td align="center"><span class="cRed">-0.17%</span></td></tr></tbody></table></div>
+				    </div>
+			    </div>
+			    <div class="sear">
+                    <form method="post">
+					    <input id="ajaxinput_right" type="text" class="text" autocomplete="off" name="code" style="color: rgb(153, 153, 153);" /> 
+                        <input id="ajaxinput_right_q" type="button" class="btn" value="" />
+					    <!--<a href='http://quote.stockstar.com/stock/fav/favorite.htm'>【自选股】</a>-->
+                    </form>
+			    </div>
+		    </div>
+	    </div>
+		<!-- end 行情 期指 环球 期货 -->
+	</div>
+	<!-- end 右 -->
+	<div class="clearfix">
+	</div>
+</div>
+<!-- end 模块一 --><!-- 广告 -->
+<div id="first_gpjj_full" class="ad"><iframe width="1000" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=164&amp;type=1"></iframe></div>
+<!-- end 广告 --><!-- 模块2 -->
+<div id="m_gpjj" class="module">
+	<h2 id="gpjj" class="title">
+	<div class="name">
+		<span class="n1" title="股票&amp;基金"><a href="http://stock.stockstar.com/">股票</a>&amp;<a href="http://fund.stockstar.com/">基金</a></span>
+	</div>
+	<div class="tags">
+		<a href="http://stock.stockstar.com/list/headlines.htm">证券要闻</a>┊<a href="http://stock.stockstar.com/list/10.shtml">公司新闻</a>┊<a href="http://stock.stockstar.com/list/live.htm">股市直击</a>┊<a href="http://stock.stockstar.com/list/sectors.htm">板块掘金</a>┊<a href="http://stock.stockstar.com/list/strategy.htm">趋势策略</a>┊<a href="http://stock.stockstar.com/list/global.htm">环球股市</a>┊<a href="http://stock.stockstar.com/bshare/">B股</a>┊<a href="http://stock.stockstar.com/third/">新三板</a>┊<a href="http://quote.stockstar.com/Comment/">千股千评</a>┊<a href="http://fund.stockstar.com/list/1293.shtml">基金要闻</a>┊<a href="http://fund.stockstar.com/rank/rate.htm">基金评级</a>
+	</div>
+	</h2>
+	<!-- 左 -->
+	<div class="left pub">
+		<!-- 股市直击 -->
+		<div class="title">
+			<h2><a href="http://stock.stockstar.com/list/headlines.htm">证券要闻</a></h2>
+            <a class="more" href="http://stock.stockstar.com/list/headlines.htm">更多 <i>&gt;&gt;</i></a>
+		</div>
+		<div id="gszj" class="content">
+			<ul><li><a href="http://stock.stockstar.com/SS2020120300000171.shtml" class="cBold">隔夜外盘：标普500续创收盘新高 中概新能源</a></li><li><a href="http://stock.stockstar.com/SS2020120300001203.shtml">多只翻倍基诞生！2021年要怎么投？七大买方研</a></li><li><a href="http://stock.stockstar.com/SS2020120300001199.shtml">数据复盘|85亿主力资金撤离电子行业 北向资金</a></li><li><a href="http://stock.stockstar.com/IG2020120300001035.shtml">成品油迎“二连涨” 小轿车加满一箱油将增加1</a></li><li><a href="http://stock.stockstar.com/IG2020120300000932.shtml">商票有收益权？还能拍卖？商票收益权拍卖平台</a></li></ul>	
+		</div>
+		<!-- 股市直击 -->
+		<!-- 机构内参 -->
+		<div class="title">
+			<h2><a href="http://stock.stockstar.com/list/main.htm">主力</a>&amp;<a href="http://stock.stockstar.com/list/strategy.htm">策略</a></h2>
+		    <div class="mores" onmouseover="this.className='mores hover'" onmouseout="this.className='mores'">
+					<span>更多</span>
+					<div class="list">
+						<a href="http://stock.stockstar.com/list/main.htm">主力监测</a>
+						<a href="http://stock.stockstar.com/list/strategy.htm">趋势策略</a>
+					</div>
+			</div>
+        </div>
+		<div id="zljc" class="content">
+			<ul><li><a href="http://stock.stockstar.com/SS2020120300000194.shtml" class="cBold">机构、股东、高管争相买入这些业绩暴增股</a></li><li><a href="http://stock.stockstar.com/IG2020120300000897.shtml">钱坤投资：沪深两市连续两日十字星 考虑变盘</a></li><li><a href="http://stock.stockstar.com/IG2020120300000743.shtml">中证投资：创业板指站上2700点 北向资金净流</a></li><li><a href="http://stock.stockstar.com/IG2020120300001176.shtml">西南证券：珍惜牛回头 市场有望进军4000点</a></li><li><a href="http://stock.stockstar.com/IG2020120300000429.shtml">广州万隆：市场风格或切换 注意一信号</a></li></ul>
+		</div>
+		<!-- 机构内参 -->
+		<!-- 相关标签 -->
+		<ul id="aside_tag" class="aside_tag"><li><a href="http://quote.stockstar.com/BillBoard/sh.htm">龙虎榜单</a> <a href="http://stock.stockstar.com/list/main.htm">主力研究</a> <a href="http://resource.stockstar.com/DataCenter/StockData/GetMainForceStats.aspx">主力统计</a> <a href="http://resource.stockstar.com/DataCenter/PrivateData/GetStockLimitSaleSummary.aspx">限售解禁</a> <a href="http://resource.stockstar.com/DataCenter/PrivateData/OneStockHolder.aspx">同一股东</a></li><li><a href="http://resource.stockstar.com/DataCenter/privatedata/GetRHREPORTALL.aspx">研报速递</a> <a href="http://resource.stockstar.com/DataCenter/StockData/GetAchieveForecast.aspx">业绩预告</a> <a href="http://stock.stockstar.com/ipo/data_ipo.aspx">新股申购</a> <a href="http://stock.stockstar.com/ipo/data_zf.aspx">增发申购</a> <a href="http://stock.stockstar.com/ipo/data_kzz.aspx">转债申购</a></li></ul>
+
+		<!-- end 相关标签 -->
+	</div>
+	<!-- end 左 -->
+	<!-- 中 -->
+	<div class="center pub">
+		<!-- 公司新闻 -->
+		<div class="title">
+			<h2><a href="http://stock.stockstar.com/list/10.shtml">公司新闻</a></h2>
+                <a class="more" href="http://stock.stockstar.com/list/10.shtml">更多 <i>&gt;&gt;</i></a>
+		</div>
+		<div id="gsxw" class="content">
+			<ul><li><a href="http://stock.stockstar.com/SS2020120300000141.shtml" class="cBold">钛白粉掀起新一轮涨价潮 机构预期行业有望</a></li><li><a href="http://stock.stockstar.com/SS2020120300001177.shtml">获13亿增持   恒大汽车股价两天大涨14%</a></li><li><a href="http://stock.stockstar.com/IG2020120300001080.shtml">中飞股份(300489.SZ)：范长龙接替潘苏滨担任</a></li><li><a href="http://stock.stockstar.com/IG2020120300001082.shtml">万润股份(002643.SZ)股东鲁银投资解除质押250</a></li><li><a href="http://stock.stockstar.com/IG2020120300001083.shtml">惠云钛业(300891.SZ)即日起上调钛白粉销售价</a></li></ul>	
+		</div>
+		<!-- end 公司新闻 -->
+		<!-- 基金要闻 -->
+		<div class="title">
+			<h2><a href="http://fund.stockstar.com/list/1293.shtml">基金要闻</a></h2>
+				<a class="more" href="http://fund.stockstar.com/list/1293.shtml">更多 <i>&gt;&gt;</i></a>
+		</div>
+		<div id="jjyw" class="content">
+			<ul><li><a href="http://fund.stockstar.com/IG2020120300001201.shtml">开源证券赵伟：政策“退潮”下 信用收缩通道</a></li><li><a href="http://fund.stockstar.com/IG2020120300001200.shtml">不要小看仿制药这场“革命” 医药股还有年末</a></li><li><a href="http://fund.stockstar.com/IG2020120300001030.shtml">国产新冠疫苗大消息！孙春兰：要做好大规模生</a></li><li><a href="http://fund.stockstar.com/SS2020120300000187.shtml">前11月37家基金公司总经理变更</a></li><li><a href="http://fund.stockstar.com/SS2020120300000185.shtml">公募基金参与定增热情高 今年累计浮盈23亿元</a></li></ul>	
+		</div>
+		<!-- end 基金要闻 -->
+		<!-- 相关标签 -->
+		<div id="aside_btn" class="aside_btn">
+			<a href="http://fund.stockstar.com/notes/newissue.htm">新基金发行</a>
+			<a href="http://fund.stockstar.com/rank.htm">基金龙虎榜</a>
+			<a href="http://fund.stockstar.com/netvalue/openfund.htm">基金净值排行</a>
+			<a href="http://fund.stockstar.com/notes/dividend.htm">分红送配比较</a>
+			<a href="http://fund.stockstar.com/archives/manager.htm">基金经理档案</a>
+			<a href="http://fund.stockstar.com/pool/zcg.htm">基金重仓股</a>
+		</div>
+		<!-- 相关标签 -->
+	</div>
+	<!-- end 中 -->
+	<!-- 右 -->
+	<div class="right">
+		<!-- 研报掘金 -->
+		<div id="ybjj" class="report">
+			<div class="title">
+				<div class="name">
+					<a href="http://stock.stockstar.com/report/">研报掘金</a>
+				</div>
+			</div>
+			<div class="content">
+				<div class="submenu">
+					<ul class="switch_3">
+						<li class="current"><span><a href="http://stock.stockstar.com/report/data_ph.htm">盈利调高</a></span></li>
+						<li><span><a href="http://stock.stockstar.com/report/data_ih.htm">评级调高</a></span></li>
+						<li><span><a href="http://stock.stockstar.com/report/data_fn.htm">机构首次关注</a></span></li>
+					</ul>
+				</div>
+				<div class="cnt">
+                    <div class="tit">
+							<ul>
+								<li class="name">报告标题</li>
+								<li class="time">日期</li>
+							</ul>
+					</div>
+					<div class="tabs  rpt-tabs">		
+                        <ul><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_ph.aspx?title=%d0%c2%b8%d6%b9%c9%b7%dd%a3%ba%c7%f8%d3%f2%b0%e5%b2%c4%c1%fa%cd%b7">新钢股份：区域板材龙头</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_ph.aspx?title=%bb%aa%d0%cb%d4%b4%b4%b4%3a%c3%e6%b0%e5%bc%b0%d0%be%c6%ac%be%b0%c6%f8%cf%f2%c9%cf%a3%ac%d6%fa%cd%c6%b9%ab%cb%be%b6%a9%b5%a5%cf%f2%ba%c3">华兴源创:面板及芯片景气向上，助推公司订</a></li><li><span class="time">12-02</span><a href="http://stock.stockstar.com/report/data_ph.aspx?title=%bb%aa%c8%f3%ce%a2%3a8%d3%a2%b4%e7%b2%fa%c4%dc%bd%f4%c8%b1%a3%ac%b9%fa%c4%da%b9%a6%c2%caIDM%c1%fa%cd%b7%d3%c5%bb%af%b2%fa%c6%b7%bd%e1%b9%b9">华润微:8英寸产能紧缺，国内功率IDM龙头优</a></li><li><span class="time">12-02</span><a href="http://stock.stockstar.com/report/data_ph.aspx?title=%d6%d0%b9%fa%cc%ab%b1%a3%a3%ba%b5%cd%b9%c8%d2%d1%b9%fd%a3%acNBV%b7%b4%d7%aa%b5%c4%b6%cc%c6%da%ba%cd%b3%a4%c6%da%b6%af%c4%dc%bc%e6%b1%b8">中国太保：低谷已过，NBV反转的短期和长期</a></li><li><span class="time">12-02</span><a href="http://stock.stockstar.com/report/data_ph.aspx?title=%d0%c7%d3%ee%b9%c9%b7%dd%a3%ba%ba%cb%d0%c4%bf%cd%bb%a7%bc%cc%d0%f8%b3%ac%d4%bd%d4%a4%c6%da%a3%ac%d0%c7%d3%ee%c3%ab%c0%fb%d3%d0%cd%fb%b3%d6%d0%f8%b8%c4%c9%c6">星宇股份：核心客户继续超越预期，星宇毛利</a></li></ul>
+					</div>
+					<div class="tabs  rpt-tabs" style="display:none">							
+						<ul><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_ih.aspx?title=%d0%c2%b8%d6%b9%c9%b7%dd%a3%ba%c7%f8%d3%f2%b0%e5%b2%c4%c1%fa%cd%b7">新钢股份：区域板材龙头</a></li><li><span class="time">12-01</span><a href="http://stock.stockstar.com/report/data_ih.aspx?title=%d5%d0%c9%cc%b9%ab%c2%b7%c9%ee%b6%c8%b1%a8%b8%e6%a3%ba%c2%b7%b2%fa%c0%a9%d5%c5%cc%e1%c9%fd%b3%c9%b3%a4%d0%d4%a3%ac%b2%fa%d2%b5%c1%b4%d0%ad%cd%ac%b7%a2%d5%b9%bc%db%d6%b5%b5%cd%b9%c0">招商公路深度报告：路产扩张提升成长性，产</a></li><li><span class="time">12-01</span><a href="http://stock.stockstar.com/report/data_ih.aspx?title=%c9%ad%c2%ed%b7%fe%ca%ce%a3%ba%d7%dc%be%ad%c0%ed%d3%eb%b6%ad%ca%c2%ca%dc%c8%c3%b9%ab%cb%be%b9%c9%c8%a8%a3%ac%c8%a8%d2%e6%b0%f3%b6%a8%d4%f6%cc%ed%ce%b4%c0%b4%b7%a2%d5%b9%d0%c5%d0%c4">森马服饰：总经理与董事受让公司股权，权益</a></li><li><span class="time">11-30</span><a href="http://stock.stockstar.com/report/data_ih.aspx?title=%ba%d3%b8%d6%d7%ca%d4%b4%a3%ba%ca%dc%d2%e6%d3%da%cc%fa%bf%f3%bc%b0%cd%ad%bc%db%b8%f1%c9%cf%d5%c7">河钢资源：受益于铁矿及铜价格上涨</a></li><li><span class="time">11-30</span><a href="http://stock.stockstar.com/report/data_ih.aspx?title=%bd%f0%b5%a4%bf%c6%bc%bc%a3%ba%b4%f2%cd%a8%b1%fb%bd%bb%f5%a5%b9%d8%bc%fc%b9%a4%d2%d5%a3%acPLA+%c3%f7%c8%d5%d6%ae%d0%c7%ec%da%ec%da%c9%fa%bb%d4">金丹科技：打通丙交酯关键工艺，PLA 明日之</a></li></ul>
+					</div>
+					<div class="tabs  rpt-tabs" style="display:none">							
+                        <ul><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_fn.aspx?title=%b0%d7%d4%c6%bb%fa%b3%a12020%c4%ea%c8%fd%bc%be%b1%a8%b5%e3%c6%c0%a3%ba%b9%fa%c4%da%c2%c3%bf%cd%cd%cc%cd%c2%c1%bf%cd%ac%b1%c8%d4%f6%cb%d9%d7%aa%d5%fd">白云机场2020年三季报点评：国内旅客吞吐量</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_fn.aspx?title=%b0%b2%e7%f7%bd%cd%c4%b8%3a%ba%cb%d0%c4%c0%fb%d2%e6%c9%ee%b6%c8%b0%f3%b6%a8%a3%ac%bc%a4%c0%f8%bc%c6%bb%ae%d5%c3%cf%d4%d0%c5%d0%c4">安琪酵母:核心利益深度绑定，激励计划彰显</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_fn.aspx?title=%b0%ae%c3%c0%bf%cd%c9%ee%b6%c8%b1%a8%b8%e6%a3%ba%ba%c3%c8%fc%b5%c0%ba%c3%c9%fa%d2%e2%a3%ac%c9%ee%b8%fb%cf%b8%d7%f7%b3%c9%be%cd%c3%c0%c0%f6">爱美客深度报告：好赛道好生意，深耕细作成</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_fn.aspx?title=%d0%c2%bd%e0%c4%dc%b6%af%cc%ac%b5%e3%c6%c0%a3%ba%b9%fa%c4%daMOSFET%c1%ec%cf%c8%c6%f3%d2%b5%a3%ac%b3%cb%b7%e7%b6%f8%c6%f0%bf%ec%cb%d9%b3%c9%b3%a4">新洁能动态点评：国内MOSFET领先企业，乘风</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_fn.aspx?title=%bc%cc%b7%e5%b9%c9%b7%dd%3a%d5%fb%ba%cf%b3%f5%bc%fb%b3%c9%d0%a7%a3%ac20Q3%bb%f2%ce%aa%d3%af%c0%fb%b9%d5%b5%e3">继峰股份:整合初见成效，20Q3或为盈利拐点</a></li></ul>
+					</div>
+				</div>
+			</div>
+			<div class="search_bar bd" style="border-bottom:0;">
+				<form method="post">
+					<strong>盈利预测</strong>
+					<input id="ajaxinput_report_y" type="text" class="text" autocomplete="off" name="code" style="color: rgb(153, 153, 153);" />
+					<input id="ajaxinput_report_y_q" class="btn" type="button" value="查询" />
+				</form>
+			</div>
+			<div class="content">
+				<div class="submenu">
+					<ul class="switch_4">
+						<li class="current"><span><a href="http://stock.stockstar.com/report/data_all.aspx?ranking=%C2%F2%C8%EB">买入</a></span></li>
+						<li><span><a href="http://stock.stockstar.com/report/data_all.aspx?ranking=%D4%F6%B3%D6">增持</a></span></li>
+						<li><span><a href="http://stock.stockstar.com/report/data_all.aspx?ranking=%D6%D0%D0%D4">中性</a></span></li>
+						<li><span><a href="http://stock.stockstar.com/report/data_all.aspx?ranking=%C2%F4%B3%F6">减持</a></span></li>
+					</ul>
+				</div>
+				<div class="cnt1">
+                    <div class="tit">
+							<ul>
+								<li class="name">报告标题</li>
+								<li class="time">日期</li>
+							</ul>
+					</div>
+					<div class="tabs rpt-tabs">							
+						<ul><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d0%c0%cd%fa%b4%ef%a3%ba%cf%fb%b7%d1%ef%ae%b5%e7%b6%e0%d4%aa%b2%bc%be%d6%a3%ac%b6%af%c1%a6%b5%e7%b3%d8%bb%fd%d0%ee%b6%af%c4%dc">欣旺达：消费锂电多元布局，动力电池积蓄动</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%b7%e7%bb%aa%b8%df%bf%c6%3a%b5%e7%d7%e8%c0%a9%b2%fa%c1%a6%b6%c8%c7%bf%be%a2%a3%ac%b1%bb%b6%af%d4%aa%bc%fe%d7%db%ba%cf%ca%b5%c1%a6%b3%d6%d0%f8%cc%e1%c9%fd">风华高科:电阻扩产力度强劲，被动元件综合</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%c0%d6%bb%dd%b9%fa%bc%ca%a3%ba%c6%a1%be%c6%c4%f0%d4%ec%c9%e8%b1%b8%c1%fa%cd%b7%a3%ac%d7%aa%d0%cd%be%ab%c4%f0%c6%a1%be%c6%b4%f2%bf%aa%b3%c9%b3%a4%bf%d5%bc%e4">乐惠国际：啤酒酿造设备龙头，转型精酿啤酒</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d0%c2%be%ad%b5%e4%a3%ba%b9%c9%b7%dd%bb%d8%b9%ba%2b%b9%c9%c8%a8%bc%a4%c0%f8%bc%e1%b6%a8%b3%c9%b3%a4%d0%c5%d0%c4%a3%ac%b2%ce%cd%b6%b5%e7%d3%b0%a1%b6%d2%f5%d1%f4%ca%a6%a1%b7%b1%be%d4%c2%bc%b4%bd%ab%c9%cf%d3%b3%d3%d0%cd%fb%d4%f6%ba%f1%d2%b5%bc%a8">新经典：股份回购+股权激励坚定成长信心，</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d0%c2%be%ad%b5%e4%ca%c2%bc%fe%b5%e3%c6%c0%a3%ba%bb%d8%b9%ba%d3%eb%c6%da%c8%a8%bc%a4%c0%f8%b2%a2%d0%d0%d6%fa%d0%c5%d0%c4%d0%c2%c6%b7%bd%a5%ca%cd%b7%c5%d6%f7%d2%b5%d3%d0%cd%fb%bb%d8%c5%af%cd%a6%bd%f82021">新经典事件点评：回购与期权激励并行助信心</a></li></ul>
+					</div>
+					<div class="tabs rpt-tabs" style="display:none">
+						<ul><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%bf%c6%cd%d8%c9%fa%ce%ef%b9%ab%cb%be%b6%af%cc%ac%b5%e3%c6%c0%a3%ba%c9%ee%c8%eb%be%fa%d6%ea%d1%d0%be%bf%a3%ac%cd%b9%cf%d4%bc%bc%ca%f5%d3%c5%ca%c6">科拓生物公司动态点评：深入菌株研究，凸显</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%bc%cc%b7%e5%b9%c9%b7%dd%3a%d5%fb%ba%cf%b3%f5%bc%fb%b3%c9%d0%a7%a3%ac20Q3%bb%f2%ce%aa%d3%af%c0%fb%b9%d5%b5%e3">继峰股份:整合初见成效，20Q3或为盈利拐点</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%b0%d7%d4%c6%bb%fa%b3%a12020%c4%ea%c8%fd%bc%be%b1%a8%b5%e3%c6%c0%a3%ba%b9%fa%c4%da%c2%c3%bf%cd%cd%cc%cd%c2%c1%bf%cd%ac%b1%c8%d4%f6%cb%d9%d7%aa%d5%fd">白云机场2020年三季报点评：国内旅客吞吐量</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d0%c2%b8%d6%b9%c9%b7%dd%a3%ba%c7%f8%d3%f2%b0%e5%b2%c4%c1%fa%cd%b7">新钢股份：区域板材龙头</a></li><li><span class="time">12-03</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%b0%b2%e7%f7%bd%cd%c4%b8%3a%ba%cb%d0%c4%c0%fb%d2%e6%c9%ee%b6%c8%b0%f3%b6%a8%a3%ac%bc%a4%c0%f8%bc%c6%bb%ae%d5%c3%cf%d4%d0%c5%d0%c4">安琪酵母:核心利益深度绑定，激励计划彰显</a></li></ul>
+					</div>
+					<div class="tabs rpt-tabs" style="display:none">
+						<ul><li><span class="time">11-30</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%e7%ea%c0%b3%d1%c5%a3%ba%b0%d1%ce%d5%c7%fe%b5%c0%ba%ec%c0%fb%a3%ac%b6%e0%ce%ac%cd%d8%d5%b9%c7%b1%c1%a6%ca%ae%d7%e3">珀莱雅：把握渠道红利，多维拓展潜力十足</a></li><li><span class="time">11-30</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%b5%e7%c9%f9%b9%c9%b7%dd%a3%ba%cc%e5%d1%e9%d3%aa%cf%fa%c1%fa%cd%b7%a3%ac%b2%bc%be%d6%ca%fd%d7%d6%d0%c2%c1%e3%ca%db">电声股份：体验营销龙头，布局数字新零售</a></li><li><span class="time">11-25</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%c3%ee%bf%c9%c0%b6%b6%e0%3a%d0%ee%ca%c6%b4%fd%b7%a2%a3%ac%b9%fa%c3%f1%c4%cc%c0%d2%cf%c8%d0%d0%d5%df%c3%ee%bf%c9%c0%b6%b6%e0">妙可蓝多:蓄势待发，国民奶酪先行者妙可蓝</a></li><li><span class="time">11-25</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%b8%b4%b5%a9%d5%c5%bd%ad%a3%ba%b9%e2%b6%af%c1%a6%bc%bc%ca%f5%b9%fa%bc%ca%c1%ec%cf%c8%c6%f3%d2%b5%a3%ac%ba%cb%d0%c4%b2%fa%c6%b7%be%ba%d5%f9%b1%da%c0%dd%b8%df">复旦张江：光动力技术国际领先企业，核心产</a></li><li><span class="time">11-24</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%ba%c0%d4%c3%bb%a4%c0%ed%a3%ba%c9%ee%b8%fb%d1%d0%b7%a2%c9%e8%bc%c6%a3%acODM%c1%ec%cf%c8%d6%c6%d4%ec%c9%cc%c7%bf%ca%c6%cd%bb%ce%a7">豪悦护理：深耕研发设计，ODM领先制造商强</a></li></ul>
+					</div>
+					<div class="tabs rpt-tabs" style="display:none">
+						<ul><li><span class="time">08-21</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%c9%ee%db%da%bb%fa%b3%a1%3a%be%ad%d3%aa%b9%dc%c0%ed%b3%f6%c9%ab%2c%b9%c9%b6%ab%bb%d8%b1%a8%c6%bd%ce%c8">深圳机场:经营管理出色,股东回报平稳</a></li><li><span class="time">03-19</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d6%d0%d0%c5%bd%a8%cd%b6%3a%b6%cc%c6%da%d5%c7%b7%f9%b9%fd%b4%f3%2c%cf%c2%b5%f7%c6%c0%bc%b6%d6%c1%a1%b0%c2%f4%b3%f6%a1%b1%b9%ab%cb%be%bf%ec%b1%a8">中信建投:短期涨幅过大,下调评级至“卖出”</a></li><li><span class="time">03-08</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%d6%d0%d0%c5%bd%a8%cd%b6%3a%b9%c0%d6%b5%cf%d4%d6%f8%b8%df%b9%c0%2c%cf%c2%b5%f7%d6%c1%c2%f4%b3%f6%c6%c0%bc%b6">中信建投:估值显著高估,下调至卖出评级</a></li><li><span class="time">02-06</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=%e2%af%d7%d3%b5%ba%3a%d4%d9%d4%e2%a1%b0%ba%da%cc%ec%b6%ec%a1%b1%2c%c9%c8%b1%b4%b4%e6%bb%f5%d2%ec%b3%a3%bb%f2%d6%c2%c8%ab%c4%ea%bf%f7%cb%f0">獐子岛:再遭“黑天鹅”,扇贝存货异常或致全</a></li><li><span class="time">02-02</span><a href="http://stock.stockstar.com/report/data_all.aspx?title=Wangsu+Technology+Alert%3aFalse+alarm">Wangsu Technology Alert:False alarm</a></li></ul>
+					</div>
+				</div>
+			</div>
+			<div class="search_bar bd">
+				<form method="post">
+					<strong>投资评级</strong>
+					<input id="ajaxinput_report_p" type="text" class="text" autocomplete="off" name="code" style="color: rgb(153, 153, 153);" />
+					<input id="ajaxinput_report_p_q" type="button" class="btn" value="查询" />
+				</form>
+			</div>
+		</div>
+		<!-- end 研报掘金 -->
+	</div>
+	<!-- end 右 -->
+	<div class="clearfix">
+	</div>
+</div>
+<!-- 模块2 --><!-- 图文广告 -->
+<div id="pic_text" class="pic_text">
+    <dl><dd><img src="//i.ssimg.cn/ssupload/2018/08/21/be736a751eb54867abb2c6843561bed5.png" alt="险企7月来密集调研63家公司" /></dd><dt><h3><a href="http://stock.stockstar.com/SS2019082100000140.shtml">险企7月来密集调研63家公司</a></h3><p>7月以来，已有67家保险机构调研了63家公司…<a class="cRed" href="http://stock.stockstar.com/SS2019082100000140.shtml">[详细]</a></p></dt></dl>
+<dl><dd><img src="//i.ssimg.cn/ssupload/2018/08/21/f90c622598e94f858ae5feb18b05fdc1.png" alt="盘中启动热点早知道" /></dd><dt><h3><a href="http://www.bida24.com/">盘中启动热点早知道</a></h3><p>7*24小时助您找热点，把握赚钱机会不再困难…<a class="cRed" href="http://www.bida24.com/">[详细]</a></p></dt></dl>
+<dl><dd><img src="//i.ssimg.cn/ssupload/2018/08/21/b0177e116cf4464cb8fde5866df5385e.png" alt="迪士尼虚增数十亿美元收入?" /></dd><dt><h3><a href="http://finance.stockstar.com/SS2019082100000128.shtml">迪士尼虚增数十亿美元收入?</a></h3><p>“童话王国”迪士尼最近负面消息缠身…<a class="cRed" href="http://finance.stockstar.com/SS2019082100000128.shtml">[详细]</a></p></dt></dl>
+</div>
+<!-- end 图文广告 --><!-- 模块3 -->
+<div id="m_tzzyd" class="module">
+	<h2 id="cjlc" class="title">
+	<div class="name">
+		<span class="n3" title="财经&amp;理财">财经&amp;理财</span>
+	</div>
+	<div class="tags">
+		<a href="http://finance.stockstar.com/list/1221.shtml">宏观要闻</a>┊<a href="http://finance.stockstar.com/list/2921.shtml">行业新闻</a>┊<a href="http://finance.stockstar.com/list/company.htm">公司新闻</a>┊<a href="http://finance.stockstar.com/list/global.htm">全球市场</a>┊<a href="http://finance.stockstar.com/list/947.shtml">曝光台</a>┊<a href="http://finance.stockstar.com/finance/mediacenter.htm">媒体广场</a>┊<a href="http://money.stockstar.com/list/3377.shtml">理财聚焦</a>┊<a href="http://bc.stockstar.com/">区块链</a>┊<a href="http://bond.stockstar.com/">债券</a>┊<a href="http://spif.stockstar.com/">股指期货</a>┊<a href="http://quote.stockstar.com/gold/">黄金报价</a>┊<a href="http://quote.stockstar.com/futures/">期货行情</a>
+	</div>
+	</h2>
+	<!-- 左 -->
+	<div class="left pub">
+		<!-- 国内&国际 -->
+		<div class="title">
+			<h2><a href="http://finance.stockstar.com/list/1221.shtml">国内</a>&amp;<a href="http://finance.stockstar.com/list/955.shtml">国际</a></h2>
+		    <div class="mores" onmouseover="this.className='mores hover'" onmouseout="this.className='mores'">
+					<span>更多</span>
+					<div class="list">
+						<a href="http://finance.stockstar.com/list/1221.shtml">国内</a>
+						<a href="http://finance.stockstar.com/list/955.shtml">国际</a>
+					</div>
+				</div>
+        </div>
+		<div class="content">
+			<ul><li><a href="http://finance.stockstar.com/SS2020120300000168.shtml" class="cBold">突发！美国众议院通过《外国公司问责法》 </a></li><li><a href="http://finance.stockstar.com/IG2020120300001069.shtml">阿联酋的科技野心：松绑外商投资限制，期盼与</a></li><li><a href="http://finance.stockstar.com/IG2020120300000765.shtml">展望2021丨瑞信：亚洲股市将迎盈利超级周期 </a></li><li><a href="http://finance.stockstar.com/IG2020120300000764.shtml">商务部谈对澳葡萄酒、大麦贸易救济案：充分保</a></li><li><a href="http://finance.stockstar.com/IG2020120300000763.shtml">商务部：正积极推进出口管制法配套法规立法，</a></li></ul>
+		</div>
+		<!-- end 国内&国际 -->
+		<!-- 黄金&外汇 -->
+		<div class="title">
+			<h2><a href="http://gold.stockstar.com/">黄金</a>&amp;<a href="http://forex.stockstar.com/">外汇</a></h2>
+			<div class="mores" onmouseover="this.className='mores hover'" onmouseout="this.className='mores'">
+					<span>更多</span>
+					<div class="list">
+						<a href="http://gold.stockstar.com/">黄金</a>
+						<a href="http://forex.stockstar.com/">外汇</a>
+					</div>
+				</div>
+		</div>
+		<div class="content">
+			<ul><li><a href="http://gold.stockstar.com/SS2020120300000105.shtml" class="cBold">刚提出就被否决 财政刺激路漫漫！黄金终回</a></li><li><a href="http://forex.stockstar.com/IG2020120300000944.shtml">默沙东抛售所持Moderna股份，称已取得“可观</a></li><li><a href="http://forex.stockstar.com/IG2020120300000767.shtml">大摩首席投资官：美股已超买，近期有回调风险</a></li><li><a href="http://forex.stockstar.com/IG2020120300000391.shtml">盘前异动：恒大汽车开盘拉升超过7%，获中国恒</a></li><li><a href="http://forex.stockstar.com/IG2020120300000270.shtml">人民币兑美元中间价报6.5592元 上调19个基点</a></li></ul>
+			<div class="icon-link clearfix">
+                <div class="img-txt">
+                    <a href="http://forex.stockstar.com/foreignEx/daily.htm" class="daily" title="财经日历"></a>
+                </div>
+                <p><a href="http://forex.stockstar.com/foreignEx/daily.htm" title="欧元区 10月 零售销售年率：4.3">欧元区 10月 零售销售年率：4.3</a></p><p><a href="http://forex.stockstar.com/foreignEx/daily.htm" title="欧元区 10月 零售销售月率：1.5">欧元区 10月 零售销售月率：1.5</a></p>
+            </div>
+		</div>
+		<!-- end 黄金&外汇 -->
+	</div>
+	<!-- end 左 -->
+	<!-- 中 -->
+	<div class="center pub">
+		<!-- 银行&保险 -->
+		<div class="title">
+			<h2><a href="http://bank.stockstar.com/">银行</a>&amp;<a href="http://insurance.stockstar.com/">保险</a></h2>
+            <div class="mores" onmouseover="this.className='mores hover'" onmouseout="this.className='mores'">
+					<span>更多</span>
+					<div class="list">
+						<a href="http://bank.stockstar.com/">银行</a>
+                        <a href="http://insurance.stockstar.com/">保险</a>
+                        <a href="http://bond.stockstar.com/">债券</a>
+					</div>
+				</div>
+		</div>
+		<div class="content">
+			<ul><li><a href="http://bond.stockstar.com/SS2020120300000206.shtml" class="cBold">连续24个月增持 境外机构持续加仓中国债券</a></li><li><a href="http://bank.stockstar.com/CP2020120300001065.shtml">金融科技让生活更美好 晨溪资本致力于为客户</a></li><li><a href="http://bank.stockstar.com/CP2020120300001064.shtml">用户停留时长暴增近4倍 新氧VR照进现实</a></li><li><a href="http://bank.stockstar.com/CP2020120300001005.shtml">大家养老保险：聚沙成塔，善小而为，用公益力</a></li><li><a href="http://bank.stockstar.com/CP2020120300001004.shtml">重新审视百度的三个增长层次，打开千亿美元估</a></li></ul>
+		</div>
+		<!-- end 银行&保险 -->
+		<!-- 银行&保险 -->
+		<div class="title">
+			<h2><a href="http://futures.stockstar.com/">期货</a>&amp;<a href="http://spif.stockstar.com/">期指</a></h2>
+			<div class="mores" onmouseover="this.className='mores hover'" onmouseout="this.className='mores'">
+					<span>更多</span>
+					<div class="list">
+						<a href="http://futures.stockstar.com/">期货</a>
+                        <a href="http://spif.stockstar.com/">期指</a>
+					</div>
+				</div>
+		</div>
+		<div class="content">
+			<ul><li><a href="http://futures.stockstar.com/SS2020120300000122.shtml" class="cBold">铝价逼近1.7万元 电解铝高利润有望延续</a></li><li><a href="http://futures.stockstar.com/SS2020120300000234.shtml">疫苗预期再度支撑油价 国内能化市场引领全球</a></li><li><a href="http://futures.stockstar.com/SS2020120300000211.shtml">又上调？国内油价大概率两连涨 加满一箱多花9</a></li><li><a href="http://futures.stockstar.com/SS2020120200000240.shtml">11月钢铁流通业PMI为49.8 行业景气继续回升</a></li><li><a href="http://futures.stockstar.com/SS2020120200000150.shtml">中金：看好浮法玻璃价格中枢进一步上移</a></li></ul>
+			<div class="icon-link clearfix">
+				<div class="img-txt">
+					<a href="http://money.stockstar.com/tools/caltools.htm" class="tools" title="理财工具"></a>
+				</div>
+				<p>
+					<a href="http://money.stockstar.com/tools/caltools.htm?type=qhlc">期货交易费</a><a href="http://resource.stockstar.com/DataCenter/FuturesData/Kcsj.aspx">库存数据</a><a href="http://resource.stockstar.com/DataCenter/FuturesData/Cftcccx.aspx">CFTC持仓</a><a href="http://resource.stockstar.com/DataCenter/FuturesData/Ccfx.aspx">持仓分析</a>
+				</p>
+				<p>
+					<a href="http://money.stockstar.com/tools/caltools.htm">计算器</a><a href="http://money.stockstar.com/tools/caltools.htm?type=zfgjj">公积金</a><a href="http://money.stockstar.com/tools/caltools.htm?type=hqcx">存款</a><a href="http://money.stockstar.com/tools/caltools.htm?type=sydk">房贷</a><a href="http://money.stockstar.com/tools/caltools.htm?type=qcdk">车贷</a><a href="http://money.stockstar.com/tools/caltools.htm?type=grsds">个税</a><a href="http://money.stockstar.com/tools/caltools.htm?type=ylbx">养老</a>
+				</p>
+			</div>
+		</div>
+		<!-- end 银行&保险 -->
+	</div>
+	<!-- end 中 -->
+	<!-- 右 -->
+	<div class="right">
+		<!-- 日元 英镑 欧元 瑞郞 加元 澳元 -->
+		<div id="wht" class="switch s_6">
+			<div class="title">
+				<ul>
+					<li data-forex="USDJPY" class="current">日元</li>
+					<li data-forex="GBPUSD">英镑</li>
+					<li data-forex="EURUSD">欧元</li>
+					<li data-forex="USDCHF">瑞郞</li>
+					<li data-forex="USDCAD">加元</li>
+					<li data-forex="AUDUSD">澳元</li>
+				</ul>
+			</div>
+			<div class="cnt">
+                    <div class="tabs"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDJPY">美元日元</a></span><span class="cRed">104.29</span><span class="cRed">▼  -0.20%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDJPY"><img src="//www.stockstar.com/gifchartse/png/USDJPY.png" alt="美元日元" width="280" height="150" /></a></div></div></div><div class="tabs" style="display:none;"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=GBPUSD">英镑美元</a></span><span class="cGreen">1.34</span><span class="cGreen">▲  +0.36%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=GBPUSD"><textarea class="lazyload" style="width:280px;height:150px">&lt;img src='//www.stockstar.com/gifchartse/png/GBPUSD.png' alt='英镑美元' width='280' height='150' /&gt;</textarea></a></div></div></div><div class="tabs" style="display:none;"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=EURUSD">欧元美元</a></span><span class="cGreen">1.21</span><span class="cGreen">▲  +0.09%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=EURUSD"><textarea class="lazyload" style="width:280px;height:150px">&lt;img src='//www.stockstar.com/gifchartse/png/EURUSD.png' alt='欧元美元' width='280' height='150' /&gt;</textarea></a></div></div></div><div class="tabs" style="display:none;"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDCHF">美元瑞士</a></span><span class="cRed">0.89</span><span class="cRed">▼  -0.23%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDCHF"><textarea class="lazyload" style="width:280px;height:150px">&lt;img src='//www.stockstar.com/gifchartse/png/USDCHF.png' alt='美元瑞士' width='280' height='150' /&gt;</textarea></a></div></div></div><div class="tabs" style="display:none;"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDCAD">美元加币</a></span><span class="cGreen">1.29</span><span class="cGreen">▲  +0.10%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=USDCAD"><textarea class="lazyload" style="width:280px;height:150px">&lt;img src='//www.stockstar.com/gifchartse/png/USDCAD.png' alt='美元加币' width='280' height='150' /&gt;</textarea></a></div></div></div><div class="tabs" style="display:none;"><div class="money"><div class="tit"><span class="name"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=AUDUSD">澳元美元</a></span><span class="cGreen">0.74</span><span class="cGreen">▲  +0.15%</span></div><div class="img"><a href="http://forex.stockstar.com/foreignEx/chart1.aspx?selectCode=AUDUSD"><textarea class="lazyload" style="width:280px;height:150px">&lt;img src='//www.stockstar.com/gifchartse/png/AUDUSD.png' alt='澳元美元' width='280' height='150' /&gt;</textarea></a></div></div></div>
+            </div>
+			<div class="search_bar bd vertical">
+				<form name="formSearchHQ" id="formForeignExchange" action="//forex.stockstar.com/foreignEx/chart1.aspx" method="get" target="_blank">
+						    外汇行情查询：
+					<select name="selectCode" id="SelectHQ" style="width:120px; overflow:hidden;">
+						<option value="USDJPY">美元-日元</option>
+						<option value="USDEUR">美元-欧元</option>
+						<option value="USDKRW">美元-韩元</option>
+						<option value="USDCHF">美元-瑞士法郎</option>
+						<option value="USDNZD">美元-纽币</option>
+						<option value="USDIDR">美元-印尼</option>
+						<option value="USDCAD">美元-加拿大元</option>
+						<option value="USDTHB">美元-泰铢</option>
+						<option value="USDHKD">美元-港币</option>
+						<option value="USDSGD">美元-星币</option>
+						<option value="USDMYR">美元-马币</option>
+						<option value="USDSEK">美元-瑞典</option>
+						<option value="USDDKK">美元-丹麦</option>
+						<option value="USDNOK">美元-挪威</option>
+						<option value="USDTWD">美元-台币</option>
+						<option value="USDMCO">美元-澳元</option>
+						<option value="USDIND">美元-印度</option>
+						<option value="USDPHP">美元-菲比</option>
+						<option value="EURUSD">欧元-美元</option>
+						<option value="JPYUSD">日元-美元</option>
+						<option value="GBPUSD">英镑-美元</option>
+						<option value="CHFUSD">瑞士法郎-美元</option>
+						<option value="AUDUSD">澳元-美元</option>
+						<option value="CADUSD">加拿大元-美元</option>
+						<option value="AUDEUR">澳元-欧元</option>
+						<option value="GBPHKD">英镑-港币</option>
+						<option value="CHFJPY">瑞士法郎-日元</option>
+						<option value="EURAUD">欧元-澳元</option>
+						<option value="NZDGBP">纽币-英镑</option>
+						<option value="EURCAD">欧元-加拿大元</option>
+						<option value="NZDAUD">纽币-澳元</option>
+						<option value="NZDCAD">纽币-加拿大元</option>
+						<option value="GBPJPY">英镑-日元</option>
+						<option value="AUDCHF">澳元-瑞士法郎</option>
+						<option value="AUDJPY">澳元-日元</option>
+						<option value="EURJPY">欧元-日元</option>
+						<option value="CADJPY">加拿大元-日元</option>
+						<option value="CADGBP">加拿大元-英镑</option>
+						<option value="CADAUD">加拿大元-澳元</option>
+						<option value="GBPCAD">英镑-加拿大元</option>
+						<option value="GBPAUD">英镑-澳元</option>
+						<option value="EURHKD">欧元-港币</option>
+						<option value="CHFGBP">瑞士法郎-英镑</option>
+						<option value="GBPCHF">英镑-瑞士法郎</option>
+						<option value="NZDJPY">纽币-日元</option>
+						<option value="NZDEUR">纽币-欧元</option>
+						<option value="AUDCAD">澳元-加拿大元</option>
+						<option value="EURGBP">欧元-英镑</option>
+						<option value="NZDCHF">纽币-瑞士法郎</option>
+						<option value="GBPEUR">英镑-欧元</option>
+						<option value="GBPNZD">英镑-纽币</option>
+						<option value="AUDGBP">澳元-英镑</option>
+						<option value="JPYHKD">日元-港币</option>
+						<option value="AUDHKD">澳元-港币</option>
+						<option value="HKDCAD">港币-加拿大元</option>
+						<option value="HKDCHF">港币-瑞士法郎</option>
+						<option value="CHFCAD">瑞士法郎-加拿大元</option>
+						<option value="JPYCAD">日元-加拿大元</option>
+						<option value="EURNZD">欧元-纽币</option>
+						<option value="JPYGBP">日元-英镑</option>
+						<option value="JPYAUD">日元-澳元</option>
+						<option value="HKDJPY">港币-日元</option>
+						<option value="CADHKD">加拿大元-港币</option>
+						<option value="CHFHKD">瑞士法郎-港币</option>
+						<option value="HKDRMB">港币-人民币</option>
+						<option value="GBPRMB">英镑-人民币</option>
+						<option value="JPYRMB">日元-人民币</option>
+						<option value="USDRMB">美元-人民币</option>
+						<option value="EURRMB">欧元-人民币</option>
+						<option value="JPYCHF">日元-瑞士法郎</option>
+						<option value="EURCHF">欧元-瑞士法郎</option>
+						<option value="CADCHF">加拿大元-瑞士法郎</option>
+						<option value="CHFAUD">瑞士法郎-澳元</option>
+					</select>
+					<input class="btn" type="button" value="查询" onclick="document.getElementById('formForeignExchange').submit()" />
+				</form>
+			</div>
+		</div>
+		<!-- end 日元 英镑 欧元 瑞郞 加元 澳元 -->
+		<!-- 伦敦金银 纽约金银 金银期货 金银T+D -->
+		<div id="s2" class="switch">
+			<div class="title">
+				<ul>
+					<li class="current">伦敦金银</li>
+					<li>纽约金银</li>
+					<li>金银期货</li>
+					<li>金银T+D</li>
+				</ul>
+			</div>
+			<div class="gold">
+                <div class="tabs"><ul><li class="current"><div class="tit"><span>现货黄金</span><span class="cRed">1395.58</span><span class="cRed">▼  -0.14%</span></div><div class="cnt" style="display: block;"><img src="//www.stockstar.com/gifchartse/png/XAU.png" alt="现货黄金" width="280" height="120" /></div></li><li><div class="tit"><span>现货白银</span><span class="cGreen">15.11</span><span class="cGreen">▲  +0.07%</span></div><div class="cnt" style="display: none;"><img src="//www.stockstar.com/gifchartse/png/XAG.png" alt="现货白银" width="280" height="120" /></div></li></ul></div><div class="tabs" style="display:none;"><ul><li class="current"><div class="tit"><span>纽约黄金</span><span class="cRed">1397.70</span><span class="cRed">▼  -0.20%</span></div><div class="cnt" style="display: block;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/GLN0.png' alt="纽约黄金" width="280" height="120" /&gt;</textarea></div></li><li><div class="tit"><span>纽约白银</span><span class="cGreen">1515.50</span><span class="cGreen">▲  +0.05%</span></div><div class="cnt" style="display: none;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/SLN0.png' alt="纽约白银" width="280" height="120" /&gt;</textarea></div></li></ul></div><div class="tabs" style="display:none;"><ul><li class="current"><div class="tit"><span>沪金连续</span><span class="cGreen">314.65</span><span class="cGreen">▼  -1.99%</span></div><div class="cnt" style="display: block;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/AUSH0.png' alt="沪金连续" width="280" height="120" /&gt;</textarea></div></li><li><div class="tit"><span>沪银连续</span><span class="cGreen">3606.00</span><span class="cGreen">▼  -0.28%</span></div><div class="cnt" style="display: none;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/AGSH0.png' alt="沪银连续" width="280" height="120" /&gt;</textarea></div></li></ul></div><div class="tabs" style="display:none;"><ul><li class="current"><div class="tit"><span>Au(T+D)</span><span class="cGreen">311.28</span><span class="cGreen">▼  -0.04%</span></div><div class="cnt" style="display: block;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/AUTD.png' alt="Au(T+D)" width="280" height="120" /&gt;</textarea></div></li><li><div class="tit"><span>Ag(T+D)</span><span class="cRed">3611.00</span><span class="cRed">▲  +0.11%</span></div><div class="cnt" style="display: none;"><textarea class="lazyload" style="width:280px;height:120px">&lt;img src='//www.stockstar.com/gifchartse/png/AGTJD.png' alt="Ag(T+D)" width="280" height="120" /&gt;</textarea></div></li></ul></div>
+            </div>
+		</div>
+		<!-- end 伦敦金银 纽约金银 金银期货 金银T+D -->
+	</div>
+	<!-- end 右 -->
+	<div class="clearfix">
+	</div>
+</div>
+<!-- 模块3 --><!-- 广告 -->
+<div class="ad" id="cjlc_hdsq_full"><iframe width="1000" height="90" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" src="//media.stockstar.com/api/?id=165&amp;type=1"></iframe></div>
+<!-- end 广告 --><!-- 模块5 -->
+
+<!-- 模块5 --><!-- 友情链接 -->
+<div id="links" class="links">
+	<div class="title"><ul><li class="current"><a href="http://info.stockstar.com/aboutus/Links.htm">友情链接</a></li>	</ul></div><div class="content"><div class="switch"><ul><li><a href="http://www.yicai.com/">一财网</a><a href="https://cn.investing.com/">Investing.com</a><a href="http://www.9666.cn">牛仔网</a><a href="http://www.dzzq.com.cn/">大众证券报</a><a href="http://www.p5w.net/">全景网</a><a href="http://www.jwview.com/">中新经纬</a><a href="http://www.55188.com/">理想财富</a><a href="http://www.iresearch.cn/">艾瑞网</a><a href="https://www.cls.cn">财联社</a><a class="nbd" href="http://www.nbd.com.cn/">每经网</a></li><li><a href="http://www.fx678.com/">汇通外汇</a><a href="http://www.lanjinger.com/">蓝鲸财经</a><a href="http://www.chinaipo.com/">资本邦</a><a href="http://www.3news.cn/">中国财经时报网</a><a href="http://www.zhiding.cn/">至顶网</a><a href="http://www.pintu360.com/">品途</a><a href="http://www.guancha.cn/">观察者网</a><a href="http://www.2345.com/">2345网址导航</a><a href="http://www.pedaily.cn/">投资界</a><a class="nbd" href="http://www.fx168.com/">外汇网</a></li><li><a href="http://iask.sina.com.cn/c/82.html">爱问商业</a><a href="https://www.chinaventure.com.cn/">投中网</a><a href="https://www.fxeye.com">外汇天眼</a><a href="http://www.smm.cn">上海有色金属网</a><a href="http://stock.sohu.com/">搜狐证券</a><a href="http://www.gelonghui.com/">格隆汇</a><a href="http://www.jin10.com/">金十数据</a><a href="http://www.cngold.com.cn">中金网</a><a class="nbd" href="http://www.21jingji.com/">21经济网</a></li></ul></div></div>
+</div>
+<!-- end 友情链接 -->
+<div class="clearfix">
+</div>
+</div>
+<!-- end 正文 --><!-- 尾 -->
+<div class="nav_box">	
+	<div class="nav">
+		<a href="http://www.stockstar.com/nav/map.html">网站导航</a>|<a href="http://info.stockstar.com/aboutus/">公司简介</a>|<a href="http://www.stockstar.com/intro/disclaimer.asp">法律声明</a>|<a href="http://info.stockstar.com/job/">诚聘英才</a>|<a href="http://info.stockstar.com/aboutus/in.htm">征稿启事</a>|<a href="http://info.stockstar.com/aboutus/lx.htm">联系我们</a>|<a href="http://info.stockstar.com/aboutus/lx.htm#ad">广告服务</a>|<a href="http://member.stockstar.com/message/message.html">投诉举报</a>|<a href="http://info.stockstar.com/yellowpage/">金融黄页</a>
+	</div>
+</div>
+<div id="Footer">
+<div class="gohome" style="display: none;">
+</div>
+<div class="oursite">
+		<em>久奕资本领衔：</em>
+		<a class="o6" title="久奕资本" href="http://www.ebicapital.cn/">久奕资本</a>
+		<em style="padding-left:15px">旗下成员：</em>
+		<a class="o2" title="证券之星" href="https://www.stockstar.com/">证券之星</a>
+		<!--<a class="o_bida" title="必达财经" href="https://www.bida24.com/">必达财经</a>-->   
+		<span class="span_shu">|</span>欢迎访问证券之星！<a class="stockstar" href="http://www.stockstar.com/">证券之星</a><span class="span_shu">|</span>简易域名：<a class="cRed" href="http://666666.com.cn/">666666.com.cn</a><span class="span_shu">|</span>版权所有 Copyright © 1996-2020
+	</div>
+<div class="explain">
+	请<a target="_blank" href="http://info.stockstar.com/aboutus/lx.htm">点此</a>与我们联系<span class="span_shu">|</span>违法和不良信息举报：021-50819999-0<span class="span_shu">|</span>举报邮箱：jubao@stockstar.com<span class="span_shu">|</span><a href="http://member.stockstar.com/message/message.html">违规信息举报专区</a><span class="span_shu">|</span><a href="http://www.zx110.org/cxs/index.html">放心搜</a><span class="span_shu">|</span>网安提示：如网民接到962110电话 请立即接听
+</div>
+<div class="report_link">
+	<div class="link" style="padding-left:86px;">
+		<a class="r1" title="上海市局公共信息网络安全" href="http://sh.cyberpolice.cn/">上海市局公共信息网络安全</a>
+		<a class="r2" title="网络社会征信网" href="http://www.zx110.org/">网络社会征信网</a>
+		<a class="r2_2" title="上海市互联网违法与违规举报中心" href="http://www.shjbzx.cn/">上海市互联网违法与违规举报中心</a>
+        	<a class="r10" title="网上有害信息举报专区" href="http://www.12377.cn">网上有害信息举报专区</a>
+		<a class="r3" title="浦东公安分局落实国际联网备案" href="http://www.pdxa.cn/Welcome.Asp?Id=3101151098">浦东公安分局落实国际联网备案</a>
+		<a class="sr3" title="全国公安机关互联网站安全服务平台" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502000171">全国公安机关互联网站安全服务平台</a>
+		<!--<a class="sr4" href=""></a>
+		<span class="r5"></span>-->
+		<a class="r6" title="上海工商" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20111010174417863">上海工商</a>
+		<span class="r7"></span>
+		<!--可信网站图片LOGO安装开始-->
+		<script type="text/javascript" src="http://kxlogo.knet.cn/seallogo.dll?callback=KX_cfg_data.jsonpCallback&amp;sn=e13112911010043670bp9h000000&amp;tp=icon3"></script><script id="kx_script" async="" cid="kx_verify" src="http://rr.knet.cn/static/js/icon3.js?sn=e13112911010043670bp9h000000&amp;tp=icon3" size="0"></script><span id="kx_verify" style="display: inline-block; position: relative; width: 128px; height: 47px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=e13112911010043670bp9h000000&amp;a=1&amp;pa=0.24713620928058488" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="https://rr.knet.cn/static/images/logo/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="128" h="47" width="128" height="47" oncontextmenu="return false;" alt="可信网站" /></a></span>
+		<script type="text/javascript">(function () { var _kxs = document.createElement('script'); _kxs.id = 'kx_script'; _kxs.async = true; _kxs.setAttribute('cid', 'kx_verify'); _kxs.src = ('https:' == document.location.protocol ? 'https://ss.knet.cn' : 'http://rr.knet.cn') + '/static/js/icon3.js?sn=e13112911010043670bp9h000000&amp;tp=icon3'; _kxs.setAttribute('size', 0); var _kx = document.getElementById('kx_verify'); _kx.parentNode.insertBefore(_kxs, _kx); })();</script>
+		<!--可信网站图片LOGO安装结束-->
+	        <a class="r9" href="http://info.stockstar.com/hb/publicservice/?tzm=shanghaigongshangju"></a>
+	</div>
+</div>
+    <div class="footer">沪ICP证：沪B2-20040014　　<a href="http://www.beian.miit.gov.cn" target="_blank">网站备案号：沪B2-20040014-1</a>　　　　　<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502003254" target="_blank"><i></i>沪公网安备：31010502003254</a></div>
+</div>
+<!-- end 尾 --><!--update20160707 新增结构 begin--><!--site ad begin-->
+<!--<div class="siteAd_l" style="display:none;">
+<div class="head">
+    <img src="//l.ssimg.cn/images/www2013/left-float-head.2.jpg"  class="head" />
+   
+</div>
+
+<ul>
+    <li class="bida">
+        <a href="//info.stockstar.com/hb/stockstarapp/" title="证券之星APP下载"><img src="//www.stockstar.com/img/static/qr-stockstar-app.jpg"/ alt=""></a> 
+        <b><em class="h1">证券之星APP</em></b>
+        <em>牛人解析市场授策略</em>
+        <em class="end">名家拆解趋势聊风口</em>
+    </li>
+    
+	<li><span>证券之星公众号</span><img src="//www.stockstar.com/img/static/qr-zqzx-wx.jpg" alt="证券之星公众号"/><em>聚焦优质资讯内容</em></li>
+	<li><span>嘉哥说股公众号</span><img src="//www.stockstar.com/img/static/qr-szzy-jptg-jgsg.jpg" alt="嘉哥说股公众号"/><em>股市大咖炒股日记</em></li>
+</ul>
+<div class="sclosea" id="lftClose"><span>关闭</span></div>
+</div>-->
+
+<!--site ad end-->
+<script type="text/javascript">
+    (function (o) { var K = o.$LAB, y = "UseLocalXHR", z = "AlwaysPreserveOrder", u = "AllowDuplicates", A = "CacheBust", B = "BasePath", C = /^[^?#]*\//.exec(location.href)[0], D = /^\w+\:\/\/\/?[^\/]+/.exec(C)[0], i = document.head || document.getElementsByTagName("head"), L = (o.opera &amp;&amp; Object.prototype.toString.call(o.opera) == "[object Opera]") || ("MozAppearance" in document.documentElement.style), q = document.createElement("script"), E = typeof q.preload == "boolean", r = E || (q.readyState &amp;&amp; q.readyState == "uninitialized"), F = !r &amp;&amp; q.async === true, M = !r &amp;&amp; !F &amp;&amp; !L; function G(a) { return Object.prototype.toString.call(a) == "[object Function]" } function H(a) { return Object.prototype.toString.call(a) == "[object Array]" } function N(a, c) { var b = /^\w+\:\/\//; if (/^\/\/\/?/.test(a)) { a = location.protocol + a } else if (!b.test(a) &amp;&amp; a.charAt(0) != "/") { a = (c || "") + a } return b.test(a) ? a : ((a.charAt(0) == "/" ? D : C) + a) } function s(a, c) { for (var b in a) { if (a.hasOwnProperty(b)) { c[b] = a[b] } } return c } function O(a) { var c = false; for (var b = 0; b &lt; a.scripts.length; b++) { if (a.scripts[b].ready &amp;&amp; a.scripts[b].exec_trigger) { c = true; a.scripts[b].exec_trigger(); a.scripts[b].exec_trigger = null } } return c } function t(a, c, b, d) { a.onload = a.onreadystatechange = function () { if ((a.readyState &amp;&amp; a.readyState != "complete" &amp;&amp; a.readyState != "loaded") || c[b]) return; a.onload = a.onreadystatechange = null; d() } } function I(a) { a.ready = a.finished = true; for (var c = 0; c &lt; a.finished_listeners.length; c++) { a.finished_listeners[c]() } a.ready_listeners = []; a.finished_listeners = [] } function P(d, f, e, g, h) { setTimeout(function () { var a, c = f.real_src, b; if ("item" in i) { if (!i[0]) { setTimeout(arguments.callee, 25); return } i = i[0] } a = document.createElement("script"); if (f.type) a.type = f.type; if (f.charset) a.charset = f.charset; if (h) { if (r) { e.elem = a; if (E) { a.preload = true; a.onpreload = g } else { a.onreadystatechange = function () { if (a.readyState == "loaded") g() } } a.src = c } else if (h &amp;&amp; c.indexOf(D) == 0 &amp;&amp; d[y]) { b = new XMLHttpRequest(); b.onreadystatechange = function () { if (b.readyState == 4) { b.onreadystatechange = function () { }; e.text = b.responseText + "\n//@ sourceURL=" + c; g() } }; b.open("GET", c); b.send() } else { a.type = "text/cache-script"; t(a, e, "ready", function () { i.removeChild(a); g() }); a.src = c; i.insertBefore(a, i.firstChild) } } else if (F) { a.async = false; t(a, e, "finished", g); a.src = c; i.insertBefore(a, i.firstChild) } else { t(a, e, "finished", g); a.src = c; i.insertBefore(a, i.firstChild) } }, 0) } function J() { var l = {}, Q = r || M, n = [], p = {}, m; l[y] = true; l[z] = false; l[u] = false; l[A] = false; l[B] = ""; function R(a, c, b) { var d; function f() { if (d != null) { d = null; I(b) } } if (p[c.src].finished) return; if (!a[u]) p[c.src].finished = true; d = b.elem || document.createElement("script"); if (c.type) d.type = c.type; if (c.charset) d.charset = c.charset; t(d, b, "finished", f); if (b.elem) { b.elem = null } else if (b.text) { d.onload = d.onreadystatechange = null; d.text = b.text } else { d.src = c.real_src } i.insertBefore(d, i.firstChild); if (b.text) { f() } } function S(c, b, d, f) { var e, g, h = function () { b.ready_cb(b, function () { R(c, b, e) }) }, j = function () { b.finished_cb(b, d) }; b.src = N(b.src, c[B]); b.real_src = b.src + (c[A] ? ((/\?.*$/.test(b.src) ? "&amp;_" : "?_") + ~~(Math.random() * 1E9) + "=") : ""); if (!p[b.src]) p[b.src] = { items: [], finished: false }; g = p[b.src].items; if (c[u] || g.length == 0) { e = g[g.length] = { ready: false, finished: false, ready_listeners: [h], finished_listeners: [j] }; P(c, b, e, ((f) ? function () { e.ready = true; for (var a = 0; a &lt; e.ready_listeners.length; a++) { e.ready_listeners[a]() } e.ready_listeners = [] } : function () { I(e) }), f) } else { e = g[0]; if (e.finished) { j() } else { e.finished_listeners.push(j) } } } function v() { var e, g = s(l, {}), h = [], j = 0, w = false, k; function T(a, c) { a.ready = true; a.exec_trigger = c; x() } function U(a, c) { a.ready = a.finished = true; a.exec_trigger = null; for (var b = 0; b &lt; c.scripts.length; b++) { if (!c.scripts[b].finished) return } c.finished = true; x() } function x() { while (j &lt; h.length) { if (G(h[j])) { try { h[j++]() } catch (err) { } continue } else if (!h[j].finished) { if (O(h[j])) continue; break } j++ } if (j == h.length) { w = false; k = false } } function V() { if (!k || !k.scripts) { h.push(k = { scripts: [], finished: true }) } } e = { script: function () { for (var f = 0; f &lt; arguments.length; f++) { (function (a, c) { var b; if (!H(a)) { c = [a] } for (var d = 0; d &lt; c.length; d++) { V(); a = c[d]; if (G(a)) a = a(); if (!a) continue; if (H(a)) { b = [].slice.call(a); b.unshift(d, 1);[].splice.apply(c, b); d--; continue } if (typeof a == "string") a = { src: a }; a = s(a, { ready: false, ready_cb: T, finished: false, finished_cb: U }); k.finished = false; k.scripts.push(a); S(g, a, k, (Q &amp;&amp; w)); w = true; if (g[z]) e.wait() } })(arguments[f], arguments[f]) } return e }, wait: function () { if (arguments.length &gt; 0) { for (var a = 0; a &lt; arguments.length; a++) { h.push(arguments[a]) } k = h[h.length - 1] } else k = false; x(); return e } }; return { script: e.script, wait: e.wait, setOptions: function (a) { s(a, g); return e } } } m = { setGlobalDefaults: function (a) { s(a, l); return m }, setOptions: function () { return v().setOptions.apply(null, arguments) }, script: function () { return v().script.apply(null, arguments) }, wait: function () { return v().wait.apply(null, arguments) }, queueScript: function () { n[n.length] = { type: "script", args: [].slice.call(arguments) }; return m }, queueWait: function () { n[n.length] = { type: "wait", args: [].slice.call(arguments) }; return m }, runQueue: function () { var a = m, c = n.length, b = c, d; for (; --b &gt;= 0;) { d = n.shift(); a = a[d.type].apply(null, d.args) } return a }, noConflict: function () { o.$LAB = K; return m }, sandbox: function () { return J() } }; return m } o.$LAB = J(); (function (a, c, b) { if (document.readyState == null &amp;&amp; document[a]) { document.readyState = "loading"; document[a](c, b = function () { document.removeEventListener(c, b, false); document.readyState = "complete" }, false) } })("addEventListener", "DOMContentLoaded") })(this);
+</script>
+<script type="text/javascript">
+    var path='/www2013/';
+</script>
+<script type="text/javascript" src="//j.ssajax.cn/js/www/footer.v.7.js?v=1.5" charset="gb2312"></script>
+<!--首页巨幅 is can't deliver-->
+
+<!--富媒体 is can't deliver-->
+<!--浮标 is can't deliver-->
+
+<script type="text/javascript" src="//www.stockstar.com/wt/SS_dcs_tag.js"></script>
+
+</body></html>

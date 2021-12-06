@@ -1,0 +1,615 @@
+<!DOCTYPE html><!--[if IE 8 ]> <html lang="en" class="eep no-js ie lt-ie9 design_a"> <![endif]--><!--[if IE 9 ]> <html lang="en" class="eep no-js ie lt-ie10 design_a"> <![endif]--><!--[if !(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="eep  design_a js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths cookies responsive" style=""><!--<![endif]--><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" type="text/javascript" src="https://www.googletagservices.com/tag/js/gpt.js"></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"57a0e6af43","applicationID":"2175329","transactionName":"IQsNEkdeDV4HQUwSRgAICgVURQhdDEBMEVsNEw==","queueTime":0,"applicationTime":493,"agent":"","atts":"GUYWRA9KQ1ENXRcQXA4IBhR0UhVbDV1BWBERDAwRFx1DQhBaFQNQGycMCEZUD0YmWgIOXAU3CwlCX0MIBFIPEVZORhMUXEcAURtjDA5aAR0gClxSClcGdRENXiYNAgpaVkMIBFIPEVZORhEDRl4UQAFWQVgRKgsOA0VQBldAH0EQVhELFhRWVChWQAlQThEWDRcKUBNbEDZbChBXQg0XA0dQFVsNXUFOERIRAQpcUgBGC1wNQAlAIUUjFX8ERRERHh8="}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={xpid:"VwQOV15QGwEBU1RRBQg=",licenseKey:"57a0e6af43",applicationID:"2175329"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(20),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(c.console=!0,i.indexOf("dev")!==-1&amp;&amp;(c.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(c.nrDev=!0))}catch(s){}c.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),c.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(u){try{o("ierr",[u,s.now(),!0])}catch(d){}}return"function"==typeof f&amp;&amp;f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(21),c=t("ee"),s=t("loader"),u=t("gos"),f=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(6),t(5),"addEventListener"in window&amp;&amp;t(3),s.xhrWrappable&amp;&amp;t(7),d=!0)}c.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),c.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(u(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(f);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){c.inPlace(t,[f,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),u=XMLHttpRequest,f="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(u.prototype)):u.prototype.hasOwnProperty(f)&amp;&amp;(i(window),i(u.prototype)),a.on(f+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(21),a=t(20);e.exports=i;var c=window,s="fetch-",u=s+"body-",f=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(f,function(t,e){r(d[h],e,u),r(l[h],e,u)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],5:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],6:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",u="clearTimeout",f="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[u,"clearImmediate"],u+d),o.on(s+f,r),o.on(c+f,i)},{}],7:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=f.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,f.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function o(t){y.push(t),h&amp;&amp;(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t&lt;y.length;t++)r([],y[t]);y.length&amp;&amp;(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var u=t("ee"),f=u.get("xhr"),d=t("wrap-function")(f),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,g="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=f;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{f.emit("new-xhr",[e],e),e.addEventListener(g,i,!1)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),f.on("send-xhr-start",function(t,e){r(t,e),o(e)}),f.on("open-xhr-start",r),h){var b=m&amp;&amp;m.resolve();if(!v&amp;&amp;!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else u.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===g||a()})},{}],8:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,u=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),g={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&amp;&amp;l())&amp;&amp;(g.traceContextParentHeader=i(h,m),g.traceContextStateHeader=o(h,v,n,r,u)),(t.sameOrigin&amp;&amp;!f()||!t.sameOrigin&amp;&amp;s(t)&amp;&amp;d())&amp;&amp;(g.newrelicHeader=a(h,m,v,n,r,u)),g}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",u="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+u+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&amp;&amp;"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&amp;&amp;r!==o&amp;&amp;(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return u()&amp;&amp;s(t)}function s(t){var e=!1,n={};if("init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r&lt;n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&amp;&amp;t.protocol===i.protocol&amp;&amp;t.port===i.port){e=!0;break}}return e}function u(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.enabled}function f(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(17),h=t(10);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],9:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r&lt;l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&amp;&amp;(e.status=0):o(this,t),n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&amp;&amp;(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&amp;&amp;(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(10),u=t(8).generateTracePayload,f=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(14),m=t(13),v=t(11),g=window.XMLHttpRequest;a.features.xhr=!0,t(7),t(4),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&amp;&amp;(h&gt;34||h&lt;10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&amp;&amp;"xpid"in NREUM.loader_config&amp;&amp;this.sameOrigin&amp;&amp;e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=u(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&amp;&amp;(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&amp;&amp;(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&amp;&amp;e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&amp;&amp;(this.dt=n)}}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&amp;&amp;r){var o=m(r);o&amp;&amp;(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&amp;&amp;(i.onloadCalled||"function"!=typeof e.onload))&amp;&amp;i.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c&lt;l;c++)e.addEventListener(d[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&amp;&amp;"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;!this.xhrGuids[n]&amp;&amp;(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;this.xhrGuids[n]&amp;&amp;(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof g&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof g&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof g&amp;&amp;("onload"===n&amp;&amp;(this.onload=!0),("load"===(t[0]&amp;&amp;t[0].type)||this.onload)&amp;&amp;(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&amp;&amp;f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),f.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&amp;&amp;(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&amp;&amp;(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&amp;&amp;t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&amp;&amp;t[0].url&amp;&amp;(n=t[0].url),n&amp;&amp;(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=u(this.parsedOrigin);if(i&amp;&amp;(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&amp;&amp;(this.dt=i),t.length&gt;1?t[1]=o:t.push(o)}else t[0]&amp;&amp;t[0].headers&amp;&amp;e(t[0].headers,i)&amp;&amp;(this.dt=i)})}},{}],10:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&amp;&amp;o[1]&amp;&amp;(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&amp;&amp;"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&amp;&amp;(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&amp;&amp;e.port===n.port;return i.sameOrigin=a&amp;&amp;(!e.hostname||c),"/"===i.pathname&amp;&amp;(r[t]=i),i}},{}],11:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&amp;&amp;null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(13);e.exports=r},{}],12:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(20),c=t(21),s=t("ee").get("tracer"),u=t("loader"),f=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=f);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){f[e]=i(l+e,!0,"api")}),f.addPageAction=i(l+"addPageAction",!0),f.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[u.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&amp;&amp;(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&amp;&amp;t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&amp;&amp;t instanceof ArrayBuffer&amp;&amp;t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&amp;&amp;t instanceof Blob&amp;&amp;t.size)return t.size;if(!("undefined"!=typeof FormData&amp;&amp;t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&amp;&amp;(r=+i[1]),e.exports=r},{}],15:[function(t,e,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(22);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],16:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&amp;&amp;d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&amp;&amp;!v){var e=Math.round(t.timeStamp),n={type:t.type};e&lt;=l.now()?n.fid=l.now()-e:e&gt;l.offset&amp;&amp;e&lt;=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var s,u,f,d=t("handle"),l=t("loader"),p=t(19),h=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,g=["click","keydown","mousedown","pointerdown","touchstart"];g.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],17:[function(t,e,n){function r(){function t(){return e?15&amp;e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&amp;&amp;r.getRandomValues&amp;&amp;(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c&lt;o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&amp;t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&amp;n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&amp;&amp;i.getRandomValues&amp;&amp;Uint8Array&amp;&amp;(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a&lt;t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],18:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],19:[function(t,e,n){function r(t){function e(){t(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],20:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&amp;&amp;(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],21:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=t[e+r];return o}e.exports=r},{}],22:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&amp;&amp;t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&amp;&amp;t(n,r,i);for(var a=e(i),c=m(n),s=c.length,u=0;u&lt;s;u++)c[u].apply(a,r);var d=f[y[n]];return d&amp;&amp;d.push([x,n,r,a]),a}}function p(t,e){w[t]=m(t).concat(e)}function h(t,e){var n=w[t];if(n)for(var r=0;r&lt;n.length;r++)n[r]===e&amp;&amp;n.splice(r,1)}function m(t){return w[t]||[]}function v(t){return d[t]=d[t]||i(n)}function g(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in f||(f[e]=[])})}var w={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:g,abort:a,aborted:!1};return x}function o(){return new r}function a(){(f.api||f.feature)&amp;&amp;(l.aborted=!0,f=l.backlog={})}var c="nr@context",s=t("gos"),u=t(20),f={},d={},l=e.exports=i();l.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return u.abort();s(w,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(15),c=t("handle"),s=t(20),u=t("ee"),f=t(18),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&amp;&amp;m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var g=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},y=m&amp;&amp;v&amp;&amp;v[p]&amp;&amp;!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:y,userAgent:f};t(12),t(16),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&amp;&amp;t instanceof Function&amp;&amp;t.apply&amp;&amp;!t[a])}var i=t("ee"),o=t(21),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){l([u,"",[r,a,i],c])}f(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw f(e+"err",[r,a,d],c),d}finally{f(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function u(t,e,i,o){i||(i="");var a,c,s,u="-"===i.charAt(0);for(s=0;s&lt;e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,u?c+i:i,o,c))}function f(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&amp;&amp;(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader",2,9]);</script>
+<title>E&amp;E News -- The essential news for energy &amp; environment professionals
+</title>
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="rq28zHwZ7uDujchCedz9G5TFqTZjsAtJb+xEXYEhUjM5e6lGKleEuBDAsIYFIzK+U6pl8CyYS+LWdhP1JApD8A==" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<!-- favicons -->
+<link rel="icon svg" type="image/svg+xml" href="/favicon.svg?v=1" data-href-light="/favicon.svg?v=1" data-href-dark="/favicon_dark.svg?v=1" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=alj9Bpy3y9" />
+<link rel="icon" type="image/png" href="/favicon-32x32.png?v=alj9Bpy3y9" sizes="32x32" />
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=alj9Bpy3y9" sizes="192x192" />
+<link rel="icon" type="image/png" href="/favicon-16x16.png?v=alj9Bpy3y9" sizes="16x16" />
+<link rel="manifest" href="/manifest.json?v=alj9Bpy3y9" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=alj9Bpy3y9" color="#003366" />
+
+<meta name="apple-mobile-web-app-title" content="E&amp;E News" />
+<meta name="application-name" content="E&amp;E News" />
+<meta name="msapplication-TileColor" content="#003366" />
+<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=alj9Bpy3y9" />
+<meta name="theme-color" content="#003366" />
+<!--end favicons -->
+
+
+<meta name="twitter:dnt" content="on" />
+
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <meta property="og:title" content="E&amp;E News -- The essential news for energy &amp; environment professionals" />
+<meta property="og:description" content="Insightful and balanced coverage from E&amp;E News' award-winning services - Energywire, Climatewire, E&amp;E Daily, Greenwire, E&amp;E News PM and E&amp;ETV - that readers rely upon for comprehensive and timely stories not found anywhere else." />
+<meta property="og:url" content="https://www.eenews.net/" />
+<meta property="fb:app_id" content="1670327216365411" />
+<meta property="og:image" content="https://www.eenews.net/application_assets/social_eep_og_300-8a373741ce9995743e22a18a07eb82b13e5b7d9e866331654bf093f73038c912.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@EENewsUpdates" />
+<meta name="twitter:image" content="https://www.eenews.net/application_assets/social_eep_twitter_300-1d2e5c3f927d454d75b8a64b8e5bc6ebbe965b5000b9301adcccc5024dd76bd8.png" />
+
+
+
+
+
+<script src="/application_assets/modernizr.custom.68100-da46a0494ef2e24e5461e6e5930886c930734c686d1ecff56e3aaa2c1d5fc4b4.js"></script>
+
+  <link rel="stylesheet" media="all" href="/packs/css/site-e2709fab.chunk.css" /><script src="/packs/js/runtime-ee816cad7321863a8b0f.js"></script>
+<script src="/packs/js/vendor_react-bd72beeb5de82503517d.chunk.js"></script>
+<script src="/packs/js/3-b2dfea2420664a6a73db.chunk.js"></script>
+<script src="/packs/js/site-4d44778c479aa0c8e0d3.chunk.js"></script>
+
+
+
+
+
+
+<!--[if lt IE 9 ]>
+<script src="/application_assets/jquery1.8.3-4ded875446ebaeb2e1cbe3d1d1a87589d4c25911a458258c03b84fc9c747f958.js"></script>
+<link rel="stylesheet" media="screen" href="/application_assets/ie8SiteHeader-329a9cab25de9f303d9cfbf76251a9f885e42dbb59de151b7e653b0139b1483e.css" />
+<![endif]-->
+<!--[if IE 9 ]>
+<link rel="stylesheet" media="screen" href="/application_assets/ie9SiteHeader-f50994cec270438fba6f2acf700c49fa209b6fa63a41622a7b1ca777acb46f2b.css" />
+<![endif]-->
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160747936-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160747936-2');
+</script>
+
+
+<!--[if !(IE)]><!-->
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+  gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+  var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+})();
+new EENews.dfpPlacement({
+  unit: 'leaderboard',
+  code: 'eep-ldrbrd-hdr',
+  id: 'hdr_leaderboardPublication_0',
+  obj: 'Publication',
+  })
+new EENews.dfpPlacement({
+  unit: 'halfpage',
+  code: 'eep-halfpage',
+  id: 'halfpageLayoutModuleContent_70808',
+  obj: 'LayoutModuleContent',
+  })
+
+googletag.cmd.push(function() {
+  googletag.pubads().enableSingleRequest();
+  googletag.disablePublisherConsole();
+    googletag.enableServices();
+});
+</script>
+ <!--<![endif]-->
+<script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020120201.js?21068927" async=""></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.eenews.net" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.eenews.net"></script><link rel="prefetch" href="https://cb20b7e9c371b0d847dfff0b17e9dec3.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" /></head>
+
+
+<body class="">
+<header role="banner" class="banner">
+<!--[if !(IE)]><!-->
+<section class="ad leaderboard" style="display: none;">
+  <p class="label">Advertisement</p>
+  <div class="ad_container" id="hdr_leaderboardPublication_0">
+      <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('hdr_leaderboardPublication_0')})
+      </script>
+<div id="google_ads_iframe_/61896409/eep-ldrbrd-hdr_0__container__" style="border: 0pt none; width: 728px; height: 90px;"></div></div></section><!--<![endif]-->
+
+
+
+<div><nav class="StarterNav main"><ul class="secondary_nav"><li><a href="/">E&amp;E Home</a></li><li><a href="/eep/learn_more/">About</a></li><li><a href="/eep/learn_more/staff_directory">Contact</a></li><li><a class="highlight" href="/trial?t=https%3A%2F%2Fwww.eenews.net%2F">Start a Trial</a></li><li><a class="highlight" href="/subscribe">Subscribe</a></li></ul><ul class="pubs"><li class="tab null ew"><a href="/ew">Energywire</a></li><li class="tab null cw"><a href="/cw">Climatewire</a></li><li class="tab null eed"><a href="/eed">E&amp;E Daily</a></li><li class="tab null gw"><a href="/gw">Greenwire</a></li><li class="tab null pm"><a href="/pm">E&amp;E News PM</a></li></ul><ul><li class="tab null special_reports"><a href="/special_reports">Reports</a></li></ul></nav><section class="mast"><h1><a href="/eep"><span class="eep_header sprite " title="E&amp;E News"><span>E&amp;E News</span></span></a></h1><h2 class="tagline"></h2></section></div>
+
+  <div data-react-class="site/SiteHeader/HeaderNav" data-react-props="{&quot;publication_index_string&quot;:&quot;eep&quot;,&quot;publication_title&quot;:&quot;E\u0026E News&quot;,&quot;tagline&quot;:null,&quot;login_path&quot;:&quot;/login?t=https%3A%2F%2Fwww.eenews.net%2F&quot;,&quot;logout_path&quot;:&quot;/logout&quot;,&quot;root_path&quot;:&quot;/&quot;,&quot;about_path&quot;:&quot;/eep/learn_more/&quot;,&quot;contact_path&quot;:&quot;/eep/learn_more/staff_directory&quot;,&quot;start_trial_path&quot;:&quot;/trial?t=https%3A%2F%2Fwww.eenews.net%2F&quot;,&quot;subscribe_path&quot;:&quot;/subscribe&quot;,&quot;extend_access_registered_users_path&quot;:&quot;/registered_users/extend_access?t=https%3A%2F%2Fwww.eenews.net%2F&quot;,&quot;current_site_user&quot;:null,&quot;current_registered_user&quot;:null,&quot;able_to_extend_access&quot;:null,&quot;current_site_ipaccess&quot;:null,&quot;special_report_path&quot;:null,&quot;special_report_sprite&quot;:null}" data-hydrate="t" data-react-cache-id="site/SiteHeader/HeaderNav-0"><div class="HeaderNav" data-reactroot=""><div class="FixedNavDesktop" style="top: -50px; opacity: 0; transition: top 0.2s ease 0s, opacity 0.2s ease 0.3s;"><nav role="navigation"><div class="nav"><div class="leftContent"><div class="EENewsLink navItem"><a href="/" class="navLink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.24 147.41" class="EENewsLogo vertical" style="fill: rgb(30, 54, 103); height: 32px; width: 30px;"><g id="Layer_2" data-name="Layer 2"><g id="Vertical"><path class="cls-1" d="M 123.63 91.08 H 104.37 L 98.5 85.31 A 37.7 37.7 0 0 1 76.43 92.1 Q 64 92.1 56.66 86.38 T 49.35 70.9 A 22 22 0 0 1 52.44 59 q 3.09 -4.92 10.6 -9.22 a 33 33 0 0 1 -5.56 -8.4 a 21.82 21.82 0 0 1 -1.74 -8.76 a 15.23 15.23 0 0 1 5.95 -12.52 q 6 -4.76 15.91 -4.75 q 9.51 0 15.2 4.42 a 14.19 14.19 0 0 1 5.7 11.82 A 19 19 0 0 1 95 42.68 q -3.52 5 -11.39 9.57 Z M 65.75 69.42 a 8.46 8.46 0 0 0 3.3 7 A 13.23 13.23 0 0 0 77.5 79 a 22.07 22.07 0 0 0 11.6 -3.11 l -17 -16.86 a 21.19 21.19 0 0 0 -4.68 4.7 A 9.64 9.64 0 0 0 65.75 69.42 Z M 84.09 33.2 a 5.29 5.29 0 0 0 -1.84 -4.27 a 7.08 7.08 0 0 0 -4.75 -1.56 A 8.18 8.18 0 0 0 72.11 29 a 5.71 5.71 0 0 0 -2 4.65 q 0 4.5 4.86 9.91 a 30.64 30.64 0 0 0 6.74 -4.83 A 7.61 7.61 0 0 0 84.09 33.2 Z"/><path class="cls-1" d="M 43.82 75.05 H 19.38 V 51.59 H 50.19 V 35.78 H 19.38 v -20 H 52.49 V 0 H 0.09 V 91 h 53 A 24.12 24.12 0 0 1 43.82 75.05 Z"/><polygon class="cls-1" points="157.88,15.81 157.88,0 105.48,0 105.48,65.36 131.91,90.97 157.88,90.97 157.88,75.05 124.77,75.05 124.77,51.59 155.57,51.59 155.57,35.78 124.77,35.78 124.77,15.81 157.88,15.81"/><path class="cls-1" d="M 30.8 146.87 H 25.57 L 4 113.78 H 3.8 q 0.43 5.82 0.43 10.68 v 22.41 H 0 V 107.44 H 5.18 l 21.49 33 h 0.22 q -0.06 -0.74 -0.24 -4.68 c -0.13 -2.63 -0.17 -4.52 -0.14 -5.65 V 107.44 H 30.8 Z"/><path class="cls-1" d="M 66 146.87 H 44 V 107.44 H 66 v 4.07 H 48.55 v 12.71 H 64.89 v 4 H 48.55 v 14.51 H 66 Z"/><path class="cls-1" d="M 114.18 146.87 h -4.53 l -8 -26.4 c -0.37 -1.17 -0.8 -2.65 -1.26 -4.43 a 25.85 25.85 0 0 1 -0.73 -3.21 a 62.42 62.42 0 0 1 -1.89 7.8 L 90.1 146.87 H 85.57 l -10.5 -39.43 h 4.86 l 6.23 24.36 a 92.73 92.73 0 0 1 1.89 9.27 a 66.4 66.4 0 0 1 2.15 -9.65 l 7.07 -24 h 4.86 l 7.41 24.19 a 73.82 73.82 0 0 1 2.19 9.44 a 81.3 81.3 0 0 1 1.94 -9.33 l 6.2 -24.3 h 4.86 Z"/><path class="cls-1" d="M 158.24 136.38 a 9.67 9.67 0 0 1 -3.78 8.12 q -3.78 2.91 -10.25 2.91 q -7 0 -10.79 -1.8 v -4.43 a 28.22 28.22 0 0 0 5.29 1.62 a 27.49 27.49 0 0 0 5.66 0.59 q 4.59 0 6.91 -1.74 a 5.7 5.7 0 0 0 2.32 -4.84 a 6.33 6.33 0 0 0 -0.82 -3.36 A 7.74 7.74 0 0 0 150 131 a 39.2 39.2 0 0 0 -5.87 -2.51 q -5.5 -2 -7.86 -4.66 a 10.28 10.28 0 0 1 -2.36 -7 a 8.77 8.77 0 0 1 3.42 -7.26 a 14.25 14.25 0 0 1 9.06 -2.7 A 26.7 26.7 0 0 1 157.24 109 l -1.43 4 a 24.54 24.54 0 0 0 -9.49 -2 a 9.19 9.19 0 0 0 -5.69 1.57 a 5.14 5.14 0 0 0 -2 4.34 a 6.69 6.69 0 0 0 0.75 3.36 a 7.08 7.08 0 0 0 2.55 2.4 a 31.44 31.44 0 0 0 5.49 2.41 q 6.19 2.22 8.54 4.75 A 9.35 9.35 0 0 1 158.24 136.38 Z"/></g></g></svg></a></div><div class="navItem hamburgerWrapper"><div class="HamburgerButton"><input type="checkbox" class="checkbox" /><span></span><span></span><span></span></div></div><div class="Search navItem"><span class="wrapper"><span><svg xmlns="http://www.w3.org/2000/svg" width="24.645" height="24.87" viewBox="0 0 24.645 24.87" class="SearchIcon"><g id="Group_2" data-name="Group 2" transform="translate(-12.304 15.807) rotate(-45)"><g id="Ellipse_1" data-name="Ellipse 1" transform="translate(19.878 -2.477) rotate(45)" fill="none" stroke="#9e9ea7" stroke-width="2"><ellipse cx="9.443" cy="9.443" rx="9.443" ry="9.443" stroke="none"/><ellipse cx="9.443" cy="9.443" rx="8.443" ry="8.443" fill="none"/></g><path id="Path_3" data-name="Path 3" d="M 1.364 1.335 c 1.112 0 1.1 0.805 1.1 0.805 l 0.266 8.039 A 1.448 1.448 0 0 1 1.364 11.7 A 1.448 1.448 0 0 1 0 10.179 L 0.3 2.14 S 0.252 1.335 1.364 1.335 Z" transform="translate(18.355 19.473)" fill="#9e9ea7"/></g></svg></span><form class="closed" action="/search/stories" method="get"><input type="search" name="keyword" id="keyword" placeholder="Search stories and videos" /></form></span></div></div><div class="rightContent"><div class="StartTrialLink navItem"><a class="navLink" href="/trial?t=https%3A%2F%2Fwww.eenews.net%2F"><span><div class="label">Start a Trial</div></span></a></div><div class="LogIn navItem"><a href="/login?t=https%3A%2F%2Fwww.eenews.net%2F" class="navLink"><span class="wrapper"><div class="label">Log in</div></span></a></div></div></div></nav></div></div></div>
+
+</header>
+<section class="publication site_container" id="publication_0">
+<header class="promo">
+
+<nav class="edition">
+  <ul>
+  </ul>
+  <form action="/search/stories" method="get">
+  <label for="keyword"><a title="Search Stories and Videos" href="/search">Search:</a></label>
+  <input type="search" name="keyword" id="keyword" class="search" onfocus="this.select()" placeholder="enter keyword" />
+  <input type="submit" name="commit" value="go!" data-disable-with="go!" />
+  </form>
+</nav>
+</header>
+
+<!--[if IE 8 ]>
+  <div><section class="span22 offset1"><section class=" promo_container ie_message"><h1>Thank you for reading E&amp;E News</h1><h2 class="bottom_1"><strong>A note on browser support</strong></h2><p>To provide the best experience for our readers, we can no longer actively support Internet Explorer 8.</p><p class="bottom_1">Please consider upgrading your browser.</p><a href="https://www.microsoft.com/en-us/microsoft-365/windows/end-of-ie-support"><button class="access_button red half-width">Learn more at microsoft.com</button></a></section></section></div>
+<![endif]-->
+<!--[if IE 9 ]>
+  <div><section class="span22 offset1"><section class=" promo_container ie_message"><h1>Thank you for reading E&amp;E News</h1><h2 class="bottom_1"><strong>A note on browser support</strong></h2><p>To provide the best experience for our readers, we can no longer actively support Internet Explorer 9.</p><p class="bottom_1">Please consider upgrading your browser.</p><a href="https://www.microsoft.com/en-us/microsoft-365/windows/end-of-ie-support"><button class="access_button red half-width">Learn more at microsoft.com</button></a></section></section></div>
+<![endif]-->
+
+
+
+
+
+    <section class="ee-row">
+
+  <section class="layout_module span24 offset0 spotlight image_top has_stories has_videos" id="layout_module_4475">
+      <section class="layout_module_content" id="layout_module_content_112905">
+        <article class="story " id="story_1063719727">
+
+    
+
+    <a href="/stories/1063719727">
+      <aside class="image_asset_layout" id="image_asset_layout_90441">
+        <div class="crop">
+          <img alt="The Yazoo River floods farms and homes in the Mississippi Delta in this May 2011 file photo.  Photo credit: Eric Thayer/Reuters/Newscom&#10;" src="https://www.eenews.net/image_assets/2020/12/image_asset_101373.jpg" />
+        </div>
+        <p class="caption"><span class="credit">Eric Thayer/Reuters/Newscom
+</span></p>
+</aside></a>
+  <div class="text_container">
+    <a href="/stories/1063719727">
+      <h2 class="slug">MISSISSIPPI RIVER</h2>
+      <h1 class="headline">EPA ditches Bush veto, approves WWII-era flood project </h1>
+</a>
+      <section class="excerpt"><p>EPA has greenlighted the Yazoo Backwater Pumps flood project, saying its 2008 veto doesn't cover the newest iteration of the project. The surprise move shocked green groups, who said it sets a dangerous precedent.</p></section>
+
+    <section class="homepage byline">
+      <p>
+        <span class="authors">By <a href="/staff/Ariel_Wittenberg">Ariel Wittenberg</a> and <a href="/staff/Hannah_Northey">Hannah Northey</a> in <a href="gw" class="publication gw">Greenwire</a></span>
+        <time datetime="2020-12-02 13:35:50 -0500">1:35 PM EST</time>
+</p>    </section>
+  </div>
+</article>
+</section></section>
+    </section>
+    <section class="ee-row">
+
+  <section class="layout_module span8 offset0 featured image_top has_stories has_videos" id="layout_module_4476">
+      <section class="layout_module_content" id="layout_module_content_112889">
+        <article class="story " id="story_1063719631">
+
+    
+
+    <a href="/stories/1063719631">
+      <aside class="image_asset_layout" id="image_asset_layout_90373">
+        <div class="crop">
+          <img alt="Mark Kelly. Photo credit: Cheney Orr/Reuters/Newscom&#10;" src="https://www.eenews.net/image_assets/2020/11/image_asset_101157.jpg" />
+        </div>
+        <p class="caption"><span class="credit">Cheney Orr/Reuters/Newscom</span></p>
+</aside></a>
+  <div class="text_container">
+    <a href="/stories/1063719631">
+      <h2 class="slug">NEW MEMBER PROFILE</h2>
+      <h1 class="headline">How Mark Kelly might shake up the Senate's power balance </h1>
+</a>
+      <section class="excerpt"><p>After campaigning as an independent problem solver, Democrat Mark Kelly is poised to get a head start on his pledge to fix a "broken" system.</p></section>
+
+    <section class="homepage byline">
+      <p>
+        <span class="authors">By <a href="/staff/Geof_Koss">Geof Koss</a> in <a href="eed" class="publication eed">E&amp;E Daily</a></span>
+        <time datetime="2020-12-02 06:58:54 -0500">6:58 AM EST</time>
+</p>    </section>
+  </div>
+</article>
+</section></section>
+
+  <section class="layout_module span8 offset0 featured image_top has_stories has_videos" id="layout_module_4477">
+      <section class="layout_module_content" id="layout_module_content_112887">
+        <article class="story " id="story_1063719641">
+
+    
+
+    <a href="/stories/1063719641">
+      <aside class="image_asset_layout" id="image_asset_layout_90357">
+        <div class="crop">
+          <img alt="Philip Schulz. Photo credit: @HybridInterface/Twitter" src="https://www.eenews.net/image_assets/2020/12/image_asset_101323.jpg" />
+        </div>
+        <p class="caption"><span class="credit">@HybridInterface/Twitter</span></p>
+</aside></a>
+  <div class="text_container">
+    <a href="/stories/1063719641">
+      <h2 class="slug">POLITICS</h2>
+      <h1 class="headline">What now for scientists who fled U.S. because of Trump? </h1>
+</a>
+      <section class="excerpt"><p>Meet three climate researchers who decided it was better to work in Europe when President Trump was elected.</p></section>
+
+    <section class="homepage byline">
+      <p>
+        <span class="authors">By <a href="/staff/Chelsea_Harvey">Chelsea Harvey</a> in <a href="cw" class="publication cw">Climatewire</a></span>
+        <time datetime="2020-12-02 07:10:30 -0500">7:10 AM EST</time>
+</p>    </section>
+  </div>
+</article>
+</section></section>
+
+  <section class="layout_module span8 offset0 featured image_top has_stories has_videos" id="layout_module_4478">
+      <section class="layout_module_content" id="layout_module_content_112873">
+        <article class="story " id="story_1063719683">
+
+    
+
+    <a href="/stories/1063719683">
+      <aside class="image_asset_layout" id="image_asset_layout_90395">
+        <div class="crop">
+          <img alt="Vistra Energy CEO Curt Morgan. Photo credit: Vistra Energy" src="https://www.eenews.net/image_assets/2020/12/image_asset_101339.jpg" />
+        </div>
+        <p class="caption"><span class="credit">Vistra Energy</span></p>
+</aside></a>
+  <div class="text_container">
+    <a href="/stories/1063719683">
+      <h2 class="slug">ELECTRICITY</h2>
+      <h1 class="headline">CEO: Biden clean energy costs 'prohibitively high' </h1>
+</a>
+      <section class="excerpt"><p>President-elect Joe Biden's plan for a 100% carbon-free power sector by 2035 could endanger grid reliability, says one power producer's CEO.</p></section>
+
+    <section class="homepage byline">
+      <p>
+        <span class="authors">By <a href="/staff/Edward_Klump">Edward Klump</a> in <a href="ew" class="publication ew">Energywire</a></span>
+        <time datetime="2020-12-02 07:32:06 -0500">7:32 AM EST</time>
+</p>    </section>
+  </div>
+</article>
+</section></section>
+    </section>
+    <section class="ee-row">
+
+  <section class="layout_module span15 offset0 subfeatured has_stories has_videos" id="layout_module_4479" style="max-width: 395px;">
+      <section class="layout_module_content" id="layout_module_content_112907">
+        <article class="story no-image" id="story_1063719713">
+
+  <a href="/stories/1063719713">
+    <h2 class="slug">EPA@50</h2>
+    <h1 class="headline">Golden anniversary precedes big changes ahead</h1>
+</a>
+  <section class="homepage byline">
+    <p>
+      <span class="authors">By <a href="/staff/Kevin_Bogardus">Kevin Bogardus</a> in <a href="gw" class="publication gw">Greenwire</a></span>
+      <time datetime="2020-12-02 13:35:51 -0500">1:35 PM EST</time>
+</p>  </section>
+
+    <section class="excerpt"><p>EPA celebrates its 50th anniversary today as the agency readies for a coming year of stark change and new leadership.</p></section>
+</article>
+</section>      <section class="layout_module_content" id="layout_module_content_112877">
+        <article class="story no-image" id="story_1063719667">
+
+  <a href="/stories/1063719667">
+    <h2 class="slug">RENEWABLE ENERGY</h2>
+    <h1 class="headline">First U.S. offshore wind farm put on hold</h1>
+</a>
+  <section class="homepage byline">
+    <p>
+      <span class="authors">By <a href="/staff/Heather_Richards">Heather Richards</a> and <a href="/staff/Benjamin_Storrow">Benjamin Storrow</a> in <a href="ew" class="publication ew">Energywire</a></span>
+      <time datetime="2020-12-02 07:32:05 -0500">7:32 AM EST</time>
+</p>  </section>
+
+    <section class="excerpt"><p>Vineyard Wind said yesterday it will withdraw its application for federal approval to erect the first large offshore wind farm in the country.</p></section>
+</article>
+</section>      <section class="layout_module_content" id="layout_module_content_112893">
+        <article class="story no-image" id="story_1063719651">
+
+  <a href="/climatewire/stories/1063719651">
+    <h2 class="slug">SCIENCE</h2>
+    <h1 class="headline">More forests die as warming cranks up fires, slows regrowth</h1>
+</a>
+  <section class="homepage byline">
+    <p>
+      <span class="authors">By <a href="/staff/Thomas_Frank">Thomas Frank</a> in <a href="cw" class="publication cw">Climatewire</a></span>
+      <time datetime="2020-12-02 07:10:31 -0500">7:10 AM EST</time>
+</p>  </section>
+
+    <section class="excerpt"><p>Wildfires in the western United States are increasingly destroying forests by turning them into grasslands and shrublands that exacerbate soil erosion and minimize carbon capture, according to new research.</p></section>
+</article>
+</section>      <section class="layout_module_content" id="layout_module_content_112909">
+        <article class="story no-image" id="story_1063719707">
+
+  <a href="/greenwire/stories/1063719707">
+    <h2 class="slug">SOCIAL MEDIA</h2>
+    <h1 class="headline">Wheeler, EPA join Parler</h1>
+</a>
+  <section class="homepage byline">
+    <p>
+      <span class="authors">By <a href="/staff/Kevin_Bogardus">Kevin Bogardus</a> in <a href="gw" class="publication gw">Greenwire</a></span>
+      <time datetime="2020-12-02 13:35:53 -0500">1:35 PM EST</time>
+</p>  </section>
+
+    <section class="excerpt"><p>EPA and Administrator Andrew Wheeler have signed up for Parler, a social media network marketed as a conservative alternative to Twitter.</p></section>
+</article>
+</section>      <section class="layout_module_content" id="layout_module_content_112911">
+        <article class="story no-image" id="story_1063719721">
+
+  <a href="/greenwire/stories/1063719721">
+    <h2 class="slug">TRANSITION</h2>
+    <h1 class="headline">Schumer backs Mary Nichols to lead Biden EPA</h1>
+</a>
+  <section class="homepage byline">
+    <p>
+      <span class="authors">By <a href="/staff/Geof_Koss">Geof Koss</a> in <a href="gw" class="publication gw">Greenwire</a></span>
+      <time datetime="2020-12-02 13:35:54 -0500">1:35 PM EST</time>
+</p>  </section>
+
+    <section class="excerpt"><p>Senate Minority Leader Chuck Schumer is pressing President-elect Joe Biden to nominate California Air Resources Board Chair Mary Nichols to be his EPA administrator.</p></section>
+</article>
+</section></section>
+
+  <section class="layout_module span9 offset0 fixed has_programmatic_contents" id="layout_module_4480" style="min-width: 360px;">
+      <section class="layout_module_content homepage_promoted_content_list" id="layout_module_content_70804">
+          <section class="promotional">
+<h1 class="section_header">E&amp;E Special Reports</h1>
+<section class="item">
+<a href="/special_reports/epa_50_years">EPA: 50 Years</a>
+</section>
+<section class="item">
+<a href="/special_reports/powershift_2021">Power Shift: Election Transition 2021</a>
+</section>
+<section class="item">
+<a href="/special_reports/offtopic">Off Topic</a>
+</section>
+<section class="item">
+<a href="/special_reports/EEnews_highlights">E&amp;E News Highlights</a>
+</section>
+<section class="item">
+<a href="/special_reports/campaign_2020">Campaign 2020</a>
+</section>
+<section class="item">
+<a href="/special_reports/epa_open_for_business">EPA: Open for Business</a>
+</section>
+<section class="item">
+<a href="/special_reports/juliana_v_us">Climate in the Courts: Juliana v. United States</a>
+</section>
+<section class="item">
+<a href="/special_reports/deepwater_10years">Deepwater Horizon: 10 Years Later</a>
+</section>
+<section class="item">
+<a href="/special_reports/recipe_for_change">Recipe For Change</a>
+</section>
+<section class="item">
+<a href="/special_reports/shifting_precedent">Shifting Precedent: The Climate Battle in the West</a>
+</section>
+<section class="item">
+<a href="/special_reports/people_to_watch_2020">People to Watch 2020</a>
+</section>
+<section class="item">
+<a href="/special_reports/2020_hindsight">2020 Hindsight</a>
+</section>
+<section class="item">
+<a href="/special_reports/bloodbath">Bloodbath: Red ink pours over Northwest dams </a>
+</section>
+<section class="item">
+<a href="/special_reports/california_crumbling_coast">California's Crumbling Coast</a>
+</section>
+</section>
+
+
+</section></section>
+    </section>
+    <section class="ee-row">
+
+  <section class="layout_module span24 offset0 has_programmatic_contents" id="layout_module_4481">
+      <section class="layout_module_content homepage_header_latest_headlines" id="layout_module_content_70805">
+        <h1 class="header bottom_divider">Latest editions</h1>
+
+</section></section>
+    </section>
+    <section class="ee-row">
+
+  <section class="layout_module span16 offset0 has_programmatic_contents" id="layout_module_4482" style="max-width: 435px;">
+      <section class="layout_module_content homepage_latest_headlines" id="layout_module_content_70806">
+        <section class="homepage_latest_headlines latest_headlines">
+	<section class="ee-row-fl no_gutter">
+				<section class="span12 no_gutter">
+					<a href="/pm/2020/12/02">
+						<h1 class="publication_header">
+							<span class="pm_logo sprite " title="E&amp;E News PM"><span>E&amp;E News PM</span></span>
+						</h1>
+						<time datetime="2020-12-02 16:10:43 -0500" class="date">Wednesday, December 2, 2020 <span>—  4:10 PM</span></time>
+</a>						<article class="story" id="story_1063719747">
+		<a href="/eenewspm/2020/12/02/stories/1063719747">
+			<h2 class="slug pm">HOUSE</h2>
+			<h1 class="headline">McMorris Rodgers, Westerman secure top committee spots </h1>
+</a></article>	<article class="story" id="story_1063719745">
+		<a href="/eenewspm/2020/12/02/stories/1063719745">
+			<h2 class="slug pm">LAW</h2>
+			<h1 class="headline">Court saves highway expansion through old-growth redwoods </h1>
+</a></article>	<article class="story" id="story_1063719743">
+		<a href="/eenewspm/2020/12/02/stories/1063719743">
+			<h2 class="slug pm">OBITUARY</h2>
+			<h1 class="headline">Conservation biologist Georgina Mace dies </h1>
+</a></article>	<article class="story" id="story_1063719733">
+		<a href="/eenewspm/2020/12/02/stories/1063719733">
+			<h2 class="slug pm">WILDLIFE</h2>
+			<h1 class="headline">Researchers from U.S., Canada team up to study white sharks </h1>
+</a></article>
+					<h2 class="more_headlines">
+						<a href="/pm/2020/12/02"><span class="arrow_icon sprite " title="More headlines"><span>More headlines</span></span>More headlines</a>
+					</h2>
+</section>				<section class="span12 no_gutter">
+					<a href="/gw/2020/12/02">
+						<h1 class="publication_header">
+							<span class="gw_logo sprite " title="Greenwire"><span>Greenwire</span></span>
+						</h1>
+						<time datetime="2020-12-02 13:36:04 -0500" class="date">Wednesday, December 2, 2020 <span>—  1:36 PM</span></time>
+</a>						<article class="story" id="story_1063719727">
+		<a href="/greenwire/2020/12/02/stories/1063719727">
+			<h2 class="slug gw">MISSISSIPPI RIVER</h2>
+			<h1 class="headline">EPA ditches Bush veto, approves WWII-era flood project </h1>
+</a></article>	<article class="story" id="story_1063719713">
+		<a href="/greenwire/2020/12/02/stories/1063719713">
+			<h2 class="slug gw">EPA@50</h2>
+			<h1 class="headline">Golden anniversary precedes big changes ahead </h1>
+</a></article>	<article class="story" id="story_1063719725">
+		<a href="/greenwire/2020/12/02/stories/1063719725">
+			<h2 class="slug gw">ENERGY POLICY</h2>
+			<h1 class="headline">Panel OKs bipartisan nuclear bill; critics see trouble ahead </h1>
+</a></article>	<article class="story" id="story_1063719731">
+		<a href="/greenwire/2020/12/02/stories/1063719731">
+			<h2 class="slug gw">CLIMATE</h2>
+			<h1 class="headline">'This is suicidal.' U.N. says humans waging war on nature </h1>
+</a></article>
+					<h2 class="more_headlines">
+						<a href="/gw/2020/12/02"><span class="arrow_icon sprite " title="More headlines"><span>More headlines</span></span>More headlines</a>
+					</h2>
+</section>    
+	</section>
+	<section class="ee-row-fl no_gutter">
+				<section class="span12 no_gutter">
+					<a href="/ew/2020/12/02">
+						<h1 class="publication_header">
+							<span class="ew_logo sprite " title="Energywire"><span>Energywire</span></span>
+						</h1>
+						<time datetime="2020-12-02 07:32:13 -0500" class="date">Wednesday, December 2, 2020 <span>—  7:32 AM</span></time>
+</a>						<article class="story" id="story_1063719667">
+		<a href="/energywire/2020/12/02/stories/1063719667">
+			<h2 class="slug ew">RENEWABLE ENERGY</h2>
+			<h1 class="headline">First U.S. offshore wind farm put on hold </h1>
+</a></article>	<article class="story" id="story_1063719683">
+		<a href="/energywire/2020/12/02/stories/1063719683">
+			<h2 class="slug ew">ELECTRICITY</h2>
+			<h1 class="headline">CEO: Biden clean energy costs 'prohibitively high' </h1>
+</a></article>	<article class="story" id="story_1063719657">
+		<a href="/energywire/2020/12/02/stories/1063719657">
+			<h2 class="slug ew">ENERGY POLICY</h2>
+			<h1 class="headline">Trump does U-turn on DOE loans for clean energy </h1>
+</a></article>	<article class="story" id="story_1063719655">
+		<a href="/energywire/2020/12/02/stories/1063719655">
+			<h2 class="slug ew">ENERGY TRANSITIONS</h2>
+			<h1 class="headline">'Methane' vs. 'natural gas': Which words sway the public? </h1>
+</a></article>
+					<h2 class="more_headlines">
+						<a href="/ew/2020/12/02"><span class="arrow_icon sprite " title="More headlines"><span>More headlines</span></span>More headlines</a>
+					</h2>
+</section>				<section class="span12 no_gutter">
+					<a href="/cw/2020/12/02">
+						<h1 class="publication_header">
+							<span class="cw_logo sprite " title="Climatewire"><span>Climatewire</span></span>
+						</h1>
+						<time datetime="2020-12-02 07:10:36 -0500" class="date">Wednesday, December 2, 2020 <span>—  7:10 AM</span></time>
+</a>						<article class="story" id="story_1063719641">
+		<a href="/climatewire/2020/12/02/stories/1063719641">
+			<h2 class="slug cw">POLITICS</h2>
+			<h1 class="headline">What now for scientists who fled U.S. because of Trump? </h1>
+</a></article>	<article class="story" id="story_1063719669">
+		<a href="/climatewire/2020/12/02/stories/1063719669">
+			<h2 class="slug cw">RENEWABLE ENERGY</h2>
+			<h1 class="headline">First U.S. offshore wind farm put on hold </h1>
+</a></article>	<article class="story" id="story_1063719651">
+		<a href="/climatewire/2020/12/02/stories/1063719651">
+			<h2 class="slug cw">SCIENCE</h2>
+			<h1 class="headline">More forests die as warming cranks up fires, slows regrowth </h1>
+</a></article>	<article class="story" id="story_1063719671">
+		<a href="/climatewire/2020/12/02/stories/1063719671">
+			<h2 class="slug cw">TECHNOLOGY</h2>
+			<h1 class="headline">'Roaring '20s'? Not for energy innovation </h1>
+</a></article>
+					<h2 class="more_headlines">
+						<a href="/cw/2020/12/02"><span class="arrow_icon sprite " title="More headlines"><span>More headlines</span></span>More headlines</a>
+					</h2>
+</section>    
+	</section>
+</section>
+</section></section>
+
+  <section class="layout_module span8 offset0 fixed has_programmatic_contents" id="layout_module_4483" style="min-width: 320px;">
+      <section class="layout_module_content half_page" id="layout_module_content_70808">
+        
+<!--[if !(IE)]><!-->
+<section class="ad halfpage">
+  <p class="label">Advertisement</p>
+  <div class="ad_container" id="halfpageLayoutModuleContent_70808">
+      <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('halfpageLayoutModuleContent_70808')})
+      </script>
+<div id="google_ads_iframe_/61896409/eep-halfpage_0__container__" style="border: 0pt none; width: 300px; height: 600px;"></div></div></section><!--<![endif]-->
+
+
+</section></section>
+    </section>
+
+
+    
+<!--[if !(IE)]><!-->
+<!--<![endif]-->
+
+
+
+</section><footer>
+<nav>
+<ul class="secondary_nav">
+<li><a href="/">E&amp;E Home</a></li><li><a href="/eep/learn_more">About</a></li><li><a href="/get_access?site_link=1">Get Access</a></li><li> <a href="/trial?t=https%3A%2F%2Fwww.eenews.net%2F">Start a Trial</a></li><li><a href="/email_alerts/">Get Email Alerts</a></li><li><a href="/eep/advertise">Advertise</a></li><li><a href="/eep/learn_more/staff_directory">Staff Directory</a></li><li><a href="/special_reports">Reports</a></li>
+</ul>
+<ul class="brands">
+<li class="eep"><a href="/eep"><span class="eep_footer sprite " title="E&amp;E News"><span>E&amp;E News</span></span></a></li><li class="ew"><a href="/ew"><span class="ew_footer sprite " title="Energywire"><span>Energywire</span></span></a></li><li class="cw"><a href="/cw"><span class="cw_footer sprite " title="Climatewire"><span>Climatewire</span></span></a></li><li class="eed"><a href="/eed"><span class="eed_footer sprite " title="E&amp;E Daily"><span>E&amp;E Daily</span></span></a></li><li class="gw"><a href="/gw"><span class="gw_footer sprite " title="Greenwire"><span>Greenwire</span></span></a></li><li class="pm"><a href="/pm"><span class="pm_footer sprite " title="E&amp;E News PM"><span>E&amp;E News PM</span></span></a></li>
+</ul>
+</nav>
+<div class="copy_tag">
+<p class="tagline">The essential news for energy &amp; environment professionals</p>
+<p class="copyright">© 1996-2020 Environment &amp; Energy Publishing, LLC  
+  <span>
+    <a href="/eep/learn_more/privacy_policy">Privacy and Data Practices Policy</a>  
+    <a href="/eep/learn_more/site_map">Site Map</a>  
+    <a href="/eep/learn_more/staff_directory">Contact Us</a>
+  </span>
+</p>
+</div>
+</footer>
+
+
+
+
+<script type="text/javascript">
+    new EENews.Beacon('/0/index_page/0/ident');
+</script><div style="display:none"><img src="/0/index_page/0/ident.gif?&amp;ts=1606992615582&amp;hr=&amp;hu=https%3A%2F%2Fwww.eenews.net%2F&amp;js=true&amp;height=585&amp;width=785&amp;design_scale=large_tablet" /></div>
+<!--[if !(IE)]><!-->
+<script type="text/javascript">
+  if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const favicons = document.querySelectorAll('link[rel="icon svg"]');
+
+    if (darkModeMediaQuery.matches) {
+      favicons.forEach((link) =&gt; { link.href = link.dataset.hrefDark});
+    } else {
+      favicons.forEach((link) =&gt; { link.href = link.dataset.hrefLight});
+    };
+  }
+</script>
+<!--<![endif]-->
+
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.96fd96193cc66c3e11d4c5e4c7c7ec97.html?origin=https%3A%2F%2Fwww.eenews.net" title="Twitter settings iframe" style="display: none;"></iframe><div style="width: auto; height: 1px; position: absolute; overflow: hidden; bottom: 0px; right: 0px;"><div style="height: auto; position: absolute; left: 2px; word-wrap: break-word;"></div></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe"></iframe></body></html>

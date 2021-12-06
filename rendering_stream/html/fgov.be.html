@@ -1,0 +1,639 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="nl" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="js"><head>
+    <meta charset="utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-b6f9115f7c7696f8896",applicationID:"27579118"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-40929792-9", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<link rel="shortlink" href="https://www.belgium.be/nl" />
+<link rel="canonical" href="https://www.belgium.be/nl" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<meta name="msapplication-config" content="/themes/custom/belgium_theme/images/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="alternate" hreflang="nl" href="http://www.belgium.be/nl/index" />
+<link rel="alternate" hreflang="fr" href="http://www.belgium.be/fr/index" />
+<link rel="alternate" hreflang="de" href="http://www.belgium.be/de/index" />
+<link rel="alternate" hreflang="en" href="http://www.belgium.be/en/index" />
+<link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/belgium_theme/images/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/belgium_theme/images/favicons/favicon.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/themes/custom/belgium_theme/images/favicons/favicon@2x.png" />
+<link rel="manifest" href="/themes/custom/belgium_theme/images/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/themes/custom/belgium_theme/images/favicons/safari-pinned-tab.svg" color="#817c00" />
+<link rel="revision" href="http://www.belgium.be/nl/index" />
+
+    <title>Home | Belgium.be</title>
+    <link rel="stylesheet" media="all" href="/core/modules/system/css/components/ajax-progress.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/autocomplete-loading.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/progress.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/sticky-header.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tabledrag.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tree-child.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/utilities/align.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/utilities/clearfix.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/utilities/container-inline.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/utilities/hidden.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/core/modules/views/css/views.module.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/extlink/extlink-window.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/normalize.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/reboot.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/selection.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/root.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/headings.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/typography.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/blockquotes.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/lists.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/media.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/code.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/tables.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/base/elements/forms.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/base/elements.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/layout/grid.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/layout/page.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/layout/region.css?qjq9xy" />
+
+<!--[if lte IE 9]>
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/outdated-browser.css?qjq9xy" />
+<![endif]-->
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/block/branding.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/breadcrumb.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/menu.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/menu-menubar.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/menu-footer.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/action-links.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/links.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/tabs.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/pager.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/dataset/item-list.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/field/label-inline.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/field/text-formatted.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/field/multiple-value-form.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/node/unpublished.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/misc/skip-link.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/contrib/kiso/css/components/navigation/links--language-block.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/layouts.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/blocks.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/forms.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/views.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/nodes.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/paragraphs.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/fields.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/tabs.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/eu-cookie-compliance.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="/themes/custom/belgium_theme/css/components/noscript.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;display=swap" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Muli:300,400,700&amp;display=swap" />
+<link rel="stylesheet" media="print" href="/themes/custom/belgium_theme/css/theme/print.css?qjq9xy" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  <style></style></head>
+  <body class="toolbar-themes toolbar-no-tabs toolbar-no-icons toolbar-themes-admin-theme--openfed-admin no-sidebars not-logged-in page--frontpage page--node-type-page">
+        <a href="#main-content" class="visually-hidden focusable skip-link">Overslaan en naar de inhoud gaan</a>
+    
+      <div class="page dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    
+      <div class="page__wrapper page__wrapper--header">
+      <header class="page__section page__section--header">
+
+        <div class="site site--logo">
+          <a href="/nl" title="Back to the Belgium.be homepage" rel="home">
+                          <img src="/themes/custom/belgium_theme/images/logos/logo-be.svg" class="site-logo" alt="Back to the Belgium.be homepage" width="68" height="50" />
+                      </a>
+        </div>
+
+                <div class="site site--tools">
+          <div class="tools">
+              
+<nav class="language-switcher-language-url block block--language block--language--language-interface block--region-tools" id="block-languageswitcher-2" aria-label="Language switcher">
+  
+    
+
+        
+<ul class="links links--language-block"><li data-drupal-link-system-path="&lt;front&gt;" class="is-active"><a href="/nl" class="language-link is-active" lang="nl" aria-label="Nederlands" hreflang="nl" data-drupal-link-system-path="&lt;front&gt;"><abbr title="Nederlands">NL</abbr></a></li><li data-drupal-link-system-path="&lt;front&gt;" class="is-active"><a href="/fr" class="language-link" lang="fr" aria-label="Français" hreflang="fr" data-drupal-link-system-path="&lt;front&gt;"><abbr title="Français">FR</abbr></a></li><li data-drupal-link-system-path="&lt;front&gt;" class="is-active"><a href="/de" class="language-link" lang="de" aria-label="Deutsch" hreflang="de" data-drupal-link-system-path="&lt;front&gt;"><abbr title="Deutsch">DE</abbr></a></li><li data-drupal-link-system-path="&lt;front&gt;" class="is-active"><a href="/en" class="language-link" lang="en" aria-label="English" hreflang="en" data-drupal-link-system-path="&lt;front&gt;"><abbr title="English">EN</abbr></a></li></ul>
+  </nav>
+
+<nav id="block-menu-menu-header-dutch-menu" aria-label="Header Dutch Menu" class="block block--menu block--menu--menu-header-dutch-menu block--region-tools">
+  
+    
+
+        
+              <ul class="menu">
+                    <li class="menu__item"><a href="/nl/nieuws" title="Nieuws" class="menu__link" hreflang="nl" data-drupal-link-system-path="node/8520">Nieuws</a>      </li>
+                <li class="menu__item"><a href="/nl/online_dienst" title="Onlinediensten" class="menu__link" hreflang="nl" data-drupal-link-system-path="node/8677">Onlinediensten</a>      </li>
+                <li class="menu__item"><a href="/nl/contactinfo_en_sites" title="Adressen en websites" class="menu__link" hreflang="nl" data-drupal-link-system-path="node/8531">Contactinfo en sites</a>      </li>
+                <li class="menu__item"><a href="/nl/jobs" title="Werken bij de overheid" class="menu__link" hreflang="nl" data-drupal-link-system-path="node/8581">Jobs</a>      </li>
+                <li class="menu__item"><a href="/nl/social_media" title="Sociale media" class="menu__link" hreflang="nl" data-drupal-link-system-path="node/8517">Sociale Media</a>      </li>
+                <li class="menu__item"><a href="https://my.belgium.be/nl" class="mybelgium menu__link">myBelgium</a>      </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+          </div>
+        </div>
+        
+        <div class="site site--name">
+          <a href="/nl" title="Back to the Belgium.be homepage" rel="home">
+                        <h1 class="name">
+                          Belgium.be
+                        </h1>
+            
+                        <span class="slogan">Informatie en diensten van de overheid</span>
+                      </a>
+        </div>
+
+        <button type="button" class="button button--toggler close" aria-controls="headerCollapsible" aria-expanded="false" style="cursor: pointer;"><span>Menu</span></button>
+          <div id="block-openfedsocialblock" class="block block--openfed-social block--openfed-social--openfedsocialblock block--region-header">
+  
+    
+
+      <div class="openfed_social_links_wrapper clearfix">
+    <div class="openfed_social_links">
+                    <a href="http://www.belgium.be/nl/index#print" class="openfed_social_share_link openfed_social_share_link_print" target="_blank"><img class="openfed_social_buttons" src="/modules/contrib/openfed_social/assets/images/print.svg" width="30" height="30" alt="Print Page Button" typeof="foaf:Image" /></a>
+                    <a href="mailto:?subject=Home&amp;body=http%3A//www.belgium.be/nl/index" class="openfed_social_share_link openfed_social_share_link_email"><img class="openfed_social_buttons" src="/modules/contrib/openfed_social/assets/images/email.svg" width="30" height="30" alt="Share by Email Button" typeof="foaf:Image" /></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.belgium.be/nl/index" class="openfed_social_share_link openfed_social_share_link_facebook" target="_blank"><img class="openfed_social_buttons" src="/modules/contrib/openfed_social/assets/images/facebook.svg" width="30" height="30" alt="Facebook Share Button" typeof="foaf:Image" /></a>
+                    <a href="https://twitter.com/intent/tweet?text=Home&amp;url=http%3A//www.belgium.be/nl/index" class="openfed_social_share_link openfed_social_share_link_twitter" target="_blank"><img class="openfed_social_buttons" src="/modules/contrib/openfed_social/assets/images/twitter.svg" width="30" height="30" alt="Twitter Share Button" typeof="foaf:Image" /></a>
+            </div>
+</div>
+
+  </div>
+<div class="views-exposed-form block block--views block--views--search-page-1 block--region-header" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1" role="search">
+  
+  
+
+      <div class="block__content">
+      <form action="/nl/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8" class="form">
+  <div class="views-exposed-form container-inline clearfix">
+  <div class="form-item form-item--type-textfield form-item--name-keywords js-form-item js-form-type-textfield js-form-item-keywords form-item--no-label">
+        <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text" placeholder="Zoeken" title="Zoeken" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</div>
+
+</form>
+
+    </div>
+  </div>
+
+
+
+      </header>
+    </div>
+  
+  <div class="page__wrapper page__wrapper--content">
+        
+                  <main class="page__section page__section--content with-complementary" role="main">
+                                      <div class="page__inner page__inner--top">
+                <div data-drupal-messages-fallback="" class="hidden"></div>
+
+
+            </div>
+                  
+                
+                  
+<nav id="block-menu-menu-main-menu-homepage-nl" aria-label="Main menu homepage NL" class="block block--menu block--menu--menu-main-menu-homepage-nl block--region-content block--menu--menu-homepage">
+  
+    
+
+        
+              <ul class="menu">
+                    <li class="menu__item menu__item--expanded"><a href="/nl/familie" id="familie" class="menu__link" data-drupal-link-system-path="node/8291">Familie</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/familie/identiteit" id="identiteit" class="menu__link" data-drupal-link-system-path="node/8300">Identiteit</a>      </li>
+                <li class="menu__item"><a href="/nl/familie/koppel" id="koppel" class="menu__link" data-drupal-link-system-path="node/8285">Koppel</a>      </li>
+                <li class="menu__item"><a href="/nl/familie/kinderen" id="kinderen" class="menu__link" data-drupal-link-system-path="node/8250">Kinderen</a>      </li>
+                <li class="menu__item"><a href="/nl/familie/sociale_steun" id="sociale-steun" class="menu__link" data-drupal-link-system-path="node/8308">Sociale steun</a>      </li>
+        <li class="more-link"><a href="/nl/familie" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/justitie" id="justitie" class="menu__link" data-drupal-link-system-path="node/8904">Justitie</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/justitie/veiligheid" id="veiligheid" class="menu__link" data-drupal-link-system-path="node/8932">Veiligheid</a>      </li>
+                <li class="menu__item"><a href="/nl/justitie/privacy" id="privacy" class="menu__link" data-drupal-link-system-path="node/8886">Privacy</a>      </li>
+                <li class="menu__item"><a href="/nl/justitie/Organisatie" id="organisatie" class="menu__link" data-drupal-link-system-path="node/8856">Organisatie</a>      </li>
+                <li class="menu__item"><a href="/nl/justitie/slachtoffer" id="slachtoffer" class="menu__link" data-drupal-link-system-path="node/8867">Slachtoffer</a>      </li>
+        <li class="more-link"><a href="/nl/justitie" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/mobiliteit" id="mobiliteit" class="menu__link" data-drupal-link-system-path="node/7859">Mobiliteit</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/mobiliteit/verkeersveiligheid" id="verkeersveiligheid" class="menu__link" data-drupal-link-system-path="node/7844">Verkeersveiligheid</a>      </li>
+                <li class="menu__item"><a href="/nl/mobiliteit/rijbewijs" id="rijbewijs" class="menu__link" data-drupal-link-system-path="node/7893">Rijbewijs</a>      </li>
+                <li class="menu__item"><a href="/nl/mobiliteit/Voertuigen" id="voertuigen" class="menu__link" data-drupal-link-system-path="node/7802">Voertuigen</a>      </li>
+                <li class="menu__item"><a href="/nl/mobiliteit/fietsers_en_voetgangers" id="fietsers-en-voetgangers" class="menu__link" data-drupal-link-system-path="node/7831">Fietsers en voetgangers</a>      </li>
+        <li class="more-link"><a href="/nl/mobiliteit" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/gezondheid" id="gezondheid" class="menu__link" data-drupal-link-system-path="node/8637">Gezondheid</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/gezondheid/gezondheidszorg" id="gezondheidszorg" class="menu__link" data-drupal-link-system-path="node/8596">Gezondheidszorg</a>      </li>
+                <li class="menu__item"><a href="/nl/gezondheid/medische_kosten" id="medische-kosten" class="menu__link" data-drupal-link-system-path="node/8627">Medische kosten</a>      </li>
+                <li class="menu__item"><a href="/nl/gezondheid/gezondheidsrisico_s" id="gezondheidsrisicos" class="menu__link" data-drupal-link-system-path="node/8668">Gezondheidsrisico's</a>      </li>
+                <li class="menu__item"><a href="/nl/gezondheid/handicap" id="handicap" class="menu__link" data-drupal-link-system-path="node/8635">Handicap</a>      </li>
+        <li class="more-link"><a href="/nl/gezondheid" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/leefmilieu" id="leefmilieu" class="menu__link" data-drupal-link-system-path="node/7961">Leefmilieu</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/leefmilieu/biodiversiteit_en_natuur" id="biodiversiteit-en-natuur" class="menu__link" data-drupal-link-system-path="node/7995">Biodiversiteit en natuur</a>      </li>
+                <li class="menu__item"><a href="/nl/leefmilieu/duurzaam_consumeren" id="duurzaam-consumeren" class="menu__link" data-drupal-link-system-path="node/7925">Duurzaam consumeren</a>      </li>
+                <li class="menu__item"><a href="/nl/leefmilieu/klimaatverandering" id="klimaatverandering" class="menu__link" data-drupal-link-system-path="node/7965">Klimaatverandering</a>      </li>
+                <li class="menu__item"><a href="/nl/leefmilieu/vervuiling" id="vervuiling" class="menu__link" data-drupal-link-system-path="node/7944">Vervuiling</a>      </li>
+        <li class="more-link"><a href="/nl/leefmilieu" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/huisvesting" id="huisvesting" class="menu__link" data-drupal-link-system-path="node/8391">Huisvesting</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/huisvesting/bouwen_en_verbouwen" id="bouwen-en-verbouwen" class="menu__link" data-drupal-link-system-path="node/8398">Bouwen en verbouwen</a>      </li>
+                <li class="menu__item"><a href="/nl/huisvesting/kopen_en_verkopen" id="kopen-en-verkopen" class="menu__link" data-drupal-link-system-path="node/8386">Kopen en verkopen</a>      </li>
+                <li class="menu__item"><a href="/nl/huisvesting/huren_en_verhuren" id="huren-en-verhuren" class="menu__link" data-drupal-link-system-path="node/8343">Huren en verhuren</a>      </li>
+                <li class="menu__item"><a href="/nl/huisvesting/verhuizen" id="verhuizen" class="menu__link" data-drupal-link-system-path="node/8417">Verhuizen</a>      </li>
+        <li class="more-link"><a href="/nl/huisvesting" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/economie" id="economie" class="menu__link" data-drupal-link-system-path="node/8516">Economie</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/economie/handel_en_consumptie" id="handel-en-consumptie" class="menu__link" data-drupal-link-system-path="node/8501">Handel en consumptie</a>      </li>
+                <li class="menu__item"><a href="/nl/economie/onderneming" id="onderneming" class="menu__link" data-drupal-link-system-path="node/8454">Onderneming</a>      </li>
+                <li class="menu__item"><a href="/nl/economie/duurzaam_produceren_en_consumeren" class="menu__link" data-drupal-link-system-path="node/11792">Duurzame productie</a>      </li>
+                <li class="menu__item"><a href="/nl/economie/economische_informatie" id="overheidsopdrachten" class="menu__link" data-drupal-link-system-path="node/8480">Economische informatie</a>      </li>
+        <li class="more-link"><a href="/nl/economie" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/belastingen" id="belastingen" class="menu__link" data-drupal-link-system-path="node/8044">Belastingen</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/belastingen/inkomstenbelastingen" id="inkomstenbelastingen" class="menu__link" data-drupal-link-system-path="node/8086">Inkomstenbelastingen</a>      </li>
+                <li class="menu__item"><a href="/nl/belastingen/btw" id="btw" class="menu__link" data-drupal-link-system-path="node/8094">BTW</a>      </li>
+                <li class="menu__item"><a href="/nl/belastingen/registratierechten" id="registratierechten" class="menu__link" data-drupal-link-system-path="node/8045">Registratierechten</a>      </li>
+                <li class="menu__item"><a href="/nl/belastingen/nalatenschap" id="nalatenschap" class="menu__link" data-drupal-link-system-path="node/8039">Nalatenschap</a>      </li>
+        <li class="more-link"><a href="/nl/belastingen" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/Leren" id="leren" class="menu__link" data-drupal-link-system-path="node/8568">Leren</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/Leren/onderwijs" id="onderwijs" class="menu__link" data-drupal-link-system-path="node/8555">Onderwijs</a>      </li>
+                <li class="menu__item"><a href="/nl/Leren/studiekosten" id="studiekosten" class="menu__link" data-drupal-link-system-path="node/8535">Studiekosten</a>      </li>
+                <li class="menu__item"><a href="/nl/Leren/permanente_vorming" id="permanente-vorming" class="menu__link" data-drupal-link-system-path="node/8562">Permanente vorming</a>      </li>
+                <li class="menu__item"><a href="/nl/Leren/internationaal" id="internationaal" class="menu__link" data-drupal-link-system-path="node/8580">Internationaal</a>      </li>
+        <li class="more-link"><a href="/nl/Leren" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/werk" id="werk" class="menu__link" data-drupal-link-system-path="node/8826">Werk</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/werk/werk_zoeken" id="werk-zoeken" class="menu__link" data-drupal-link-system-path="node/8795">Werk zoeken</a>      </li>
+                <li class="menu__item"><a href="/nl/werk/arbeidscontract" id="arbeidscontract" class="menu__link" data-drupal-link-system-path="node/8758">Arbeidscontract</a>      </li>
+                <li class="menu__item"><a href="/nl/werk/verlof_en_loopbaanonderbrekingen" id="loopbaanbeheer" class="menu__link" data-drupal-link-system-path="node/8696">Verlof en loopbaanonderbrekingen</a>      </li>
+                <li class="menu__item"><a href="/nl/werk/pensioen_en_einde_loopbaan" id="pensioen-en-einde-loopbaan" class="menu__link" data-drupal-link-system-path="node/8702">Pensioen en einde loopbaan</a>      </li>
+        <li class="more-link"><a href="/nl/werk" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+                <li class="menu__item menu__item--expanded"><a href="/nl/over_belgie" id="over-belgi" class="menu__link" data-drupal-link-system-path="node/8234">Over België</a>                        <ul class="menu">
+                    <li class="menu__item"><a href="/nl/over_belgie/overheid" id="overheid" class="menu__link" data-drupal-link-system-path="node/8170">Overheid</a>      </li>
+                <li class="menu__item"><a href="/nl/over_belgie/land" id="ken-ons-land" class="menu__link" data-drupal-link-system-path="node/8229">Ken ons land</a>      </li>
+                <li class="menu__item"><a href="/nl/over_belgie/toerisme" id="toerisme" class="menu__link" data-drupal-link-system-path="node/8237">Toerisme</a>      </li>
+        <li class="more-link"><a href="/nl/over_belgie" aria-hidden="true" tabindex="-1">Lees meer</a></li></ul>
+  
+              <span class="toggle-menu closed">Sluiten</span></li>
+        </ul>
+  
+
+
+  </nav>
+    <span id="main-content"></span>
+  <article role="article" about="/nl/index" class="node node--type-page node--view-mode-full">
+
+  
+
+</article>
+
+
+
+      </main>
+    
+                      <aside class="page__section page__section--complementary" role="complementary">
+            <div class="views-element-container block block--views block--views--highlights-block-1 block--region-sidebar-second" id="block-views-block-highlights-block-1">
+  
+    
+
+      <div><div class="highlights-banners view view--highlights view--id-highlights js-view-dom-id-cd097bb4316cd5b486efbc3395d3faf94a8c9dd37aeef1f2f99a2c516ecd2990">
+  
+  
+  
+
+  
+  
+  
+    <div class="view__content">
+    
+<ul class="view__rows">
+
+      <li class="view__row"><article role="article" about="/nl/highlights/coronavirus_0" class="node node--type-highlights node--view-mode-teaser">
+
+  <div class="picture">
+    
+    <h2>
+              <a href="/nl/nieuws/2020/beslissingen_van_het_overlegcomite_van_27_november_2020" title="Read more about Coronavirus">
+          Coronavirus
+        </a>
+          </h2>
+    
+
+      <img src="/sites/default/files/styles/highlights_banner/public/resources/highlights/images/exit_corona_belgium%20%28003%29_0.png?itok=vSd6-hAm" width="470" height="290" alt="gouden regels" typeof="foaf:Image" class="image-style--highlights-banner" />
+
+
+  </div>
+  <div class="content">
+    <p>Beslissingen van het Overlegcomité van 27 november 2020</p>
+
+        <a href="/nl/nieuws/2020/beslissingen_van_het_overlegcomite_van_27_november_2020" class="read-more" aria-hidden="true" tabindex="-1">Lees meer</a>
+      </div>
+
+</article>
+</li>
+  
+</ul>
+  </div>
+  
+  
+  
+  
+  </div></div>
+
+  </div>
+<div class="views-element-container block block--views block--views--highlights-block-3 block--region-sidebar-second" id="block-views-block-highlights-block-3">
+  
+      <h2 class="block__title">Laatste nieuwsberichten<div class="more-link"><a href="/news/overview"> Meer nieuwsberichten</a></div></h2>
+    
+
+      <div><div class="highlights-news view view--highlights view--id-highlights js-view-dom-id-02fa2d7455c1adfe7500c3202e9151a2dcb6964eb70e31a041fd4cb09846959a">
+  
+  
+  
+
+  
+  
+  
+    <div class="view__content">
+    
+<ul class="view__rows">
+
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_het_overlegcomite_van_27_november_2020" hreflang="nl">Beslissingen van het Overlegcomité van 27 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">27/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/1_ploeg_van_11_miljoen_om_het_coronavirus_te_verslaan" hreflang="nl">1 ploeg van 11 miljoen om het coronavirus te verslaan</a></span></h3><div class="views-field views-field-created"><span class="field-content">27/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_de_ministerraad_van_27_november_2020" hreflang="nl">Beslissingen van de ministerraad van 27 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">27/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_de_ministerraad_van_24_november_2020" hreflang="nl">Beslissingen van de ministerraad van 24 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">24/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_de_ministerraad_van_20_november_2020" hreflang="nl">Beslissingen van de ministerraad van 20 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">20/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/overlegcomite_bespreekt_epidemiologische_situatie_en_houdt_bestaande_maatregelen_aan" hreflang="nl">Overlegcomité bespreekt epidemiologische situatie en houdt bestaande maatregelen aan</a></span></h3><div class="views-field views-field-created"><span class="field-content">13/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_de_ministerraad_van_13_november_2020" hreflang="nl">Beslissingen van de ministerraad van 13 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">13/11/2020</span></div></li>
+      <li class="view__row"><h3 class="views-field views-field-title"><span class="field-content"><a href="/nl/nieuws/2020/beslissingen_van_de_ministerraad_van_6_november_2020" hreflang="nl">Beslissingen van de ministerraad van 6 november 2020</a></span></h3><div class="views-field views-field-created"><span class="field-content">06/11/2020</span></div></li>
+  
+</ul>
+  </div>
+  
+  
+  
+    <div class="view__more">
+    
+
+  </div>
+  
+  </div></div>
+
+  </div>
+<div class="views-element-container block block--views block--views--highlights-block-2 block--region-sidebar-second" id="block-views-block-highlights-block-2">
+  
+    
+
+      <div><div class="highlights-content view view--highlights view--id-highlights js-view-dom-id-5d9395c1cc17711be46732347f84806fcc8bdd1604391f6382a501c45febcd85">
+  
+  
+  
+
+  
+  
+  
+    <div class="view__content">
+    
+<ul class="view__rows">
+
+      <li class="view__row"><article role="article" about="/nl/highlights" class="node node--type-highlights node--view-mode-list">
+
+  <div class="picture">
+    <a href="/nl/brexit" aria-hidden="true" tabindex="-1">
+        <img src="/sites/default/files/styles/highlights_list/public/resources/highlights/images/brexit-illu-small_2.jpg?itok=cPs_stIC" width="220" height="165" alt="" typeof="foaf:Image" class="image-style--highlights-list" />
+
+
+    </a>
+  </div>
+  <div class="content">
+    <h3>
+              <a href="/nl/brexit" title="Read more about Brexit">
+          Brexit
+        </a>
+          </h3>
+        <div class="body">
+      <p>Klik hier voor alle info</p>
+
+    </div>
+            <a href="/nl/brexit" class="read-more" aria-hidden="true" tabindex="-1">Lees meer</a>
+    
+  </div>
+
+</article>
+</li>
+      <li class="view__row"><article role="article" about="/nl/highlights/online_shoppen" class="node node--type-highlights node--view-mode-list">
+
+  <div class="picture">
+    <a href="/nl/nieuws/2019/online_shoppen_uw_rechten_als_koper_de_europese_unie" aria-hidden="true" tabindex="-1">
+        <img src="/sites/default/files/styles/highlights_list/public/resources/highlights/images/109f6883-f265-48db-a232-f566ac0d4aee.jpg?itok=lzANWXSB" width="220" height="165" alt="" typeof="foaf:Image" class="image-style--highlights-list" />
+
+
+    </a>
+  </div>
+  <div class="content">
+    <h3>
+              <a href="/nl/nieuws/2019/online_shoppen_uw_rechten_als_koper_de_europese_unie" title="Read more about Online shoppen">
+          Online shoppen
+        </a>
+          </h3>
+        <div class="body">
+      <p>Uw rechten als koper in de EU</p>
+
+    </div>
+            <a href="/nl/nieuws/2019/online_shoppen_uw_rechten_als_koper_de_europese_unie" class="read-more" aria-hidden="true" tabindex="-1">Lees meer</a>
+    
+  </div>
+
+</article>
+</li>
+      <li class="view__row"><article role="article" about="/nl/highlights/mypensionbe" class="node node--type-highlights node--view-mode-list">
+
+  <div class="picture">
+    <a href="/nl/nieuws/2017/hoeveel_zal_je_toekomstige_pensioen_bedragen_ontdek_het_op_mypensionbe" aria-hidden="true" tabindex="-1">
+        <img src="/sites/default/files/styles/highlights_list/public/resources/highlights/images/mypension_logo.jpg?itok=vRYEmKXg" width="220" height="165" alt="" typeof="foaf:Image" class="image-style--highlights-list" />
+
+
+    </a>
+  </div>
+  <div class="content">
+    <h3>
+              <a href="/nl/nieuws/2017/hoeveel_zal_je_toekomstige_pensioen_bedragen_ontdek_het_op_mypensionbe" title="Read more about mypension.be">
+          mypension.be
+        </a>
+          </h3>
+        <div class="body">
+      <p>Hoeveel zal je toekomstige pensioen bedragen? Ontdek het op mypension.be!</p>
+
+    </div>
+            <a href="/nl/nieuws/2017/hoeveel_zal_je_toekomstige_pensioen_bedragen_ontdek_het_op_mypensionbe" class="read-more" aria-hidden="true" tabindex="-1">Lees meer</a>
+    
+  </div>
+
+</article>
+</li>
+  
+</ul>
+  </div>
+  
+  
+  
+  
+  </div></div>
+
+  </div>
+
+
+        </aside>
+          
+                          <div class="page__section page__section--bottom with-complementary">
+            
+<nav id="block-menu-menu-top-themes-nl" aria-labelledby="block-menu-menu-top-themes-nl-heading" class="block block--menu block--menu--menu-top-themes-nl block--region-content-bottom">
+  
+  <h2 class="block__title" id="block-menu-menu-top-themes-nl-heading">Top onderwerpen</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu__item"><a href="https://www.belgium.be/nl/over_belgie/overheid/federale_overheid/federale_regering/samenstelling_regering" class="menu__link">Samenstelling van de federale regering</a>      </li>
+                <li class="menu__item"><a href="https://www.belgium.be/nl/over_belgie/overheid/federale_overheid/federale_regering/beleid/regeerakkoord" class="menu__link">Regeerakkoord</a>      </li>
+                <li class="menu__item"><a href="/nl/mobiliteit/Voertuigen/inschrijving/div-kantoren" id="menu-top-themes_2" class="menu__link" data-drupal-link-system-path="node/7830">DIV-kantoren</a>      </li>
+                <li class="menu__item"><a href="/nl/werk/werk_zoeken/arbeidsmarkt/knelpuntberoepen" id="menu-top-themes_3" class="menu__link" data-drupal-link-system-path="node/8796">Knelpuntberoepen</a>      </li>
+                <li class="menu__item"><a href="/nl/familie/identiteit/identiteitskaart" id="menu-top-themes_5" class="menu__link" data-drupal-link-system-path="node/8294">eID, de elektronische identiteitskaart</a>      </li>
+        </ul>
+  
+
+
+  </nav>
+
+<nav id="block-menu-menu-top-online-services-nl" aria-labelledby="block-menu-menu-top-online-services-nl-heading" class="block block--menu block--menu--menu-top-online-services-nl block--region-content-bottom">
+  
+  <h2 class="block__title" id="block-menu-menu-top-online-services-nl-heading">Top online diensten</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu__item"><a href="/nl/online_dienst/app_zich_inschrijven" id="menu-top-online-services_1" class="menu__link" data-drupal-link-system-path="node/7648">Zich registreren - Token aanvragen</a>      </li>
+                <li class="menu__item"><a href="https://www.belgium.be/nl/online_dienst/app_jaarlijkse_vakantie" class="menu__link">Mijn vakantierekening</a>      </li>
+                <li class="menu__item"><a href="/nl/online_dienst/app_police_on_web" id="menu-top-online-services_3" class="menu__link" data-drupal-link-system-path="node/7630">Police-on-web</a>      </li>
+                <li class="menu__item"><a href="/nl/online_dienst/werkloosheidsdossier" id="menu-top-online-services_5" class="menu__link" data-drupal-link-system-path="node/7635">Werkloosheidsdossier</a>      </li>
+                <li class="menu__item"><a href="http://www.belgium.be/nl/online_dienst/app_mypension" class="menu__link">Mypension</a>      </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+        </div>
+            </div>
+
+
+      <div class="page__wrapper page__wrapper--footer">
+      <footer class="page__section page__section--footer" role="contentinfo">
+              
+<div id="block-anysurferlogo" role="region" aria-label="Anysurfer Logo" class="block block--block-content block--block-content--anysurferlogo block--region-footer block--block-content--basic">
+  
+    
+
+      
+            <div class="clearfix field--text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="sitemap">
+<h3>Niet gevonden wat u zocht? <a href="/nl/sitemap">Sitemap</a></h3>
+</div>
+</div>
+      
+  </div>
+<nav id="block-menu-menu-footer-nl" aria-label="Footer NL" class="block block--menu block--menu--menu-footer-nl block--region-footer">
+  
+    
+
+        
+              <ul class="menu">
+                    <li class="menu__item"><a href="/nl/over_deze_site" id="a_propos_de_ce_site" class="menu__link" data-drupal-link-system-path="node/7998">Over deze website</a>      </li>
+                <li class="menu__item"><a href="/nl/persoonsgegevens" id="declaration_de_confidentialite" class="menu__link" data-drupal-link-system-path="node/8674">Persoonsgegevens</a>      </li>
+                <li class="menu__item"><a href="/nl/gebruiksvoorwaarden" id="conditions_d_utilisation" class="menu__link" data-drupal-link-system-path="node/8582">Voorwaarden voor het hergebruik</a>      </li>
+                <li class="menu__item"><a href="/nl/vragen" class="menu__link" data-drupal-link-system-path="node/11017">Vragen?</a>      </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+        <div class="copyright">
+          Copyright © 2020 Belgische Federale Overheidsdiensten
+        </div>
+      </footer>
+    </div>
+  
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"nl\/","currentPath":"node\/8521","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"nl"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":0,"extFollowNoOverride":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EDeze website maakt gebruik van cookies om uw gebruikservaring te verbeteren. Door onze website te bezoeken verklaar je je hiermee akkoord.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EJa, ik ga akkoord\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003Eweigeren\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EJa, ik ga akkoord\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003Eweigeren\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/nl\/persoonsgegevens","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"nl","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"disagree_do_not_show_popup":false,"method":"opt_in","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"withdraw_button_on_info_popup":false,"cookie_categories":[],"enable_save_preferences_button":true,"fix_first_cookie_category":true,"select_all_categories_by_default":false},"kiso":{"backtotop":{"offset":"","mobile_hide":0}},"ajaxTrustedUrl":{"\/nl\/search":true},"user":{"uid":0,"permissionsHash":"9782aa92aeadb304f2675b8726e484f4f6c7d61a1f1341b8e0a2c1204b28d44d"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.4.1"></script>
+<script src="/core/assets/vendor/jquery/jquery-htmlprefilter-3.5.0.js?v=3.4.1"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.0"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.8.8"></script>
+<script src="/sites/default/files/languages/nl_KMYjtDYRO7rtwOtk1gN_33AwpSa6RZRItfbw56hCo4A.js?qjq9xy"></script>
+<script src="/core/misc/drupal.js?v=8.8.8"></script>
+<script src="/core/misc/drupal.init.js?v=8.8.8"></script>
+<script src="/modules/contrib/google_analytics/js/google_analytics.js?v=8.8.8"></script>
+
+<!--[if lte IE 9]>
+<script src="/themes/custom/belgium_theme/js/outdated-browser.min.js?v=8.8.8"></script>
+<![endif]-->
+<script src="/themes/custom/belgium_theme/js/init.min.js?qjq9xy"></script>
+<script src="/modules/contrib/extlink/extlink.js?v=8.8.8"></script>
+<script src="/core/assets/vendor/jquery.cookie/jquery.cookie.min.js?v=1.4.1"></script>
+<script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1"></script>
+<script src="/modules/contrib/openfed_social/assets/scripts/openfed_social.js?v=1.x"></script>
+
+    <noscript class="noscript">
+            Om deze site optimaal te gebruiken is het noodzakelijk om Javascript aan te zetten.&lt;br&gt;Hier vind je &lt;a href="http://www.enable-javascript.com/" target="_blank"&gt;instructies over hoe je Javascript activeert in je web browser&lt;/a&gt;.    </noscript>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-b6f9115f7c7696f8896","applicationID":"27579118","transactionName":"MhBSZQoZXUEEVEdcDAtacVIMEVxcSkdSUgY6FlFSEB0=","queueTime":0,"applicationTime":45,"atts":"HldRE0IDTk8=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script>
+
+<div id="sliding-popup" style="height: auto; width: 100%; bottom: -68.9315px;" class="sliding-popup-bottom"><div class="eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in">
+  <div class="popup-content info eu-cookie-compliance-content">
+    <div id="popup-text" class="eu-cookie-compliance-message">
+      <p>Deze website maakt gebruik van cookies om uw gebruikservaring te verbeteren. Door onze website te bezoeken verklaar je je hiermee akkoord.</p>
+              <button type="button" class="find-more-button eu-cookie-compliance-more-button find-more-button-processed">More info</button>
+          </div>
+
+    
+    <div id="popup-buttons" class="eu-cookie-compliance-buttons">
+      <button type="button" class="agree-button eu-cookie-compliance-secondary-button">Ja, ik ga akkoord</button>
+              <button type="button" class="decline-button eu-cookie-compliance-default-button">weigeren</button>
+          </div>
+  </div>
+</div></div></body></html>

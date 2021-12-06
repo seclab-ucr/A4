@@ -1,0 +1,1731 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="https://c.mql5.com" />
+    <meta name="description" content="MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions" />
+    <meta property="og:url" content="https://www.mql5.com" />
+    <meta property="og:title" content="Discover new MetaTrader 5 opportunities with MQL5 community and services" />
+    <meta property="vk:image" content="https://c.mql5.com/i/og/mql5-community-vk.png" />
+    <meta property="og:image" content="https://c.mql5.com/i/og/mql5-community.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@mql5com" />
+    <meta name="twitter:image" content="https://c.mql5.com/i/og/mql5-community.png" /> 
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="https://c.mql5.com/i/favicon.ico" />
+    <meta name="msapplication-config" content="none" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta property="qc:admins" content="36367170677651456375" />
+    <meta property="wb:webmaster" content="073d7690269bcd81" />
+    <link href="https://c.mql5.com/styles/core.e6fc087f2869d50847847c610d41cb46.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="https://c.mql5.com/styles/all.2adb55c645bb4ad1f90e376c52afe0e0.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="https://c.mql5.com/styles/home.5868e4cbba39698c362608222ba8df64.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="/en/forum/rss" rel="alternate" type="application/rss+xml" title="MetaTrader 5 trading, automated systems and strategy testing forum" />
+    <link href="/en/articles/rss" rel="alternate" type="application/rss+xml" title="Articles on the development and application of MetaTrader {0} trading robots and technical indicators" />
+    <link href="/en/code/rss" rel="alternate" type="application/rss+xml" title="Code Base - free database of MetaTrader 5 trading robots and technical indicators" />
+    <link href="/en/job/rss" rel="alternate" type="application/rss+xml" title="Freelance service for traders" />
+    <link rel="canonical" href="https://www.mql5.com" />
+    <link rel="alternate" hreflang="x-default" href="https://www.mql5.com" />
+    <link rel="alternate" hreflang="en" href="https://www.mql5.com/en" />
+    <link rel="alternate" hreflang="ru" href="https://www.mql5.com/ru" />
+    <link rel="alternate" hreflang="zh" href="https://www.mql5.com/zh" />
+    <link rel="alternate" hreflang="es" href="https://www.mql5.com/es" />
+    <link rel="alternate" hreflang="pt" href="https://www.mql5.com/pt" />
+    <link rel="alternate" hreflang="ja" href="https://www.mql5.com/ja" />
+    <link rel="alternate" hreflang="de" href="https://www.mql5.com/de" />
+    <title>MQL5: automated forex trading, strategy tester and custom indicators in MetaTrader</title>
+    
+<script async="" defer="" src="/fz/core.js"></script><script type="text/javascript">  
+  
+  !function(){window.mqGlobal={};var n=!1,t=!1,o=[],e=[];function i(n){var t;for(t=0;t&lt;n.length;t+=1)n[t]()}function d(){n||(n=!0,i(o),o=[])}function c(){d(),t||(t=!0,i(e),e=[])}if(mqGlobal.AddOnReady=function(t){n?t(document):o.push(t)},mqGlobal.AddOnLoad=function(n){t?n(document):e.push(n)},mqGlobal.AddOnActiveWindowChange=function(n){this._onvisibility||(this._onvisibility=[]),this._onvisibility[this._onvisibility.length]=n},document.addEventListener)document.addEventListener("DOMContentLoaded",d,!1),window.addEventListener("load",c,!1);else if(document.attachEvent&amp;&amp;(document.attachEvent("onreadystatechange",(function(){switch(document.readyState){case"interactive":d();break;case"complete":c()}})),window.attachEvent("onload",c),document.documentElement.doScroll&amp;&amp;window==window.top)){!function t(){if(!n&amp;&amp;document.body)try{document.documentElement.doScroll("left"),d()}catch(n){setTimeout(t,0)}}()}}()
+  mqGlobal.CookieDomain = ".mql5.com";
+  mqGlobal.Language = 'en';
+  mqGlobal.IsMobile = false;
+      mqGlobal.ClearRteStorage = function (e) { if (window.GStorage || (window.GStorage = globalStorage()), window.GStorage.supported) try { var o = e; window.GStorage.getItem("rte_autosave_uid", function (e, t) { t == o &amp;&amp; (window.GStorage.removeItem("rte_autosave_text"), window.GStorage.removeItem("rte_autosave_date"), window.GStorage.removeItem("rte_autosave_uid")) }) } catch (e) { } };
+</script>
+
+    <style type="text/css">
+        div.top-band { border-bottom: none; }
+    </style>
+
+    <meta property="fb:admins" content="100003321148816" />
+        <script src="https://c.mql5.com/js/all.11624107825608b7b080e7e8fa09b63e.js" type="text/javascript" defer="defer"></script>
+    <script src="https://c.mql5.com/js/signals.488d1964960a9276f003bf6c0b4e2d19.js" type="text/javascript" defer="defer"></script>
+    <script src="https://c.mql5.com/js/vps.3ea139f86ffdf90952107604b9ac7794.js" type="text/javascript" defer="defer"></script>
+
+</head>
+
+
+<body>
+
+<div class="cover" id="cover">
+    
+    <div class="head">
+        <a href="https://www.mql5.com" class="head__logo" title="MQL5 - Language of trade strategies built-in the MetaTrader 5 client terminal"></a>
+        <ul id="mainmenu" class="menu dropdown" style="margin-right: 280px; padding-right: 25px;">
+            <li class="selected">
+                <a id="mainMenuSelected">
+                    <span>Home</span>
+                </a>
+                <ul id="mainmenuItems">
+                    <li><a href="/en/forum"><span>Forum</span></a></li>
+                    <li><a href="/en/market"><span>Market</span></a></li>
+                    <li><a href="/en/signals"><span>Signals</span></a></li>
+                    <li><a href="/en/job"><span>Freelance</span></a></li>
+                    <li><a href="/en/quotes/currencies"><span>Quotes</span></a></li>
+                    <li><a href="/en/trading"><span>WebTerminal</span></a></li>
+                    <li><a href="/en/economic-calendar"><span>Calendar</span></a></li>
+                    <li><a href="/en/vps"><span>VPS</span></a></li>
+                    <li><a href="/en/articles"><span>Articles</span></a></li>
+                    <li><a href="/en/code"><span>CodeBase</span></a></li>
+                    <li><a href="/en/docs"><span>Documentation</span></a></li>
+                    <li class="main-menu__about-link"><a href="/en/about"><span>About</span></a></li> 
+                </ul>
+            </li>
+            <li><input class="blurHandler" id="mainMenuBlurHandler" type="checkbox" /></li>
+         </ul>
+        <div class="head__toolbar" id="headerToolbar">
+            
+            <div class="container loginRegister"><ul id="loginRegisterButtons"><li><a class="login" title="Please sign in. OpenID supported" href="https://www.mql5.com/en/auth_login">Log in</a></li><li><a class="registration en" title="Please register" href="https://www.mql5.com/en/auth_register" onclick="window.fpush('MQL5+Button+Click');">Create an account</a></li></ul></div>
+            <div class="container"><div class="toggle-button" id="sidebarToggleButton"><i></i><i></i><i></i></div></div>
+
+            <div class="group-menu" id="groupMenu">
+                
+                <div class="container lang-menu-container"><div id="langMenuContainer" class="lang-menu"><b id="langMenuSelected" class="lang-menu__selected en"><span>English</span></b><ul class="lang-menu__list" id="langmenu"><li class="ru"><a href="/ru"><span>Русский</span></a></li><li class="zh"><a href="/zh"><span>中文</span></a></li><li class="es"><a href="/es"><span>Español</span></a></li><li class="pt"><a href="/pt"><span>Português</span></a></li><li class="ja"><a href="/ja"><span>日本語</span></a></li><li class="de"><a href="/de"><span>Deutsch</span></a></li><li><input class="blurHandler" id="langmenuBlurHandler" type="checkbox" /></li></ul></div></div>
+                <div class="container search-box-container"><div id="searchBoxContainer" class="search-box">
+                
+<form action="https://www.mql5.com/en/search" onsubmit="document.location.assign((&quot;https://www.mql5.com/en/search&quot;) + ($(&quot;keyword&quot;).value.length&gt;0?(&quot;#!keyword=&quot;+encodeURIComponent($(&quot;keyword&quot;).value)):&quot;&quot;)); if(document.location.href.indexOf(&quot;/en/search#&quot;)&gt;=0)setTimeout(function(){document.location.reload(true);},10);return false;" id="main_search_form" class="header-search" method="post">
+<div class="header-search__box"><div class="header-search__input-wrapper"><input name="keyword" type="text" title="Enter search text" id="keyword" autocomplete="off" /></div></div><input type="submit" value="" class="header-search__hidden-submit" /><div class="header-search__submit" id="searchSubmit"></div></form>
+                
+                </div></div>
+            </div>
+            
+        </div>
+        <div class="sub-nav__container" style="right: 280px;" id="subNavContainer">
+            <div class="sub-nav__toggle" id="subNavToggle">...</div>
+            <ul id="subNavList"><li><a href="/en/trading"><span>WebTerminal</span></a></li><li><a href="/en/economic-calendar"><span>Calendar</span></a></li><li><a href="/en/vps"><span>VPS</span></a></li><li><a href="/en/articles"><span>Articles</span></a></li><li><a href="/en/code"><span>CodeBase</span></a></li><li><a href="/en/docs"><span>Documentation</span></a></li></ul>
+            <input class="blurHandler" id="blurHandlerSubNav" type="checkbox" />
+        </div>
+    </div>
+    
+    <div id="bfogggabsofabcpxuzmgaibarmaxasdrj" class="r4m0gs5xt9i0c7v6b ff"></div>
+            
+    <div class="body" id="bodyContent">
+        <div class="top-band"></div>
+    <div class="content-wrapper">
+        
+
+<div class="main-page__area main-page__area-market">
+    <div class="main-page__intro">
+        
+        <h1><a href="/en/market">MQL5 Programs Market</a></h1>
+        <p>Dozens of new automated trading applications appear in the MQL5 Market every day. Choose the right app among 10,000 products and forget about unnecessary routine operations of manual trading. </p>
+<p><a href="https://www.mql5.com/en/articles/401" target="_blank">Sell</a> your algorithmic trading programs through the largest store of trading applications!</p>
+
+        
+    </div>
+
+    
+    <div class="main-page__area-sections main-page__area-sections-market">
+        <div class="main-page__area-section main-page__area-section-market products-block products-block_no-left-menu">
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/264/one-click-close-logo-200x200-9259.png)"></div>
+                
+                <a href="/en/market/product/95" class="products-block__market-item-title">One Click Close</a>
+                
+                <div class="products-block__market-item-author">Jinsong Zhang</div>
+
+                <div class="products-block__market-item-rating"><div class="v00"></div></div>
+
+                <div class="products-block__market-item-description">
+                    The script allows users to easily close positions if their profit/loss reaches or exceeds a value specified in pips. Please set slippage value first. Sometimes some positions do not close due to high volatility of the market. Please set larger slippage or restart the script.
+
+The free demo version is:  https://www.mql5.com/en/market/product/879 ............................................................................................ 
+                </div>
+                
+                <div class="products-block__market-item-price">30 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/0/AccountQuickReport.png)"></div>
+                
+                <a href="/en/market/product/86" class="products-block__market-item-title">AccountQuickReport</a>
+                
+                <div class="products-block__market-item-author">Andrej Nikitin</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                    The script creates account summary report in a separate window. The report can be created for all deals and on deals for selected financial instruments. 
+It is possible to specify a time interval of calculation and save report to htm-file.
+The script creates account summary report in a separate window. The report can be created for all deals and for deals of the selected financial instruments. It is possible to specify a time interval of calculation and save report to htm-file. 
+Input paramet
+                </div>
+                
+                <div class="products-block__market-item-price">30 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/3/marketBig__7.png)"></div>
+                
+                <a href="/en/market/product/635" class="products-block__market-item-title">CreateGridOrdersTune</a>
+                
+                <div class="products-block__market-item-author">Konstantin Chernov</div>
+
+                <div class="products-block__market-item-rating"><div class="v00"></div></div>
+
+                <div class="products-block__market-item-description">
+                    A script for opening a grid of orders If you need to quickly open several pending orders (Buy Limit, Sell Limit, Buy Stop, Sell Stop) on a certain distance from the current price, this script will do all the routine for you! Allow AutoTrading before running the script. Usage: 
+Run the script on a chart. Input Parameters: Language of messages displayed (EN, RU, DE, FR, ES) - language of the output messages (English, Russian, German, French, Spanish). Price for open - open price. If set to 0, the
+                </div>
+                
+                <div class="products-block__market-item-price">30 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/520/steady-mt5-logo-200x200-4509.png)"></div>
+                
+                <a href="/en/market/product/56240" class="products-block__market-item-title">Steady MT5</a>
+                
+                <div class="products-block__market-item-author">Andrey Barinov</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                    "Steady" is a 100% adaptive expert advisor based on price movement. It has a built-in unique Smart Recovery algorithm. Only one trade at a time. Every trade has Stop Loss and Take Profit from very beginning, and they do not change. This is for those, who are looking for steady and stable growth over the long run. 
+Take advantage of the discounted promo price.     Price will be increased up to $1299 on January 1-st. 
+"Steady" for MetaTrader4 is here:  https://www.mql5.com/en/market/product/5623
+                </div>
+                
+                <div class="products-block__market-item-price">999 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/513/aura-gold-ea-mt5-logo-200x200-3171.png)"></div>
+                
+                <a href="/en/market/product/55223" class="products-block__market-item-title">Aura Gold EA MT5</a>
+                
+                <div class="products-block__market-item-author">Stanislav Tomilov</div>
+
+                <div class="products-block__market-item-rating"><div class="v45"></div></div>
+
+                <div class="products-block__market-item-description">
+                     Limited number of copies will be sold on MQL5 market.  Price $1299 8 of 10 left at this price Next 10 copies $1499. Expert will be available on sale untill 1 of January. RECOMMENDED BROKER FOR AURA GOLD Telegram channel:  https://t.me/aura_gold_ea Aura Gold EA  is a fully automated EA designed to trade  GOLD  only. It is based on machine learning cluster analysis and genetic algorithms. EA contains self-adaptive market algorithm, which uses price action patterns and standard trading indicators 
+                </div>
+                
+                <div class="products-block__market-item-price">1 299 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/537/perfect-score-mt5-logo-200x200-1926.png)"></div>
+                
+                <a href="/en/market/product/51693" class="products-block__market-item-title">Perfect Score MT5</a>
+                
+                <div class="products-block__market-item-author">SERGEI RIEBIN</div>
+
+                <div class="products-block__market-item-rating"><div class="v40"></div></div>
+
+                <div class="products-block__market-item-description">
+                    This robot enters the market at the opening of London Stock Exchange (LSE). It is based on short-term reversal patterns which use the tendency of FX prices to move toward their average value during the LSE session . The EA does not use indicators, grid, martingale, arbitrage. The trading system is suitable for both experienced traders and beginners. The EA includes protection against high spreads, and allows you to trade with a fixed or automatic lot size. Monitoring  - most popular signal at MQ
+                </div>
+                
+                <div class="products-block__market-item-price">1 499 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/538/portfolio-x-10-eurusd-logo-200x200-5454.png)"></div>
+                
+                <a href="/en/market/product/52444" class="products-block__market-item-title">Portfolio X 10 eurusd</a>
+                
+                <div class="products-block__market-item-author">Mateus Botelho Mattos</div>
+
+                <div class="products-block__market-item-rating"><div class="v45"></div></div>
+
+                <div class="products-block__market-item-description">
+                     EA with hundreds of unique strategies. Run multiple strategies simultaneously. Select your strategies and build your custom portfolio. Replace strategies anytime. Run multiple portfolios with this single EA. All strategies go through phases. Some strategies earn more profits than others. With Portfolio X running you can run multiple strategies so the profits of good strategies compensate for the losses in others, creating a smooth equity curve. 
+Telegram Group for PortfolioX Members 
+
+MT4 ve
+                </div>
+                
+                <div class="products-block__market-item-price">499 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/520/magic-seven-mt5-logo-200x200-3323.png)"></div>
+                
+                <a href="/en/market/product/56694" class="products-block__market-item-title">Magic Seven MT5</a>
+                
+                <div class="products-block__market-item-author">Ozkan Kara</div>
+
+                <div class="products-block__market-item-rating"><div class="v40"></div></div>
+
+                <div class="products-block__market-item-description">
+                     Price: $295      This price is only for the first 5 buyers! Next Price: $495   
+Magic Seven  is a fully automated  EURUSD Daily Trend System. Before London Trading Season, EURUSD movements are small and predictable. The system focuses only Small and Steady Profits . The EA does not use grid, martingale, averaging  or other dangerous strategies.   It uses fixed stoploss for every position. I will always help you, please contact me ! 
+General Strategy Definition
+Correct Open Time:    It opens 
+                </div>
+                
+                <div class="products-block__market-item-price">295 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/8/market-watch-panel-logo-200x200-8362.png)"></div>
+                
+                <a href="/en/market/product/1842" class="products-block__market-item-title">Market Watch Panel</a>
+                
+                <div class="products-block__market-item-author">Dmitriy Skub</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                    Introducing a compact and handy panel for watching the market and estimating multicurrency price movements. It shows main parameters for a user defined group of symbols in the form of a table. Its functionality is checked on Forex and FORTS. The following information is displayed: Financial instrument name . Last price value - can be turned off for off-exchange markets. Ask price value . Bid price value . Spread size in pips. Stop level in pips - can be turned off for off-exchange markets. Chang
+                </div>
+                
+                <div class="products-block__market-item-price">45 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/537/goldenbot-mt5-logo-200x200-5091.png)"></div>
+                
+                <a href="/en/market/product/56665" class="products-block__market-item-title">GoldenBot MT5</a>
+                
+                <div class="products-block__market-item-author">SERGEI RIEBIN</div>
+
+                <div class="products-block__market-item-rating"><div class="v35"></div></div>
+
+                <div class="products-block__market-item-description">
+                    GoldenBot is a diversified portfolio of various systems trading gold. Most gold trading systems you encounter are either pure trend ones or counter-trend ones. So they are only good at certain market phases. GoldenBot includes a number of trend and counter-trend systems making it to perform good during any market phase. System effectiveness is proven by live results (see below at Telegram channel). Monitoring :  https://www.mql5.com/en/signals/827470 Telegram channel:   https://t.me/accurateEAs 
+                </div>
+                
+                <div class="products-block__market-item-price">499 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/513/aura-gold-ea-logo-200x200-2910.png)"></div>
+                
+                <a href="/en/market/product/55170" class="products-block__market-item-title">Aura Gold EA</a>
+                
+                <div class="products-block__market-item-author">Stanislav Tomilov</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                     Limited number of copies will be sold on MQL5 market.   Price $1299 6 of 10 left at this price Next 10 copies $1499. Expert will be available on sale untill 1 of January. RECOMMENDED BROKER FOR AURA GOLD Telegram channel:  https://t.me/aura_gold_ea Aura Gold EA  is a fully automated EA designed to trade GOLD only. It is based on machine learning cluster analysis and genetic algorithms. EA contains self-adaptive market algorithm, which uses price action patterns and standard trading indicators (
+                </div>
+                
+                <div class="products-block__market-item-price">1 299 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/537/perfect-score-logo-200x200-1688.png)"></div>
+                
+                <a href="/en/market/product/51341" class="products-block__market-item-title">Perfect Score</a>
+                
+                <div class="products-block__market-item-author">SERGEI RIEBIN</div>
+
+                <div class="products-block__market-item-rating"><div class="v40"></div></div>
+
+                <div class="products-block__market-item-description">
+                    This robot enters the market at the opening of London Stock Exchange (LSE). It is based on short-term reversal patterns which use the tendency of FX prices to move toward their average value during the LSE session . The EA does not use indicators, grid, martingale, arbitrage. The trading system is suitable for both experienced traders and beginners. The EA includes protection against high spreads, and allows you to trade with a fixed or automatic lot size. Monitoring - most popular signal at MQL
+                </div>
+                
+                <div class="products-block__market-item-price">1 499 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/498/ea-gold-stuff-logo-200x200-7236.png)"></div>
+                
+                <a href="/en/market/product/53855" class="products-block__market-item-title">EA Gold Stuff</a>
+                
+                <div class="products-block__market-item-author">Vasiliy Strukov</div>
+
+                <div class="products-block__market-item-rating"><div class="v45"></div></div>
+
+                <div class="products-block__market-item-description">
+                     EA Gold Stuff is an Expert Advisor designed specifically for trading gold. The operation is based on opening orders using the Gold Stuff indicator, thus the EA works according to the "Trend Follow" strategy, which means following the trend. Real-time results can be viewed  here . Telegram group  here  telegram channel  here  SETTINGS Open new series -  on / off beginning of a new series of orders. Start lots -  start lot. Trade Buy -  allow the adviser to buy. Trade Sell -  allow the adviser to
+                </div>
+                
+                <div class="products-block__market-item-price">149 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/537/magic-fx-logo-200x200-9513.png)"></div>
+                
+                <a href="/en/market/product/55801" class="products-block__market-item-title">Magic FX</a>
+                
+                <div class="products-block__market-item-author">Alexey Bolshakov</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                     Magic FX is an automated trading system that uses a channel indicator and candlestick patterns to open and close trades.
+Trades every day at a specific time. Follows the news, a news filter is installed in the advisor, if important news comes out, the EA does not trade.
+Doesn't use grid, martingale or other dangerous money management methods. 
+Timeframe М5, currency pairs EURAUD, EURCAD, GBPCAD, GBPUSD Minimum deposit 50 usd. 
+The broker I trade with. The account type is Raw Spread  https:/
+                </div>
+                
+                <div class="products-block__market-item-price">395 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/433/exclusive-dc-logo-200x200-3788.png)"></div>
+                
+                <a href="/en/market/product/50758" class="products-block__market-item-title">Exclusive DC</a>
+                
+                <div class="products-block__market-item-author">NATALYIA NIKITINA</div>
+
+                <div class="products-block__market-item-rating"><div class="v00"></div></div>
+
+                <div class="products-block__market-item-description">
+                    Impulse movements in the Forex market are formed constantly. The peculiarity of such market segments is that the chart covers a considerable distance in short periods of time.
+In addition to the chance for earnings, such fragments indicate the position of important support and resistance zones, and the chart reacts to them in the future.
+Next, we will analyze the Exclusive DC expert Advisor and pulse levels and find out how to use it in work.news – occur when publishing news of the first magni
+                </div>
+                
+                <div class="products-block__market-item-price">18 600 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/535/advanced-scalper-logo-200x200-6162.png)"></div>
+                
+                <a href="/en/market/product/24254" class="products-block__market-item-title">Advanced Scalper</a>
+                
+                <div class="products-block__market-item-author">Wim Schrynemakers</div>
+
+                <div class="products-block__market-item-rating"><div class="v40"></div></div>
+
+                <div class="products-block__market-item-description">
+                     !! BLACK FRIDAY SUPER PROMO !! LAST COPY AVAILABLE AT 225$ AFTER THAT, PRICE WILL GO BACK TO 350$ Advanced Scalper is the result of more than 15 years of studying the markets and programming expert advisors. It uses very advanced exit-algorithms and has a build in spread-filter and slippage-control algorithms. It is fully customisable to suit the client's needs and offers many setup possibilities. Of course there are also recommended settings which will be available in the comments-pages. LIVE 
+                </div>
+                
+                <div class="products-block__market-item-price">225 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/398/order-block-breaker-logo-200x200-6560.png)"></div>
+                
+                <a href="/en/market/product/46295" class="products-block__market-item-title">Order Block Breaker Indicator</a>
+                
+                <div class="products-block__market-item-author">LEE SAMSON</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                     Optional FREE dashboard to monitor ALL pairs and timeframes here:  https://www.mql5.com/en/market/product/54657 
+MT5 Version Available Here: https://www.mql5.com/en/market/product/57892 
+Telegram:  https://t.me/breakertrader_chat Become a Breaker Trader and profit from market structure changes as price reverses. The order block breaker indicator identifies when a trend or price move is approaching exhaustion and ready to reverse. It alerts you to changes in market structure which typically oc
+                </div>
+                
+                <div class="products-block__market-item-price">49 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/526/breakthrough-strategy-logo-200x200-1143.png)"></div>
+                
+                <a href="/en/market/product/23001" class="products-block__market-item-title">Breakthrough Strategy</a>
+                
+                <div class="products-block__market-item-author">Konstantin Kulikov</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                     ONLY 1/20 COPIES AVAILABLE AT 380$ NEXT PRICE -&gt; 497$ This system was developed to work with a large number of sets and after a certain time showed itself well when working at the close of trading on Friday. As a result, this direction of trading has become the main one for working with this expert. There are 25 current sets for different currency pairs, as well as a profile for quick setup   (download in comment #112 ). You can analyze the statistics of the work of an expert for different curr
+                </div>
+                
+                <div class="products-block__market-item-price">380 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/515/turbo-scalper-m1-logo-200x200-7194.png)"></div>
+                
+                <a href="/en/market/product/56062" class="products-block__market-item-title">Turbo Scalper M1</a>
+                
+                <div class="products-block__market-item-author">Andrey Kozak</div>
+
+                <div class="products-block__market-item-rating"><div class=""></div></div>
+
+                <div class="products-block__market-item-description">
+                     TURBO SCALPER M1 is a fully automatic trading robot for the GBPUSD currency pair. The robot works on the M1 timeframe. This is the smallest and most dynamic timeframe on the Metatrader4 platform. The algorithm of the robot's work is to analyze the market dynamics using the analytical module of signals, after which the robot opens pending orders and looks where the price is going. If the price moves in the right direction and breaks through the placed pending order, the robot starts following it
+                </div>
+                
+                <div class="products-block__market-item-price">1 250 USD</div>
+                </div>
+            </div>
+            
+            <div class="products-block__market-item">
+                <div class="products-block__market-item-wrapper">
+                <div class="products-block__market-item-image" style="background-image: url(https://c.mql5.com/31/520/steady-mt4-logo-200x200-4022.png)"></div>
+                
+                <a href="/en/market/product/56239" class="products-block__market-item-title">Steady MT4</a>
+                
+                <div class="products-block__market-item-author">Andrey Barinov</div>
+
+                <div class="products-block__market-item-rating"><div class="v50"></div></div>
+
+                <div class="products-block__market-item-description">
+                    "Steady" is a 100% adaptive expert advisor based on price movement. It has a built-in unique Smart Recovery algorithm. Only one trade at a time. Every trade has Stop Loss and Take Profit from very beginning, and they do not change. This is for those, who are looking for steady and stable growth over the long run. 
+Take advantage of the discounted promo price.   Price will be increased up to $1299 on January 1-st. 
+"Steady" for MetaTrader5 is here:  https://www.mql5.com/en/market/product/56240 
+                </div>
+                
+                <div class="products-block__market-item-price">999 USD</div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</div>
+
+
+<div class="main-page__area main-page__area-signals">
+    <div class="main-page__intro">
+        
+            <h2><a href="/en/signals">Trading Signals</a></h2>
+        <p>Choose a suitable trading strategy and subscribe to it with a few clicks. All Signals are provided with detailed statistics and informative charts. </p>
+<p><a href="https://www.mql5.com/en/articles/591" target="_blank">Become</a> a trading signal provider and sell subscriptions to thousands of traders around the world. 
+With the Signals service, your successful strategy can generate income with a small start-up budget!</p>          
+
+    </div>
+
+
+    
+    <div class="main-page__area-sections main-page__area-sections-signals">
+        
+        <div class="signal-card-list main-page__area-section main-page__area-section-signals">
+            
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/784579">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/paanda';return false;"> <img src="https://c.mql5.com/avatar/2019/6/5D0CC7FB-7D0C.jpg" title="Nicolas Faucheur" alt="Nicolas Faucheur" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-fr"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Nicolas</span><br /><span class="signal-card__author__item">Faucheur</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">PAANDAz</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">1 976%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 2, 2, 2, 3, 3, 3, 2, 4, 9, 27, 40, 42, 43, 43, 51, 57, 37, 40, " type="hidden" />
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="367" height="70"><defs><linearGradient id="chart0.18917572862749488GradPositive" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(222,241,255,1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(239,249,255,0.1);stop-opacity:1"/></linearGradient><linearGradient id="chart0.18917572862749488GradNegative" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(253,246,244,0.1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(255,232,224,1);stop-opacity:1"/></linearGradient></defs><g clip-path="url(#chart0.18917572862749488positive)"><path d="M0,64 Q0,64 10.2,63.5 Q0,64 10.2,63.5 Q20.4,62.9 30.6,62.9 Q40.8,62.9 51,62.9 Q61.2,62.9 71.4,62.4 Q81.6,61.8 91.8,61.8 Q101.9,61.8 112.1,61.8 Q122.3,61.8 132.5,62.4 Q142.7,62.9 152.9,61.8 Q163.1,60.7 173.3,57.9 Q183.5,55.1 193.7,45.2 Q203.9,35.2 214.1,28 Q224.3,20.8 234.5,19.7 Q244.7,18.6 254.9,18.1 Q265.1,17.5 275.3,17.5 Q285.4,17.5 295.6,13.1 Q305.8,8.6 316,5.3 Q326.2,2 336.4,13.1 Q346.6,24.1 356.8,22.5 Q367,20.8 367,20.8 L377,20.8 L377,65.1 " stroke-width="2" stroke="rgb(10,174,239)" stroke-opacity="0.9" fill="url(#chart0.18917572862749488GradPositive)"/></g><clipPath id="chart0.18917572862749488positive"><rect x="0" y="0" width="367" height="66.1" rx="0" ry="0" stroke-width="0"/></clipPath><g clip-path="url(#chart0.18917572862749488negative)"><path d="M0,64 Q0,64 10.2,63.5 Q0,64 10.2,63.5 Q20.4,62.9 30.6,62.9 Q40.8,62.9 51,62.9 Q61.2,62.9 71.4,62.4 Q81.6,61.8 91.8,61.8 Q101.9,61.8 112.1,61.8 Q122.3,61.8 132.5,62.4 Q142.7,62.9 152.9,61.8 Q163.1,60.7 173.3,57.9 Q183.5,55.1 193.7,45.2 Q203.9,35.2 214.1,28 Q224.3,20.8 234.5,19.7 Q244.7,18.6 254.9,18.1 Q265.1,17.5 275.3,17.5 Q285.4,17.5 295.6,13.1 Q305.8,8.6 316,5.3 Q326.2,2 336.4,13.1 Q346.6,24.1 356.8,22.5 Q367,20.8 367,20.8 L377,20.8 L377,65.1 " stroke-width="2" stroke="rgba(243,67,20,1)" stroke-opacity="0.9" fill="url(#chart0.18917572862749488GradNegative)"/></g><clipPath id="chart0.18917572862749488negative"><rect x="0" y="66.1" width="367" height="0.9000000000000057" rx="0" ry="0" stroke-width="0"/></clipPath></svg></span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:40%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg40"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    0%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="0%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">9</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="PAANDAz" data-mt="5" data-id="784579" data-price="30" data-balance="456" data-facilities="6.4K" data-weeks="36">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/862902">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/sky_ea';return false;"> <img src="https://c.mql5.com/avatar/2020/11/5FAAB41B-972D.jpg" title="Man Li" alt="Man Li" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-cn"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Man</span><br /><span class="signal-card__author__item">Li</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Stable Profit</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">544%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 6, 7, 8, 12, 15, 29, 33, 34, 40, 41, 42, 50, 50, 57, 58, 59, 59, 59, " type="hidden" />
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="367" height="70"><defs><linearGradient id="chart0.6263143256547143GradPositive" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(222,241,255,1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(239,249,255,0.1);stop-opacity:1"/></linearGradient><linearGradient id="chart0.6263143256547143GradNegative" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(253,246,244,0.1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(255,232,224,1);stop-opacity:1"/></linearGradient></defs><g clip-path="url(#chart0.6263143256547143positive)"><path d="M0,64 Q0,64 10.2,61.4 Q0,64 10.2,61.4 Q20.4,58.7 30.6,58.2 Q40.8,57.6 51,57.1 Q61.2,56.5 71.4,54.4 Q81.6,52.2 91.8,50.6 Q101.9,49 112.1,41.6 Q122.3,34.1 132.5,32 Q142.7,29.8 152.9,29.3 Q163.1,28.7 173.3,25.5 Q183.5,22.3 193.7,21.8 Q203.9,21.2 214.1,20.7 Q224.3,20.2 234.5,15.9 Q244.7,11.6 254.9,11.6 Q265.1,11.6 275.3,7.9 Q285.4,4.1 295.6,3.6 Q305.8,3.1 316,2.6 Q326.2,2 336.4,2 Q346.6,2 356.8,2 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgb(10,174,239)" stroke-opacity="0.9" fill="url(#chart0.6263143256547143GradPositive)"/></g><clipPath id="chart0.6263143256547143positive"><rect x="0" y="0" width="367" height="66.1" rx="0" ry="0" stroke-width="0"/></clipPath><g clip-path="url(#chart0.6263143256547143negative)"><path d="M0,64 Q0,64 10.2,61.4 Q0,64 10.2,61.4 Q20.4,58.7 30.6,58.2 Q40.8,57.6 51,57.1 Q61.2,56.5 71.4,54.4 Q81.6,52.2 91.8,50.6 Q101.9,49 112.1,41.6 Q122.3,34.1 132.5,32 Q142.7,29.8 152.9,29.3 Q163.1,28.7 173.3,25.5 Q183.5,22.3 193.7,21.8 Q203.9,21.2 214.1,20.7 Q224.3,20.2 234.5,15.9 Q244.7,11.6 254.9,11.6 Q265.1,11.6 275.3,7.9 Q285.4,4.1 295.6,3.6 Q305.8,3.1 316,2.6 Q326.2,2 336.4,2 Q346.6,2 356.8,2 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgba(243,67,20,1)" stroke-opacity="0.9" fill="url(#chart0.6263143256547143GradNegative)"/></g><clipPath id="chart0.6263143256547143negative"><rect x="0" y="66.1" width="367" height="0.9000000000000057" rx="0" ry="0" stroke-width="0"/></clipPath></svg></span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:80%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg80"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    0%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="0%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">49</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Stable Profit" data-mt="5" data-id="862902" data-price="30" data-balance="15K" data-facilities="36K" data-weeks="38">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/849167">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/pivotpilot';return false;"> <img src="https://c.mql5.com/avatar/2020/10/5F9540CC-CFE6.JPG" title="Om Prakash Arora" alt="Om Prakash Arora" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-in"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Om Prakash Arora</span><br /><span class="signal-card__author__item"></span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Moustache</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">454%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 3, 6, 9, 11, 12, 13, 17, 21, 23, 28, 31, 36, 42, 47, 50, 53, 58, 59, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:80%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg80"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    0%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="0%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">112</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Moustache" data-mt="5" data-id="849167" data-price="30" data-balance="1.9K" data-facilities="176K" data-weeks="40">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/766987">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/x3minus';return false;"> <img src="https://c.mql5.com/avatar/2020/9/5F54BD63-6345.jpg" title="MARIO DANIELE SCRETI" alt="MARIO DANIELE SCRETI" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-ch"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">MARIO DANIELE</span><br /><span class="signal-card__author__item">SCRETI</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Jack Flash Slow Real</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">422%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 2, 3, 5, 7, 10, 13, 16, 18, 21, 24, 29, 34, 38, 41, 47, 50, 55, 59, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:20%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg20"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    100%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="100%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">77</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Jack Flash Slow Real" data-mt="5" data-id="766987" data-price="30" data-balance="2.2K" data-facilities="154K" data-weeks="27">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/803388">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/x3minus';return false;"> <img src="https://c.mql5.com/avatar/2020/9/5F54BD63-6345.jpg" title="MARIO DANIELE SCRETI" alt="MARIO DANIELE SCRETI" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-ch"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">MARIO DANIELE</span><br /><span class="signal-card__author__item">SCRETI</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Jack F2 Pro</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">237%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 4, 7, 9, 12, 16, 17, 18, 24, 25, 31, 36, 40, 47, 49, 52, 54, 59, 0, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:80%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg80"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    100%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="100%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">9</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Jack F2 Pro" data-mt="5" data-id="803388" data-price="30" data-balance="337" data-facilities="18K" data-weeks="18">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+        </div>
+        
+        <div class="signal-card-list main-page__area-section main-page__area-section-signals">
+            
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/678017">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/westernvt';return false;"> <img src="https://c.mql5.com/avatar/2020/11/5FC4496F-07A8.jpg" title="PAVEL UDOVICHENKO" alt="PAVEL UDOVICHENKO" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-ru"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">PAVEL</span><br /><span class="signal-card__author__item">UDOVICHENKO</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">North East Way</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">2 691%</span>
+                <span class="signal-card__growth-label">growth since 2018</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 3, 5, 7, 10, 12, 14, 17, 19, 22, 24, 29, 35, 40, 47, 51, 54, 58, 59, " type="hidden" />
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="367" height="70"><defs><linearGradient id="chart0.6914885953327419GradPositive" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(222,241,255,1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(239,249,255,0.1);stop-opacity:1"/></linearGradient><linearGradient id="chart0.6914885953327419GradNegative" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(253,246,244,0.1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(255,232,224,1);stop-opacity:1"/></linearGradient></defs><g clip-path="url(#chart0.6914885953327419positive)"><path d="M0,64 Q0,64 10.2,63 Q0,64 10.2,63 Q20.4,61.9 30.6,60.8 Q40.8,59.7 51,58.7 Q61.2,57.6 71.4,56 Q81.6,54.4 91.8,53.3 Q101.9,52.2 112.1,51.2 Q122.3,50.1 132.5,48.5 Q142.7,46.9 152.9,45.8 Q163.1,44.8 173.3,43.2 Q183.5,41.6 193.7,40.5 Q203.9,39.4 214.1,36.8 Q224.3,34.1 234.5,30.9 Q244.7,27.7 254.9,25 Q265.1,22.3 275.3,18.6 Q285.4,14.8 295.6,12.7 Q305.8,10.6 316,9 Q326.2,7.3 336.4,5.2 Q346.6,3.1 356.8,2.6 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgb(10,174,239)" stroke-opacity="0.9" fill="url(#chart0.6914885953327419GradPositive)"/></g><clipPath id="chart0.6914885953327419positive"><rect x="0" y="0" width="367" height="66.1" rx="0" ry="0" stroke-width="0"/></clipPath><g clip-path="url(#chart0.6914885953327419negative)"><path d="M0,64 Q0,64 10.2,63 Q0,64 10.2,63 Q20.4,61.9 30.6,60.8 Q40.8,59.7 51,58.7 Q61.2,57.6 71.4,56 Q81.6,54.4 91.8,53.3 Q101.9,52.2 112.1,51.2 Q122.3,50.1 132.5,48.5 Q142.7,46.9 152.9,45.8 Q163.1,44.8 173.3,43.2 Q183.5,41.6 193.7,40.5 Q203.9,39.4 214.1,36.8 Q224.3,34.1 234.5,30.9 Q244.7,27.7 254.9,25 Q265.1,22.3 275.3,18.6 Q285.4,14.8 295.6,12.7 Q305.8,10.6 316,9 Q326.2,7.3 336.4,5.2 Q346.6,3.1 356.8,2.6 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgba(243,67,20,1)" stroke-opacity="0.9" fill="url(#chart0.6914885953327419GradNegative)"/></g><clipPath id="chart0.6914885953327419negative"><rect x="0" y="66.1" width="367" height="0.9000000000000057" rx="0" ry="0" stroke-width="0"/></clipPath></svg></span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:80%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg80"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    99%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="99%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">118</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="North East Way" data-mt="4" data-id="678017" data-price="40" data-balance="27K" data-facilities="842K" data-weeks="131">
+                <span class="signal-card__copy-label">Copy for 1<span class="signal-card__copy-sub">.33</span> <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/363385">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/vetallnemo';return false;"> <img src="https://c.mql5.com/avatar/2017/11/5A00C8A0-B035.jpg" title="Vitalii Nemyh" alt="Vitalii Nemyh" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-ru"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Vitalii</span><br /><span class="signal-card__author__item">Nemyh</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Firmum Fiduciam Motus</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">342%</span>
+                <span class="signal-card__growth-label">growth since 2016</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="2, 1, 4, 12, 9, 18, 23, 30, 33, 37, 38, 38, 39, 39, 39, 41, 44, 51, 54, 56, " type="hidden" />
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="367" height="70"><defs><linearGradient id="chart0.23423930581492147GradPositive" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(222,241,255,1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(239,249,255,0.1);stop-opacity:1"/></linearGradient><linearGradient id="chart0.23423930581492147GradNegative" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:rgba(253,246,244,0.1);stop-opacity:1"/><stop offset="100%" style="stop-color:rgba(255,232,224,1);stop-opacity:1"/></linearGradient></defs><g clip-path="url(#chart0.23423930581492147positive)"><path d="M0,64 Q0,64 10.2,62.3 Q0,64 10.2,62.3 Q20.4,60.6 30.6,56.1 Q40.8,51.6 51,53.3 Q61.2,55 71.4,49.9 Q81.6,44.8 91.8,42 Q101.9,39.2 112.1,35.3 Q122.3,31.3 132.5,29.6 Q142.7,27.9 152.9,25.7 Q163.1,23.4 173.3,22.9 Q183.5,22.3 193.7,22.3 Q203.9,22.3 214.1,21.8 Q224.3,21.2 234.5,21.2 Q244.7,21.2 254.9,21.2 Q265.1,21.2 275.3,20 Q285.4,18.9 295.6,17.2 Q305.8,15.5 316,11.6 Q326.2,7.6 336.4,5.9 Q346.6,4.3 356.8,3.2 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgb(10,174,239)" stroke-opacity="0.9" fill="url(#chart0.23423930581492147GradPositive)"/></g><clipPath id="chart0.23423930581492147positive"><rect x="0" y="0" width="367" height="66.1" rx="0" ry="0" stroke-width="0"/></clipPath><g clip-path="url(#chart0.23423930581492147negative)"><path d="M0,64 Q0,64 10.2,62.3 Q0,64 10.2,62.3 Q20.4,60.6 30.6,56.1 Q40.8,51.6 51,53.3 Q61.2,55 71.4,49.9 Q81.6,44.8 91.8,42 Q101.9,39.2 112.1,35.3 Q122.3,31.3 132.5,29.6 Q142.7,27.9 152.9,25.7 Q163.1,23.4 173.3,22.9 Q183.5,22.3 193.7,22.3 Q203.9,22.3 214.1,21.8 Q224.3,21.2 234.5,21.2 Q244.7,21.2 254.9,21.2 Q265.1,21.2 275.3,20 Q285.4,18.9 295.6,17.2 Q305.8,15.5 316,11.6 Q326.2,7.6 336.4,5.9 Q346.6,4.3 356.8,3.2 Q367,2 367,2 L377,2 L377,65.1 " stroke-width="2" stroke="rgba(243,67,20,1)" stroke-opacity="0.9" fill="url(#chart0.23423930581492147GradNegative)"/></g><clipPath id="chart0.23423930581492147negative"><rect x="0" y="66.1" width="367" height="0.9000000000000057" rx="0" ry="0" stroke-width="0"/></clipPath></svg></span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:100%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg100"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    99%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="99%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">9</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Firmum Fiduciam Motus" data-mt="4" data-id="363385" data-price="30" data-balance="1.4K" data-facilities="3.1K" data-weeks="243">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/395124">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/test-standart';return false;"> <img src="https://c.mql5.com/avatar/2020/10/5F9B2F87-A60A.jpg" title="Konstantin Kulikov" alt="Konstantin Kulikov" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-ru"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Konstantin</span><br /><span class="signal-card__author__item">Kulikov</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Breakthrough Strategy ICM</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">1 581%</span>
+                <span class="signal-card__growth-label">growth since 2017</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 2, 2, 2, 3, 4, 6, 5, 6, 5, 8, 10, 10, 17, 20, 28, 31, 45, 59, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:60%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg60"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    100%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="100%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">53</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Breakthrough Strategy ICM" data-mt="4" data-id="395124" data-price="30" data-balance="3.4K" data-facilities="102K" data-weeks="161">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/660268">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/sashabull';return false;"> <img src="https://c.mql5.com/avatar/2019/12/5DEDED25-38F2.jpg" title="Aliaksandr Bulatski" alt="Aliaksandr Bulatski" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-by"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Aliaksandr</span><br /><span class="signal-card__author__item">Bulatski</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">BoomBuhTruh</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">1 584%</span>
+                <span class="signal-card__growth-label">growth since 2017</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 2, 4, 5, 7, 9, 12, 15, 19, 23, 26, 28, 36, 41, 48, 51, 54, 58, 59, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:40%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg40"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    100%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="100%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">34</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="BoomBuhTruh" data-mt="4" data-id="660268" data-price="30" data-balance="3.8K" data-facilities="115K" data-weeks="158">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+<div class="signal-card">
+    <a class="signal-card__wrapper" href="/en/signals/726689">
+        <span class="signal-card__header">
+            <span class="signal-card__avatar">
+                <span onclick="document.location.href='/en/users/badoka';return false;"> <img src="https://c.mql5.com/avatar/2018/5/5AECEA7F-3A20.jpg" title="Andras Varga" alt="Andras Varga" loading="lazy" width="48" height="48" /></span>
+                <span class="ui-icon-flags ui-icon-flags_bg-hu"></span>
+                    <span title="Real Account" class="ico_state real_new"></span>
+                
+            </span>
+            <span class="signal-card__author"><span class="signal-card__author__item">Andras</span><br /><span class="signal-card__author__item">Varga</span></span>
+        </span>
+        <span class="signal-card__chart-area">
+            <span class="signal-card__title"><span class="signal-card__title-wrapper">Aztec Empire</span></span>
+            <span class="signal-card__growth">
+                <span class="signal-card__growth-value green">737%</span>
+                <span class="signal-card__growth-label">growth since 2020</span>
+                
+            </span>
+            <span class="signal-card__chart">
+                <input value="0, 1, 4, 13, 17, 21, 24, 26, 29, 34, 36, 40, 42, 34, 37, 43, 48, 54, 57, 59, " type="hidden" />
+            </span>
+        </span>
+        <span class="signal-card__indicators">
+            
+                <span class="signal-card__risk">
+                    <span class="signal-card__risk-value" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."><span style="width:100%" class="signal-card__risk-count"><span class="signal-card__risk-count__value bg100"></span></span><span class="signal-card__risk-value-res"></span><span class="signal-card__risk-bg"></span></span>
+                    Reliability
+                </span>
+            <span class="signal-card__algotrading">
+                <span class="signal-card__algotrading-value" title="Trades made by Expert Advisors">
+                    95%
+                        <canvas height="30" width="30"></canvas>
+                    <input value="95%" type="hidden" />
+                </span>
+                Algo trading
+            </span>
+            <span class="signal-card__subscribers">
+                <span class="signal-card__subscribers-wrapper" title="Subscribers">
+                    <span class="signal-card__subscribers-value">140</span>
+                </span>
+            </span>
+            <span class="signal-card__copy" data-name="Aztec Empire" data-mt="4" data-id="726689" data-price="30" data-balance="14K" data-facilities="514K" data-weeks="42">
+                <span class="signal-card__copy-label">Copy for 1 <span class="signal-card__copy-currency">USD</span> per day </span>
+                    
+            </span>
+        </span>
+    </a>
+</div>
+
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+    
+
+
+<div class="main-page__area main-page__area-vps">
+
+    <div class="main-page__vps">
+        <div class="main-page__vps-left">
+            <h2><a href="/en/vps">Forex VPS for MetaTrader 4/5</a></h2>
+            <div class="main-page__vps-description">We will offer a server with the lowest ping and the best execution</div>
+
+            <script type="text/javascript">
+                var fSearchBrokerSent = false, fMapFocusSent = false;
+            </script>
+            
+            <div class="vps-search-form main-page__vps-form">
+                <!--[if lt IE 10]><div class="name">Specify your broker's server:</div><![endif]-->
+                <form method="get" id="brokerSearchForm" action="/en/vps" autocomplete="off" autocorrect="off" spellcheck="false">
+                    <input type="text" name="server" id="brokerServerName" class="main-page__vps-form-textbox" aria-label="Specify your broker's server" placeholder="Broker server" title="Specify your broker's server" onfocus="if(!window.fSearchBrokerSent) {window.fpush('MQL5+VPS+Search+Broker'); window.fSearchBrokerSent=true;}" autocomplete="off" />
+
+                    <input type="submit" class="main-page__vps-form-submit" onclick="window.fpush('MQL5+VPS+Register+Button');" id="vps-button-rent" value="15 USD per month" title="Search" />
+                </form>
+
+                <div class="message" id="brokerSearchMessage"></div>
+            <div class="select-edit-list" style="width: 400px;"><table></table></div></div>
+        </div>
+
+
+        <div class="main-page__vps-right">
+            <img src="https://c.mql5.com/i/virtualhosting/map.png" width="555" height="234" alt="Forex VPS for MetaTrader 4/5" loading="lazy" />
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="main-page__area main-page__area-freelance">
+    <div class="main-page__intro">
+        
+            <h2><a href="/en/job">Jobs for Freelancers</a></h2>
+        <p>Order a custom technical indicator, a trading robot or any other app for the MetaTrader platforms from trusted developers.</p>
+<p>Professional programmers deal with <a href="https://www.mql5.com/en/job" target="_blank">hundreds of orders</a> in the MQL5 Freelance section with guaranteed payment and instant withdrawal of earnings through convenient payment systems.</p> 
+
+    </div>
+
+
+    <div class="main-page__area-sections main-page__area-sections-freelance">
+        
+        <div class="main-page__area-section main-page__area-section-freelance">
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135434">I NEED A ROBOT WHICH MARKS MONTHLY, WEEKLY AND DAILY SWINGS WITH HORIZONTAL LINES AND GOES TO 15M, 30M OR 1HR TO FIND DOJI /HAMMER REJECTION</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30 - 35 <span>USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Hi guys, This is a simple robot which should use horizontal lines to mark monthly swings (green colour), weekly swings (blue colour) and daily swings (red colour) available at the number of pips set above and below the previous weekly close and to go to 15m or 30m or 1hr to find doji /hammer rejections on any of these lines at CCI overbought or CCI oversold zone. Once it finds such a rejection and after the close of
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>1</strong> Application
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: . Feedbacks: 0"><div class="v0"></div></div></div>
+        
+        <span class="job-item__lang mql4"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Experts</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 11:24">2020.12.03</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135429">It must manage all my trade</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30+ <span> USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Do as well because I want to do the best on my trades and must manage my trades well and always let me know when the is any changes and always collect my profit
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>3</strong> Applications
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: . Feedbacks: 0"><div class="v0"></div></div></div>
+        
+        <span class="job-item__lang mql5"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Experts</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 09:41">1 hour ago</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135427">Thinkscript to MT4 Job - 20201203</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30+ <span> USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Hi, I'd like to take a custom thinkscript and put it into my MT4 platform for real-time notifications to be sent to my mobile device. I'm looking to enter higher timeframe trends on a lower timeframe pullback to 18EMA or 50EMA (i.e. M15 pulls back to 18EMA during an H1 uptrend). I've included a pdf with the limited coding I have completed so far but I'm stuck now on more complex requirements. OBJECTIVE: To have a
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>0</strong> Applications
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: 5. Feedbacks: 6"><div class="v50"></div></div><span class="job-item__rating-count">(6)</span></div>
+        
+        <span class="job-item__lang mql4"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Converting</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 09:13">2 hours ago</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+        </div>
+        
+        <div class="main-page__area-section main-page__area-section-freelance">
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135426">I want to convert an indicator on tradingview-com into ea</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30 - 50 <span>USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          I want to convert an indicator on tradingview.com (trend magic) into a trading ea on MT5/MT4. Anyone who can code on these 2 trading platforms should contact me. If interested i will send a detailed description for you reference. Tks
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>2</strong> Applications
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: . Feedbacks: 0"><div class="v0"></div></div></div>
+        
+        <span class="job-item__lang mql5"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Experts</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 08:07">3 hours ago</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135422">In need of urgent trading</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">70+ <span> USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          I have 70 dollars that I want to double to 400$ in the next few days.I am in need of money please assist.I am new to the trading market. Please assist
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>2</strong> Applications
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: . Feedbacks: 0"><div class="v0"></div></div></div>
+        
+        <span class="job-item__lang mql5"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Experts</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 07:25">4 hours ago</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+                <div class="main-page__freelance-item">
+                    
+<div class="job-item">
+  
+  <div class="job-item__title">
+    <a href="/en/job/135417">M and W indicator plus tdi</a>
+  </div>
+  
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">100+ <span> USD</span></span>
+        
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Please only apply for this job if experienced to create such a indicator or dashboard. I am looking to create an indicator that gives alert on M and W patterns.. Programmer must be experienced and can show proof of doing similar work. The W pattern is for buying market low of day and M pattern for selling market high of day with Tdi rsi line cross the signal line and market base line. 13 Ema confirms 1st and second
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+        
+        <div class="job-item__count">
+          <strong>3</strong> Applications
+        </div>
+        
+      </div>
+
+      <div class="job-item__right-part">
+        <div class="job-item__rating-block"><div class="rating" title="Rating from developers: 4.67. Feedbacks: 3"><div class="v45"></div></div><span class="job-item__rating-count">(3)</span></div>
+        
+        <span class="job-item__lang mql4"></span>
+        <span class="job-item__list-category">
+          
+          <span class="job-item__list-category-item">Indicators</span>
+          
+          <span class="job-item__list-category-item">Experts</span>
+          
+        </span>
+        <span class="job-item__list-skills">
+          
+          <span class="job-item__list-skills-item">Panels and dialog boxes</span>
+          
+          <span class="job-item__list-skills-item">Custom graphics</span>
+          
+          <span class="job-item__list-skills-item">C++</span>
+          
+          <span class="job-item__list-skills-item">C#</span>
+          
+          <span class="job-item__list-skills-item">Java</span>
+          
+          <span class="job-item__list-skills-item">Trading robot/indicator debugging</span>
+          
+          <span class="job-item__list-skills-item">Strategy optimization</span>
+          
+          <span class="job-item__list-skills-item">Collection of data on the internet</span>
+          
+          <span class="job-item__list-skills-item">Forex</span>
+          
+          <span class="job-item__list-skills-item">Product Design</span>
+          
+          <span class="job-item__list-skills-item">Text writing</span>
+          
+        </span>
+        
+        <span class="job-item__date" title="03/12/2020 05:45">5 hours ago</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div>
+            
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="main-page__area main-page__area-forum">
+    <div class="main-page__intro">
+        
+        <h2><a href="/en/forum">Traders Forum</a></h2>
+        <p>Ask questions on technical analysis, discuss trading systems and improve your <a href="https://www.mql5.com/en/docs" target="_blank">MQL5</a> programming skills to develop your own trading strategies. </p>
+<p>Communicate and share your experience with traders from anywhere in the world, answer questions and help beginners — MQL5.community is developing along with you.</p>
+    </div>
+
+
+    
+    <div class="main-page__area-sections main-page__area-sections-forum">
+
+        <ul class="main-page__forum-items main-page__forum-items_column-1">
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357104">I have deposit and do not show in netatrader 5</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357106">Ordersend error 131 at US30 pair</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/175037">Elite indicators :)</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357105">Missing data on BTC/EUR and BTC/USD Metaquotes demo server</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356957">Order routing - EUREX</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357101">Connectivity Problem</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356572">lot size variations</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356690">I need an auto move take profit EA</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/10773">Frequently Asked Questions about the Signals service</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/350131">Differentiation of chart events</a></li>
+            
+        </ul><ul class="main-page__forum-items main-page__forum-items_column-2">
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356508">New MetaTrader 5 platform build 2715: General improvements</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357008">Connecting to signal server</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356829">MT4 No Object draw On Chart but i get Object Exist Error</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357098">Calculating High/Low price for specific time, from one point to another</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356965">Bug: Class CChartObjectTrendByAngle does not save/load OBJPROP_ANGLE</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/356745">how to trade U.S. equity and options?</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357100">MT5 Tester issue with the Trade setting option help</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357077">Add/Remove a function from input</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/357099">MT5 Datafeed</a></li>
+            
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/334952">Your application has been rejected</a></li>
+            
+        </ul>
+
+    </div>
+    
+</div>
+
+
+<div class="main-page__area main-page__area-articles">
+    <div class="main-page__intro">
+        
+        <h2><a href="/en/articles">Financial Trading Articles</a></h2>
+        <p>Learn how to create your own technical indicators and trading robots from the huge database of articles written by expert traders.</p>
+<p>Share your trading and programming experience with those who are new to algorithmic trading, <a href="https://www.mql5.com/en/forum/384" target="_blank">write</a> an article about it and earn $200. In addition, we will translate your article to six languages.</p>
+    </div>
+    
+
+    
+    <div class="main-page__area-sections main-page__area-sections-articles">
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/41/yandex_catboost_2.png" class="main-page__articles-item-image" alt="CatBoost machine learning algorithm from Yandex with no Python or R knowledge required" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8657">CatBoost machine learning algorithm from Yandex with no Python or R knowledge required</a></h3>
+            <div class="main-page__articles-item-description">The article provides the code and the description of the main stages of the machine learning process using a specific example. To obtain the model, you do not need Python or R knowledge. Furthermore, basic MQL5 knowledge is enough — this is exactly my level. Therefore, I hope that the article will serve as a good tutorial for a broad audience, assisting those interested in evaluating machine learning capabilities and in implementing them in their programs.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/40/MQL5-avatar-doeasy-library__2.png" class="main-page__articles-item-image" alt="Timeseries in DoEasy library (part 50): Multi-period multi-symbol standard indicators with a shift" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8331">Timeseries in DoEasy library (part 50): Multi-period multi-symbol standard indicators with a shift</a></h3>
+            <div class="main-page__articles-item-description">In the article, let’s improve library methods for correct display of multi-symbol multi-period standard indicators, which lines are displayed on the current symbol chart with a shift set in the settings. As well, let’s put things in order in methods of work with standard indicators and remove the redundant code to the library area in the final indicator program.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/40/user_symbols.png" class="main-page__articles-item-image" alt="Custom symbols: Practical basics" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8226">Custom symbols: Practical basics</a></h3>
+            <div class="main-page__articles-item-description">The article is devoted to the programmatic generation of custom symbols which are used to demonstrate some popular methods for displaying quotes. It describes a suggested variant of minimally invasive adaptation of Expert Advisors for trading a real symbol from a derived custom symbol chart. MQL source codes are attached to this article.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/40/neural_network_MQL5.png" class="main-page__articles-item-image" alt="Neural networks made easy (Part 2): Network training and testing" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8119">Neural networks made easy (Part 2): Network training and testing</a></h3>
+            <div class="main-page__articles-item-description">In this second article, we will continue to study neural networks and will consider an example of using our created CNet class in Expert Advisors. We will work with two neural network models, which show similar results both in terms of training time and prediction accuracy.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/39/unnamed.png" class="main-page__articles-item-image" alt="What is a trend and is the market structure based on trend or flat?" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8184">What is a trend and is the market structure based on trend or flat?</a></h3>
+            <div class="main-page__articles-item-description">Traders often talk about trends and flats but very few of them really understand what a trend/flat really is and even fewer are able to clearly explain these concepts. Discussing these basic terms is often beset by a solid set of prejudices and misconceptions. However, if we want to make profit, we need to understand the mathematical and logical meaning of these concepts. In this article, I will take a closer look at the essence of trend and flat, as well as try to define whether the market structure is based on trend, flat or something else. I will also consider the most optimal strategies for making profit on trend and flat markets.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/41/websockets.png" class="main-page__articles-item-image" alt="Websockets for MetaTrader 5" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8196">Websockets for MetaTrader 5</a></h3>
+            <div class="main-page__articles-item-description">Before the introduction of the network functionality provided with the updated MQL5 API, MetaTrader programs have been limited in their ability to connect and interface with websocket based services. But of course this has all changed, in this article we will explore the implementation of a websocket library in pure MQL5. A brief description of the websocket protocol will be given along with a step by step guide on how to use the resulting library.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/39/4qc92l.png" class="main-page__articles-item-image" alt="Price series discretization, random component and noise" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8136">Price series discretization, random component and noise</a></h3>
+            <div class="main-page__articles-item-description">We usually analyze the market using candlesticks or bars that slice the price series into regular intervals. Doesn't such discretization method distort the real structure of market movements? Discretization of an audio signal at regular intervals is an acceptable solution because an audio signal is a function that changes over time. The signal itself is an amplitude which depends on time. This signal property is fundamental.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/40/MQL5-avatar-doeasy-library__1.png" class="main-page__articles-item-image" alt="Timeseries in DoEasy library (part 49): Multi-period multi-symbol multi-buffer standard indicators" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8292">Timeseries in DoEasy library (part 49): Multi-period multi-symbol multi-buffer standard indicators</a></h3>
+            <div class="main-page__articles-item-description">In the current article, I will improve the library classes to implement the ability to develop multi-symbol multi-period standard indicators requiring several indicator buffers to display their data.</div>
+        </div>
+        
+        <div class="main-page__articles-item">
+            <img src="https://c.mql5.com/2/41/yandex_catboost.png" class="main-page__articles-item-image" alt="Gradient Boosting (CatBoost) in the development of trading systems. A naive approach" loading="lazy" width="60" height="60" />
+            <h3 class="main-page__articles-item-title"><a href="/en/articles/8642">Gradient Boosting (CatBoost) in the development of trading systems. A naive approach</a></h3>
+            <div class="main-page__articles-item-description">Training the CatBoost classifier in Python and exporting the model to mql5, as well as parsing the model parameters and a custom strategy tester. The Python language and the MetaTrader 5 library are used for preparing the data and for training the model.</div>
+        </div>
+        
+    </div>
+    
+</div>
+
+    </div>
+
+    
+
+    
+
+    </div>
+
+    <div class="footer desktop" id="footer">
+        <ul class="links links_desktop">
+            <li id="navFooterCommunity">
+                <b>MQL5.community</b>
+                <ul>
+                    <li><a href="/en/trading">Online trading / WebTerminal</a></li>
+                    <li><a href="/en/code">Free technical indicators and robots</a></li>
+                    <li><a href="/en/articles">Articles about programming and trading</a></li>
+                    <li><a href="/en/job">Order trading robots on the Freelance</a></li>
+                    <li><a href="/en/market">Market of Expert Advisors and applications	</a></li>
+                    <li><a href="/en/signals">Follow forex signals</a></li>
+                    <li><a href="/en/vps">Low latency forex VPS</a></li>
+                    <li><a href="/en/forum">Traders forum</a></li>
+                    <li><a href="/en/blogs">Trading blogs</a></li>
+                    <li><a href="/en/charts">Charts</a></li>
+                </ul>
+            </li><!--
+
+         --><li id="navFooterMt5">
+                <b>MetaTrader 5</b>
+                <ul>
+                    <li><a href="https://www.metatrader5.com"><span class="nobr">MetaTrader 5</span> Trading Platform</a></li>
+                    <li><a href="https://www.metatrader5.com/en/releasenotes"><span class="nobr">MetaTrader 5</span> latest updates</a></li>
+                    <li><a href="https://www.metatrader5.com/en/news">News, implementations and technology</a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help"><span class="nobr">MetaTrader 5</span> User Manual</a></li>
+                    <li><a href="/en/docs">MQL5 language of trading strategies</a></li>
+                    <li><a href="https://cloud.mql5.com">MQL5 Cloud Network</a></li>
+                    <li><a href="https://www.finteza.com/?utm_source=www.mql5.com&amp;utm_medium=cpc&amp;utm_term=cross-link&amp;utm_content=visit.finteza.com&amp;utm_campaign=0791.finteza.cross-link" target="_blank">End-to-End Analytics</a></li>
+                    <li><a href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download" data-fz-event="MetaTrader+5+Desktop+Download">Download <span class="nobr">MetaTrader 5</span></a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help/start_advanced/installation">Install Platform</a></li>
+                    <li><a href="https://www.metatrader5.com/en/terminal/help/start_advanced/deinstallation">Uninstall Platform</a></li>
+                </ul>
+             
+                
+            </li><!--
+
+         --><li id="navFooterWebsite">
+             
+                
+                <b>Website</b>
+                <ul>
+                    <li><a href="/en/about">About</a></li><li><a href="/en/wall">Timeline</a></li><li><a href="/en/about/terms">Terms and Conditions</a></li>
+                    <li><a href="/en/about/autopayments">Recurring Payment Agreement</a></li>
+                    <li><a href="/en/about/privacy">Privacy and Data Protection Policy</a></li>
+                    <li><a href="/en/about/cookies">Cookies Policy</a></li>
+                    <li><a href="/en/contact">Contacts and requests</a></li>
+                </ul>
+                
+                
+            </li><!--
+
+         --><li id="navFooterDownload">
+                <b>Join us — download <span class="nobr">MetaTrader 5!</span></b>
+                <ul>
+                    <li class="icon windows"><a href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download" data-fz-event="MetaTrader+5+Desktop+Download" title="Download MetaTrader 5 for Windows Free!">Windows</a></li><li class="icon ios"><a href="https://download.mql5.com/cdn/mobile/mt5/ios?hl=en&amp;utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes" data-fz-event="MetaTrader+5+iOS+Download" target="_blank" rel="nofollow noopener" title="Download MetaTrader 5 for iPhone Free!">iPhone/iPad</a></li><li class="icon macos"><a href="/en/articles/619" target="_blank" title="How to install MetaTrader 5 on Mac OS" data-fz-event="MetaTrader+5+Desktop+Download">Mac OS</a></li><li class="icon android"><a href="https://download.mql5.com/cdn/mobile/mt5/android?hl=en&amp;utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes" data-fz-event="MetaTrader+5+Android+Download" target="_blank" rel="nofollow noopener" title="Download MetaTrader 5 Android from Google Play Free!"><span>Android</span></a></li><li class="icon linux"><a href="/en/articles/625" data-fz-event="MetaTrader+5+Desktop+Download" target="_blank" title="MetaTrader 5 on Linux"><span>Linux</span></a></li>
+                    <li class="icon tradays"><a href="https://www.tradays.com/en/download?utm_source=www.mql5.com&amp;utm_campaign=download" target="_blank" title="Tradays Economic Calendar"><span>Tradays Economic Calendar</span></a></li>
+                </ul>
+              <div class="footer__other">
+                  <div class="footer__not-a-broker">Not a broker, no real trading accounts</div>
+                  <div class="copyright">13 Anastasi Sioukri, 3105, Limassol, Cyprus</div>
+                  <div class="copyright">Copyright 2000-2020, <span class="nobr">MetaQuotes Ltd.</span></div>
+              </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+    <div class="shadow-layer" id="layer"></div>
+
+    
+    
+    
+            
+        
+    
+</div>
+
+
+
+<script type="text/javascript">
+    (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&amp;&amp;d.parentNode&amp;&amp;d.parentNode.insertBefore(c,d))})
+          (window,document,"script","/fz/core.js","fz");
+        window.fz("register", "website", {
+            id: "sqjxkxkswybhifrohpyooonwgbvsfzmayq",
+            trackLinks: true
+        });mqGlobal.AddOnLoad(function(){window.keywordMainFormSuggests = new Suggestions("keyword","https://search.mql5.com/api/suggest","en",function(){$('main_search_form').onsubmit();});});window.fz("show","bfogggabsofabcpxuzmgaibarmaxasdrj");mqGlobal.AddOnReady(function () {
+            renderSignalAlgoTrading("signal-card__algotrading-value");
+            renderSignalChartSvg("signal-card__chart");
+            });var vpsBrokersListMoreAvailable = 'Refine your search. There are too many choices.';
+    var vpsUserLanguage = 'en';
+    var vpsNotFound = 'Not found';
+    var vpsDialogCaption = 'Forex VPS for MetaTrader 4/5';
+    var vpsIsMobile = false;
+        
+    mqGlobal.AddOnReady(function () {
+        VirtualHosting.InitAutocomplete(vpsUserLanguage, true);
+    });mqGlobal.AddOnReady(function ()
+                    {
+                    new FloatVerticalPanel('This website uses cookies. Learn more about our &lt;a href="/en/about/cookies"&gt;Cookies Policy&lt;/a&gt;.','cookie_accept');
+                    });
+    mqGlobal.AddOnLoad(function () {
+        Mql5Cookie.init('mql5.com', '5FC8D247-91A3',null);
+    });
+    
+    if(typeof Attach !== "undefined")
+        Attach.setAcceptFilter(".zip,.txt,.log,.mqh,.ex5,.mq5,.mq4,.ex4,.mt5,.set,.tpl,.cl,.py,.sqlite,.csv,.ipynb,.gif,.png,.jpg,.jpeg");
+    
+</script>
+
+
+  <div class="b-fixed-mt" id="bFixedMt" style="display: none;">
+      <div id="jjyeyqenuvuvgqlpjjrqigjthhcgagwglu" class="bfb ff"><script type="text/javascript">window.fz("show","jjyeyqenuvuvgqlpjjrqigjthhcgagwglu");</script></div>
+  </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://www.mql5.com",
+  "logo": "https://c.mql5.com/i/community/logo_mql5.png",
+  "sameAs": [
+    "https://www.facebook.com/mql5.community",
+    "https://www.twitter.com/mql5com",
+    "https://www.youtube.com/user/MetaQuotesOfficial"
+   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MQL5.Community",
+  "url": "https://www.mql5.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.mql5.com/en/search?keyword={keyword}",
+    "query-input": "required name=keyword"
+  }
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"SiteNavigationElement","position":1,"name":"Forum","description":"Discussions of trading strategies and algorithmic trading. MQL5.community  the largest forex forum","url":"https://www.mql5.com/en/forum"},{"@type":"SiteNavigationElement","position":2,"name":"Market","description":"MetaTrader Market - a Market of trading robots, indicators, trading books and magazines","url":"https://www.mql5.com/en/market"},{"@type":"SiteNavigationElement","position":3,"name":"Signals","description":"Social trading, copy trading and account monitoring with MetaTrader - Trading Signals on MQL5.com","url":"https://www.mql5.com/en/signals"},{"@type":"SiteNavigationElement","position":4,"name":"Freelance","description":"Order trading robots, technical indicators and algorithmic trading applications. Forex jobs. Freelance on MQL5.com","url":"https://www.mql5.com/en/job"},{"@type":"SiteNavigationElement","position":5,"name":"Quotes","description":"","url":"https://www.mql5.com/en/quotes/currencies"},{"@type":"SiteNavigationElement","position":6,"name":"WebTerminal","description":"WebTerminal for the MetaTrader trading platform. Online forex trading.","url":"https://www.mql5.com/en/trading"},{"@type":"SiteNavigationElement","position":7,"name":"Calendar","description":"","url":"https://www.mql5.com/en/economic-calendar"},{"@type":"SiteNavigationElement","position":8,"name":"VPS","description":"","url":"https://www.mql5.com/en/vps"},{"@type":"SiteNavigationElement","position":9,"name":"Articles","description":"","url":"https://www.mql5.com/en/articles"},{"@type":"SiteNavigationElement","position":10,"name":"CodeBase","description":"Download trading robots, technical indicators and scripts with source code - MQL5 Code Base for MetaTrader 5","url":"https://www.mql5.com/en/code"},{"@type":"SiteNavigationElement","position":11,"name":"Documentation","description":"MetaQuotes Language 5 (MQL5) Reference - Documentation on MQL5.com","url":"https://www.mql5.com/en/docs"}]}
+</script>
+
+
+
+<!-- Generated in 3.8617 ms --><div class="float-vertical-panel" id="floatVerticalPanel">This website uses cookies. Learn more about our <a href="/en/about/cookies">Cookies Policy</a>.<span class="float-vertical-panel__cross"></span></div></body></html>

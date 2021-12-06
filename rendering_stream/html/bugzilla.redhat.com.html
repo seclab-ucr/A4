@@ -1,0 +1,437 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+      <meta charset="UTF-8" />
+
+      <meta name="referrer" content="origin" />
+<script type="text/javascript" src="page.cgi?1606985914&amp;id=bayotbase/fielddefs.js"></script>
+
+
+
+
+<script type="text/javascript">var BB_CONFIG = ({"defaults":{"priority":"Unspecified","bugentry_fields":["summary","product","component","rh_sub_components","severity","priority","comment"],"platform":"Unspecified","severity":"Unspecified","op_sys":"Unspecified"},"user":{"enterable_products":[],"groups":[],"logged_in":false}});</script><script type="text/javascript">
+var classifications = '[ { "name": "Red Hat", "description": "Red Hat Products"},{ "name": "Workflows", "description": "User driven workflows"},{ "name": "JBoss", "description": "JBoss Products"},{ "name": "CentOS", "description": "CentOS Projects"},{ "name": "Fedora", "description": "Fedora Products"},{ "name": "Community", "description": "Community Projects"},{ "name": "oVirt", "description": "oVirt Virtualization Management Projects"},{ "name": "Internal", "description": "Internal Projects."},{ "name": "Other", "description": "Other Miscellaneous Products"},{ "name": "Unclassified", "description": "Not assigned to any classification"},{ "name": "Retired", "description": "Products that have reached end of life, or were never released."} ]';
+var c_optgroups = JSON.parse(classifications);
+</script>
+    <title>Red Hat Bugzilla Main Page</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="data/assets/9f9a396efbf51b2187262e4c74a895aa.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+<script type="text/javascript" src="data/assets/2679efbddcbfb8a952a0e5198502dd0a.js"></script>
+
+    <script type="text/javascript">
+    &lt;!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) &amp;&amp; sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") &amp;&amp; !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 8,
+                maxattachmentsize: 20000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    "You must enter a Description for this attachment.",
+                component_required:
+                    "You must select a Component for this bug.",
+                description_required:
+                    "You must enter a Description for this bug.",
+                short_desc_required:
+                    "You must enter a Summary for this bug.",
+                version_required:
+                    "You must select a Version for this bug.",
+                group_required:
+                    "You must select at least one group for bugs in this product."
+            }
+        };
+
+    // --&gt;
+    </script>
+<script type="text/javascript" src="data/assets/4b5beddc4159196d38a6d6671916ed09.js"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml" title="Red Hat Bugzilla" href="./search_plugin.cgi" />
+    <link rel="shortcut icon" href="extensions/RedHat/web/css/favicons/production.ico?v=0" />
+  </head>
+
+  <body class="bugzilla-redhat-com yui-skin-sam">
+
+  <div id="header"><div id="banner">
+   <ul id="loginin_launcher"><a href="#" onclick="$('#loginin_launcher').addClass('bz_default_hidden');$('#login_container').removeClass('bz_default_hidden');"><i class="fa fa-user" aria-hidden="true"></i>  Login</a></ul>
+   <ul id="login_container" class="bz_default_hidden">
+    <a href="#" id="hide_mini_login" onclick="$('#login_container').addClass('bz_default_hidden');$('#loginin_launcher').removeClass('bz_default_hidden');">[x]</a>
+     
+    <li id="mini_login_container"><div id="saml2_container">
+    Log in using an account from:
+  <div id="saml2auth_login_Fedora Account System">
+    <a href="saml2_login.cgi?idp=Fedora Account System&amp;target=index.cgi"><i class="fa fa-cogs" aria-hidden="true"></i>  Fedora Account System</a>
+  </div>
+  <div id="saml2auth_login_Red Hat Associate">
+    <a href="saml2_login.cgi?idp=Red Hat Associate&amp;target=index.cgi"><i class="fa fa-user-secret" aria-hidden="true"></i>  Red Hat Associate</a>
+  </div>
+  <div id="saml2auth_login_Red Hat Customer">
+    <a href="saml2_login.cgi?idp=Red Hat Customer&amp;target=index.cgi"><i class="fa fa-user" aria-hidden="true"></i>  Red Hat Customer</a>
+  </div>
+  Or login using a Red Hat Bugzilla account
+  <div>
+
+  <form action="index.cgi" method="POST" class="mini_login " id="mini_login">
+    <input id="Bugzilla_login" required="" name="Bugzilla_login" class="bz_login" type="email" placeholder="Email Address" />
+    <input class="bz_password" name="Bugzilla_password" type="password" id="Bugzilla_password" required="" placeholder="Password" />
+    <input type="hidden" name="Bugzilla_login_token" value="" />
+    <input type="submit" name="GoAheadAndLogIn" value="Log in" id="log_in" />
+  </form>
+</div></div></li>
+<li id="forgot_container">
+  <a id="forgot_link" href="#forgot" onclick="return show_forgot_form('')"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  Forgot Password</a>
+  <form action="token.cgi" method="post" id="forgot_form" class="mini_forgot bz_default_hidden">
+    <label for="login">Login:</label>
+    <input name="loginname" size="20" id="login" required="" type="email" placeholder="Your Email Address" />
+    <input id="forgot_button" value="Reset Password" type="submit" />
+    <input type="hidden" name="a" value="reqpw" />
+    <input type="hidden" id="token" name="token" value="1606992895-S3ehhVS75ynquCDZa-C83Odq5PogNxLxn4Te2LYYeeI" />
+    <p>
+    <a href="#" onclick="return hide_forgot_form('')"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  Hide Forgot</a>
+  </p></form>
+</li>
+    
+   </ul>
+  </div>
+
+    <div id="titles">
+      <span id="title">Red Hat Bugzilla – Main Page</span>
+
+
+        <span id="information" class="header_addl_info">version 5.0.4.rh50</span>
+    </div>
+
+
+    <div id="common_links"><ul class="links">
+  <li class="form">
+    
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')&#10;                  { alert('Please enter one or more search terms first.');&#10;                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="1" />
+    <script type="text/javascript">
+      if (history &amp;&amp; history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" title="Quick Search" value="" />
+    <input class="btn" type="submit" value="Search" id="find_top" /></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+  <li><a href="./" title="Home"><i class="fas fa-home"></i></a></li>
+  <li><a href="enter_bug.cgi">New</a></li>
+  <li class="submenu">
+    <a href="#" title="Search"><i class="fas fa-search"></i> <span class="fa fa-caret-down"></span></a>
+    <div>
+      <ul>
+        <li><a href="query.cgi?format=specific">Simple Search</a></li>
+        <li><a href="query.cgi?format=advanced">Advanced Search</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="submenu">
+   <a href="#">My Links <span class="fa fa-caret-down"></span></a>
+   <div>
+    <ul>
+      <li><a href="describecomponents.cgi">Browse</a></li>
+      <li>
+            <a href="request.cgi">Requests</a></li>
+      <li class="submenu">
+        <a href="report.cgi">Reports <span class="fa fa-caret-right"></span></a>
+        <div>
+          <ul>
+            <li class="submenu">
+              <a href="#">Current State <span class="fa fa-caret-right"></span></a>
+              <div>
+                <ul>
+                  <li id="report_search">
+                    <a href="query.cgi">Search</a>
+                  </li>
+                  <li id="report_tabular">
+                      <a href="query.cgi?format=report-table">Tabular reports</a>
+                  </li>
+                    <li id="report_graphical">
+                        <a href="query.cgi?format=report-graph">Graphical reports</a>
+                    </li>
+                  <li id="report_duplicates">
+                    <a href="duplicates.cgi">Duplicates</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="submenu">
+              <a href="#">Other Reports <span class="fa fa-caret-right"></span></a>
+              <div>
+                <ul>
+                  <li>
+                      <a href="https://bugzilla.redhat.com/page.cgi?id=user_activity.html">User Changes</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="submenu">
+              <a href="#">Plotly Reports <span class="fa fa-caret-right"></span></a>
+              <div>
+                <ul>
+                  <li>
+                      <a href="https://bugzilla.redhat.com/page.cgi?id=bug_status.html">Bug Status</a>
+                  </li>
+                  <li>
+                      <a href="https://bugzilla.redhat.com/page.cgi?id=bug_severity.html">Bug Severity</a>
+                  </li>
+                  <li>
+                      <a href="https://bugzilla.redhat.com/page.cgi?id=non_defaults.html">Non-Defaults</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li><li><span class="separator"> | </span><a href="page.cgi?id=productdashboard.html">Product Dashboard</a></li>
+    </ul>
+   </div>
+  </li>
+
+  <li class="submenu">
+   <a href="#">Help <span class="fa fa-caret-down"></span></a>
+   <div>
+    <ul>
+      <li><a href="page.cgi?id=bug-writing.html">Bug Writing Guidelines</a></li> 
+      <li><a href="page.cgi?id=whats-new.html">What's new</a></li>
+      <li><a href="https://access.redhat.com/help/browsers">Browser Support Policy</a></li>
+      <li><a href="page.cgi?id=release-notes.html">5.0.4.rh50 Release notes</a></li>
+      <li><a href="page.cgi?id=faq.html">FAQ</a></li>
+      <li><a href="docs/en/html/index.html">Guides index</a></li>
+      <li><a href="docs/en/html/using/index.html">User guide</a></li>
+      <li><a href="docs/en/html/integrating/api/Bugzilla/WebService/Bug.html">Web Services</a></li>
+      <li><a href="page.cgi?id=redhat/contact.html">Contact</a></li> 
+      <li><a href="page.cgi?id=terms-conditions.html">Legal</a></li> 
+    </ul>
+   </div>
+  </li>
+
+
+
+</ul>
+    </div>
+  </div>
+
+
+  <div id="bugzilla-body">
+
+
+
+<noscript>
+      &lt;div id="no-js-message"&gt;This site requires JavaScript to be enabled to function correctly, please enable it.&lt;/div&gt;
+</noscript>
+
+
+<div id="page-index">
+  <h1 id="welcome"> Welcome to Red Hat Bugzilla</h1>
+  <div class="intro"><div id="index-content">
+    <p>
+    Thank you for visiting Red Hat Bugzilla.  Red Hat Bugzilla is the Red Hat bug-tracking
+    system and is used to submit and review defects that have been found in Red
+    Hat distributions.  Red Hat Bugzilla is not an avenue for
+    technical assistance or support, but simply a bug tracking system.  If you submit a
+    defect, please provide detailed information in your submission after you
+    have queried Red Hat Bugzilla to ensure the defect has not been reported yet.
+    Defects will go directly to the engineer responsible for the component you
+    filed the defect against. Engineers have many responsibilities and will get to
+    your defect in due time.
+    </p>
+
+    <p>
+    If you are a Red Hat customer with an active subscription, please
+    visit the <a href="http://access.redhat.com"> Red Hat Customer Portal </a> 
+    for assistance with your issue.
+    </p>
+
+    <p>
+    If you are a Fedora Project user and require assistance, please consider using one
+    of the <a href="http://fedoraproject.org/wiki/Communicate">mailing lists</a> we host for the Fedora Project.
+    </p>
+  </div>
+</div></div>
+
+  <div class="bz_common_actions">
+    <ul>
+      <li>
+        <a id="enter_bug" href="enter_bug.cgi"><span>File a Bug</span></a>
+      </li>
+      <li>
+        <a id="query" href="query.cgi"><span>Search</span></a>
+      </li>
+      <li>
+        <a id="account" href="createaccount.cgi"><span>Open a New Account</span></a>
+      </li>
+      <li>
+        <a id="help" href="docs/en/html/using/index.html"><span>Documentation</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <form id="quicksearchForm" name="quicksearchForm" action="buglist.cgi">
+      <input id="quicksearch_main" name="quicksearch" title="Quick Search" placeholder="Enter a bug # or some search terms" autofocus="" required="" />
+      <input id="find" type="submit" value="Quick Search" />
+      <a href="page.cgi?id=quicksearch.html" title="Quick Search help">[?]</a>
+    </form>
+
+    <ul class="additional_links">
+    </ul>
+  </div>
+
+  <div id="common_queries">
+    <h4>Common Queries:</h4>
+    <ul>
+
+      <li>Bugs reported in the
+        <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=24h">last 24 hours</a>
+        <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=24h&amp;ctype=atom&amp;title=Bugs%20reported%20in%20the%20last%2024%20hours" class="rss"> </a>
+        | <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=7d">last 7 days</a>
+        <a href="buglist.cgi?chfield=%5BBug%20creation%5D&amp;chfieldfrom=7d&amp;ctype=atom&amp;title=Bugs%20reported%20in%20the%20last%207%20days" class="rss"> </a>
+      </li>
+      <li>Bugs changed in the
+        <a href="buglist.cgi?chfieldfrom=24h">last 24 hours</a>
+        <a href="buglist.cgi?chfieldfrom=24h&amp;ctype=atom&amp;title=Bugs%20changed%20in%20the%20last%2024%20hours" class="rss"> </a>
+        | <a href="buglist.cgi?chfieldfrom=7d">last 7 days</a>
+        <a href="buglist.cgi?chfieldfrom=7d&amp;ctype=atom&amp;title=Bugs%20changed%20in%20the%20last%207%20days" class="rss"> </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="outro"></div>
+</div>
+
+
+    <div id="footer">
+      <div class="intro"></div>
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li class="form">
+    
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')&#10;                  { alert('Please enter one or more search terms first.');&#10;                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="1" />
+    <script type="text/javascript">
+      if (history &amp;&amp; history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" title="Quick Search" value="" />
+    <input class="btn" type="submit" value="Search" id="find_bottom" /></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+</ul>
+  </li>
+
+  
+
+
+
+
+  
+</ul>
+
+      <div class="outro"></div>
+    </div>
+<script type="text/javascript">
+function dt_submit() {
+  var tables = $.fn.dataTable.tables( { visible: true, api: true } );
+  $.each(tables.context, function() {
+    var $myform = this.nTable.closest('form');
+
+    // Checked checkboxes
+    $.each(this.oInstance.$('input:checked'), function() {
+      add_hidden(this.name, this.value, $myform)
+    });
+
+    // Inputs in selected rows
+    $.each(this.oInstance.$('tr.selected'), function() {
+      $(this).find('input').each( function() {
+        add_hidden(this.name, this.value, $myform)
+      });
+    });
+
+    // select boxes
+    $.each(this.oInstance.$('select'), function() {
+      if(($(this).val()!=="") &amp;&amp; ($(this).val() !== 0)) {
+        add_hidden(this.name, this.value, $myform);
+      }
+    });
+  });
+}
+
+function add_hidden(nm, val, $frm) {
+        $('&lt;input /&gt;').attr('type', 'hidden')
+          .attr('name', nm)
+          .attr('value', val)
+          .appendTo($frm);
+}
+
+$(document).ready(function() {
+    $('form').submit(function( event ) {
+        dt_submit();
+    });
+
+});
+
+</script><script type="text/javascript">
+$(document).ready(function() {
+    $('select').not('.custom_search_condition select, #member_template select, #available_columns, #p2_component, #select_user_verify_class, #inclusion_to_remove, #exclusion_to_remove, #cc, #hide, #ack_col_edit #show, .noselectize, #j_top').each(function() {
+        if(! $(this).hasClass('selectized')) {
+            $(this).selectize({
+                plugins: ['remove_button', 'minimum_search_length', 'extra_keys_control', 'related_fields', 'load_from_js'],
+                selectOnTab: true,
+                maxOptions: 'nolimit',
+                minimum_search_length: 2,
+                render: {
+                    option: function(item, escape) {
+                        var classes = "option";
+                        var selected = this.items.indexOf(item.value) !== -1;
+                        if(item.disabled) {
+                            classes = classes + " bz_default_hidden" ;
+                        }
+
+                        return '&lt;div class="' +  classes  + '" title="' + escape(item.title) + '" id="' + escape(item.id) + '" data-value="' + escape(item.value) + '"&gt;' +
+                                    '&lt;span&gt;' + escape(item.text) + '&lt;/span&gt;' +
+                                '&lt;/div&gt;';
+                    }
+                },
+            });
+        }
+    });
+});
+</script>
+  
+</body></html>

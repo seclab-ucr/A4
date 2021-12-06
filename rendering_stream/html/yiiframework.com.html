@@ -1,0 +1,942 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png" />
+        <link rel="manifest" href="/favico/manifest.json" />
+        <link rel="mask-icon" href="/favico/safari-pinned-tab.svg" color="#2b5797" />
+        <link rel="shortcut icon" href="/favico/favicon.ico" />
+        <meta name="msapplication-config" content="/favico/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <link href="https://www.yiiframework.com/rss.xml" type="application/rss+xml" rel="alternate" title="Lives News for Yii Framework" />
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <meta name="csrf-param" content="_csrf" />
+<meta name="csrf-token" content="BqNnG71Uya6ET2pgBUv1c4a0Plg3UzcR61AgXehXpo5c70p9jC645d14BiZMAo8H7uJ1HEIXViGtEUgwmgHU4g==" />
+        
+        <title>Yii PHP Framework</title>
+
+        <meta property="og:site_name" content="Yii Framework" />
+        <meta property="og:title" content="Yii Framework" />
+        <meta property="og:image" content="https://www.yiiframework.com/image/facebook_cover.png" />
+        <meta property="og:url" content="/" />
+        <meta property="og:description" content="" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="yiiframework" />
+        <meta name="twitter:title" content="Yii Framework" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="https://www.yiiframework.com/image/twitter_cover.png" />
+        <meta name="twitter:image:width" content="120" />
+        <meta name="twitter:image:height" content="120" />
+
+        <link type="application/opensearchdescription+xml" href="/opensearch.xml" title="Yii Search" rel="search" />
+<link href="/assets/a7068376/css/all.min.css?v=1606987000" rel="stylesheet" />
+<script>yiiBaseUrl = ""</script>    </head>
+    <body data-spy="scroll" data-target="#scrollnav" data-offset="1">
+        
+        <div id="page-wrapper" class="">
+
+            <header class="navbar navbar-inverse navbar-static" id="top">
+    <div class="container">
+        <div id="main-nav-head" class="navbar-header">
+            <a href="/" class="navbar-brand">
+                <img src="/image/logo.svg" alt="Yii PHP Framework" width="165" height="35" />
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" aria-label="Toggle navigation" data-target=".navbar-collapse"><i class="fa fa-inverse fa-bars"></i></button>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-right">
+            <ul id="main-nav" class="nav navbar-nav navbar-main-menu"><li title="The Definitive Guide to Yii"><a href="/doc/guide">Guide</a></li>
+<li title="API Documentation"><a href="/doc/api">API</a></li>
+<li title="Community Wiki"><a href="/wiki">Wiki</a></li>
+<li title="Community Forum"><a href="/forum">Forum</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Community <span class="caret"></span></a><ul id="w0" class="dropdown-menu"><li><a href="/chat" tabindex="-1">Live Chat</a></li>
+<li title="Extensions"><a href="/extensions" tabindex="-1">Extensions</a></li>
+<li><a href="/community" tabindex="-1">Resources</a></li>
+<li title="Community Members"><a href="/user" tabindex="-1">Members</a></li>
+<li title="Community Hall of Fame"><a href="/user/halloffame" tabindex="-1">Hall of Fame</a></li>
+<li title="Community Badges"><a href="/badges" tabindex="-1">Badges</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">More <span class="caret"></span></a><ul id="w1" class="dropdown-menu"><li class="separator dropdown-header">Learn</li>
+<li><a href="/books" tabindex="-1">Books</a></li>
+<li><a href="/resources" tabindex="-1">Resources</a></li>
+<li class="separator dropdown-header">Develop</li>
+<li><a href="/download" tabindex="-1">Download Yii</a></li>
+<li><a href="/report-issue" tabindex="-1">Report an Issue</a></li>
+<li><a href="/security" tabindex="-1">Report a Security Issue</a></li>
+<li><a href="/contribute" tabindex="-1">Contribute to Yii</a></li>
+<li class="separator dropdown-header">About</li>
+<li><a href="/doc/guide/2.0/en/intro-yii" tabindex="-1">What is Yii?</a></li>
+<li><a href="/release-cycle" tabindex="-1">Release Cycle</a></li>
+<li><a href="/news" tabindex="-1">News</a></li>
+<li><a href="/license" tabindex="-1">License</a></li>
+<li><a href="/team" tabindex="-1">Team</a></li>
+<li><a href="/logo" tabindex="-1">Official logo</a></li></ul></li></ul>
+            
+            <div class="nav navbar-nav navbar-right">
+                <ul id="login-nav" class="nav navbar-nav navbar-main-menu"><li><a href="/login">Login</a></li></ul>            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                        <form id="search-form" class="navbar-form" action="/search" method="get">        <div class="form-group nospace">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search" name="q" placeholder="Search…" autocomplete="off" value="" style="width: 226px;" />
+            </div>
+        </div>
+        <div id="search-resultbox" style="width: 350px;"></div>
+        </form>            </div>
+
+            
+        </div>
+    </div>
+</header>
+
+            
+                        <div class="sitejumbo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Yes, it is!</h1>
+                <p class="propaganda">
+                    Yii is a fast, secure, and efficient PHP framework.<br />
+                    Flexible yet pragmatic. <br />
+                    Works right out of the box. <br />
+                    Has reasonable defaults.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dashed-heading-jumbo">
+                    <span><a href="/doc/guide/2.0/en/start-installation" class="btn">Get Started</a> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="Glide" class="glide glide--carousel glide--horizontal">
+            <div class="glide__wrapper">
+                <ul class="glide__track" style="width: 6462px; transition: all 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; transform: translate3d(-1436px, 0px, 0px);"><li class="glide__slide clone" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/4.png" alt="Gii code generator" srcset="/image/tour/4.png 1x, /image/tour/4@2x.png 2x" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 4
+            </div>
+            <div class="tour-header">
+                Gii code generator
+            </div>
+            <div class="tour-content">
+                <p>After it's done, use the code generator to generate models, CRUD and more.</p>
+
+                <p>Then customize the generated code to suit your needs.</p>
+            </div>
+        </div>
+    </div>
+</li><li class="glide__slide clone" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/5.png" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 5
+            </div>
+            <div class="tour-header">
+                Where to go next
+            </div>
+            <div class="tour-content">
+                <p>Check these helpful resources:</p>
+
+                <ul>
+                    <li><a href="/doc/guide">Documentation</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/extensions">Extensions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+                    <li class="glide__slide active" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/1.gif" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 1
+            </div>
+            <div class="tour-header">
+                Installation
+            </div>
+            <div class="tour-content">
+                <p>The primary way of installing Yii is by using Composer.</p>
+
+                <ul>
+                    <li>Install Composer</li>
+                    <li>Get a basic project template</li>
+                    <li>Run <kbd>./yii serve</kbd></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+                    <li class="glide__slide" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/2.png" alt="Welcome Page" srcset="/image/tour/2.png 1x, /image/tour/2@2x.png 2x" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 2
+            </div>
+            <div class="tour-header">
+                Welcome Page
+            </div>
+            <div class="tour-content">
+                <p>You get a nice template which includes:</p>
+
+                <ul>
+                    <li>MVC</li>
+                    <li>Some static pages</li>
+                    <li>Contact via email form</li>
+                    <li>Login and logout</li>
+                    <li>Bootstrap UI template</li>
+                    <li>Powerful debugger</li>
+                    <li>and more...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+                    <li class="glide__slide" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/3.png" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 3
+            </div>
+            <div class="tour-header">
+                Migrations
+            </div>
+            <div class="tour-content">
+                <p>While Yii can virtually eliminate most repetitive coding tasks, you are responsible for the real
+                   creative work. This often starts with designing the whole system to be built, in terms of some
+                   database schema. The best way to do this is by using migrations.</p>
+            </div>
+        </div>
+    </div>
+</li>
+                    <li class="glide__slide" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/4.png" alt="Gii code generator" srcset="/image/tour/4.png 1x, /image/tour/4@2x.png 2x" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 4
+            </div>
+            <div class="tour-header">
+                Gii code generator
+            </div>
+            <div class="tour-content">
+                <p>After it's done, use the code generator to generate models, CRUD and more.</p>
+
+                <p>Then customize the generated code to suit your needs.</p>
+            </div>
+        </div>
+    </div>
+</li>
+                    <li class="glide__slide" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/5.png" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 5
+            </div>
+            <div class="tour-header">
+                Where to go next
+            </div>
+            <div class="tour-content">
+                <p>Check these helpful resources:</p>
+
+                <ul>
+                    <li><a href="/doc/guide">Documentation</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/extensions">Extensions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+                <li class="glide__slide clone" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/1.gif" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 1
+            </div>
+            <div class="tour-header">
+                Installation
+            </div>
+            <div class="tour-content">
+                <p>The primary way of installing Yii is by using Composer.</p>
+
+                <ul>
+                    <li>Install Composer</li>
+                    <li>Get a basic project template</li>
+                    <li>Run <kbd>./yii serve</kbd></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li><li class="glide__slide clone" style="width: 718px;">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="/image/tour/2.png" alt="Welcome Page" srcset="/image/tour/2.png 1x, /image/tour/2@2x.png 2x" class="img-responsive" />
+        </div>
+        <div class="col-md-5">
+            <div class="tour-subheader">
+                Step 2
+            </div>
+            <div class="tour-header">
+                Welcome Page
+            </div>
+            <div class="tour-content">
+                <p>You get a nice template which includes:</p>
+
+                <ul>
+                    <li>MVC</li>
+                    <li>Some static pages</li>
+                    <li>Contact via email form</li>
+                    <li>Login and logout</li>
+                    <li>Bootstrap UI template</li>
+                    <li>Powerful debugger</li>
+                    <li>and more...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li></ul>
+            </div>
+            <div class="glide__bullets hidden-xs"><button class="glide__bullet active" data-glide-dir="=1"></button><button class="glide__bullet" data-glide-dir="=2"></button><button class="glide__bullet" data-glide-dir="=3"></button><button class="glide__bullet" data-glide-dir="=4"></button><button class="glide__bullet" data-glide-dir="=5"></button></div>
+        </div>
+    </div>
+</div>
+
+<div class="container content-separator features">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="media">
+              <div class="media-left">
+                  <img class="media-object" src="/image/front/fast-80.png" alt="Yii is Fast" />
+              </div>
+              <div class="media-body">
+                <div class="media-heading fast">Fast</div>
+                Yii gives you the maximum functionality by adding the least possible overhead
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="media">
+              <div class="media-left">
+                    <img class="media-object" src="/image/front/secure-80.png" alt="Yii is Secure" />
+              </div>
+              <div class="media-body">
+                <div class="media-heading secure">Secure</div>
+                    Sane defaults and built-in tools helps you write solid and secure code
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="media">
+              <div class="media-left">
+                    <img class="media-object" src="/image/front/professional-80.png" alt="Yii is Efficient" />
+              </div>
+              <div class="media-body">
+                <div class="media-heading efficient">Efficient</div>
+                    Write more code in less time with simple, yet powerful APIs and code generation
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container content-separator latest-news">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dashed-heading-front">
+                <span>Latest News</span>
+            </div>
+
+            <div class="row news">
+                
+                    <div class="col-md-6">
+                        <span class="date">Dec 2, 2020</span>
+                        <h2><a href="/news/317/cookies-1-0-0-released">Cookies 1.0.0 released</a></h2>
+                        <div class="text">
+                            <p></p><p>First version of cookies package released.</p>
+<p></p>
+                            <p><a href="/news/317/cookies-1-0-0-released">» read more</a></p>
+                        </div>
+                    </div>
+
+                    
+                
+                    <div class="col-md-6">
+                        <span class="date">Dec 2, 2020</span>
+                        <h2><a href="/news/318/yii-1-1-23-is-released">Yii 1.1.23 is released</a></h2>
+                        <div class="text">
+                            <p></p><p>We are very pleased to announce that Yii Framework version 1.1.23 is released.
+You can download it at <a href="https://www.yiiframework.com/download/#yii1">yiiframework.com/download/</a>.</p>
+<p></p>
+                            <p><a href="/news/318/yii-1-1-23-is-released">» read more</a></p>
+                        </div>
+                    </div>
+
+                    </div><div class="row news">
+                
+                    <div class="col-md-6">
+                        <span class="date">Nov 13, 2020</span>
+                        <h2><a href="/news/314/auth-client-extension-2-2-9-released">Auth Client extension 2.2.9 released</a></h2>
+                        <div class="text">
+                            <p></p><p>We are very pleased to announce the release of <a href="https://github.com/yiisoft/yii2-authclient">Auth Client extension</a> version 2.2.9.</p>
+<p></p>
+                            <p><a href="/news/314/auth-client-extension-2-2-9-released">» read more</a></p>
+                        </div>
+                    </div>
+
+                    
+                
+                    <div class="col-md-6">
+                        <span class="date">Nov 13, 2020</span>
+                        <h2><a href="/news/315/debug-extension-2-1-15-released">Debug extension 2.1.15 released</a></h2>
+                        <div class="text">
+                            <p></p><p><a href="https://github.com/yiisoft/yii2-debug">Debug extension</a> version 2.1.15 was released.</p>
+<p></p>
+                            <p><a href="/news/315/debug-extension-2-1-15-released">» read more</a></p>
+                        </div>
+                    </div>
+
+                    
+                            </div>
+
+            <a href="/news" class="btn btn-front btn-block">Read all news</a>
+        </div>
+    </div>
+</div>
+
+<div class="books-videos">
+    <div class="container content-separator">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dashed-heading-front-books">
+                    <span>Books and Videos on Yii</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+<div class="books-list">
+    
+    
+    <div class="col-lg-5ths col-md-6 col-sm-6 col-xs-12 books-item">
+        <div class="books-image">
+            <a href="http://yii.larryullman.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/image/books/yii1-yiibook-larry.png" alt="The Yii Book (Second edition)" class="thumbnail img-responsive" />
+            </a>
+        </div>
+        <div class="books-link">
+            <a href="http://yii.larryullman.com/" target="_blank" rel="noopener noreferrer">The Yii Book (Second edition)</a>
+            <span class="skill beginner" title="Recommended for beginners.">■</span>
+        </div>
+        <div class="author-publisher">
+            <div><span class="what">Author: </span> <span class="who">Larry Ullman</span></div>
+        </div>
+        <p class="books-description">
+            Covers everything from very basics to advanced topics. Explanations are very clear. Additionally to the guide-style
+                chapters there are two complete examples.
+            The second edition (for Yii 2.0) is <strong>not finished yet</strong>, but buyers can download updates as they are available.        </p>
+    </div>
+    
+    
+    <div class="col-lg-5ths col-md-6 col-sm-6 col-xs-12 books-item">
+        <div class="books-image">
+            <a href="https://leanpub.com/yii2forbeginners" target="_blank" rel="noopener noreferrer">
+                <img src="/image/books/yii2-forbeginners.jpg" alt="PHP Web Application Development" class="thumbnail img-responsive" />
+            </a>
+        </div>
+        <div class="books-link">
+            <a href="https://leanpub.com/yii2forbeginners" target="_blank" rel="noopener noreferrer">PHP Web Application Development</a>
+            <span class="skill beginner" title="Recommended for beginners.">■</span>
+        </div>
+        <div class="author-publisher">
+            <div><span class="what">Author: </span> <span class="who">Bill Keck</span></div>
+        </div>
+        <p class="books-description">
+            It is a step by step introduction to the framework, which is based around
+            creating a reusable template that can serve as the basis for your projects.        </p>
+    </div>
+            <div class="clearfix visible-sm visible-md"></div>
+    
+    
+    <div class="col-lg-5ths col-md-6 col-sm-6 col-xs-12 books-item">
+        <div class="books-image">
+            <a href="http://www.amazon.com/dp/1783981881?tag=gii20f-20" target="_blank" rel="noopener noreferrer">
+                <img src="/image/books/yii2-app-development.jpg" alt="Web Application Development with Yii 2 and PHP" class="thumbnail img-responsive" />
+            </a>
+        </div>
+        <div class="books-link">
+            <a href="http://www.amazon.com/dp/1783981881?tag=gii20f-20" target="_blank" rel="noopener noreferrer">Web Application Development with Yii 2 and PHP</a>
+            <span class="skill pro" title="Recommended for intermediate-to-advanced developers.">■</span>
+        </div>
+        <div class="author-publisher">
+            <div><span class="what">Author: </span> <span class="who">Mark Safronov</span></div>
+        </div>
+        <p class="books-description">
+            Based around implementing a real world CRM following many best practices.
+            It is assumed that reader is experienced enough in OOP so don't expect OO-basics
+            explained.        </p>
+    </div>
+    
+    
+    <div class="col-lg-5ths col-md-6 col-sm-6 col-xs-12 books-item">
+        <div class="books-image">
+            <a href="http://www.amazon.com/dp/1784392278?tag=gii20f-20" target="_blank" rel="noopener noreferrer">
+                <img src="/image/books/yii2-testing.jpg" alt="Learning Yii Testing" class="thumbnail img-responsive" />
+            </a>
+        </div>
+        <div class="books-link">
+            <a href="http://www.amazon.com/dp/1784392278?tag=gii20f-20" target="_blank" rel="noopener noreferrer">Learning Yii Testing</a>
+            <span class="skill pro" title="Recommended for intermediate-to-advanced developers.">■</span>
+        </div>
+        <div class="author-publisher">
+            <div><span class="what">Author: </span> <span class="who">Matteo Pescarin</span></div>
+        </div>
+        <p class="books-description">
+            Embrace 360-degree testing on your Yii 2 projects using Codeception.        </p>
+    </div>
+            <div class="clearfix visible-sm visible-md"></div>
+    
+    
+    <div class="col-lg-5ths col-md-6 col-sm-6 col-xs-12 books-item">
+        <div class="books-image">
+            <a href="https://www.packtpub.com/web-development/yii2-application-development-cookbook-third-edition" target="_blank" rel="noopener noreferrer">
+                <img src="/image/books/yii2-app-development-cookbook-3.jpg" alt="Yii2 Application Development Cookbook - Third Edition" class="thumbnail img-responsive" />
+            </a>
+        </div>
+        <div class="books-link">
+            <a href="https://www.packtpub.com/web-development/yii2-application-development-cookbook-third-edition" target="_blank" rel="noopener noreferrer">Yii2 Application Development Cookbook - Third Edition</a>
+            <span class="skill all" title="Recommended for all levels">■</span>
+        </div>
+        <div class="author-publisher">
+            <div><span class="what">Author: </span> <span class="who">Andrew Bogdanov, Dmitry Eliseev</span></div>
+        </div>
+        <p class="books-description">
+            The book is a set of individual independent recipes. Each recipe shows how to
+            do something useful with Yii explaining why it's done, how it's done, why it works and how exactly it works.        </p>
+    </div>
+</div>
+        </div>
+        <div class="row see-all">
+            <a href="/books" class="btn btn-front btn-block">See all books</a>
+        </div>
+    </div>
+</div>
+
+<div class="container content-separator content-guide">
+    <div class="row">
+        <div class="col-md-4">
+            
+<div class="testimonials">
+    <div class="dashed-heading-front-section">
+        <span>Testimonials</span>
+    </div>
+    <div class="row testimonial">
+
+        <div id="Glide2" class="glide glide--carousel glide--horizontal">
+            <div class="glide__wrapper" style="transition: height 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; height: 288px;">
+                <ul class="glide__track" style="width: 5110px; transition: all 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; transform: translate3d(-1460px, 0px, 0px);"><li class="glide__slide clone" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/humhub.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://www.humhub.org/en">HumHub</a>
+                                </div>
+                                <div class="description">
+                                    HumHub is a free social network software and framework built to give you the tools to make communication and collaboration easy and successful.                                </div>
+                                <div class="quote">
+                                    <p>Yii Framework is our rock solid foundation and provides us with numerous well designed features already out of the box.
+Especially the flexibility in form of modules or the event concept, perfectly match our requirements.
+In and above that, Yii has very active and helpful community!</p>
+<p><b>Lucas Bartholemy</b><br />
+    CEO of HumHub
+</p>                                </div>
+                            </div>
+                        </li><li class="glide__slide clone" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/luya.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://luya.io/">LUYA</a>
+                                </div>
+                                <div class="description">
+                                    LUYA is a free and open-source toolbox to build websites and web applications of any size, extending the Yii Framework with an administration, a content management system and other useful modules.                                </div>
+                                <div class="quote">
+                                    <p>For us, the well-thought-out, solid Yii Framework is the giant upon whose shoulders LUYA is built.
+We are happy to be a part of the passionate Yii community.</p>
+<p><b>Basil Suter</b><br />
+    Lead developer of LUYA
+</p>                                </div>
+                            </div>
+                        </li>
+                                            <li class="glide__slide active" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/craft.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://craftcms.com/3">Craft CMS</a>
+                                </div>
+                                <div class="description">
+                                    Craft is a content-first CMS that aims to make life enjoyable for developers and content managers alike.                                </div>
+                                <div class="quote">
+                                    <p>Choosing the right PHP framework was a vital decision when we set out to build Craft. With its elegant, modular architecture, rich internationalization support, and helpful documentation, Yii was a perfect fit.</p>
+<p><b>Brandon Kelly</b><br />
+    creator of Craft
+</p>                                </div>
+                            </div>
+                        </li>
+                                            <li class="glide__slide" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/humhub.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://www.humhub.org/en">HumHub</a>
+                                </div>
+                                <div class="description">
+                                    HumHub is a free social network software and framework built to give you the tools to make communication and collaboration easy and successful.                                </div>
+                                <div class="quote">
+                                    <p>Yii Framework is our rock solid foundation and provides us with numerous well designed features already out of the box.
+Especially the flexibility in form of modules or the event concept, perfectly match our requirements.
+In and above that, Yii has very active and helpful community!</p>
+<p><b>Lucas Bartholemy</b><br />
+    CEO of HumHub
+</p>                                </div>
+                            </div>
+                        </li>
+                                            <li class="glide__slide" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/luya.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://luya.io/">LUYA</a>
+                                </div>
+                                <div class="description">
+                                    LUYA is a free and open-source toolbox to build websites and web applications of any size, extending the Yii Framework with an administration, a content management system and other useful modules.                                </div>
+                                <div class="quote">
+                                    <p>For us, the well-thought-out, solid Yii Framework is the giant upon whose shoulders LUYA is built.
+We are happy to be a part of the passionate Yii community.</p>
+<p><b>Basil Suter</b><br />
+    Lead developer of LUYA
+</p>                                </div>
+                            </div>
+                        </li>
+                                    <li class="glide__slide clone" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/craft.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://craftcms.com/3">Craft CMS</a>
+                                </div>
+                                <div class="description">
+                                    Craft is a content-first CMS that aims to make life enjoyable for developers and content managers alike.                                </div>
+                                <div class="quote">
+                                    <p>Choosing the right PHP framework was a vital decision when we set out to build Craft. With its elegant, modular architecture, rich internationalization support, and helpful documentation, Yii was a perfect fit.</p>
+<p><b>Brandon Kelly</b><br />
+    creator of Craft
+</p>                                </div>
+                            </div>
+                        </li><li class="glide__slide clone" style="width: 730px;">
+                            <div class="testimonial-content">
+                                <img src="/image/testimonials/humhub.png" alt="" class="img-responsive" />
+                                <div class="title">
+                                    <a href="https://www.humhub.org/en">HumHub</a>
+                                </div>
+                                <div class="description">
+                                    HumHub is a free social network software and framework built to give you the tools to make communication and collaboration easy and successful.                                </div>
+                                <div class="quote">
+                                    <p>Yii Framework is our rock solid foundation and provides us with numerous well designed features already out of the box.
+Especially the flexibility in form of modules or the event concept, perfectly match our requirements.
+In and above that, Yii has very active and helpful community!</p>
+<p><b>Lucas Bartholemy</b><br />
+    CEO of HumHub
+</p>                                </div>
+                            </div>
+                        </li></ul>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="col-md-4">
+            <div class="tutorials">
+    <div class="dashed-heading-front-section">
+        <span>Latest Tutorials</span>
+    </div>
+    <ul class="latest-list">
+                    <li><a href="/wiki/2566/how-to-redirect-all-emails-to-one-inbox-on-yii2-applications">How to redirect all emails to one inbox on Yii2 applications</a></li>
+                    <li><a href="/wiki/2565/api-of-multiple-file-uploading-in-yii2">Api of Multiple File Uploading in Yii2</a></li>
+                    <li><a href="/wiki/2564/how-to-email-error-logs-to-developer-on-yii2-apps">How to email error logs to developer on Yii2 apps</a></li>
+                    <li><a href="/wiki/2560/how-to-add-schema-org-markup-to-yii2-pages">How to add Schema.org markup to Yii2 pages</a></li>
+                    <li><a href="/wiki/2559/how-to-add-open-graph-and-twitter-card-tags-to-yii2-website">How to add Open Graph and Twitter Card tags to Yii2 website.</a></li>
+                    <li><a href="/wiki/2558/yii-v2-snippet-guide-ii">Yii v2 snippet guide II</a></li>
+                    <li><a href="/wiki/2557/start-using-yii2-in-raspberry-pi3-rpi3-via-pantahub">Start using Yii2 in Raspberry Pi3 (RPI3) via Pantahub</a></li>
+                    <li><a href="/wiki/2556/yii2-upgrading-to-bootstrap-4">Yii2 - Upgrading to Bootstrap 4</a></li>
+                    <li><a href="/wiki/2555/uuid-instead-of-an-auto-increment-integer-for-id-with-active-record">UUID instead of an auto-increment integer for ID with Active Record</a></li>
+                    <li><a href="/wiki/2552/yii-v2-snippet-guide">Yii v2 snippet guide</a></li>
+            </ul>
+</div>
+        </div>
+        <div class="col-md-4">
+            <div class="extensions">
+    <div class="dashed-heading-front-section">
+        <span>Latest Extensions</span>
+    </div>
+    <ul class="latest-list">
+                <li>
+            <a href="/extension/dicr/yii2-yandex-xml">dicr/yii2-yandex-xml</a>            <p>API XML-поиска Яндекс для Yii2</p>
+        </li>
+                <li>
+            <a href="/extension/dicr/yii2-tinkoff">dicr/yii2-tinkoff</a>            <p>Tinkoff bank support for Yii2</p>
+        </li>
+                <li>
+            <a href="/extension/dicr/yii2-telegram">dicr/yii2-telegram</a>            <p>Telegram API for Yii2</p>
+        </li>
+                <li>
+            <a href="/extension/dicr/yii2-settings">dicr/yii2-settings</a>            <p>Компонент Yii2 для хранения настроек приложения</p>
+        </li>
+                <li>
+            <a href="/extension/dicr/yii2-sberbank-rest">dicr/yii2-sberbank-rest</a>            <p>Sberbank REST API для Yii2</p>
+        </li>
+                <li>
+            <a href="/extension/dicr/yii2-roistat">dicr/yii2-roistat</a>            <p>Roistat API for Yii2</p>
+        </li>
+            </ul>
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row padded-row">
+                <a href="http://yiipowered.com/en" class="btn btn-front btn-block">See more projects using Yii</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row padded-row">
+                <a href="/wiki" class="btn btn-front btn-block">See all tutorials</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row padded-row">
+                <a href="/extensions" class="btn btn-front btn-block">See all extensions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="footer-wrapper">
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+  <li class="footerList_item">
+    <div>About</div>
+  </li>
+  <li class="footerList_item">
+    <a href="/doc/guide/2.0/en/intro-yii">About Yii</a>  </li>
+  <li class="footerList_item">
+    <a href="/news">News</a>  </li>
+  <li class="footerList_item">
+    <a href="/license">License</a>  </li>
+  <li class="footerList_item">
+    <a href="/contact">Contact Us</a>  </li>
+</ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+  <li class="footerList_item">
+    <div>Downloads</div>
+  </li>
+  <li class="footerList_item">
+    <a href="/download">Framework</a>  </li>
+  <li class="footerList_item">
+    <a href="/download#offline-documentation">Documentation</a>  </li>
+  <li class="footerList_item">
+    <a href="/extensions">Extensions</a>  </li>
+  <li class="footerList_item">
+    <a href="/logo">Logo</a>  </li>
+</ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+  <li class="footerList_item">
+    <div>Documentation</div>
+  </li>
+  <li class="footerList_item">
+    <a href="/doc/guide">Guide</a>  </li>
+  <li class="footerList_item">
+    <a href="/doc/api">API</a>  </li>
+  <li class="footerList_item">
+    <a href="/wiki">Wiki</a>  </li>
+  <li class="footerList_item">
+    <a href="/resources">Resources</a>  </li>
+</ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+  <li class="footerList_item">
+    <div>Development</div>
+  </li>
+  <li class="footerList_item">
+    <a href="/contribute">Contribute</a>  </li>
+  <li class="footerList_item">
+    <a href="https://github.com/yiisoft/yii2/commits/master" rel="noopener noreferrer" target="_blank">Latest Updates</a>  </li>
+  <li class="footerList_item">
+    <a href="/report-issue">Report a Bug</a>  </li>
+  <li class="footerList_item">
+    <a href="/security">Report Security Issue</a>  </li>
+</ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+    <li class="footerList_item">
+        <div>Community</div>
+    </li>
+    <li class="footerList_item">
+        <a href="/forum">Forum</a>    </li>
+    <li class="footerList_item">
+        <a href="/chat">Live Chat</a>    </li>
+    <li class="footerList_item">
+        <a href="https://www.facebook.com/groups/yiitalk/" target="_blank" rel="noopener noreferrer">Facebook Group</a>
+    </li>
+    <li class="footerList_item">
+        <a href="/user/halloffame">Hall of Fame</a>    </li>
+    <li class="footerList_item">
+        <a href="/badges">Badges</a>    </li>
+</ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 hidden-xs">
+                        <ul class="footerList">
+  <li class="footerList_item">
+      <span class="social">
+          <a href="https://github.com/yiisoft" aria-label="GitHub Account" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+          <a href="https://twitter.com/yiiframework" aria-label="Twitter Account" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.facebook.com/groups/yiitalk/" aria-label="Facebook Group" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+          <a href="/rss.xml" aria-label="RSS Feed"><i class="fa fa-rss"></i></a>      </span>
+  </li>
+  <li class="footerList_item">
+    <a href="/tos">Terms of service</a>  </li>
+  <li class="footerList_item">
+      <a href="/license">License</a>  </li>
+  <li class="footerList_item">
+      <a href="https://github.com/yiisoft-contrib/yiiframework.com" target="_blank" rel="noopener noreferrer">Website Source Code</a>
+  </li>
+  <li class="footerList_item">
+       
+  </li>
+  <li class="footerList_item">
+    © 2008 - 2020 Yii
+  </li>
+  <li class="footerList_item">
+      Design: <a href="http://www.eshill.ru/" target="_blank" rel="noopener noreferrer">Eshill</a>
+  </li>
+</ul>
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                        <div class="center-block">
+                            <div>
+                                <ul class="footerList">
+  <li class="footerList_item">
+      <span class="social">
+          <a href="https://github.com/yiisoft" aria-label="GitHub Account" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+          <a href="https://twitter.com/yiiframework" aria-label="Twitter Account" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.facebook.com/groups/yiitalk/" aria-label="Facebook Group" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+          <a href="/rss.xml" aria-label="RSS Feed"><i class="fa fa-rss"></i></a>      </span>
+  </li>
+  <li class="footerList_item">
+    <a href="/tos">Terms of service</a>  </li>
+  <li class="footerList_item">
+      <a href="/license">License</a>  </li>
+  <li class="footerList_item">
+      <a href="https://github.com/yiisoft-contrib/yiiframework.com" target="_blank" rel="noopener noreferrer">Website Source Code</a>
+  </li>
+  <li class="footerList_item">
+       
+  </li>
+  <li class="footerList_item">
+    © 2008 - 2020 Yii
+  </li>
+  <li class="footerList_item">
+      Design: <a href="http://www.eshill.ru/" target="_blank" rel="noopener noreferrer">Eshill</a>
+  </li>
+</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <ul class="footerList">
+    <li class="footerList_item">
+        <div>Supported by</div>
+    </li>
+    <li class="footerList_item">
+            <a href="https://opencollective.com/yiisoft" aria-label="OpenCollective" target="_blank" rel="noopener&#10;            noreferrer"><img alt="OpenCollective" height="40" src="/image/collective.png" /></a>
+    </li>
+    <li class="footerList_item">
+        <a href="https://www.jetbrains.com/?from=yii" aria-label="JetBrains website" target="_blank" rel="noopener&#10;        noreferrer"><img alt="JetBrains logo" width="80" src="/image/jetbrains.svg" /></a>
+    </li>
+</ul>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+        </div> <!-- close the id="page-wrapper" -->
+
+        <script src="/assets/a7068376/js/all.min.js?v=1606987000"></script>
+<script>jQuery(function ($) {
+
+    $('#Glide').glide({
+        type: 'carousel',
+        autoheight: false,
+        autoplay: 10000,
+    });
+
+
+    $('#Glide2').glide({
+        type: 'carousel',
+        autoheight: true,
+        autoplay: 10000,
+    });
+
+});</script>    
+
+<a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"></a></body></html>

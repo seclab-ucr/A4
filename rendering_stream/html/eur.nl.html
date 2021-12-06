@@ -1,0 +1,901 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="nl" dir="ltr" prefix="og: https://ogp.me/ns#" class=" js"><head><script type="text/javascript">
+    function f_pMPA(o) {
+        var closed = false;
+        /* init selectors */
+        o.startAnimation.selector = o.endAnimation.selector = o.selector;
+            
+        /* activate libraries */
+        f_iPL(o, function() {
+            /* reset listeners */
+            jQuery(o.selector).off( 'transitionend webkitTransitionEnd');
+            jQuery(o.selector).css('-webkit-transition', '');
+            jQuery(o.selector).css('transition', '');
+            
+            /* start position */
+            jQuery(o.selector).css(o.position);
+            jQuery(o.selector).css("top");
+            jQuery(o.selector).css("display", "initial");
+
+            /* startAnimation */
+            if (o.startAnimation.animationType == 'reposition') {
+                jQuery(o.selector).css('display', 'inherit'); 
+            }
+            
+            /* adjust title of personalisation */
+            console.log(jQuery(o.titleFromPage.titleValue).text());
+            if (o.titleFromPage.titleValue !== '') {
+                jQuery(o.selector+ ' .wqht_title').html(jQuery(o.titleFromPage.titleValue).text());
+            }
+            
+            /* activate close button event */
+            jQuery(o.selector+' .wqht_close').click(function() {
+                f_pSPA(o.endAnimation, function() {
+                    closed = true; 
+                });
+            });
+
+            /* move the personalisation to the right position */
+            if (typeof o.moveTo != 'undefined') {
+                if (o.moveTo.position == 'before') {
+                    jQuery(o.moveTo.elementOnPage).before(jQuery(o.selector));
+                } else {
+                    jQuery(o.moveTo.elementOnPage).after(jQuery(o.selector));
+                }
+            }
+            
+            if (typeof window['wqCustom_'+o.selector.substr(1)] != 'undefined') {
+                window['wqCustom_'+o.selector.substr(1)](o);
+            }
+
+            f_pSPA(o.startAnimation, function() {
+                /* progress */
+                if (o.progress.duration &gt; 0) {
+                    if (o.progress.animationType == 'progressbar') {
+                        o.progress.selector = o.progress.selector ? o.progress.selector : '#wq_pbar_innerdiv';
+                    } else {
+                        o.progress.selector = '#wq_pbar_innerdiv';
+                        jQuery(o.progress.selector).css('bottom', '-40px');
+                    }
+                
+                    f_pSPA(o.progress, function() {
+                        /* endAnimation */
+                        if (!closed) {
+                            f_pSPA(o.endAnimation, function() {
+                                closed = true;
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    function f_pSPA(o, c) {
+        jQuery(o.selector).css({ 
+            '-webkit-transition': o.styleProperty+' '+o.duration+'s '+o.motion,
+            'transition': o.styleProperty+' '+o.duration+'s '+o.motion
+        });
+        
+        jQuery(o.selector).css(o.styleProperty, o.styleValue);
+        
+        jQuery(o.selector).one( 'transitionend', function(event) {
+            event.stopPropagation();
+
+            jQuery(o.selector).off('transitionend');
+            jQuery(o.selector).css('-webkit-transition', '');
+            jQuery(o.selector).css('transition', '');
+            
+            return c();
+        });
+    }
+
+
+    function f_iPL(o, c) {
+        /* activate libraries */
+        /* wiqhiticons script */
+        function initializeWiQhitIcons() {
+            if (typeof window.wiqhiticons === 'undefined') {
+                var wiqhiticonsScript = document.createElement('script');
+                wiqhiticonsScript.type = "text/javascript";
+                wiqhiticonsScript.src = "//app-v2.wiqhit.com/js/wiqhitIcons.js";
+                document.getElementsByTagName('head')[0].appendChild(wiqhiticonsScript);
+                
+                wiqhiticonsScript.onload = wiqhiticonsScript.onreadystatechange = function () {
+                    if (typeof wiqhiticonsScript !== 'undefined' || !wiqhiticonsScript.readyState || wiqhiticonsScript.readyState === "loaded" || wiqhiticonsScript.readyState === "complete") {
+                        wiqhiticons.replace();
+                    }
+                };
+            } else {
+                wiqhiticons.replace();
+            }
+        }
+
+        
+        /* feather script */
+        function initializeFeather() {
+            if (typeof window.feather === 'undefined') {
+                var featherScript = document.createElement('script');
+                featherScript.type = "text/javascript";
+                featherScript.src = "//app-v2.wiqhit.com/js/feathericons.js";
+                document.getElementsByTagName('head')[0].appendChild(featherScript);
+                
+                featherScript.onload = featherScript.onreadystatechange = function () {
+                    if (typeof feather !== 'undefined' || !featherScript.readyState || featherScript.readyState === "loaded" || featherScript.readyState === "complete") {
+                        feather.replace();
+                    }
+                };
+            } else {
+                feather.replace();
+            }
+        }
+        
+        /* jQuery script */
+        function initializeJQuery(callback) {
+            if (typeof jQuery === 'undefined') {
+                var jQueryScript = document.createElement('script');
+                    jQueryScript.type = "text/javascript";
+                    jQueryScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js";
+                    document.getElementsByTagName('head')[0].appendChild(jQueryScript);
+                    
+                    jQueryScript.onload = jQueryScript.onreadystatechange = function () {
+                        if (typeof jQuery !== 'undefined' || !jQueryScript.readyState || jQueryScript.readyState === "loaded" || jQueryScript.readyState === "complete") {
+                            var $j = jQuery.noConflict();
+                            return callback();
+                        }
+                    };
+            } else {
+                return callback();
+            }
+        }
+        
+        if (typeof window.initializeSlick == 'undefined') {
+            /* Slick CSS */
+            var slickLink = document.createElement('link');
+                slickLink.type = "text/css";
+                slickLink.rel = "stylesheet";
+                slickLink.href = "//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css";
+                document.getElementsByTagName('head')[0].appendChild(slickLink);
+                
+            var slickTheme = document.createElement('link');
+                slickTheme.type = "text/css";
+                slickTheme.rel = "stylesheet";
+                slickTheme.href = "//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css";
+                document.getElementsByTagName('head')[0].appendChild(slickTheme);
+                
+            window.initializeSlick = function (callback) {
+                if (typeof $j().slick == "undefined") {
+                        var slickScript = document.createElement('script');
+                        slickScript.type = "text/javascript";
+                        slickScript.src = "//app-v2.wiqhit.com/js/slick-1.9.0.js";
+                        document.getElementsByTagName('head')[0].appendChild(slickScript);
+                        
+                        slickScript.onload = slickScript.onreadystatechange = function () {
+                            if (!slickScript.readyState || slickScript.readyState === "loaded" || slickScript.readyState === "complete") {
+
+                                return callback();
+                            }
+                        };
+                } else {
+                    return callback();
+                }
+            };
+        }
+        
+        initializeJQuery(function() {
+            /* activate slick when necessary */
+            if (o.carousselSelector !== '') {
+                initializeSlick(function() {
+                    jQuery(o.carousselSelector).slick(carrousel);
+                    c();
+                });   
+            } else {
+                c();   
+            }
+        });
+        
+        if (typeof o.iconset != "undefined" &amp;&amp; o.iconset == "WiQhitIcons") {
+            initializeWiQhitIcons();
+        } else {
+            initializeFeather();
+        }
+    }
+    </script><script type="text/javascript">
+var style = document.createElement('style');
+  style.innerHTML = `
+  .wqht_p * {
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+#wq-wrapper {
+    position: relative;
+    box-shadow:0 0 7px rgba(0,0,0,0.5);
+    background: #fff;
+    max-width: 400px;
+    border-radius: 4px; /* ronde hoeken voor alle 4 */
+    width: 90%;
+    margin: 0 auto auto;
+    overflow: hidden;
+    display: table;
+}
+
+.wqht_p {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    box-shadow:0 0 7px rgba(0,0,0,0.5);      
+    background: #fff;
+    width: 400px;
+    border-radius: 0px; /* ronde hoeken voor alle 4 */
+    padding: 0px;
+    border: 0px solid #fc341f;
+    overflow: hidden;
+    display:table;
+}
+
+.wqht_icon {
+    display: table-cell;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100px;
+    /*background: radial-gradient(circle farthest-corner at right bottom,#db5505 0, #ff7320 100%);*/
+    color: #FC8D01;
+    vertical-align: middle;
+}
+
+.wqht_body {
+    display: table-cell;
+    padding: 20px;
+    border-bottom: 0px solid #fff;
+    width: 300px;
+    height:100%;
+    background-color: #efefef;
+}
+
+.wqht_title {
+    font-weight: 600;
+    text-align: left;
+    color:#FC8D01;
+    font-size: 14px;
+}
+
+.wqht_content {
+    font-size: 12px;
+}
+
+.wqht_footer {
+    
+}
+
+
+
+.wqht_close {
+    position:absolute;
+    font-size: 24px;
+    width:18px;
+    height:18px;
+    background-color:#fff;
+    border-radius:50%;
+    font-weight: 600;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: rgba(0,0,0,.5);
+}
+
+.wqht_close:hover {
+    color: rgba(0,0,0,.8);
+}
+
+.wqht_button {
+    display: inline-block;
+    padding: 0 15px 0 15px !important;
+    margin: 0px;
+    text-align:center;
+    text-decoration: none;
+    /* Pas hieronder aan */
+    background: #ff7320;
+    color: #fff !important;
+    line-height: 0px; /* gelijk aan de height maken */
+    font-size: 16px;
+    border-radius: 3px;
+    border: 0px solid #ff7320;
+}
+
+.wqht_button:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.wqht_label {
+    position: fixed;
+    left:initial;
+    top: 50%;
+    left: 35px;
+    z-index: 1000000;
+    background: #fc341f;
+    box-shadow:2px 2px 2px rgba(0,0,0,0.2);
+    transform: rotate(90deg);
+	transform-origin: left top 0;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 20px 5px 20px;
+	font-size: 16px;
+	letter-spacing: .05rem;
+	border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+/* CSS for extended into overlay */
+.wqht_p_extended {
+    position: fixed;
+    z-index: 1000000;
+    box-shadow:2px 2px 2px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 1);
+    width: 600px;
+    border-radius: 0px; /* ronde hoeken voor alle 4 */
+    padding: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #000;
+}
+
+.wqht_body_extended {
+    padding: 0px;
+    margin:0;
+}
+
+.wqht_title_extended {
+    background: #000;
+    color: #fff;
+    font-size: 36px;
+    font-family: franklingothic-demicond,Arial,sans-serif;
+    text-transform: uppercase;
+    padding: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom: 0px solid #bdbdbd;
+}
+
+.wqht_content_extended {
+    padding: 30px;
+}
+
+.wqht_footer_extended {
+    border-top: 0px solid #e0e0e0;
+    background: #000;
+    padding: 10px;
+    text-align: right;
+    border-radius: 0;
+}
+
+.wqht_close_extended {
+    position:absolute;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    font-weight: 600;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+    color: rgba(255,255,255,.7);
+}
+
+.wqht_close_extended:hover {
+    color: rgba(255,255,255,1);
+}
+
+
+/* generic elements styling */
+.wqht_p h1,
+.wqht_p h2,
+.wqht_p h3,
+.wqht_p h4 {
+
+}
+
+.wqht_p h1 {
+    font-size: 36px;
+}
+
+.wqht_p h2 {
+    font-size: 30px;
+}
+
+.wqht_p h3 {
+    font-size: 24px;
+}
+
+.wqht_p h4 {
+    font-size: 16px;
+}
+
+.wqht_p ul {
+    list-style: none;
+    text-align: left;
+    position: relative;
+    left: initial;
+    padding-left:20px;
+    margin: 0 0 10px 0;
+}
+
+.wqht_p li {
+    
+}
+
+.wqht_p ul li:before {
+    margin-left: -2rem;
+    margin-right: 0.5rem;
+    content: '✓ ';
+    text-align: left;
+    color: #fc341f;
+}
+
+.wqht_p ol {
+    list-style: none;
+    text-align: left;
+    position: relative;
+    left: 0;
+}
+
+.wqht_p p {
+    padding-bottom: 10px;
+    width:100%;
+    text-align: left;
+}
+
+.wqht_p table {
+    width: 95%;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.wqht_p .striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.wqht_p thead th {
+    vertical-align: bottom;
+    font-weight: 400;
+    letter-spacing: .05rem;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.wqht_p th, 
+.wqht_p td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: inherit;
+}
+
+/* carrousel css */
+.slick-prev {
+    left: 0px;
+    z-index: 2;
+}
+
+.slick-next {
+    right: 0;
+    z-index: 2;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    color: #fc341f;
+    opacity: .35;
+}
+
+.slick-inner {
+    padding: 5px 30px 5px 30px;
+}
+
+.slick-slider ul li::before {
+    content: '';
+}
+
+.slick-slider ul {
+    text-align:center;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.slick-dots li button:before {
+    color: #fc341f;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #fc341f;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 10px;
+}
+
+/***** DO NOT CHANGE ANYTHING ABOVE THIS LINE *****/
+
+.wqht_subtitle {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#wq_pbar_outerdiv {
+    width: 100%; 
+    height: 5px; 
+    z-index: 1; 
+    position: absolute; 
+    bottom:0;
+    left:0; 
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#wq_pbar_innerdiv {
+    background-color: lightblue; 
+    z-index: 2; 
+    height: 100%; 
+    width: 0;
+    transition-timing-function: linear;
+}
+`;
+
+  document.head.appendChild(style);
+
+</script><meta charset="utf-8" /><meta name="twitter:card" content="summary_large_image" /><link rel="canonical" href="https://www.eur.nl/" /><link rel="shortlink" href="https://www.eur.nl/" /><meta name="description" content="De Erasmus Universiteit Rotterdam (EUR) formuleert oplossingen voor de maatschappij van de toekomst. Bekijk onze bachelor- en masteropleidingen." /><meta name="twitter:title" content="Erasmus Universiteit Rotterdam" /><meta name="twitter:description" content="De Erasmus Universiteit Rotterdam (EUR) formuleert oplossingen voor de maatschappij van de toekomst. Bekijk onze bachelor- en masteropleidingen." /><link rel="mask-icon" href="/favicon.svg" /><link rel="icon" sizes="16x16" href="/favicon-16x16.png" /><link rel="icon" sizes="32x32" href="/favicon-32x32.png" /><meta property="og:title" content="Erasmus Universiteit Rotterdam" /><meta property="og:description" content="De Erasmus Universiteit Rotterdam (EUR) formuleert oplossingen voor de maatschappij van de toekomst. Bekijk onze bachelor- en masteropleidingen." /><meta name="twitter:image" content="https://www.eur.nl/sites/corporate/files/styles/open_graph/public/2018-10/Herfst%20op%20campus%202018%201440x810.jpg?h=2d44e782&amp;itok=1Jz_AbP2" /><meta property="og:image" content="https://www.eur.nl/sites/corporate/files/styles/open_graph/public/2018-10/Herfst%20op%20campus%202018%201440x810.jpg?h=2d44e782&amp;itok=1Jz_AbP2" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="Generator" content="Drupal 8 (https://www.drupal.org)" /><meta name="MobileOptimized" content="width" /><meta name="HandheldFriendly" content="true" /><meta name="theme-color" content="#0C8066" /><link rel="alternate" hreflang="en" href="https://www.eur.nl/en" /><link rel="alternate" hreflang="nl" href="https://www.eur.nl/" /><link rel="revision" href="https://www.eur.nl/erasmus-universiteit-rotterdam" /><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/408be03a/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//col1.wiqhit.com/script/ad43b0ea07cd9dc31f79783c6fad0285ad43b0ea07cd9d-31f.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HVMDBN9MFB&amp;l=dataLayer&amp;cx=c"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-TGXDGTQ" async=""></script><script src="/sites/corporate/files/google_tag/primary/google_tag.script.js?qkqk81" defer=""></script><title>Erasmus Universiteit Rotterdam | Erasmus University Rotterdam</title><link rel="stylesheet" media="all" href="/sites/corporate/files/css/css_U5-cDYrukjXIpTYlrgGplLaTsJr0U7GwIl4mEfakhV4.css" /><link rel="stylesheet" media="all" href="/sites/corporate/files/css/css_JGK5_K4VtHJTQHfQwL_VdbdbRj-yD9GcWKVaACB1wrs.css" /><link rel="stylesheet" media="all" href="/sites/corporate/files/css/css_PXaQ8aXyTvtw4Vu7RTgDd2n6GjHQBV8ZYz8TijSjmSk.css" /><script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31213","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"nl"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"ajax_comments\/commands,blazy\/load,ckeditor_indentblock\/indentblock,core\/html5shiv,core\/picturefill,corporate\/accordion,corporate\/branding,corporate\/button,corporate\/collapse,corporate\/context.corporate,corporate\/eur,corporate\/external-links,corporate\/filter-toggle,corporate\/footer,corporate\/global-styling,corporate\/header,corporate\/language_switch,corporate\/list,corporate\/logo_block,corporate\/masthead,corporate\/navigation-foldout,corporate\/navigation-inline,corporate\/object-fit-polyfill,corporate\/search-collapse,corporate\/search-collapsible,corporate\/site_name,corporate\/social_links,corporate\/svg4everybody,eur_cookieconsent\/eur_cookieconsent,eur_cookieconsent\/settings,eur_groups\/datalayer,eur_study_programme\/study_compare,paragraphs\/drupal.paragraphs.unpublished,poll\/drupal.poll-links,search_api_autocomplete\/search_api_autocomplete,system\/base,views\/views.ajax,views\/views.module","theme":"corporate","theme_token":null},"ajaxTrustedUrl":{"\/zoeken":true},"eur_cookieconsent":{"header":"Erasmus University Rotterdam maakt gebruik van cookies.","message":"De Erasmus University Rotterdam gebruikt cookies voor statistische- en marketingdoeleinden. Door op \u0022Accepteer cookies\u0022 te klikken geef je toestemming voor het plaatsen van cookies bij bezoek aan de website. Lees onze \u003Ca href=\u0022\/disclaimer\/cookies\u0022\u003Ecookie policy\u003C\/a\u003E voor meer informatie over cookies.","dismiss":"Accepteer cookies","allow":"Accepteer cookies","deny":"Cookies weigeren","link":"","href":"","close":"Sluiten","minified":0,"position":"bottom","layout":"block","banner":"#eeeeee","banner_text":"#000000","button":"#0c8066","button_text":"#ffffff","type":"opt-out","domain":".www.eur.nl"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:72167ae0453d50ea6aeec520d202a0a31c538b0b8f44b29244158aff56c45c64":{"view_name":"events","view_display_id":"pe_list_image","view_args":"","view_path":"\/node\/31213","view_base_path":"events\/overview","view_dom_id":"72167ae0453d50ea6aeec520d202a0a31c538b0b8f44b29244158aff56c45c64","pager_element":0,"viewsreference":{"data":{"filter_category":[],"filter_department":"","filter_discipline":[],"filter_event_type":{"2328":"2328","2334":"2334","2336":"2336"},"filter_facets":{"0":0,"events_pe_list_image_group_type":0,"events_pe_list_image_month":0,"events_pe_list_image_organisation":0,"events_pe_list_image_theme":0,"events_pe_list_image_type":0,"events_pe_list_image_year":0},"forum_filter":[],"item_boost_sort":null,"filter_location":null,"filter_news_type":[],"filter_organisation":{"6":"6","8":"8"},"filter_program_name":[],"filter_program_name_master":[],"filter_program_name_post_exp_master":[],"filter_program_name_pre_master":[],"filter_program_name_research_master":[],"result_count":0,"filter_sdg":[],"search_field":0,"filter_strategic_theme":[],"filter_study_programme_type":"","filter_target_group":[],"argument":null,"limit":"3","offset":"0","pager":"some","title":null},"enabled_settings":{"result_count":"result_count","filter_organisation":"filter_organisation","filter_location":"filter_location","item_boost_sort":"item_boost_sort","filter_news_type":"filter_news_type","filter_facets":"filter_facets","filter_discipline":"filter_discipline","filter_program_name_pre_master":"filter_program_name_pre_master","filter_strategic_theme":"filter_strategic_theme","forum_filter":"forum_filter","search_field":"search_field","filter_program_name":"filter_program_name","filter_program_name_research_master":"filter_program_name_research_master","filter_program_name_master":"filter_program_name_master","filter_study_programme_type":"filter_study_programme_type","filter_category":"filter_category","filter_event_type":"filter_event_type","filter_department":"filter_department","filter_sdg":"filter_sdg","filter_program_name_post_exp_master":"filter_program_name_post_exp_master","filter_target_group":"filter_target_group","pager":"pager","limit":"limit","offset":"offset"}}},"views_dom_id:04979abad010b74c55a91f71d1ce31163bed63d9d0e4860cabac5c577762c249":{"view_name":"news","view_display_id":"pe_list_image","view_args":"","view_path":"\/node\/31213","view_base_path":"news-overview","view_dom_id":"04979abad010b74c55a91f71d1ce31163bed63d9d0e4860cabac5c577762c249","pager_element":0,"viewsreference":{"data":{"filter_category":[],"filter_department":"","filter_discipline":[],"filter_event_type":[],"filter_facets":{"0":0,"news_pe_list_image_discipline":0,"news_pe_list_image_group_type":0,"news_pe_list_image_month":0,"news_pe_list_image_organisation":0,"news_pe_list_image_theme":0,"news_pe_list_image_type":0,"news_pe_list_image_year":0},"forum_filter":[],"item_boost_sort":null,"filter_location":null,"filter_news_type":{"2831":"2831","2866":"2866","2322":"2322","2734":"2734","2323":"2323","2325":"2325","2326":"2326","2324":"2324"},"filter_organisation":{"6":"6","8":"8"},"filter_program_name":[],"filter_program_name_master":[],"filter_program_name_post_exp_master":[],"filter_program_name_pre_master":[],"filter_program_name_research_master":[],"result_count":0,"filter_sdg":[],"search_field":0,"filter_strategic_theme":[],"filter_study_programme_type":"","filter_target_group":[],"argument":null,"limit":"3","offset":"0","pager":"some","title":null},"enabled_settings":{"result_count":"result_count","filter_organisation":"filter_organisation","filter_location":"filter_location","item_boost_sort":"item_boost_sort","filter_news_type":"filter_news_type","filter_facets":"filter_facets","filter_discipline":"filter_discipline","filter_program_name_pre_master":"filter_program_name_pre_master","filter_strategic_theme":"filter_strategic_theme","forum_filter":"forum_filter","search_field":"search_field","filter_program_name":"filter_program_name","filter_program_name_research_master":"filter_program_name_research_master","filter_program_name_master":"filter_program_name_master","filter_study_programme_type":"filter_study_programme_type","filter_category":"filter_category","filter_event_type":"filter_event_type","filter_department":"filter_department","filter_sdg":"filter_sdg","filter_program_name_post_exp_master":"filter_program_name_post_exp_master","filter_target_group":"filter_target_group","pager":"pager","limit":"limit","offset":"offset"}}}}},"blazy":{"loadInvisible":false,"offset":200,"saveViewportOffsetDelay":50,"validateDelay":null},"blazyIo":{"enabled":true,"disconnect":false,"rootMargin":"0px","threshold":[0]},"search_api_autocomplete":{"search_page":{"delay":300,"auto_submit":true,"min_length":3}},"eur_groups":{"owner_group":"32"},"eur_study_programme":{"studyCompareBaseUrl":"\/studievergelijker","studyCompareLabels":{"studies":{"24217":"\u003Ca href=\u0022\/bachelor\/algemene-cultuurwetenschappen\u0022 hreflang=\u0022nl\u0022\u003EAlgemene Cultuurwetenschappen\u003C\/a\u003E","24220":"\u003Ca href=\u0022\/bachelor\/bestuurskunde\u0022 hreflang=\u0022nl\u0022\u003EBestuurskunde\u003C\/a\u003E","24223":"\u003Ca href=\u0022\/bachelor\/bedrijfskunde\u0022 hreflang=\u0022nl\u0022\u003EBedrijfskunde\u003C\/a\u003E","24226":"\u003Ca href=\u0022\/bachelor\/criminologie\u0022 hreflang=\u0022nl\u0022\u003ECriminologie\u003C\/a\u003E","24229":"\u003Ca href=\u0022\/bachelor\/econometrie-en-operationele-research\u0022 hreflang=\u0022nl\u0022\u003EEconometrie en Operationele Research\u003C\/a\u003E","24232":"\u003Ca href=\u0022\/bachelor\/economie-en-bedrijfseconomie\u0022 hreflang=\u0022nl\u0022\u003EEconomie en Bedrijfseconomie\u003C\/a\u003E","24235":"\u003Ca href=\u0022\/bachelor\/filosofie\u0022 hreflang=\u0022nl\u0022\u003EFilosofie\u003C\/a\u003E","24238":"\u003Ca href=\u0022\/bachelor\/fiscaal-recht\u0022 hreflang=\u0022nl\u0022\u003EFiscaal Recht\u003C\/a\u003E","24241":"\u003Ca href=\u0022\/bachelor\/fiscale-economie\u0022 hreflang=\u0022nl\u0022\u003EFiscale Economie\u003C\/a\u003E","24244":"\u003Ca href=\u0022\/bachelor\/geneeskunde\u0022 hreflang=\u0022nl\u0022\u003EGeneeskunde\u003C\/a\u003E","24247":"\u003Ca href=\u0022\/bachelor\/geschiedenis\u0022 hreflang=\u0022nl\u0022\u003EGeschiedenis\u003C\/a\u003E","24250":"\u003Ca href=\u0022\/bachelor\/gezondheidswetenschappen-beleid-management-gezondheidszorg-bmg\u0022 hreflang=\u0022nl\u0022\u003EGezondheidswetenschappen, Beleid \u0026amp; Management Gezondheidszorg, BMG\u003C\/a\u003E","24252":"\u003Ca href=\u0022\/bachelor\/international-bachelor-communication-and-media\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor Communication and Media\u003C\/a\u003E","24255":"\u003Ca href=\u0022\/bachelor\/international-bachelor-economics-business-economics\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor Economics \u0026amp; Business Economics\u003C\/a\u003E","24258":"\u003Ca href=\u0022\/bachelor\/international-business-administration-iba\u0022 hreflang=\u0022nl\u0022\u003EInternational Business Administration (IBA)\u003C\/a\u003E","24261":"\u003Ca href=\u0022\/bachelor\/dubbelstudie-economie-en-recht\u0022 hreflang=\u0022nl\u0022\u003EDubbelstudie Economie en Recht\u003C\/a\u003E","24264":"\u003Ca href=\u0022\/bachelor\/rechtsgeleerdheid\u0022 hreflang=\u0022nl\u0022\u003ERechtsgeleerdheid\u003C\/a\u003E","24267":"\u003Ca href=\u0022\/bachelor\/psychologie\u0022 hreflang=\u0022nl\u0022\u003EPsychologie\u003C\/a\u003E","24270":"\u003Ca href=\u0022\/bachelor\/sociologie\u0022 hreflang=\u0022nl\u0022\u003ESociologie\u003C\/a\u003E","24273":"\u003Ca href=\u0022\/master\/ondernemingsrecht\u0022 hreflang=\u0022nl\u0022\u003EOndernemingsrecht\u003C\/a\u003E","24276":"\u003Ca href=\u0022\/master\/master-management\u0022 hreflang=\u0022nl\u0022\u003EMaster in Management\u003C\/a\u003E","24279":"\u003Ca href=\u0022\/master\/accounting-financial-management\u0022 hreflang=\u0022nl\u0022\u003EAccounting \u0026amp; Financial Management\u003C\/a\u003E","24282":"\u003Ca href=\u0022\/master\/criminologie\u0022 hreflang=\u0022nl\u0022\u003ECriminologie\u003C\/a\u003E","24285":"\u003Ca href=\u0022\/master\/econometrics-and-management-science\u0022 hreflang=\u0022nl\u0022\u003EEconometrics and Management Science\u003C\/a\u003E","24288":"\u003Ca href=\u0022\/master\/econometrics\u0022 hreflang=\u0022nl\u0022\u003EEconometrics\u003C\/a\u003E","24291":"\u003Ca href=\u0022\/master\/operations-research-and-quantitative-logistics\u0022 hreflang=\u0022nl\u0022\u003EOperations Research and Quantitative Logistics\u003C\/a\u003E","24292":"\u003Ca href=\u0022\/master\/business-analytics-and-quantitative-marketing\u0022 hreflang=\u0022nl\u0022\u003EBusiness Analytics and Quantitative Marketing\u003C\/a\u003E","24295":"\u003Ca href=\u0022\/master\/economics-and-business\u0022 hreflang=\u0022nl\u0022\u003EEconomics and Business\u003C\/a\u003E","24298":"\u003Ca href=\u0022\/master\/financial-economics\u0022 hreflang=\u0022nl\u0022\u003EFinancial Economics\u003C\/a\u003E","24301":"\u003Ca href=\u0022\/master\/marketing\u0022 hreflang=\u0022nl\u0022\u003EMarketing\u003C\/a\u003E","24304":"\u003Ca href=\u0022\/master\/urban-port-and-transport-economics\u0022 hreflang=\u0022nl\u0022\u003EUrban, Port and Transport Economics\u003C\/a\u003E","24307":"\u003Ca href=\u0022\/master\/behavioural-economics\u0022 hreflang=\u0022nl\u0022\u003EBehavioural Economics\u003C\/a\u003E","24310":"\u003Ca href=\u0022\/master\/economics-markets-and-organisations\u0022 hreflang=\u0022nl\u0022\u003EEconomics of Markets and Organisations\u003C\/a\u003E","24313":"\u003Ca href=\u0022\/master\/strategy-economics\u0022 hreflang=\u0022nl\u0022\u003EStrategy Economics\u003C\/a\u003E","24319":"\u003Ca href=\u0022\/master\/international-economics\u0022 hreflang=\u0022nl\u0022\u003EInternational Economics\u003C\/a\u003E","24322":"\u003Ca href=\u0022\/master\/policy-economics\u0022 hreflang=\u0022nl\u0022\u003EPolicy Economics\u003C\/a\u003E","24325":"\u003Ca href=\u0022\/master\/financieel-recht\u0022 hreflang=\u0022nl\u0022\u003EFinancieel recht\u003C\/a\u003E","24328":"\u003Ca href=\u0022\/master\/fiscaal-recht-directe-belastingen\u0022 hreflang=\u0022nl\u0022\u003EFiscaal Recht (Directe Belastingen)\u003C\/a\u003E","24331":"\u003Ca href=\u0022\/master\/fiscale-economie-directe-belastingen\u0022 hreflang=\u0022nl\u0022\u003EFiscale Economie (Directe Belastingen)\u003C\/a\u003E","24334":"\u003Ca href=\u0022\/master\/health-economics-policy-law\u0022 hreflang=\u0022nl\u0022\u003EHealth Economics, Policy \u0026amp; Law\u003C\/a\u003E","24337":"\u003Ca href=\u0022\/master\/health-economics\u0022 hreflang=\u0022nl\u0022\u003EHealth Economics\u003C\/a\u003E","24340":"\u003Ca href=\u0022\/master\/international-management-cems\u0022 hreflang=\u0022nl\u0022\u003EInternational Management \/ CEMS\u003C\/a\u003E","24343":"\u003Ca href=\u0022\/master\/arts-and-culture-studies\u0022 hreflang=\u0022nl\u0022\u003EArts and Culture Studies\u003C\/a\u003E","24349":"\u003Ca href=\u0022\/master\/cultural-economics-and-entrepreneurship\u0022 hreflang=\u0022nl\u0022\u003ECultural Economics and Entrepreneurship\u003C\/a\u003E","24352":"\u003Ca href=\u0022\/master\/cultuurgeschiedenis\u0022 hreflang=\u0022nl\u0022\u003ECultuurgeschiedenis\u003C\/a\u003E","24355":"\u003Ca href=\u0022\/master\/geschiedenis-van-nederland-een-mondiale-context\u0022 hreflang=\u0022nl\u0022\u003EGeschiedenis van Nederland in een Mondiale Context\u003C\/a\u003E","24358":"\u003Ca href=\u0022\/master\/mediastudies\u0022 hreflang=\u0022nl\u0022\u003EMediastudies\u003C\/a\u003E","24361":"\u003Ca href=\u0022\/master\/media-en-cultuur\u0022 hreflang=\u0022nl\u0022\u003EMedia en Cultuur\u003C\/a\u003E","24367":"\u003Ca href=\u0022\/master\/arbeids-en-organisatiepsychologie\u0022 hreflang=\u0022nl\u0022\u003EArbeids- en Organisatiepsychologie\u003C\/a\u003E","24370":"\u003Ca href=\u0022\/master\/brein-en-cognitie\u0022 hreflang=\u0022nl\u0022\u003EBrein en Cognitie\u003C\/a\u003E","24373":"\u003Ca href=\u0022\/master\/klinische-psychologie\u0022 hreflang=\u0022nl\u0022\u003EKlinische Psychologie\u003C\/a\u003E","24376":"\u003Ca href=\u0022\/master\/klinische-kinder-en-jeugdpsychologie\u0022 hreflang=\u0022nl\u0022\u003EKlinische Kinder- en Jeugdpsychologie\u003C\/a\u003E","24379":"\u003Ca href=\u0022\/master\/psychologie-van-leren-en-presteren\u0022 hreflang=\u0022nl\u0022\u003EPsychologie van Leren en Presteren\u003C\/a\u003E","24382":"\u003Ca href=\u0022\/master\/legal-theory\u0022 hreflang=\u0022nl\u0022\u003ELegal Theory\u003C\/a\u003E","24385":"\u003Ca href=\u0022\/master\/privaatrecht\u0022 hreflang=\u0022nl\u0022\u003EPrivaatrecht\u003C\/a\u003E","24388":"\u003Ca href=\u0022\/master\/staats-en-bestuursrecht\u0022 hreflang=\u0022nl\u0022\u003EStaats- en Bestuursrecht\u003C\/a\u003E","24391":"\u003Ca href=\u0022\/master\/strafrecht\u0022 hreflang=\u0022nl\u0022\u003EStrafrecht\u003C\/a\u003E","24403":"\u003Ca href=\u0022\/master\/zorgmanagement-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EZorgmanagement (deeltijd)\u003C\/a\u003E","24406":"\u003Ca href=\u0022\/research-master\/business-and-management\u0022 hreflang=\u0022nl\u0022\u003EBusiness and Management\u003C\/a\u003E","24409":"\u003Ca href=\u0022\/en\/research-master\/clinical-epidemiology\u0022 hreflang=\u0022en\u0022\u003EClinical Epidemiology\u003C\/a\u003E","24412":"\u003Ca href=\u0022\/en\/research-master\/epidemiology\u0022 hreflang=\u0022en\u0022\u003EEpidemiology\u003C\/a\u003E","24415":"\u003Ca href=\u0022\/en\/research-master\/public-health\u0022 hreflang=\u0022en\u0022\u003EPublic Health\u003C\/a\u003E","24418":"\u003Ca href=\u0022\/en\/research-master\/genetic-epidemiology\u0022 hreflang=\u0022en\u0022\u003EGenetic Epidemiology\u003C\/a\u003E","24421":"\u003Ca href=\u0022\/en\/research-master\/health-economics\u0022 hreflang=\u0022en\u0022\u003EHealth Economics\u003C\/a\u003E","24424":"\u003Ca href=\u0022\/research-master\/clinical-research\u0022 hreflang=\u0022nl\u0022\u003EClinical Research\u003C\/a\u003E","24427":"\u003Ca href=\u0022\/research-master\/research-master-philosophy-and-economics\u0022 hreflang=\u0022nl\u0022\u003EResearch Master in Philosophy and Economics\u003C\/a\u003E","24430":"\u003Ca href=\u0022\/research-master\/economics\u0022 hreflang=\u0022nl\u0022\u003EEconomics\u003C\/a\u003E","24433":"\u003Ca href=\u0022\/research-master\/finance\u0022 hreflang=\u0022nl\u0022\u003EFinance\u003C\/a\u003E","24436":"\u003Ca href=\u0022\/research-master\/econometrics\u0022 hreflang=\u0022nl\u0022\u003EEconometrics\u003C\/a\u003E","24439":"\u003Ca href=\u0022\/research-master\/molecular-medicine\u0022 hreflang=\u0022nl\u0022\u003EMolecular Medicine\u003C\/a\u003E","24442":"\u003Ca href=\u0022\/research-master\/neuroscience\u0022 hreflang=\u0022nl\u0022\u003ENeuroscience\u003C\/a\u003E","24445":"\u003Ca href=\u0022\/research-master\/public-administration-and-organisational-science\u0022 hreflang=\u0022nl\u0022\u003EPublic Administration and Organisational Science\u003C\/a\u003E","24448":"\u003Ca href=\u0022\/research-master\/sociology-culture-media-and-arts\u0022 hreflang=\u0022nl\u0022\u003ESociology of Culture, Media and the Arts\u003C\/a\u003E","24451":"\u003Ca href=\u0022\/bachelor\/bachelor-philosophy-specific-discipline\u0022 hreflang=\u0022nl\u0022\u003EBachelor in Philosophy of a Specific Discipline\u003C\/a\u003E","24454":"\u003Ca href=\u0022\/master\/supply-chain-management\u0022 hreflang=\u0022nl\u0022\u003ESupply Chain Management\u003C\/a\u003E","24457":"\u003Ca href=\u0022\/master\/finance-and-investments\u0022 hreflang=\u0022nl\u0022\u003EFinance and Investments\u003C\/a\u003E","24481":"\u003Ca href=\u0022\/post-master\/international-full-time-mba\u0022 hreflang=\u0022nl\u0022\u003EInternational Full-time MBA\u003C\/a\u003E","24484":"\u003Ca href=\u0022\/post-master\/european-master-law-and-economics\u0022 hreflang=\u0022nl\u0022\u003EEuropean Master in Law and Economics\u003C\/a\u003E","24487":"\u003Ca href=\u0022\/post-master\/maritime-economics-and-logistics\u0022 hreflang=\u0022nl\u0022\u003EMaritime Economics and Logistics\u003C\/a\u003E","24490":"\u003Ca href=\u0022\/post-master\/health-sciences\u0022 hreflang=\u0022nl\u0022\u003EHealth Sciences\u003C\/a\u003E","24493":"\u003Ca href=\u0022\/en\/post-master\/epidemiology\u0022 hreflang=\u0022en\u0022\u003EEpidemiology\u003C\/a\u003E","24496":"\u003Ca href=\u0022\/en\/post-master\/clinical-epidemiology\u0022 hreflang=\u0022en\u0022\u003EClinical Epidemiology\u003C\/a\u003E","24499":"\u003Ca href=\u0022\/en\/post-master\/genetic-epidemiology\u0022 hreflang=\u0022en\u0022\u003EGenetic Epidemiology\u003C\/a\u003E","24502":"\u003Ca href=\u0022\/en\/post-master\/pharmaco-epidemiology\u0022 hreflang=\u0022en\u0022\u003EPharmaco-epidemiology\u003C\/a\u003E","24505":"\u003Ca href=\u0022\/en\/post-master\/public-health\u0022 hreflang=\u0022en\u0022\u003EPublic Health\u003C\/a\u003E","24508":"\u003Ca href=\u0022\/master\/accounting-auditing-and-control\u0022 hreflang=\u0022nl\u0022\u003EAccounting, Auditing and Control\u003C\/a\u003E","24511":"\u003Ca href=\u0022\/master\/accounting-and-auditing\u0022 hreflang=\u0022nl\u0022\u003EAccounting and Auditing\u003C\/a\u003E","24514":"\u003Ca href=\u0022\/master\/accounting-and-control\u0022 hreflang=\u0022nl\u0022\u003EAccounting and Control\u003C\/a\u003E","24517":"\u003Ca href=\u0022\/master\/accounting-and-finance\u0022 hreflang=\u0022nl\u0022\u003EAccounting and Finance\u003C\/a\u003E","24520":"\u003Ca href=\u0022\/master\/aansprakelijkheid-en-verzekering\u0022 hreflang=\u0022nl\u0022\u003EAansprakelijkheid en Verzekering\u003C\/a\u003E","24523":"\u003Ca href=\u0022\/master\/arbeidsrecht\u0022 hreflang=\u0022nl\u0022\u003EArbeidsrecht\u003C\/a\u003E","24526":"\u003Ca href=\u0022\/master\/recht-van-de-gezondheidszorg\u0022 hreflang=\u0022nl\u0022\u003ERecht van de Gezondheidszorg\u003C\/a\u003E","24529":"\u003Ca href=\u0022\/master\/dubbele-master-toga-aan-de-maas\u0022 hreflang=\u0022nl\u0022\u003EDubbele master Toga aan de Maas\u003C\/a\u003E","24535":"\u003Ca href=\u0022\/master\/business-information-management\u0022 hreflang=\u0022nl\u0022\u003EBusiness Information Management\u003C\/a\u003E","24538":"\u003Ca href=\u0022\/master\/strategic-entrepreneurship\u0022 hreflang=\u0022nl\u0022\u003EStrategic Entrepreneurship\u003C\/a\u003E","24541":"\u003Ca href=\u0022\/master\/global-business-sustainability\u0022 hreflang=\u0022nl\u0022\u003EGlobal Business \u0026amp; Sustainability\u003C\/a\u003E","24544":"\u003Ca href=\u0022\/master\/human-resource-management\u0022 hreflang=\u0022nl\u0022\u003EHuman Resource Management\u003C\/a\u003E","24547":"\u003Ca href=\u0022\/master\/management-innovation\u0022 hreflang=\u0022nl\u0022\u003EManagement of Innovation\u003C\/a\u003E","24550":"\u003Ca href=\u0022\/master\/marketing-management\u0022 hreflang=\u0022nl\u0022\u003EMarketing Management\u003C\/a\u003E","24556":"\u003Ca href=\u0022\/master\/strategic-management\u0022 hreflang=\u0022nl\u0022\u003EStrategic Management\u003C\/a\u003E","24559":"\u003Ca href=\u0022\/master\/international-public-management-and-policy\u0022 hreflang=\u0022nl\u0022\u003EInternational Public Management and Policy\u003C\/a\u003E","24562":"\u003Ca href=\u0022\/master\/geneeskunde\u0022 hreflang=\u0022nl\u0022\u003EGeneeskunde\u003C\/a\u003E","24565":"\u003Ca href=\u0022\/bachelor\/international-bachelor-econometrics-and-operations-research\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor Econometrics and Operations Research\u003C\/a\u003E","24568":"\u003Ca href=\u0022\/research-master\/infection-and-immunity\u0022 hreflang=\u0022nl\u0022\u003EInfection and Immunity\u003C\/a\u003E","24571":"\u003Ca href=\u0022\/post-master\/corporate-communication\u0022 hreflang=\u0022nl\u0022\u003ECorporate Communication\u003C\/a\u003E","24574":"\u003Ca href=\u0022\/master\/international-trade-law\u0022 hreflang=\u0022nl\u0022\u003EInternational Trade Law\u003C\/a\u003E","24577":"\u003Ca href=\u0022\/post-master\/commercieel-privaatrecht\u0022 hreflang=\u0022nl\u0022\u003ECommercieel privaatrecht\u003C\/a\u003E","24580":"\u003Ca href=\u0022\/master\/maritime-transport-law\u0022 hreflang=\u0022nl\u0022\u003EMaritime \u0026amp; Transport Law\u003C\/a\u003E","24583":"\u003Ca href=\u0022\/master\/commercial-and-company-law\u0022 hreflang=\u0022nl\u0022\u003ECommercial and Company Law\u003C\/a\u003E","24586":"\u003Ca href=\u0022\/bachelor\/filosofie-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EFilosofie - deeltijd\u003C\/a\u003E","24589":"\u003Ca href=\u0022\/bachelor\/rechtsgeleerdheid-deeltijd\u0022 hreflang=\u0022nl\u0022\u003ERechtsgeleerdheid (deeltijd)\u003C\/a\u003E","24601":"\u003Ca href=\u0022\/en\/master\/arts-and-culture-studies-deeltijd\u0022 hreflang=\u0022en\u0022\u003EArts and Culture Studies (deeltijd)\u003C\/a\u003E","24607":"\u003Ca href=\u0022\/master\/maatschappijgeschiedenis-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EMaatschappijgeschiedenis (deeltijd)\u003C\/a\u003E","24610":"\u003Ca href=\u0022\/master\/media-studies-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EMedia Studies (deeltijd)\u003C\/a\u003E","24628":"\u003Ca href=\u0022\/bachelor\/nanobiology\u0022 hreflang=\u0022nl\u0022\u003ENanobiology\u003C\/a\u003E","24640":"\u003Ca href=\u0022\/bachelor\/double-bachelor-bsc2-econometrics-and-economics\u0022 hreflang=\u0022nl\u0022\u003EDouble bachelor BSc\u00b2 in Econometrics and Economics\u003C\/a\u003E","24643":"\u003Ca href=\u0022\/post-master\/executive-mba\u0022 hreflang=\u0022nl\u0022\u003EExecutive MBA\u003C\/a\u003E","24646":"\u003Ca href=\u0022\/post-master\/global-executive-onemba\u0022 hreflang=\u0022nl\u0022\u003EGlobal Executive OneMBA\u003C\/a\u003E","24655":"\u003Ca href=\u0022\/bachelor\/klinische-technologie\u0022 hreflang=\u0022nl\u0022\u003EKlinische Technologie\u003C\/a\u003E","24658":"\u003Ca href=\u0022\/bachelor\/international-bachelor-arts-and-culture-studies\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor Arts and Culture Studies\u003C\/a\u003E","24661":"\u003Ca href=\u0022\/bachelor\/international-bachelor-history\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor History\u003C\/a\u003E","24664":"\u003Ca href=\u0022\/bachelor\/international-bachelor-psychology\u0022 hreflang=\u0022nl\u0022\u003EInternational Bachelor in Psychology\u003C\/a\u003E","24682":"\u003Ca href=\u0022\/master\/health-care-management\u0022 hreflang=\u0022nl\u0022\u003EHealth Care Management\u003C\/a\u003E","24685":"\u003Ca href=\u0022\/master\/global-history-and-international-relations\u0022 hreflang=\u0022nl\u0022\u003EGlobal History and International Relations\u003C\/a\u003E","24703":"\u003Ca href=\u0022\/master\/quantitative-finance\u0022 hreflang=\u0022nl\u0022\u003EQuantitative Finance\u003C\/a\u003E","24706":"\u003Ca href=\u0022\/master\/media-journalistiek\u0022 hreflang=\u0022nl\u0022\u003EMedia \u0026amp; Journalistiek\u003C\/a\u003E","24715":"\u003Ca href=\u0022\/master\/international-and-european-union-law\u0022 hreflang=\u0022nl\u0022\u003EInternational and European Union Law\u003C\/a\u003E","24724":"\u003Ca href=\u0022\/master\/governance-migration-and-diversity-public-administration\u0022 hreflang=\u0022nl\u0022\u003EGovernance of Migration and Diversity - Public Administration\u003C\/a\u003E","24727":"\u003Ca href=\u0022\/master\/governance-and-management-public-sector\u0022 hreflang=\u0022nl\u0022\u003EGovernance and Management in the Public Sector\u003C\/a\u003E","24730":"\u003Ca href=\u0022\/master\/media-studies\u0022 hreflang=\u0022nl\u0022\u003EMedia Studies\u003C\/a\u003E","24733":"\u003Ca href=\u0022\/master\/media-culture-society\u0022 hreflang=\u0022nl\u0022\u003EMedia, Culture \u0026amp; Society\u003C\/a\u003E","24736":"\u003Ca href=\u0022\/master\/media-business\u0022 hreflang=\u0022nl\u0022\u003EMedia \u0026amp; Business\u003C\/a\u003E","24739":"\u003Ca href=\u0022\/master\/nanobiology\u0022 hreflang=\u0022nl\u0022\u003ENanobiology\u003C\/a\u003E","24742":"\u003Ca href=\u0022\/master\/philosophy\u0022 hreflang=\u0022nl\u0022\u003EPhilosophy\u003C\/a\u003E","24751":"\u003Ca href=\u0022\/master\/politics-and-society\u0022 hreflang=\u0022nl\u0022\u003EPolitics and Society\u003C\/a\u003E","24757":"\u003Ca href=\u0022\/master\/governance-migration-and-diversity-sociology\u0022 hreflang=\u0022nl\u0022\u003EGovernance of Migration and Diversity - Sociology\u003C\/a\u003E","24760":"\u003Ca href=\u0022\/bachelor\/management-international-social-challenges\u0022 hreflang=\u0022nl\u0022\u003EManagement of International Social Challenges\u003C\/a\u003E","24766":"\u003Ca href=\u0022\/master\/arbeid-organisatie-en-management\u0022 hreflang=\u0022nl\u0022\u003EArbeid, Organisatie en Management\u003C\/a\u003E","24769":"\u003Ca href=\u0022\/master\/grootstedelijke-vraagstukken-en-beleid\u0022 hreflang=\u0022nl\u0022\u003EGrootstedelijke Vraagstukken en Beleid\u003C\/a\u003E","24775":"\u003Ca href=\u0022\/master\/european-master-health-economics-and-management\u0022 hreflang=\u0022nl\u0022\u003EEuropean Master in Health Economics and Management\u003C\/a\u003E","24778":"\u003Ca href=\u0022\/bachelor\/fiscaal-recht-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EFiscaal Recht (deeltijd)\u003C\/a\u003E","24796":"\u003Ca href=\u0022\/master\/wijsgerige-antropologie-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EWijsgerige Antropologie (deeltijd)\u003C\/a\u003E","24799":"\u003Ca href=\u0022\/master\/avondprogramma-bestuurskunde\u0022 hreflang=\u0022nl\u0022\u003EAvondprogramma Bestuurskunde\u003C\/a\u003E","24802":"\u003Ca href=\u0022\/master\/beleid-en-politiek\u0022 hreflang=\u0022nl\u0022\u003EBeleid en Politiek\u003C\/a\u003E","24805":"\u003Ca href=\u0022\/master\/governance-en-management-van-complexe-systemen\u0022 hreflang=\u0022nl\u0022\u003EGovernance en Management van Complexe Systemen\u003C\/a\u003E","24808":"\u003Ca href=\u0022\/master\/management-van-hr-en-verandering\u0022 hreflang=\u0022nl\u0022\u003EManagement van HR en verandering\u003C\/a\u003E","24811":"\u003Ca href=\u0022\/master\/publiek-management\u0022 hreflang=\u0022nl\u0022\u003EPubliek Management\u003C\/a\u003E","24814":"\u003Ca href=\u0022\/post-master\/executive-master-finance-and-control-registercontroller\u0022 hreflang=\u0022nl\u0022\u003EExecutive Master of Finance and Control (Registercontroller)\u003C\/a\u003E","24820":"\u003Ca href=\u0022\/post-master\/master-city-developer\u0022 hreflang=\u0022nl\u0022\u003EMaster City Developer\u003C\/a\u003E","24823":"\u003Ca href=\u0022\/master\/development-studies\u0022 hreflang=\u0022nl\u0022\u003EDevelopment Studies\u003C\/a\u003E","24826":"\u003Ca href=\u0022\/en\/post-master\/agrarian-food-and-environmental-studies\u0022 hreflang=\u0022en\u0022\u003EAgrarian, Food and Environmental Studies\u003C\/a\u003E","24829":"\u003Ca href=\u0022\/en\/post-master\/economics-development\u0022 hreflang=\u0022en\u0022\u003EEconomics of Development\u003C\/a\u003E","24832":"\u003Ca href=\u0022\/en\/post-master\/governance-and-development-policy\u0022 hreflang=\u0022en\u0022\u003EGovernance and Development Policy\u003C\/a\u003E","24835":"\u003Ca href=\u0022\/en\/post-master\/human-rights-gender-and-conflict-studies-social-justice-perspectives\u0022 hreflang=\u0022en\u0022\u003EHuman Rights, Gender and Conflict Studies: Social Justice Perspectives\u003C\/a\u003E","24838":"\u003Ca href=\u0022\/en\/post-master\/social-policy-development\u0022 hreflang=\u0022en\u0022\u003ESocial Policy for Development\u003C\/a\u003E","24844":"\u003Ca href=\u0022\/master\/mundus-master-public-policy\u0022 hreflang=\u0022nl\u0022\u003EMundus Master in Public Policy\u003C\/a\u003E","24847":"\u003Ca href=\u0022\/en\/post-master\/political-economy-and-development-iss-ibei-track\u0022 hreflang=\u0022en\u0022\u003EPolitical Economy and Development (ISS-IBEI track)\u003C\/a\u003E","24850":"\u003Ca href=\u0022\/en\/post-master\/governance-and-development-iss-university-york-track\u0022 hreflang=\u0022en\u0022\u003EGovernance and Development (ISS-University of York track)\u003C\/a\u003E","24853":"\u003Ca href=\u0022\/bachelor\/dubbelstudie-recht-en-bedrijfskunde\u0022 hreflang=\u0022nl\u0022\u003EDubbelstudie Recht en Bedrijfskunde\u003C\/a\u003E","24856":"\u003Ca href=\u0022\/master\/media-en-cultuur-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EMedia en Cultuur (deeltijd)\u003C\/a\u003E","24859":"\u003Ca href=\u0022\/master\/media-journalistiek-deeltijd\u0022 hreflang=\u0022nl\u0022\u003EMedia \u0026amp; Journalistiek (deeltijd)\u003C\/a\u003E","24865":"\u003Ca href=\u0022\/master\/orthopedagogiek\u0022 hreflang=\u0022nl\u0022\u003EOrthopedagogiek\u003C\/a\u003E","24868":"\u003Ca href=\u0022\/master\/onderwijswetenschappen\u0022 hreflang=\u0022nl\u0022\u003EOnderwijswetenschappen\u003C\/a\u003E","24871":"\u003Ca href=\u0022\/master\/opvoedvraagstukken-een-diverse-samenleving\u0022 hreflang=\u0022nl\u0022\u003EOpvoedvraagstukken in een diverse samenleving\u003C\/a\u003E","24940":"\u003Ca href=\u0022\/bachelor\/pedagogische-wetenschappen\u0022 hreflang=\u0022nl\u0022\u003EPedagogische Wetenschappen\u003C\/a\u003E","26995":"\u003Ca href=\u0022\/bachelor\/dual-degree-arts-and-sciences\u0022 hreflang=\u0022nl\u0022\u003EDual Degree in Arts and Sciences\u003C\/a\u003E","27040":"\u003Ca href=\u0022\/master\/dubbele-master-privaatrecht-aansprakelijkheid-en-verzekering\u0022 hreflang=\u0022nl\u0022\u003EDubbele master Privaatrecht \u0026amp; Aansprakelijkheid en Verzekering\u003C\/a\u003E","27049":"\u003Ca href=\u0022\/master\/tourism-culture-and-society\u0022 hreflang=\u0022nl\u0022\u003ETourism, Culture and Society\u003C\/a\u003E","28534":"\u003Ca href=\u0022\/en\/master\/business-administration\u0022 hreflang=\u0022en\u0022\u003EBusiness Administration\u003C\/a\u003E","29746":"\u003Ca href=\u0022\/master\/data-science-and-marketing-analytics\u0022 hreflang=\u0022nl\u0022\u003EData Science and Marketing Analytics\u003C\/a\u003E","30184":"\u003Ca href=\u0022\/pre-master\/sociologie\u0022 hreflang=\u0022nl\u0022\u003ESociologie\u003C\/a\u003E","30220":"\u003Ca href=\u0022\/pre-master\/pedagogische-wetenschappen\u0022 hreflang=\u0022nl\u0022\u003EPedagogische Wetenschappen\u003C\/a\u003E","30250":"\u003Ca href=\u0022\/pre-master\/bestuurskunde\u0022 hreflang=\u0022nl\u0022\u003EBestuurskunde\u003C\/a\u003E","30997":"\u003Ca href=\u0022\/pre-master\/gezondheidswetenschappen-bmg\u0022 hreflang=\u0022nl\u0022\u003EGezondheidswetenschappen, BMG\u003C\/a\u003E","31444":"\u003Ca href=\u0022\/research-master\/rechtswetenschappelijk-onderzoek\u0022 hreflang=\u0022nl\u0022\u003ERechtswetenschappelijk Onderzoek\u003C\/a\u003E","31702":"\u003Ca href=\u0022\/pre-master\/history\u0022 hreflang=\u0022nl\u0022\u003EHistory\u003C\/a\u003E","31711":"\u003Ca href=\u0022\/pre-master\/geschiedenis\u0022 hreflang=\u0022nl\u0022\u003EGeschiedenis\u003C\/a\u003E","31779":"\u003Ca href=\u0022\/pre-master\/arts-culture-society\u0022 hreflang=\u0022nl\u0022\u003EArts, Culture \u0026amp; Society\u003C\/a\u003E","31782":"\u003Ca href=\u0022\/pre-master\/cultural-economics-and-entrepreneurship\u0022 hreflang=\u0022nl\u0022\u003ECultural Economics and Entrepreneurship\u003C\/a\u003E","31785":"\u003Ca href=\u0022\/pre-master\/media-journalistiek\u0022 hreflang=\u0022nl\u0022\u003EMedia \u0026amp; Journalistiek\u003C\/a\u003E","31788":"\u003Ca href=\u0022\/pre-master\/media-studies\u0022 hreflang=\u0022nl\u0022\u003EMedia Studies\u003C\/a\u003E","33422":"\u003Ca href=\u0022\/bachelor\/double-bachelor-economics-and-philosophy-economics\u0022 hreflang=\u0022nl\u0022\u003EDouble bachelor in Economics and Philosophy of Economics\u003C\/a\u003E","33452":"\u003Ca href=\u0022\/bachelor\/double-bachelor-econometrics-and-philosophy-econometrics\u0022 hreflang=\u0022nl\u0022\u003EDouble bachelor in Econometrics and Philosophy of Econometrics\u003C\/a\u003E","35918":"\u003Ca href=\u0022\/pre-master\/tourism-culture-and-society\u0022 hreflang=\u0022nl\u0022\u003ETourism, Culture and Society\u003C\/a\u003E","40487":"\u003Ca href=\u0022\/post-master\/customs-and-supply-chain-compliance\u0022 hreflang=\u0022nl\u0022\u003ECustoms and Supply Chain Compliance\u003C\/a\u003E","41005":"\u003Ca href=\u0022\/master\/arts-culture-and-society\u0022 hreflang=\u0022nl\u0022\u003EArts, Culture and Society\u003C\/a\u003E","41020":"\u003Ca href=\u0022\/master\/global-markets-local-creativities-glocal\u0022 hreflang=\u0022nl\u0022\u003EGlobal Markets, Local Creativities (GLOCAL)\u003C\/a\u003E","41437":"\u003Ca href=\u0022\/post-master\/registeraccountant\u0022 hreflang=\u0022nl\u0022\u003ERegisteraccountant\u003C\/a\u003E","42066":"\u003Ca href=\u0022\/master\/dubbele-master-arbeidsrecht-en-ondernemingsrecht\u0022 hreflang=\u0022nl\u0022\u003EDubbele master Arbeidsrecht en Ondernemingsrecht\u003C\/a\u003E","42195":"\u003Ca href=\u0022\/master\/fiscaal-recht-indirecte-belastingen\u0022 hreflang=\u0022nl\u0022\u003EFiscaal Recht (Indirecte Belastingen)\u003C\/a\u003E","42370":"\u003Ca href=\u0022\/en\/research-master\/health-sciences\u0022 hreflang=\u0022en\u0022\u003EHealth Sciences\u003C\/a\u003E","42461":"\u003Ca href=\u0022\/post-master\/internal-auditing-advisory\u0022 hreflang=\u0022nl\u0022\u003EInternal Auditing \u0026amp; Advisory\u003C\/a\u003E","42511":"\u003Ca href=\u0022\/post-master\/it-auditing-advisory\u0022 hreflang=\u0022nl\u0022\u003EIT-Auditing \u0026amp; Advisory\u003C\/a\u003E","43116":"\u003Ca href=\u0022\/master\/philosophy-part-time\u0022 hreflang=\u0022nl\u0022\u003EPhilosophy (part-time)\u003C\/a\u003E","45797":"\u003Ca href=\u0022\/master\/urban-governance\u0022 hreflang=\u0022nl\u0022\u003EUrban Governance\u003C\/a\u003E","46687":"\u003Ca href=\u0022\/master\/international-arbitration-and-business-law\u0022 hreflang=\u0022nl\u0022\u003EInternational Arbitration and Business Law\u003C\/a\u003E","46926":"\u003Ca href=\u0022\/master\/social-inequalities\u0022 hreflang=\u0022nl\u0022\u003ESocial Inequalities\u003C\/a\u003E","46958":"\u003Ca href=\u0022\/master\/engaging-public-issues\u0022 hreflang=\u0022nl\u0022\u003EEngaging Public Issues\u003C\/a\u003E","46990":"\u003Ca href=\u0022\/master\/fiscale-economie-indirecte-belastingen\u0022 hreflang=\u0022nl\u0022\u003EFiscale Economie (Indirecte Belastingen)\u003C\/a\u003E","48222":"\u003Ca href=\u0022\/master\/international-masters-advanced-research-criminology-imarc\u0022 hreflang=\u0022nl\u0022\u003EInternational Master\u2019s in Advanced Research in Criminology (IMARC)\u003C\/a\u003E","51508":"\u003Ca href=\u0022\/master\/media-creative-industries\u0022 hreflang=\u0022nl\u0022\u003EMedia \u0026amp; Creative Industries\u003C\/a\u003E","53369":"\u003Ca href=\u0022\/master\/master-management-parttime\u0022 hreflang=\u0022nl\u0022\u003EMaster in Management (Parttime)\u003C\/a\u003E","53384":"\u003Ca href=\u0022\/master\/forensic-and-legal-psychology\u0022 hreflang=\u0022nl\u0022\u003EForensic and Legal Psychology\u003C\/a\u003E","53431":"\u003Ca href=\u0022\/master\/psychology-digital-media\u0022 hreflang=\u0022nl\u0022\u003EPsychology of the Digital Media\u003C\/a\u003E","53577":"\u003Ca href=\u0022\/master\/health-psychology-digital-interventions\u0022 hreflang=\u0022nl\u0022\u003EHealth Psychology \u0026amp; Digital Interventions\u003C\/a\u003E","53834":"\u003Ca href=\u0022\/en\/master\/infrastructure-and-green-cities\u0022 hreflang=\u0022en\u0022\u003EInfrastructure and Green Cities\u003C\/a\u003E","53960":"\u003Ca href=\u0022\/en\/master\/urban-environment-sustainability-and-climate-change\u0022 hreflang=\u0022en\u0022\u003EUrban Environment, Sustainability and Climate Change\u003C\/a\u003E","54012":"\u003Ca href=\u0022\/en\/master\/land-management-law-finance-real-estate-and-natural-resources\u0022 hreflang=\u0022en\u0022\u003ELand Management: Law, Finance, Real Estate and Natural Resources\u003C\/a\u003E","54139":"\u003Ca href=\u0022\/en\/master\/strategic-urban-planning-policies\u0022 hreflang=\u0022en\u0022\u003EStrategic Urban Planning \u0026amp; Policies\u003C\/a\u003E","54145":"\u003Ca href=\u0022\/en\/master\/urban-housing-equity-and-social-justice\u0022 hreflang=\u0022en\u0022\u003EUrban Housing, Equity and Social Justice\u003C\/a\u003E","54150":"\u003Ca href=\u0022\/en\/master\/urban-economic-development-innovation-and-entrepreneurship\u0022 hreflang=\u0022en\u0022\u003EUrban Economic Development: Innovation and Entrepreneurship\u003C\/a\u003E","54447":"\u003Ca href=\u0022\/master\/organisational-dynamics-digital-society\u0022 hreflang=\u0022nl\u0022\u003EOrganisational Dynamics in the Digital Society\u003C\/a\u003E","55004":"\u003Ca href=\u0022\/en\/master\/business-analytics-management\u0022 hreflang=\u0022en\u0022\u003EBusiness Analytics \u0026amp; Management\u003C\/a\u003E","56762":"\u003Ca href=\u0022\/en\/ese\/pre-master\/econometrics-and-management-science\u0022 hreflang=\u0022en\u0022\u003EEconometrics and Management Science\u003C\/a\u003E","57684":"\u003Ca href=\u0022\/en\/erasmusmc\/research-master\/health-sciences\u0022 hreflang=\u0022en\u0022\u003EHealth Sciences\u003C\/a\u003E","58099":"\u003Ca href=\u0022\/research-master\/business-data-science\u0022 hreflang=\u0022nl\u0022\u003EBusiness Data Science\u003C\/a\u003E","58784":"\u003Ca href=\u0022\/bachelor\/liberal-arts-and-sciences\u0022 hreflang=\u0022nl\u0022\u003ELiberal Arts and Sciences\u003C\/a\u003E","61672":"\u003Ca href=\u0022\/esl-executive-education\/post-master\/commercieel-privaatrecht-0\u0022 hreflang=\u0022nl\u0022\u003ECommercieel Privaatrecht\u003C\/a\u003E","61837":"\u003Ca href=\u0022\/esl-executive-education\/post-master\/ethiek-recht-en-zorg\u0022 hreflang=\u0022nl\u0022\u003EEthiek, Recht en Zorg\u003C\/a\u003E","63402":"\u003Ca href=\u0022\/master\/digitalisation-surveillance-societies\u0022 hreflang=\u0022nl\u0022\u003EDigitalisation, Surveillance \u0026amp; Societies\u003C\/a\u003E"},"durations":{"1768":{"singular":"dag","plural":"dagen"},"1766":{"singular":"uur","plural":"uren"},"1774":{"singular":"maand","plural":"maanden"},"1771":{"singular":"week","plural":"weken"},"1777":{"singular":"jaar","plural":"jaren"}}},"studyCompareCart":true},"user":{"uid":0,"permissionsHash":"64ea640bef876819f8544a7f32842a0d6b2365786b75474c3b0babbb78de26bf"}}</script><!--[if lte IE 8]><script src="/sites/corporate/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script><![endif]--><script src="/sites/corporate/files/js/js_5wkwuLNYl0ihT5BcJk3y1dRCrdmhbf4TZzbl_4rNeWI.js"></script><script src="/sites/corporate/files/js/js_Qs5RzCcOUDzx-00lK-doSxyDZ5K8rGjFtGxc_glDGo8.js"></script><script src="/sites/corporate/files/js/js_TsyPvSsxabMdkcCO4t5DWIo4sAUCXFsA5RpIHutoIG0.js"></script><meta name="msvalidate.01" content="7692D324BDD12725A89038050215B59F" /><script type="text/javascript">function createCookie(name,value,days) { if (days) { var date = new Date(); date.setTime(date.getTime()+(days*24*60*60*1000)); var expires = "; expires="+date.toGMTString(); } else var expires = ""; document.cookie = name+"="+value+expires+"; path=/";} function readCookie(name) { var nameEQ = name + "="; var ca = document.cookie.split(';'); for(var i=0;i &lt; ca.length;i++) { var c = ca[i]; while (c.charAt(0)==' ') c = c.substring(1,c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length); } return null; } </script><script type="text/javascript" src="https://www.youtube.com/iframe_api"></script><style>
+  .wqht_p * {
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+#wq-wrapper {
+    position: relative;
+    box-shadow:0 0 7px rgba(0,0,0,0.5);
+    background: #fff;
+    max-width: 400px;
+    border-radius: 4px; /* ronde hoeken voor alle 4 */
+    width: 90%;
+    margin: 0 auto auto;
+    overflow: hidden;
+    display: table;
+}
+
+.wqht_p {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    box-shadow:0 0 7px rgba(0,0,0,0.5);      
+    background: #fff;
+    width: 400px;
+    border-radius: 0px; /* ronde hoeken voor alle 4 */
+    padding: 0px;
+    border: 0px solid #fc341f;
+    overflow: hidden;
+    display:table;
+}
+
+.wqht_icon {
+    display: table-cell;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100px;
+    /*background: radial-gradient(circle farthest-corner at right bottom,#db5505 0, #ff7320 100%);*/
+    color: #FC8D01;
+    vertical-align: middle;
+}
+
+.wqht_body {
+    display: table-cell;
+    padding: 20px;
+    border-bottom: 0px solid #fff;
+    width: 300px;
+    height:100%;
+    background-color: #efefef;
+}
+
+.wqht_title {
+    font-weight: 600;
+    text-align: left;
+    color:#FC8D01;
+    font-size: 14px;
+}
+
+.wqht_content {
+    font-size: 12px;
+}
+
+.wqht_footer {
+    
+}
+
+
+
+.wqht_close {
+    position:absolute;
+    font-size: 24px;
+    width:18px;
+    height:18px;
+    background-color:#fff;
+    border-radius:50%;
+    font-weight: 600;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: rgba(0,0,0,.5);
+}
+
+.wqht_close:hover {
+    color: rgba(0,0,0,.8);
+}
+
+.wqht_button {
+    display: inline-block;
+    padding: 0 15px 0 15px !important;
+    margin: 0px;
+    text-align:center;
+    text-decoration: none;
+    /* Pas hieronder aan */
+    background: #ff7320;
+    color: #fff !important;
+    line-height: 0px; /* gelijk aan de height maken */
+    font-size: 16px;
+    border-radius: 3px;
+    border: 0px solid #ff7320;
+}
+
+.wqht_button:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.wqht_label {
+    position: fixed;
+    left:initial;
+    top: 50%;
+    left: 35px;
+    z-index: 1000000;
+    background: #fc341f;
+    box-shadow:2px 2px 2px rgba(0,0,0,0.2);
+    transform: rotate(90deg);
+	transform-origin: left top 0;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 20px 5px 20px;
+	font-size: 16px;
+	letter-spacing: .05rem;
+	border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+/* CSS for extended into overlay */
+.wqht_p_extended {
+    position: fixed;
+    z-index: 1000000;
+    box-shadow:2px 2px 2px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 1);
+    width: 600px;
+    border-radius: 0px; /* ronde hoeken voor alle 4 */
+    padding: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #000;
+}
+
+.wqht_body_extended {
+    padding: 0px;
+    margin:0;
+}
+
+.wqht_title_extended {
+    background: #000;
+    color: #fff;
+    font-size: 36px;
+    font-family: franklingothic-demicond,Arial,sans-serif;
+    text-transform: uppercase;
+    padding: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom: 0px solid #bdbdbd;
+}
+
+.wqht_content_extended {
+    padding: 30px;
+}
+
+.wqht_footer_extended {
+    border-top: 0px solid #e0e0e0;
+    background: #000;
+    padding: 10px;
+    text-align: right;
+    border-radius: 0;
+}
+
+.wqht_close_extended {
+    position:absolute;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    font-weight: 600;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+    color: rgba(255,255,255,.7);
+}
+
+.wqht_close_extended:hover {
+    color: rgba(255,255,255,1);
+}
+
+
+/* generic elements styling */
+.wqht_p h1,
+.wqht_p h2,
+.wqht_p h3,
+.wqht_p h4 {
+
+}
+
+.wqht_p h1 {
+    font-size: 36px;
+}
+
+.wqht_p h2 {
+    font-size: 30px;
+}
+
+.wqht_p h3 {
+    font-size: 24px;
+}
+
+.wqht_p h4 {
+    font-size: 16px;
+}
+
+.wqht_p ul {
+    list-style: none;
+    text-align: left;
+    position: relative;
+    left: initial;
+    padding-left:20px;
+    margin: 0 0 10px 0;
+}
+
+.wqht_p li {
+    
+}
+
+.wqht_p ul li:before {
+    margin-left: -2rem;
+    margin-right: 0.5rem;
+    content: '✓ ';
+    text-align: left;
+    color: #fc341f;
+}
+
+.wqht_p ol {
+    list-style: none;
+    text-align: left;
+    position: relative;
+    left: 0;
+}
+
+.wqht_p p {
+    padding-bottom: 10px;
+    width:100%;
+    text-align: left;
+}
+
+.wqht_p table {
+    width: 95%;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.wqht_p .striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,.05);
+}
+
+.wqht_p thead th {
+    vertical-align: bottom;
+    font-weight: 400;
+    letter-spacing: .05rem;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.wqht_p th, 
+.wqht_p td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: inherit;
+}
+
+/* carrousel css */
+.slick-prev {
+    left: 0px;
+    z-index: 2;
+}
+
+.slick-next {
+    right: 0;
+    z-index: 2;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    color: #fc341f;
+    opacity: .35;
+}
+
+.slick-inner {
+    padding: 5px 30px 5px 30px;
+}
+
+.slick-slider ul li::before {
+    content: '';
+}
+
+.slick-slider ul {
+    text-align:center;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.slick-dots li button:before {
+    color: #fc341f;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #fc341f;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 10px;
+}
+
+/***** DO NOT CHANGE ANYTHING ABOVE THIS LINE *****/
+
+.wqht_subtitle {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#wq_pbar_outerdiv {
+    width: 100%; 
+    height: 5px; 
+    z-index: 1; 
+    position: absolute; 
+    bottom:0;
+    left:0; 
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#wq_pbar_innerdiv {
+    background-color: lightblue; 
+    z-index: 2; 
+    height: 100%; 
+    width: 0;
+    transition-timing-function: linear;
+}
+</style><style></style></head><body class="palette-corporate page--with-swoosh-photo page--with-masthead-header page__front page--node-type-landingpage"><div style="display: none;"></div><div role="dialog" aria-live="polite" aria-labelledby="cookieTitle" aria-describedby="cookieDescr" class="cc-window cc-type-opt-outcc-bottom messages messages--cookie " style=""><svg xmlns="http://www.w3.org/2000/svg" class="messages__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg#info-sign"/></svg><div class="l-cookie-content-wrapper"><div class="messages__content"><h3 id="cookieTitle" class="messages__title">Erasmus University Rotterdam maakt gebruik van cookies.</h3><p id="cookieDescr">De Erasmus University Rotterdam gebruikt cookies voor statistische- en marketingdoeleinden. Door op "Accepteer cookies" te klikken geef je toestemming voor het plaatsen van cookies bij bezoek aan de website. Lees onze <a href="/disclaimer/cookies">cookie policy</a> voor meer informatie over cookies.</p></div><div class="l-cookie-button-wrapper"><button class="button cc-btn cc-dismiss"><span class="button__chevron">›</span>Accepteer cookies</button><button tabindex="0" class="button button--white cc-btn cc-deny"><span class="button__chevron">›</span>Cookies weigeren</button></div></div></div><div class="skip"> <a href="https://www.eur.nl/erasmus-universiteit-rotterdam#main-content" class="visually-hidden focusable skip__link skip__link-content button"> <span class="button__chevron" aria-hidden="true">›</span> <span class="button__text">Overslaan en naar de inhoud gaan</span> </a> <a href="#searchButton" class="visually-hidden focusable skip__link skip__link-search button"> <span class="button__chevron" aria-hidden="true">›</span> <span class="button__text">Overslaan en naar de zoekfunctie gaan</span> </a> <a href="https://www.eur.nl/erasmus-universiteit-rotterdam#sidebar-first" class="visually-hidden focusable skip__link skip__link-sidebar button" style="display: none;"> <span class="button__chevron" aria-hidden="true">›</span> <span class="button__text">Direct naar subnavigatie</span> </a></div><noscript aria-hidden="true">&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGXDGTQ" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript><div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas=""> <header class="l-site-header "><div class="l-site-header__inner"><div class="l-site-header__header-mobile l-move-with-pullout"> <button class="button button--menu button--no-bg js-pullout-toggle js-pullout-open"> <span class="visually-hidden"> Open menu </span> <svg class="button__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#menu" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button> <button class="js-pullout-toggle l-close-pullout-tablet" aria-hidden="true"> </button> <a href="/" title="Home" class="logo logo--variant-1"><svg xmlns="http://www.w3.org/2000/svg" class="logo__image"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#logo"/></svg></a><div class="js-search-toggle"></div></div><div class="l-site-pullout"> <button class="button button--close button--no-bg button--menu l-pullout-close js-pullout-toggle js-pullout-close"> <span class="visually-hidden"> Sluiten </span> <svg class="button__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#close" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><div class="l-branding"><div class="l-site-name"> <a class="site-name--corporate site-name site-name--stacked site-name--stacked-below-desktop" href="/" title="Home" rel="home"> <span class="site-name__part">Erasmus</span> <span class="site-name__part">University</span> <span class="site-name__part">Rotterdam</span> </a></div><div class="l-logo"> <a href="/" title="Home" rel="home" class="logo"><svg xmlns="http://www.w3.org/2000/svg" aria-label="Erasmus logo, ga naar homepagina" class="logo__image" role="img"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#logo"/></svg></a></div></div><div class="l-site-header-top"><div class="l-site-header-top__inner"><div class="l-navigation-primary"> <nav aria-labelledby="navigation-main" class="navigation-main"><h2 class="visually-hidden" id="navigation-main"> Primaire navigatie</h2><ul class="navigation-foldout__list navigation-foldout__list--Primary js-nav-accordion-content"><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/onderwijs" class="navigation-foldout__link"> Onderwijs </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-1" aria-expanded="false" id="js-nav-accordion-trigger-1"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-1" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/onderwijs/studiekeuze" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Studiekeuze </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/bacheloropleidingen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Bacheloropleidingen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/masteropleidingen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Masteropleidingen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/executive-onderwijs" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Executive onderwijs </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/cursussen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Cursussen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/minoren" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Minoren </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/keuzevakken" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Keuzevakken </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/praktische-zaken" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Praktische zaken </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/alumni" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Alumni </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/services-voor-scholen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Services voor scholen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderwijs/studeren-rotterdam" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Studeren in Rotterdam </span> </a></li></ul></li><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/onderzoek" class="navigation-foldout__link"> Onderzoek </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-2" aria-expanded="false" id="js-nav-accordion-trigger-2"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-2" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/onderzoek/promoveren-aan-eur" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Promoveren aan EUR </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/onderzoeksgebieden" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Onderzoeksgebieden </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/erasmus-initiatives" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Erasmus Initiatives </span> </a></li><li class="navigation-foldout__subitem"> <a href="/people" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Wetenschappers </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/research-services" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Research services </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/studio-erasmus" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Studio Erasmus </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/wetenschapscafe-rotterdam" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Wetenschapscafé Rotterdam </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/prijzen-en-onderscheidingen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Prijzen en onderscheidingen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/onderzoek/bureau-van-de-pedel" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Bureau van de Pedel </span> </a></li></ul></li><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/over-de-eur" class="navigation-foldout__link"> Over de EUR </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-3" aria-expanded="false" id="js-nav-accordion-trigger-3"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-3" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/over-de-eur/rankings" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Rankings </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/organisatie-en-bestuur" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Organisatie en bestuur </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/faculteiten" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Faculteiten </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/strategie-2024" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Strategie 2024 </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/beleid-en-reglementen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Beleid en reglementen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/visie" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Visie </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/feiten-en-cijfers" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Feiten en cijfers </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/evenementen" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Evenementen </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/samenwerken" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Samenwerken </span> </a></li><li class="navigation-foldout__subitem"> <a href="/over-de-eur/eur-holding" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> EUR Holding </span> </a></li></ul></li><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/werken-bij" class="navigation-foldout__link"> Werken bij </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-4" aria-expanded="false" id="js-nav-accordion-trigger-4"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-4" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/werken-bij/vacatures-wetenschappelijk-personeel" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Vacatures wetenschappelijk personeel </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/vacatures-ondersteunend-personeel" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Vacatures ondersteunend personeel </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/lde-traineeship" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> LDE-traineeship </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/eur-als-werkgever" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> EUR als werkgever </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/trainingen-eur" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Trainingen EUR </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/hr-excellence-research" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> HR Excellence in Research </span> </a></li><li class="navigation-foldout__subitem"> <a href="/werken-bij/internationalisering" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Internationalisering </span> </a></li></ul></li><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/campus" class="navigation-foldout__link"> Campus </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-5" aria-expanded="false" id="js-nav-accordion-trigger-5"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-5" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/campus/locaties" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Locaties </span> </a></li><li class="navigation-foldout__subitem"> <a href="https://www.eur.nl/library/" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Universiteitsbibliotheek </span> </a></li><li class="navigation-foldout__subitem"> <a href="/campus/campus-ontwikkeling" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Campus in ontwikkeling </span> </a></li><li class="navigation-foldout__subitem"> <a href="/campus/kunst-cultuur" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Kunst &amp; cultuur </span> </a></li><li class="navigation-foldout__subitem"> <a href="/campus/verhuur" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Verhuur </span> </a></li></ul></li><li class="navigation-foldout__item navigation-foldout__item--with-sublist"> <a href="/nieuws-agenda" class="navigation-foldout__link"> Nieuws &amp; Agenda </a> <button data-toggle-open="Open submenu" data-toggle-close="Sluit submenu" class="navigation-foldout__toggle navigation-foldout__toggle--hide js-accordion-trigger" aria-controls="js-nav-accordion-content-6" aria-expanded="false" id="js-nav-accordion-trigger-6"> <span class="visually-hidden">Open submenu</span> <svg class="navigation-foldout__toggle-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><ul class="navigation-foldout__sublist navigation-foldout__sublist--Primary js-nav-accordion-content" id="js-nav-accordion-content-6" hidden="hidden"><li class="navigation-foldout__subitem"> <a href="/nieuws/overzicht" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Nieuwsoverzicht </span> </a></li><li class="navigation-foldout__subitem"> <a href="/evenementen/overzicht" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Agenda </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/dossiers" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Dossiers </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/corona" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Corona </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/academische-plechtigheden" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Academische plechtigheden </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/eur-het-nieuws" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> EUR in het nieuws </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/voor-journalisten" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Voor journalisten </span> </a></li><li class="navigation-foldout__subitem"> <a href="/nieuws-agenda/podcasts" class="navigation-foldout__sublink navigation-foldout__sublink--with-icon link--icon"> <svg class="navigation-foldout__subicon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Podcasts </span> </a></li></ul></li><li class="navigation-foldout__item"> <a href="/contact" class="navigation-foldout__link"> Contact </a></li></ul> </nav></div></div><div class="l-language-switch"> <nav class="language-switch" id="language-switch" aria-labelledby="language-switch-label"><h2 class="visually-hidden" id="language-switch-label">Wissel naar taal</h2><ul class="language-switch__list list"><li class="language-switch__item list__item"><a href="/en" class="language-switch__link" hreflang="en"><span aria-hidden="true">EN</span><span class="visually-hidden">English</span></a></li><li class="language-switch__item list__item"><span class="language-switch__link language-switch__link--active"><span aria-hidden="true">NL</span><span class="visually-hidden">Nederlands huidige taal</span></span></li></ul></nav></div></div></div><div class="search--collapsible"> <button class="search--collapsible__toggle js-search-collapsible-toggle collapsed" id="searchButton" data-toggle="collapse" data-target="#searchBox" aria-expanded="false" aria-controls="searchBox"> <span class="visually-hidden">Toon zoekveld</span> <svg class="button__icon icon-search" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#search" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <svg class="button__icon icon-close" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#close" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> </button><div class="search--collapsible__form collapse hide" id="searchBox"><div class="views-exposed-form views-exposed-form-search-page-results form form--main form--search form--header" data-drupal-selector="views-exposed-form" id="block-search-search-form"><form action="/zoeken" method="get" id="views-exposed-form-search-page-results" accept-charset="UTF-8" novalidate="" data-drupal-form-fields="edit-s"><div class="form__inner"><div class="js-form-item form-item js-form-type-eur-search-api-autocomplete form-item-s js-form-item-s form-no-label"> <label for="edit-s" class="visually-hidden"> Zoeken </label> <input placeholder="Zoeken" data-drupal-selector="edit-s" data-search-api-autocomplete-search="search_page" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/search_api_autocomplete/search_page?display=results&amp;&amp;filter=s" type="search" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off" /></div><div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><button class="button--search button js-form-submit form-submit" type="submit" id="edit-submit-search-page" value="Zoeken" aria-label="Zoeken"><svg xmlns="http://www.w3.org/2000/svg" class="button__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#search"/></svg><span class="button--text">Zoeken</span> </button></div></div></form></div></div></div></div></header><div class="l-site-content l-move-with-pullout"><div class="l-masthead l-masthead--with-image"><div class="l-swoosh"><div class="swoosh swoosh--masthead" aria-hidden="true"> <svg class="swoosh__graphic" viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <pattern id="imgpattern" x="0" y="0" width="1" height="1"> <image width="1440" height="810" class="swoosh__image" xlink:href="https://www.eur.nl/sites/corporate/files/styles/masthead/public/2018-10/Herfst%20op%20campus%202018%201440x810.jpg?h=2d44e782&amp;itok=8kLI2xA2"/> </pattern> </defs> <path fill="url(#imgpattern)" d="M0.3,621.4c21.8,13.8,44.5,27.4,68,40.6c636.6,357.7,999.5-370.4,1371.3-398.1V-0.8H0.3V621.4z"/> </svg></div></div><div class="l-masthead-header"><div class="masthead-header"><h1 class="masthead-header__title"> Erasmus Universiteit Rotterdam</h1><div class="masthead-header__subtitle"> Make it happen</div></div></div></div><div class="l-site-content__wrapper"><div class="l-main-content-wrapper"><div class="l-content-top"></div> <main class="l-main-content"> <a id="main-content" tabindex="-1"></a><div class="l-content"><div data-drupal-messages-fallback="" class="hidden"></div><article data-history-node-id="31213" role="article" class="node node--type-landingpage node--view-mode-full"><div class="paragraph paragraph--spotlight l-spotlight l-spotlight--with-featured spotlight--featured"><div class="spotlight--featured__item"><div data-history-node-id="64299" class="spotlight--variant-3 spotlight spotlight--background-color-2 l-negate-section-padding"> <a class="spotlight__link js-no-external-icon" href="https://www.youtube.com/watch?v=InJbeKs_rfo"><div class="spotlight__still"></div> <span class="visually-hidden"> Lees meer over <span>Studio Erasmus - Mathilde Berghout over medisch leiderschap</span> </span> <figure class="spotlight__photo rs_preserve"><div class="media media--bundle--image media--blazy media--responsive media--image is-b-loaded"> <picture> <source media="(min-width: 480px)" type="image/jpeg" srcset="/sites/corporate/files/styles/spotlight_featured/public/2020-11/se-artsen.jpg?h=c673cd1c&amp;itok=1quzArQQ 1x" /> <source type="image/jpeg" srcset="/sites/corporate/files/styles/spotlight_mobile/public/2020-11/se-artsen.jpg?h=c673cd1c&amp;itok=bcFN0TZh 1x" /> <img class="media__image media__element b-lazy b-responsive b-loaded" loading="lazy" src="/sites/corporate/files/styles/spotlight_mobile/public/2020-11/se-artsen.jpg?h=c673cd1c&amp;itok=bcFN0TZh" alt="" data-bio-hit="1" /> </picture></div> </figure><div class="spotlight__content"><p class="spotlight__content-title"><span>Studio Erasmus - Mathilde Berghout over medisch leiderschap</span></p><div class="button button--hide-text"> <span class="button__chevron">›</span></div></div> </a></div></div><div class="spotlight--featured__items"><div data-history-node-id="64296" class="spotlight--variant-3 spotlight spotlight--background-color-2 l-negate-section-padding"> <a class="spotlight__link js-no-external-icon" href="https://www.youtube.com/watch?v=gWRlz4irfMU"><div class="spotlight__still"></div> <span class="visually-hidden"> Lees meer over <span>Studio Erasmus - Peter Scholten over migratie naar Europa</span> </span> <figure class="spotlight__photo rs_preserve"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"> <picture> <source media="(min-width: 480px)" type="image/jpeg" data-srcset="/sites/corporate/files/styles/spotlight_featured/public/2020-11/se-peter-scholten.jpg?h=b609465e&amp;itok=2hhYcCqN 1x" /> <source type="image/jpeg" data-srcset="/sites/corporate/files/styles/spotlight_mobile/public/2020-11/se-peter-scholten.jpg?h=b609465e&amp;itok=DWyhC7-x 1x" /> <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/sites/corporate/files/styles/spotlight_mobile/public/2020-11/se-peter-scholten.jpg?h=b609465e&amp;itok=DWyhC7-x" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 480 280'%2F%3E" alt="" /> </picture></div> </figure><div class="spotlight__content"><p class="spotlight__content-title"><span>Studio Erasmus - Peter Scholten over migratie naar Europa</span></p><div class="button button--hide-text"> <span class="button__chevron">›</span></div></div> </a></div><div data-history-node-id="57426" class="spotlight--variant-3 spotlight spotlight--background-color-2 l-negate-section-padding"> <a class="spotlight__link js-no-external-icon" href="https://www.eur.nl/corona"><div class="spotlight__still"></div> <span class="visually-hidden"> Lees meer over <span>EUR coronavirus updates: 2 december, 11:14 uur</span> </span> <figure class="spotlight__photo rs_preserve"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"> <picture> <source media="(min-width: 480px)" type="image/jpeg" data-srcset="/sites/corporate/files/styles/spotlight_featured/public/2020-03/coronavirus-eur.jpg?h=036f3151&amp;itok=oEr6L3oS 1x" /> <source type="image/jpeg" data-srcset="/sites/corporate/files/styles/spotlight_mobile/public/2020-03/coronavirus-eur.jpg?h=036f3151&amp;itok=Ufg7g2fx 1x" /> <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/sites/corporate/files/styles/spotlight_mobile/public/2020-03/coronavirus-eur.jpg?h=036f3151&amp;itok=Ufg7g2fx" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 480 280'%2F%3E" alt="" /> </picture></div> </figure><div class="spotlight__content"><p class="spotlight__content-title"><span>EUR coronavirus updates: 2 december, 11:14 uur</span></p><div class="button button--hide-text"> <span class="button__chevron">›</span></div></div> </a></div></div></div><div class="paragraph paragraph--link-blocks l-negate-section-padding"><div class="grid grid--reset-margin"><div class="grid__item link-block"><h2 class="block-title"><a href="/onderwijs" class="block-title block-title__link" hreflang="und"> <span class="block-title__text">Onderwijs</span><span class="block-title__chevron" aria-hidden="true">›</span></a></h2><ul class="link-block__list"><li class="link-block__list-item"><a href="/onderwijs/bacheloropleidingen" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Bacheloropleidingen</span></a></li><li class="link-block__list-item"><a href="/onderwijs/masteropleidingen" class="list-item-link"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Masteropleidingen</span></a></li><li class="link-block__list-item"><a href="/onderwijs/executive-onderwijs" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Executive onderwijs</span></a></li><li class="link-block__list-item"><a href="https://www.eur.nl/library" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Universiteitsbibliotheek</span></a></li></ul></div><div class="grid__item link-block"><h2 class="block-title"><a href="/over-de-eur" class="block-title block-title__link" hreflang="und"> <span class="block-title__text">Over de EUR</span><span class="block-title__chevron" aria-hidden="true">›</span></a></h2><ul class="link-block__list"><li class="link-block__list-item"><a href="/werken-bij" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Vacatures</span></a></li><li class="link-block__list-item"><a href="/onderzoek/promoveren-aan-eur" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Promoveren aan de EUR</span></a></li><li class="link-block__list-item"><a href="/contact" class="list-item-link"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Contact</span></a></li><li class="link-block__list-item"><a href="/over-de-eur/organisatie-en-bestuur" class="list-item-link"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Bestuur</span></a></li></ul></div><div class="grid__item link-block"><h2 class="block-title"><a href="/onderzoek" class="block-title block-title__link" hreflang="und"> <span class="block-title__text">Onderzoek</span><span class="block-title__chevron" aria-hidden="true">›</span></a></h2><ul class="link-block__list"><li class="link-block__list-item"><a href="/onderzoek/erasmus-initiatives" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Erasmus Initiatives</span></a></li><li class="link-block__list-item"><a href="https://repub.eur.nl" class="list-item-link link-external"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Publicaties</span><svg class="link-external__icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg#icon-external" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">Opent extern</span></a></li><li class="link-block__list-item"><a href="/people" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Wetenschappers</span></a></li><li class="link-block__list-item"><a href="/onderzoek/onderzoeksgebieden" class="list-item-link" hreflang="und"> <span class="list-item-link__chevron" aria-hidden="true">›</span><span class="list-item-link__text">Onderzoeksgebieden</span></a></li></ul></div></div></div><div class="paragraph paragraph--views-reference views-reference views--news display--pe-list-image"><h2 class="paragraph__title paragraph__title--views-reference">Nieuws</h2> <a href="/nieuws/overzicht" class="paragraph__more-link" title="Nieuwsoverzicht"> Nieuwsoverzicht<svg xmlns="http://www.w3.org/2000/svg" class="paragraph__more-link__icon" focusable="false" aria-hidden="true"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#icon-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/> </svg> </a><div class="field field--name-field-views-reference field--type-viewsreference field--label-hidden"><div class="views-element-container"><div class="paragraph-list js-view-dom-id-04979abad010b74c55a91f71d1ce31163bed63d9d0e4860cabac5c577762c249"><ul class="grid grid--reset-margin"><li class="grid__item grid__item--three"><div data-history-node-id="64561" class="node node--type-news node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/nieuws/betere-prestaties-na-strenger-bsa-maar-tegen-welke-prijs" hreflang="nl">Betere prestaties na strenger BSA, maar tegen welke prijs?</a></h3><div class="meta-data"><div class="meta-data__item"> <time datetime="2020-12-03T07:30:05Z">donderdag, 3 dec 2020</time></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2019-06/Foto%20DPECS%20Rob_kleiner.jpg?h=9bb7775d&amp;itok=lPlHixf3" width="480" height="270" alt="" /></div><div class="field field--name-field-news-type field--type-entity-reference field--label-hidden">Persbericht</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p><span><span>Studenten vertonen aanzienlijk betere studieprestaties met een strenger BSA. Uit het promotieonderzoek van Rob Kickert blijkt o.a. dat studenten hun eerste jaar sneller halen en cijfers omhoog gaan.</span></span></p></div></div><div class="l-tile-link-wrapper"> <a href="/nieuws/betere-prestaties-na-strenger-bsa-maar-tegen-welke-prijs" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over Betere prestaties na strenger BSA, maar tegen welke prijs?</span></span></a></div></div></div></li><li class="grid__item grid__item--three"><div data-history-node-id="64581" class="node node--type-news node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/nieuws/daniel-trottier-over-complottheorieen-allereerste-eurcast" hreflang="nl">Daniel Trottier over complottheorieën in allereerste EURcast</a></h3><div class="meta-data"><div class="meta-data__item"> <time datetime="2020-12-03T07:00:50Z">donderdag, 3 dec 2020</time></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2020-12/tessa-david-eurcast.jpg?h=094654a7&amp;itok=7JMVM2BN" width="480" height="270" alt="" /></div><div class="field field--name-field-news-type field--type-entity-reference field--label-hidden">Podcast</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p>De EUR lanceert de EURcast, de podcast voor en door studenten.  Vandaag verschijnt de eerste aflevering met Daniel Trottier over complottheorieën en digital vigilantism.</p></div></div><div class="l-tile-link-wrapper"> <a href="/nieuws/daniel-trottier-over-complottheorieen-allereerste-eurcast" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over Daniel Trottier over complottheorieën in allereerste EURcast</span></span></a></div></div></div></li><li class="grid__item grid__item--three"><div data-history-node-id="64594" class="node node--type-news node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/nieuws/weinig-vraag-en-aanbod-voor-banken-tijdens-de-coronacrisis" hreflang="nl">Weinig vraag en aanbod voor banken tijdens de coronacrisis</a></h3><div class="meta-data"><div class="meta-data__item"> <time datetime="2020-12-02T13:31:06Z">woensdag, 2 dec 2020</time></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2019-10/casper-de-vries.png?h=8abcec71&amp;itok=HvPfAsmO" width="480" height="270" alt="" /></div><div class="field field--name-field-news-type field--type-entity-reference field--label-hidden">In de media</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p><span><span><span><span><span><span><span>De hoofdeconoom van de ECB maakt zich zorgen over de vraag en aanbod van krediet bij banken en ziet verontrustende signalen.</span></span></span></span></span></span></span></p></div></div><div class="l-tile-link-wrapper"> <a href="/nieuws/weinig-vraag-en-aanbod-voor-banken-tijdens-de-coronacrisis" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over Weinig vraag en aanbod voor banken tijdens de coronacrisis</span></span></a></div></div></div></li></ul></div></div></div></div><div class="paragraph paragraph--views-reference views-reference views--events display--pe-list-image"><h2 class="paragraph__title paragraph__title--views-reference">Evenementen</h2> <a href="/evenementen/overzicht" class="paragraph__more-link" title="Kalender"> Kalender<svg xmlns="http://www.w3.org/2000/svg" class="paragraph__more-link__icon" focusable="false" aria-hidden="true"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#icon-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/> </svg> </a><div class="field field--name-field-views-reference field--type-viewsreference field--label-hidden"><div class="views-element-container"><div class="js-view-dom-id-72167ae0453d50ea6aeec520d202a0a31c538b0b8f44b29244158aff56c45c64"><ul class="grid grid--reset-margin"><li class="grid__item grid__item--three"><div data-history-node-id="64414" class="node node--type-event node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/evenementen/multiplier-event-re-frame-fashion-innovation-fashion-education-2020-12-04" hreflang="nl">Multiplier event “Re-Frame Fashion – Innovation in Fashion Education"</a></h3><div class="meta-data"><div class="meta-data__item"><div class="field field--name-field-start-end-date field--type-daterange field--label-hidden"><time datetime="2020-12-04T12:00:08Z">vrijdag, 4 dec 2020, 13:00</time> - <time datetime="2020-12-04T16:15:14Z">vrijdag, 4 dec 2020, 17:15</time></div></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2020-11/craft-council.jpg?h=5dc9785f&amp;itok=4UbLnOE7" width="480" height="270" alt="" /></div><div class="field field--name-field-event-type field--type-entity-reference field--label-hidden">Online evenement</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p><span><span><span>RE-FRAME FASHION is een internationaal project, uitgevoerd door drie universiteiten - EUR, Paris Dauphine University (FR), Gdansk University of Technology (PL) - samen met partners uit de mode.</span></span></span></p></div> <a href="/node/59971" class="link-subscribe icon-only"> <svg xmlns="http://www.w3.org/2000/svg" class="button__icon" aria-hidden="true" focusable="false"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#calendar-edit-regular"/> </svg> <span class="button__text"> Register for the event </span></a></div><div class="l-tile-link-wrapper"> <a href="/evenementen/multiplier-event-re-frame-fashion-innovation-fashion-education-2020-12-04" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over Multiplier event “Re-Frame Fashion – Innovation in Fashion Education"</span></span></a></div></div></div></li><li class="grid__item grid__item--three"><div data-history-node-id="64006" class="node node--type-event node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/evenementen/lde-cel-jaarlijkse-bijeenkomst-2020-12-07" hreflang="nl">LDE CEL jaarlijkse bijeenkomst</a></h3><div class="meta-data"><div class="meta-data__item"><div class="field field--name-field-start-end-date field--type-daterange field--label-hidden"><time datetime="2020-12-07T09:00:50Z">maandag, 7 dec 2020, 10:00</time> - <time datetime="2020-12-07T16:00:14Z">maandag, 7 dec 2020, 17:00</time></div></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2020-11/lde.jpg?h=a7e6d17b&amp;itok=qWnl3s2R" width="480" height="270" alt="" /></div><div class="field field--name-field-event-type field--type-entity-reference field--label-hidden">Algemeen</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p>LDE Centre for Education &amp; Learning (CEL) organiseert haar jaarlijkse vergadering op maandag 7 december 2020 van 10:00-17:00 uur.</p></div> <a href="https://m11.mailplus.nl/wpzQXXYvdqvN-1089-31100608-test-1" class="link-subscribe icon-only link-external"> <svg xmlns="http://www.w3.org/2000/svg" class="button__icon" aria-hidden="true" focusable="false"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#calendar-edit-regular"/> </svg> <span class="button__text"> Aanmelden </span><svg class="link-external__icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg#icon-external" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">Opent extern</span></a></div><div class="l-tile-link-wrapper"> <a href="/evenementen/lde-cel-jaarlijkse-bijeenkomst-2020-12-07" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over LDE CEL jaarlijkse bijeenkomst</span></span></a></div></div></div></li><li class="grid__item grid__item--three"><div data-history-node-id="64087" class="node node--type-event node--view-mode-list-image tile tile-image"><h3 class="tile__title"> <a href="/evenementen/online-motivatie-en-voldoening-je-loopbaan-2020-12-09" hreflang="nl">ONLINE: Motivatie en voldoening in je loopbaan</a></h3><div class="meta-data"><div class="meta-data__item"><div class="field field--name-field-start-end-date field--type-daterange field--label-hidden"><time datetime="2020-12-09T12:00:53Z">woensdag, 9 dec 2020, 13:00</time> - <time datetime="2020-12-09T14:00:04Z">woensdag, 9 dec 2020, 15:00</time></div></div></div><div class="l-tile-image-wrapper"><div class="field field--name-field-image-primary field--type-entity-reference field--label-hidden"> <img src="/sites/corporate/files/styles/mobile_16_9/public/2019-10/msc-photoshoot-2019-033.jpg?h=f34df970&amp;itok=8EeS2o0J" width="480" height="270" alt="" /></div><div class="field field--name-field-event-type field--type-entity-reference field--label-hidden">Online evenement</div></div><div class="l-tile-content-wrapper l-with-cta"><div class="tile__description"><div class="field field--name-field-short-lead-text field--type-text-long field--label-hidden"><p><span>Onderzoek welke factoren belangrijk zijn in jouw loopbaan! </span></p></div></div><div class="l-tile-link-wrapper"> <a href="/evenementen/online-motivatie-en-voldoening-je-loopbaan-2020-12-09" class="button button button--cta button--hide-text-mobile" hreflang="nl"> <span class="button__chevron" aria-hidden="true">›</span><span class="button__text">Lees meer <span class="visually-hidden">over ONLINE: Motivatie en voldoening in je loopbaan</span></span></a></div></div></div></li></ul></div></div></div></div></article></div> </main></div><div class="l-sidebar-first" id="sidebar-first"></div></div></div> <footer class="l-site-footer"><div class="l-site-footer__inner"><ul class="social__list list"><li class="social__list-item list__item"><a href="https://www.facebook.com/ErasmusUniversity" class="social__link js-no-external-icon"><svg class="social__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#facebook" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">facebook</span></a></li><li class="social__list-item list__item"><a href="https://www.instagram.com/erasmusuniversity/" class="social__link js-no-external-icon"><svg class="social__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#instagram" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">instagram</span></a></li><li class="social__list-item list__item"><a href="https://www.linkedin.com/school/269012/" class="social__link js-no-external-icon"><svg class="social__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">linkedin</span></a></li><li class="social__list-item list__item"><a href="https://twitter.com/erasmusuni" class="social__link js-no-external-icon"><svg class="social__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#twitter" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden">twitter</span></a></li><li class="social__list-item list__item"><a href="https://www.youtube.com/user/ErasmusUniversity" class="social__link js-no-external-icon"><svg class="social__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#youtube" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg><span class="visually-hidden"></span></a></li></ul><nav aria-labelledby="navigation-footer" class="navigation-footer"><h2 class="visually-hidden" id="navigation-footer"> Footer-menu</h2><ul class="navigation-inline__list navigation-inline__list--footer js-nav-accordion-content"><li class="navigation-inline__item"> <a href="/over-de-eur/anbi" class="navigation-inline__link navigation-inline__link--with-icon link--icon"> <svg class="navigation-inline__icon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> ANBI </span> </a></li><li class="navigation-inline__item"> <a href="/disclaimer/cookies" class="navigation-inline__link navigation-inline__link--with-icon link--icon"> <svg class="navigation-inline__icon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Cookies </span> </a></li><li class="navigation-inline__item"> <a href="/disclaimer" class="navigation-inline__link navigation-inline__link--with-icon link--icon"> <svg class="navigation-inline__icon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Disclaimer </span> </a></li><li class="navigation-inline__item"> <a href="/disclaimer/privacy-statement" class="navigation-inline__link navigation-inline__link--with-icon link--icon"> <svg class="navigation-inline__icon link__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"> <use xlink:href="/themes/custom/corporate/dist/images/defs/svg/sprite.defs.svg?v=1606799404#chevron" xmlns:xlink="http://www.w3.org/1999/xlink"/></svg> <span class="icon-link__text"> Privacy statement </span> </a></li></ul> </nav></div></footer></div><script src="/sites/corporate/files/js/js_c8LbWbHV1txem3q8oAzuadnL-HiBShaQH_WRviNqT_g.js"></script><script src="/sites/corporate/files/js/js_uLLtUGSl47RQch34YhxtJqPpk68qqFRkzvbPf_US1pQ.js"></script><script src="/sites/corporate/files/js/js_GPwA00P00O_r2QcDnUz8vvSaCn1k5D8WrJywD8SK26k.js"></script><script src="/sites/corporate/files/js/js_pX1pLHHXek9NWqsiGWKwAZ7InfLg2bN2XbADiRwEegk.js"></script><script src="/sites/corporate/files/js/js_5rcJrZb1eIMZWoZot9Z5o3i9hsyHOI-89t3d1n9JJp8.js"></script><script src="/sites/corporate/files/js/js_EEgz8jKoNBwEUpYsUNjVwCwo0k6mSRDjt34vFJROhRQ.js"></script><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front search-api-autocomplete-search" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><script type="text/javascript" id="">var meta=document.createElement("meta");meta.name="msvalidate.01";meta.content="7692D324BDD12725A89038050215B59F";document.getElementsByTagName("head")[0].appendChild(meta);</script><script type="text/javascript" id="">var ws=document.createElement("script");ws.type="text/javascript";ws.async=!0;ws.src="//col1.wiqhit.com/script/ad43b0ea07cd9dc31f79783c6fad0285ad43b0ea07cd9d-31f.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ws,s);</script><script type="text/javascript" id="">var s=document.createElement("script");s.type="text/javascript";s.innerHTML='function createCookie(name,value,days) { if (days) { var date \x3d new Date(); date.setTime(date.getTime()+(days*24*60*60*1000)); var expires \x3d "; expires\x3d"+date.toGMTString(); } else var expires \x3d ""; document.cookie \x3d name+"\x3d"+value+expires+"; path\x3d/";} function readCookie(name) { var nameEQ \x3d name + "\x3d"; var ca \x3d document.cookie.split(\';\'); for(var i\x3d0;i \x3c ca.length;i++) { var c \x3d ca[i]; while (c.charAt(0)\x3d\x3d\' \') c \x3d c.substring(1,c.length); if (c.indexOf(nameEQ) \x3d\x3d 0) return c.substring(nameEQ.length,c.length); } return null; } ';
+document.getElementsByTagName("head")[0].appendChild(s);</script><script type="text/javascript" id="">var s=document.createElement("script");s.type="text/javascript";s.src="https://www.youtube.com/iframe_api";document.getElementsByTagName("head")[0].appendChild(s);</script></body></html>

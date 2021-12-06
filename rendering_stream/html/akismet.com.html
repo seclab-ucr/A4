@@ -1,0 +1,418 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="wf-museoslab1-n5-active wf-active"><head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Akismet: Spam Protection for WordPress</title>
+	<meta name="description" content="Akismet is a spam fighting service that protects millions of WordPress sites from comment and contact form spam." />
+	<meta property="keywords" content="akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments, wordpress spam, blog spam" />
+	<meta property="og:title" content="Akismet: Spam Protection for WordPress - Akismet" />
+	<meta property="og:image" content="http://akismet.com/img/home-betterweb-2x.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Akismet" />
+	<meta property="og:description" content="Akismet is a spam fighting service that protects millions of WordPress sites from comment and contact form spam." />
+	<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/inc/common/css/core.css?m=1601570445" />
+	<link href="/inc/common/css/dops.css?m=1576586029" media="screen" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600" type="text/css" media="all" />	
+	<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="/inc/public/css/home.css?v=1576662002" />
+
+	<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/signals/config/485349158311379?v=2.9.29&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script language="javascript" type="text/javascript" src="/inc/common/js/jquery.js?m=1576586030"></script>
+	<script language="javascript" type="text/javascript" src="/inc/common/js/tracks.js?m=1586847963"></script>
+		<script type="text/javascript">
+		var is_user_logged_in = false;
+
+			</script>
+
+<!-- cookie banner [start] -->
+<script type="text/javascript">
+    jQuery( window.document ).ready( function() {
+        jQuery( window.document ).trigger( 'a8c-cookie-banner:fire-sensitive-pixels' );
+    });
+</script>
+<script type="text/javascript">
+(function() {
+	'use strict';
+	window.cookieBannerKit = {
+        doNotTrack: function() {
+            // Internet Explorer 11 uses window.doNotTrack rather than navigator.doNotTrack.
+            // Safari 7.1.3+ uses window.doNotTrack rather than navigator.doNotTrack.
+            // MDN ref: https://developer.mozilla.org/en-US/docs/Web/API/navigator/doNotTrack#Browser_compatibility
+            return ( window.doNotTrack === '1' || ( window.navigator &amp;&amp; window.navigator.doNotTrack === '1' ) );
+        },
+		createScriptElement: function( url, attrs, onLoad, onError ) {
+			var script = document.createElement( 'script' );
+			script.src = url;
+			script.type = 'text/javascript';
+			script.async = true;
+			script.onload = onLoad;
+			script.onerror = onError;
+			jQuery.each( attrs, function( key, val ) {
+				script.setAttribute( key, val );
+			});
+			return script;
+		},
+		attachToBody: function( element ) {
+			document.body.appendChild( element );
+			return element;
+		},
+		attachScriptElement: function( url, attrs, onLoad, onError ) {
+            return this.attachToBody( this.createScriptElement( url, attrs, onLoad, onError ) );
+		},
+		loadPixelImage: function( url ) {
+			return jQuery( '&lt;img&gt;', {
+				src: url,
+				width: 1,
+				height: 1,
+				border: 0,
+			});
+		},
+		appendIFrame: function( url ) {
+			var $iframe = jQuery( '&lt;iframe/&gt;' );
+			$iframe.attr( 'src', url );
+			$iframe.attr( 'width', '1' );
+			$iframe.attr( 'height', '1' );
+			$iframe.attr( 'frameborder', '0' );
+			$iframe.css( 'display', 'none' );
+			jQuery( '#wpcom-ad-tracking' ).append( $iframe );
+			return $iframe;
+		},
+		loadGoogleAnalytics: function() {
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		},
+		loadFacebook: function() {
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window,document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		},
+		loadTwitter: function() {
+			!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+			},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+			a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+		},
+		fireHotjar: function( hjid ) {
+			(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:hjid,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+			})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		},
+        fireAdWords: function ( data ) {
+            this.attachScriptElement( 'https://www.googleadservices.com/pagead/conversion_async.js', {}, function() {
+                window.google_trackConversion( data );
+            });
+        }
+	}
+})();
+</script>
+<!-- cookie banner [end] -->
+
+<script type="text/javascript">
+( function() {
+	'use strict';
+
+	var cbk = window.cookieBannerKit;
+
+	function fireFacebook() {
+		cbk.loadFacebook();
+		fbq( 'init', '485349158311379' );
+		fbq( 'track', "PageView" );
+	}
+
+	// ------- Fire Normal Pixels -------
+	// None
+
+	if ( cbk.doNotTrack() ) {
+		return;
+	}
+
+	// ------- Fire "Sensitive" Pixels -------
+	
+	jQuery( window.document ).on( 'a8c-cookie-banner:fire-sensitive-pixels', function() {
+
+		fireFacebook();
+
+	} );
+
+} )();
+</script>
+
+
+
+
+<script src="//stats.wp.com/w.js?20201203" type="text/javascript" async="" defer=""></script> 	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- 
+	        +=================+                
+               .|                 |.               
+             o+{|   .+.     .+.   |}+o             
+\      /       .|  ( # )   ( # )  |.       \      /
+ \    /         |   '+'     '+'   |         \    / 
+  =++=          |      _____      |          =++=  
+   ||           |    .'     '.    |           ||   
+   ||           |     '+===+'     |           ||   
+   ||           +====+=======+====+           ||   
+   ||                |       |                ||   
+   |=================+=======+=================|   
+   +==========+                     +==========+   
+              |  +==+        . /\ . |              
+              |  +==+         /++\  |              
+              |        _____        |              
+              |    .+''    q''+.    |              
+              |   /_____bP______\   |              
+              |                     |              
+              | +==+ +==+ +==+ +==+ |              
+              | +==+ +==+ +==+ +==+ |              
+              |                     |              
+          +============================+           
+          |============|  |============|           
+          |============|  |============|           
+          +============+  +============+   
+
+         A    K    I    S    B    O    T       
+ --><style type="text/css">.museo500,.signup_form_plans,h1,h2,label{font-family:"museo-slab-1","museo-slab-2",serif;}</style><style type="text/css">@font-face{font-family:museo-slab-1;src:url(https://use.typekit.com/af/d22dc7/000000000000000000012043/27/l?subset_id=1&amp;fvd=n5&amp;v=3) format("woff2"),url(https://use.typekit.com/af/d22dc7/000000000000000000012043/27/d?subset_id=1&amp;fvd=n5&amp;v=3) format("woff"),url(https://use.typekit.com/af/d22dc7/000000000000000000012043/27/a?subset_id=1&amp;fvd=n5&amp;v=3) format("opentype");font-weight:500;font-style:normal;font-display:auto;}</style>
+<script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/937350433/?random=1606992202691&amp;cv=9&amp;fst=1606992202691&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_his=2&amp;u_tz=-480&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fakismet.com%2F&amp;tiba=Akismet%3A%20Spam%20Protection%20for%20WordPress&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script></head>
+<body id="home">
+
+	
+<div id="page">
+
+    <label class="drawer-label" for="menu" onclick=""></label>
+
+    <div id="header">
+        <div class="akismet-logo-tablet"><a href="/"><span>Akismet</span></a></div>
+        <nav>
+            <ul class="main-nav">
+				<li class="current"><a href="/" id="ak-logo" class="current"><span>Akismet</span></a></li>
+								<li><a href="/how/" title="Learn more about what Akismet does, and how it works.">Features</a></li>
+				<li><a href="/plans/" title="Learn more about pricing and service levels.">Pricing</a></li>
+				<li><a href="/development/">Developers</a></li>
+				<li><a href="/support/" title="Get help with Akismet.">Help</a></li>
+				<li><a href="http://blog.akismet.com">Blog</a></li>
+				<li><a href="https://docs.akismet.com/getting-started/activate">Activate</a></li>
+			</ul>
+
+			<ul class="user-nav">
+								<li id="wpcc-sign-in">
+					<span class="wpcom">WordPress.com</span>
+										<a href="/account/login/?connect=yes" class="button">Sign In</a>
+									</li>
+							</ul>
+        </nav>
+    </div>
+
+	<div class="home-header">
+		<div class="core_container core_centered">
+			<h1 class="logo">Akismet</h1>
+
+			<p><b>Akismet stops spam.</b><br /><br />Used by millions of websites, Akismet filters out hundreds of millions of spam comments from the Web every day. Add Akismet to your site so you don't have to worry about spam again.</p>
+
+			<a href="https://akismet.com/signup/?plan=pro" class="ak-button ak-button--big button--inline home_get_started_button">Sign Up For Akismet Now</a>
+			<a href="/how/" class="ak-button ak-button--big ak-button--minimal button--inline home_learn_more_button">Learn More</a>
+		</div>
+
+		<div class="core_container home-get-started">
+			<h2>Get started in 3 simple steps</h2>
+
+			<div class="core_left home-get-started--steps">
+				<h3 class="get-started--signup">1. Sign Up</h3>
+				<p>Sign up for an <a href="https://akismet.com/signup/?plan=pro">Akismet plan</a> that best suits your needs.</p>
+			</div>
+
+			<div class="core_left home-get-started--steps">
+				<h3 class="get-started--activate">2. Activate</h3>
+				<p>Use your API key to activate your Akismet plugin or module.</p>
+			</div>
+
+			<div class="core_right home-get-started--steps">
+				<h3 class="get-started--relax">3. Relax</h3>
+				<p>Rest easy knowing that Akismet is protecting your site from spam.</p>
+			</div>
+
+			<div class="home-bottom-cta">
+				<a href="https://akismet.com/signup/?plan=pro" class="ak-button ak-button--minimal ak-button--big button--inline home_get_started_button_low">Awesome, let’s kill some spam!</a>
+			</div>
+		</div> <!-- /core_container -->
+
+		<div class="core_container home-spam-counter">
+			<canvas id="bg" style="display: none;"></canvas>
+			<div id="1" class="counter">
+				<div id="countUp" class="home_count"><div class="number" position="0"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">5</div></div><div class="number" position="1"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">0</div></div><div class="number" position="2"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">8</div></div><div class="comma">,</div><div class="number" position="3"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">6</div></div><div class="number" position="4"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">4</div></div><div class="number" position="5"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">9</div></div><div class="comma">,</div><div class="number" position="6"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">8</div></div><div class="number" position="7"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">7</div></div><div class="number" position="8"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">2</div></div><div class="comma">,</div><div class="number" position="9"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">2</div></div><div class="number" position="10"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">1</div></div><div class="number" position="11"><div class="shade1" style="display: none;"></div><div class="shade2" style="display: none;"></div><div class="shade3"></div><div class="divider"></div><div class="digit museo500">5</div></div></div>
+				<div class="clear"></div>
+				<div class="home_stats">
+					<h3 class="museo500">Spam comments blocked to date</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="core_container core_centered">
+			<div class="big-spam-sorter">
+				<div class="big-spam-sorter--machine">
+					<div class="big-spam-sorter--conveyor-left"></div>
+					<div class="big-spam-sorter--conveyor-right"></div>
+					<div class="big-spam-sorter--wheels-left"></div>
+					<div class="big-spam-sorter--wheels-right"></div>
+					<div class="big-spam-sorter--comments-left" style="background-position: 6.1455px center;"></div>
+					<div class="big-spam-sorter--comments-right" style="background-position: -168.855px center;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="hi-there"></div>
+
+    
+	<script>
+		var currentCount = "508649872215";
+		var todaysCount = "37655132";
+	</script>
+	
+	<div id="footer-container" class="core_container core_footer">
+	    <footer id="a8c-dops">
+	        <nav>
+	            <ul>
+	                <li><a href="/how/">Features</a></li>
+
+	                <li><a href="/plans/">Pricing</a></li>
+	
+	                <li><a href="/development/">Development</a></li>
+
+	                <li><a href="/support/">Help</a></li>
+
+	                <li><a href="http://blog.akismet.com">Blog</a></li>
+	            </ul>
+	
+	            <div id="a8c-attribution">
+	                <span>An <a href="https://automattic.com"><strong><span>Automattic</span></strong></a> medley</span>	            </div>
+	        </nav>
+	
+	        <nav id="a8c-secondary">
+	            <ul>
+	                <li><a href="/tos/">Terms</a></li>
+	
+	                <li><a href="http://automattic.com/privacy/">Privacy</a></li>
+	
+						
+	                	
+	                <li><a href="/account/login/?connect=yes">Sign In</a></li>
+	                
+
+					<li><a href="https://automatticstatus.com/">System Status</a></li>					
+
+	            </ul>
+	
+	            <ul id="a8c">
+	                <li><a href="http://wordpress.com">WordPress.com</a></li>
+	
+	                <li><a href="http://vaultpress.com">VaultPress</a></li>
+	
+	                <li><a href="http://akismet.com">Akismet</a></li>
+	
+	                <li><a href="http://crowdsignal.com">Crowdsignal</a></li>
+	            </ul>
+	        </nav>
+	    </footer>
+	</div>
+</div><!-- // #page -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.drawer-label').click(function() {
+		$('.main-nav').slideToggle(100);
+	});
+});
+</script>
+<script type="text/javascript" src="/inc/public/js/how.js?v=1576586030"></script>
+<script type="text/javascript" src="/inc/public/js/spam-counter.js?v=1606816740"></script>
+
+
+
+<script type="text/javascript">
+( function() {
+	'use strict';
+
+	var cbk = window.cookieBannerKit;
+
+	function fireGoogleAnalytics( id ) {
+		cbk.loadGoogleAnalytics();
+		ga( 'create', id );
+		ga( 'send', 'pageview' );
+	}
+
+	// ------- Fire Normal Pixels -------
+	// None
+
+	if ( cbk.doNotTrack() ) {
+		return;
+	}
+
+
+	// ------- Fire "Sensitive" Pixels -------
+	
+	jQuery( window.document ).on( 'a8c-cookie-banner:fire-sensitive-pixels', function() {
+
+						fireGoogleAnalytics( 'UA-19309600-2' );
+				
+		cbk.fireAdWords( {
+			google_conversion_id: 937350433,
+			google_remarketing_only: true,
+			google_custom_params: window.google_tag_params
+		} );
+	} );
+
+} )();
+</script>
+
+
+	<script>$(document).ready( function() {
+		// a bit of fun
+		var kcode = "38384040373937396665"; 
+		var kcodeInput = "";
+		var kcodeTimer;
+		$(document).keyup(function(e) {
+		   kcodeInput += e.which;    
+		   clearTimeout(kcodeTimer);
+		   kcodeTimer = setTimeout(function() { kcodeInput = ""; }, 500);
+		   check_kcode();
+		});
+		function check_kcode() {
+		    if(kcodeInput == kcode) {
+		        $('.hi-there').addClass('on');  
+		        setTimeout(function() {
+		        	$('.hi-there').removeClass('on');
+		        }, 1000);
+		    }
+		};
+	} );</script>	
+	<script type="text/javascript">	
+		akismet_tracks_event( 'akismet_homepage_view' );
+	</script>
+
+	<script>
+		$(document).ready( function() {	
+			$('.home_get_started_button').on('click', function() {
+				akismet_tracks_event( 'akismet_home_big_button_click' );
+			})
+
+			$('.home_get_started_button_low').on('click', function() {
+				akismet_tracks_event( 'akismet_home_big_bottom_button_click' );
+			})
+
+			$( '.home_learn_more_button' ).on( 'click', function (e) {
+				akismet_tracks_event( 'akismet_home_learn_more_button_click' );
+			} );
+		});
+	</script>
+
+	<script type="text/javascript" src="//use.typekit.com/smj4plc.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script>$(document).ready( function() {	$("#countUp").countUp.init(); } );</script>
+
+
+<script src="https://www.googleadservices.com/pagead/conversion_async.js" type="text/javascript" async=""></script></body></html>

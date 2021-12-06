@@ -1,0 +1,1036 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=""><head>
+
+<title>University of Mississippi</title>
+<meta charset="UTF-8" />
+<!-- Alexa verification ID -->
+<!-- WAxzg3zEqIO8lMaLOMdEITgueZY -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="apple-touch-icon" href="https://olemiss.edu/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="https://olemiss.edu/apple-touch-icon.png" />
+<script type="text/javascript" async="" src="https://www.google-analytics.com/gtm/js?id=GTM-TXJV2PC&amp;cid=1083146451.1606992737"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="//cdn.blueconic.net/olemiss.js"></script>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-TXJV2PC':true});</script>
+<meta name="google-site-verification" content="7ASWNvOJl3RyB7yTmKVqCHx0M2fTtfp0M2vW1wkqPy8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<link rel="stylesheet" href="/_scripts/woothemes-FlexSlider-a4647ed/flexslider.css" type="text/css" />
+
+<!-- USE PRIMETEST FOR DROPDOWN -->
+<link rel="stylesheet" type="text/css" href="/_css/prime.css" />
+<!--link rel="stylesheet" type="text/css" href="/_css/primetest.css"-->
+<style type="text/css">
+</style>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="/_css/ie.css">
+<script src="https://olemiss.edu/_scripts/html5shiv-printshiv.js"></script>
+<![endif]-->
+<script src="https://common.olemiss.edu/_js/jquery.js"></script>
+<!--[if lt ie 9]>
+<script src="_scripts/html5shiv.js"></script>
+<script type="text/javascript">
+$(document).ready( function() {
+	$('#news article').each( function() {
+		var imageurl = $(this).children().children('.photo').css('background-image');
+		imageurl = imageurl.match(/^url\(['"](.+)["']\)$/);
+		imageurl = imageurl ? imageurl[1] : ""; 
+		$(this).children().children('.photo').append('<img src="'+imageurl+'" width="100%"/>');
+	});
+});
+</script>
+<![endif]-->
+<!--[if !IE]><!-->
+	<script src="_scripts/jquery.customSelect.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var $cs = $('select#search-category').customSelect();	
+		});
+	</script>
+<!--<![endif]-->
+<!--[if gt IE 8]>
+	<script src="_scripts/jquery.customSelect.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var $cs = $('select#search-category').customSelect();	
+		});
+	</script>
+<![endif]-->
+
+<script src="/_scripts/woothemes-FlexSlider-a4647ed/jquery.flexslider.js"></script>
+<script src="/_scripts/jquery.dotdotdot-1.5.6-packed.js"></script>
+<script type="text/javascript">
+
+// Search
+function makeSearch() {
+	var q = document.getElementById('q');
+	var c = document.getElementById('search-category');
+	var category = 'all';
+	if (c.selectedIndex &gt; -1) {
+		category = c.options[c.selectedIndex].value;
+	}
+	var url = 'https://olemiss.edu/search/' + category + '/' + q.value;
+	window.location.href = url;
+	return false;
+}
+
+// Cycle Search Placeholder Text
+var ph = ['A - Z','People','Policies','Directories','Organizations','Courses','Programs','Committees','Technology','UM'];
+var phctr = 0;
+var timeoutID;
+timeoutID = setInterval(rotateph, 1000);
+function rotateph() {
+	$('input#q').attr('placeholder','Search '+ph[phctr]);
+	if (phctr &lt; (ph.length - 1)) {
+		phctr++;
+	} else {
+		timeoutID = clearInterval();
+	}
+}
+
+//FlexSlider
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+	slideshowSpeed: 10000,
+	pauseOnHover: true,
+	keyboard: false,
+//	randomize: true,
+	start: function() {
+		$('figcaption').hide();
+		$('.flex-active-slide figcaption').fadeIn(300);
+	},
+	after: function() {
+		$('.flex-active-slide figcaption').fadeIn(300);
+	},
+	before: function() {
+		$('.flex-active-slide figcaption').fadeOut(300);
+	}
+  });
+});
+/* Equal Heights Plugin */
+(function($) {
+	$.fn.equalHeights = function(minHeight, maxHeight) {
+		tallest = (minHeight) ? minHeight : 0;
+		this.each(function() {
+			if($(this).height() &gt; tallest) {
+				tallest = $(this).height();
+			}
+		});
+		if((maxHeight) &amp;&amp; tallest &gt; maxHeight) tallest = maxHeight;
+		return this.each(function() {
+			$(this).height(tallest).css("overflow","auto");
+		});
+	}
+})(jQuery);
+
+var pagesizes  = new Array(320, 600, 768, 1024, 1280);
+var photosizes = new Array(320, 600, 728,  948, 1200);
+var devicewidth = 0;
+function getDeviceWidth() {
+	if(typeof window.innerWidth==="undefined") {
+		devicewidth = $(window).innerWidth();
+	} else {
+		devicewidth = Math.max($(window).innerWidth(), window.innerWidth);
+	}	
+}
+
+$(document).ready(function() {
+// Give Constituencies Active State for Mobile Dropdowns
+	$('#constituencies dl').click(function() {
+		$(this).toggleClass('hover');
+	});
+
+	$('#constituencies dl').mouseenter(function() {
+		$(this).addClass('hover');
+	});
+	$('#constituencies dl').mouseleave(function() {
+		$(this).removeClass('hover');
+	});
+
+// Sublinks show/hide
+	$('nav#main').addClass('showmore');
+
+	$('#moresublinks').click(function() { 
+		$('nav#main').removeClass('showmore').addClass('showfewer');
+	});
+	$('#fewersublinks').click(function() {
+		$('nav#main').removeClass('showfewer').addClass('showmore');
+	});
+
+// Mouseover for MoreInfo icons 
+	$('.icons-main-info, .moreinfo').on({
+		mouseenter:function() {
+			$(this).parent().children('.moreinfo').show();
+		},
+		mouseleave:function() {
+			$(this).parent().children('.moreinfo').hide();
+		}
+	});
+
+// Main Nav Buttons with Dropdowns 	
+var navtimer;
+var navdelay = 300;
+	$('#aboutum, #aboutum-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-aboutum');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-aboutum');
+	});
+	$('#academics, #academics-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-academics');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-academics');
+	});
+	$('#campuslife, #campuslife-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-campuslife');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-campuslife');
+	});
+	$('#newsevents, #newsevents-push').hover( function() {
+			navtimer = setTimeout(function() {
+				$('body').addClass('push-newsevents');
+			}, navdelay);
+		}, function() {
+			clearTimeout(navtimer);
+			$('body').removeClass('push-newsevents');
+	});
+	
+// AutoScroll Announcements
+	var period     = 6000;
+	var transition = 600;
+	function scrollUp() {
+		getDeviceWidth();
+		if (devicewidth &gt;= pagesizes[2]) {
+			var itemHeight  = $('#announcements li').height();
+			var totalHeight = $('#announcements li').size() * itemHeight;
+			var currentTop  = parseInt($('#announcements li').css('top'), 10);
+			var newTop      = currentTop - itemHeight;
+			if (-newTop &lt; totalHeight) {
+				$('#announcements li').animate({top: newTop});
+			} else {
+				newTop = 0;
+				$('#announcements li').css({top: itemHeight}).animate({top: newTop});
+			}
+		} else {
+			$('#announcements li').css({top: 0});
+		}
+	}
+	setInterval(function() {scrollUp()}, period);
+	
+// Fix column heights for #newsannouncements and #eventphototweet
+	setEqualHeights = function() {
+		getDeviceWidth();
+		$('#news, #announcements, #events, #photos, #tweets').css('height', 'auto');
+		 if (devicewidth &gt;= pagesizes[2]) {
+			$('#news, #announcements').equalHeights();
+		}
+		if (devicewidth &gt;= pagesizes[3]) {
+			$('#events, #photos, #tweets').equalHeights();
+		}
+	}
+	$(document).ready(setEqualHeights);
+	$(window).bind('resize', setEqualHeights);
+
+// Give hero images an adaptive background
+	setHeroPhotos = function() {
+		getDeviceWidth();
+		$('#herophoto li img').each( function() {
+			var datasrc = "&amp;f=" + $(this).data('src');
+			var imagemagic = "/includes/images/?w=";
+			var photourl = imagemagic+photosizes[0]+datasrc;
+			
+			for(var i=0; i&lt;5; i++) {
+				if (devicewidth &gt;= pagesizes[i]) {
+					photourl = imagemagic+photosizes[i]+datasrc;
+				}
+			}
+			$(this).attr('src',photourl);
+		});
+	}
+	$(document).ready(setHeroPhotos);
+	$(window).bind('resize', setHeroPhotos);
+
+// Handle Alerts
+	if($('#alert').length) {
+		$('body').addClass('alert');
+	}
+
+// Flickr Description Ellipsis
+	$('.desc').dotdotdot({
+		watch: true
+	});
+
+});
+</script>
+<!--style>
+	.dropdown {
+		background-image: url("/_images/banners/great_college_to_work_for-2019.jpg")
+	}
+	nav#constituencies .givenow {
+		display: none;
+	}
+</style-->
+
+</head>
+
+<body class="withbanner">
+
+<!--div class="dropdown">
+	<button class="droptag">Hotty Toddy!</button>
+	<div class="dropdetails">
+			<a href="https://news.olemiss.edu/um-makes-chronicles-great-colleges-work-list-11th-year/" title="Great College To Work For 2019 - We did it again!"><span class="offscreen">Great College To Work For 2019 - We did it again!</span></a>
+	</div>
+</div-->
+<!-- New COVID Banner -->
+<style>
+	.covidbanner {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		background-color: #11294E;
+	}
+	.covidwrapper {
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		display: grid;
+		grid-template-areas: "image info";
+		grid-template-columns: 70px 1fr;
+		grid-template-rows: 1fr;
+		grid-column-gap: 15px;
+	}
+	.covidwrapper .words {
+		grid-area: "info";
+	}
+	.covidwrapper p, .covidwrapper a:link, .covidwrapper a:visited {
+		font-size: 19px;
+		line-height: 110%;
+		color: white;
+		align-self: center;
+	}
+	.covidwrapper .image {
+		grid-area: "image";
+		height: 70px;
+		width: 70px;
+		background: url("_images/banners/covid-alarm.png") no-repeat center center;
+		background-size: contain;
+	}
+	.covidwrapper .daily a {
+		margin-top: 1em;
+		padding: .5em .7em;
+		font-size: 16px;
+		background-color: white;
+		color: #11294E;
+		display: inline-block;
+	}
+
+	#eventphototweet #events.cares {
+	}
+
+	#eventphototweet .cares h2 {
+		font-size: 22px;
+		font-size: 2.2rem;
+		padding: 15px 0 12px 0;
+		font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+		color: #595959;
+	}
+	#eventphototweet .cares p {
+		font-size: 14px;
+		text-shadow: none;
+	}
+	#eventphototweet .cares a {
+		text-shadow: none;
+		color: blue;
+		text-decoration: underline;
+		text-align: center;
+		display: block;
+	}
+</style>
+
+<div class="covidbanner">
+	<div class="covidwrapper">
+		<div class="image"></div>
+		<div class="words">
+			<p><strong>COVID-19 INFORMATION</strong></p>
+			<ul style="list-style:disc; color:white; margin-left:1.5em;"><li><a href="https://coronavirus.olemiss.edu/confirmed-cases-reported-to-um/">New and Confirmed Cases </a></li><li><a href="https://olemiss.edu/coronavirus">Resources, FAQs, and more</a></li>
+			<li><a href="https://coronavirus.olemiss.edu/faq/cares-act/">CARES Act Report</a></li></ul>
+			<p class="daily"><a href="https://uofmississippi.qualtrics.com/jfe/form/SV_eKH25jxIIHAr8A5" onclick="trackOutboundLink('https://uofmississippi.qualtrics.com/jfe/form/SV_eKH25jxIIHAr8A5'); return false;">Daily Symptom Checker</a> <a href="https://olemiss.edu/mobile/#Everbridge" onclick="trackOutboundLink('/mobile'); return false;">Everbridge App</a></p>
+		</div>
+	</div>
+</div>
+	
+<a href="#main" class="skipnav">Skip to Main Navigation</a>
+<header>
+	<div id="watermark"></div>
+	<nav id="constituencies" aria-label="links to other campuses and constituencies">
+		<dl class="campus">
+			<dt><span>Regional Campuses</span></dt>
+			<dd><a href="http://www.outreach.olemiss.edu/southaven/">UM - DeSoto Campus</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/tupelo/">UM - Tupelo Campus</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/booneville/">UM - Booneville Center</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/grenada/">UM - Grenada Center</a></dd>
+			<dd><a href="http://www.outreach.olemiss.edu/rankin/">UM - Rankin</a></dd>
+			<dd><a href="https://www.umc.edu/">Jackson Campus</a></dd>
+		</dl>
+		<dl class="audience">
+			<dt><span><a href="https://olemiss.edu/audience">Who Are You?</a></span></dt>
+			<dd><a href="https://olemiss.edu/audience/prospective.html">Prospective Students</a></dd>
+			<dd><a href="https://olemiss.edu/audience/students.html">Current Students</a></dd>
+			<dd><a href="https://olemiss.edu/audience/facstaff.html">Faculty &amp; Staff</a></dd>
+			<dd><a href="https://olemiss.edu/audience/parents.html">Parents &amp; Families</a></dd>
+			<dd><a href="https://olemiss.edu/audience/alumni.html">Alumni &amp; Friends</a></dd>
+			<dd><a href="https://olemiss.edu/audience/visitors.html">Visitors</a></dd>
+		</dl>
+		<div class="givenow"><a class="" style="color: white;font-weight: bold !important;padding-left: 2em;padding-right: 2em;" href="https://umfoundation.com/gift" onclick="trackOutboundLink('https://umfoundation.com/gift'); return false;">Give to Ole Miss</a></div>
+	</nav>
+	<section class="hero" aria-label="University of Mississippi logo">
+		<div class="umlogo">
+			<h1><a href="https://olemiss.edu"><span class="hidetext">The University of Mississippi</span><img src="https://olemiss.edu/_images/logo/CrestUM_Web_2x.png" alt="" /></a></h1>
+		</div>
+		<div class="searchbox">
+			<form onsubmit="return makeSearch()">
+				<label for="q"><span class="hidetext">Search the UM website</span>
+					<input type="search" title="Search UM for anything..." placeholder="Search UM" id="q" />
+				</label>
+				<label for="search-category"><span class="hidetext">Search Types</span></label>
+				<select id="search-category" class="hasCustomSelect" style="-webkit-appearance: menulist-button; width: 160px; position: absolute; opacity: 0; height: 22px; font-size: 12px;">
+					<option value="all">All Categories</option>
+					<option value="people">People</option>
+					<option value="buildings">Buildings &amp; Landmarks</option>
+					<option value="organizations">Departments &amp; Offices</option>
+					<option value="quicklinks">Quick Links</option>
+					<option value="policies">Policies</option>
+					<option value="technology">Technology</option>
+				</select><span class="customSelect" style="display: inline-block;"><span class="customSelectInner" style="width: 123px; display: inline-block;">All Categories</span></span>
+				<input type="submit" class="offscreen" value="Submit" />
+			</form>
+		</div>
+	</section>
+</header>
+<nav id="main" class="showmore"><a href="#content" class="skipnav">Skip to Main Content</a>
+	<div class="bg"><!-- Needed for screen-width bgcolor --></div>
+	<div class="top">
+		<ul>
+			<li>
+				<h2 id="aboutum" class="top"><a href="https://olemiss.edu/aboutum">About UM</a></h2>
+			</li>
+			<li>
+				<h2 id="academics" class="top"><a href="https://olemiss.edu/academics">Academics</a></h2>
+			</li>
+			<li>
+				<h2 id="campuslife" class="top"><a href="https://olemiss.edu/campuslife">Campus Life</a></h2>
+			</li>
+			<li>
+				<h2 id="newsevents" class="top"><a href="https://olemiss.edu/newsevents">News &amp; Events</a></h2>
+			</li>
+		</ul>
+	</div>
+	<div class="sublinks">
+		<ul>
+			<li>
+				<h3><a href="https://olemiss.edu/research.html">Research</a></h3>
+			</li>
+			<li>
+				<h3><a href="http://global.olemiss.edu/">Global<span class="xtra"> Engagement</span></a></h3>
+			</li>
+			<li>
+				<h3><a href="https://olemiss.edu/community.html">Community<span class="xtra"> &amp; Service</span></a></h3>
+			</li>
+			<li>
+				<h3><a href="https://libraries.olemiss.edu">Libraries</a></h3>
+			</li>
+			<li>
+				<h3><a href="https://olemisssports.com">Athletics</a></h3>
+			</li>
+			<li>
+				<h3><a href="https://diversity.olemiss.edu/">Diversity <span class="xtra">&amp; Inclusion</span></a></h3>
+			</li>
+		</ul>
+		<div class="subpush">
+			<div id="moresublinks">MORE LINKS</div>
+			<div id="fewersublinks">FEWER LINKS</div>
+		</div>
+	</div>
+</nav>
+<div class="pushdown">
+	<div id="aboutum-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="https://olemiss.edu/aboutum/contact.html" class="icons-main-contact">Contact Information</a></li>
+				<li><a href="https://olemiss.edu/aboutum/mission.html" class="icons-main-mission">Mission, Vision &amp; Core Values</a></li>
+				<li><a href="https://olemiss.edu/aboutum/facts.html" class="icons-main-facts">Facts &amp; Statistics</a></li>
+				<li><a href="http://flagshipforward.olemiss.edu" style="background:url('../_images/icons-main/flagship.png') no-repeat;">Strategic Plan</a></li>
+				<li><a href="https://olemiss.edu/aboutum/history.html" class="icons-main-history">Our History</a></li>
+				<li><a href="https://olemiss.edu/tours" class="icons-main-virtualtours">Virtual Tours</a></li>
+				<li><a href="http://chancellor.olemiss.edu/" class="icons-main-leadership">Chancellor's Office</a></li>
+				<li><a href="https://olemiss.edu/info/disclosures/" class="icons-main-consumer">Student Consumer Information</a></li>
+				<li><a href="https://olemiss.edu/policy" class="icons-main-policy">Policy Directory</a></li>
+				<li><a href="https://olemiss.edu/aboutum/leadership.html" class="icons-main-leadership">Senior Leadership</a></li>
+				<li><a href="https://map.olemiss.edu" class="icons-main-map">Campus Map</a></li>
+				<li><a href="https://livecam.olemiss.edu/" class="icons-main-cams">Live HD Cams</a></li>
+				<li><a href="https://irep.olemiss.edu/organizational-charts/" class="icons-main-structure">Organization Structure</a></li>
+				<li><a href="https://olemiss.edu/parking" style="background:url('../_images/icons-main/parking.png') no-repeat;">Parking on Campus</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="academics-push" class="push main" style="display:block;">
+		<div class="row">
+			<ul>
+				<li><a href="https://admissions.olemiss.edu/" class="icons-main-admissions">Admissions <span class="details">Admissions &amp; Enrollment Services</span></a></li>
+				<li><a href="https://catalog.olemiss.edu" class="icons-main-catalog">Academic Catalog <span class="details">Majors, Minors &amp; Courses</span></a></li>
+				<li><a href="https://registrar.olemiss.edu/academic-calendar/" class="icons-main-calendar">Academic Calendar <span class="details">Terms, Holiday &amp; More</span></a></li>
+			</ul>
+		</div>
+		<hr />
+		<h4>UNIVERSITY OF MISSISSIPPI SCHOOLS AND COLLEGES</h4>
+		<div class="row">
+			<ul>
+				<li><a href="https://libarts.olemiss.edu" class="icons-main-liberalarts">College of Liberal Arts</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="libartsinfo">
+						<ul>
+							<li><a href="https://afrotc.olemiss.edu/">Aerospace Studies</a></li>
+							<li><a href="https://english.olemiss.edu/">English</a></li>
+							<li><a href="http://modernlanguages.olemiss.edu/">Modern Languages</a></li>
+							<li><a href="https://psychology.olemiss.edu/">Psychology</a></li>
+							<li><a href="https://aas.olemiss.edu/">African American Studies</a></li>
+							<li><a href="http://history.olemiss.edu/">History</a></li>
+							<li><a href="https://music.olemiss.edu/">Music</a></li>
+							<li><a href="https://leadership.olemiss.edu/">Public Policy Leadership</a></li>
+							<li><a href="http://art.olemiss.edu/">Art &amp; Art History</a></li>
+							<li><a href="https://www.croft.olemiss.edu/home/">International Studies</a></li>
+							<li><a href="http://nrotc.olemiss.edu/">Naval Science</a></li>
+							<li><a href="https://socanth.olemiss.edu/">Sociology &amp; Anthropology</a></li>
+							<li><a href="https://biology.olemiss.edu/">Biology</a></li>
+							<li><a href="https://olemiss.edu/academics/programs/liberal-arts/ba-lib-stud">Liberal Studies</a></li>
+							<li><a href="http://phirel.olemiss.edu/">Philosophy &amp; Religion</a></li>
+							<li><a href="https://southernstudies.olemiss.edu/">Southern Studies</a></li>
+							<li><a href="http://chemistry.olemiss.edu//">Chemistry &amp; Biochemistry</a></li>
+							<li><a href="https://math.olemiss.edu/">Mathematics</a></li>
+							<li><a href="https://physics.olemiss.edu/">Physics &amp; Astronomy</a></li>
+							<li><a href="https://theatreandfilm.olemiss.edu/">Theatre &amp; Film</a></li>
+							<li><a href="https://classics.olemiss.edu/">Classics</a></li>
+							<li><a href="https://www.goarmy.com/rotc/schools/the-university-of-mississippi.html">Military Science</a></li>
+							<li><a href="https://politicalscience.olemiss.edu/">Political Science</a></li>
+							<li><a href="https://rhetoric.olemiss.edu/">Writing &amp; Rhetoric</a></li>
+							<li><a href="https://economics.olemiss.edu/">Economics</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.engineering.olemiss.edu/" class="icons-main-engineering">School of Engineering</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="enginfo">
+						<ul>
+							<li><a href="http://www.engineering.olemiss.edu/chemical/">Chemical Engineering</a></li>
+							<li><a href="http://cs.olemiss.edu/">Computer &amp; Information Science</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/geology/">Geology &amp; Geological Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/civil/">Civil Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/electrical/">Electrical Engineering</a></li>
+							<li><a href="http://www.engineering.olemiss.edu/mechanical/">Mechanical Engineering</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://gradschool.olemiss.edu/" class="icons-main-graduateschool">Graduate School</a></li>
+				<li><a href="https://olemiss.edu/generalstudies/" class="icons-main-generalstudies">General Studies</a></li>
+				<li><a href="http://www.umc.edu/shrp/" class="icons-main-healthprofessions">School of Health Related Professions</a></li>
+				<li><a href="http://www.umc.edu/graduateschool/" class="icons-main-graduatehealth">Health Sciences Graduate School</a></li>
+				<li><a href="https://accountancy.olemiss.edu/" class="icons-main-accountancy">School of Accountancy</a></li>
+				<li><a href="http://jnm.olemiss.edu/" class="icons-main-journalism">School of Journalism &amp; New Media</a></li>
+				<li><a href="http://www.honors.olemiss.edu/" class="icons-main-honors">Honors College</a></li>
+				<li><a href="http://sas.olemiss.edu/" class="icons-main-appliedscience">School of Applied Sciences</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="appsciinfo">
+						<ul>
+							<li><a href="http://gerontology.olemiss.edu/">Applied Gerontology</a></li>
+							<li><a href="http://nfsmi.org/">Institute of Child Nutrition</a></li>							
+							<li><a href="http://nhm.olemiss.edu/">Nutrition &amp; Hospitality Management</a></li>
+							<li><a href="http://csd.olemiss.edu/">Communication Sciences &amp; Disorders</a></li>
+							<li><a href="http://legalstudies.olemiss.edu/">Legal Studies</a></li>							
+							<li><a href="http://sw.olemiss.edu/">Social Work</a></li>	
+							<li><a href="http://hesrm.olemiss.edu/">Health, Exercise Science, &amp; Recreation Management</a></li>
+							<li></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://law.olemiss.edu/" class="icons-main-law">School of Law</a></li>
+				<li><a href="http://online.olemiss.edu/" class="icons-main-online">Online Programs</a></li>
+				<li><a href="https://business.olemiss.edu/" class="icons-main-business">School of Business Administration</a></li>
+				<li><a href="http://www.umc.edu/som/" class="icons-main-medicine">School of Medicine</a></li>
+				<li><a href="https://olemiss.edu/academics/#institutesprograms" class="generic">Institutes &amp; Programs</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="instinfo">
+						<ul>
+							<li><a href="http://bri.olemiss.edu/">Barksdale Reading Institute</a></li>
+							<li><a href="http://ciss.olemiss.edu/">Center for Intelligence &amp; Security Studies</a></li>
+							<li><a href="http://mclean.olemiss.edu/">McLean Inst. for Partnerships &amp; Comm. Engagement</a></li>
+							<li><a href="http://nfsmi.org/">National Food Service Management Institute</a></li>
+							<li><a href="http://cme.ms">Center for Manufacturing Excellence</a></li>
+							<li><a href="http://www.mississippihills.org/">Mississippi Hills Inst. for Heritage Resource Mgmt.</a></li>
+							<!--li><a href="http://niust.org/">National Institute for Undersea Science &amp; Technology</a></li-->
+							<li><a href="http://www.croft.olemiss.edu/">Croft Institute for International Studies</a></li>
+							<li><a href="http://www.mlri.olemiss.edu/">Mississippi Law Research Institute</a></li>
+							<li><a href="https://pharmacy.olemiss.edu/rips/">Research Institute of Pharmaceutical Sciences</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/ProfDev/teacher/pathways/">Pathways to School Leadership</a></li>
+							<li><a href="http://mmri.olemiss.edu">Mississippi Mineral Resources Institute</a></li>
+							<li><a href="http://winterinstitute.org/">Winter Inst. for Racial Reconciliation &amp; Civic Renewal</a></li>
+							<li><a href="http://lottinst.olemiss.edu/">Lott Leadership Institute</a></li>
+							<li><a href="http://www.research.olemiss.edu/research-centers">Research Centers (Complete List)</a></li>
+						</ul>
+						<ul>
+							<li><a href="http://generalstudies.olemiss.edu/">Bachelor of General Studies</a></li>
+							<li><a href="http://www.online.olemiss.edu/">Ole Miss Online</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/study_usa/">Study USA</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/indstudy">Independent Study</a></li>
+							<li><a href="http://www.outreach.olemiss.edu">Outreach &amp; Continuing Education</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/internships/">UM Internship Experiences</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/summer">Office of Summer School</a></li>
+							<li><a href="http://studyabroad.olemiss.edu/">Study Abroad</a></li>
+							<li><a href="http://www.outreach.olemiss.edu/wintersession/">Winter Intersession</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="http://www.umc.edu/sod/" class="icons-main-dentistry">School of Dentistry</a></li>
+				<li><a href="https://www.umc.edu/son/" class="icons-main-nursing">School of Nursing</a></li>
+				<li><a href="https://olemiss.edu/academics/#officesresources" class="generic">Offices &amp; Resources</a></li>
+				<li><a href="http://education.olemiss.edu/" class="icons-main-education">School of Education</a></li>
+				<li><a href="http://pharmacy.olemiss.edu/" class="icons-main-pharmacy">School of Pharmacy</a> <span class="icons-main-info"></span>
+					<div class="moreinfo" id="pharminfo">
+						<ul>
+							<li><a href="http://pharmacy.olemiss.edu/biomolecularsciences/">Biomolecular Sciences</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/pharmaceutics/">Pharmaceutics &amp; Drug Delivery</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/phad/">Pharmacy Administration</a></li>
+							<li><a href="http://pharmacy.olemiss.edu/pharmacypractice/">Pharmacy Practice</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://olemiss.edu/academics/#regionalcampuses" class="generic">Regional Campuses</a></li>
+			</ul>
+		</div>
+		<hr />
+		<div class="row"><span class="details">The Schools of Nursing and Pharmacy operate on both the Oxford and Jackson campuses. The Schools of Dentistry, Health Related Professionals and Medicine, and the Health Sciences Graduate School, are based in Jackson only. (Additional healthcare programs are available through the School of Applied Sciences on the Oxford campus.) Other than these exceptions, the schools above are on the Oxford campus. </span></div>
+	</div>
+	<div id="campuslife-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="http://olemissboxoffice.com/" class="icons-main-boxoffice">Box Office</a></li>
+				<li><a href="http://www.olemissdining.com/" class="icons-main-dining">Campus Dining</a></li>
+				<li><a href="https://olemiss.campuslabs.com/engage" class="icons-main-organizations">Student Organizations</a></li>
+				<li><a href="http://campusrec.olemiss.edu/" class="icons-main-campusrec">Campus Recreation</a></li>
+				<li><a href="http://fordcenter.org/" class="icons-main-fordcenter">Ford Center for the Performing Arts</a></li>
+				<li><a href="http://healthcenter.olemiss.edu/" class="icons-main-graduatehealth">Health Services</a></li>
+				<li><a href="http://sustain.olemiss.edu/" class="icons-main-green">Sustainability</a></li>
+				<li><a href="https://olemiss.edu/info/impnumbers.html" class="icons-main-telephone">Important Numbers</a></li>
+				<li><a href="http://careers.olemiss.edu" class="icons-main-jobs">Jobs / Employment</a></li>
+				<li><a href="https://olemiss.edu/livesafe" class="icons-main-livesafe">LiveSafe App</a></li>
+				<li><a href="https://olemiss.edu/marketplace" class="icons-main-socialmedia">Marketplace</a></li>
+				<li><a href="http://ole-miss.bncollege.com/" class="icons-main-bookstore">Ole Miss Bookstore</a></li>
+				<li><a href="http://www.oxfordms.net/" class="icons-main-oxford">Oxford Community</a></li>
+				<li><a href="https://olemiss.edu/chapel/" class="icons-main-chapel">Paris-Yates Chapel</a></li>
+				<!--li><a href="https://olemiss.edu/rebelgo" class="icons-main-rebelgo">Rebel Go</a></li-->
+				<li><a href="https://olemiss.edu/community.html" class="icons-main-community">Community &amp; Service</a></li>
+				<li><a href="https://studenthousing.olemiss.edu" class="icons-main-housing">Student Housing</a></li>
+				<li><a href="https://olemiss.edu/campuslife/technology.html" class="icons-main-technologies">Technology</a></li>
+				<li><a href="http://museum.olemiss.edu/" class="icons-main-museum">University Museum</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="newsevents-push" class="push main">
+		<div class="row">
+			<ul>
+				<li><a href="https://olemiss.edu/newsevents/announcements.html" class="icons-main-announcements">Announcements</a></li>
+				<li><a href="http://www.newswatcholemiss.com/" class="icons-main-newswatch12">NewsWatch</a></li>
+				<li><a href="http://www.thedmonline.com/" class="icons-main-dailymississippian">Daily Mississippian</a></li>
+				<li><a href="https://olemiss.edu/emergency" class="icons-main-emergency">Emergency Information</a></li>
+				<li><a href="https://events.olemiss.edu/" class="icons-main-eventcalendar">Event Calendar</a></li>
+				<li><a href="https://olemiss.edu/mobile" class="icons-main-mobileapp">Mobile Apps</a></li>
+				<li><a href="https://news.olemiss.edu/" class="icons-main-news">Ole Miss News</a></li>
+				<li><a href="http://www.myrebelradio.com/" class="icons-main-rebelradio">Rebel Radio</a></li>
+				<li><a href="https://olemiss.edu/campuslife/social.html" class="icons-main-socialmedia">Social Media</a></li>
+				<li><a href="https://olemiss.edu/newsevents/umtoday" class="icons-main-umtoday">UM Today</a></li>
+				<li><a href="https://www.youtube.com/olemiss" class="icons-main-youtubechannel">YouTube Channel</a></li>
+				<li><a href="https://olemiss.campuslabs.com/engage/events" class="icons-main-leadership">Student Events</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<section id="herophoto"> 
+	<div id="noalert"></div>
+	<div class="flexslider page">
+		
+	<div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1600%; transition-duration: 0s; transform: translate3d(-768px, 0px, 0px);"><li class="quad2 clone"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-19_13_12_02SKB_3804-AB2web.jpg" alt="Relax and Ace the Final Junior journalism major Jakarious Landrum studies for finals in the &lt;a href=&quot;https://libraries.olemiss.edu&quot;&gt;J.D. Williams Library&lt;/a&gt;." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-19_13_12_02SKB_3804-AB2web.jpg" /><figcaption><h5>Relax and Ace the Final</h5><p>Junior journalism major Jakarious Landrum studies for finals in the <a href="https://libraries.olemiss.edu">J.D. Williams Library</a>.</p></figcaption></figure></li>
+			<!-- # include virtual="/_includes/herophotos.htm"-->
+			<li class="quad2 flex-active-slide"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-28_20_01_14112820_MSU_3591.JPG" alt="Eggs on the Menu Ole Miss players celebrate with the Golden Egg Trophy following a 31-24 victory over Mississippi State in the 2020 Egg Bowl." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-28_20_01_14112820_MSU_3591.JPG" /><figcaption><h5>Eggs on the Menu</h5><p>Ole Miss players celebrate with the Golden Egg Trophy following a 31-24 victory over Mississippi State in the 2020 Egg Bowl.</p></figcaption></figure></li><li class="quad2"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-25_12_40_06SKB_3806-ANweb.jpg" alt="Red &amp; Blue Because of You This year's annual holiday luncheon may have looked a bit different, but it didn't keep members of our community from thanking and celebrating faculty and staff for their hard work." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-25_12_40_06SKB_3806-ANweb.jpg" /><figcaption><h5>Red &amp; Blue Because of You</h5><p>This year's annual holiday luncheon may have looked a bit different, but it didn't keep members of our community from thanking and celebrating faculty and staff for their hard work.</p></figcaption></figure></li><li class="quad4"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-25_10_09_56LTK_0066-ACweb1.jpg" alt="Semester Sunset The sun dips below the horizon on campus as the fall semester comes to an end." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-25_10_09_56LTK_0066-ACweb1.jpg" /><figcaption><h5>Semester Sunset</h5><p>The sun dips below the horizon on campus as the fall semester comes to an end.</p></figcaption></figure></li><li class="quad2"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-23_11_37_40SKB_3805-BBweb.jpg" alt="Prominent Pillars The morning sun shines across the front porch of the Student Union as the Ole Miss community prepares for the fourth day of final exams." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-23_11_37_40SKB_3805-BBweb.jpg" /><figcaption><h5>Prominent Pillars</h5><p>The morning sun shines across the front porch of the Student Union as the Ole Miss community prepares for the fourth day of final exams.</p></figcaption></figure></li><li class="quad4"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-25_09_21_01LTK_0066-AAweb.jpg" alt="Fall Colors Leaves in the Grove continue to change, adding touches of fall colors and beautiful scenes across campus." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-25_09_21_01LTK_0066-AAweb.jpg" /><figcaption><h5>Fall Colors</h5><p>Leaves in the Grove continue to change, adding touches of fall colors and beautiful scenes across campus.</p></figcaption></figure></li><li class="quad2"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-19_13_12_02SKB_3804-AB2web.jpg" alt="Relax and Ace the Final Junior journalism major Jakarious Landrum studies for finals in the &lt;a href=&quot;https://libraries.olemiss.edu&quot;&gt;J.D. Williams Library&lt;/a&gt;." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-19_13_12_02SKB_3804-AB2web.jpg" /><figcaption><h5>Relax and Ace the Final</h5><p>Junior journalism major Jakarious Landrum studies for finals in the <a href="https://libraries.olemiss.edu">J.D. Williams Library</a>.</p></figcaption></figure></li>
+		<li class="quad2 clone"><figure><img data-src="www.olemiss.edu/_images/hero2/2020-11-28_20_01_14112820_MSU_3591.JPG" alt="Eggs on the Menu Ole Miss players celebrate with the Golden Egg Trophy following a 31-24 victory over Mississippi State in the 2020 Egg Bowl." src="/includes/images/?w=728&amp;f=www.olemiss.edu/_images/hero2/2020-11-28_20_01_14112820_MSU_3591.JPG" /><figcaption><h5>Eggs on the Menu</h5><p>Ole Miss players celebrate with the Golden Egg Trophy following a 31-24 victory over Mississippi State in the 2020 Egg Bowl.</p></figcaption></figure></li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a>2</a></li><li><a>3</a></li><li><a>4</a></li><li><a>5</a></li><li><a>6</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+</section>
+<a id="content" class="skipnav">Main content begins</a>
+<div id="newsannouncements">
+	<section id="news" style="height: 229px; overflow: auto;"> <a href="https://news.olemiss.edu" class="link2all">ALL<span class="xtra"> NEWS</span></a>
+		<h2>Latest News</h2>
+		<article aria-labelledby="headline0"><a href="https://news.olemiss.edu/more-than-dollars-and-cents-larry-sparks-looks-forward-to-retirement/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=more-than-dollars-and-cents-larry-sparks-looks-forward-to-retirement"><div class="photo" style="background-image: url(/includes/images/?w=260&amp;f=news.olemiss.edu/wp-content/uploads/2020/11/UCIMG-1603-2.jpg);"></div><h3 id="headline0">More Than Dollars and Cents: Larry Sparks Looks Forward to Retirement</h3></a></article><article aria-labelledby="headline1"><a href="https://news.olemiss.edu/news-you-can-use-safely-celebrate-with-your-teams-during-holidays/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=news-you-can-use-safely-celebrate-with-your-teams-during-holidays"><div class="photo" style="background-image: url(/includes/images/?w=260&amp;f=news.olemiss.edu/wp-content/uploads/2020/12/UCIMG-1602.jpg);"></div><h3 id="headline1">News You Can Use: Safely Celebrate with Your Teams During Holidays</h3></a></article><article aria-labelledby="headline2"><a href="https://news.olemiss.edu/chemistry-professors-innovate-to-run-labs-safely-amid-pandemic/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=chemistry-professors-innovate-to-run-labs-safely-amid-pandemic"><div class="photo" style="background-image: url(/includes/images/?w=260&amp;f=news.olemiss.edu/wp-content/uploads/2020/11/UCIMG-1596-1.jpg);"></div><h3 id="headline2">Chemistry Professors Innovate to Run Labs Safely Amid Pandemic</h3></a></article> 
+	</section>
+	<section id="announcements" style="height: 229px; overflow: auto;"> <a href="/newsevents/announcements.html" class="link2all">ALL<span class="xtra long"> ANNOUNCEMENTS</span></a>
+		<h2>Announcements</h2>
+		<ul>
+			<!-- NOT CACHED -->
+<li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000038937">     <h3>Parking and Transportation —      Winter Holiday Parking, Park-N-Ride, and Buses</h3>     <p>Please read the full announcement for information about parking and bus transportation during the winter holiday.</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000038867">     <h3>Academics —      Current UM Students Can Apply to the Honors College</h3>     <p>Any UM student on the main campus with at least 45 earned hours of college credit and a 3.50 cumulative GPA is eligible to join the SMBHC.</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000038968">     <h3>Human Resources —      Notice Concerning Upcoming Payroll Periods</h3>     <p>Please see this important notice concerning the upcoming payrolls in 2020.</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000038691">     <h3>Campus News —      Join Us at McCormicks!</h3>     <p>McCormick's at The Inn at Ole Miss is now open for breakfast, lunch and dinner. Receive 25% off your meal by showing your Ole Miss ID.</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000038695">     <h3>Academics —      Call for Applications: Isom Fellows</h3>     <p>A two-year teaching and research fellowship at the Sarah Isom Center for Women and Gender Studies. Deadline February 2, 2021</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000039052">     <h3>Academics —      It's Not Too Late: StudyUSA Deadline Extends to Dec. 11</h3>     <p>StudyUSA isn't your typical class. Join UM faculty during Wintersession through virtual courses. Spots open in ANTH 311 and WRIT 398,GSt 395</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000039104">     <h3>Research —      Objective Resilience Lecture - Dr. Yuri Basilevs</h3>     <p>Entitled, 'Advanced &amp; Practical Fluid-Structure Interaction for Large-Scale Structural Systems'. See flyer to register for Zoom Webinar.</p></a></li><li><a href="https://umtoday.olemiss.edu/av.jsp?umtid=000000025787">     <h3>IT Alert —      Blackboard Upgrade Scheduled Dec. 14-21, 2020</h3>     <p>Blackboard will be offline during an upgrade scheduled for Dec. 14-21, 2020. Services are expected to be restored by end of day, Dec. 21.</p></a></li>
+		</ul>
+	</section>
+</div>
+<div id="eventphototweet">
+	<!--section id="events" class="cares">
+		<h2>CARES Application</h2>
+			<p>The Federal Coronavirus Aid, Relief and Economic Security (CARES) Act (enacted March 27, 2020) provided funding to institutions of higher education to award in the form of emergency financial aid grants to students for expenses related to the disruption of campus operations due to the coronavirus. The CARES application process for the University of Mississippi is now closed.</p><p>You may visit the UM COVID-19 website for further information at <a style="display: inline" href="https://coronavirus.olemiss.edu">coronavirus.olemiss.edu</a></p>
+			<p><a href="https://coronavirus.olemiss.edu/faq/cares-act/">See FAQs About CARES Act </a></p>
+			<p><a href="https://coronavirus.olemiss.edu/wp-content/uploads/sites/320/2020/08/Accessible-CARES-Act-Report-as-of-08192020.pdf">Report of Emergency Financial Aid Grants to Students as of 8/19/20 (PDF)</a></p>
+	</section-->
+	<section id="events" style="height: auto;"> <a href="https://events.olemiss.edu" class="link2all">ALL<span class="xtra"> EVENTS</span></a>
+		<h2>Events</h2>
+		<ul>
+			
+<li><a href="https://events.olemiss.edu/event.php?value=33205"><div class="dateinfo"><div class="day">Tue</div><div class="date">12/1</div></div><h3>LOU Symphony offers free online concert Tuesday night</h3><p>7:30 PM - 8:45 PM</p></a></li>
+
+		</ul>
+	</section>
+	<section id="photos" style="height: auto;">
+		<!-- # include virtual="/includes/dynamic/13/yearinphotos.htm" -->
+		<h2>This Week in Photos</h2>
+<a href="https://www.flickr.com/photos/olemiss/sets/72157717014204848/" class="photos">
+<div class="photo" style="background-image: url('/includes/images/?h=147&amp;f=farm66.staticflickr.com/65535/50639295592_8958e08f22.jpg');"></div>
+<div class="desc">
+<h3>November 23</h3>
+<p><strong>20 photos:</strong> Campus Scenes. </p></div>
+<p class="credits">Photo by Logan Kirkland/ Ole Miss Digital Imaging Services</p>
+</a>
+
+
+		<a class="livecams" title="Check out our Live Cams" href="http://livecam.olemiss.edu/"><span class="hidetext">Check Out Our HD Live Cams</span></a> </section>
+	<section id="tweets" style="height: auto;"> <a href="https://twitter.com/olemissrebels" class="link2all">FOLLOW<span class="xtra"> THE REBELS</span></a>
+		<h2>Tweet, Tweet</h2>
+		<ul>
+				<li>
+		<img src="https://pbs.twimg.com/profile_images/1029658581434544129/TRvtevHr_normal.jpg" alt="avatar for timeshighered" onerror="proxy(this)" />
+		<span class="posttime">15 mins</span>
+		<h3>Times Higher Education<span class="btw"><a href="https://twitter.com/timeshighered">@timeshighered</a></span></h3>
+		<p>RT <a href="https://twitter.com/JohnRoss49:">@JohnRoss49:</a> Australia will put more focus on the remote and offshore teaching of international students, after a Canberra meeting faile...</p>
+	</li>
+	<li>
+		<img src="https://pbs.twimg.com/profile_images/1029658581434544129/TRvtevHr_normal.jpg" alt="avatar for timeshighered" onerror="proxy(this)" />
+		<span class="posttime">33 mins</span>
+		<h3>Times Higher Education<span class="btw"><a href="https://twitter.com/timeshighered">@timeshighered</a></span></h3>
+		<p>Interview with <a href="https://twitter.com/hanneblank:">@hanneblank:</a> the historian and author of ‘Fat’ on the meanings of eating and not eating in the West
+https://t.co/e9D3TbqN9D</p>
+	</li>
+
+		</ul>
+	</section>
+</div>
+<hr />
+
+<section id="ads" aria-label="handy links"> 
+
+	<!--a href="/elsiehoodaward" class="single" onclick="trackOutboundLink('/elsiehoodaward'); return false;"><img src="_images/ads/elsiehoodaward.png" alt="Elsie Hood Award"></a--> 
+
+	<a href="https://olemiss.edu/coronavirus" class="single" onclick="trackOutboundLink('/coronavirus); return false;"><img src="_images/ads/coronavirus.jpg" alt="Coronavirus response and information" /></a> 	
+	
+	<a href="https://keeplearning.olemiss.edu/" class="single" onclick="trackOutboundLink('/keeplearning); return false;"><img src="_images/ads/covid19-keeplearning1.png" alt="Keep learning - response to COVID-19" /></a> 
+
+	<!--a href="https://olemiss.edu/frist_award/" class="single" onclick="trackOutboundLink('/frist_award'); return false;"><img src="_images/ads/fristaward.png" alt="Frist Award"></a--> 
+
+	<a href="/academics/programs/" class="single" onclick="trackOutboundLink('/academics/programs'); return false;"><img src="_images/ads/majors_221x70.png?1" alt="See our Majors" /></a> 
+
+	<!--a href="https://olemiss.edu/summer.html" class="single" onclick="trackOutboundLink('/summer'); return false;"><img src="_images/ads/SummerYouth_70x221.png" alt="Summer Youth Programs"></a--> 
+
+	<a href="https://yourvoice.olemiss.edu/" class="single" onclick="trackOutboundLink('/yourvoice.olemiss.edu'); return false;"><img src="_images/ads/Campus-Climate-Survey-Results-2020.png" alt="Campus climate survey results " /></a> 
+
+	<!--a href="/livesafe" class="single" onclick="trackOutboundLink('/livesafe'); return false;"><img src="_images/ads/livesafe.png" alt="LiveSafe"></a--> 
+
+	<!--a href="http://arotc.olemiss.edu/scholarship/" class="single" onclick="trackOutboundLink('http://arotc.olemiss.edu/scholarship/'); return false;"><img src="_images/ads/ROTC_WebAd.png" alt="Army ROTC Scholarships"></a-->
+
+	<a href="https://www.msc2c.org/" class="single" onclick="trackOutboundLink('https://www.msc2c.org/'); return false;"><img src="_images/ads/C2Cbutton.png" alt="Complete 2 Compete" /></a> 
+	
+	<!--a href="https://givingday.olemiss.edu/" class="single" onclick="trackOutboundLink('https://givingday.olemiss.edu/'); return false;"><img src="_images/ads/SupportUM.png" alt="Support UM"></a--> 
+
+	<!--a href="/applynow" class="single" onclick="trackOutboundLink('/applynow'); return false;"><img src="_images/ads/ApplyNow.png" alt="Apply Now"></a--> 
+	
+	<!--a href="/visit" class="single" onclick="trackOutboundLink('/visit'); return false;"><img src="_images/ads/visit-campus-web-ad.png" alt="Schedule a campus visit"></a--> 
+	
+	<!--a href="https://technews.olemiss.edu/" class="single" onclick="trackOutboundLink('https://technews.olemiss.edu/'); return false;"><img src="_images/ads/TechNews-UMhome.png" alt="Technews: News from IT that isn't just for geeks"></a--> 
+
+
+</section>
+
+	
+<hr />
+<footer>
+	<nav id="socialicons">
+		<ul>
+			<li><a href="https://www.facebook.com/home.php#/pages/Oxford-MS/University-of-Mississippi-Ole-Miss/56900048284" class="icons-social-facebook" title="Facebook">
+				<div class="icons-social-title">Facebook</div>
+				</a></li>
+			<li><a href="https://twitter.com/olemissrebels" class="icons-social-twitter" title="Twitter">
+				<div class="icons-social-title">Twitter</div>
+				</a></li>
+			<!--li><a href="https://plus.google.com/113158010831538772748" rel="publisher" class="icons-social-googleplus" title="Google +"><div class="icons-social-title">Google +</div></a></li-->
+			<li><a href="https://instagram.com/olemiss" class="icons-social-instagram" title="Instagram">
+				<div class="icons-social-title">Instagram</div>
+				</a></li>
+			<li><a href="https://www.flickr.com/photos/olemiss/" class="icons-social-flickr" title="Flickr">
+				<div class="icons-social-title">Flickr</div>
+				</a></li>
+			<li><a href="https://www.youtube.com/olemiss" class="icons-social-youtube" title="Youtube">
+				<div class="icons-social-title">YouTube</div>
+				</a></li>
+			<li><a href="https://pinterest.com/olemiss/" class="icons-social-pinterest" title="Pinterest">
+				<div class="icons-social-title">Pinterest</div>
+				</a></li>
+			<li><a href="https://news.olemiss.edu/category/news-releases/feed/" class="icons-social-rss" title="News Feed">
+				<div class="icons-social-title">News Feed</div>
+				</a></li>
+		</ul>
+	</nav>
+	<nav id="mainfooter">
+		<div class="row audiences">
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/prospective.html">Prospective<br class="break" />
+					Students</a></h1>
+				<ul>
+					<li><a href="https://olemiss.edu/applynow" class="link">Apply Now</a></li>
+					<li><a href="http://orientation.olemiss.edu/" class="link">Orientation</a></li>
+					<li><a href="https://olemiss.edu/aboutum/facts.html" class="link">Quick Facts</a></li>
+					<li><a href="http://finaid.olemiss.edu/" class="link">Financial Aid &amp; Scholarships</a></li>
+					<li><a href="http://bursar.olemiss.edu/tuition-fees/tuition-estimator/" class="link">Tuition Estimator</a></li>
+					<li><a href="http://admissions.olemiss.edu" class="link">Undergraduate</a></li>
+					<li><a href="http://www.online.olemiss.edu/" class="link">Online</a></li>
+					<li><a href="http://gradschool.olemiss.edu/" class="link">Graduate</a></li>
+					<li><a href="//olemiss.edu/info/disclosures" class="link">Student Consumer Info</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/students.html">Current<br class="break" />
+					Students</a></h1>
+				<ul>
+					<li><a href="http://conflictresolution.olemiss.edu/m-book/" class="link">M Book</a></li>
+					<li><a href="//olemiss.edu/finaidaward" class="link">Financial Aid Award</a></li>
+					<li><a href="http://registrar.olemiss.edu/" class="link">Registrar</a></li>
+					<li><a href="http://bursar.olemiss.edu/" class="link">Bursar</a></li>
+					<li><a href="http://idcenter.olemiss.edu/" class="link">ID Center</a></li>
+					<li><a href="https://studenthousing.olemiss.edu/" class="link">Student Housing</a></li>
+					<li><a href="https://olemiss.campuslabs.com/engage" class="link">Organizations</a></li>
+					<li><a href="http://ole-miss.bncollege.com/" class="link">Ole Miss Bookstore</a></li>
+					<li><a href="//olemiss.edu/info/complaint.html" class="link">Student Complaints</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/facstaff.html">Faculty<br class="break" />
+					&amp; Staff</a></h1>
+				<ul>
+					<li><a href="https://careerlife.olemiss.edu/" class="link">Career Life Connector</a></li>
+					<li><a href="https://careers.olemiss.edu/" class="link">Jobs / Employment</a></li>
+					<li><a href="http://hr.olemiss.edu/" class="link">Human Resources</a></li>
+					<!--li><a href="https://olemiss.edu/orgs/faculty_senate/" class="link">Faculty Senate</a></li--><!--li><a href="http://staffcouncil.olemiss.edu/" class="link">Staff Council</a></li-->
+					<li><a href="https://olemiss.edu/ftdc" class="link">FTDC</a></li>
+					<li><a href="https://olemiss.edu/info/orgs.html" class="link">Organizations</a></li>
+					<!--li><a href="https://olemiss.edu/aboutum/standingcommittees/" class="link">Standing Committees</a></li-->
+					<li><a href="http://hr.olemiss.edu/development/" class="link">Training &amp; Development</a></li>
+					<!--li><a href="https://olemiss.edu/orgs/retirees" class="link">Retirees' Association</a></li-->
+					<li><a href="http://ombuds.olemiss.edu/" class="link">University Ombuds</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/parents.html">Parents<br class="break" />
+					&amp; Families</a></h1>
+				<ul>
+					<li><a href="http://families.olemiss.edu/" class="link">Family Association</a></li>
+					<li><a href="http://omflc.olemiss.edu/" class="link">Family Leadership Council</a></li>
+					<li><a href="https://olemiss.edu/helpdesk/parentwebid/" class="link">Parent WebIDs</a></li>
+					<li><a href="https://umatter.olemiss.edu/bit/" class="link">Behavioral Intervention Team</a></li>
+					<li><a href="http://admissions.olemiss.edu/visit" class="link">Plan a Visit</a></li>
+					<li><a href="http://orientation.olemiss.edu/" class="link">Orientation</a></li>
+					<li><a href="http://www.outreach.olemiss.edu/academic_competitions/" class="link">Academic Competitions</a></li>
+					<li><a href="https://olemiss.edu/summer.html" class="link">Summer Youth Programs</a></li>
+					<!--li><a href="http://www.olemisssports.com/camps/ole-camps.html" class="link">Sports Camps</a></li-->
+				</ul>
+			</div>
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/alumni.html">Alumni<br class="break" />
+					&amp; Friends</a></h1>
+				<ul>
+					<li><a href="http://www.olemissalumni.com/" class="link">Alumni Association</a></li>
+					<li><a href="http://www.olemissalumni.com/shop/" class="link">Merchandise</a></li>
+					<li><a href="http://olemissalumni.com/events" class="link">Alumni Events</a></li>
+					<li><a href="https://give.olemiss.edu/" class="link">Support Ole Miss</a></li>
+					<li><a href="https://olemiss.edu/transcriptlanding" class="link">Transcript Requests</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h1><a href="https://olemiss.edu/audience/visitors.html">Visitors</a></h1>
+				<ul>
+					<li><a href="https://olemiss.edu/parking/visitors.html" class="link">$3 Daily Parking</a></li>
+					<li><a href="http://airport.olemiss.edu/" class="link">Airport</a></li>
+					<li><a href="http://www.theinnatolemiss.com/" class="link">The Inn at Ole Miss</a></li>
+					<li><a href="https://map.olemiss.edu" class="link">Map &amp; Directions</a></li>
+					<li><a href="http://www.oxfordms.net/visitors/oxford-university-transit" class="link">O.U.T. Routes</a></li>
+					<li><a href="http://www.olemissfb.com/" class="link">Game Day Information</a></li>
+					<li><a href="http://museum.olemiss.edu/historic-homes/rowan-oak/" class="link">Rowan Oak</a></li>
+					<li><a href="http://www.oxfordms.net/" class="link">About Oxford, MS</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row applications">
+			<div class="column">
+				<ul>
+					<li><a href="http://blackboard.olemiss.edu" class="link">Blackboard</a></li>
+					<li><a href="http://my.olemiss.edu" class="link">myOleMiss</a></li>
+					<li><a href="https://olemiss.edu/email/" class="link">Email</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://go.olemiss.edu" class="link">Go! Applications</a></li>
+					<li><a href="//olemiss.edu/helpdesk" class="link">IT Helpdesk</a></li>
+					<li><a href="//olemiss.edu/mobile" class="link">Mobile App</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://map.olemiss.edu/" class="link">Map</a></li>
+					<li><a href="//olemiss.edu/directories.html" class="link">Directories</a></li>
+					<li><a href="https://libraries.olemiss.edu/" class="link">Library Search</a></li>
+					<li><a href="https://olemiss.edu/cloud" class="link">Cloud Storage</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row address">
+			<div class="column">
+				<ul>
+					<li><a href="//olemiss.edu/aboutum" class="link">About UM</a></li>
+					<li><a href="//olemiss.edu/academics" class="link">Academics</a></li>
+					<li><a href="//olemiss.edu/campuslife" class="link">Campus Life</a></li>
+					<li><a href="//olemiss.edu/newsevents" class="link">News &amp; Events</a></li>
+					<li><a href="https://give.olemiss.edu/" class="link">Support Ole Miss</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="//olemiss.edu/research.html" class="link">Research</a></li>
+					<li><a href="https://libraries.olemiss.edu/" class="link">Libraries</a></li>
+					<li><a href="http://global.olemiss.edu/" class="link">International</a></li>
+					<li><a href="http://olemisssports.com" class="link">Athletics</a></li>
+					<li><a href="//olemiss.edu/community.html" class="link">Community &amp; Service</a></li>
+				</ul>
+			</div>
+			<div class="addressblock">
+				<div class="omlogo"></div>
+				<div class="vcard">
+					<div class="org">The University of Mississippi</div>
+					<div class="adr"> <span class="street-address">P.O. Box 1848</span>, <span class="locality">University</span>, <span class="region">MS</span> <span class="postal-code">38677</span> <span class="country-name">USA</span> </div>
+					<div class="tel">(662) 915-7211</div>
+				</div>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="https://olemiss.edu/email" class="link">Email</a></li>
+					<li><a href="http://blackboard.olemiss.edu" class="link">Blackboard</a></li>
+					<li><a href="http://my.olemiss.edu" class="link">myOleMiss</a></li>
+					<li><a href="//olemiss.edu/helpdesk" class="link">IT Helpdesk</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<ul>
+					<li><a href="http://go.olemiss.edu" class="link">Go! Applications</a></li>
+					<li><a href="http://map.olemiss.edu" class="link">Map</a></li>
+					<li><a href="//olemiss.edu/directories.html" class="link">Directories</a></li>
+					<li><a href="https://olemiss.edu/helpdesk/cloud" class="link">Cloud Storage</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="legal">
+			<ul>
+				<li><a href="//olemiss.edu/info/eeo.html">EEO Statement</a></li>
+				<li><a href="//olemiss.edu/info/comment.php">Give Us Your Feedback</a></li>
+				<li><a href="//olemiss.edu/info/access.html">Accessibility</a></li>
+				<li><a href="https://secure.ethicspoint.com/domain/media/en/gui/31500/index.html">Ethics Line</a></li>
+				<li><a href="//olemiss.edu/info/creed.html">UM Creed</a></li>
+			</ul>
+			<div class="copyright"><a href="//olemiss.edu/info/copy.html">Copyright © 2020 The University of Mississippi. All Rights Reserved.</a></div>
+			<div class="mspublicuniversities"> <a href="http://www.mississippi.edu/transparency"><img src="https://olemiss.edu/_images/logo/MississippiSchools.png" alt="Mississippi Public Universities: Advancing Our State Together" /></a> </div>
+		</div>
+	</nav>
+</footer>
+<script src="https://olemiss.edu/_scripts/respond.js"></script>
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-508224-1', 'auto'); 
+	ga('require', 'GTM-TXJV2PC'); // Google Tag Manager requirement
+	ga('send', 'pageview');</script>
+<!-- End Google Analytics -->
+
+<!-- proxy for Twitter avatars --><script>try {function proxy(img) {img.src =  'https://images.weserv.nl/?url=' + encodeURIComponent(img.src.replace(/^https?:\/\//, ''));img.onerror = null;}/*Notes:- onerror set to null in order to prevent infinite loops in case the fallback URL also errors out (not sure if needed)*/} catch (error) { throw error; }//# sourceURL=xibose.js</script>
+
+<!-- Handle Big Banner DROPDOWN-->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.droptag').click(function() {
+			if($(this).parent('div.dropdown').hasClass('open')) {
+				$(this).parent('div.dropdown').removeClass('open');
+				document.cookie = "bigad=shut; expires=Sat, 28 Sept 2019 12:00:00 UTC";
+			} else {
+				$(this).parent('div.dropdown').addClass('open');
+				document.cookie = "bigad=open; expires=Sat, 28 Sept 2019 12:00:00 UTC";
+			}
+			console.log(getCookie("bigad"));
+		});
+
+		var bigad = getCookie("bigad");
+		console.log(bigad);
+
+		if (bigad == "open") {
+			$('.dropdown').addClass('open');
+		} else {
+			if (bigad != "shut") {
+				$('.dropdown').delay(1500).queue(function(next) {
+					$(this).addClass('open');
+					next();
+				});
+			}
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i &lt;ca.length; i++){
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+	})
+</script>
+	<script>
+		$(document).ready(function() {
+			$('#q').focusin(function() {
+				$('section.hero').addClass('in_search_field');
+			})
+			$('#q').focusout(function() {
+				$('section.hero').removeClass('in_search_field');
+			})
+			
+		})
+	</script>
+
+
+<div class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;"></div></body></html>

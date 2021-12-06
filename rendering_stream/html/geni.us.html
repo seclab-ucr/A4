@@ -1,0 +1,699 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en"><head>
+  <!-- SERVER IS HEALTHY -->
+
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Geniuslink - URL Shortener for Creators and Affiliates</title>
+  <meta name="description" content="Geniuslink is the world’s most intelligent URL shortener. Create links that dynamically route users to different destinations based off their devices, operating systems, countries, and even date of click." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="fb:app_id" content="451685931862362" />
+  <meta property="og:description" content="Geniuslink is the world’s most intelligent URL shortener. Create links that dynamically route users to different destinations based off their devices, operating systems, countries, and even date of click." />
+  <link rel="stylesheet" href="/css/main.css?rev=1039" />
+
+  <script>
+    /**** Define Scripts we need consent for, from Cookie Control ****/
+
+    function consentableAnalyticsScripts() {
+      /* Google Tag Manager: Analytics */
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+              new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&amp;l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5659RJ');
+      /* End Google Tag Manager: Analytics */
+
+    }
+
+
+    function consentableMarketingScripts() {
+      /* Google Tag Manager: Marketing */
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N8SCH69');
+      /* End Google Tag Manager: Marketing */
+    }
+
+  </script>
+
+  <script>
+    /* Utils */
+    var pageVariant = 'none';
+    var cookieDomainString = '';
+    if ( location.hostname.includes("geni.us") ) {
+      cookieDomainString = 'domain=geni.us;';
+    }
+
+    //Cookie setting and getting
+    function setGeniuslinkCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + "; "+ cookieDomainString + expires + ";path=/"; //Make it cross-subdomain
+    }
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i &lt;ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+
+    // Get url params
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&amp;]+([^=&amp;]+)=([^&amp;]*)/gi,
+          function(m,key,value) {
+            vars[key] = value;
+          });
+      return vars;
+    }
+    /* This just makes sure url vars are set to defaults if the  don't exist */
+    function getUrlParam(parameter, defaultvalue){
+      var urlparameter = defaultvalue;
+      if(window.location.href.indexOf(parameter) &gt; -1){
+        urlparameter = getUrlVars()[parameter];
+      }
+      return urlparameter;
+    }
+
+    /* End utils */
+
+    /** A/B Base values **/
+    //Set up A/B parameters
+    var variantCodeA = "a76t3";  //Code used in URLs and cookies
+    var variantCodeB = "b76t3";  //Code used in URLs and cookies
+    var pageVariant = "none";
+
+    //Set up cookie properties
+    var vCookie = getCookie('geniuslink_pvariant');
+    var vCookieDaysToLive = 365;
+
+    //Since we have some conditional content, check cookie to determine which variant to show
+    //Price page may override this
+    if(vCookie ===  variantCodeA) {
+        pageVariant = "a";
+    } else if(vCookie === variantCodeB){
+        pageVariant = "b";
+    }
+
+    /** End A/B Values **/
+
+
+  </script>
+
+
+  <meta property="og:image" content="https://geniuslink.com/img/geniuslogo-og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192" />
+  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="/favicons/manifest.json" />
+  <link rel="shortcut icon" href="/favicons/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- End Favicons -->
+
+</head>
+
+<body class="section-home pagestyle-splash showing-top-bar-info-notice">
+
+
+
+
+<!-- Cookie Control Script MUST BE IN BODY -->
+<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.2.1.min.js" type="text/javascript"></script>
+
+<!-- Cookie Control Configuration -->
+
+<style>
+  body #ccc .ccc-content--dark #ccc-notify-accept, body #ccc .ccc-content--dark #ccc-recommended-settings {
+    background-color: #00b9ee;
+    border: 1px solid #00b9ee;
+    color: #fff;
+  }
+  body #ccc .ccc-content--dark .ccc-notify-button {
+    border: 1px solid rgba(255,255,255,.4);
+  }
+  body .ccc-content--dark #ccc-notify-dismiss {
+    outline: none;
+    opacity: .4;
+  }
+  body .ccc-content--dark #ccc-notify-dismiss:hover {
+    opacity: 1;
+  }
+  body #ccc {
+      font-family: "Open Sans";
+  }
+  body #ccc #ccc-notify {
+      font-size: 14px;
+  }
+</style>
+<script>
+    var config = {
+        apiKey: 'dd61620418d9309689d83001793f38f3379b80b9',
+        product: 'PRO_MULTISITE',
+        initialState: 'NOTIFY',
+        locales: [
+            {
+                mode: 'ccpa',
+                location: ['US-CA']
+            }
+        ],
+        ccpaConfig : {
+          description: 'This may include the website or our third-party tools processing personal data. ' +
+              'In the case of your personal data, you may opt out of such activity by using the buttons below. ' +
+              'To find out more about the categories of personal information collected and the purposes for which ' +
+              'such information will be used, please refer to our',
+          name : 'Privacy Policy',
+          url: 'https://geniuslink.com/privacy',
+          updated : '30/05/2020' // DD/MM/YYYY
+        },
+        optionalCookies: [
+            {
+                name: 'analytics',
+                label: 'Analytics',
+                description: 'Helps us measure website traffic.',
+                recommendedState: 'on',
+                cookies: ['_ga', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv', '__cfduid', 'personalization_id'],
+                onAccept : function(){
+                    consentableAnalyticsScripts();
+                },
+                onRevoke: function(){}
+            },
+            {
+                name: 'marketing',
+                label: 'Marketing',
+                description: 'Helps us measure the effectiveness of our promotions.',
+                initialConsentState: 'on',
+                cookies: ['test_cookie', 'MR', 'MR2','MUID','fr'],
+                onAccept : function(){
+                    consentableMarketingScripts();
+                },
+                onRevoke: function(){
+                }
+            }
+        ],
+        layout: 'POPUP',
+        position: 'LEFT',
+        theme: 'DARK',
+        branding: {
+            fontColor: "#FFF",
+            fontSizeTitle: "1.0em",
+            fontSizeIntro: "1.0em",
+            fontSizeHeaders: "1.0em",
+            fontSize: ".9em",
+            backgroundColor: "#2b2b33",
+            toggleText: "#fff",
+            toggleColor: "#00b9ee",
+            toggleBackground: "#43434c",
+            removeIcon: true,
+            removeAbout: true
+        },
+        excludedCountries: ["all"]
+    };
+
+    CookieControl.load( config );
+</script>
+
+<!-- End Cookie Control -->
+
+<!-- Floating Navigation -->
+<header class="affix-top">
+
+  <div class="container">
+
+  <div class="topbar">
+      <div class="toplinks">
+            <a href="https://my.geni.us" class="toplink login"><em>Log In</em></a><!-- nospace
+            --><a href="https://help.geni.us" class="toplink support"><em>Support</em></a><!-- nospace
+            --><a href="https://geniuslink.com/blog/" class="toplink blog"><em>Blog</em></a>
+      </div>
+      <!--<p><a href="/contact"><strong>Here</strong> We can put a special announcement</a></p>-->
+
+  </div>
+  <nav id="nav" class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          <img class="nonsplash-only" src="/img/geniuslink-logo-white-blue.svg" alt="Geniuslink: The world's most intelligent URL shortener for marketing products across a global audience." height="33" width="132" />
+          <img class="splash-only" src="/img/geniuslink-logo-white.svg" alt="Geniuslink: The world's most intelligent URL shortener for marketing products across a global audience." height="33" width="132" />
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav">
+          <li id="nav-home" class="active"><a href="/">HOME <span class="sr-only">(current)</span></a></li>
+          <li id="nav-features"><a href="/features">FEATURES <span class="sr-only">(current)</span></a></li>
+          <li id="nav-howitworks"><a href="/how-it-works">HOW IT WORKS</a></li>
+          <li id="nav-pricing"><a href="/pricing">PRICING</a></li>
+          <li id="nav-join"><a href="https://my.geni.us/join">JOIN</a></li>
+          <li id="nav-login"><a href="https://my.geni.us">LOG IN</a></li>
+          <li id="nav-support"><a href="https://help.geni.us">SUPPORT</a></li>
+          <li id="nav-blog"><a href="https://geniuslink.com/blog/">BLOG</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+    </div>
+  </nav>
+  </div>
+</header>
+
+<div class="container full-splash-area">
+
+  <div class="container">
+    <section class="row splash-content">
+
+      <div class="sub-hero">
+        <h2><strong>New:</strong> Diversify in seconds with Choice Pages</h2>
+        <a href="/choice-pages"><img src="/img/choice-collection.png" width="274" /></a>
+      </div>
+
+
+      <div class="col-lg-6 col-lg-offset-1 col-md-7 col-sm-8">
+        <h1>
+          Squeeze more revenue out of every link you share
+        </h1>
+        <p>
+          Geniuslink makes localizing, tracking, and managing smart links dead simple, so you can earn more without added work.
+        </p>
+
+        <a href="/pricing" class="btn-gl-blue">Try it free</a>
+        <p class="fineprint">Guaranteed Amazon, iTunes, and Microsoft Safe</p>
+
+      </div>
+    </section>
+  </div>
+</div><!-- Close container -->
+
+<div class="full-band use-cases-area">
+  <div class="scroll-tab">
+    <div id="splash-scroll-cue" class="vsprite d-arrow animated wobble"></div>
+    WHAT CAN YOU DO WITH GENIUSLINK?
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="use-case-area">
+          <a href="/how-it-works/for-affiliates" class="use-case">
+            <h3>Affiliates</h3>
+            <p>Cash in on international traffic across multiple programs and boost commissions by up to 200%.</p>
+            <button class="btn">Learn more...</button>
+          </a>
+        </div>
+        <div class="use-case-area">
+          <a href="/how-it-works/for-creators" class="use-case">
+            <h3>Content Creators</h3>
+            <p>Save time and earn higher commissions from your content with links that are automatically localized and affiliated.</p>
+            <button class="btn">Learn more...</button>
+          </a>
+        </div>
+        <div class="use-case-area">
+          <a href="/how-it-works/for-authors-publishers/" class="use-case">
+            <h3>Authors</h3>
+            <p>Increase sales of your books with localized links or let your readers choose where to buy. </p>
+            <button class="btn">Learn more...</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="client-stripe col-md-12">
+
+      <div class="client-stripe">
+        <h3>LOVED BY BEGINNERS. RELIED ON BY PROS.</h3>
+
+        <div class="client-logo-gray client-logo-ryan"></div>
+        <div class="client-logo-gray client-logo-hyper"></div>
+        <div class="client-logo-gray client-logo-linus"></div>
+        <div class="client-logo-gray client-logo-bmw"></div>
+        <div class="client-logo-gray client-logo-nbc-universal"></div>
+        <div class="client-logo-gray client-logo-independent"></div>
+        <!--
+          <div class="client-logo-gray client-logo-orchard"></div>
+          <div class="client-logo-gray client-logo-purch"></div>
+          <div class="client-logo-gray client-logo-future"></div>
+          <div class="client-logo-gray client-logo-ranker"></div>
+          <div class="client-logo-gray client-logo-universal-nashville"></div>
+          <div class="client-logo-gray client-logo-techradar"></div>
+          <div class="client-logo-gray client-logo-nuclear"></div>
+          <div class="client-logo-gray client-logo-pcgamer"></div>
+          <div class="client-logo-gray client-logo-softonic"></div>
+          <div class="client-logo-gray client-logo-digitas"></div>
+          <div class="client-logo-gray client-logo-pias"></div>
+          <div class="client-logo-gray client-logo-shutup"></div>
+          <div class="client-logo-gray client-logo-macrumors"></div>
+          <div class="client-logo-gray client-logo-appshopper"></div>
+          <div class="client-logo-gray client-logo-digitalcamera"></div>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="full-band single-quote-area">
+  <a class="end-tab" href="/happy-clients">More happy clients...</a>
+  <div class="big-quote">
+    <img class="lazy" src="" data-src="/img/quote-sutmm.png" data-srcset="/img/quote-sutmm.png 1x" width="220" />
+    <p>"Geniuslink increased our total international affiliate revenue by 120%."</p>
+    <p class="big-quote-by">David Peterson, CEO - ShutUpAndTakeMyMoney</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="page">
+  <div class="container highlights">
+
+
+
+    <!-- Screenshot image to the right -->
+
+    <section class="row feature-group-heading">
+      <div class="col-md-5 col-md-push-7 art-container wow slideInRight" style="visibility: hidden; animation-name: none;">
+        <div class="feature-head-screen">
+          <div class="line-to-edge"></div>
+          <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-boost-money.svg" alt="Geniuslink Dashboard Screenshot" width="214" height="214" />
+        </div>
+      </div>
+      <div class="col-md-6  col-md-offset-1 col-md-pull-5 ">
+        <div class="highlight-text">
+          <h2>Smart short links that multiply your affiliate revenue</h2>
+          <p>Use features like <a href="/localization/">localization</a> and <a href="/choice-pages">Choice Pages</a> to
+              improve the shopping experience of your audience,
+              boost revenue, and capture international commissions.    </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Screenshot image to the left -->
+    <section class="row feature-group-heading art-left">
+      <div class="col-md-5 art-container wow slideInLeft" style="visibility: hidden; animation-name: none;">
+        <div class="feature-head-screen">
+          <div class="line-to-edge"></div>
+          <a href="/localization">
+            <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-localize.svg" alt="Geniuslink Dashboard Screenshot" width="214" height="214" />
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="highlight-text">
+            <h2>Automatic Amazon localization</h2>
+            <p>With one link, send every visitor to the right product in their
+              country's Amazon store, all while earning commissions from each Associates program. <a href="/localization/">More...</a></p>
+          </div>
+      </div>
+    </section>
+
+
+      <!-- Screenshot image to the right -->
+
+      <section class="row feature-group-heading">
+          <div class="col-md-5 col-md-push-7 art-container wow slideInRight" style="visibility: hidden; animation-name: none;">
+              <div class="feature-head-screen">
+                  <div class="line-to-edge"></div>
+                  <a href="/choice-pages">
+                    <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-choice-screen.jpg" width="210" height="210" />
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-6  col-md-offset-1 col-md-pull-5 ">
+              <div class="highlight-text">
+              <h2>Empower your audience and diversify with Choice Pages</h2>
+              <p>
+                  One link. Multiple destinations. Diversify your income and turn your audience into confident
+                  comparison shoppers who are more likely to buy.
+                  Learn more about <a href="/choice-pages">Choice Pages</a>.
+              </p>
+              </div>
+          </div>
+      </section>
+
+
+
+
+      <!-- Screenshot image to the left -->
+      <section class="row feature-group-heading art-left">
+          <div class="col-md-5 art-container wow slideInLeft" style="visibility: hidden; animation-name: none;">
+              <div class="feature-head-screen">
+                  <div class="line-to-edge"></div>
+                  <a href="/methods">
+                    <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-automatic.svg" alt="Geniuslink Advanced Targeting Screenshot" />
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="highlight-text">
+
+                  <h2>Optimize your content automatically</h2>
+                  <p>Already have published links you need optimized? Check out our YouTube Link optimizer, WordPress plugins,
+                      JS snippets, API and <a href="/methods">more...</a> </p>
+              </div>
+          </div>
+      </section>
+
+
+    <!-- Screenshot image to the right -->
+
+      <section class="row feature-group-heading">
+          <div class="col-md-5 col-md-push-7 art-container wow slideInRight" style="visibility: hidden; animation-name: none;">
+              <div class="feature-head-screen">
+                  <div class="line-to-edge"></div>
+                  <a href="/supported">
+                    <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-stopwatch.svg" width="214" height="214" />
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-6  col-md-offset-1 col-md-pull-5 ">
+              <div class="highlight-text">
+                  <h2>Never hunt for an affiliate link or code again</h2>
+
+                  <p>Just connect your affiliate programs. We'll make sure every product link you share earns
+                    you commissions. <a href="supported">See supported retailers...</a></p>
+              </div>
+          </div>
+      </section>
+
+    <!-- Image to the left -->
+    <section class="row feature-group-heading art-left">
+      <div class="col-md-5 art-container wow slideInLeft" style="visibility: hidden; animation-name: none;">
+        <div class="feature-head-screen">
+          <div class="line-to-edge"></div>
+            <a href="/supported">
+              <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-stores.png" width="214" height="214" alt="Geniuslink Affiliate Tag Management Screenshot" />
+            </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="highlight-text">
+            <h2>Grow on Amazon and beyond</h2>
+            <p>With auto affiliation and the option to use Choice Pages, it has never been easier to level up your
+              affiliate game. <a href="supported">See supported retailers...</a>
+              </p>
+          </div>
+      </div>
+    </section>
+
+    <!-- Screenshot image to the right -->
+
+    <section class="row feature-group-heading">
+      <div class="col-md-5 col-md-push-7 art-container wow slideInRight" style="visibility: hidden; animation-name: none;">
+        <div class="feature-head-screen">
+          <div class="line-to-edge"></div>
+          <a href="/supported">
+            <img class="lazy img-responsive" src="/img/artsm-placeholder.png" data-src="/img/artsm-support.svg" width="214" height="214" />
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6  col-md-offset-1 col-md-pull-5 ">
+        <div class="highlight-text">
+          <h2>Fast and friendly support when you need it most.</h2>
+          <p>Don't let technical issues, broken links, or feeling stuck cost you sales. Whenever there's a problem,
+            you'll talk to a real human with the smarts to help you solve it quickly.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <p class="center"><br />
+      <a href="/features" class="btn-gl-blue">Explore all features...</a>
+    </p>
+
+
+  </div>
+</div>
+
+
+<div class="full-band price-highlight">
+  <div class="container">
+    <div class="row">
+      <div class="supporting-image">
+        <img class="lazy img-responsive" src="" data-src="/img/art-fullbanner-counter.svg" />
+      </div>
+      <div class="message">
+        <h2>Per-click pricing that flexes with you</h2>
+        <p>Earn more revenue and grow more quickly with plans that scale along with your success. </p>
+        <a href="/pricing" class="btn">See pricing...</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer">
+
+  <div class="full-band footer-startnow">
+    <div>
+      <p>Get 14 days with infinite clicks for zero dollars.</p>
+      <a href="https://my.geni.us/join" class="btn-gl-blue">Start Now</a>
+    </div>
+  </div>
+
+  <div class="container footer-main">
+
+    <section class="row">
+      <div class="col-sm-5">
+        <h2>News &amp; Updates</h2>
+        <ul class="blog-list" id="newsteasers"></ul>
+      </div>
+      <div class="col-sm-7 sitemap">
+        <h2>Site Map</h2>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <h4><a href="/how-it-works">How it works for...</a></h4>
+            <ul>
+                <li><a href="/how-it-works/for-affiliates">Affiliates</a></li>
+                <li><a href="/how-it-works/for-creators">Creators</a></li>
+                <li><a href="/how-it-works/for-youtubers">Youtubers</a></li>
+                <li><a href="/how-it-works/for-authors">Authors</a></li>
+                <li><a href="/how-it-works/for-marketers">Brands</a></li>
+                <li><a href="/how-it-works/for-retailers">Retailers</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <h4><a href="/features">Features &amp; pricing</a></h4>
+            <ul>
+              <li><a href="/features">All Features</a></li>
+              <li><a href="/localization">Localization</a></li>
+              <li><a href="/choice-pages">Choice Pages</a></li>
+              <li><a href="/supported">Supported retailers</a></li>
+              <li><a href="/methods/">Link building methods</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <h4><a href="/about">About Geniuslink</a></h4>
+            <ul>
+                <li><a href="/happy-clients">Testimonials</a></li>
+                <li><a href="https://geniuslink.com/blog">Blog</a></li>
+                <li><a href="http://help.geni.us">Support</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">Our team</a></li>
+                <li><a href="/jobs">Jobs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row meta-area ">
+          <div class="col-sm-12">
+            <a class="approved-logos" href="/gdpr"><img title="GDR compliant" src="/img/privacy-participation.png" height="106" width="88" /></a>
+            <h4><a href="/about">Meta</a></h4>
+            <ul>
+              <li><a href="/amazon-affiliate-guide"><em>Amazon Affiliate - The Definitive Guide</em></a></li>
+              <li><a href="/amazon-safe"><em>"Is Geniuslink safe to use for Amazon Associates?"</em></a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy">Privacy Policy</a> </li>
+              <li><a href="/gdpr">GDPR </a> </li>
+              <li><a href="/affiliate-disclosure">Affiliate Disclosure</a> </li>
+              <li><a href="/spam-policy">Spam Policy</a> </li>
+              <li> <a href="#!" onclick="CookieControl.open()">Do not sell my personal information (EU &amp; US-California only)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="row" id="footer-bottom-line">
+      <div class="col-sm-5">
+        <div class="social">
+          <a href="https://twitter.com/geniuslink" class="uicon uicon-twitter-bb"></a>
+          <a href="http://www.facebook.com/geniuslink" class="uicon uicon-facebook-bb"></a>
+          <a href="https://www.youtube.com/channel/UC_MJhw9qVNA2tL1kb9mRT8g" class="uicon uicon-youtube-bb"></a>
+          <a href="https://www.instagram.com/geniuslink/" class="uicon uicon-instagram-bb"></a>
+          <a href="https://www.linkedin.com/company/geniuslink" class="uicon uicon-linkedin-bb"></a>
+        </div>
+
+        <div class="copyright">
+          <a href="/"><img class="lazy" src="" data-src="/img/logo.svg" data-srcset="/img/logo.svg 1x" alt="Geniuslink: The world's most intelligent URL shortener for marketing products across a global audience." height="20" width="80" /></a>
+            <br /> © <noscript>2019</noscript> <script>document.write(new Date().getFullYear());</script>2020 by GeoRiot Networks, Inc.
+        </div>
+
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<script src="/js/built/built.js?v=1033" defer=""></script>
+
+
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>

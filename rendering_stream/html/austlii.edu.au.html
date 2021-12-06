@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="js "><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australasian Legal Information Institute</title>
+  <link media="all" rel="stylesheet" href="/css/screen.css" />
+  <meta name="theme-color" content="#ee3224" />
+  <meta name="description" content="Australasian Legal Information Institute (AustLII), a joint facility of UTS and UNSW Faculties of Law." />
+  <link rel="icon" sizes="192x192" href="/images/icon-192.png" />
+  <link rel="apple-touch-icon-precomposed" href="/images/icon-shortcut.png" />
+  <meta name="msapplication-TileColor" content="#ee3224" />
+  <meta name="msapplication-TileImage" content="/images/icon/ms.png" />
+  <script src="/js/modernizr.min.js"></script>
+<script type="text/javascript" src="/pub/js/autosuggest.js"></script>
+<script type="text/javascript" src="/pub/js/austliisuggest.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+       var oTextbox = new AutoSuggestControl(document.getElementById("search-box"), new AustLIISuggestions());   
+    }
+</script>
+
+
+</head>
+<body class="home">
+  <header id="page-header">
+    <div id="primary">
+      <a id="page-logo" href="/" tabindex="1"><img src="/images/logo.svg" alt="AustLII" /><span class="title-main">AustLII</span></a>
+      
+      <a class="go-search" href="#">Search</a>
+      
+
+      
+      <h1 id="page-title">
+        <span>Australasian Legal Information Institute</span> 
+<!--
+        <span class="page-subheader">Free, comprehensive and independent access to Australasian law</span>
+-->
+        <span class="page-subheader">A joint facility of UTS and UNSW Faculties of Law</span>
+      </h1>
+      
+    </div>
+
+    <!-- Search box
+
+The search box at the top of most pages. Always visible unless the
+'search' variable is set to false, for pages where we don't want
+that box along the top, such as on Advanced Search & LawCite.
+
+'Results' is a class added to database pages, which exposes the ability
+to search just by that database.
+
+'Searchable' is a page variable which indicates the page has checkboxes
+on it - the search box has a radio button for selecting we only search
+the checked areas.
+
+'Extra search' is for those rare extra options found in pages like the
+Aviation Law Association library database.
+-->
+
+
+<form action="/cgi-bin/sinosrch.cgi" autocomplete="off">
+  <div id="page-search">
+    <h2 class="hide">Search AustLII</h2>
+    <div class="search-box">
+      <a class="search-dropdown" href="javascript:void(0);">▼</a> 
+
+      <fieldset>
+        <legend>Search Options</legend>
+        <ul class="search-options">
+          <li><label for="database-full">Full text <input type="radio" name="method" value="auto" id="database-full" checked="" tabindex="6" /></label></li>
+          <li><label for="database-title">Titles only <input type="radio" name="method" value="title" id="database-title" tabindex="7" /></label></li>
+          <li class="advanced-search"><a href="advanced_search.shtml" tabindex="8">Advanced Search…</a></li>
+<!--
+          <li class="advanced-search"><a href="http://www.austlii.edu.au/form/search/search1.html" tabindex="8">Advanced Search&hellip;</a></li>
+-->
+        </ul>
+      </fieldset>
+
+      <label for="search-box" class="hide">Search term:</label>
+       
+      <input id="search-box" type="text" name="query" placeholder="Search all databases" tabindex="9" />
+      
+      <a href="javascript:void(0);" class="search-box-clear hide">×</a>
+      <input type="submit" value="Search" tabindex="9" />
+
+    </div>
+    <a class="go-primary" href="#">Close</a>
+  </div>
+</form>
+
+
+
+    <ul id="page-tertiary">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="copyright.html">Copyright &amp; Usage</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="disclaimers.html">Disclaimers</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+  </header>
+
+  <!-- Ribbons
+
+These are the red bars along the top of each page.
+
+Ribbon is a variable set on most pages; it defaults to an expanded view,
+and can be simplified using variables 'intro' (for home) and 'basic' (for
+search, about pages, etc.)
+-->
+
+<nav id="ribbon">
+  <div class="inner">
+    <ul>
+      <li class="ribbon-home-databases"><a href="/databases.html" tabindex="10">All Databases</a></li>
+      <li class="ribbon-home-cases"><a href="/databases.html" tabindex="11">Cases &amp; Legislation</a></li>
+      <li class="ribbon-home-journals"><a href="/au/special/journals/" tabindex="12">Journals &amp; Scholarship</a></li>
+      <li class="ribbon-home-lawreform"><a href="/au/special/lawreform/" tabindex="13">Law Reform</a></li>
+      <li class="ribbon-home-treaties"><a href="/au/other/dfat/index.html" tabindex="14">Treaties</a></li>
+      <li class="ribbon-home-libraries"><a href="/libraries.html" tabindex="15">Libraries</a></li>
+      <li class="ribbon-home-communities"><a href="http://austlii.community/wiki/" tabindex="16">Communities</a></li>
+      <li class="ribbon-home-lawcite"><a href="/lawcite/" tabindex="17">LawCite</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- Panels
+
+The Panel defaults to 'year' view, which is what the database pages all have,
+it's what search results have, etc.
+
+The selections within if statements below are to visualize the 'is-selected'
+class across the various mock pages in the prototype.
+
+When implementing this, pull out the if statements and simply apply 'is-selected'
+when it's appropriate to that particular page.
+
+The options for the panel include:
+* none: the panel doesn't render
+* closed: the panel is present, but closed, adds 'is-closed' class
+* jurisdiction: jurisdiction is open at page load, adds 'is-jurisdiction' class
+* letter: 'starts with' is open at page load, adds 'is-letter' class
+-->
+
+
+<div id="panels" class="is-jurisdiction">
+
+  <div class="inner">
+    <div id="panel-type">
+      <ul>
+        <li class="panel-type-all "><a href="database-all.html"><h5>All Databases</h5><p>Complete database listing</p></a></li>
+        <li class="panel-type-all "><a href="database-cases.html"><h5>Cases &amp; Legislation</h5><p>Primary sources of law</p></a></li>
+        <li class="panel-type-all "><a href="/au/journals/"><h5>Journals &amp; Scholarship</h5><p>Australasian Legal Scholarship Library</p></a></li>
+        <li class="panel-type-all "><a href="database-treaties.html"><h5>Treaties</h5><p>Australian Treaties Library</p></a></li>
+        <li class="panel-type-all "><a href="database-libraries.html"><h5>Libraries</h5><p>Subject-specific Libraries</p></a></li>
+        <li class="panel-type-all"><a href="/lawcite/"><h5>LawCite</h5><p>Free-access international citator for law</p></a></li>
+      </ul>
+    </div>
+
+    <div id="panel-jurisdiction">
+      <ul>
+        <li class="panel-type-all"><a href="databases.html"><h5>Australia</h5></a></li>
+        <li class="panel-type-all"><a href="/au/cth/"><h5>CTH</h5></a></li>
+        <li class="panel-type-all"><a href="/au/act/"><h5>ACT</h5></a></li>
+        <li class="panel-type-all"><a href="/au/nsw/"><h5>NSW</h5></a></li>
+        <li class="panel-type-all"><a href="/au/nt/"><h5>NT</h5></a></li>
+        <li class="panel-type-all"><a href="/au/qld/"><h5>QLD</h5></a></li>
+        <li class="panel-type-all"><a href="/au/sa/"><h5>SA</h5></a></li>
+        <li class="panel-type-all"><a href="/au/tas/"><h5>TAS</h5></a></li>
+        <li class="panel-type-all"><a href="/au/vic/"><h5>VIC</h5></a></li>
+        <li class="panel-type-all"><a href="/au/wa/"><h5>WA</h5></a></li>
+        <li class="panel-type-all"><a href="http://www.nzlii.org/databases.html"><h5>New Zealand</h5></a></li>
+      </ul>
+    </div>
+
+    <div id="panel-year">
+      <ul>
+        <li class="panel-type-specific">
+          <div>
+            <h5>Specific Year</h5>
+            <a href="#" class="year-specific-dropdown type-specific">2015</a>
+            <select class="type-specific">
+              <option>2015</option>
+            </select>
+          </div>
+        </li>
+        <li class="panel-type-range">
+          <div>
+            <h5>Year Range</h5>
+            <a href="#" class="year-range-dropdown-1 type-range-1">1970</a>
+            <select class="type-range-1">
+              <option>2015</option>
+            </select>
+            <a href="#" class="year-range-dropdown-2 type-range-2">2015</a>
+            <select class="type-range-2">
+              <option>2015</option>
+            </select>
+            <a href="results.html" class="button">Apply</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="panel-letter">
+      <ul>
+        <li class="panel-letter-any"><a href="#"><h5>Any</h5></a></li>
+        <li><a href="#"><h5>0</h5></a></li>
+        <li><a href="#"><h5>A</h5></a></li>
+        <li><a href="#"><h5>B</h5></a></li>
+        <li><a href="#"><h5>C</h5></a></li>
+        <li><a href="#"><h5>D</h5></a></li>
+        <li><a href="#"><h5>E</h5></a></li>
+        <li><a href="#"><h5>F</h5></a></li>
+        <li><a href="#"><h5>G</h5></a></li>
+        <li><a href="#"><h5>H</h5></a></li>
+        <li><a href="#"><h5>I</h5></a></li>
+        <li><a href="#"><h5>J</h5></a></li>
+        <li><a href="#"><h5>K</h5></a></li>
+        <li><a href="#"><h5>L</h5></a></li>
+        <li><a href="#"><h5>M</h5></a></li>
+        <li><a href="#"><h5>N</h5></a></li>
+        <li><a href="#"><h5>O</h5></a></li>
+        <li><a href="#"><h5>P</h5></a></li>
+        <li><a href="#"><h5>Q</h5></a></li>
+        <li><a href="#"><h5>R</h5></a></li>
+        <li><a href="#"><h5>S</h5></a></li>
+        <li><a href="#"><h5>T</h5></a></li>
+        <li><a href="#"><h5>U</h5></a></li>
+        <li><a href="#"><h5>V</h5></a></li>
+        <li><a href="#"><h5>W</h5></a></li>
+        <li><a href="#"><h5>X</h5></a></li>
+        <li><a href="#"><h5>Y</h5></a></li>
+        <li><a href="#"><h5>Z</h5></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- "Year" dropdowns
+
+These dropdowns should be generated with data as appropriate.
+The data you see here is for presentatioal purposes.
+-->
+
+<div class="year-options-list">
+  <div class="year-specific-options year-options">
+    <ul>
+      <li><h5><a href="results.html">Any</a></h5></li>
+      <li><h5><a href="results.html">2015</a></h5></li>
+    </ul>
+  </div>
+
+  <div class="year-range-1-options year-options">
+    <ul>
+      <li><h5><a href="#">2015</a></h5></li>
+      <li><h5><a href="#">2004</a></h5></li>
+    </ul>
+  </div>
+
+  <div class="year-range-2-options year-options">
+    <ul>
+      <li><h5><a href="#">2015</a></h5></li>
+      <li><h5><a href="#">2004</a></h5></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+  <div id="page-content">
+
+    <div id="page-main"> 
+      
+
+<div class="card-group">
+    <h2 class="card-title funding-appeal">End of Year Appeal</h2>
+    <div class="card funding-appeal">
+      <ul>
+      <li class="multi"><a href="/austlii/events/2020/2/">AustLII's 2020 End of Year Appeal</a> - If you value the service we provide, please make a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      </ul>
+    </div>
+<!--
+    <h2 class="card-title funding-appeal">End of Financial Year Appeal</h2>
+    <div class="card funding-appeal">
+      <ul>
+      <li class="multi"><a href="/austlii/events/2020/1/">AustLII's 2020 End of Financial Year Appeal</a> - Your support is urgently needed! Please make a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      </ul>
+    </div>
+-->
+<!--
+    <h2 class="card-title funding-appeal">COVID-19</h2>
+    <div class="card funding-appeal">
+      <ul>
+      <li class="multi">
+<p><b>
+As a response to the current COVID-19 crisis many of our users are being required to work from home. We recognise that the free access service we provide is important to many of you. We are putting the necessary resources and systems in place to ensure that AustLII will remain available and updated during this time. But we need you to help us keep our service going.  We operate as a charity and if you can make a donation we would really value your support at this time. Please make a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.
+</b></p>
+</li>
+      </ul>
+    </div>
+-->
+
+<!-- Announcement
+  <h2 class="card-title">Announcements</h2>
+
+  <div class="card">
+    <ul>
+-->
+      <!-- li class="multi"> <strong>Welcome to the new AustLII website</strong> with new and enhanced features. For the time being, we will continue to support the  <a href="http://classic.austlii.edu.au/">'classic' AustLII interface</a>.</li> <!#-- announced 20170822 -->
+      <!-- li class="multi"><a href="http://www.austlii.edu.au/austlii/seminars/2018/1.html">New AustLII interface - User seminars</a>: Sessions are free but bookings are essential and should be addressed to <a href="mailto:seminar@austlii.edu.au">seminar@austlii.edu.au</a> </li> <!#-- announced 20170908 -->
+      <!-- li><a href="http://www.austlii.edu.au/austlii/guide/user_guide.pdf">AustLII 20.0 User Guide</a></li> <!#-- announced 20170828 -->
+<!--
+      <li class="multi"><a href="/austlii/events/2019/2/">AustLII's 2019 End of Financial Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><a href="/austlii/events/2018/2/">AustLII's 2018 End of Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><a href="http://lvi2018.ittig.cnr.it/">Law via the Internet Conference 2018</a>, Florence, Italy, 11-12 October 2018 - Call for papers</li> 
+      <li class="multi"><a href="/austlii/events/2018/1/">AustLII's 2018 Financial Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><a href="/austlii/events/2017/2/">AustLII's 2017 End of Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><a href="https://lawevents.rutgers.edu/LVI2017/">Law via the Internet Conference 2017</a>, Newark, USA, 19-21 October 2017</li>
+      <li class="multi"> <strong>Welcome to the AustLII 20.0 (beta) website</strong> - we will be releasing progressively a <a href="/AustLII_20_features.html">new interface with enhanced features</a> over the coming months. As a beta website, it is under active development so features and structures are subject to change. </li>
+      <li class="multi"><a href="http://www.austlii.edu.au/austlii/events/2017/1/">AustLII's 2017 Financial Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><a href="/austlii/events/2016/2/">AustLII's 2016 End of Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+      <li class="multi"><img src="AustLII_20_small.png" align="top" border="0" alt="AustLII 20.0" style="clear:right; float:left; margin: 3px;"> <strong>Welcome to the AustLII 20.0 (beta) website</strong> - over the coming months, we will be releasing progressively a new interface with enhanced features (27 November 2015)</li>
+      <li class="multi"><a href="http://www.lvi2015.org/">Law via the Internet Conference 2015</a>, Sydney, 9-11 November 2015 - <a href="http://www.lvi2015.org/highlights/">Conference highlights</a> now available</li>
+<li class="multi"><a href="/austlii/events/2016/1/">AustLII's 2016 Financial Year Appeal</a> - If you value the service we provide, please support us by making a <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi">contribution</a> today.</li>
+<li class="multi"><a href="http://www.lvi2016.org/">Law via the Internet Conference 2016</a>, Limassol, Cyprus, 8-9 September 2016 - <a href="http://www.lvi2016.org/call-for-papers/">Call for papers</a></li>
+<li class="multi">25th Anniversary of the Report of the <A href="/au/other/IndigLRes/rciadic/">Royal Commission into Aboriginal Deaths in Custody</A></li>
+-->
+
+<!-- Announcement
+    </ul>
+  </div>
+-->
+
+</div>
+
+<div class="card-group">
+  <h2 class="card-title">News &amp; Database Additions</h2>
+
+  <div class="card">
+    <ul>
+    <li class="20201203"><a href="/au/journals/USydLRS/">University of Sydney Law Research Series 2018-</a></li>
+<li><a href="/au/cases/cth/HCA/2020/42.html">Chetcuti v Commonwealth of Australia [2020] HCA 42 (26 November 2020)</a></li>
+<li><a href="/au/other/hca/bulletin/2020/9.html">High Court of Australia Bulletin [2020] HCAB 9 (13 November 2020)</a></li>
+<li class="202011112"><a href="/au/cases/wa/WAWM/">Western Australian Warden of Mines 1979-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUPJSelCEP/">Australian Parliamentary Joint Select Committees on Environment and Planning 1996-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUPJStaCNCET/">Australian Parliamentary Joint Standing Committees on the National Capital and External Territories 1958-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUPJStaCPW/">Australian Parliamentary Joint Standing Committee on Public Works 1915-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUSSelCEP/">Australian Senate Select Committees on Environment and Planning 1985-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUSStaCEC/">Australian Senate Standing Committees on Environment and Communications 1988-</a></li>
+<li class="202011112"><a href="/cgi-bin/viewdb/au/other/AUSStaCRRAT/">Australian Senate Standing Committees on Rural and Regional Affairs and Transport 1998-</a></li>
+<li class="20201109"><a href="http://www.nzlii.org/nz/legis/sel_act_maori/">Selected New Zealand Acts in Te Reo Māori 1868-1892</a></li>
+<li class="20201029"><a href="/au/cases/vic/VicPRp/">Victorian Planning Reports 1998-2013</a></li>
+      <li><a href="/austlii/announce/2020/1.pdf">Smart AI: AustLII's DataLex turns NSW gaming Regulations into code in 24 hours (2 October 2020)</a></li> <!-- announced 20201002 -->
+<li class="20200930"><a href="http://www.nzlii.org/nz/other/NZMaoriLLegMan/">New Zealand Māori Land Legislation Manual 1841-1993</a></li>
+<li class="20200930"><a href="http://www.nzlii.org/nz/other/lawreform/NZPenalPP/">New Zealand Penal Policy Papers 1954-</a></li>
+<li class="20200930"><a href="http://www.nzlii.org/nz/cases/NZOSWRA/">New Zealand Overtime and Shift Work Recognition Authority 1975-1982</a></li>
+<li class="20200911"><a href="http://www.nzlii.org/nz/other/NZMaoriLRes/">New Zealand Māori Law Resources 1858-</a></li>
+<li class="20200911"><a href="http://www.nzlii.org/nz/cases/NZTCPAB/">New Zealand Town and Country Planning Appeal Board 1955-1983</a></li>
+<li class="20200911"><a href="http://www.nzlii.org/nz/other/lawreform/NZFamJustRef/">New Zealand Family Justice Reforms 2011-</a></li>
+<li class="20200911"><a href="http://www.nzlii.org/nz/journals/VUWICOPCrim/">Institute of Criminology, Victoria University of Wellington - Occasional Papers in Criminology 1975-</a></li>
+<!-- database additions are kept for 4 months below -->
+<li class="20200824"><a href="/au/legis/vic/covid-19_dir/">Victorian COVID-19 Public Health Directions</a></li>
+<li class="20200824"><a href="/au/legis/qld/covid-19_dir/">Queensland COVID-19 Public Health Directions</a></li>
+<li class="20200824"><a href="/cgi-bin/viewdb/au/other/AUHRSelCEP/">Australian House of Representatives Select Committees on Environment and Planning 1971-</a></li>
+<li class="20200824"><a href="/cgi-bin/viewdb/au/other/AUHRStaCARFF/">Australian House of Representatives Standing Committees on Agriculture, Resources, Fisheries and Forestry 1996-</a></li>
+<li class="20200824"><a href="/cgi-bin/viewdb/au/other/AUHRStaCEP/">Australian House of Representatives Standing Committees on Environment and Planning 1973- </a></li>
+<li class="20200824"><a href="/cgi-bin/viewdb/au/other/AUHRStaCRAU/">Australian House of Representatives Standing Committee on Regional Australia 2011-2013</a></li>
+<li class="20200812"><a href="http://www.nzlii.org/nz/cases/NZDLCQLDC/">New Zealand District Licensing Committee - Queenstown Lakes District Council 2015-</a></li>
+<li><a href="/au/cases/cth/FCAFC/2020/115.html">Nationwide News Pty Limited v Rush [2020] FCAFC 115 (2 July 2020)</a></li>
+<li class="20200615"><a href="/au/journals/IntJlCrimJustSocDem/">International Journal for Crime, Justice and Social Democracy 2012-</a></li>
+<li><a href="/au/cases/cth/FCA/2020/732.html">Brett Cattle Company Pty Ltd v Minister for Agriculture [2020] FCA 732 (2 June 2020)</a></li>
+<li><a href="/au/cases/cth/FCAFC//2020/84.html">WorkPac Pty Ltd v Rossato [2020] FCAFC 84 (20 May 2020)</a></li>
+<li class="20200518"><a href="/au/journals/LawTechHum/">Law, Technology and Humans 2019-</a></li>
+<li class="20200420"><a href="/au/legis/nsw/covid-19_orders/">New South Wales COVID-19 Government Orders</a></li>
+<li class="multi"><a href="http://www.worldlii.org/catalog/57380.html">AustLII’s COVID-19 Catalog</a> - links to Australian regulations</li><!-- announced 20200408 -->
+<li class="20200406"><a href="/au/cases/nsw/NSWSIRADRS/">New South Wales State Insurance Regulatory Authority Dispute Resolution Service 2020-</a></li>
+
+      <li><a href="/austlii/recent.html">Past announcements...</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    </div>
+    
+<!-- Home Sidebar -->
+<div id="page-side">
+  <div class="side-element side-contributors">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><path fill="#C3C3C3" d="M10.5 3.6c1.8-4.3 10.3-3 10.2 3.2 0 6.2-10.6 12.2-10 11.9C10.7 18.7.6 13 .6 6.8s8.1-7.5 9.9-3.2z"/></svg>
+  <h4>Contributors</h4>
+  <ul>
+    <li><a href="http://www.austlii.edu.au/austlii/contributors/">All Contributors</a></li>
+    <li><a href="http://www.austlii.edu.au/austlii/contributors/s_juris.html">By Jurisdiction</a></li>
+    <li><a href="http://www.austlii.edu.au/cgi-bin/s_type.cgi">By Type</a></li> 
+    <li class="contribute-now">
+      <a href="https://secure.austlii.edu.au/cgi-egate/contribute.cgi" class="button">Contribute Now</a>
+
+      <div class="annual-reports">
+        <a href="javascript:void(0);" class="annual-reports-button button">Annual Reports</a>
+        <ul class="annual-reports-dropdown">
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2019/AustLII_YiR_2019.pdf">2019 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2018/AustLII_YiR_2018.pdf">2018 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2017/AustLII_YiR_2017.pdf">2017 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2016/AustLII_YiR_2016.pdf">2016 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2015/AustLII_YiR_2015.pdf">2015 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2014/AustLII_YiR_2014.pdf">2014 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2013/AustLII_YiR_2013.pdf">2013 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2012/AustLII_YiR_2012.pdf">2012 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2011/AustLII_YiR_2011.pdf">2011 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2010/AustLII_YiR_2010.pdf">2010 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2009/AustLII_YiR_2009.pdf">2009 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2008/AustLII_YiR_2008.pdf">2008 (PDF)</a></li>
+          <li><a href="http://www.austlii.edu.au/austlii/reports/2007/AustLII_YiR_2007.pdf">2007 (PDF)</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  <div class="side-element side-statistics">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><path fill="#C3C3C3" d="M.6 10.4H5v8.8H.6zM5.6 12.9H10v6.3H5.6zM10.6.7H15v18.5h-4.4zM15.6 4.6H20v14.7h-4.4z"/></svg>
+  <h4>Statistics</h4> 
+  <ul>
+    <li><strong><b>3 December 2020</b>
+</strong> last updated</li>
+    <li><strong>855</strong> databases</li>
+    <li><strong>1,364,488</strong> cases and decisions</li>
+    <li><strong>118,071</strong> journal articles and commentary</li>
+<!--
+    <li><strong>6,121,203</strong> documents</li>
+-->
+  </ul>
+</div>
+
+  <div class="side-element side-updates">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><g fill="#C3C3C3"><path d="M10.4 17.3H3.8c-2 0-3.5-1.5-3.5-3.5V4.9c0-2 1.5-3.6 3.6-3.6H17c1.9 0 3.5 1.5 3.5 3.4v9.1c0 1.9-1.5 3.4-3.4 3.4h-3.3c-1.1.1-2.3.1-3.4.1zm.1-13.2H4c-.5 0-.8.3-.8.8v8.8c0 .5.3.8.8.8h13c.3 0 .6-.1.7-.4.1-.1.1-.3.1-.5V4.8c0-.5-.3-.8-.8-.8-2.2.1-4.4.1-6.5.1zM13 10.5c.3-.2.5-.5.8-.6.1-.1.3-.2.5-.2h1.3c.4 0 .7.3.7.7 0 .4-.3.7-.7.7h-.3c-.6-.1-1 .1-1.4.5-.3.3-.6.5-.9.7-.5.4-1 .1-1.2-.4-.2-1-.4-2-.7-2.9 0 0 0-.1-.1-.2l-.9 3.9c0 .2-.1.4-.1.6-.1.4-.3.6-.7.6-.3 0-.6-.2-.7-.6-.3-1-.6-2.1-.9-3.1 0-.1 0-.1-.1-.3-.2.3-.4.5-.5.8-.2.3-.4.4-.7.4H5.1c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7h.7c.2 0 .3 0 .4-.2.3-.5.7-1 1-1.5.2-.3.4-.4.7-.4.3.1.5.3.6.6.2.6.4 1.3.6 1.9 0 0 0 .1.1.2.1-.6.3-1.1.4-1.6.2-1.1.5-2.2.7-3.2.1-.4.3-.6.7-.6.4 0 .6.2.7.6.4 1.6.7 3.3 1.1 4.9.1 0 .2 0 .2.1z"/></g></svg>
+  <h4>Update Status</h4>
+  <ul>
+    <li><a href="http://www.austlii.edu.au/cgi-bin/cases_status.cgi">Case Law Updates</a></li>
+    <li><a href="http://www.austlii.edu.au/cgi-bin/jstatus.cgi">Journal Updates</a></li>
+    <li><a href="http://www.austlii.edu.au/cgi-bin/legstatus.cgi">Legislation Updates</a></li>
+  </ul>
+</div>
+
+  <div class="side-element side-social">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><path fill="#C3C3C3" d="M20.7 3.7c-.7.3-1.5.5-2.4.6.9-.5 1.5-1.3 1.9-2.3-.8.5-1.7.8-2.7 1-.8-.8-1.9-1.3-3.1-1.3-2.3 0-4.2 1.9-4.2 4.2 0 .3 0 .6.1 1C6.9 6.7 3.8 5 1.7 2.5c-.4.6-.6 1.3-.6 2.1 0 1.4.8 2.7 1.9 3.5-.7-.1-1.3-.3-1.9-.6v.1c0 2 1.4 3.7 3.4 4.1-.4.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.7 2.1 2.9 3.9 2.9-1.4 1.1-3.2 1.8-5.2 1.8-.3 0-.7 0-1-.1 1.9 1.2 4.1 1.9 6.4 1.9 7.7 0 11.9-6.4 11.9-11.9v-.5c.8-.6 1.6-1.3 2.1-2.1z"/></svg>
+  <h4>Join the discussion</h4>
+  <ul>
+    
+    <li><a href="https://twitter.com/intent/user?screen_name=AustLII" target="_blank">Follow @AustLII on Twitter</a></li>
+<!--
+    <li><a href="https://twitter.com/search?f=tweets&vertical=default&q=austlii" target="_blank">Recent tweets about AustLII</a></li>
+-->
+  </ul>
+</div> 
+
+  <div class="side-element side-search">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><path fill="#C3C3C3" d="M4.7 12.3v.7c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1h-.7c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3v-.7c0-.1 0-.2.1-.3.1-.1.2-.1.3-.1h.7c.1 0 .2 0 .3.1.1.1.1.2.1.3zm0-2.9v.7c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1h-.7c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3v-.7c0-.1 0-.2.1-.3.1-.1.2-.1.3-.1h.7c.1 0 .2 0 .3.1.1.2.1.2.1.3zm0-2.8v.7c0 .1 0 .2-.1.3-.1 0-.2.1-.2.1h-.8c-.1 0-.2 0-.3-.1v-1c0-.1 0-.2.1-.3.1-.1.2-.1.3-.1h.7c.1 0 .2 0 .3.1v.3zm12.9 5.7v.7c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1H6.5c-.1 0-.2 0-.3-.1s-.1-.2-.1-.3v-.7c0-.1 0-.2.1-.3.1-.1.2-.1.3-.1h10.7c.1 0 .2 0 .3.1.1.1.1.2.1.3zm0-2.9v.7c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1H6.5c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3v-.7c0-.1 0-.2.1-.3.1-.1.2-.1.3-.1h10.7c.1 0 .2 0 .3.1.1.2.1.2.1.3zm0-2.8v.7c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1H6.5c-.1 0-.2 0-.3-.1 0-.1-.1-.2-.1-.3v-.7c0-.1 0-.2.1-.3s.2-.1.3-.1h10.7c.1 0 .2 0 .3.1s.1.2.1.3zm1.4 7.9V5.2c0-.1 0-.2-.1-.3-.1-.1-.2-.1-.3-.1H2.2c-.1 0-.2 0-.2.1-.1.1-.2.2-.2.3v9.3c0 .1 0 .2.1.3.1.1.2.1.3.1h16.5c.1 0 .2 0 .3-.1s0-.2 0-.3zm1.5-12.2v12.2c0 .5-.2.9-.5 1.3-.4.4-.8.5-1.3.5H2.2c-.5 0-.9-.2-1.3-.5-.4-.4-.5-.8-.5-1.3V2.3c0-.5.2-.9.5-1.3S1.7.5 2.2.5h16.5c.5 0 .9.2 1.3.5.3.4.5.8.5 1.3z"/></svg>
+  <h4>Catalog</h4>
+  <ul>
+    <li><a href="http://www.worldlii.org/catalog/1.html">Australia</a></li>
+    <li>
+      <ul>
+        <li><a href="http://www.worldlii.org/catalog/2602.html">By Jurisdiction</a></li>
+        <li><a href="http://www.worldlii.org/catalog/33.html">By Subject</a></li>
+        <li><a href="http://www.worldlii.org/catalog/2385.html">Community Info</a></li>
+        <li><a href="http://www.worldlii.org/catalog/193.html">Legal Services</a></li>
+      </ul>
+    </li>
+    <li><a href="http://www.worldlii.org/catalog/242.html">New Zealand</a></li>
+    <li><a href="http://www.worldlii.org/catalog/1.html">More...</a></li>
+  </ul>
+</div>
+
+  <div class="side-element side-tools">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" enable-background="new 0 0 21 20"><path fill="#C3C3C3" d="M3.5 19.3c-.1 0-.1 0 0 0h-.2c-.3 0-.5-.1-.7-.3l-.9-.9c-.5-.5-.4-1.3.1-1.7.1-.1.2-.1.2-.2 1.6-1.4 3.2-2.9 4.8-4.3.4-.4.8-.7 1.2-1.1l-.2-.2c-.5-.5-1-1-1.4-1.5h-.1c-.7.2-1.4.3-2.1.2C2.6 9 1.5 8 1 6.5c-.1-.3-.1-.6-.1-.9v-.7c.1-.3.4-.3.6-.1l1.7 1.7.2.2h.1c.6-.2 1.3-.3 1.9-.5.1 0 .1 0 .1-.1.2-.6.3-1.2.5-1.8v-.2c-.7-.6-1.3-1.3-1.9-1.9-.2-.1-.2-.2-.2-.4.1-.1.2-.2.4-.2h.4c1.2 0 2.2.5 3 1.4.6.7.9 1.5 1 2.4 0 .6 0 1.1-.2 1.6v.1c.5.5 1 1 1.5 1.4l.4.4c1.3-1.3 2.5-2.6 3.7-3.9 0-.1-.1-.1-.1-.2-.1-.2 0-.5.1-.7.1-.1.1-.2.2-.2.2-.3.2-.7 0-1-.2-.5-.5-.9-1-1.1-.6-.4-1.2-.6-1.8-.7-.2 0-.3-.1-.5-.1 0 0-.1 0-.1-.1 0 0 0-.1.1-.1s.2-.1.3-.1c.2-.1.5-.1.7-.1h.6c.6.1 1.2.2 1.8.5.8.4 1.5.9 2.1 1.4.5.4.9.8 1.3 1.2.2.5.5.9.7 1.3.1.2.1.4.1.6v.1c.1.3.3.5.4.7.1-.1.1-.2.2-.2.1-.1.1-.1.2-.1.2-.1.5 0 .7.2.2.2.2.5-.1.7l-1.3 1.3c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8.1 0 .1-.1.2-.1-.3-.2-.5-.4-.8-.6-.2-.1-.3-.2-.5-.3-.1-.1-.3-.1-.4 0-.2.1-.4.1-.7 0-.1-.1-.2-.1-.4-.2-1.2 1.3-2.5 2.5-3.7 3.8l.3.3c1.2 1.1 2.4 2.2 3.5 3.3.8.7 1.5 1.4 2.3 2.1.2.2.5.4.6.7.2.4.4.8.3 1.2-.1.7-.5 1.1-1.1 1.3-.2.1-.4.1-.6.1h-.1c-.5 0-1-.3-1.4-.7-.4-.5-.9-.9-1.3-1.4-.8-.8-1.6-1.6-2.3-2.4-.5-.5-1-1.1-1.6-1.6-.1-.2-.3-.3-.5-.4l-.2.2-5.4 6c0 .2-.1.3-.2.4-.1 0-.3 0-.4.1zm13.4-1.1c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7-.4 0-.7.3-.7.7-.1.4.3.7.7.7z"/></svg>
+  <h4>Tools &amp; Guides</h4>
+  <ul>
+    <li><a href="http://classic.austlii.edu.au/">'Classic' AustLII website</a></li>
+    <li><a href="http://www.austlii.edu.au/austlii/seminars/2018/1.html">New AustLII interface - User seminars</a></li>
+    <li><a href="/austlii/guide/user_guide.pdf">User Guide</a></li>
+<!--
+    <li><a href="http://www.austlii.edu.au/austlii/help/">User Guides</a></li>
+    <li><a href="#">Subscribe to RSS</a></li>
+    <li><a href="http://www.austlii.edu.au/austlii/help/">More...</a></li>
+-->
+  </ul>
+</div>
+
+</div>
+
+    <footer class="closing">
+  <div class="inner">
+    <p>AustLII provides free, comprehensive and independent access to Australasian law. AustLII participates in the <a href="http://www.falm.info/">Free Access to Law Movement</a>.</p>
+<!--
+    <p>AustLII is a joint facility of UNSW and UTS. AustLII participates in the <a href="http://www.falm.info/">Free Access to Law Movement</a>.</p>
+-->
+    <p><a href="http://www.falm.info/" target="_blank"><img src="images/falm.png" alt="FALM" /></a></p><a href="http://www.falm.info/" target="_blank">
+  </a></div><a href="http://www.falm.info/" target="_blank">
+</a></footer><a href="http://www.falm.info/" target="_blank">
+
+  </a></div><a href="http://www.falm.info/" target="_blank">
+
+  <script src="/js/production.min.js"></script>
+
+
+</a><div class="suggestions" style="visibility: hidden;"></div></body></html>

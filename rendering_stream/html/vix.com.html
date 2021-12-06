@@ -1,0 +1,91 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><title>VIX </title><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /><meta name="theme-color" content="#fff" /><meta name="mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="shortcut icon" href="https://static.vix.com/assets/favicon.ico" /><script src="https://connect.facebook.net/signals/config/576881903234907?v=2.9.29&amp;r=stable" async=""></script><script async="" src="//connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-VFNSBL0T48&amp;l=gtmDataLayer&amp;cx=c"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K3V6T8F&amp;l=gtmDataLayer"></script><script>var appVersion = '2.7.9'</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VFNSBL0T48"></script><script>window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'G-VFNSBL0T48', {'appVersion': appVersion, 'send_page_view': false});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','gtmDataLayer','GTM-K3V6T8F');</script><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" /><link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" /><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CIntersectionObserverEntry%2CPromise%2CPromise.prototype.finally"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/can-autoplay@3.0.0/build/can-autoplay.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script><script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"></script><script type="text/javascript">function OptanonWrapper() {
+          //load CCPA
+          var geo = Optanon.getGeolocationData();
+          if(geo.country === 'US' &amp;&amp; geo.state === 'CA') {
+            var s = document.createElement('script');
+            var attrs = {
+              "ccpa-opt-out-ids": "C0004",
+              "ccpa-opt-out-geo": "ca",
+              "ccpa-opt-out-lspa": "true"
+            }
+
+            s.src = "https://cdn.cookielaw.org/opt-out/otCCPAiab.js";
+            for(var name in attrs) {
+              s.setAttribute(name, attrs[name]);
+            }
+            document.head.appendChild(s);
+          }
+
+          var isEurope = "function" === typeof Optanon.getVendorConsentsRequestV2
+
+          window.OptanonLoaded = window.OptanonLoaded || false;
+
+          Optanon.OnConsentChanged(function() {
+            var w = window;
+            var personalizedAd = 'C0004';
+            var consent = {
+              groups: '',
+              gdpr: {
+                  isEurope: false,
+                  iabTCF: {}
+              },
+              ccpa: {
+                  isCCPA: false,
+                  tcString: ''
+              },
+              restrictData: false
+            };
+            //get IAB Europe consent
+            try {
+                var iabConsentHash = w.Optanon.getVendorConsentsRequestV2(function (e) { return e });
+                consent.gdpr = {
+                  isEurope: true,
+                  iabTCF: iabConsentHash
+                }
+            }
+            catch (e) {
+              console.warn('[consent] TCF Error ' + e);
+            }
+
+            if (-1 === w.OptanonActiveGroups.indexOf(personalizedAd)) {
+              consent.restrictData = true
+            }
+            //CCPA
+            var uspapi = w.usPrivacyCookie;
+            if (undefined !== uspapi) {
+              consent.ccpa = {
+                  isCCPA: true,
+                  tcString: w.usPrivacyCookie.get()
+              }
+            }
+            consent.groups = w.OptanonActiveGroups;
+            w.OptanonConsentDone = true;
+            w.dispatchEvent(new CustomEvent('consentChanged', {
+              detail: {
+                consent: consent
+              }
+            }));
+          });
+
+        window.OptanonLoaded = true;
+      }</script><script>if (location.href.indexOf("embed") === -1) {
+            let gpt = document.createElement('script');
+            gpt.src = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js';
+            gpt.async = true;
+            document.head.appendChild(gpt);
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function() {
+              googletag.pubads().enableSingleRequest();
+              googletag.enableServices();
+              var adUnits = {'/324756075/vix.com_es_web_outofpage': 'div-fullbannerd', '/324756075/vix.com_es_mw_outofpage': 'div-fullbannerm'};
+              for(var adUnitName in adUnits) {
+                var divId = adUnits[adUnitName];
+                googletag.defineOutOfPageSlot(adUnitName, divId).addService(googletag.pubads());
+                var element = document.createElement('div');
+                element.id = divId;
+                document.body.appendChild(element);
+                googletag.cmd.push(function() { googletag.display(divId); });
+              }
+            });
+          }</script><script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async=""></script><link href="/tv/static/css/app.7b26a658b484f0d55f388e85662858b7.css" rel="stylesheet" /><meta data-vue-meta="1" property="og:locale" content="es" /><meta data-vue-meta="1" property="og:site_name" content="VIX" /><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020111901.js" async=""></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.vix.com" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.vix.com"></script><link rel="prefetch" href="https://8836196a5e2e64c490a5e5856ccbdc9c.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" /></head><body><!----><script type="text/javascript">!function(e){var n=window.webpackJsonp;window.webpackJsonp=function(r,c,a){for(var f,i,u,d=0,s=[];d&lt;r.length;d++)i=r[d],t[i]&amp;&amp;s.push(t[i][0]),t[i]=0;for(f in c)Object.prototype.hasOwnProperty.call(c,f)&amp;&amp;(e[f]=c[f]);for(n&amp;&amp;n(r,c,a);s.length;)s.shift()();if(a)for(d=0;d&lt;a.length;d++)u=o(o.s=a[d]);return u};var r={},t={12:0};function o(n){if(r[n])return r[n].exports;var t=r[n]={i:n,l:!1,exports:{}};return e[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.e=function(e){var n=t[e];if(0===n)return new Promise(function(e){e()});if(n)return n[2];var r=new Promise(function(r,o){n=t[e]=[r,o]});n[2]=r;var c=document.getElementsByTagName("head")[0],a=document.createElement("script");a.type="text/javascript",a.charset="utf-8",a.async=!0,a.timeout=12e4,o.nc&amp;&amp;a.setAttribute("nonce",o.nc),a.src=o.p+"static/js/"+e+"."+{0:"510e0c68b77f85099426",1:"c3c66715c1867a2ce560",2:"497a66436417ac31216f",3:"4681907ef02fc6c23b63",4:"a53c03fa8fa522addae8",5:"91b0fdce7739ef99653b",6:"4b2cdc7779949b06c2dd",7:"4669b4c97d162d7de840",8:"41d6cd283cfbfd55e66d",9:"ad92047729ca7af01717"}[e]+".js";var f=setTimeout(i,12e4);function i(){a.onerror=a.onload=null,clearTimeout(f);var n=t[e];0!==n&amp;&amp;(n&amp;&amp;n[1](new Error("Loading chunk "+e+" failed.")),t[e]=void 0)}return a.onerror=a.onload=i,c.appendChild(a),r},o.m=e,o.c=r,o.d=function(e,n,r){o.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},o.n=function(e){var n=e&amp;&amp;e.__esModule?function(){return e.default}:function(){return e};return o.d(n,"a",n),n},o.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},o.p="/tv/",o.oe=function(e){throw console.error(e),e}}([]);</script><script type="text/javascript" src="/tv/static/js/vendor.0efae3f119dc205ee5a7.js"></script><script type="text/javascript" src="/tv/static/js/app.84e4d8aa125144c23515.js"></script>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","//connect.facebook.net/en_US/fbevents.js");fbq("init","576881903234907");fbq("trackSingle","576881903234907","PageView");</script><div id="div-fullbannerd"><div id="google_ads_iframe_/324756075/vix.com_es_web_outofpage_0__container__" style="border: 0pt none; width: 1px; height: 1px;"></div></div><div id="div-fullbannerm"><div id="google_ads_iframe_/324756075/vix.com_es_mw_outofpage_0__container__" style="border: 0pt none; width: 1px; height: 1px;"></div></div></body></html>

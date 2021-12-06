@@ -1,0 +1,97 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+                <link rel="alternate" hreflang="en" href="https://www.docdroid.net" />
+                <link rel="alternate" hreflang="de" href="https://www.docdroid.net/de" />
+        
+    
+    <title>Upload &amp; Share PDF | DocDroid</title>
+
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" />
+
+
+
+
+    <meta name="description" content="Upload and share PDF documents. Free &amp; fast! No registration required." />
+
+<!-- CSS -->
+    <link href="/css/app.css?id=2fea23890eecf5036172" rel="stylesheet" />
+
+    <meta property="fb:app_id" content="450042191753217" />
+    <meta name="twitter:site" content="@docdroid_" />
+    <meta name="wot-verification" content="d00a3eca2520f263d354" />
+
+
+    <!-- Global Data -->
+    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+        window.Spark = {"braintreeMerchantId":null,"braintreeToken":null,"cardUpFront":false,"collectsBillingAddress":true,"collectsEuropeanVat":true,"createsAdditionalTeams":true,"csrfToken":"6Hfwuv9GUH8LMXu2yvST5ufwaPtYLiNJnkJIBeX7","currencySymbol":"$","env":"production","roles":[],"state":{"user":null,"teams":[],"currentTeam":null},"stripeKey":"pk_live_e4QZlwMhPFKGIwXdgGYZsZlU","teamString":"team","pluralTeamString":"teams","userId":null,"usesApi":true,"usesBraintree":false,"usesTeams":false,"usesStripe":true};
+
+        window.app = {
+            env: 'production',
+            routeName: 'uploadDocuments',
+            isLoggedIn: false,
+            isSubscribed: false,
+            apiUrl: '/api'
+        };
+    </script>
+
+<script type="text/javascript" charset="utf-8" async="" src="/js/app.30.js?id=b5eeece78db97491f204"></script><script type="text/javascript" charset="utf-8" async="" src="/js/app.17.js?id=bf019817b538ec65e850"></script><script type="text/javascript" charset="utf-8" async="" src="/js/app.16.js?id=e7c9ebf50efef78dc4b8"></script><script type="text/javascript" charset="utf-8" async="" src="/js/app.10.js?id=a99346f4189079f82975"></script></head>
+<body class=" with-navbar">
+
+
+
+<div id="app"><nav class="navbar  navbar-shadow navbar-fixed-top"><div class="container"><div class="navbar-branding"><a href="https://www.docdroid.net" class="navbar-brand"><img src="https://www.docdroid.net/images/logo_navbar.png" alt="DocDroid" /></a></div> <ul class="nav navbar-nav navbar-left"><li class="ml20 visible-sm"><a href="https://www.docdroid.net" title="DocDroid - Share your documents"><span title="Upload Documents" class="fa fa-file-text pr5"></span> <span> Upload </span></a></li> <li class="ml20 hidden-xs hidden-sm"><a href="https://www.docdroid.net" title="DocDroid - Share your documents"><span title="Upload Documents" class="fa fa-file-text pr5"></span> <span> Upload Documents </span></a></li> <li class="ml20 hidden-xs hidden-sm"><a href="https://www.docdroid.net/share-slides" title="DocDroid - Share your slides"><span title="Share Slides" class="fa fa-list-alt pr5"></span> <span> Share Slides </span></a></li> <li class="ml20 hidden-xs"><a href="https://www.docdroid.net/pricing"><span title="Pricing" class="fa fa-shopping-bag pr5"></span> <span> Pricing </span></a></li></ul> <ul class="nav navbar-nav navbar-right hidden-xs"><li class="dropdown"><a data-toggle="dropdown" href="" class="dropdown-toggle"><span class="flag-xs flag-en"></span></a> <ul role="menu" class="dropdown-menu animated animated-short flipInX"><li><a rel="alternate" hreflang="en" href="https://www.docdroid.net?hl=en" class="fw600"><span class="flag-xs flag-en mr10"></span> English </a></li> <li><a rel="alternate" hreflang="de" href="https://www.docdroid.net/de?hl=de" class="fw600"><span class="flag-xs flag-de mr10"></span> German </a></li></ul></li></ul> <ul class="nav navbar-nav navbar-right"><li><a href="/login" class="navbar-link">Login</a></li> <li><a href="/register" class="navbar-link">Register</a></li></ul></div></nav> <div class="container"><div><div class="tray-bin pl10 mb30 pb10 pt10"><h5 class="text-muted  fw600 pl10 hidden-xs"><i class="fa fa-files-o fa-lg pr10"></i>
+
+
+                        Drop your PDF files here...
+                    </h5> <form action="" id="dropzone" class="dropzone dz-clickable"><div class="dz-default dz-message"><span><i class="fa fa-cloud-upload"></i> <h1 class="main-text fs35">
+                                Upload PDF                        </h1> <span class="sub-text mb30">
+
+
+                        or any document format: DOC, DOCX, TXT...
+                </span> <br /> <button type="button" id="select" class="btn btn-default btn-lg light"><span class="fa fa-folder-open pr5"></span>
+                        Select Files                    </button></span></div></form></div> <!---->  <div class="popup-basic admin-form mfp-with-anim" style="display: none;"><div class="panel"><div class="panel-heading"><span class="panel-title"><i class="fa fa-shield"></i>Captcha</span></div> <div class="panel-body p25"><!----> <div class="section row pl10"><p>
+                    Sorry for the interruption. To upload this file, please click Verify.
+                </p> <!----></div></div> <div class="panel-footer clearfix"><button type="submit" class="button btn-primary pull-right"> Verify</button></div></div></div> <div class="popup-basic admin-form mfp-with-anim" style="display: none;"><div class="panel"><div class="panel-heading"><span class="panel-title"><i class="fa fa-ban"></i>Daily Limit Reached</span></div> <div class="panel-body p25"><p>
+                Thanks for using DocDroid! Unfortunately, you have reached your daily limit of uploading documents.
+            </p> <p>
+                To continue using DocDroid, please consider to chose one of our subscriptions. Besides no daily limit, you profit from other cool features: Analytics, Custom Branding and more!
+            </p></div> <div class="panel-footer clearfix"><a href="/pricing" class="button btn-primary pull-right"><i class="fa fa-shopping-bag mr5"></i>
+                Pricing </a></div></div></div> <div class="popup-basic admin-form mfp-with-anim" style="display: none;"><div class="panel"><div class="panel-heading"><span class="panel-title"><i class="fa fa-warning"></i>You are not logged in</span></div> <div class="panel-body p25"><!----> <div class="section"><p>
+                    Create a free account to modify or delete your document later:
+                </p> <p class="text-center"><a href="/register" class="btn btn-primary"><i class="fa fa-pencil-square mr5"></i> Register</a> <a href="/login/social/redirect/facebook" class="btn facebook"><i class="fa fa-facebook"></i></a> <a href="/login/social/redirect/google" class="btn  googleplus"><i class="fa fa-google"></i></a> <a href="/login/social/redirect/twitter" class="btn  twitter"><i class="fa fa-twitter"></i></a></p></div> <!----></div> <div class="panel-footer clearfix"><a class="button btn-primary cancel pull-right">No, thanks</a></div></div></div></div></div> <div id="marketing" class="container"><div class="row mt50"><div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-files-o fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9">
+                Upload your documents in any format. We support <strong>PDF, DOCX, DOC, ODT, RTF, XLS, XLSX, ODS, PPT, PPTX, ODP, TXT and more</strong>! DocDroid creates a link for sharing.
+            </div></div> <div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-download fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9"><strong>Fast and convenient</strong> browser preview for your readers (<a href="/hptvUCe/example-document.docx" target="_blank">example document</a>). We automatically convert your document: If you upload a DOCX, your readers can choose to download it as PDF, DOC, ODT or TXT!
+            </div></div> <div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-lock fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9"><strong>Privacy</strong> is important to us! Uploaded documents are <strong>not publicly</strong> listed. If you want to, you can set up password protection or set your document to private at anytime.
+            </div></div></div> <div class="row pt30"><div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-edit fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9">
+                You retain <strong>complete control</strong> over your uploaded documents. You can modify, replace and delete your PDFs later. Documents are automatically deleted after 60 days without view.
+            </div></div> <div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-user fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9"><strong>No sign up required</strong>. For more comfort we encourage you to create a free account, but we do not force you to do so!
+            </div></div> <div class="col-md-4 row"><div class="col-md-3 text-center"><i class="fa fa-code fa-lg fs60 mt5 mb5"></i></div> <div class="col-md-9"><strong>Embed</strong> your uploaded PDFs in other websites. This way you can integrate DocDroid documents in your website as iframes.
+            </div></div></div></div> <footer id="content-footer"><div class="container"><span class="footer-legal hidden-xs">© 2020 Lunaweb GmbH </span> <a href="https://twitter.com/docdroid_" target="_blank"><span class="fa fa-twitter ml20"></span></a> <a href="https://www.facebook.com/docdroid" target="_blank"><span class="fa fa-facebook ml20"></span></a> <a href="https://www.docdroid.net/contact" class="ml20">Contact</a> <a href="https://www.docdroid.net/terms" class="ml20">Terms Of Service</a> <a href="https://www.docdroid.net/privacy" class="ml20">Privacy</a> <a href="https://cloudconvert.com" target="_blank" class="hidden-xs hidden-sm ml20">File Conversion API</a></div></footer></div>
+
+
+<!-- JavaScript -->
+
+
+
+
+ 
+<script src="/js/app.js?id=7030c1f33c66b4c30204"></script>
+    <script src="https://www.recaptcha.net/recaptcha/api.js?onload=vueRecaptchaApiLoaded&amp;render=explicit" async="" defer="">
+    </script>
+
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;" /></body></html>

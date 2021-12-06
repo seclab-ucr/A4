@@ -1,0 +1,682 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8" />
+<title>Global Chemical Network - Chemicals Trading Platform for Chemical Suppliers and Chemical Buyers - ChemNet </title>
+<meta name="keywords" content="Chemicals, Chemical Products, Chemical Suppliers, Chemical Manufacturers, Chemical Database, Chemical Network" />
+<meta name="description" content="ChemNet is the Chemical Trading platform to connect chemical buyers and chemical sellers with Chemical Search Engine of Chemical Suppliers and Chemical Products." />
+<meta name="googlebot" content="index,follow" />
+<meta name="robots" content="index,follow" />
+<link href="/css/font.css" rel="stylesheet" type="text/css" />
+<link href="/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="/css/master.css" rel="stylesheet" type="text/css" />
+<link href="/css/leftmenu.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- header -->
+<div id="header">
+<div class="header01">
+<!-- login -->
+<div class="login">
+<script language="JavaScript">
+function getCookie(c_name)
+{
+if (document.cookie.length&gt;0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=")
+  if (c_start!=-1)
+    {
+    c_start=c_start + c_name.length+1
+    
+    c_end=document.cookie.indexOf(";",c_start)
+    if (c_end==-1) c_end=document.cookie.length
+    return " Welcome,&lt;font color='#ff6600'&gt;"+unescape(document.cookie.substring(c_start,c_end))+"&lt;/font&gt;&amp;nbsp;&amp;nbsp;&lt;a href=\"/member/\"&gt;\&lt;font color='#ff6600'&gt;My Office&lt;/font&gt;\&lt;/a&gt;&amp;nbsp; &lt;font color='#ff6600'&gt;|&lt;/font&gt; &amp;nbsp;&lt;a href=\"/member/logout.cgi\" class=\"blue_sell_1\"&gt;&lt;font color='#ff6600'&gt;Logout&lt;/font&gt;&lt;/a&gt;"
+    }
+  }
+  return "&lt;form name=\"form_login\" method=\"post\" action=\"/member/\" &gt;&lt;input type=hidden name=f value=login1&gt;&lt;input type=hidden name=returl value=\"/member/\"&gt;Member ID:&lt;input name=\"username\" type=\"text\" id=\"username\" size=\"18\" chname=\"username\" maxsize=\"20\"  nullable=\"no\" datatype=\"text\" class=\"user\"&gt;password:&lt;input name=\"password\" type=\"password\" id=\"password\" size=\"18\" class=\"user\"&gt;&lt;input name=\"f1\" value=\"sign in\" type=\"submit\"  width=\"80\" height=\"46\" border=\"0\" class=\"button\"&gt; &amp;nbsp;&lt;a href=\"/member/admin/hub/reg.cgi?t=minfo&amp;f=add&amp;lang=chn\" class=\"orange\" target=\"_blank\"&gt;Join Now!&lt;/a&gt; &lt;/form&gt;"
+}
+document.write(getCookie('username'));
+</script><form name="form_login" method="post" action="/member/"><input type="hidden" name="f" value="login1" /><input type="hidden" name="returl" value="/member/" />Member ID:<input name="username" type="text" id="username" size="18" chname="username" maxsize="20" nullable="no" datatype="text" class="user" />password:<input name="password" type="password" id="password" size="18" class="user" /><input name="f1" value="sign in" type="submit" width="80" height="46" border="0" class="button" />  <a href="/member/admin/hub/reg.cgi?t=minfo&amp;f=add&amp;lang=chn" class="orange" target="_blank">Join Now!</a> </form>
+</div>
+<a href="http://www.toocle.com/" class="icon01" target="_blank">China Business Portal</a>
+<a href="http://china.chemnet.com" target="_blank" class="icon02">ChinaChemNet</a>
+<a href="http://kr.chemnet.com/" target="_blank" class="icon03">KoreaChemNet</a></div>
+<div class="header02">
+<div class="logo"><a title="Global Chemical Network" href="http://www.chemnet.com/">Global Chemical Network</a></div>
+<!-- banner -->
+<div class="header-banner">
+<ul>
+<li><a href="http://www.dynai.com/index_en.html" target="_blank" title="Jiangsu Dynamic Chemistry Co., Ltd. 2022-02-18"><img src="http://images-a.china.chemnet.com/enbanner/chinatianyin270.gif" alt="Jiangsu Dynamic Chemistry Co., Ltd. 2022-02-18" width="270" height="42" border="0" align="absmiddle" /></a></li>
+<li><a href="http://expo.toocle.com/" target="_blank"><img src="http://images-a.china.chemnet.com/enbanner/toocleexpo.gif" alt="2020.6.30" width="180" height="42" border="0" align="absmiddle" /></a></li>
+<li><a href="http://www.toocle.com/" target="_blank"><img src="/images/ad/toocle270.gif" border="0" align="absmiddle" /></a></li>
+</ul>
+</div>
+<!-- nav -->
+<div id="nav">
+<ul>
+<li class="nav_bg01"></li>
+<li class="nav_bg02"><a href="/" class="yellow fb">Home</a>  |  <a href="/Global/Products/" class="white">Products</a>  |  <a href="/Global/Suppliers/" class="white">Suppliers</a>  |  <a href="/Global/Offer-to-Buy/" class="white">Offer to Buy</a>  |  <a href="/Global/Offer-to-Sell/" class="white">Offer to Sell</a>  |  <a href="http://news.chemnet.com/Chemical-News/" class="white">Chemical News</a>  |  <a href="http://www.chemnet.com/reach/" class="white">REACH</a>  |  <a href="http://www.chemnet.com/cas/" class="white">CAS</a>  |  <a href="/resource/" class="white">Resource</a></li>
+<li class="nav_bg03"></li>
+</ul>
+</div>
+</div>
+<!-- search -->
+<div class="search">
+<ul>
+<li class="search_bg01"></li>
+<li class="search_bg02">
+    
+<form method="post" name="form4" action="/index/search.cgi" onsubmit="return submit_form(this);" class="form">
+  <input type="hidden" name="c" value="utf8.b" />
+  <input name="terms" type="text" id="key" size="50" value="Please Enter Product Name,CAS No.or Molecular Formula" onfocus="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}" class="search_input" />
+  <!--<select name="f" onChange="document.form4.terms.value=''">-->
+  <select name="f">
+    <option value="product" selected="">Product Search
+    </option><option value="company">Company Search
+    </option><option value="web">ChemSearch 
+    </option><option value="dir">Directory Search
+  </option></select>
+  <input type="submit" name="submit" value="search" class="search_button" />
+</form>
+
+<span>Hot Products</span>:
+
+    <a href="/Global/Products/Betaxolol-HCl/Suppliers-0-0.html" target="_blank" title="Betaxolol HCl" class="white">Betaxolol HC...</a>
+
+    <a href="/Global/Products/Alendronate-sodium/Suppliers-0-0.html" target="_blank" title="Alendronate sodium" class="white">Alendronate ...</a>
+
+    <a href="/Global/Products/Carbon/Suppliers-0-0.html" target="_blank" title="Carbon" class="white">Carbon</a>
+
+
+<a href="#" onmousemove="openBox('typeTrol');" onmouseout="closeBox('typeTrol')" class="white">▼</a> 
+<div id="typeTrol" onmouseover="openBox('typeTrol')" onmouseout="closeBox('typeTrol')">
+<ul>
+
+<li><a href="/Global/Products/Sorbitol/Suppliers-0-0.html" target="_blank">Sorbitol</a></li>
+
+<li><a href="/Global/Products/Ketorolac-Tromethamine/Suppliers-0-0.html" target="_blank">Ketorolac Tromethamine</a></li>
+
+<li><a href="/Global/Products/Musk-ketone/Suppliers-0-0.html" target="_blank">Musk ketone</a></li>
+
+<li><a href="/Global/Products/sodium-dihydrogen-phosphate-anhydrous/Suppliers-0-0.html" target="_blank">sodium dihydrogen phosphate anhydrous</a></li>
+
+<li><a href="/Global/Products/Anisic-Alcohol/Suppliers-0-0.html" target="_blank">Anisic Alcohol</a></li>
+
+<li><a href="/Global/Products/Reactive-Orange-72/Suppliers-0-0.html" target="_blank">Reactive Orange 72</a></li>
+
+<li><a href="/Global/Products/trans-4-Aminocyclohexanol/Suppliers-0-0.html" target="_blank">trans-4-Aminocyclohexanol</a></li>
+
+<li><a href="/Products/supplier.cgi?f=pclist&amp;lang=en&amp;site=chemnet&amp;skey=Poly%28vinyl-alcohol%29" target="_blank">Poly(vinyl alcohol)</a></li>
+
+<li><a href="/Global/Products/dipyrone/Suppliers-0-0.html" target="_blank">dipyrone</a></li>
+
+<li><a href="/Global/Products/2-ethyl-bromobutyrate/Suppliers-0-0.html" target="_blank">2-ethyl bromobutyrate</a></li>
+
+<li><a href="/Global/Products/p-Toluenesulfonyl-Isocyanate/Suppliers-0-0.html" target="_blank">p-Toluenesulfonyl Isocyanate</a></li>
+
+<li><a href="/Global/Products/clotrimazole-crystalline/Suppliers-0-0.html" target="_blank">clotrimazole crystalline</a></li>
+
+</ul>
+</div>
+
+<script type="text/javascript" src="/js/web.js"></script>
+</li>
+<li class="search_bg03"></li>
+</ul>
+</div>
+</div>
+
+<!-- main -->
+  <div id="main">
+<!-- banner -->
+    <div id="banner">
+      <ul>
+        <li><a href="http://www.keyuanchem.com/index-e.html" target="_blank" title="Jiangxi Keyuan2021.6.15"><img src="http://images-a.china.chemnet.com/enbanner/keyuanchem270.gif" alt="Jiangxi Keyuan 2021.6.15" width="216" height="40" border="0" align="absmiddle" /></a></li>
+        <li><a href="http://www.wxredstar.com/index_en.html" target="_blank" title="Wuxi city Hongxing Chemical Industry Factory 2021.11.20"><img src="http://images-a.china.chemnet.com/enbanner/wxredstar115.gif" alt="Wuxi city Hongxing Chemical Industry Factory 2021.11.20" width="115" height="40" border="0" align="absmiddle" /></a></li>
+        <li><a href="/"><img src="http://images-a.china.chemnet.com/enbanner/whpharm-115.gif" width="115" height="40" border="0" /></a></li>
+        <li><a href="http://www.lemonchem.com/index_en.html" target="_blank" title="Jiangsu Lemon Chemical &amp; Technology 2021-12-18"><img src="http://images-a.china.chemnet.com/enbanner/lemonchem115.gif" alt="Jiangsu Lemon Chemical &amp; Technology Co.,Ltd 2021-12-18" border="0" width="115" height="40" align="absmiddle" /></a></li>
+        <li><a href="http://www.yatai-chem.com/index_en.html" target="_blank"><img src="/images/ad/yatai-chem.gif" alt="Yatai Electrochemistry 2012-6-1" border="0" align="absmiddle" width="115" height="40" /></a></li>
+        <li class="no"><a href="/"><img src="http://images-a.china.chemnet.com/enbanner/jianpingchem.gif" width="242" height="40" border="0" align="absmiddle" /></a></li>
+      </ul>
+    </div>
+
+<div class="clear"></div>
+
+<!-- left -->
+<div id="left">
+<!-- cate-box -->
+<div id="cate_left_b" class="cate-box">
+<dl>
+<dt>Product Category</dt>
+<dd>
+<div id="cate-father" class="box">
+  <ul id="categories" class="after-load-subs">
+    <li class="box_bg"><a href="/Global/Products/Adhesives-and-Sealants/Directory-1.html">Adhesives and Sealants</a></li>
+    <li class="box_bg"><a href="/Global/Products/Agrochemicals/Directory-1.html">Agrochemicals</a></li>
+    <li><a href="/Global/Products/Agrochemicals/Chemical-fertilizers/Directory-1.html">Chemical fertilizers</a></li>
+    <li><a href="/Global/Products/Agrochemicals/Fungicide/Directory-1.html">Fungicide</a></li>
+    <li><a href="/Global/Products/Agrochemicals/Herbicide/Directory-1.html">Herbicide</a></li>
+    <li><a href="/Global/Products/Agrochemicals/Insecticide/Directory-1.html">Insecticide</a></li>
+    <li class="box_bg"><a href="/Global/Products/Catalyst-and-Auxiliary/Directory-1.html">Catalyst and Auxiliary</a></li>
+    <li><a href="/Global/Products/Catalyst-and-Auxiliary/Plastic-Auxiliary-Agent/Directory-1.html">Plastic Auxiliary Agent</a></li>
+    <li><a href="/Global/Products/Catalyst-and-Auxiliary/Rubber-Auxiliary-Agent/Directory-1.html">Rubber Auxiliary Agent</a> </li>
+    <li><a href="/Global/Products/Catalyst-and-Auxiliary/Surface-Active-Agent/Directory-1.html">Surface Active Agent</a></li>
+    <li><a href="/Global/Products/Catalyst-and-Auxiliary/Textile-Auxiliary-Agent/Directory-1.html">Textile Auxiliary Agent</a></li>
+    <li><a href="/Global/Products/Catalyst-and-Auxiliary/Water-Treatment-Chemicals/Directory-1.html">Water Treatment Chemicals</a></li>
+    <li class="box_bg"><a href="/Global/Products/Dyestuffs-and-Pigments/Directory-1.html">Dyestuffs and Pigments</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Acid-Dyes/Directory-1.html">Acid Dyes</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Direct-Dyes/Directory-1.html">Direct Dyes</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Disperse-Dyes/Directory-1.html">Disperse Dyes</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Pigments/Directory-1.html">Pigments</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Reactive-Dyes/Directory-1.html">Reactive Dyes</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Solvent-Dyes/Directory-1.html">Solvent Dyes</a></li>
+    <li><a href="/Global/Products/Dyestuffs-and-Pigments/Vat-Dyes/Directory-1.html">Vat Dyes</a></li>
+    <li class="box_bg"><a href="/Global/Products/Food-and-Feed-additives/Directory-1.html">Food and Feed Additives</a></li>
+    <li class="box_bg"><a href="/Global/Products/Fragrances-and-Aroma-chemicals/Directory-1.html">Fragrances and Aroma chemicals</a></li>
+    <li class="box_bg"><a href="/Global/Products/Inorganic-chemicals/Directory-1.html">Inorganic chemicals</a></li>
+    <li class="box_bg"><a href="/Global/Products/Intermediates/Directory-1.html">Intermediates</a></li>
+    <li><a href="/Global/Products/Intermediates/Pharmaceutical-intermediates/Directory-1.html">Pharmaceutical intermediates</a></li>
+    <li><a href="/Global/Products/Intermediates/Agrochemical-intermediates/Directory-1.html">Agrochemical intermediates</a></li>
+    <li><a href="/Global/Products/Intermediates/Dyestuff-intermediates/Directory-1.html">Dyestuff intermediates</a></li>
+    <li><a href="/Global/Products/Intermediates/Synthesis-material-intermediates/Directory-1.html">Synthesis material intermediates</a></li>
+    <li><a href="/Global/Products/Intermediates/Others/Directory-1.html">Others</a></li>
+    <li class="box_bg"><a href="/Global/Products/Machinery-and-Equipment/Directory-1.html">Machinery and Equipment</a></li>
+    <li><a href="/Global/Products/Machinery-and-Equipment/Filters-and-filtration-Systems/Directory-1.html">Filters and filtration Systems</a></li>
+    <li><a href="/Global/Products/Machinery-and-Equipment/Pipes-and-Accessories/Directory-1.html">Pipes and Accessories</a></li>
+    <li><a href="/Global/Products/Machinery-and-Equipment/Pump-and-Valve/Directory-1.html">Pump and Valve</a></li>
+    <li><a href="/Global/Products/Machinery-and-Equipment/Reactor/Directory-1.html">Reactor</a></li>
+    <li><a href="/Global/Products/Machinery-and-Equipment/Thermal-Process-Equipment/Directory-1.html">Thermal Process Equipment</a></li>
+    <li class="box_bg"><a href="/Global/Products/Metals-and-Minerals/Directory-1.html">Metals and Minerals</a></li>
+    <li class="box_bg"><a href="/Global/Products/Organic-chemicals-and-Derivatives/Directory-1.html">Organic chemicals and Derivatives</a></li>
+    <li><a href="/Global/Products/Organic-chemicals-and-Derivatives/Acid,-ester-and-anhydride-compounds/Directory-1.html">Acid, ester and anhydride compounds</a></li>
+    <li><a href="/Global/Products/Organic-chemicals-and-Derivatives/Alcohol-and-aether-compounds/Directory-1.html">Alcohol and aether compounds</a></li>
+    <li><a href="/Global/Products/Organic-chemicals-and-Derivatives/Aroma-compounds/Directory-1.html">Aroma compounds</a></li>
+    <li><a href="/Global/Products/Organic-chemicals-and-Derivatives/Basic-organic-raw-materials/Directory-1.html">Basic organic raw materials</a></li>
+    <li class="box_bg"><a href="/Global/Products/Paint-and-Coatings/Directory-1.html">Paint and Coatings</a></li>
+    <li class="box_bg"><a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Directory-1.html">Pharmaceuticals and Biochemicals</a></li>
+    <li><a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Antibiotic-and-antimicrobial-agents/Directory-1.html">Antibiotic and antimicrobial agents</a></li>
+    <li><a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Cardiovascular-agents/Directory-1.html">Cardiovascular agents</a></li>
+    <li><a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Herbal-Plant-Extract/Directory-1.html">Herbal Plant Extract</a></li>
+    <li><a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Vitamin,-amino-acids-and-coenzymes/Directory-1.html">Vitamin, amino acids and coenzymes</a></li>
+    <li class="box_bg"><a href="/Global/Products/Polymers/Directory-1.html">Polymers</a></li>
+    <li><a href="/Global/Products/Polymers/Rubber-articles-and-products/Directory-1.html">Rubber articles and products</a></li>
+    <li><a href="/Global/Products/Polymers/Synthetic-resin-and-plastics/Directory-1.html">Synthetic resin and plastics</a></li>
+    <li><a href="/Global/Products/Polymers/Synthetic Rubber/Directory-1.html">Synthetic Rubber</a></li>
+    <li class="box_bg"><a href="/Global/Products/Soaps-and-Cosmetics/Directory-1.html">Soaps and Cosmetics</a></li>
+    <li class="box_bg"><a href="/Global/Products/Other-Chemicals/Directory-1.html">Other Chemicals</a></li>
+  </ul>
+  <div id="categories-subs">
+    
+      <div rel="Adhesives and Sealants">
+      <a href="/Global/Products/Adhesives-and-Sealants/Acrylic-Adhesives/Directory-1.html" class="first-sub-li">Acrylic Adhesives</a> <a href="/Global/Products/Adhesives-and-Sealants/Construction-Adhesives-and-Sealants/Directory-1.html">Construction Adhesives and Sealants</a> <a href="/Global/Products/Adhesives-and-Sealants/Fiber-and-Garment-Adhesives/Directory-1.html">Fiber and Garment Adhesives</a>
+      </div>
+    
+      <div rel="Agrochemicals">
+      <a href="/Global/Products/Agrochemicals/Acaricide/Directory-1.html" class="first-sub-li">Acaricide</a> <a href="/Global/Products/Agrochemicals/Plant-growth-regulator/Directory-1.html">Plant growth regulator</a> <a href="/Global/Products/Agrochemicals/Rodenticide/Directory-1.html">Rodenticide</a> <a href="/Global/Products/Agrochemicals/Other-pesticide/Directory-1.html">Other pesticide</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/15264/Dinotefuran--2157620.html" target="_blank">Dinotefuran <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/13784/isocarbophos--401462.html" target="_blank">Isocarbophos</a> </span>
+      </div>
+    
+      <div rel="Catalyst and Auxiliary">
+      <a href="/Global/Products/Catalyst-and-Auxiliary/Catalyst/Directory-1.html" class="first-sub-li">Catalyst</a> <a href="/Global/Products/Catalyst-and-Auxiliary/Coating-Auxiliary-Agent/Directory-1.html">Coating Auxiliary Agent</a> <a href="/Global/Products/Catalyst-and-Auxiliary/Leather-Auxiliary-Agent/Directory-1.html">Leather Auxiliary Agent</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/33863/Ferrous%20Sulfate--1151108.html" target="_blank">Ferrous Sulfate <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/14369/silicone%20fluid--1976619.html" target="_blank">Silicone fluid</a> <a href="/ChinaSuppliers/13596/accelerator%20PZ--389827.html" target="_blank">Accelerator PZ</a> </span>
+      </div>
+    
+      <div rel="Dyestuffs and Pigments">
+      <a href="/Global/Products/Dyestuffs-and-Pigments/Azoic-Dyes/Directory-1.html" class="first-sub-li">Azoic Dyes</a> <a href="/Global/Products/Dyestuffs-and-Pigments/Basic-Dyes/Directory-1.html">Basic Dyes</a> <a href="/Global/Products/Dyestuffs-and-Pigments/Fluorescent-Brighteners/Directory-1.html">Fluorescent Brighteners</a> <a href="/Global/Products/Dyestuffs-and-Pigments/Food-Dyes/Directory-1.html">Food Dyes</a> <a href="/Global/Products/Dyestuffs-and-Pigments/Mordant-Dyes/Directory-1.html">Mordant Dyes</a> <a href="/Global/Products/Dyestuffs-and-Pigments/Sulfur-Dyes/Directory-1.html">Sulfur Dyes</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/52840/Sulphur-Black-1--2106581.html" target="_blank">Sulphur Black 1 <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/China/Suppliers/38218/titanium-dioxide--1656171.html" target="_blank">Titanium Dioxide</a> </span> 
+      </div>
+    
+      <div rel="Food and Feed additives">
+      <a href="/Global/Products/Food-and-Feed-additives/Feed-additives/Directory-1.html" class="first-sub-li">Feed additives</a> <a href="/Global/Products/Food-and-Feed-additives/Food-additives/Directory-1.html">Food additives</a> <a href="/Global/Products/Food-and-Feed-additives/General-reagents/Directory-1.html">General reagents</a> <a href="/Global/Products/Food-and-Feed-additives/High-purity-reagents/Directory-1.html">High purity reagents</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/53154/(+-)-2-(P-methoxyphenoxy)*propionic-acid--2207996.html" target="_blank">2-(4-methoxyphenoxy)propanoic acid <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/32824/DL-Methionine--1915240.html" target="_blank">DL-Methionine</a> </span>
+      </div>
+    
+      <div rel="Fragrances and Aroma chemicals">
+      <a href="/Global/Products/Fragrances-and-Aroma-chemicals/Alcohols/Directory-1.html" class="first-sub-li">Alcohols</a> <a href="/Global/Products/Fragrances-and-Aroma-chemicals/Aldehydes/Directory-1.html">Aldehydes</a> <a href="/Global/Products/Fragrances-and-Aroma-chemicals/Essential-oils-and-others/Directory-1.html">Essential oils</a> <a href="/Global/Products/Fragrances-and-Aroma-chemicals/Esters/Directory-1.html">Esters</a>
+      </div>
+    
+      <div rel="Inorganic chemicals">
+      <a href="/Global/Products/Inorganic-chemicals/Inorganic-acids/Directory-1.html" class="first-sub-li">Inorganic acids</a> <a href="/Global/Products/Inorganic-chemicals/Inorganic-alkali/Directory-1.html">Inorganic alkali</a> <a href="/Global/Products/Inorganic-chemicals/Inorganic-oxides/Directory-1.html">Inorganic oxides</a> <a href="/Global/Products/Inorganic-chemicals/Inorganic-salts/Directory-1.html">Inorganic salts</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/38323/Lithium-bromide--2110358.html" target="_blank">Lithium-bromide <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/31487/Iron-Oxide--1413839.html" target="_blank">Iron Oxide</a> <a href="/ChinaSuppliers/36038/calcium-chloride--1441029.html" target="_blank">Calcium Chloride</a> </span> 
+      </div>
+    
+      <div rel="Intermediates">
+      <a href="/Global/Products/Intermediates/Pharmaceutical-intermediates/Directory-1.html" class="first-sub-li">Pharmaceutical intermediates</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="http://www.chemnet.com/ChinaSuppliers/38323/Capsaicin--2144031.html" target="_blank">Capsaicin <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="http://www.chemnet.com/ChinaSuppliers/52773/Sodium-acetate-anhydrous--2088678.html" target="_blank">Sodium acetate anhydrous</a> </span> 
+      </div>
+    
+      <div rel="Machinery and Equipment">
+      <a href="/Global/Products/Machinery-and-Equipment/Drying-Equipment/Directory-1.html" class="first-sub-li">Drying Equipment</a> <a href="/Global/Products/Machinery-and-Equipment/Mixer/Directory-1.html">Mixer</a> <a href="/Global/Products/Machinery-and-Equipment/Separation-Equipment/Directory-1.html">Separation Equipment</a> <a href="/Global/Products/Machinery-and-Equipment/Transportation-Equipment/Directory-1.html">Transportation Equipment</a> <a href="/Global/Products/Machinery-and-Equipment/Vessels/Directory-1.html">Vessels</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/14713/packing--454390.html" target="_blank">Packing</a> <a href="/ChinaSuppliers/15594/Condensator--1686274.html" target="_blank">Condensator <font color="#FF0000" style="font-size:8px">NEW!</font></a> </span>
+      </div>
+    
+      <div rel="Organic chemicals and Derivatives">
+      <a href="/Global/Products/Organic-chemicals-and-Derivatives/Acid,-ester-and-anhydride-compounds/Directory-1.html">Acid, ester and anhydride compounds</a> <a href="/Global/Products/Organic-chemicals-and-Derivatives/Aldehyde-and-ketone-compounds/Directory-1.html">Aldehyde and ketone compounds</a> <a href="/Global/Products/Organic-chemicals-and-Derivatives/Amine-compounds/Directory-1.html">Amine compounds</a> <a href="/Global/Products/Organic-chemicals-and-Derivatives/Basic-organic-raw-materials/Directory-1.html">Basic organic raw materials</a> <a href="/Global/Products/Organic-chemicals-and-Derivatives/Heterocyclic-compounds/Directory-1.html">Heterocyclic compounds</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/52787/Oxalic-Acid--2096744.html" target="_blank">Oxalic Acid <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/52570/Tetrahydrofuran--1968345.html" target="_blank">Tetrahydrofuran</a> <a href="/ChinaSuppliers/52489/Benzyl-Alcohol--1938207.html" target="_blank">Benzyl Alcohol</a> </span> 
+      </div>
+    
+      <div rel="Paint and Coatings">
+      <a href="/Global/Products/Paint-and-Coatings/Appliance-Paint/Directory-1.html" class="first-sub-li">Appliance Paint</a> <a href="/Global/Products/Paint-and-Coatings/Boat-Paint/Directory-1.html">Boat Paint</a> <a href="/Global/Products/Paint-and-Coatings/Building-Coating/Directory-1.html">Building Coating</a> <a href="/Global/Products/Paint-and-Coatings/Inks-and-Printing-Oil/Directory-1.html">Inks and Printing Oil</a> <a href="/Global/Products/Paint-and-Coatings/Plastic-Coating/Directory-1.html">Plastic Coating</a> <a href="/Global/Products/Paint-and-Coatings/Rubber-Coating/Directory-1.html">Rubber Coating</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/China/Suppliers/38118/Chlorodifluoromethane--1626511.html" target="_blank">Chlorodifluoromethane <font color="#FF0000" style="font-size:8px">NEW!</font></a> </span>
+      </div>
+    
+      <div rel="Pharmaceuticals and Biochemicals">
+      <a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Antianaphylaxis(antihistamines)-and-antidotes/Directory-1.html" class="first-sub-li">Antianaphylaxis(antihistamines) and antidotes</a> <a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Antiparasitics-and-antispirochete-agents/Directory-1.html">Antiparasitics and antispirochete agents</a> <a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Central-nervous-system-depressants-and-stimulants/Directory-1.html">Central nervous system depressants and stimulants</a> <a href="/Global/Products/Pharmaceuticals-and-Biochemicals/Disinfector-and-preservative/Directory-1.html">Disinfector and preservative</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/ChinaSuppliers/26279/Phytic-acid--823005.html" target="_blank">Phytic acid<font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/52862/Oleic-Acid--2113206.html" target="_blank">Oleic Acid</a> <a href="/ChinaSuppliers/52862/Linoleic-acid--2113190.html" target="_blank">Linoleic acid</a> </span> 
+      </div>
+    
+      <div rel="Polymers">
+      <a href="/Global/Products/Polymers/Synthetic-fiber/Directory-1.html" class="first-sub-li">Synthetic fiber</a> <span class="hot-products"> <span class="hot-products-text">Hot Products</span> <a href="/chinaSuppliers/37752/PVC--1561586.html" target="_blank">PVC</a> <a href="/China/Suppliers/38327/silicone-rubber--1671033.html" target="_blank">silicone rubber <font color="#FF0000" style="font-size:8px">NEW!</font></a> <a href="/ChinaSuppliers/38010/synthetic-rubber--1615559.html" target="_blank">Synthetic Rubber</a> </span>
+      </div>
+    
+      <div rel="Soaps and Cosmetics">
+      <a href="/Global/Products/Soaps-and-Cosmetics/Cosmetics/Directory-1.html" class="first-sub-li">Cosmetics</a> <a href="/Global/Products/Soaps-and-Cosmetics/Detergents/Directory-1.html">Detergents</a> <a href="/Global/Products/Soaps-and-Cosmetics/Soap/Directory-1.html">Soap</a>
+      </div>
+    
+  </div>  
+ </div><!-- end #cate-father -->
+</dd>
+</dl>
+</div>
+<script language="JavaScript" type="text/javascript" src="/js/cateleft.js"></script>
+</div>
+
+<!-- right -->
+<div id="right">
+
+<div class="wrapper chem-news">
+<dl>
+<dt><p>Chemical News</p><a href="http://news.chemnet.com/Chemical-News/" class="blue">more&gt;&gt;</a></dt>
+<dd>
+
+    
+<div id="pic" class="pic" style="float: left; width: 370px; height: 180px; overflow: hidden; position: relative; visibility: visible;">
+        <!-- <a href="http://cna2.chemnet.com/Chemical-News/detail-2458457.html" target="_blank"><img src="http://cna2.chemnet.com/img/articles/245/2458457_1.jpg" alt="Vale shopefuls on positive outcome for VNC nickel plant as sale deadline looms" width="370" height="180" /></a>-->
+		<div id="KinSlideshow_moveBox" style="width: 370px; height: 180px; overflow: hidden; position: relative;"><div id="KinSlideshow_XposBox" style="float: left; width: 2000%;"><div id="KinSlideshow_content" style="float: left;"><a href="http://www.ntacf.com.cn/index-e.html" target="_blank"><img src="http://images-a.china.chemnet.com/enbanner/ntacf370.jpg" alt="Nantong Acetic Acid Chemical Co., Ltd 2018-03-18" width="370" height="180" border="0" style="border: 0px;" /></a></div><div id="KinSlideshow_contentClone" style="float: left;"><a href="http://www.ntacf.com.cn/index-e.html" target="_blank"><img src="http://images-a.china.chemnet.com/enbanner/ntacf370.jpg" alt="Nantong Acetic Acid Chemical Co., Ltd 2018-03-18" width="370" height="180" border="0" style="border: 0px;" /></a></div></div></div>         <img src="http://images-a.china.chemnet.com/enbanner/chem-base2.gif" alt="chem-base" width="370" height="180" border="0" /><div class="KinSlideshow_titleBar" style="height: 25px; width: 100%; position: absolute; bottom: 0px; left: 0px; background: rgb(255, 255, 255); opacity: 0;"><h2 class="title" style="margin: 1px 0px 0px 6px; padding: 0px; font-size: 12px; color: rgb(255, 255, 255); font-family: Verdana; font-weight: normal;">Nantong Acetic Acid Chemical Co., Ltd 2018-03-18</h2></div></div>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.KinSlideshow-1.1.js"></script>
+
+<div class="cn-content">
+<h1><a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458457.html" title="Vale shopefuls on positive outcome for VNC nickel plant as sale deadline looms" class="blues">Vale 'hopeful' on positive outcome for VNC nickel plan...</a></h1>
+<p>Brazilian miner Vale is "hopeful" that a positive decision will be made within the next two days on the future of its Vale Nouvelle Caledonie (VNC) nickel and cobalt operation in New Caledonia, the company's base metals ...<a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458457.html" class="blue">&gt;&gt;</a></p>
+
+    
+<ul>
+
+  <li><a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458490.html">China rebuffs Australian, U.S. accusations</a></li>
+
+  <li><a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458489.html">China sets up traceability web, covers 90% of cold-cha...</a></li>
+
+  <li><a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458488.html">One-sided trade investigations damage China-Australia ...</a></li>
+
+  <li><a target="_blank" href="http://news.chemnet.com/Chemical-News/detail-2458487.html">China to accelerate domestic steps for RCEP implementa...</a></li>
+
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+
+<div class="clear"></div>
+
+<div class="notice">
+<p>Notice:</p>
+    • <a href="http://news.chemnet.com/Chemical-News/detail-1411716.html" target="_blank">China Chemical Weekly is in hot sale</a>    • <a href="/resource/synthesis/" target="_blank">Drug Synthesis</a>    • <a href="/ChinaSuppliers/36038/calcium-chloride--1441029.html" target="_blank">calcium chloride</a></div>
+<!-- banner -->
+<div id="banner">
+<ul>
+<li><a href="http://www.ruijiachem.com/index_en.html" target="_blank" title="Jiangsu Ruijia Chemistry 2023-12-28"><img src="http://images-a.china.chemnet.com/enbanner/ruijiachem.gif" alt="Jiangsu Ruijia Chemistry 2023-12-28" width="240" height="40" border="0" /></a></li>
+<li><a href="/"><img src="http://images-a.china.chemnet.com/enbanner/chunxiaochem.gif" width="115" height="40" border="0" /></a></li>
+<li><a href="http://www.toocle.com/" target="_blank" title="Qingdao Changrong Chemical 2018.6.5"><img src="http://images-a.china.chemnet.com/enbanner/toocle_en4.gif" width="115" height="40" border="0" /></a></li>
+<li class="no"><a href="http://www.tengyuanchem.com/index_en.html" target="_blank" title="Lianyungang Tengyuan Chemical 2021-03-23"><img src="http://images-a.china.chemnet.com/enbanner/tengyuanchem248.gif" alt="Lianyungang Tengyuan Chemical 2021-03-23" width="248" height="40" border="0" /></a></li>
+</ul>
+</div>
+
+<div class="wrapper buy">
+<dl>
+<dt><p>Offer to Buy</p><a href="/Global/Offer-to-Buy/" class="blue">more&gt;&gt;</a></dt>
+<dd>
+<ul>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Dovesol-3040-529763.html">Dovesol 3040</a></p>2020-12-03</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Bisphenol-A-529762.html">Bisphenol A</a></p>2020-12-03</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/levamisole-supplier-in-China-(whatsapp-+86-19930503252-529761.html">levamisole supplier in China (whats</a></p>2020-12-02</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Vanillin-529760.html">Vanillin</a></p>2020-12-02</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/EPOXY-resin-529759.html">EPOXY resin</a></p>2020-12-02</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Carbon-disulphide-529758.html">Carbon disulphide</a></p>2020-12-01</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/3-Methyl-Benzaldehyde-&#9;-529757.html">3-Methyl Benzaldehyde 	</a></p>2020-12-01</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Dextrose-Monohydrate-529756.html">Dextrose Monohydrate</a></p>2020-11-30</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Sodium-alginate--529755.html">Sodium alginate </a></p>2020-11-30</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/2-methyl-3-phenylpropanol-529754.html">2-methyl-3-phenylpropanol</a></p>2020-11-27</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/-Sodium-ethoxide-529753.html"> Sodium ethoxide</a></p>2020-11-27</li>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Buy/Linear-Alkyl-Benzene--529752.html">Linear Alkyl Benzene </a></p>2020-11-27</li>
+    
+</ul>
+</dd>
+</dl>
+</div>
+
+<div class="wrapper sell">
+<dl>
+<dt><p>Offer to Sell</p><a href="/Global/Offer-to-Sell/" class="blue">more&gt;&gt;</a></dt>
+<dd>
+<ul>
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Sodium-Sulphate-2061518.html">Sodium Sulphate</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Washing-powder-production-line-2061524.html">Washing powder productio...</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/soap-equipment-2061523.html">soap equipment</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Zeolite-2061515.html">Zeolite</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/spray-drying-tower-rebuild-2061465.html">spray drying tower rebui...</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/liquid-detergent-line-2061474.html">liquid detergent line</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Daily-chemical-products-plant-supplier--2061525.html">Daily chemical products ...</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/REFINE-PROCESS-2061450.html">REFINE PROCESS</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Pneumatic-Conveyer-2061520.html">Pneumatic Conveyer</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/color-speckle-2061463.html">color speckle</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/Co-Polymer-2061516.html">Co-Polymer</a></p><p class="cas"> </p>2020-12-03</li>    
+
+  <li><p><a target="_blank" href="/Global/Offer-to-Sell/REFINE-PROCESS-2061473.html">REFINE PROCESS</a></p><p class="cas"> </p>2020-12-03</li>    
+
+</ul>
+</dd>
+</dl>
+</div>
+
+<!-- Start #sidebar-left -->
+<div id="sidebar-left">
+<div style="height:8px;"></div>
+
+<!-- Start CAS Base -->
+<div class="wrapper cas-base">
+<dl>
+<dt><p><span>CAS Base </span><a href="/cas/list/1-1.html">1</a> <a href="/cas/list/2-1.html">2</a> <a href="/cas/list/3-1.html">3</a> <a href="/cas/list/4-1.html">4</a> <a href="/cas/list/5-1.html">5</a> <a href="/cas/list/6-1.html">6</a> <a href="/cas/list/7-1.html">7</a> <a href="/cas/list/8-1.html">8</a> <a href="/cas/list/9-1.html">9</a></p><a href="http://www.chemnet.com/cas/" class="blue">more&gt;&gt;</a></dt>
+<dd>
+<ul>
+
+  <li>
+    <a target="_blank" href="/cas/en/628334-77-0/1H-Pyrazole-5-propanoic-acid%2C3-%5B3-%5B3-cyclohexyl-1-%5B5-%28trifluoromethyl%29-2-pyridinyl%5D-1H-pyrazol-4-yl%5Dpropoxy%5D-1-phenyl-.html" style=" cursor:hand;"><p>628334-77-0</p> <p>1H-Pyrazole-5-prop...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62979-47-9/Piperazine%2C1-%5B2-%283%2C4-dihydro-5%2C6-dimethoxy-1H-2-benzopyran-1-yl%29ethyl%5D-4-phenyl-%2Cdihydrochloride.html" style=" cursor:hand;"><p>62979-47-9</p> <p>Piperazine,1-[2-(3...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/628332-23-0/1H-Pyrazole%2C-4-iodo-3-%281-methylethyl%29-1-%28phenylmethyl%29-.html" style=" cursor:hand;"><p>628332-23-0</p> <p>1H-Pyrazole, 4-iod...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630095-25-9/Propanedioic-acid%2C-compd-with-1-propanamine.html" style=" cursor:hand;"><p>630095-25-9</p> <p>Propanedioic acid,...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629645-26-7/1H-Indole%2C-2-methyl-5-%28methylsulfonyl%29-3-%28methylthio%29-.html" style=" cursor:hand;"><p>629645-26-7</p> <p>1H-Indole, 2-methy...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629644-00-4/Quinoline%2C-4-%282%2C5-dimethyl-1H-indol-3-yl%29-2%2C8-dimethyl-%2Cmonohydrochloride.html" style=" cursor:hand;"><p>629644-00-4</p> <p>Quinoline, 4-(2,5-...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629649-69-0/3%2C5-Pyridinedicarboxylic-acid%2C1%2C4-dihydro-4-%282-hydroxy-3-methoxyphenyl%29-2%2C6-dimethyl-%2C-dimethylester.html" style=" cursor:hand;"><p>629649-69-0</p> <p>3,5-Pyridinedicarb...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629649-58-7/3%2C5-Pyridinedicarboxylic-acid%2C4-%5B3-%28acetyloxy%29phenyl%5D-1%2C4-dihydro-2%2C6-dimethyl-%2C-diethyl-ester.html" style=" cursor:hand;"><p>629649-58-7</p> <p>3,5-Pyridinedicarb...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630128-59-5/Decanoic-acid%2C-3%2C4-dihydroxyphenyl-ester.html" style=" cursor:hand;"><p>630128-59-5</p> <p>Decanoic acid, 3,4...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630396-78-0/Pyrano%5B3%2C4-b%5Dindole-1-acetic-acid%2C1%2C3%2C4%2C9-tetrahydro-1-propyl-8-%5B4-%28trifluoromethyl%29phenyl%5D-.html" style=" cursor:hand;"><p>630396-78-0</p> <p>Pyrano[3,4-b]indol...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62903-58-6/2H-1%2C4-Benzodiazepin-2-one%2C7-chloro-1%2C3-dihydro-1-methyl-5-%282-propenyloxy%29-.html" style=" cursor:hand;"><p>62903-58-6</p> <p>2H-1,4-Benzodiazep...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630115-98-9/Benzoic-acid%2C-3%2C5-bis%5B3-%28acetyloxy%29-1-propynyl%5D-.html" style=" cursor:hand;"><p>630115-98-9</p> <p>Benzoic acid, 3,5-...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629612-88-0/9H-Pyrido%5B2%2C3-b%5Dindole-3-propanoic-acid%2C2%2C4-dimethyl-9-%5B%5B4-%5B%281S%29-2-oxo-2-%5B4-%28phenylmethyl%29-1-piperidinyl%5D-1-%28tetrahydro-2H-pyran-4-yl%29ethyl%5Dphenyl%5Dmethyl%5D-.html" style=" cursor:hand;"><p>629612-88-0</p> <p>9H-Pyrido[2,3-b]in...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/63033-96-5/2-Thia-4-aza-3-phospha-1-stannaheptane%2C3-ethyl-5%2C6%2C6-trimethyl-1%2C1%2C1-triphenyl-%2C-3-sulfide.html" style=" cursor:hand;"><p>63033-96-5</p> <p>2-Thia-4-aza-3-pho...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62879-58-7/Acetamide%2CN-%28aminocarbonyl%29-2-bromo-2-%28triphenylphosphoranylidene%29-.html" style=" cursor:hand;"><p>62879-58-7</p> <p>Acetamide,N-(amino...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630408-29-6/Cytidine%2C3%27-deoxy-3%27-%28hydroxymethyl%29-N-%5B%282-methoxyphenyl%29methyl%5D-5-methyl-2%27-O-methyl-.html" style=" cursor:hand;"><p>630408-29-6</p> <p>Cytidine,3'-deoxy-...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/628739-48-0/Benzoic-acid%2C4-%5B3-%5B4-%5B%5B%5B4-%28dimethylamino%29phenyl%5Dmethyl%5Dthio%5D-5%2C6%2C7%2C8-tetrahydro-5%2C5%2C8%2C8-tetramethyl-2-naphthalenyl%5D-3-hydroxy-1-propenyl%5D-2-hydroxy-.html" style=" cursor:hand;"><p>628739-48-0</p> <p>Benzoic acid,4-[3-...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630112-93-5/2-Propenoic-acid%2C3-%5B4-%5B%281E%29-3-%28dimethylamino%29-3-oxo-1-propenyl%5Dphenyl%5D-%2C-methyl-ester%2C%282E%29-.html" style=" cursor:hand;"><p>630112-93-5</p> <p>2-Propenoic acid,3...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630413-87-5/Glycine%2C-N-%5B%28Z%29-%28cyanoimino%29methyl%5D-N-%5B%284-methoxyphenyl%29methyl%5D-%2C-ethylester.html" style=" cursor:hand;"><p>630413-87-5</p> <p>Glycine, N-[(Z)-(c...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62935-41-5/Propanedioic-acid%2C-%28trifluoromethyl%29-%2C-ethyl2%2C2%2C2-trifluoro-1-%28trifluoromethyl%29ethyl-ester.html" style=" cursor:hand;"><p>62935-41-5</p> <p>Propanedioic acid,...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/629658-28-2/L-Threonine%2CL-valyl-L-histidyl-L-seryl-L-seryl-L-tyrosyl-L-a-glutamyl-L-leucyl-.html" style=" cursor:hand;"><p>629658-28-2</p> <p>L-Threonine,L-valy...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62824-49-1/Arsorane%2C-chloromercaptotripropyl-.html" style=" cursor:hand;"><p>62824-49-1</p> <p>Arsorane, chlorome...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62848-72-0/Quinoline%2C-1%2C2-dihydro-2-methyl-2-phenyl-%2C-lithium-salt.html" style=" cursor:hand;"><p>62848-72-0</p> <p>Quinoline, 1,2-dih...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630407-90-8/Cytidine%2C-2%27-O-methyl-N-%5B%5B3-%28trifluoromethyl%29phenyl%5Dmethyl%5D-.html" style=" cursor:hand;"><p>630407-90-8</p> <p>Cytidine, 2'-O-met...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62861-41-0/Benzene%2C-1-%281-cyclobutylideneethyl%29-3%2C5-bis%28trifluoromethyl%29-.html" style=" cursor:hand;"><p>62861-41-0</p> <p>Benzene, 1-(1-cycl...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/630403-13-3/1%2C6-Dioxa-9-azaspiro%5B45%5Ddec-3-en-10-one%2C2-%5B%285-chloro-3-methyl-1-phenyl-1H-pyrazol-4-yl%29methylene%5D-9-ethyl-.html" style=" cursor:hand;"><p>630403-13-3</p> <p>1,6-Dioxa-9-azaspi...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62914-20-9/Urea%2CN%2CN%27%27-%28methylenedi-4%2C1-phenylene%29bis%5BN%27-%5B%284-nitrophenyl%29methyl%5D-N%27-propyl-.html" style=" cursor:hand;"><p>62914-20-9</p> <p>Urea,N,N''-(methyl...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62838-97-5/Propanoic-acid%2C-3%2C3%27-%5B1%2C4-phenylenebis%28dimethylsilylene%29%5Dbis%5B2-methyl-%2Cdimethyl-ester.html" style=" cursor:hand;"><p>62838-97-5</p> <p>Propanoic acid, 3,...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62935-73-3/2H-1-Benzopyran-4-acetic-acid%2C-7-methoxy-2-oxo-%2C-methyl-ester.html" style=" cursor:hand;"><p>62935-73-3</p> <p>2H-1-Benzopyran-4-...</p></a>
+  </li>
+
+  <li>
+    <a target="_blank" href="/cas/en/62921-68-0/Methanesulfonamide%2CN-%5B2-%5B2-amino-5-%5Bethyl%5B2-%5B2-%282-methoxyethoxy%29ethoxy%5Dethyl%5Damino%5Dphenyl%5Dethyl%5D-%2C-mono%284-methylbenzenesulfonate%29.html" style=" cursor:hand;"><p>62921-68-0</p> <p>Methanesulfonamide...</p></a>
+  </li>
+
+</ul>
+</dd>
+</dl>
+</div>
+<!-- End CAS Base -->
+
+<div class="clear"></div>
+
+<!-- Featured Products -->
+<div class="wrapper products">
+<dl>
+<dt><p><span>Featured Products</span></p><a href="/Products/hot-product/list.html" class="blue">more&gt;&gt;</a></dt>
+<dd>
+<ul>
+<li><a href="/ChinaSuppliers/53404/Phenyl-dichlorophosphate--2354801.html" target="_blank"><img src="/images/enbanner/cpd130.gif" width="77" height="77" border="0" alt="Phenyl dichlorophosphate 2019.9.9" /></a><br />
+<a href="/ChinaSuppliers/53404/Phenyl-dichlorophosphate--2354801.html" target="_blank" class="blue">Phenyl dichlorophosphate</a></li>
+<li><a href="/ChinaSuppliers/53416/Soda-ash--2358517.html" target="_blank"><img src="/images/enbanner/cpd131.gif" alt="Soda ash 2019.11.25" width="77" height="77" border="0" /></a><br />
+<a href="/ChinaSuppliers/53416/Soda-ash--2358517.html" target="_blank" class="blue">Soda ash</a></li>
+<li><a href="/ChinaSuppliers/52982/L-Tyrosine--2327935.html" target="_blank"><img src="/images/enbanner/cpd132.gif" border="0" alt="L-Tyrosine 2019.12.9" /></a><br />
+<a href="/ChinaSuppliers/52982/L-Tyrosine--2327935.html" target="_blank" class="blue">L-Tyrosine</a></li>
+<li><a href="/ChinaSuppliers/14049/2-Acetyl-pyrazine--415941.html" target="_blank"><img src="/images/enbanner/cpd133.gif" alt="2-Acetyl pyrazine 2019.12.23" width="77" height="77" border="0" /></a><br />
+<a href="/ChinaSuppliers/14049/2-Acetyl-pyrazine--415941.html" target="_blank" class="blue">2-Acetyl pyrazine</a></li>
+<li><a href="/ChinaSuppliers/52907/PTSA--2125745.html" target="_blank"><img src="/images/enbanner/cpd134.gif" border="0" alt="PTSA-2020.5.11" /></a><br />
+<a href="/ChinaSuppliers/52907/PTSA--2125745.html" target="_blank" class="blue">PTSA</a></li>
+<li><a href="/ChinaSuppliers/37152/2-Acetyl-Pyridine--1490963.html" target="_blank"><img src="/images/enbanner/cpd135.gif" border="0" alt="2-Acetyl Pyridine 2020.5.11" /></a><br />
+<a href="/ChinaSuppliers/37152/2-Acetyl-Pyridine--1490963.html" target="_blank" class="blue">2-Acetyl Pyridine</a></li>
+<li><a href="/ChinaSuppliers/53221/Methacrylic-acid--2230252.html" target="_blank"><img src="/images/enbanner/cpd136.gif" border="0" alt="Methacrylic acid 2020.6.22" /></a><br />
+<a href="/ChinaSuppliers/53221/Methacrylic-acid--2230252.html" target="_blank" class="blue">
+Methacrylic acid</a></li>
+<li><a href="/ChinaSuppliers/16030/Trimethyl-Orthobutyrate--1331311.html" target="_blank"><img src="/images/enbanner/cpd137.gif" border="0" alt="Trimethyl Orthobutyrate 2020.8.31" /></a><br />
+<a href="/ChinaSuppliers/16030/Trimethyl-Orthobutyrate--1331311.html" target="_blank" class="blue">Trimethyl Orthobutyrate</a></li>
+<li><a href="/ChinaSuppliers/16893/4-Hydroxyacetophenone--2376871.html" target="_blank"><img src="/images/enbanner/cpd138.gif" border="0" alt="4'-Hydroxyacetophenone 2020.11.09" /></a><br />
+<a href="/ChinaSuppliers/16893/4-Hydroxyacetophenone--2376871.html" target="_blank" class="blue">4'-Hydroxyacetophenone</a></li>
+<li><a href="/ChinaSuppliers/15019/Chondroitin-sulfate--471712.html" target="_blank"><img src="/images/enbanner/cpd129.gif" border="0" alt="Chondroitin sulfate 19.8.20" /></a><br />
+<a href="/ChinaSuppliers/15019/Chondroitin-sulfate--471712.html" target="_blank" class="blue">Chondroitin sulfate</a></li>
+</ul>
+</dd>
+</dl>
+</div><!-- End Featured Products -->
+
+</div> <!-- End #sidebar-left -->
+
+<!-- Start #sidebar-right -->
+<div id="sidebar-right">
+
+  <div class="wrapper company">
+  <dl>
+    <dt><p>Gold Suppliers</p><a target="_blank" href="/Global/Suppliers/" class="blue">more&gt;&gt;</a></dt>
+    <dd>
+    <ul>
+    <li><a href="/ChinaSuppliers/13860/" class="blue xhx" title="2020.11.16" target="_blank">Nantong Jinxing Fluorine Chemical Co.,Ltd.</a></li>
+<li><a href="/ChinaSuppliers/13817/" class="blue xhx" title="2020.11.16" target="_blank">Zhejiang Shaxing Pharmaceutical Co.,Ltd.</a></li>
+<li><a href="/ChinaSuppliers/16893/" class="blue xhx" title="2020.11.9" target="_blank">Shandong believe Chemical PET Ltd.</a></li>
+<li><a href="/ChinaSuppliers/34093/" class="blue xhx" title="2020.10.26" target="_blank">ANGCHEN Co., Ltd.</a></li>
+<li><a href="/ChinaSuppliers/53460/" class="blue xhx" title="2020.9.7" target="_blank">Zhejiang bamboo pharmaceuticals co.,ltd</a></li>
+<li><a href="/ChinaSuppliers/53244/" class="blue xhx" title="2020.8.31" target="_blank">Changzhou Jiang Xing chemical co.LTD</a></li>
+<li><a href="/ChinaSuppliers/16030/" class="blue xhx" title="2020.8.31" target="_blank">Weifang Runzhong Fine Chemical Co., Ltd.</a></li>
+<li><a href="/ChinaSuppliers/30951/" class="blue xhx" title="2020.8.31" target="_blank">Taixing Dongyu Chemical Co.,Ltd.</a></li>
+<li><a href="/ChinaSuppliers/15392/" class="blue xhx" title="2020.8.24" target="_blank">Jiangsu Wisdom Pharmaceutical Co.,Ltd.</a></li>
+<li><a href="/ChinaSuppliers/53249/" class="blue xhx" title="2020.8.24" target="_blank">Jiangsu Quan Li Chemical Co., Ltd.</a></li>
+<li><a href="/ChinaSuppliers/15086/" class="blue xhx" title="2020.8.24" target="_blank">Jiangsu Victory Chemical Co., Ltd.</a></li>
+<li><a href="/ChinaSuppliers/16129/" class="blue xhx" title="2020.8.17" target="_blank">Dongying City Longxing Chemical Co., Ltd.</a></li>
+<li><a href="/ChinaSuppliers/16181/" class="blue xhx" title="2020.7.27" target="_blank">Jiangsu Panoxi Chemical Co.,ltd.(Cangzhou Panoxi Chemical Co., Ltd)</a></li>
+<li><a href="/ChinaSuppliers/34813/" class="blue xhx" title="2020.7.13" target="_blank">ASCOT I.E. CO.,LTD</a></li>
+<li><a href="/ChinaSuppliers/32727/" class="blue xhx" title="2020.7.6" target="_blank">Taizhou Keyan Fine Chemical Co., Ltd.</a></li>
+    </ul>
+    </dd>
+  </dl>
+  </div>
+
+<div class="wrapper resourcer">
+<dl>
+<dt><p>Chemical Resource</p><a target="_blank" href="/resource/" class="blue">more&gt;&gt;</a></dt>
+<dd>
+<ul>
+<li><a href="/resource/atc/" target="_blank">ATC Index</a></li>
+<li><a href="/resource/colour/" target="_blank">Colour Index</a></li>
+<li>FDA: <a href="/resource/dmf/" target="_blank">DMF</a> | <a href="/resource/fda/exclusivity.html" target="_blank">Exclusivity</a></li>
+<li><a href="/resource/fda/" target="_blank">FDA's Approved Drug Products</a></li>
+<li><a href="/resource/fda/patent.html" target="_blank">FDA's Patents of drugs</a></li>
+<li><a href="/resource/fema/" target="_blank">Fema Index</a></li>
+<li><a href="/resource/journal/" target="_blank">Open Access Journals</a></li>
+<li><a href="/resource/pesticides/" target="_blank">Pesticide Common Names</a></li>
+<li><a href="/resource/synthesis/" target="_blank">Synthesis of Drugs</a></li>
+<li><a href="/resource/drug/" target="_blank">TOP 200 Drugs</a></li>
+<li><a href="/resource/chemical/" target="_blank">Other Chemical Databases</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+<!--<div class="trade">
+<h3><a href="/Chemical-News/expo/" class="blue">Trade Shows</a></h3>
+<ul>
+
+</ul>
+</div>-->
+
+</div>
+<!--<div id="img1" style="z-index: 100; right: 2px; width:150px; position: absolute; top: 43px; height: 170px; visibility: visible;">
+<img src=/images/cha.gif width=12 border=0 height=12 id='cha4' onMouseDown=document.getElementById("img1").style.display="none";cha4.style.display='none';><br /><a href="http://www.spechemchina.com/en/" target="_blank"><img src="/images/enbanner/spechem150en.gif" width="150" height="150" border="0"></a></div>
+<SCRIPT src="http://china.chemnet.com/js/float_div.js"></SCRIPT>-->
+<!-- footer -->
+<div id="footer">
+	<div style="border:1px solid #D2DFEF;margin-bottom:10px;background:#fbfdff;text-align:left;padding-left:20px">
+<span class="blue fb">World Wide ChemNet:</span> <a href="/" class="blues">International</a> - <a href="http://china.chemnet.com" target="_blank" class="blues">China</a> - <a href="http://kr.chemnet.com/" class="blues">Korea</a>
+<br />
+<span class="blue fb">Vertical Websites:</span> <a href="http://www.chinachemnet.com/" class="blues" target="_blank">ChinaChemical</a> - <a href="http://www.chemindex.com/" class="blues" target="_blank">ChemIndex</a> - <a href="http://www.pharmnet.com.cn/" class="blues" target="_blank">PharmNet</a> - <a href="http://www.chinamedevice.com/" class="blues" target="_blank">China Medical Device</a> - <a href="http://www.texnet.com.cn/" class="blues" target="_blank">TexNet</a> - <a href="http://www.chinatexnet.com/" class="blues" target="_blank">ChinaTexNet</a> - <a href="http://www.texindex.com/" class="blues" target="_blank">TexIndex</a> - <a href="http://www.sunsirs.com/" class="blues" target="_blank">SunSirs</a><br />
+<span class="blue fb">Marketplace:</span> <a href="http://www.toocle.com/" class="blues" target="_blank">Toocle Global</a> - <a href="http://cn.toocle.com/" class="blues" target="_blank">Toocle China</a> - <a href="http://jp.toocle.com/" class="blues" target="_blank">Toocle Japan</a> - <a href="http://kr.toocle.com/" class="blues" target="_blank">Toocle Korea</a> - <a href="http://ru.toocle.com/" class="blues" target="_blank">Toocle Russia</a> - <a href="http://vn.toocle.com/" class="blues" target="_blank">Toocle Vietnam</a></div>
+    <center><a href="/static/about_chemnet.html" class="blues">About Us</a> - <a href="/Dir/index.html" class="blues">Chemical Industry Directory</a> - <a href="/static/partner.html" class="blues">Partner with Us</a> - <a href="/static/contact_us.html" class="blues">Contact Us</a> - <a href="/static/reciprocal_links.html" class="blues">Reciprocal Links</a> - <a href="/help/" class="blues">Help</a> - <a href="/static/sitemap.html" class="blues">Sitemap</a>
+</center>
+ChemNet is a registered trademark of Zhejiang NetSun Co., Ltd. <br />
+Global Chemical Exchange, China Chemical Network and ChemNet.com are services of Zhejiang NetSun Co., Ltd.  <a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/member/images/zhe3.gif" /></a></div>
+
+<script language="JavaScript">
+function submit_form(thisform)
+{
+    if((thisform.terms.value=="" || thisform.terms.value=="Please Enter Product Name,CAS No.or Molecular Formula") &amp;&amp; thisform.f.value=="product"){
+        alert("Please Enter Product Name,CAS No.!");
+        thisform.terms.focus();
+        thisform.terms.select();
+        return false;
+    } else {
+        return true;
+    }
+}
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+    $('#pic').KinSlideshow({
+        moveStyle: 'right',
+        intervalTime:5,
+        mouseEvent:"mouseclick",
+        titleBar: {titleBar_height:15, titleBar_bgColor:'#FFFFFF', titleBar_alpha:0},
+        titleFont: {TitleFont_size:12, TitleFont_color:'#FFFFFF', TitleFont_weight:'normal'},
+        btn: {
+          btn_bgColor:'#666666',
+          btn_bgHoverColor:'#009900',
+          btn_fontColor:'#ffffff',
+          btn_fontHoverColor:'#FFF',
+          btn_borderHoverColor:'#1188C0'
+        }
+      });
+    });
+</script>
+
+
+
+
+</body></html>

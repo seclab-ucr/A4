@@ -1,0 +1,178 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" class="esriLtr en-us en dj_webkit dj_chrome dj_contentbox" lang="en-us"><head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex, follow" />
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/jsapi/dojo/nls/dojo_en-us.js"></script><script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/base.js"></script><script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/nls/base_en-us.js"></script><script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/esri-global-nav/dist/esri-global-nav.js"></script><script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/jsapi/dojo/selector/lite.js"></script><script type="text/javascript" charset="utf-8" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/pages/utils/accessNotice.js"></script><script type="text/javascript" src="./js/arcgisonline/config.js"></script>
+    <script type="text/javascript" src="https://cdn-a.arcgis.com/cdn/197C3D5/js/jsapi/dojo/dojo.js"></script>
+    <script type="text/javascript">
+      function addStylesheet(href) {
+        var dfd = new dojo.Deferred();
+
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = href;
+        document.head.appendChild(link);
+
+        link.onload = function() {
+          return dfd.resolve();
+        };
+
+        return dfd;
+      }
+
+      function loadClassicCSS() {
+        var s1 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/css/common.css");
+        var s2 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/css/esri.css");
+        var s3 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/css/esri/home.css");
+
+        var pageStyle = document.createElement("style");
+        pageStyle.type = "text/css";
+        pageStyle.innerHTML = ".center.center960 .footer { border-top: none; }";
+        document.head.appendChild(pageStyle);
+
+        return new dojo.DeferredList([s1, s2, s3]);
+      }
+
+      function loadModernCSS() {
+        var s1 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/js/calcite-web/dist/css/calcite-web-no-fonts.min.css");
+        var s2 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/css/app.css");
+        var s3 = addStylesheet("https://cdn-a.arcgis.com/cdn/197C3D5/js/arcgisonline/pages/css/home.css");
+
+        return new dojo.DeferredList([s1, s2, s3]);
+      }
+
+      function loadClassicTemplate() {
+        var classicTemplate = "&lt;a href='#main-content-area' id='skipToContent' class='skip-to-content'&gt;&lt;/a&gt;" +
+          "&lt;div id='page-border' class='center center960' style='height:auto; overflow: hidden;'&gt;" +
+            "&lt;div&gt;&lt;div id='header' class='grid_16_0'&gt;&lt;/div&gt;&lt;/div&gt;" +
+            "&lt;div class='container_12' id='main-content-area' tabindex='-1'&gt;" +
+              "&lt;div&gt;" +
+                "&lt;div id='homeRotate' class='homeRotatorPanel'&gt;" +
+                  "&lt;div id='details'&gt;" +
+                    "&lt;div id='matrixLayout'&gt;" +
+                      "&lt;div id='imgRotator' class='imgRotator'&gt;&lt;/div&gt;" +
+                      "&lt;div id='categories' class='dots'&gt;&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                  "&lt;/div&gt;" +
+                "&lt;/div&gt;" +
+                "&lt;div id='featuredMaps' class='clearfix'&gt;" +
+                  "&lt;div id='fHeader'&gt;&lt;h2 id='galleryTitle'&gt;&lt;/h2&gt;&lt;/div&gt;" +
+                  "&lt;div class='featuredMapsContainer'&gt;" +
+                    "&lt;div class='clearfix container_16 zindexfix'&gt;" +
+                      "&lt;div class='clearfix galleryContainer' style='position:relative;'&gt;" +
+                        "&lt;span tabindex='0' id='prev' role='button' class='prevButton'&gt;&lt;/span&gt;" +
+                        "&lt;div id='gallery' class='grid_16'&gt;&lt;/div&gt;" +
+                        "&lt;span tabindex='0' id='next' role='button' class='nextButton'&gt;&lt;/span&gt;" +
+                      "&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                  "&lt;/div&gt;" +
+                "&lt;/div&gt;" +
+                "&lt;div id='bottomContent' class='clearfix'&gt;" +
+                  "&lt;div id='organizationSection' style='display:none;' class='clearfix'&gt;" +
+                    "&lt;div class='grid_1'&gt;&lt;div class='content last'&gt;&lt;div id='orgDetails' class='esriItemLinks'&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" +
+                  "&lt;/div&gt;" +
+                  "&lt;div class='clear'&gt;&lt;/div&gt;" +
+                  "&lt;div class='clear'&gt;&lt;/div&gt;" +
+                  "&lt;div id='bottomSection' class='clearfix container' style='width: 960px;'&gt;" +
+                    "&lt;div id='bottom1Grid' class='grid-25 alpha'&gt;" +
+                      "&lt;div id='bottomRow1' class='content first clearfix'&gt;" +
+                        "&lt;h2&gt;&lt;img src='images/calcite_icon_signup.png' width='19' height='19' id='signUpImg' class='calcite_icon ico_signup'&gt; &lt;a href='signin.html' id='signUpLink'&gt;&lt;/a&gt;&lt;/h2&gt;" +
+                        "&lt;p id='signUpDescription'&gt;&lt;/p&gt;" +
+                      "&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                    "&lt;div id='bottom2Grid' class='grid-25'&gt;" +
+                      "&lt;div id='bottomRow2' class='content middle'&gt;" +
+                        "&lt;h2&gt;&lt;img src='images/calcite_icon_map.png' width='19' height='19' id='mapImg' class='calcite_icon ico_map'&gt; &lt;a href='webmap/viewer.html' id='viewerLink'&gt;&lt;/a&gt;&lt;/h2&gt;" +
+                        "&lt;p id='viewerDescription'&gt;&lt;/p&gt;" +
+                      "&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                    "&lt;div id='bottom3Grid' class='grid-25'&gt;" +
+                      "&lt;div id='appDiv' class='content last'&gt;" +
+                        "&lt;h2 id='h2Explore'&gt;&lt;img src='images/calcite_icon_developers.png' width='19' height='19' id='developersImg' class='calcite_icon ico_developers'&gt; &lt;a id='lnkExplore' class='explorerLink' target='_blank' href='http://developers.arcgis.com'&gt;&lt;/a&gt;&lt;/h2&gt;" +
+                        "&lt;p id='pExplore'&gt;&lt;/p&gt;" +
+                      "&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                    "&lt;div id='bottom4Grid' class='grid-25 omega'&gt;" +
+                      "&lt;div id='bottomRow3' class='content middle'&gt;" +
+                        "&lt;h2&gt;&lt;img src='images/calcite_icon_lessons.png' width='19' height='19' id='videosImg' class='calcite_icon ico_video'&gt; &lt;a href='' id='featuredVideosLink' target='_blank'&gt;&lt;/a&gt;&lt;/h2&gt;" +
+                        "&lt;p id='featuredVideosDescription'&gt;&lt;/p&gt;" +
+                      "&lt;/div&gt;" +
+                    "&lt;/div&gt;" +
+                  "&lt;/div&gt;" +
+                "&lt;/div&gt;" +
+                "&lt;div style='clear:both; width:100%;'&gt;&lt;/div&gt;" +
+              "&lt;/div&gt;" +
+            "&lt;/div&gt;" +
+            "&lt;div id='footer' class='footer' style='width:100%'&gt;&lt;/div&gt;" +
+          "&lt;/div&gt;";
+        document.body.className = "soria esri hide";
+        document.body.insertAdjacentHTML("afterbegin", classicTemplate);
+      }
+
+      function loadHeaderAndFooter() {
+        require(["arcgisonline/sharing/dijit/SiteHeader", "arcgisonline/sharing/dijit/SiteFooter"], function(
+          SiteHeader,
+          SiteFooter
+        ) {
+          new SiteHeader({ id: "header", legacy: true }, "header").startup();
+          new SiteFooter({ id: "footer", style: { width: "100%" } }, "footer").startup();
+        });
+      }
+
+      function loadMetaViewport() {
+        var metaViewport = document.createElement("meta");
+        metaViewport.name = "viewport";
+        metaViewport.content = "width=device-width";
+        document.head.appendChild(metaViewport);
+      }
+
+      require(["arcgisonline/base", "dojo/domReady!"], function(base) {
+        require([
+          "arcgisonline/pages/utils/accessNotice",
+          "arcgisonline/init",
+          "arcgisonline/sharing/geow/Account",
+          "arcgisonline/sharing/geow/Geow",
+          "arcgisonline/pages/utils/organization"
+        ], function(accessNotice, init, Account, Geow, orgUtil) {
+          // This validates the cookie per environment / user based on the url being accessed
+          // this was in siteHeader before, but must do this here now since by the time siteHeader is constructed its to late.
+          // Must be done before we construct the portal so the correct token is sent
+          Geow.checkSharedCookie();
+
+          accessNotice.checkSettings().then(function(result) {
+            if (!result.redirected) {
+              Account.getSelf().then(function(self) {
+                var isOrg =
+                  self.isPortal ||
+                  (self.user &amp;&amp; self.user.orgId &amp;&amp; self.user.orgId.length &gt; 0) ||
+                  (self.id &amp;&amp; self.id.length &gt; 0);
+                if (
+                  !isOrg ||
+                  (isOrg &amp;&amp; (orgUtil.hasModernHomePageEnabled(self) || orgUtil.hasLegacyHomePageDefaults(self)))
+                ) {
+                  loadModernCSS().then(
+                    function() {
+                      loadMetaViewport();
+                      require(["arcgisonline/main"]);
+                    }.bind(this)
+                  );
+                } else {
+                  loadClassicCSS().then(
+                    function() {
+                      loadClassicTemplate();
+                      loadHeaderAndFooter();
+                      init.initialize();
+                    }.bind(this)
+                  );
+                }
+              });
+            }
+          });
+        });
+      });
+    </script>
+  
+
+</body></html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Adam Goforth" />
+    <meta name="generator" content="Hugo 0.69.0" />
+    <title>Defining Terms</title>
+
+    <meta name="description" content="" />
+    <link rel="canonical" href="https://definingterms.com/" />
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Defining Terms" />
+
+    
+    <link rel="stylesheet" href="https://definingterms.com/css/normalize.min.6dec53ee20f5bc2905289325994cab42171978d2d264472563bf2e1eab0da1cd.css" integrity="sha256-bexT7iD1vCkFKJMlmUyrQhcZeNLSZEclY78uHqsNoc0=" />
+
+    
+    <link rel="stylesheet" href="https://definingterms.com/css/highlight.vs.min.886b364e906d75f1abd45220cc6c8ee022800f5fb641a0ecc2d3262700ed1c0b.css" integrity="sha256-iGs2TpBtdfGr1FIgzGyO4CKAD1+2QaDswtMmJwDtHAs=" />
+
+    
+    <link rel="stylesheet" href="https://definingterms.com/css/styles.min.0027312e93a39a58a0384de0046353ac408e901bfa863ed2ce55c61fdf0fa9c6.css" integrity="sha256-ACcxLpOjmligOE3gBGNTrECOkBv6hj7SzlXGH98PqcY=" />
+</head>
+
+
+<body>
+    <div class="container">
+
+        <header class="pageheader">
+    <div class="pageheader__sitename">
+        <a href="/" class="pageheader__homelink">Defining Terms</a>
+    </div>
+
+    <nav class="sitenav">
+        <a class="sitenav__link" href="/">Blog</a>
+        <a class="sitenav__link" href="/about/">About</a>
+        <a class="sitenav__link" href="/contact/">Contact</a>
+
+        <span class="sitenav__spacer"></span>
+
+        <form class="sitenav__search" method="get" action="https://duckduckgo.com/">
+            <input class="sitenav__search-input" size="40" name="q" placeholder="Search" />
+            <input type="hidden" name="sites" value="definingterms.com" />
+        </form>
+    </nav>
+</header>
+
+
+        <main class="main-content">
+            <section class="posts">
+                
+                
+                <article>
+                    <h2><a href="https://definingterms.com/2013/08/03/pivotal-tracker-git-hook/">Pivotal Tracker Git Hook</a></h2>
+<div>
+    <p>At work we use <a href="https://www.pivotaltracker.com/">Pivotal Tracker</a> to manage some of our projects and we like to use the <a href="https://www.pivotaltracker.com/help/api#scm_post_commit">Post-Commit Hook Integration</a>.  Basically, if you put the Pivotal Tracker story number in your commit message, it will associate the commit with the story.  It’s a nice feature that makes it easy to tie your code changes to features.</p>
+<p>The problem is that I often forget to include the story number in my commit message.  So, I wrote a small git commit-msg hook to check for a story number.  If the message does not include one, the commit is aborted.  I’ve been using the hook for a while and it’s been very helpful, so I’m publishing it.</p>
+<p>The code is available on Github under an MIT license:</p>
+<p><a href="https://github.com/aag/pt-story-git-hook">https://github.com/aag/pt-story-git-hook</a></p>
+
+</div>
+
+                </article>
+                
+                <article>
+                    <h2><a href="https://definingterms.com/2013/03/23/pitfalls-of-ruby-mixins/">Pitfalls of Ruby Mixins</a></h2>
+<div>
+    <h4 id="multiple-inheritance">Multiple Inheritance</h4>
+<p>Mixins are Ruby’s way of dealing with the multiple inheritance problem.  If inheritance expresses an is-a relationship, the problem occurs when a class is more than one thing.  For example, it’s easy to express that an Employee is a Person by making the Employee class inherit from the Person class.  But what if Employees are also EmailReporters, who can email their status to their manager?  How do you express that?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby hljs" data-lang="ruby">  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">EmailReporter</span></span></span>
+    <span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span style="color:#a6e22e"><span class="hljs-function"><span class="hljs-title">send_report</span></span></span>
+      <span style="color:#75715e"><span class="hljs-comment"># Send an email</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Person</span></span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Employee</span></span></span><span class="hljs-class"> </span><span style="color:#f92672"><span class="hljs-class">&lt;</span></span><span class="hljs-class"> </span><span style="color:#66d9ef"><span class="hljs-class">Person</span></span>
+    <span style="color:#75715e"><span class="hljs-comment"># How can this also be an EmailReporter?</span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+</code></pre></div><div class="centered-image">
+  <img src="/images/posts/mixins_d1.jpg" />
+</div>
+<p>Other languages solve this problem by allowing a single class to inherit from multiple other classes, or by using interfaces.  Ruby is a single-inheritance language, but solves this problem with <em>mixins</em>.</p>
+<h4 id="mixins">Mixins</h4>
+<p>Mixins are a way of adding a set of methods and constants to a class, without using class inheritance.  The <code>include</code> method lets you include a module’s contents in a class definition.  In addition to inheriting from one other class, classes can <code>include</code> any number of mixins.  In our example, the Employee class can inherit from the Person class, but include the EmailReporter module as a mixin.  Then, any methods and constants that are defined in the EmailReporter module are added to the Employee class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby hljs" data-lang="ruby">  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">module</span></span></span><span class="hljs-class"> <span class="hljs-title">EmailReporter</span></span>
+    <span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span style="color:#a6e22e"><span class="hljs-function"><span class="hljs-title">send_report</span></span></span>
+      <span style="color:#75715e"><span class="hljs-comment"># Send an email</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Person</span></span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Employee</span></span></span><span class="hljs-class"> </span><span style="color:#f92672"><span class="hljs-class">&lt;</span></span><span class="hljs-class"> </span><span style="color:#66d9ef"><span class="hljs-class">Person</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">include</span></span> <span style="color:#66d9ef">EmailReporter</span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+</code></pre></div><div class="centered-image">
+  <img src="/images/posts/mixins_d2.jpg" />
+</div>
+<p>Mixins have simplicity as their primary strength.  They let us share code between classes without some of the problems of multiple inheritance, which can be complex and sometimes ambiguous.  They let us easily create lightweight bundles of methods that can be included in any class where they’re needed.  This functionality is simple and convenient, but not without its problems.</p>
+<h4 id="pitfall-1">Pitfall #1</h4>
+<p>Mixins have at least two major pitfalls.  The first pitfall stems from how mixins are implemented.  What really happens when you call the <code>include</code> method with a module?  It seems like the module’s methods are injected into the current class, but that’s not actually how it works.  Instead, the module is inserted into the inheritance chain, directly above the class where it’s included.  Then, when one of the methods in the mixin is called, the interpreter starts going up the inheritance chain looking for the method, and when it gets to the mixin module, the method is found and called.</p>
+<div class="centered-image">
+  <img src="/images/posts/mixins_d3.jpg" />
+</div>
+<p>You can see in the above diagram that the EmailReporter module is represented right above the Employee class in the hierarchy, by the class with a dotted line around it.  But where does this new class come from?  The Ruby interpreter creates an anonymous class called an <em>include class</em> (or <em>proxy class</em>) that is a wrapper for the module, and this class is inserted into the class hierarchy, directly above the class where it’s included.</p>
+<p>This all works great, except when a module defines a method that already exists in some other module or class in the hierarchy.  When that happens, whichever definition is lowest in the hierarchy silently <em>shadows</em>, or covers up, all the other methods.  That means the behavior of a method call can be determined not just by the class hierarchy and which modules are included, but the <em>order</em> of the <code>include</code> statements.</p>
+<p>Let’s expand our previous class hierarchy to show an example of this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby hljs" data-lang="ruby">  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">module</span></span></span><span class="hljs-class"> <span class="hljs-title">EmailReporter</span></span>
+    <span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span style="color:#a6e22e"><span class="hljs-function"><span class="hljs-title">send_report</span></span></span>
+      <span style="color:#75715e"><span class="hljs-comment"># Send an email</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">module</span></span></span><span class="hljs-class"> <span class="hljs-title">PDFReporter</span></span>
+    <span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span style="color:#a6e22e"><span class="hljs-function"><span class="hljs-title">send_report</span></span></span>
+      <span style="color:#75715e"><span class="hljs-comment"># Write a PDF file</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Person</span></span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Employee</span></span></span><span class="hljs-class"> </span><span style="color:#f92672"><span class="hljs-class">&lt;</span></span><span class="hljs-class"> </span><span style="color:#66d9ef"><span class="hljs-class">Person</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">include</span></span> <span style="color:#66d9ef">EmailReporter</span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">include</span></span> <span style="color:#66d9ef">PDFReporter</span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Vehicle</span></span></span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+  <span style="color:#66d9ef"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span style="color:#a6e22e"><span class="hljs-class"><span class="hljs-title">Car</span></span></span><span class="hljs-class"> </span><span style="color:#f92672"><span class="hljs-class">&lt;</span></span><span class="hljs-class"> </span><span style="color:#66d9ef"><span class="hljs-class">Vehicle</span></span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">include</span></span> <span style="color:#66d9ef">PDFReporter</span>
+    <span style="color:#66d9ef"><span class="hljs-keyword">include</span></span> <span style="color:#66d9ef">EmailReporter</span>
+  <span style="color:#66d9ef"><span class="hljs-keyword">end</span></span>
+
+</code></pre></div><div class="centered-image">
+  <img src="/images/posts/mixins_d4.jpg" />
+</div>
+<p>In this hierarchy, we have added Vehicle and Car classes to our previous hierarchy.  Also, in addition to the EmailReporter module which emails reports, we have a PDFReporter module which writes reports to PDF files.</p>
+<p>Because the Employee and Car class include the EmailReporter and PDFReporter modules in a different order, calls to the <code>send_report</code> method have different effects:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby hljs" data-lang="ruby">  an_employee <span style="color:#f92672">=</span> <span style="color:#66d9ef">Employee</span><span style="color:#f92672">.</span>new
+  a_car <span style="color:#f92672">=</span> <span style="color:#66d9ef">Car</span><span style="color:#f92672">.</span>new
+
+  an_employee<span style="color:#f92672">.</span>send_report <span style="color:#75715e"><span class="hljs-comment"># Writes a PDF</span></span>
+  a_car<span style="color:#f92672">.</span>send_report       <span style="color:#75715e"><span class="hljs-comment"># Sends an email</span></span>
+
+</code></pre></div><p>This dependence on statement ordering can be confusing and can make debugging more difficult.  And this issue isn’t restricted to just modules interacting with each other.  Methods defined in a class definition will silently shadow methods in included modules, and methods defined on classes higher up in the hierarchy will be silently shadowed by any modules lower down in the hierarchy.</p>
+<h4 id="pitfall-2">Pitfall #2</h4>
+<p>The second pitfall of mixins is that they break encapsulation, so they can make code more entangled and make code changes harder.  Consider the case of the standard Ruby <code>Comparable</code> module.  When this module is included in a class, it expects the class to define a <code>&lt;=&gt;</code> method, which the module uses to define the <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>&gt;=</code>, and <code>&gt;</code> operators, as well as the <code>between?</code> method.</p><p></p>
+<p>The <code>Comparable</code> module is very convenient, but consider what would happen if it changed so that it expected a <code>compare_to</code> method instead of <code>&lt;=&gt;</code>.  This change would necessitate changing every class that includes <code>Comparable</code>.  This is unlikely to happen with a standard Ruby module like <code>Comparable</code>, but it is fairly likely to happen with the modules you create in your application, especially at the beginning of development when you’re still figuring out how the different classes and modules should interact.</p>
+<p>Instead of using mixins, it’s often better to create a new class and call methods on an instance of that class.  Then, if the internals of the new class change, you can usually make sure the changes are wrapped in whatever method was originally being used, so the calling code doesn’t have to change.</p>
+<h4 id="conclusion">Conclusion</h4>
+<p>In general, mixins are a good solution to the multiple inheritance problem.  They can be very useful and make code sharing between classes easier than other solutions like interfaces or true multiple inheritance.  However, when using mixins, you have to be aware of the potential pitfalls.  Since mixins silently shadow methods, you have to be careful with method names and the order of <code>include</code> calls.  Also, since mixins break encapsulation and can make changes difficult, you may want to consider using an instance of a class to perform the same function, especially early on in new projects.</p>
+
+</div>
+
+                </article>
+                
+                <article>
+                    <h2><a href="https://definingterms.com/2009/11/25/windows-shell-bug/">Windows Shell Bug</a></h2>
+<div>
+    <p>At work, we build one of our projects with Makefiles.  In one of these Makefiles, we have this line:</p>
+<pre><code class="hljs bash">IF NOT EXIST <span class="hljs-string">"<span class="hljs-variable">$(OUTDIR)</span>"</span> mkdir <span class="hljs-string">"<span class="hljs-variable">$(OUTDIR)</span>"</span>
+</code></pre><p>This should create the output directory if it doesn’t exist.  The line would hang the build on my development box from time to time, so I decided to track down what the problem was.  It turns out, IF NOT EXIST will sometimes hang if there are quotes around the filepath, at least on Windows XP.  You can verify this with a simple perl script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl hljs" data-lang="perl"><span style="color:#66d9ef"><span class="hljs-keyword">for</span></span> (;;) {
+    <span class="hljs-keyword">system</span>(<span style="color:#e6db74"><span class="hljs-string">"cmd /c IF NOT EXIST \"\\Windows\" echo nodir"</span></span>);
+}
+</code></pre></div><p>Running that script will cause the cmd to hang after a short amount of time (usually less than a minute).</p>
+<p>But, if you run this script, it will continue forever:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl hljs" data-lang="perl"><span style="color:#66d9ef"><span class="hljs-keyword">for</span></span> (;;) {
+    <span class="hljs-keyword">system</span>(<span style="color:#e6db74"><span class="hljs-string">"cmd /c IF NOT EXIST \\Windows echo nodir"</span></span>);
+}
+</code></pre></div><p>In our case, the filepath will never contain any spaces, so the solution was to just remove the quotes from the IF NOT EXIST command in the Makefile.</p>
+
+</div>
+
+                </article>
+                
+                <article>
+                    <h2><a href="https://definingterms.com/2009/08/19/engineyard-sha-1-competition/">EngineYard SHA-1 Competition</a></h2>
+<div>
+    <p>A few weeks ago, EngineYard held <a href="http://www.engineyard.com/blog/2009/programming-contest-win-iphone-3gs-2k-cloud-credit/">a programming competition</a>.  Basically, the contest was to see who could get a SHA-1 hash closest to a given hash.  I thought it might be fun to see how well I could do with a minimal implementation, so <a href="http://github.com/aag/engineyard_sha1/tree">I coded up something in C</a>.</p>
+<p>My goal was not to write the most efficient program possible, but to see what results I could get from a reasonable design and no major optimizations.  So, I wrote about 160 lines of C code, using OpenSSL for the hashing and the old <a href="http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan">K&amp;R bit counting method</a>.  Depending on how long the message plaintext was, this got me about 1 to 1.5 million attempts per second per core on my 3.0 Ghz Core 2 Duo.  <a href="http://www.win.tue.nl/cccc/sha-1-challenge.html">The winning CPU-based entry</a>, which was written by <a href="http://cr.yp.to/djb.html">D. J. Bernstein</a>, contained an optimized SHA-1 implementation and got around 10 million hashes per second per core.  So, I was about an order of magnitude off, which seems reasonable to me.</p>
+<p>It turns out the really fast implementations were all on GPUs.  Both the winner and the runner up <a href="http://forums.nvidia.com/index.php?showtopic=102349">used Nvidia’s CUDA</a> for fast GPGPU processing, which was cool to see.</p>
+<p>I ran my program for most of the 30 hours of the competition.  How did I do?  <a href="http://twitter.com/adamgoforth/status/2767713639">My best result</a> was 37 bits off of the goal, which put me 7 away from the winner.</p>
+
+</div>
+
+                </article>
+                
+                <article>
+                    <h2><a href="https://definingterms.com/2009/08/18/c-the-ternary-operator-and-mono/">C#, The Ternary Operator, and Mono</a></h2>
+<div>
+    <h4 id="the-quiz">The Quiz</h4>
+<p>One of my coworkers recently sent out this C# programming quiz:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp hljs" data-lang="csharp"><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">static</span></span></span><span class="hljs-function"> </span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">void</span></span></span><span class="hljs-function"> <span class="hljs-title">Main</span>(</span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">string</span></span></span></span><span class="hljs-function"><span class="hljs-params">[] args</span>)</span>
+{
+    <span style="color:#66d9ef"><span class="hljs-keyword">object</span></span> x = <span style="color:#66d9ef"><span class="hljs-literal">null</span></span>;
+    <span style="color:#66d9ef"><span class="hljs-keyword">object</span></span> y = (<span style="color:#66d9ef"><span class="hljs-keyword">short</span></span>)<span style="color:#ae81ff"><span class="hljs-number">4</span></span>;
+    x = (y <span style="color:#66d9ef"><span class="hljs-keyword">is</span></span> System.Int32) ? (System.Int32)y : (System.Int16)y;
+    Console.WriteLine(x.GetType());
+}
+</code></pre></div><blockquote>
+<p>What is printed out?<br />
+Try it.<br />
+Explain why you were wrong.</p>
+</blockquote>
+<p>If you run the code, you get this output:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">System</span><span class="hljs-selector-class">.Int32</span>
+</code></pre><p>The code snippet as it stands doesn’t make it clear exactly where the unexpected behavior is.  This is a little more clear:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp hljs" data-lang="csharp"><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">static</span></span></span><span class="hljs-function"> </span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">void</span></span></span><span class="hljs-function"> <span class="hljs-title">Main</span>(</span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">string</span></span></span></span><span class="hljs-function"><span class="hljs-params">[] args</span>)</span>
+{
+    <span style="color:#66d9ef"><span class="hljs-keyword">object</span></span> x = <span style="color:#66d9ef"><span class="hljs-literal">null</span></span>;
+    <span style="color:#66d9ef"><span class="hljs-keyword">object</span></span> y = (<span style="color:#66d9ef"><span class="hljs-keyword">short</span></span>)<span style="color:#ae81ff"><span class="hljs-number">4</span></span>;
+    x = <span style="color:#66d9ef"><span class="hljs-literal">false</span></span> ? (System.Int32)y : (System.Int16)y;
+    Console.WriteLine(x.GetType());
+}
+</code></pre></div><p>This code outputs the same thing as the above snippet.  So why does this snippet output <code>System.Int32</code>, when <code>x</code> clearly gets set to <code>(System.Int16)4</code> ?  The answer is in the C# implementation of the ternary operator.</p>
+<h4 id="the-answer">The Answer</h4>
+<p>In line 5 of the second example above, x is set to the result of the <em>expression</em> on the right side of the equals sign.  Since the thing on the right is an expression, it must have a single type.</p>
+<p>The <a href="http://www.ecma-international.org/publications/standards/Ecma-334.htm">C# Language Specification</a>, in section 14.13, spells out how the type of the expression is determined:</p>
+<blockquote>
+<p>The second and third operands of the ?: operator control the type of the conditional expression. Let X and Y be the types of the second and third operands. Then,</p>
+<ul>
+<li>If X and Y are the same type, then this is the type of the conditional expression.</li>
+<li>Otherwise, if an implicit conversion exists from X to Y, but not from Y to X, then Y is the type of the conditional expression.</li>
+<li>Otherwise, if an implicit conversion exists from Y to X, but not from X to Y, then X is the type of the conditional expression.</li>
+<li>Otherwise, no expression type can be determined, and a compile-time error occurs.</li>
+</ul>
+</blockquote>
+<p>In our example, since there’s an implicit cast from an Int16 to an Int32, but not an implicit cast from an Int32 to an Int16, the compiler says the type of the expression must be Int32.  Then, when our Int16 is returned, it’s typecast to an Int32.</p>
+<h4 id="more-types">More Types</h4>
+<p>The spec makes it pretty clear what is supposed to happen if there’s an implicit conversion from one of the operands to the other, but not the other way around.  But what happens if there’s an implicit conversion in both directions?  According to the spec, none of the first three conditions are met, so the compiler must output an error.  There is an implicit conversion from a byte to int, and also one from const int to byte, as long as the int is small enough to fit into the byte.  So, let’s try compiling this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp hljs" data-lang="csharp"><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">static</span></span></span><span class="hljs-function"> </span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-keyword">void</span></span></span><span class="hljs-function"> <span class="hljs-title">Main</span>(</span><span style="color:#66d9ef"><span class="hljs-function"><span class="hljs-params"><span class="hljs-keyword">string</span></span></span></span><span class="hljs-function"><span class="hljs-params">[] args</span>)</span>
+{
+    <span style="color:#66d9ef"><span class="hljs-keyword">const</span></span> <span style="color:#66d9ef"><span class="hljs-keyword">int</span></span> i = <span style="color:#ae81ff"><span class="hljs-number">1</span></span>;
+    <span style="color:#66d9ef"><span class="hljs-keyword">const</span></span> <span style="color:#66d9ef"><span class="hljs-keyword">byte</span></span> b = <span style="color:#ae81ff"><span class="hljs-number">2</span></span>;
+    
+    <span style="color:#66d9ef"><span class="hljs-keyword">object</span></span> x = <span style="color:#66d9ef"><span class="hljs-literal">null</span></span>;
+    x = <span style="color:#66d9ef"><span class="hljs-literal">true</span></span> ? i : b;
+
+    Console.WriteLine(x.GetType());
+}
+</code></pre></div><h4 id="the-bug">The Bug</h4>
+<p>If you compile this with the .NET 3.5 compiler, it compiles without errors.  There’s a warning about hardcoding true into the ternary operator, but nothing about the types.  So, the compiler does not conform to the C# language spec.  That’s a bug, but it’s not that shocking.  <a href="https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=91646">There are other</a> places where the .NET compiler doesn’t conform to the spec.  It seems that Microsoft <a href="http://blogs.msdn.com/ericgu/archive/2003/10/10/52732.aspx">has a policy</a> to leave such bugs in, so as to not break compatibility with existing code, so it will probably stay that way for the foreseeable future.</p>
+<h4 id="mono">Mono</h4>
+<p>This got me wondering if the Mono compiler properly supports the spec.  So, I tried compiling with the Mono 2.0 C# compiler.  Here’s what you get:</p>
+<pre><code class="hljs rust">Program.cs(<span class="hljs-number">13</span>,<span class="hljs-number">17</span>): error CS0172: Can not compute <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">of</span></span> conditional expression <span class="hljs-keyword">as</span> `int' and `byte' convert implicitly to each other
+Compilation failed: <span class="hljs-number">1</span> error(s), <span class="hljs-number">0</span> warnings
+</code></pre><p>So it looks like Mono conforms to the spec in this case.  It’s a bit amusing that an open source project supports the spec better than Microsoft itself, but there are probably also cases where it goes the other way.  However, this means that the Mono implementation is incompatible with the .NET implementation of C#.  Now, this particular incompatibility is unlikely to come up that often, since there aren’t many types that have two-way implicit conversions with each other, but it’s something to consider.</p>
+<h4 id="the-law">The Law</h4>
+<p>The legal implications of this bug are perhaps the most interesting part.  A few weeks ago, there was a lot of talk about the Mono patent situation.  This has now been largely resolved with Microsoft putting C# and the CLR under its <a href="http://www.microsoft.com/interop/cp/default.mspx">Community Promise</a>.  However, the Community Promise only applies to a given implementation “to the extent it conforms to one of the Covered Specifications.”  If an implementation does not conform to the specification, it is not covered by the promise.</p>
+<p>You can probably see where I’m going with this.  If Mono decided to support compatibility with the .NET compiler by breaking from the spec and implementing the ternary type bug the same way Microsoft has, it might be giving up its protection against patent lawsuits.  In order to be legally safer, it’s probably wiser for Mono to stick to the spec and break compatibility with the .NET compiler.  This is significant, because the more situations like this crop up, the harder it will be for programmers to port their .NET code to Mono.  There’s not much that the mono project can do about this, but it’s unfortunate that the legal situation forces their hand on compatibility.</p>
+
+</div>
+
+                </article>
+                
+            </section>
+
+            <nav class="index-nav">
+    <div>
+    
+        <a href="/page/2/" title="Older Posts">← Older</a>
+    
+    </div>
+
+    <div>
+        Page 1 of 6 (<a href="https://definingterms.com/post/">All posts</a>)
+    </div>
+
+    <div>
+    
+    </div>
+</nav>
+
+        </main>
+
+        <aside class="about">
+    <h1 class="about__name"><a href="/about/" class="about__link">Adam Goforth</a></h1>
+    <a class="about__link" href="/about/">
+        <img class="about__image" src="/images/adam_goforth.jpg" />
+    </a>
+    <p class="about__description">I’m a software developer in<br />
+        Ann Arbor, Michigan.</p>
+    <ul class="socials">
+        <li class="socials__item">
+            <a class="about__link" href="https://github.com/aag/">
+                <img src="/images/github_icon.png" />
+            </a>
+        </li>
+        <li class="socials__item">
+            <a class="about__link" href="https://twitter.com/adamgoforth">
+                <img src="/images/twitter_icon.png" />
+            </a>
+        </li>
+    </ul>
+</aside>
+
+
+
+
+        <footer class="pagefooter">
+    <img class="pagefooter__image" src="/images/cc.png" />
+    <span class="footer-text">Except where otherwise noted, the contents of 
+        this website are licensed under
+    <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY</a></span>
+</footer>
+
+
+    </div>
+
+    
+
+<script src="/js/highlight.pack.2e8f0a4bbcf444e33c5632611744543f64a09ed3888bdadabd25c27281cbbc8a.js" integrity="sha256-Lo8KS7z0ROM8VjJhF0RUP2SgntOIi9ravSXCcoHLvIo="></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+</body></html>

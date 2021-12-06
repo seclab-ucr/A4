@@ -1,0 +1,2847 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js svg no-touchevents cssanimations csstransitions"><head>
+    <meta charset="utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"2f1f7a5441",applicationID:"357909913"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta name="title" content="University of Calgary in Alberta | Top Degree Programs and Research in Canada" />
+<link rel="shortlink" href="https://ucalgary.ca/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="University of Calgary in Alberta" />
+<link rel="canonical" href="https://ucalgary.ca/" />
+<meta name="description" content="UCalgary offers diverse educational and research experiences for Canadian and International students, with top undergraduate and graduate programs in Canada" />
+<meta property="og:url" content="https://ucalgary.ca/node/4" />
+<meta name="keywords" content="University in Alberta, Top research university, International programs, Alberta, PHD programs" />
+<meta property="og:title" content="Top Degree Programs and Research in Canada" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="shortcut icon" href="/themes/ucalgary/ucws_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/themes/ucalgary/ucws_theme/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/themes/ucalgary/ucws_theme/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/themes/ucalgary/ucws_theme/favicon-16x16.png" />
+<link rel="manifest" href="/themes/ucalgary/ucws_theme/site.webmanifest" />
+<link rel="revision" href="https://ucalgary.ca/node/4" />
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.icon_color = "transparent,white";
+a2a_config.templates.email = {
+    subject: "Checkout this Basic page from University of Calgary in Alberta | Top Degree Programs and Research in Canada",
+    body: "Welcome to the University of Calgary\n${link}"
+};
+</script>
+
+          <title>University of Calgary in Alberta | Top Degree Programs and Research in Canada | University of Calgary</title>
+    
+          <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-173139-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_Q5AhvrqaUz9-lIP8oQZjj6Q4MeU8mZazeLjBsl86PjA.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_V6GQggJcV-CckVHVVQ9ZjCu7OAhZ4JT1ECQJVJtJWJc.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_uVTgGwmGz0HzKvTph3Zpf1YgFiS0MyOIKYhWje1DVfU.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_LxGEropoDYXWolNewnrgSRPasEgye46igctyi45TsLM.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_AwwmM40xRyFb8SrNdSfobNDlQ0c_xZQeBlhzqBIPRKE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_2tphbtRrq1OEbJJNmrIHlBI1jpRIei2UMWm0PKbImLo.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_x8gvTtcFKmd1EvDGNojjAIMpxth0w1H947t_jx_89fI.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_l7Mmi8dPvTeDqNB9JWs6sPIiyUvBfxxHcWEo1JWvSww.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_sgwrULgZCAOxDWWbFnL3_fmBAys0Z-39fTvlUt3Rh6M.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_jcyM1pFgOwsLRzWZMaeI98i848JCkpPKtqDXrHNuoXg.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css__m8jUKdbQ9dTcd9jMoNm6Nz9d3M9vfuuoW9IY-B1ZTM.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_lbf_YR52ynnNYIma9JIVb4I8Jv1TkgzX9o-v5STZcO4.css" />
+<link rel="stylesheet" media="all" href="https://use.typekit.net/yam6tmr.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_cKQ6ouYrWb4BLVkh7wYlPWOCChxvZO3ZeROlBdnd4xo.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_n5_ZaUHqyTo-QW2_qxiit8hGpkJ0DxvlfD-Sx5ZKlh8.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://events.ucalgary.ca/live/resource/css/%5Clivewhale%5Ctheme%5Cglobal%5Cstyles%5Cwidgets.css" /><script type="text/javascript" src="https://events.ucalgary.ca/live/resource/js/%5Clivewhale%5Cscripts%5Clib%5Cdate%5Cformatter.js/%5Clivewhale%5Cscripts%5Clib%5Cdate%5Ctimezone.js/%5Clivewhale%5Cscripts%5Clib%5Cdate%5Cuser.js/%5Clivewhale%5Cplugins%5Cjquery%5Cjquery.lw-widget.js"></script></head>
+  <body class="convocation animate-search site-alert">
+        <a href="#content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+          
+<header class="container-fluid"><div id="global-alert" class="row gold-back">
+  <div class="container">
+    <div class="row button">
+      <div class="col-sm-12">
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <a id="alert-toggle" class="btn btn-rounded" type="button" data-ucws-analytics-toggle="" data-ucws-analytics-category="Site Alert" data-ucws-analytics-label="COVID-19 update: Impact of new government covid-19 regulations on campus" data-ucws-analytics-off-class="btn-tab">
+              <span class="sr-only">Hide Site Alert Message</span>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content" style="overflow: hidden; display: block; height: 2.24874px; padding-top: 0.192749px; margin-top: 0px; padding-bottom: 0.385499px; margin-bottom: 0px;">
+      <div class="col-sm-12">
+        <div class="alert-message">
+          <p>
+            <span class="message">COVID-19 update: Impact of new government covid-19 regulations on campus</span>
+            <span class="link"><a href="https://ucalgary.ca/risk/emergency-management/covid-19-response" rel="nofollow" target="_blank" data-ucws-analytics-click="" data-ucws-analytics-category="Site Alert" data-ucws-analytics-label="COVID-19 update: Impact of new government covid-19 regulations on campus" data-ucws-analytics-action="Link Click">Learn more </a></span>
+          </p>
+        </div>
+        <div class="alert-timestamp">
+          <p>
+            <span class="date">November 26, 2020</span>
+            <span class="time">08:39:57</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+    
+    
+    
+        
+  <div id="toolbox" class="row red-back">
+    <div id="redline"><div></div></div>
+    <div class="container">
+      <div class="row button">
+        <div class="col-sm-12">
+                    <div id="desktop-search" class="row">
+            <div class="col-sm-12">
+              <form id="search-desktop" name="search-desktop" role="form" action="/sitesearch" data-ucws-analytics-search="" data-ucws-analytics-category="On-site search">
+                <input type="hidden" name="m" value="" />
+                <div class="btn-toolbar">
+                  <div class="btn-group search-field">
+                    <div class="input-group input-group-sm">
+                      <input id="uc-desktop-global-search-field" name="as_q" data-ucws-analytics-search-input="" type="text" autocomplete="off" class="form-control" placeholder="Explore UCalgary" />
+                      <span class="input-group-btn">
+                        <button id="uc-desktop-global-search-submit" class="btn btn-default" type="submit" data-ucws-analytics-search-submit="">
+                          <span class="sr-only">Search</span>
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button id="toolbox-toggle" class="btn btn-rounded btn-tab" type="button" data-ucws-analytics-toggle="" data-ucws-analytics-category="Toolbox" data-ucws-analytics-label="https://ucalgary.ca/node/4" data-ucws-analytics-off-class="btn-tab">
+                      <span class="sr-only">Toggle Toolbox</span>
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row content">
+        <div class="col-sm-12">
+                    <div id="mobile-search" class="row">
+            <div class="col-sm-12">
+              <form id="search-mobile" name="search-mobile" role="form" action="/sitesearch" data-ucws-analytics-search="" data-ucws-analytics-category="On-site search">
+                <input type="hidden" name="m" value="" />
+                <div class="btn-toolbar">
+                  <div class="btn-group search-field">
+                    <div class="input-group input-group-sm">
+                      <input id="uc-mobile-global-search-field" name="as_q" data-ucws-analytics-search-input="" type="text" autocomplete="off" class="form-control show-toolbox" placeholder="Search UCalgary" tabindex="-1" />
+                      <span class="input-group-btn">
+                        <button id="uc-mobile-global-search-submit" class="btn btn-default" type="submit" data-ucws-analytics-search-submit="">
+                          <span class="sr-only">Search</span>
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+                    <div id="quicklinks" class="row">
+            <div class="col-sm-12 col-md-4 logins">
+                                            <ul>
+                                       <li>
+                      <a href="https://my.ucalgary.ca/" target="_blank" rel="noopener noreferrer">My UCalgary</a>
+                    </li>
+                                       <li>
+                      <a href="https://office365.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Webmail</a>
+                    </li>
+                                       <li>
+                      <a href="https://www.ucalgary.ca/it/">IT</a>
+                    </li>
+                                       <li>
+                      <a href="https://d2l.ucalgary.ca/" target="_blank" rel="noopener noreferrer">D2L</a>
+                    </li>
+                                       <li>
+                      <a href="https://www.ucalgary.ca/iriss/">IRISS</a>
+                    </li>
+                                       <li>
+                      <a href="https://myfacilities.ucalgary.ca/" target="_blank" rel="noopener noreferrer">ARCHIBUS</a>
+                    </li>
+                                  </ul>
+                          </div>
+            <div class="col-sm-12 col-md-8 links">
+                                            <ul>
+                                                                                                      <li>
+                        <a href="https://www.ucalgary.ca/hr/">HR</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://library.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Library</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://www.godinos.com/" target="_blank" rel="noopener noreferrer">Go Dinos</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://csprd.my.ucalgary.ca/psp/csprd/EMPLOYEE/SA/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?public=yes/" target="_blank" rel="noopener noreferrer">Class Schedule</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://contacts.ucalgary.ca/" target="_blank" rel="noopener noreferrer">UCalgary Directory</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://conted.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Continuing Education</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://careers.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Careers</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://www.calgarybookstore.ca/" target="_blank" rel="noopener noreferrer">Bookstore</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://www.ucalgary.ca/activeliving/">Active Living</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://www.ucalgary.ca/pubs/calendar/">Academic Calendar</a>
+                      </li>
+                                                                                                                          <li>
+                        <a href="https://www.ucalgary.ca/map/">UCalgary Maps</a>
+                      </li>
+                                                                                                                          <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                          Faculty Websites <span class="glyphicon glyphicon-chevron"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          <li class="close-dropdown">
+                            <span class="sr-only">Close Faculty Websites List</span>
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="notice">Viewing: <span>Faculty Websites</span></span>
+                          </li>
+                                                      <li>
+                              <a href="https://cumming.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Cumming School of Medicine</a>
+                            </li>
+                                                      <li>
+                              <a href="https://arts.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Arts</a>
+                            </li>
+                                                      <li>
+                              <a href="https://grad.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Graduate Studies</a>
+                            </li>
+                                                      <li>
+                              <a href="https://www.ucalgary.ca/knes/">Faculty of Kinesiology</a>
+                            </li>
+                                                      <li>
+                              <a href="https://law.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Law</a>
+                            </li>
+                                                      <li>
+                              <a href="https://nursing.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Nursing</a>
+                            </li>
+                                                      <li>
+                              <a href="https://www.ucalgary.edu.qa/" target="_blank" rel="noopener noreferrer">Faculty of Nursing (Qatar)</a>
+                            </li>
+                                                      <li>
+                              <a href="https://science.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Science</a>
+                            </li>
+                                                      <li>
+                              <a href="https://fsw.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Social Work</a>
+                            </li>
+                                                      <li>
+                              <a href="https://vet.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Faculty of Veterinary Medicine</a>
+                            </li>
+                                                      <li>
+                              <a href="https://haskayne.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Haskayne School of Business</a>
+                            </li>
+                                                      <li>
+                              <a href="https://sapl.ucalgary.ca/" target="_blank" rel="noopener noreferrer">School of Architecture, Planning and Landscape</a>
+                            </li>
+                                                      <li>
+                              <a href="https://schulich.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Schulich School of Engineering</a>
+                            </li>
+                                                      <li>
+                              <a href="https://werklund.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Werklund School of Education</a>
+                            </li>
+                                                  </ul>
+                      </li>
+                                                      </ul>
+                          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <div id="navigation" class="row">
+    <div class="uc-logo-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="uc-logo">
+                              <a href="/"><img src="/themes/ucalgary/ucws_theme/images/UCalgary.svg" /></a>                           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <div class="uc-nav-container">
+        <div class="container">
+                              <div class="row menus">
+            <div class="col-sm-12">
+              <div class="uc-nav">
+                <div id="uc-menu" class="uc-menuwrapper">
+                  <button type="button" id="hamburger" class="uc-trigger hamburger hamburger-htx" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-label="Hamburger" data-ucws-analytics-on-class="is-active">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                  </button>
+                      
+
+  
+                
+                                                                                                                                                                                                                        
+    
+    <ul class="level1 uc-menu">
+
+      
+      
+      
+      
+      
+        
+        
+        
+        
+          
+                                    <li class="uc-mainmenu children" id="menu-item-1">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Future Students" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1">Future Students</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                                                                              
+    
+    <ul class="level2 uc-submenu tabbed menu-block"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Future Students">Future Students</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students">Future Students</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          
+          
+          
+            <li class="children">
+                                                                          
+    <div class="sidebar">
+  <div class="sidebar-wrapper dark-orange-back">
+    <div class="cta">
+              <p>Get to know the UCalgary campus by taking a tour or attending an event for future students.</p>
+
+<p><a class="btn btn-ghost" href="https://www.ucalgary.ca/future-students/undergraduate/tours-events" target="_blank">Campus tours and events</a></p>
+
+          </div>
+  </div>
+</div>
+
+
+
+            
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-2">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Undergraduate" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-2">Undergraduate</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Undergraduate">Undergraduate</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/undergraduate">Undergraduate</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/experience">Why UCalgary</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/explore-programs">Explore programs</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/tours-events">Tours and events</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/recruiters">Meet our team</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-2-5">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="How to apply" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-2-5">How to apply</a>
+
+          
+          
+          
+            
+              
+                
+                                              
+    
+    <ul class="level4 uc-submenu"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="How to apply">How to apply</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/undergraduate/apply">How to apply</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/documents">Documents</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/finances">Fees and financing</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/admitted">You've been admitted</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/indigenous">Indigenous students</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/international-students">International students</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/contacts-and-help/parents-and-family">Parents and Family</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/contacts-and-help/high-school-counsellors-and-advisors">High school counsellors and advisors</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-2-12">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Contacts and help" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-2-12">Contacts and help</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                
+    
+    <ul class="level4 uc-submenu"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Contacts and help">Contacts and help</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/undergraduate/contact">Contacts and help</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/undergraduate/contacts-and-help/resources">Helpful resources</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="/future-students/undergraduate/dates-and-deadlines">Dates and deadlines</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-3">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Graduate" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-3">Graduate</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                            
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Graduate">Graduate</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/graduate">Graduate</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/explore-programs">Explore programs</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/finance">Finance</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/contact">Contacts</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/apply">How to apply</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/student-life">Student life</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/international">International students</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/understanding-graduate-studies">Understanding graduate studies</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/indigenous">Indigenous Graduate Students</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-4">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Open Studies" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-4">Open Studies</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                    
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Open Studies">Open Studies</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/open-studies">Open Studies</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/open-studies/degree-and-non-degree-holders">Degree and non-degree holders</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/open-studies/open-studies-dates">Open Studies dates</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/open-studies/visiting">Visiting students and visiting student researchers</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/open-studies/high-school-students">High school students</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-1-5">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Professional and Continuing Education" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-1-5">Professional and Continuing Education</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                    
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Professional and Continuing Education">Professional and Continuing Education</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/future-students/professional-and-continuing-education">Professional and Continuing Education</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://conted.ucalgary.ca/" target="_blank" rel="noopener noreferrer">Continuing Education</a>
+                                                    
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://haskayne.ucalgary.ca/future-students/executive" target="_blank" rel="noopener noreferrer">Haskayne School of Business - Executive Education</a>
+                                                    
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/pd/">Faculty of Social Work - Professional Development Program</a>
+                                                    
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://cumming.ucalgary.ca/cme" target="_blank" rel="noopener noreferrer">Continuing Medical Education &amp; Professional Development</a>
+                                                    
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="uc-mainmenu children" id="menu-item-2">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Current Students" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-2">Current Students</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                        
+    
+    <ul class="level2 uc-submenu tabbed"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Current Students">Current Students</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/current-students">Current Students</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-2-1">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Undergraduate" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-2-1">Undergraduate</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                        
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Undergraduate">Undergraduate</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/current-students">Undergraduate</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/current-students/academics">Academics</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/current-students/finances">Finances</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/current-students/student-services">Student Services</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/current-students/student-life">Student life</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/registrar/">Office of the Registrar</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/current-students/under-arch">Under the Arch</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-2-2">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Graduate" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-2-2">Graduate</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                            
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Graduate">Graduate</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://grad.ucalgary.ca/current" target="_blank" rel="noopener noreferrer">Graduate</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/future-students/graduate/new-students">Newly admitted</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current-students/forms-documents" target="_blank" rel="noopener noreferrer">Forms &amp; documents</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current/managing-my-program" target="_blank" rel="noopener noreferrer">Managing my program</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current/thesis" target="_blank" rel="noopener noreferrer">Thesis</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current/student-services" target="_blank" rel="noopener noreferrer">Student services</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/mygradskills/starting-business">Entrepreneurship</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current/tuition" target="_blank" rel="noopener noreferrer">Tuition &amp; fees</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://grad.ucalgary.ca/current/graduate-calendar" target="_blank" rel="noopener noreferrer">Graduate calendar</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="uc-mainmenu children" id="menu-item-3">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Alumni &amp; Donors" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-3">Alumni &amp; Donors</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                              
+    
+    <ul class="level2 uc-submenu tabbed menu-block"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Alumni &amp; Donors">Alumni &amp; Donors</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/">Alumni &amp; Donors</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-3-1">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Alumni Engagement" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-3-1">Alumni Engagement</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                          
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Alumni Engagement">Alumni Engagement</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/alumni">Alumni Engagement</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/events" target="_blank" rel="noopener noreferrer">Events</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/benefits" target="_blank" rel="noopener noreferrer">Benefits</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/communities" target="_blank" rel="noopener noreferrer">Communities</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/stories" target="_blank" rel="noopener noreferrer">News &amp; stories</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/alumni/volunteer">Volunteer</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/connect-with-us" target="_blank" rel="noopener noreferrer">Connect with us</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://alumni.ucalgary.ca/grow-your-career" target="_blank" rel="noopener noreferrer">Grow Your Career</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+          
+          
+            <li class="children">
+                                                                          
+    <div class="sidebar">
+  <div class="sidebar-wrapper dark-orange-back">
+    <div class="cta">
+              <p>Invest in a different kind of energy and see the change you can make.</p>
+
+<p>Find out how you can make a difference today.</p>
+
+<p><a class="btn btn-ghost" href="https://www.ucalgary.ca/campaign/how-to-give">Donate now</a></p>
+
+          </div>
+  </div>
+</div>
+
+
+
+            
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-3-3">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Giving to UCalgary" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-3-3">Giving to UCalgary</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                  
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Giving to UCalgary">Giving to UCalgary</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://www.ucalgary.ca/giving">Giving to UCalgary</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/giving/campaign-success">Energize: The Campaign for Eyes High</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/campaign/how-to-give">How to give</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/campaign/contact">Contacts</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li class="uc-mainmenu">
+                                <a href="https://www.ucalgary.ca/research">Research</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li class="uc-mainmenu">
+                                <a href="https://www.ucalgary.ca/facultyandstaff">Faculty &amp; Staff</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="uc-mainmenu children" id="menu-item-6">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="About UCalgary" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6">About UCalgary</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                        
+    
+    <ul class="level2 uc-submenu tabbed"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="About UCalgary">About UCalgary</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary">About UCalgary</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-6-1">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Our organization" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6-1">Our organization</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                                                                                                
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Our organization">Our organization</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary/our-organization">Our organization</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/our-mandate">Our mandate</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/facts-and-figures">Facts and figures</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/governance-and-leadership">Governance and leadership</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/faculties">Faculties</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/our-people">Our people</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/executive-leadership-team">Executive leadership team</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-organization/administration">Administration</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/utoday/">UCalgary news</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/events/all">UCalgary events</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/podcasts">UCalgary Podcasts</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-6-2">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Our history" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6-2">Our history</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                                                            
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Our history">Our history</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary/our-history">Our history</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/calgarys-urban-evolution">Calgary's urban evolution</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/changing-face-campus">Changing face of campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-6-2-3">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Culture and society" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6-2-3">Culture and society</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                  
+    
+    <ul class="level4 uc-submenu"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Culture and society">Culture and society</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary/our-history/culture-and-society">Culture and society</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/culture-and-society/watch">Watch</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/culture-and-society/listen">Listen</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/culture-and-society/look">Look</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/energy-and-environment">Energy and the environment</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/high-performance-athletics">High-performance athletics</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/how-we-teach-and-learn">How we teach and learn</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/human-and-animal-health">Human and animal health</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-history/our-place-universe">Our place in the universe</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-6-3">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Our strategy" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6-3">Our strategy</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                    
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Our strategy">Our strategy</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary/our-strategy">Our strategy</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-strategy/strategies-and-plans">Strategies and Plans</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-strategy/teaching-and-learning">Teaching and Learning</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-strategy/research-and-scholarship">Research and Scholarship</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/community">Community Engagement</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          
+                                    <li class="children" id="menu-item-6-4">
+            <a href="#" data-ucws-analytics-toggle="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Open" data-ucws-analytics-label="Our campuses" data-ucws-analytics-on-class="uc-active-menu" data-ucws-analytics-element="#menu-item-6-4">Our campuses</a>
+
+          
+          
+          
+            
+              
+                
+                                                                                                                                                                                                                                                          
+    
+    <ul class="level3 uc-submenu overview-link"><li class="uc-back"><a href="#" data-ucws-analytics-click="" data-ucws-analytics-category="Menu" data-ucws-analytics-action="Back" data-ucws-analytics-label="Our campuses">Our campuses</a></li>
+
+      
+                            <li class="overview">
+                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities">Our campuses</a>
+              </li>
+            
+      
+      
+      
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://www.ucalgary.ca/about-ucalgary/our-campuses/campus-maps-and-room-finder">Campus maps and room finder</a>
+                                                    
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/main-campus">Main Campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/foothills-campus">Foothills Campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/qatar-campus">Qatar Campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/downtown-campus">Downtown Campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/spy-hill-campus">Spy Hill Campus</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+        
+        
+        
+        
+          <li>
+                                <a href="https://ucalgary.ca/about-ucalgary/our-campuses-and-facilities/field-stations-and-other-facilities">Field stations and other facilities</a>
+                                                    
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+          
+        
+        </li>
+
+      
+      
+    </ul>
+  
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </header>
+
+<main id="content">
+      <div class="loading" style="display: none;"></div>       <div data-drupal-messages-fallback="" class="hidden"></div>
+    <div class="container-fluid layout col1 hero">
+    <div class="row">
+      <div class="layout-col hero layout-12 col-sm-12">
+          
+    
+      
+
+  
+    
+   
+    
+    
+  
+  <div class="layout-blocks-ucws-homepage-search container-fluid full-width block homepage-search bg-image top parallax">
+    <div class="row red-back" style="background-image: url('/sites/default/files/styles/ucws_homepage_search_desktop/public/2019-09/TFDL_011A6790_1_F.jpg?h=16be757d&amp;itok=7dwGNk34');">       <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+                            <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/default/files/styles/ucws_homepage_search_tablet/public/2019-09/TFDL_011A6790_1_F.jpg?itok=PBqKyJfl 1x" media="all and (min-width: 768px)" type="image/jpeg" />
+              <source srcset="/sites/default/files/styles/ucws_homepage_search_mobile/public/2019-09/TFDL_011A6790_1_F.jpg?h=1a32d37e&amp;itok=VdwPu-lg 1x" media="all and (max-width: 767px)" type="image/jpeg" />
+            <!--[if IE 9]></video><![endif]-->
+            <img src="/sites/default/files/styles/ucws_homepage_search_desktop/public/2019-09/TFDL_011A6790_1_F.jpg?h=16be757d&amp;itok=7dwGNk34" alt="Taylor Family Digital Library, University of Calgary" typeof="foaf:Image" />
+
+  </picture>
+
+                        <div class="homepage-search-form">
+                              <h1>Welcome to the University of Calgary</h1>
+                                                                          <div id="homepage-search">
+      <form role="form" action="/sitesearch" data-ucws-analytics-search="" data-ucws-analytics-category="Homepage search" data-drupal-form-fields="uc-homepage-search-field" style="opacity: 1;">
+        <div class="input-group input-group-lg">
+          <input id="uc-homepage-search-field" name="as_q" class="form-control" type="text" data-ucws-analytics-search-input="" placeholder="Explore UCalgary" autocomplete="off" />
+          <span class="input-group-btn">
+            <button id="uc-homepage-search-submit" class="btn btn-default" type="submit" data-ucws-analytics-search-submit="">
+                              <span class="sr-only">Explore UCalgary</span>
+                <span class="glyphicon glyphicon-search"></span>
+                          </button>
+          </span>
+        </div>
+                  <input name="scope" type="hidden" value="global" />
+              </form>
+    </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+  </div>
+
+
+
+  
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid layout col1">
+    <div class="row">
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid layout col1">
+    <div class="row">
+      <div class="layout-col col1 layout-12 col-sm-12">
+          
+    
+      
+
+  
+    
+  <div class="layout-blocks-ucws-text container-fluid roundable block text">
+    <div class="row">
+      <div class="container">
+                          <div class="row header left">
+            <div class="col-sm-12">
+              <h2>
+                                                Top research university in Canada
+              </h2>
+            </div>
+          </div>
+                          <div class="row left">
+            <div class="col-sm-12 one-col">
+              <p>We are on an ambitious journey to become one of Canada’s top research-intensive universities. Join us as we create new knowledge, find new answers, help thousands of students define their future and change the world, all while engaging the communities we serve and lead.</p>
+
+<p><strong><a href="https://www.ucalgary.ca/eyeshigh">Learn about our exciting path ahead</a> </strong><a href="https://news.ucalgary.ca/news/arts/faculty-arts-news" target="_blank" rel="noopener noreferrer"><strong>»</strong></a></p>
+
+<p> </p>
+            </div>
+          </div>
+                      </div>
+          </div>
+  </div>
+
+
+
+    
+    
+      
+
+  
+    
+
+    
+               
+    
+  <div class="layout-blocks-ucws-more-info container-fluid roundable block more-info">
+    <div class="row">
+      <div class="container">
+                <div class="row">
+          <div class="col-sm-12">
+                                                                                                  <div class="more-info-items max-items">
+                                  <div class="media more-info-item">
+                                          <div class="media-left">
+                        <span class="icon icomoon ucws-more-info-compass light-orange" aria-hidden="true"></span>
+                      </div>
+                                        <div class="media-body">
+                                              <h3>Undergraduate programs</h3>
+                                            <p>Get set for success at a university with an amazing student experience, in a city where there's always something new to discover.</p>
+                                              <p><a href="https://www.ucalgary.ca/future-students/undergraduate/explore-programs/" class="read-more">Explore programs</a></p>
+                                          </div>
+                  </div>
+                                  <div class="media more-info-item">
+                                          <div class="media-left">
+                        <span class="icon icomoon ucws-more-info-lab light-orange" aria-hidden="true"></span>
+                      </div>
+                                        <div class="media-body">
+                                              <h3>Graduate programs</h3>
+                                            <p>Work with leading researchers to transform your passion into expertise in one of over 160 degrees across 65 graduate programs.</p>
+                                              <p><a href="https://www.ucalgary.ca/future-students/graduate/explore-programs/" class="read-more">View programs</a></p>
+                                          </div>
+                  </div>
+                                  <div class="media more-info-item">
+                                          <div class="media-left">
+                        <span class="icon icomoon ucws-more-info-lightbulb light-orange" aria-hidden="true"></span>
+                      </div>
+                                        <div class="media-body">
+                                              <h3>Professional and Continuing Education</h3>
+                                            <p><span><span>For professional development and personal enrichment, choose from a broad range of learning opportunities that are best practice based, relevant and in demand.</span></span></p>
+                                              <p><a href="https://www.ucalgary.ca/future-students/professional-and-continuing-education" class="read-more">Learn more</a></p>
+                                          </div>
+                  </div>
+                                  <div class="media more-info-item">
+                                          <div class="media-left">
+                        <span class="icon icomoon ucws-business-and-finance-handshake light-orange" aria-hidden="true"></span>
+                      </div>
+                                        <div class="media-body">
+                                              <h3>Careers</h3>
+                                            <p>Power learning and research at a university as energetic and full of opportunity as the city in which it’s located.</p>
+                                              <p><a href="https://careers.ucalgary.ca/" class="read-more" target="_blank" rel="noopener noreferrer">Search current opportunities</a></p>
+                                          </div>
+                  </div>
+                              </div>
+                      </div>
+        </div>
+      </div>
+          </div>
+  </div>
+
+
+
+    
+    
+      
+
+  
+    
+
+    
+    
+  
+  <div class="layout-blocks-ucws-banner container-fluid roundable full-width block hero-cta legacy-image-hero banner graphic no-grad no-bottom-margin">
+    <div class="row red-back">
+      <div class="container">
+        <div class="row">
+                                <div class="col-sm-12 col-text">
+              <div class="cta-content left">
+                                  <h2>Unstoppable</h2>
+                                <p><em>Unstoppable</em> is our "growth through focus" plan to keep our <a href="https://www.ucalgary.ca/eyeshigh"><em>Eyes High</em></a> ambitions and strengthen our community in uncertain times. It supports the University of Calgary’s academic and research plans as well as the Indigenous, mental health and sustainability strategies.</p>
+                                  <div class="btn-wrapper">
+                                                                                      <a class="btn btn-default btn-ghost" href="https://ucalgary.ca/president/unstoppable" role="button" data-ucws-analytics-click="" data-ucws-analytics-category="CTA button click" data-ucws-analytics-action="Learn more" data-ucws-analytics-label="https://ucalgary.ca/node/4">Learn more</a>
+                                      </div>
+                              </div>
+            </div>
+                  </div>
+      </div>
+          </div>
+  </div>
+
+
+    
+    
+      
+
+  
+    
+
+    
+    
+  <div class="layout-blocks-ucws-sidekick-cta container-fluid full-width block hero-cta legacy-image-hero sidekick-cta bg-image">
+    <div class="row berry-back hleft" style="background-image: url('/sites/default/files/styles/ucws_sidekick_cta_desktop/public/2020-10/Landmarks_011A0070_F_0.jpg?h=df5b4532&amp;itok=nqOANs8a');">       <div class="container">
+        <div class="row">
+                      <div class="col-sm-12 col-image hidden-md hidden-lg">
+                <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/default/files/styles/ucws_sidekick_cta_tablet/public/2020-10/Landmarks_011A0070_F_0.jpg?h=9aa97dac&amp;itok=fvBGtc9D 1x" media="all and (min-width: 768px)" type="image/jpeg" />
+              <source srcset="/sites/default/files/styles/ucws_sidekick_cta_mobile/public/2020-10/Landmarks_011A0070_F_0.jpg?h=97565a2d&amp;itok=1lyptEij 1x" media="all and (max-width: 767px)" type="image/jpeg" />
+            <!--[if IE 9]></video><![endif]-->
+            <img class="img-responsive" src="/sites/default/files/styles/ucws_sidekick_cta_desktop/public/2020-10/Landmarks_011A0070_F_0.jpg?h=df5b4532&amp;itok=nqOANs8a" alt="University of Calgary campus " typeof="foaf:Image" />
+
+  </picture>
+
+            </div>
+                    <div class="col-sm-12 col-text">
+                          <div class="cta-content">
+                                  <h2 class="left">Connecting With Our Community</h2>
+                                <p>Discover what UCalgary has to offer the community — hear from experts and researchers through webinars, podcasts, news and more.</p>
+                                  <div class="btn-wrapper left">
+                                                                                      <a class="btn btn-default btn-primary" href="http://ucalgary.ca/community/community-connection" role="button" data-ucws-analytics-click="" data-ucws-analytics-category="CTA button click" data-ucws-analytics-action="Learn more" data-ucws-analytics-label="https://ucalgary.ca/node/4">Learn more</a>
+                                      </div>
+                              </div>
+                      </div>
+        </div>
+      </div>
+          </div>
+  </div>
+
+
+
+    
+    
+      
+
+  
+    
+  
+
+        
+    
+                                                    
+  <div class="layout-blocks-ucws-news-feed container-fluid roundable block news-feed">
+    <div class="row">
+      <div class="container">
+                  <div class="row header">
+            <div class="col-sm-12">
+              <h2>UCalgary news</h2>
+            </div>
+          </div>
+        
+        <div class="row divider">
+          <div class="col-sm-12">
+            <hr class="dark-grey" />
+          </div>
+        </div>
+
+        <div class="row news-items dark-grey-accents">
+                                  <div class="col-sm-12 col-md-6 news-item news-items__main">
+              <div class="news-item ">
+                <div class="item-info">
+                        <div class="image-wrapper">
+      <a href="https://news.ucalgary.ca/news/alberta-families-economic-pain-still-resilient-during-pandemic" title="Alberta families in economic pain but still resilient during pandemic " target="_blank" rel="noopener noreferrer">
+                                        
+                                    <img class="img-responsive" src="https://news.ucalgary.ca/news/sites/default/files/styles/ucws_news_hero_image_thumbnail/public/2020-12/Household.jpg" alt="Alberta families in economic pain but still resilient during pandemic " />
+      </a>
+    </div>
+  
+  
+          <div class="title-border dark-orange-accents"></div>
+  
+            <h3>Alberta families in economic pain but still resilient during pandemic </h3>
+      
+      <p>COVID-19 Impact Study looks at how families manage reduced income, social isolation, relationship stress...</p>
+  
+                    
+    <p><a href="https://news.ucalgary.ca/news/alberta-families-economic-pain-still-resilient-during-pandemic" class="read-more" target="_blank" rel="noopener noreferrer">Read more</a></p>
+  
+  
+
+                </div>
+              </div>
+            </div>
+
+                        <div class="col-sm-12 col-md-6 news-items__second">
+              <div class="row">
+                                  <div class="col-sm-12 col-lg-4 news-item">
+                    <div class="item-info">
+                            <div class="image-wrapper">
+      <a href="https://news.ucalgary.ca/news/social-work-researcher-help-create-national-plan-stop-violence-against-women" title="Social work researcher to help create national plan to stop violence against women" target="_blank" rel="noopener noreferrer">
+                                        
+                                    <img class="img-responsive" src="https://news.ucalgary.ca/news/sites/default/files/styles/ucws_news_hero_image_thumb_sec/public/2020-11/Lana%20Wells%202013%20High%20resolution_0.jpg" alt="Social work researcher to help create national plan to stop violence against women" />
+      </a>
+    </div>
+  
+      <div class="news-info show-images">
+  
+          <div class="title-border dark-orange-accents"></div>
+  
+            <h4>Social work researcher to help create national plan to stop violence against women</h4>
+      
+  
+                    
+    <p><a href="https://news.ucalgary.ca/news/social-work-researcher-help-create-national-plan-stop-violence-against-women" class="read-more" target="_blank" rel="noopener noreferrer">Read more</a></p>
+  
+      </div>
+  
+
+                    </div>
+                  </div>
+                                  <div class="col-sm-12 col-lg-4 news-item">
+                    <div class="item-info">
+                            <div class="image-wrapper">
+      <a href="https://news.ucalgary.ca/news/students-design-wearable-devices-aid-mental-health" title="Students design wearable devices to aid with mental health" target="_blank" rel="noopener noreferrer">
+                                        
+                                    <img class="img-responsive" src="https://news.ucalgary.ca/news/sites/default/files/styles/ucws_news_hero_image_thumb_sec/public/2020-12/Mai_pillow_0.jpg" alt="Students design wearable devices to aid with mental health" />
+      </a>
+    </div>
+  
+      <div class="news-info show-images">
+  
+          <div class="title-border dark-orange-accents"></div>
+  
+            <h4>Students design wearable devices to aid with mental health</h4>
+      
+  
+                    
+    <p><a href="https://news.ucalgary.ca/news/students-design-wearable-devices-aid-mental-health" class="read-more" target="_blank" rel="noopener noreferrer">Read more</a></p>
+  
+      </div>
+  
+
+                    </div>
+                  </div>
+                                  <div class="col-sm-12 col-lg-4 news-item">
+                    <div class="item-info">
+                            <div class="image-wrapper">
+      <a href="https://news.ucalgary.ca/news/rise-health-ucalgary-medical-students-work-immigrant-youth-co-create-health-programs-address-health" title="RISE for health: UCalgary medical students work with immigrant youth to co-create health programs, address health disparities" target="_blank" rel="noopener noreferrer">
+                                        
+                                    <img class="img-responsive" src="https://news.ucalgary.ca/news/sites/default/files/styles/ucws_news_hero_image_thumb_sec/public/2020-11/RISE-1_0.jpeg" alt="RISE for health: UCalgary medical students work with immigrant youth to co-create health programs, address health disparities" />
+      </a>
+    </div>
+  
+      <div class="news-info show-images">
+  
+          <div class="title-border dark-orange-accents"></div>
+  
+            <h4>RISE for health: UCalgary medical students work with immigrant youth to co-create health programs, address health disparities</h4>
+      
+  
+                    
+    <p><a href="https://news.ucalgary.ca/news/rise-health-ucalgary-medical-students-work-immigrant-youth-co-create-health-programs-address-health" class="read-more" target="_blank" rel="noopener noreferrer">Read more</a></p>
+  
+      </div>
+  
+
+                    </div>
+                  </div>
+                              </div>
+            </div>
+                  </div>
+
+                      </div>
+
+          </div>
+  </div>
+
+
+    
+    
+      
+
+  
+    
+  <div class="layout-blocks-ucws-text container-fluid roundable block text">
+    <div class="row">
+      <div class="container">
+                                  <div class="row left">
+            <div class="col-sm-12 one-col">
+              <p><strong><a href="https://www.ucalgary.ca/ucalgary-news">More UCalgary news</a> </strong><a href="https://news.ucalgary.ca/news/arts/faculty-arts-news" target="_blank" rel="noopener noreferrer"><strong>»</strong></a></p>
+            </div>
+          </div>
+                      </div>
+          </div>
+  </div>
+
+
+
+  
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid layout col1">
+    <div class="row">
+      <div class="layout-col col1 layout-12 col-sm-12">
+          
+    
+      
+
+  
+    
+
+    
+    
+  <div class="layout-blocks-ucws-sidekick-cta container-fluid full-width block hero-cta legacy-image-hero sidekick-cta bg-image">
+    <div class="row red-back hright" style="background-image: url('/sites/default/files/styles/ucws_sidekick_cta_desktop/public/2019-09/9-NAP-99556-Explore-UCalgary-billboard%20Illustartion-wesbite-Explore_Hero-1500x800-v3.jpg?h=42a1d5fa&amp;itok=a0imUGep');">       <div class="container">
+        <div class="row">
+                      <div class="col-sm-12 col-image hidden-md hidden-lg">
+                <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+              <source srcset="/sites/default/files/styles/ucws_sidekick_cta_tablet/public/2019-09/9-NAP-99556-Explore-UCalgary-billboard%20Illustartion-wesbite-Explore_Hero-1500x800-v3.jpg?h=296e08af&amp;itok=MHnFOJp9 1x" media="all and (min-width: 768px)" type="image/jpeg" />
+              <source srcset="/sites/default/files/styles/ucws_sidekick_cta_mobile/public/2019-09/9-NAP-99556-Explore-UCalgary-billboard%20Illustartion-wesbite-Explore_Hero-1500x800-v3.jpg?h=e7471140&amp;itok=xkE44Uw4 1x" media="all and (max-width: 767px)" type="image/jpeg" />
+            <!--[if IE 9]></video><![endif]-->
+            <img class="img-responsive" src="/sites/default/files/styles/ucws_sidekick_cta_desktop/public/2019-09/9-NAP-99556-Explore-UCalgary-billboard%20Illustartion-wesbite-Explore_Hero-1500x800-v3.jpg?h=42a1d5fa&amp;itok=a0imUGep" alt="null" typeof="foaf:Image" />
+
+  </picture>
+
+            </div>
+                    <div class="col-sm-12 col-text">
+                          <div class="cta-content">
+                                  <h2 class="left">Can asking questions change the world?</h2>
+                                <p>Is everyone truly equal under the law? Can wastewater become drinking water? Is there a better way to detect cancer? Does social media make us less civil?</p>
+
+<p>Every day, our scholars tackle global challenges, make important discoveries and create new knowledge. It all starts with a big question — one that challenges status quo, defies conventional wisdom, confronts the obvious.</p>
+
+<p>Because without asking questions, we can’t move our world forward.</p>
+                                  <div class="btn-wrapper left">
+                                                                                      <a class="btn btn-default btn-primary" href="https://www.ucalgary.ca/explore" role="button" data-ucws-analytics-click="" data-ucws-analytics-category="CTA button click" data-ucws-analytics-action="Let's explore new answers" data-ucws-analytics-label="https://ucalgary.ca/node/4">Let's explore new answers</a>
+                                                                                      <a class="btn btn-default btn-ghost" href="https://research.ucalgary.ca/research/research-plan" role="button" data-ucws-analytics-click="" data-ucws-analytics-category="CTA button click" data-ucws-analytics-action="Check out our research plan" data-ucws-analytics-label="https://ucalgary.ca/node/4" target="_blank" rel="noopener noreferrer">Check out our research plan</a>
+                                      </div>
+                              </div>
+                      </div>
+        </div>
+      </div>
+          </div>
+  </div>
+
+
+
+    
+    
+      
+
+
+ 
+
+
+
+
+<div class="layout-blocks-ucws-events-feed container-fluid roundable block event-feed">
+  <div class="row">
+    <div class="container">
+
+              <div class="row header livewhale-events-header">
+          <div class="col-sm-12">
+            <h2>UCalgary events</h2>
+          </div>
+        </div>
+
+        <div class="row divider livewhale-events-divider"><div class="col-sm-12"><hr class="dark-grey" /></div></div>
+      
+            <div class="row event-items ">
+        <div class="lwcw" data-options="id=5&amp;format=html&amp;groups=UCalgary News and Events&amp;tag=online&amp;hide_repeats=true" style="display: block;"><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />3</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://events.ucalgary.ca/ucalgary-news/#!view/event/event_id/202409"><img src="https://events.ucalgary.ca/live/image/gid/200/width/3/height/2/crop/1/src_region/0,0,300,300/3897_Master-of-Public-Policy-Information-Session-dec-3.rev.1605737726.png" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>4:00 pm</span><span></span></span><span></span></p><p class="title"><abbr title="MPP Information Session: Change the World with a Master of Public Policy"><a href="https://events.ucalgary.ca/ucalgary-news/#!view/event/event_id/202409">MPP Information Session: Change the World with a Master of Public Policy</a></abbr></p><div class="desc ddd-truncated"><p style="box-sizing: border-box; margin: 0px 0px 15px; color: #5d5d5d; font-family: proxima-nova, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;">  The University of Calgary Master of Public Policy program is a 13-month integrated program that gives you the skills and understanding to create… </p></div></div></div><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />3</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://ucalgary.zoom.us/meeting/register/tJAofuGqqj4sG9cz9-1EliT8gIpl2dczHBG4"><img src="https://events.ucalgary.ca/live/image/gid/15/width/3/height/2/crop/1/src_region/0,0,3200,2133/2801_Craft_Together.rev.1591692331.jpg" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>5:00 pm</span><span>6:00 pm</span></span><span>Zoom</span></p><p class="title"><abbr title="UCalgaryTogether: Craft Together"><a href="https://ucalgary.zoom.us/meeting/register/tJAofuGqqj4sG9cz9-1EliT8gIpl2dczHBG4">UCalgaryTogether: Craft Together</a></abbr></p><div class="desc ddd-truncated"><p>Calling all creative types! Hang out with your fellow makers for an online arts and crafts session. Learn some new techniques, show off your current… </p></div></div></div><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />3</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://ucalgary.zoom.us/meeting/register/tJMtf-6tqjkrHd3iMavQTLIC-C7-vChXjJUE"><img src="https://events.ucalgary.ca/live/image/gid/15/width/3/height/2/crop/1/src_region/0,0,3200,2133/2812_Stretch_Together2.rev.1591692333.jpg" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>9:00 pm</span><span>9:30 pm</span></span><span>Zoom</span></p><p class="title"><abbr title="UCalgaryTogether: Stretch Together"><a href="https://ucalgary.zoom.us/meeting/register/tJMtf-6tqjkrHd3iMavQTLIC-C7-vChXjJUE">UCalgaryTogether: Stretch Together</a></abbr></p><div class="desc"><p>Join us for a 30-min. stretch session!</p></div></div></div><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />4</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://ucalgary.zoom.us/meeting/register/tJMod--rrDwjGtDuQOd6csfcK3AZfKu19sJg"><img src="https://events.ucalgary.ca/live/image/gid/15/width/3/height/2/crop/1/src_region/0,0,3200,2133/2800_Bollywood_Dance_Together2.rev.1591692330.jpg" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>7:00 pm</span><span>8:00 pm</span></span><span>Zoom</span></p><p class="title"><abbr title="UCalgaryTogether: Bollywood Dance Together"><a href="https://ucalgary.zoom.us/meeting/register/tJMod--rrDwjGtDuQOd6csfcK3AZfKu19sJg">UCalgaryTogether: Bollywood Dance Together</a></abbr></p><div class="desc"><p>Got an itch to groove and move? Join us as we learn to dance, Bollywood style!</p></div></div></div><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />7</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://ucalgary.zoom.us/meeting/register/tJ0qdOivpjMjHNDM_Ap8mQXPUES6RooyJdlQ"><img src="https://events.ucalgary.ca/live/image/gid/15/width/3/height/2/crop/1/src_region/0,0,3200,2133/2812_Stretch_Together2.rev.1591692333.jpg" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>5:00 pm</span><span>5:30 pm</span></span><span>Zoom</span></p><p class="title"><abbr title="UCalgaryTogether: Stretch Together"><a href="https://ucalgary.zoom.us/meeting/register/tJ0qdOivpjMjHNDM_Ap8mQXPUES6RooyJdlQ">UCalgaryTogether: Stretch Together</a></abbr></p><div class="desc"><p>Join us for a 30-min. stretch session!</p></div></div></div><div class="event-item col-md-4 col-xs-6"><div class="date-box"><p>Dec<br />9</p></div><div class="image-section"><div class="image-wrapper lw_has_image"><span class="lw_item_thumb"><a href="https://ucalgary.zoom.us/meeting/register/tJIrf-irpzIoG9SXhznxslJZ7zCYXCUHNIfn"><img src="https://events.ucalgary.ca/live/image/gid/15/width/3/height/2/crop/1/src_region/0,0,3200,2133/2812_Stretch_Together2.rev.1591692333.jpg" alt="" class="lw_image lazy" /></a></span></div></div><div class="event-deets"><p class="time-loc"><span><span>12:30 pm</span><span>1:00 pm</span></span><span>Zoom</span></p><p class="title"><abbr title="UCalgaryTogether: Stretch Together"><a href="https://ucalgary.zoom.us/meeting/register/tJIrf-irpzIoG9SXhznxslJZ7zCYXCUHNIfn">UCalgaryTogether: Stretch Together</a></abbr></p><div class="desc"><p>Join us for a 30-min. stretch session!</p></div></div></div></div>
+      </div>
+
+            
+    </div>
+  </div>
+</div>
+
+  
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </main>
+
+<footer class="container-fluid">
+    <div id="block-ucws-theme-section-information">
+  
+    
+      
+        
+
+
+
+
+  
+
+
+
+  </div>
+
+
+        
+    
+  <div id="footer" class="row">
+    <div class="container">
+      <div class="row">
+        <div id="footer-special" class="col-md-4 col-md-push-4">
+                      <a href="https://ucalgary.ca/giving/campaign-success"><img src="/themes/ucalgary/ucws_theme/images/energized-by-you.png" alt="Energized By You" /></a>
+                  </div>
+        <div id="footer-links" class="col-md-4 col-md-pull-4">
+          <p class="small social">
+                                          <a class="btn-social" href="https://www.facebook.com/universityofcalgary" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="svg facebook  injected-svg" data-url="/themes/ucalgary/ucws_theme/images/social-icon-facebook.svg">
+<rect class="background" fill="transparent" width="32" height="32"/>
+<path class="icon" fill="#FFFFFF" d="M32,0v32h-9.9V19.6h4.2l0.6-4.8h-4.8v-3.1c0-1.4,0.4-2.4,2.4-2.4l2.6,0V5c-0.4-0.1-2-0.2-3.7-0.2c-3.7,0-6.2,2.3-6.2,6.4v3.6h-4.2v4.8h4.2V32H0V0H32z"/>
+</svg></a>
+                              <a class="btn-social" href="https://www.twitter.com/ucalgary" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="svg twitter  injected-svg" data-url="/themes/ucalgary/ucws_theme/images/social-icon-twitter.svg">
+<rect class="background" fill="transparent" width="32" height="32"/>
+<path class="icon" fill="#FFFFFF" d="M25.3,12.4c0,0.2,0,0.4,0,0.6c0,5.7-4.3,12.2-12.2,12.2c-2.4,0-4.7-0.7-6.6-1.9   c0.3,0,0.7,0.1,1,0.1c2,0,3.9-0.7,5.3-1.8c-1.9,0-3.5-1.3-4-3c0.3,0.1,0.5,0.1,0.8,0.1c0.4,0,0.8-0.1,1.1-0.2   c-2-0.4-3.4-2.1-3.4-4.2c0,0,0,0,0-0.1c0.6,0.3,1.2,0.5,1.9,0.5c-1.2-0.8-1.9-2.1-1.9-3.6C7.4,10.3,7.6,9.6,8,9   c2.1,2.6,5.3,4.3,8.8,4.5c-0.1-0.3-0.1-0.6-0.1-1c0-2.4,1.9-4.3,4.3-4.3c1.2,0,2.3,0.5,3.1,1.4c1-0.2,1.9-0.5,2.7-1   c-0.3,1-1,1.8-1.9,2.4c0.9-0.1,1.7-0.3,2.5-0.7C26.9,11.1,26.2,11.8,25.3,12.4 M0,0v32h32V0H0z"/>
+</svg></a>
+                              <a class="btn-social" href="https://www.linkedin.com/company/university-of-calgary" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="svg linkedin  injected-svg" data-url="/themes/ucalgary/ucws_theme/images/social-icon-linkedin.svg">
+<rect class="background" fill="transparent" width="32" height="32"/>
+<path class="icon" fill="#FFFFFF" d="M0,0v32h32V0H0z M9,27H5V12h4V27z M7.1,9.9c-1.5,0-2.8-1.2-2.8-2.8c0-1.5,1.2-2.8,2.8-2.8   c1.5,0,2.8,1.2,2.8,2.8C9.9,8.7,8.6,9.9,7.1,9.9z M27,27h-4v-7.2c0-1.8-0.4-4-2.8-4c-2.5,0-3.2,1.9-3.2,3.9V27h-5V12h5v2h0.1   c0.6-1,2-2.4,4.4-2.4c4.8,0,5.6,3.2,5.6,7.3V27z"/>
+</svg></a>
+                              <a class="btn-social" href="https://www.instagram.com/ucalgary" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="svg instagram  injected-svg" data-url="/themes/ucalgary/ucws_theme/images/social-icon-instagram.svg">
+<rect class="background" fill="transparent" width="32" height="32"/>
+<path class="icon" fill="#FFFFFF" d="M25.1,9.9L25.1,9.9c0.6,0,1.2,0,1.8,0c0.9,0,1.5-0.6,1.5-1.5c0-1.1,0-2.2,0-3.2   c0-0.9-0.6-1.5-1.5-1.6c-1.1,0-2.3,0-3.4,0c-0.9,0-1.5,0.6-1.5,1.6c0,1.1,0,2.2,0,3.4c0,0.8,0.6,1.4,1.3,1.4   C23.8,9.9,24.5,9.9,25.1,9.9 M16,22.2c0.3,0,0.5,0,0.8,0c1.8-0.2,3.3-1,4.4-2.5c1-1.3,1.4-2.8,1.2-4.4c-0.1-1.3-0.7-2.5-1.7-3.5   c-1.1-1.2-2.6-1.9-4.2-2c-1.6-0.1-3,0.3-4.3,1.2c-1.3,0.9-2.2,2.2-2.5,3.8c-0.4,1.9,0.1,3.6,1.3,5.1C12.3,21.4,14,22.1,16,22.2    M25.6,13.5c0.1,0.6,0.2,1.1,0.3,1.6c0.2,1.7,0,3.3-0.7,4.9c-0.6,1.4-1.5,2.6-2.7,3.6c-1.1,0.9-2.3,1.6-3.7,1.9   c-1.4,0.4-2.7,0.5-4.1,0.3c-1.8-0.2-3.5-0.9-4.9-2c-1.5-1.1-2.5-2.6-3.1-4.3c-0.6-1.6-0.7-3.3-0.4-5c0.1-0.3,0.1-0.6,0.2-0.9H3.6   c0,0.1,0,0.2,0,0.3c0,4.4,0,8.7,0,13.1c0,0.9,0.6,1.4,1.4,1.4c7.3,0,14.7,0,22,0c0.8,0,1.4-0.6,1.4-1.4c0-4.4,0-8.7,0-13.1v-0.3   H25.6z M0,0h32v32H0V0z"/>
+</svg></a>
+                              <a class="btn-social" href="https://www.youtube.com/c/UCalgaryCa" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="svg youtube  injected-svg" data-url="/themes/ucalgary/ucws_theme/images/social-icon-youtube.svg">
+<rect class="background" fill="transparent" width="32" height="32"/>
+<path class="icon" fill="#FFFFFF" d="M23.4,21.3v-0.9c0-0.6,0-0.5,0.1-0.6c0.1-0.2,0.2-0.3,0.5-0.3c0.2,0,0.4,0.1,0.5,0.4   c0,0.1,0.1,0,0.1,0.6v1.1h-1.1V21.3z M23.4,22.4H26v-0.8c0-0.8-0.1-1.6-0.2-2c-0.1-0.4-0.4-0.7-0.7-0.9c-0.3-0.2-0.7-0.3-1.2-0.3   c-0.4,0-0.8,0.1-1.1,0.3c-0.3,0.2-0.5,0.5-0.7,0.8c-0.1,0.4-0.2,0.9-0.2,1.9v2.4c0,0.3,0,0.8,0.1,1c0.1,0.3,0.2,0.6,0.3,0.8   c0.1,0.2,0.4,0.4,0.7,0.5c0.3,0.1,0.6,0.2,1,0.2c0.4,0,0.7-0.1,1-0.2c0.2-0.1,0.5-0.3,0.6-0.6c0.2-0.3,0.3-0.5,0.3-0.8   C26,24.4,26,24,26,23.5v-0.4h-1.4V24c0,0.4,0,0.7-0.1,0.9c-0.1,0.2-0.3,0.4-0.6,0.4c-0.2,0-0.4-0.1-0.5-0.3c0-0.1-0.1-0.3-0.1-0.8   V22.4z M19.3,23.2c0,0.7,0,0.9-0.1,1.1c-0.1,0.2-0.2,0.4-0.5,0.4c-0.2,0-0.4-0.1-0.5-0.4c0-0.1-0.1-0.3-0.1-1v-2c0-0.7,0-0.9,0.1-1   c0.1-0.2,0.2-0.4,0.5-0.4c0.2,0,0.4,0.1,0.5,0.4c0,0.1,0.1,0.3,0.1,1V23.2z M20.6,18.7c-0.1-0.2-0.2-0.3-0.4-0.4   c-0.2-0.1-0.4-0.1-0.6-0.1c-0.2,0-0.4,0-0.5,0.1c-0.2,0.1-0.3,0.3-0.5,0.5l-0.5,0.7v-3.7h-1.5V26h1.4l0.1-0.5l0.1-0.6l0.3,0.5   c0.1,0.2,0.3,0.4,0.5,0.5c0.2,0.1,0.3,0.2,0.5,0.2c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.4-0.7c0.1-0.3,0.1-0.8,0.1-0.7v-4   c0,0,0.1-0.4,0-1.2C20.8,19.1,20.7,18.9,20.6,18.7 M13.9,23.1c0,0.9,0,1.1,0,1.2c-0.1,0.2-0.2,0.4-0.5,0.4c-0.3,0-0.4-0.1-0.5-0.4   c0-0.1-0.1-0.3-0.1-1.2v-4.9h-1.5v5.3c0,0.7,0,1.2,0,1.4c0,0.2,0.1,0.4,0.2,0.6c0.1,0.2,0.2,0.3,0.3,0.4c0.2,0.1,0.4,0.2,0.6,0.2   c0.2,0,0.4-0.1,0.6-0.2c0.2-0.1,0.3-0.3,0.4-0.5l0.5,0.1l0,0.4h1.5v-7.7h-1.5V23.1z M6.4,17.5h1.5V26h1.6v-8.6H11v-1.6H6.4V17.5z    M15.1,12.1c0.2,0,0.4-0.1,0.5-0.4c0-0.1,0.1-0.3,0.1-0.9V7.6c0-0.6,0-0.9-0.1-1c-0.1-0.2-0.3-0.4-0.5-0.4c-0.2,0-0.4,0.1-0.5,0.4   c0,0.1-0.1,0.3-0.1,1v3.1c0,0.6,0,0.8,0.1,0.9C14.7,11.9,14.9,12.1,15.1,12.1 M27.7,25.6c-0.2,1.8-1.8,3.3-3.7,3.5   c-5.4,0.2-10.7,0.2-16.1,0c-1.8-0.1-3.5-1.6-3.7-3.5c-0.2-2.9-0.2-5.8,0-8.7c0.2-1.8,1.8-3.3,3.7-3.5c5.4-0.2,10.7-0.2,16.1,0   c1.8,0.1,3.5,1.6,3.7,3.5C27.9,19.8,27.9,22.7,27.7,25.6 M9.4,2.8l1.3,4.1c0.2-1.1,0.7-2.5,1-4.1h1.1l-1.5,5.8l0,0.1v4.1H9.9V8.6   l0,0L8.2,2.8H9.4z M13,8.5c0-0.8,0.1-1.4,0.2-1.8c0.1-0.4,0.3-0.7,0.6-0.9c0.3-0.2,0.7-0.4,1.2-0.4c0.4,0,0.8,0.1,1.1,0.2   c0.3,0.2,0.5,0.4,0.7,0.6C17,6.5,17.1,6.7,17.2,7c0.1,0.3,0.1,0.7,0.1,1.3v1.3c0,0.8,0,1.3-0.1,1.7c-0.1,0.3-0.2,0.6-0.3,0.9   c-0.2,0.3-0.4,0.5-0.7,0.6c-0.3,0.1-0.6,0.2-1,0.2c-0.4,0-0.8-0.1-1.1-0.2c-0.3-0.1-0.5-0.3-0.6-0.5c-0.1-0.2-0.3-0.5-0.3-0.8   c-0.1-0.3-0.1-0.9-0.1-1.6V8.5z M18.4,5.4H20v4.9c0,0.9,0,0.9,0.1,1c0,0.1,0.1,0.4,0.5,0.4c0.4,0,0.5-0.3,0.5-0.4   c0-0.1,0.1-0.1,0.1-1.1V5.4h1.6v7.4h-1.6l0-0.4l-0.5-0.2c-0.1,0.2-0.3,0.4-0.4,0.5c-0.2,0.1-0.4,0.2-0.6,0.2   c-0.3,0-0.5-0.1-0.7-0.2c-0.2-0.1-0.3-0.2-0.4-0.4c-0.1-0.2-0.1-0.4-0.1-0.6c0-0.2,0-0.7,0-1.5V5.4z M0,0v32h32V0H0z"/>
+</svg></a>
+                                    </p>
+          <p class="small legalese">
+                          <a href="https://www.ucalgary.ca/sites/default/files/ucgy/groups/Marketing/digital-privacy-statement.pdf" target="_blank" rel="noopener noreferrer">Digital Privacy Statement</a><br />
+              <a href="https://www.ucalgary.ca/policies/files/policies/privacy-policy.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy</a><br />
+              <a href="https://ucalgarysurvey.qualtrics.com/SE/?SID=SV_2lcAqNmIryzHpZ3" target="_blank" rel="noopener noreferrer">Website feedback</a>
+                      </p>
+        </div>
+        <div id="footer-deets" class="col-md-4">
+          <p class="small address">
+                          University of Calgary<br />
+              2500 University Drive NW<br />
+              Calgary Alberta <span class="postal-code">T2N 1N4</span><br />
+              CANADA
+                      </p>
+          <p class="small copyright">
+                          Copyright © 2020
+                      </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/4","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":false},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":false,"mobiledevicewidth":null},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"(.*\\.pdf)|(iac01\\.*)|(homepages\\.*)|(www2\\.*)|(people\\.ucalgary\\.ca\\~*)|(webapps2\\.ucalgary\\.ca\\~*)|(webapps3\\.ucalgary\\.ca\\~*)|(webapp6\\.ucalgary\\.ca\\~*)|(csh\\.ucalgary\\.ca\\~*)|(d2l\\.ucalgary\\.ca\\~*)","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)"}},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EThis site uses cookies. By continuing, you\u0027re agreeing to the use of cookies outlined in our \u003Ca href=\u0022https:\/\/www.ucalgary.ca\/sites\/default\/files\/ucgy\/groups\/Marketing\/digital-privacy-statement.pdf\u0022\u003EDigital Privacy Statement\u003C\/a\u003E.\u003C\/p\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EClose\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EClose\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/sites\/default\/files\/digital-privacy-statement.pdf","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":true,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":null,"disagree_do_not_show_popup":false,"method":"default","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003E\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"withdraw_button_on_info_popup":false,"cookie_categories":[],"enable_save_preferences_button":true,"fix_first_cookie_category":true,"select_all_categories_by_default":false},"ucws_event_feed":{"livewhale_embed_code":{"#markup":"\u003Cdiv class=\u0027lwcw\u0027 data-options=\u0027id=5\u0026format=html\u0026groups=UCalgary News and Events\u0026tag=online\u0026hide_repeats=true\u0027\u003E\u003C\/div\u003E"},"path":"modules\/ucalgary\/ucws_blocks\/ucws_event_feed"},"user":{"uid":0,"permissionsHash":"771bf7f8a991c169edcacf7d2898d7b51b5b51ad1607693417304e6f978a8708"}}</script>
+<script src="/sites/default/files/js/js_cYe-2GuoMDYn0QB5MwBaQ5rydOUrSqpr90hOSugQWaI.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async=""></script>
+<script src="/sites/default/files/js/js_5ihs3LzKIijKXUDu_lhvyHyXRdvMr-9_mS78ukkW-UU.js"></script>
+<script src="https://events.ucalgary.ca/livewhale/theme/core/scripts/lwcw.js" id="lw_lwcw"></script>
+<script src="/sites/default/files/js/js_-vL7OgjzWxP7af0RmsuS6fV1Z6s5yFvAy78s46qaJu4.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"2f1f7a5441","applicationID":"357909913","transactionName":"ZFQHZhNQDEoDUUdZDF0eJFEVWA1XTUJSVwZsUgRRCVQ=","queueTime":0,"applicationTime":14,"atts":"SBMEEFtKH0Q=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<div id="sliding-popup" style="height: auto; width: 100%; bottom: -69.3779px;" class="sliding-popup-bottom"><div class="eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default">
+  <div class="popup-content info eu-cookie-compliance-content">
+    <div id="popup-text" class="eu-cookie-compliance-message">
+      <p>This site uses cookies. By continuing, you're agreeing to the use of cookies outlined in our <a href="https://www.ucalgary.ca/sites/default/files/ucgy/groups/Marketing/digital-privacy-statement.pdf">Digital Privacy Statement</a>.</p>
+          </div>
+
+    
+    <div id="popup-buttons" class="eu-cookie-compliance-buttons">
+      <button type="button" class="agree-button eu-cookie-compliance-default-button">Close</button>
+          </div>
+  </div>
+</div></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html><!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# schema: http://schema.org/" class="js wf-arsmaquetteweb-n4-active wf-arsmaquetteweb-n7-active wf-arsmaquetteweb-n3-active wf-arsmaquetteweb-i4-active wf-arsmaquetteweb-n9-active wf-arsmaquetteweb-i7-active wf-arsmaquetteweb-i3-active wf-arsmaquetteweb-i9-active wf-active"><!--<![endif]--><head>
+  <meta charset="utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="https://www.googletagmanager.com/gtm.js?id=GTM-5L7J7Q" async=""></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c6c22d56ae",applicationID:"86686438"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://www.mtholyoke.edu/sites/all/themes/centers/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.mtholyoke.edu/" />
+<link rel="shortlink" href="https://www.mtholyoke.edu/" />
+<meta property="og:site_name" content="Mount Holyoke College" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mtholyoke.edu/" />
+<meta property="og:title" content="Mount Holyoke College" />
+  <title>Mount Holyoke College |</title>
+
+      <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="cleartype" content="on" />
+
+  <link type="text/css" rel="stylesheet" href="https://www.mtholyoke.edu/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.mtholyoke.edu/sites/default/files/css/css_syWpWVVt-ntZdYem_JlHGAQFy48uNJJ6WQj2kNrNxTQ.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.mtholyoke.edu/sites/default/files/css/css_7QV6kuKuClX0xHY1VYHyiN7pXj1h6CT5WlgJhQhqbaY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.mtholyoke.edu/sites/default/files/css/css_A0wNi36niOP75TcywhsO_zE3N_ARXwcbmJNz9eo1B3U.css" media="all" />
+  <script src="https://www.mtholyoke.edu/sites/default/files/js/js_B5JM5ncOfsXfbojXW4Fehewq0b2GLU9yvbGkue6GOE0.js"></script>
+<script src="https://www.mtholyoke.edu/sites/default/files/js/js_wKyFX46tVKJtPKN12qNjRfS4aubW4G2u7LK22vlDiKo.js"></script>
+<script src="https://www.mtholyoke.edu/sites/default/files/js/js_45JniWrXrY8q8AEVIV6GFupI5scizolw-FrujytMgiY.js"></script>
+<script src="https://www.mtholyoke.edu/sites/default/files/js/js_RX1aIFdCtJNi_n9B6eZ_YCBRbvbvcMeF7gZ_bx0R5ps.js"></script>
+<script src="https://use.typekit.com/rjq7xyj.js"></script>
+<style type="text/css">.tk-ars-maquette-web{font-family:"ars-maquette-web",sans-serif;}</style><style type="text/css">@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/2e34b2/0000000000000000000149b5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3) format("woff2"),url(https://use.typekit.com/af/2e34b2/0000000000000000000149b5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3) format("woff"),url(https://use.typekit.com/af/2e34b2/0000000000000000000149b5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n4&amp;v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/18a672/0000000000000000000149b6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3) format("woff2"),url(https://use.typekit.com/af/18a672/0000000000000000000149b6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3) format("woff"),url(https://use.typekit.com/af/18a672/0000000000000000000149b6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n7&amp;v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/bd3f3a/0000000000000000000149b7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n3&amp;v=3) format("woff2"),url(https://use.typekit.com/af/bd3f3a/0000000000000000000149b7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n3&amp;v=3) format("woff"),url(https://use.typekit.com/af/bd3f3a/0000000000000000000149b7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n3&amp;v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/94150b/0000000000000000000149b9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n9&amp;v=3) format("woff2"),url(https://use.typekit.com/af/94150b/0000000000000000000149b9/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n9&amp;v=3) format("woff"),url(https://use.typekit.com/af/94150b/0000000000000000000149b9/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=n9&amp;v=3) format("opentype");font-weight:900;font-style:normal;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/4bbae7/0000000000000000000149ba/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i3&amp;v=3) format("woff2"),url(https://use.typekit.com/af/4bbae7/0000000000000000000149ba/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i3&amp;v=3) format("woff"),url(https://use.typekit.com/af/4bbae7/0000000000000000000149ba/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i3&amp;v=3) format("opentype");font-weight:300;font-style:italic;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/f5baae/0000000000000000000149bb/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3) format("woff2"),url(https://use.typekit.com/af/f5baae/0000000000000000000149bb/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3) format("woff"),url(https://use.typekit.com/af/f5baae/0000000000000000000149bb/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i4&amp;v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/1d75e6/0000000000000000000149bd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i7&amp;v=3) format("woff2"),url(https://use.typekit.com/af/1d75e6/0000000000000000000149bd/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i7&amp;v=3) format("woff"),url(https://use.typekit.com/af/1d75e6/0000000000000000000149bd/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i7&amp;v=3) format("opentype");font-weight:700;font-style:italic;font-display:auto;}@font-face{font-family:ars-maquette-web;src:url(https://use.typekit.com/af/f9608d/0000000000000000000149be/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i9&amp;v=3) format("woff2"),url(https://use.typekit.com/af/f9608d/0000000000000000000149be/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i9&amp;v=3) format("woff"),url(https://use.typekit.com/af/f9608d/0000000000000000000149be/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&amp;fvd=i9&amp;v=3) format("opentype");font-weight:900;font-style:italic;font-display:auto;}</style><script>try{Typekit.load();}catch(e){}</script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"centers","theme_token":"pwZkgrtJTjvFFupqcPh1GVLXdJ6bsVY191jbyRQIZes","js":{"sites\/all\/themes\/centers\/js\/script.js":1,"public:\/\/google_tag\/google_tag.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/superfish.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/nice_menus.js":1,"sites\/all\/modules\/contrib\/geo_filter\/geo_filter.js":1,"https:\/\/use.typekit.com\/rjq7xyj.js":1,"0":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/relation_add\/relation_add.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/custom\/mhc_blocks\/mhc_blocks.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons_on_hover.css":1,"sites\/all\/modules\/contrib\/flickr\/flickr_cc_icons.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/oembed\/oembed.base.css":1,"sites\/all\/themes\/centers\/system.menus.css":1,"sites\/all\/themes\/centers\/system.messages.css":1,"sites\/all\/themes\/centers\/system.theme.css":1,"sites\/all\/themes\/centers\/dist\/css\/style.css":1,"sites\/all\/themes\/centers\/fonts\/ss-social.css":1,"sites\/all\/themes\/centers\/fonts\/ss-standard.css":1}},"better_exposed_filters":{"views":{"homepage_highlight_field_collection_view":{"displays":{"default":{"filters":[]}}},"media_mentions":{"displays":{"block":{"filters":[]}}},"left_nav_related_links":{"displays":{"block":{"filters":[]}}},"contact_info":{"displays":{"social_media":{"filters":[]},"person_location_hours":{"filters":[]}}},"image_callout_random_page_":{"displays":{"section_random_image_block":{"filters":[]}}}}},"nice_menus_options":{"delay":"600","speed":"fast"}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0080/4411.js" async="async"></script>
+</head>
+<body class="html front not-logged-in no-sidebars page-node page-node- page-node-71495 node-type-center-home-page one-sidebar sidebar-first">
+  <p id="skip-link">
+    <a href="/access-and-inclusion" class="element-invisible element-focusable">Access and Inclusion</a>
+<a href="#skip-link" class="element-invisible element-focusable">Jump to content</a>
+<a href="#navigation" class="element-invisible element-focusable">Jump to Navigation</a>  </p>
+    <div class="region region-page-top">
+    <noscript aria-hidden="true">&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L7J7Q" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>  </div>
+  <!-- dprod.mtholyoke.edu.html - last saved 11/30/2020 - 9:02am -->
+<div class="mhc-alert-level-emergency" style="background-color: #991A00; color: #FFFFFF; font-family: Arial, Verdana, sans-serif; line-height: 1.2em; margin: 0 auto; padding: 5px 20px 5px; text-align: left; z-index: 1;">
+<h3 style="color: #FFFFFF; font-size: 16px; font-weight: bold;">Campus Updates</h3>
+<p style="color:#fff; font-size: 14px;">Visit the <a style="color: #fff; font-weight: bold; text-decoration: underline;" href="https://www.mtholyoke.edu/coronavirus">Campus Updates page</a> for information on Mount Holyoke’s response to the global pandemic. The <a style="color: #fff; font-weight: bold; text-decoration: underline;" href="/opening-gates">Opening the Gates</a> website contains the plan for the spring semester.</p>
+</div>
+<!-- /dprod.mtholyoke.edu.html -->  <div class="canvas">
+  <header class="header">
+  <div class="header__container">
+    <div class="header__top">
+      <div class="container header__top__container">
+        <a href="/" class="header__logo-small">
+          <span class="svgstore svgstore--logo-small">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <title>Mount Holyoke College</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#logo-small"/>
+            </svg>
+          </span>
+        </a>
+        <a href="/" class="header__logo">
+          <span class="svgstore svgstore--logo">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <title>Mount Holyoke College</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#logo"/>
+            </svg>
+          </span>
+        </a>
+        <div class="header__title"></div>
+        <div id="search">
+  <form id="searchbox_016391806028396851631:z_hgzjywgmk" action="/search" class="header__search-flyout">
+    <label for="q">Search:  </label>
+    <input value="016391806028396851631:z_hgzjywgmk" name="cx" type="hidden" />
+    <input value="FORID:11" name="cof" type="hidden" />
+    <input class="header__search-flyout__input" type="search" placeholder="Custom Search" id="q" name="qq" style="background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;" />
+    <button class="header__search-flyout__button" type="submit">Go</button>
+  <input name="siteurl" type="hidden" value="www.mtholyoke.edu/" /><input name="ref" type="hidden" value="" /><input name="ss" type="hidden" value="" /><input name="siteurl" type="hidden" value="www.mtholyoke.edu/" /><input name="ref" type="hidden" value="" /><input name="ss" type="hidden" value="" /></form>
+</div>
+<script src="//www.google.com/cse/brand?form=searchbox_016391806028396851631:z_hgzjywgmk&amp;lang=en" type="text/javascript"></script>
+        <button class="header__menu-toggle">
+          <span class="header__menu-toggle__label">Navigation</span>
+          <span class="header__menu-toggle__inactive"></span>
+          <span class="header__menu-toggle__active">
+            <span class="cross"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="header__menu">
+      <form class="header__search" id="searchbox_016391806028396851631:z_hgzjywgmk" action="/search">
+  <input value="016391806028396851631:z_hgzjywgmk" name="cx" type="hidden" />
+  <input value="FORID:11" name="cof" type="hidden" />
+  <input class="header__search__input" type="search" placeholder="Search" id="q" name="qq" />
+  <button class="header__search__button" type="submit">Go</button>
+</form>
+<script src="//www.google.com/cse/brand?form=searchbox_016391806028396851631:z_hgzjywgmk&amp;lang=en" type="text/javascript"></script>
+      <nav class="header__nav-primary">
+          <div class="region region-centers-primary">
+    <div id="block-nice-menus-7" class="block block-nice-menus first last odd count-1">
+
+        <h2 class="block__title block-title"><span class="nice-menu-show-title">Homepage Primary Nav</span></h2>
+    
+  <ul class="nice-menu nice-menu-right nice-menu-menu-homepage-primary-nav nice-menus-processed sf-js-enabled" id="nice-menu-7"><li class="level-1"><a href="/about" class="menu__link">About</a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="/about/facts" class="menu__link">Fast Facts</a></li>
+<li class="level-2"><a href="https://blog.mtholyoke.edu/thegates/why-a-womens-college" class="menu__link">Why a Women's College?</a></li>
+<li class="level-2"><a href="/about/history" class="menu__link">History</a></li>
+<li class="level-2"><a href="/president" class="menu__link">Office of the President</a></li>
+<li class="level-2"><a href="/contact" class="menu__link">Contact the College</a></li>
+</ul></li>
+<li class="level-1"><a href="/admission" class="menu__link">Admission</a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="/admission/firstyear" class="menu__link">First-Year Students</a></li>
+<li class="level-2"><a href="/admission/international" class="menu__link">International Students</a></li>
+<li class="level-2"><a href="/admission/transfer" class="menu__link">Transfer Students</a></li>
+<li class="level-2"><a href="/fp" class="menu__link">Nontraditional Age</a></li>
+<li class="level-2"><a href="/admission/visit" class="menu__link">Visit</a></li>
+<li class="level-2"><a href="https://admission.mtholyoke.edu/portal/virtualmhcinyourarea" class="menu__link">MHC Near You</a></li>
+<li class="level-2"><a href="/admission/tuition_finaid" class="menu__link">Tuition and Financial Aid</a></li>
+<li class="level-2"><a href="/professional-graduate/how-apply" class="menu__link">Professional and Graduate Admission</a></li>
+</ul></li>
+<li class="level-1"><a href="/acad" class="menu__link">Academics</a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="/acad/majors" class="menu__link">Majors and Minors</a></li>
+<li class="level-2"><a href="/acad/degrees" class="menu__link">Degrees and Requirements</a></li>
+<li class="level-2"><a href="https://www.mtholyoke.edu/go/academic-calendar" class="menu__link">Academic Calendar</a></li>
+<li class="level-2"><a href="http://catalog.mtholyoke.edu/" class="menu__link">Bulletin and Course Catalog</a></li>
+<li class="level-2"><a href="/acad/academic-centers" class="menu__link">Academic Centers</a></li>
+<li class="level-2"><a href="/professional-graduate" class="menu__link">Professional and Graduate Education (co-ed classes)</a></li>
+<li class="level-2"><a href="/lits" class="menu__link">Library, Information and Technology Services (LITS)</a></li>
+<li class="level-2"><a href="https://artmuseum.mtholyoke.edu" class="menu__link">Art Museum</a></li>
+<li class="level-2"><a href="https://www.mtholyoke.edu/student-success-and-advising" class="menu__link">Student Success and Advising</a></li>
+</ul></li>
+<li class="level-1"><a href="/acad/faculty" class="menu__link">Faculty</a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="/deanoffaculty" class="menu__link">Dean of Faculty</a></li>
+<li class="level-2"><a href="/academicdeans/advising" class="menu__link">Academic Advising</a></li>
+<li class="level-2"><a href="/teachinglearninginitiatives" class="menu__link">Teaching &amp; Learning Initiative</a></li>
+<li class="level-2"><a href="/deanoffaculty/current_faculty/committees" class="menu__link">Committees</a></li>
+<li class="level-2"><a href="/grants-office/sponsoredresearch" class="menu__link">Sponsored Research</a></li>
+<li class="level-2"><a href="/academic-affairs" class="menu__link">Division of Academic Affairs</a></li>
+</ul></li>
+<li class="level-1"><a href="/campuslife" class="menu__link">Student Life</a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="/reslife" class="menu__link">Residential Life</a></li>
+<li class="level-2"><a href="/dining" class="menu__link">Dining Services</a></li>
+<li class="level-2"><a href="/diversity/centers" class="menu__link">Cultural Centers</a></li>
+<li class="level-2"><a href="/studentlife/community-and-belonging" class="menu__link">Community and Belonging</a></li>
+<li class="level-2"><a href="/studentprograms" class="menu__link">Student Involvement</a></li>
+<li class="level-2"><a href="https://events.mtholyoke.edu/search/groups?group_types%5B%5D=139800" class="menu__link">Student Organizations</a></li>
+<li class="level-2"><a href="/deanofstudents" class="menu__link">Division of Student Life</a></li>
+<li class="level-2"><a href="/sfs" class="menu__link">Student Financial Services</a></li>
+</ul></li>
+<li class="level-1"><a href="http://athletics.mtholyoke.edu/" class="menu__link">Lyons Athletics          </a><ul style="visibility: hidden; display: none;"><li class="level-2"><a href="https://mtholyoke.prestosports.com/information/overview/index" class="menu__link">Varsity Teams</a></li>
+<li class="level-2"><a href="https://mtholyoke.prestosports.com/composite" class="menu__link">Composite Schedule</a></li>
+<li class="level-2"><a href="https://mtholyoke.prestosports.com/facilities/index" class="menu__link">Facilities</a></li>
+<li class="level-2"><a href="https://mtholyoke.prestosports.com/facilities/equestrian_center/index" class="menu__link">Equestrian Center</a></li>
+<li class="level-2"><a href="https://mtholyoke.prestosports.com/facilities/kendall_complex/kendall" class="menu__link">Kendall Membership</a></li>
+</ul></li>
+</ul>
+
+</div>
+  </div>
+      </nav>
+      <nav class="header__nav-secondary">
+          <div class="region region-centers-secondary">
+    <div id="block-menu-menu-homepage-secondary-nav" class="block block-menu first last odd count-1" role="navigation">
+
+        <h2 class="block__title block-title">Homepage Secondary Nav</h2>
+    
+  <ul class="menu"><li class="level-1"><a href="https://events.mtholyoke.edu" class="menu__link">Events</a></li>
+<li class="level-1"><a href="/media/mhc-news-events" class="menu__link">News</a></li>
+<li class="level-1"><a href="http://alumnae.mtholyoke.edu/" class="menu__link">Alumnae</a></li>
+<li class="level-1"><a href="/volunteer" class="menu__link">Volunteer</a></li>
+<li class="level-1"><a href="https://securelb.imodules.com/s/1660/adv/index.aspx?sid=1660&amp;gid=2&amp;pgid=603&amp;cid=1307&amp;appealcode=wb" class="menu__link">Give</a></li>
+<li class="level-1"><a href="/families" class="menu__link">Families</a></li>
+</ul>
+</div>
+  </div>
+        <button class="header__search-toggle">
+          <span class="svgstore svgstore--search">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <title>Search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#search"/>
+            </svg>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <div id="page">
+    <div id="main">
+      
+
+
+
+<div class="paragraphs-items paragraphs-items-field-chp-paragraphs paragraphs-items-field-chp-paragraphs-full paragraphs-items-full">
+  
+  <div class="hero hero--tall hero--left hero--" style="background-image: url(https://www.mtholyoke.edu/sites/default/files/Mount-Holyoke-College-aerial-200408-CH.png);">
+  <div class="hero__container">
+    <div class="hero__overlay">
+      <h1 class="hero__heading">
+  Mount Holyoke College</h1>
+              <a href="https://www.youtube.com/watch?v=WagboDqgAQ0" class="hero__video" data-minimodal="">
+          <span class="icon-inline hero__video__play svgstore svgstore--play">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#play"/>
+            </svg>
+          </span>
+           Watch the video
+          <span class="icon-inline svgstore svgstore--angle-right">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#angle-right"/>
+            </svg>
+          </span>
+        </a>
+          </div>
+  </div>
+</div>
+  <div class="events text-large">
+  <div class="container container--margin events__container">
+    <ul class="events__list">
+            <li class="events__item">
+        <a href="admission/contact/request_info" target="" class="events__link"><p style="text-align: center;"><strong>Request Information</strong></p></a>
+      </li>
+                  <li class="events__item">
+        <a href="admission/visit" target="" class="events__link"><p style="text-align: center;"><strong>Visit us</strong></p></a>
+      </li>
+                  <li class="events__item">
+        <a href="admission/apply" target="" class="events__link"><p style="text-align: center;"><strong>Apply</strong></p></a>
+      </li>
+          </ul>
+  </div>
+</div>
+    <div class="feature">
+    <div class="feature__container">
+      <div class="feature__image" style="background-image: url(https://www.mtholyoke.edu/sites/default/files/walking-fall-boots.png);"></div>
+      <div class="feature__text">
+        <div class="h2 feature__heading">
+  MoHome and Away: Mount Holyoke is an uncommon community. We continue to strengthen our bonds, support each other and celebrate MoHome at this time.</div>
+        <a href="https://www.mtholyoke.edu/mohome-and-away" class="button button--simple button--simple--white">Learn more.          <span class="icon-inline svgstore svgstore--angle-right">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#angle-right"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+    <div class="blocks blocks--2">
+    <div class="container blocks__container">
+      
+  <div class="blocks__item">
+  <a href="acad">
+    
+  <img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/spif/public/Academice-Excellence-SIF.png?itok=CkI_F9Eh&amp;c=34cf555cb82331f31b985a00b86e6cef" alt="Students working with a biology professor." title="Students working with a biology professor." />  </a>
+  <div class="blocks__text">
+    <h3>
+  <a href="https://www.mtholyoke.edu/acad">Academic Excellence</a></h3>
+    
+  <p>Mount Holyoke provides excellent and distinctive academic programs for students that exemplify and demonstrate the extraordinary value of a liberal arts education.</p>
+  </div>
+</div>
+  <div class="blocks__item">
+  <a href="global">
+    
+  <img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/spif/public/mcgi-intl-internships-SIF-2019.png?itok=vxSLCmUD&amp;c=34cf555cb82331f31b985a00b86e6cef" alt="Photo of a Mount Holyoke student taking part in an international internship" />  </a>
+  <div class="blocks__text">
+    <h3>
+  <a href="https://www.mtholyoke.edu/global">Global Impact</a></h3>
+    
+  <p>Within the spirit and framework of our robust commitment to the liberal arts, Mount Holyoke prepares students to respond to the needs and challenges of a global society.</p>
+  </div>
+</div>
+  <div class="blocks__item">
+  <a href="mwce/news">
+    
+  <img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/spif/public/sustainability-internship-SIF.png?itok=l31QK-BO&amp;c=34cf555cb82331f31b985a00b86e6cef" alt="Two Mount Holyoke students taking part in a sustainability internship." title="Two Mount Holyoke students taking part in a sustainability internship." />  </a>
+  <div class="blocks__text">
+    <h3>
+  <a href="https://www.mtholyoke.edu/mwce/news">Sustainability</a></h3>
+    
+  <p>Mount Holyoke is committed to advancing its core education and research to impact leadership in local and global sustainability and to foster a culture of sustainability on campus.</p>
+  </div>
+</div>
+  <div class="blocks__item">
+  <a href="diversity/news">
+    
+  <img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/spif/public/MHC-Inclusiveness-3.png?itok=FYRJj-4E&amp;c=34cf555cb82331f31b985a00b86e6cef" alt="A group of Mount Holyoke students celebrate Mountain Day" title="A group of Mount Holyoke students celebrate Mountain Day" />  </a>
+  <div class="blocks__text">
+    <h3>
+  <a href="https://www.mtholyoke.edu/diversity/news">Inclusiveness</a></h3>
+    
+  <p>Mount Holyoke sustains an increasingly diverse, global, and inclusive community of students, faculty, and staff in an environment of mutual respect in which all thrive and contribute to the flourishing of others.</p>
+  </div>
+</div>
+    </div>
+  </div>
+    <div class="text-center add-margins">
+          <a class="button" href="https://events.mtholyoke.edu/">
+        View the full calendar of events        <span class="icon-inline svgstore svgstore--angle-right">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#angle-right"/>
+          </svg>
+        </span>
+      </a>
+      </div>
+  
+<div class="entity entity-paragraphs-item paragraphs-item-centered-title" about="" typeof="">
+  <div class="content">
+    
+  <h2 class="field field-name-field-centered-heading field-type-text field-label-hidden">
+    Connect with Mount Holyoke  </h2>
+  </div>
+</div>
+  
+<div class="entity entity-paragraphs-item paragraphs-item-text-paragraph" about="" typeof="">
+  <div class="content">
+    <div class="field field-name-field-image-with-text-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><iframe src="https://www.juicer.io/api/feeds/mountholyokecollege/iframe" style="display: block; margin: 0 auto;" width="90%" height="300" frameborder="0"></iframe></p>
+</div></div></div>  </div>
+</div>
+  
+<div class="entity entity-paragraphs-item paragraphs-item-centered-title" about="" typeof="">
+  <div class="content">
+    
+  <h2 class="field field-name-field-centered-heading field-type-text field-label-hidden">
+    Learn More  </h2>
+  </div>
+</div>
+    <div class="text-center add-margins">
+          <a class="button" href="https://www.mtholyoke.edu/about/why-womens-college">
+        Now more than ever. Discover the top 9 reasons to choose a women's college.        <span class="icon-inline svgstore svgstore--angle-right">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#angle-right"/>
+          </svg>
+        </span>
+      </a>
+      </div>
+  <div class="container highlight-paragraph">
+<div class="blocks blocks--3">
+  <div class="container blocks__container">
+                <div class="blocks__item blocks__item--padding l-6up__1">
+        <div id="node-71467" class="node node-highlight view-mode-highlighted clearfix" about="/highlights/71467/homepage-hl-college-news" typeof="sioc:Item foaf:Document">
+
+  
+  <div class="content">
+            <div class="highlight" style="height: 421px;">
+    <div class="view view-homepage-highlight-field-collection-view view-id-homepage_highlight_field_collection_view view-display-id-default view-dom-id-1bda56cbff8c80d1d5644376215db024">
+        
+  
+  
+      <div class="view-content">
+      <!-- <div class="highlight__container"> -->
+
+            <div class="highlight" style="height: 421px;">
+            
+          <div class="highlight__image"><a href="https://www.mtholyoke.edu/media/mhc-news-events" title="[field_highlight_title]"><img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/620x349_highlight/public/COM_News_Hero_New_0520.jpg?itok=9yl6QnVP&amp;c=78ca1de420e3613c0065c1378b2b22c1" width="620" height="349" alt="Montage image of students and faculty" /></a></div>    
+          <h2 class="highlight__title"><a href="https://www.mtholyoke.edu/media/mhc-news-events">College News</a></h2>    
+          <div class="highlight__lede">Find out what's going on around campus and in the world involving Mount Holyoke faculty, students and alumnae.</div>          </div>
+    <!-- </div> -->
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+<span property="dc:title" content="Homepage HL: College News" class="rdf-meta element-hidden"></span>  </div>
+</div><!-- /.node -->
+      </div>
+                <div class="blocks__item blocks__item--padding l-6up__2">
+        <div id="node-73090" class="node node-highlight view-mode-highlighted clearfix" about="/highlights/73090/giving-hl-access-opportunity-inclusion" typeof="sioc:Item foaf:Document">
+
+  
+  <div class="content">
+            <div class="highlight" style="height: 421px;">
+    <div class="view view-homepage-highlight-field-collection-view view-id-homepage_highlight_field_collection_view view-display-id-default view-dom-id-5d8804c85eb9b430df61a7958d9daf22">
+        
+  
+  
+      <div class="view-content">
+      <!-- <div class="highlight__container"> -->
+
+            <div class="highlight" style="height: 421px;">
+            
+          <div class="highlight__image"><a href="https://hubs.ly/H0wYd5H0" title="[field_highlight_title]"><img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/620x349_highlight/public/Five-Scholarship-Destinations.png?itok=CoInrmoC&amp;c=c7dd58dddad1124469a0d8a0470b5939" width="620" height="349" alt="Support Scholarship Aid" /></a></div>    
+          <h2 class="highlight__title"><a href="https://hubs.ly/H0wYd5H0">Access. Opportunity. Inclusion.</a></h2>    
+          <div class="highlight__lede">Five scholarship destinations. Five ways to invest in MHC students. Make your gift to The Mount Holyoke Fund in support of scholarship aid today.</div>          </div>
+    <!-- </div> -->
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+<span property="dc:title" content="Giving HL: Access. Opportunity. Inclusion." class="rdf-meta element-hidden"></span>  </div>
+</div><!-- /.node -->
+      </div>
+                <div class="blocks__item blocks__item--padding l-6up__3">
+        <div id="node-72089" class="node node-highlight view-mode-highlighted clearfix" about="/highlights/72089/homepage-hl-alumnae-connections" typeof="sioc:Item foaf:Document">
+
+  
+  <div class="content">
+            <div class="highlight" style="height: 421px;">
+    <div class="view view-homepage-highlight-field-collection-view view-id-homepage_highlight_field_collection_view view-display-id-default view-dom-id-c18adcdf224f8d7c7cba299df6d2666b">
+        
+  
+  
+      <div class="view-content">
+      <!-- <div class="highlight__container"> -->
+
+            <div class="highlight" style="height: 421px;">
+            
+          <div class="highlight__image"><a href="https://alumnae.mtholyoke.edu/poweredbymountholyoke-strengthinconnections/" title="[field_highlight_title]"><img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/620x349_highlight/public/PbMHC_AlumnaeConnections_16-9.png?itok=VxXNS3_P" width="620" height="349" alt="Strength in Alumnae Connections: Powered by Mount Holyoke" /></a></div>    
+          <h2 class="highlight__title"><a href="https://alumnae.mtholyoke.edu/poweredbymountholyoke-strengthinconnections/">Strength in Alumnae Connections</a></h2>    
+          <div class="highlight__lede">The Alumnae Association has launched a renewed focus on providing more opportunities for alums to engage with each other in a virtual landscape.</div>          </div>
+    <!-- </div> -->
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+<span property="dc:title" content="Homepage HL: Alumnae Connections " class="rdf-meta element-hidden"></span>  </div>
+</div><!-- /.node -->
+      </div>
+      </div>
+</div>
+</div>
+</div>
+<span property="dc:title" content="Homepage" class="rdf-meta element-hidden"></span>    </div>
+  </div>
+      
+  <footer class="footer">
+  <div class="footer__top">
+    <div class="container footer__top__container">
+      <a href="#" class="footer__logo-small">
+        <span class="svgstore svgstore--logo-small">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <title>Mount Holyoke College</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#logo-small"/>
+          </svg>
+        </span>
+      </a>
+      <a href="#" class="footer__logo">
+        <span class="svgstore svgstore--logo">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <title>Mount Holyoke College</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#logo"/>
+          </svg>
+        </span>
+      </a>
+      <div class="footer__title"></div>
+        <div class="region region-footer-social">
+    <div id="block-views-contact-info-social-media" class="block block-views first last odd count-1">
+
+      
+  <div class="view view-contact-info view-id-contact_info view-display-id-social_media view-dom-id-afba11e80bd4a5ffcef6617970fa79e6">
+        
+  
+  
+      <div class="view-content">
+        <div class="field-name-field-social-media">
+      
+          <div class="field field-name-field-twitter field-type-link-field field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://twitter.com/mtholyoke" class="ss-icon ss-social-circle" target="_top" title="Homepage on Twitter">Twitter</a></div></div></div><div class="field field-name-field-facebook field-type-link-field field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.facebook.com/mountholyokecollege" class="ss-icon ss-social-circle" target="_top" title="Homepage on Facebook">Facebook</a></div></div></div><div class="field field-name-field-youtube field-type-link-field field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.youtube.com/user/mountholyokecollege" class="ss-icon ss-social-circle" target="_top" title="Homepage on YouTube">YouTube</a></div></div></div><div class="field field-name-field-instagram field-type-link-field field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.instagram.com/mtholyoke/" class="ss-icon ss-social-circle" title="Homepage on Instagram">Instagram</a></div></div></div><div class="field field-name-field-linkedin field-type-link-field field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.linkedin.com/school/mount-holyoke-college/" class="ss-icon ss-social-circle" target="_top" title="Homepage on LinkedIn">LinkedIn</a></div></div></div>    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+  </div>
+      <!-- <ul class="footer__social">
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <span class="svgstore svgstore--twitter">
+              <svg>
+                <title>Twitter</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#twitter"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <span class="svgstore svgstore--facebook">
+              <svg>
+                <title>Facebook</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#facebook"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <span class="svgstore svgstore--flickr">
+              <svg>
+                <title>Flickr</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#flickr"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <span class="svgstore svgstore--youtube">
+              <svg>
+                <title>YouTube</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#youtube"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <span class="svgstore svgstore--tumblr">
+              <svg>
+                <title>Tumblr</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#tumblr"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul> -->
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom__container">
+      <div class="footer__info">
+        <!-- <div class="footer__info__block">
+          <h3 class="footer__heading">Contact Us:</h3>
+          <p><strong>Fatoumata Gadjigo, Administrative Assistant</strong><br>Phone <a href="#">413-538-2072</a></p>
+          <p>Dwight Hall (first floor)<br>Mount Holyoke College<br>South Hadley, Massachusetts 78910</p>
+        </div>
+        <div class="footer__info__block">
+          <h3 class="footer__heading">Our Hours:</h3>
+          <p><strong>Monday through Friday: 8:30am to 5:00pm</strong><br>To schedule an appointment with a McCulloch Center staff member, please call our office. We do not schedule appointments via email.</p>
+        </div> -->
+          <div class="region region-footer-contact-info">
+    <div id="block-views-109857f7ebde80178c5699ef01e25e17" class="block block-views first odd count-1">
+
+        <h2 class="block__title block-title">Contact Us</h2>
+    
+  <div class="view view-contact-info view-id-contact_info view-display-id-person_location_hours view-dom-id-cbd006c620b6447e8f280be63466c6be">
+        
+  
+  
+      <div class="view-content">
+        <div>
+      
+  <div class="views-field views-field-field-phone-numbers">        <div class="field-content">Phone <a href="tel://+14135382000" rel="nofollow">413-538-2000</a></div>  </div>  
+  <div class="views-field views-field-field-showstreet">        <div class="field-content">Mount Holyoke College<br />
+50 College Street<br />
+South Hadley, MA 01075</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-views-341cd5548ed636ed5282e37f0aa1daba" class="block block-views even count-2">
+
+      
+  <div class="view view-image-callout-random-page- view-id-image_callout_random_page_ view-display-id-section_random_image_block view-dom-id-658e1e84e2d69ba1505362ffc2c1089a">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-sidebar-image-multiple">        <div class="field-content"><a href="https://map.mtholyoke.edu/"><img typeof="foaf:Image" src="https://www.mtholyoke.edu/sites/default/files/styles/image_callout/public/random/images/campus-map-300x200.png?itok=S-7syIC8" width="300" height="200" alt="Campus Map" /></a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-block-38" class="block block-block last odd count-3">
+
+      
+  <div style="color: #fff; clear: both; font-size: .8em; margin-top: 1em;"><a href="https://www.mtholyoke.edu/copyright">Copyright © 2020 Trustees of Mount Holyoke College</a> | <a href="/policies/digital-privacy-statement">Digital Privacy Statement</a> | <a href="/policies/website-terms-and-conditions-use">Terms of Use</a></div>
+<div style="color: #fff; clear: both; font-size: .8em; margin-top: 1em;"><strong>Non-Discrimination Policy</strong> <br />Mount Holyoke College is a women’s college that is gender diverse. The College is committed to providing equal access and opportunity in employment and education to all employees and students. In compliance with state and federal law, Mount Holyoke College does not discriminate on the basis of race, ethnicity, color, genetic information, sex, national or ethnic origin, religion, age, physical or mental disability, marital status, sexual orientation, pregnancy, gender identity or expression, ancestry, veteran or military status, or any other legally protected status under federal, state or local law.</div>
+
+</div>
+  </div>
+          <div class="region region-footer-login">
+    <div id="block-simplesamlphp-auth-0" class="block block-simplesamlphp-auth first last odd count-1">
+
+        <h2 class="block__title block-title">simpleSAMLphp login</h2>
+    
+  <div id="shib_login_url"><a href="/saml_login?destination=node/71495">Drupal Login</a></div>
+</div>
+  </div>
+      </div>
+      <!-- <ul class="footer__nav">
+        <li><a href="#">McCulloch Center for Global Initiatives</a></li>
+        <li><a href="#">Miller Worley Center for the Environment</a></li>
+        <li><a href="#">Weissman Center for Leadership</a></li>
+      </ul> -->
+        <div class="region region-footer-nav">
+    <div id="block-menu-menu-homepage-footer-nav" class="block block-menu first last odd count-1" role="navigation">
+
+        <h2 class="block__title block-title">Homepage Footer Nav</h2>
+    
+  <ul class="menu"><li class="level-1"><a href="/contact" class="menu__link">Contact</a></li>
+<li class="level-1"><a href="/offices" class="menu__link">Offices</a></li>
+<li class="level-1"><a href="https://www.mtholyoke.edu/hr/employment" class="menu__link">Employment</a></li>
+<li class="level-1"><a href="/login" class="menu__link">Login</a></li>
+</ul>
+</div>
+  </div>
+      <a href="#" class="footer__logo-bottom">
+        <span class="svgstore svgstore--logo">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <title>Mount Holyoke College</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/centers/dist/img/svgstore.svg#logo"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>
+</div>
+  <script src="https://www.mtholyoke.edu/sites/default/files/js/js_2KlXA4Z5El1IQFVPxDN1aX5mIoMSFWGv3vwsP77K9yk.js"></script>
+  <script src="/sites/all/themes/centers/dist/js/script.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"c6c22d56ae","applicationID":"86686438","transactionName":"NAADYEcEC0pXAEUKWg1KNEZcSkpQWAdUGxsTDRE=","queueTime":0,"applicationTime":26,"atts":"GEcAFg8eGEQ=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<script type="text/javascript" id="">(function(b){var c=window.GoogleAnalyticsObject||"ga",a=window[c],k=window.console||{error:function(){}},e,f,d,h=function(a){try{return a[0]&amp;&amp;a[0].substr&amp;&amp;"gtm."==a[0].substr(0,4)||!1!==b(a)}catch(c){k.error(c)}},g=function(){var a,b=window[c];window[c]=function(){if(h(a=[].slice.call(arguments)))return b.apply(b,a)};for(e in b)b.hasOwnProperty(e)&amp;&amp;(window[c][e]=b[e])};a||(a=window[c]=function(){(window[c].q=window[c].q||[]).push(arguments)},a.l=1*new Date);if(a.getAll)g();else if(a.l){if(a.q){f=
+[];for(d=0;d&lt;a.q.length;d++)h([].slice.call(a.q[d]))&amp;&amp;f.push(a.q[d]);a.q=f}else a.q=[];a(g);g()}else throw Error("spyGoogleAnalytics aborting; `"+c+"` not the GA object.");})(function(b){if("send"==b[0]&amp;&amp;"event"==b[1]&amp;&amp;("ShareThis"==b[2]||"addthis"==b[2]))return dataLayer.push({event:"socialShare via "+b[2],socialShare:{network:b[3],url:b[4]}}),!1});</script></body></html>

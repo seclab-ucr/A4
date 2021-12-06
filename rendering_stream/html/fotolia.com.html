@@ -1,0 +1,208 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Fotolia is now Adobe Stock</title>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"04651d9c35",applicationID:"8612617"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><meta name="description" content="Search 253 million royalty-free stock photos, EPS vector art illustrations and HD video footage. Download creative files from $0.74! The best creative source for presentations and marketing projects!" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Fotolia is now Adobe Stock" />
+<meta property="og:description" content="Search 253 million royalty-free stock photos, EPS vector art illustrations and HD video footage. Download creative files from $0.74! The best creative source for presentations and marketing projects!" />
+<meta property="og:url" content="https://www.fotolia.com/" />
+<meta property="og:image" content="https://s.ftcdn.net/r/v2013/9a964fa1ec560c29958fcd461fe3559f80652000/pics/all/hab/logo_social.png" />
+<link rel="stylesheet" type="text/css" href="https://s.ftcdn.net/r/v2013/62be3646ede7126f57e92f94ee1875215b2d8ab7/css/all_hashes_ssl.min.css" media="all" />
+<!--[if (IE 8)|(IE 9)]>
+<link rel="stylesheet" type="text/css" href="https://s.ftcdn.net/r/v2013/924d9648fd0dac571aaf5fd0b8264c253f8a9b3f/css/all_2_hashes_ssl.min.css" media="all" />
+<![endif]-->
+<script type="text/javascript" src="https://s.ftcdn.net/r/v2013/5032fec4abbbb3f848e960be805c7cb930c160c8/js/all.min.js"></script>
+<!--[if lte IE 9]>
+<link rel="stylesheet" type="text/css" href="https://s.ftcdn.net/r/v2013/fe0aca816a3dbe1b330c2b898d4b5762d6872607/css/ie_fixes_hashes_ssl.min.css" media="screen" />
+<meta http-equiv="imagetoolbar" content="no" />
+<![endif]-->
+<link rel="icon" href="https://s.ftcdn.net/r/v2013/ad19a24ea1f0654450a1bceacefc7d26ef26099f/pics/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="https://s.ftcdn.net/r/v2013/ad19a24ea1f0654450a1bceacefc7d26ef26099f/pics/favicon.ico" type="image/x-icon" />
+<link rel="image_src" href="https://s.ftcdn.net/r/v2013/438457544e772dd5215121c4255ea8c053bb10e9/pics/all/hab/fotolia_logo.png" />
+<link href="https://plus.google.com/+fotolia" rel="publisher" />
+<link rel="search" type="application/opensearchdescription+xml" title="Fotolia [www.fotolia.com]" href="https://s.ftcdn.net/r/v2010/b4c54c5fc3f00c4fb95c792a2af49dfbad2c53bc/xml/search-plugin/www_search_plugin.xml" />
+<meta name="google" content="nositelinkssearchbox" />
+<link rel="apple-touch-icon-precomposed" href="https://s.ftcdn.net/r/v2013/d751704272c6af3949c072dd2ce3920b462d6781/pics/all/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://s.ftcdn.net/r/v2013/d751704272c6af3949c072dd2ce3920b462d6781/pics/all/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://s.ftcdn.net/r/v2013/16d1690f4f44c7c392f49979abefe55433ff37e7/pics/all/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="https://s.ftcdn.net/r/v2013/16d1690f4f44c7c392f49979abefe55433ff37e7/pics/all/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://s.ftcdn.net/r/v2013/6c7fd393b7586b93bd5c40136b0096e0dae16f5c/pics/all/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://s.ftcdn.net/r/v2013/6c7fd393b7586b93bd5c40136b0096e0dae16f5c/pics/all/img/apple-touch-icon-152x152.png" />
+</head>
+<body class="ftl-initialized" style=""><div id="ftl-javascript-data" class="display-none">
+{"interception":{"ii":"-1"},"fotolia":{"host_base":"fotolia.com"}}</div>
+<div class="closure-landing-page">
+<header>
+<nav class="black-nav-bar">
+<div class="padding-right-20 padding-left-20">
+<div class="left-nav">
+<ul class="nav-inline">
+<li class="nav-item">
+<a href="https://stock.adobe.com/images?as_content=lp_header_images&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link nav-link--less-left-padding">Images</a>
+</li>
+<li class="nav-item">
+<a href="https://stock.adobe.com/video?as_content=lp_header_videos&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link">Videos</a>
+</li>
+<li class="nav-item">
+<a href="https://stock.adobe.com/templates?as_content=lp_header_templates&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link">Templates</a>
+</li>
+<li class="nav-item">
+<a href="https://stock.adobe.com/3d-assets?as_content=lp_header_3d&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link">3D</a>
+</li>
+<li class="nav-item">
+<a href="https://stock.adobe.com/premium?as_content=lp_header_premium&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link">Premium</a>
+</li>
+<li class="nav-item">
+<a href="https://stock.adobe.com/editorial?as_content=lp_header_editorial&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link">Editorial</a>
+</li>
+</ul>
+</div>
+<div class="right-nav">
+<ul class="nav-inline">
+<li class="nav-item">
+<img alt="" src="https://s.ftcdn.net/r/v2013/f7c978b1652f27bff0ffda77d3ef13950873c9ab/pics/all/hab/icon_to_cloud.png" />
+</li>
+<li class="nav-item">
+<a href="https://contributor.stock.adobe.com/?as_content=lp_sellimages&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="nav-link nav-link--less-right-padding">Sell images</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="row-large margin-top-0">
+<div class="col-24 header-landing header-closure-image">
+<div class="header-icons">
+<div class="left-icon">
+<img src="https://s.ftcdn.net/r/v2013/b618f82ebd62aa1571a096d6ee18d960aa95b65d/pics/all/page/interception/stock_logo_bw.png" /></div>
+</div>
+<div class="content-center">
+<div class="text-content-header">
+<p class="big margin-bottom-10">Fotolia is now Adobe Stock</p>
+<p class="small padding-bottom-20 margin-top-15">Get all the best from Fotolia and much more</p><div class="form-content">
+<form class="js-form-landing" action="https://stock.adobe.com/?as_channel=dpcft&amp;as_source=ft_web&amp;as_campaign=www_interception&amp;as_campclass=brand&amp;as_content=lp_search" method="get">
+<div class="search-group">
+<div class="input-box">
+<div class="container-table">
+<div class="container-table-cell no-stretch">
+<div class="select-box js-select-box select-box-inside gray">
+<select name="" id="" class="js-select_content_type">
+ <option value="content_type:all" label="All">All</option>
+<option value="content_type:photo" label="Images">Images</option>
+<option value="content_type:video" label="Video">Video</option>
+<option value="content_type:template" label="Template">Template</option>
+<option value="content_type:3d" label="3D">3D</option>
+ </select>
+
+</div>
+</div>
+<div class="container-table-cell container-full container-relative">
+<input name="k" class="input--silent input--full light input--xlarge" type="text" placeholder="Search Adobe Stock" />
+</div>
+<div class="container-table-cell no-stretch">
+<div class="padding-right-large">
+<div class="button-box input-button-box gray">
+<button type="submit"></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-24 blue-bar">
+<div class="container-inline-block">
+<div class="container-table">
+<div class="container-table-cell container-table-cell-blue-bar">
+<p>Are you new to Adobe Stock? Get 10 free images</p>
+</div>
+<div class="container-table-cell container-table-cell-blue-bar">
+<div class="button-blue-bar">
+<a href="https://stock.adobe.com/promo/firstmonthfree?as_channel=dpcft&amp;as_source=ft_web&amp;as_campaign=www_interception&amp;as_campclass=brand&amp;as_content=lp_bluebar" class="blue-button blue-button--with-border">Start now</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-24 grid-content"><div class="text-description"><div class="title"><p>Stock like only Adobe can</p></div><div class="third-title"><p>Explore curated collections of high-quality images, graphics, videos, and more from the world's leading creative community.</p></div><div class="line padding-top-20"><hr /></div><div class="cards"><a class="card" href="https://stock.adobe.com/collections/odrm7yZGIpUayOHrmQdrQxQsUq41xelb?as_content=lp_gallery_business&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/c47542b103b874badf16fdc3efbc6b6b0c89b061/pics/all/page/interception/galeries-business.jpg" /><div class="card-description"><p class="card-title">Business</p><p class="card-text">Modern work spaces.</p></div></a><a class="card" href="https://stock.adobe.com/collections/Z8TatSqvCSZ3iVC2iLlTrXKsWgL0N5vn?as_content=lp_gallery_food&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/1fb799505bc9139804f6165d74896d992f44e0c0/pics/all/page/interception/galeries-food.jpg" /><div class="card-description"><p class="card-title">Food</p><p class="card-text">Flavours for every taste.</p></div></a><a class="card" href="https://stock.adobe.com/collections/UwJqybUpUl4T1JEaPwKjdQ0owEF5jew3?as_content=lp_gallery_travel&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/91af01f6330506aa8ca8baed9e4b4e4e7947b430/pics/all/page/interception/galeries-travel.jpg" /><div class="card-description"><p class="card-title">Travel</p><p class="card-text">Passport to inspiration.</p></div></a></div><div class="cards"><a class="card" href="https://stock.adobe.com/collections/chmOnQBeLBAs3XNHG80DTWF25wKBCU8e?as_content=lp_gallery_pets&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/e48ef92c2769bdb9e1786f7eb0a80b1a3d6fd763/pics/all/page/interception/galeries-pets.jpg" /><div class="card-description"><p class="card-title">Pets</p><p class="card-text">Beloved furry friends.</p></div></a><a class="card" href="https://stock.adobe.com/collections/ol5hqnJmjit7YaabLBWFixXZl2LRH0jw?as_content=lp_gallery_family&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/4b908ad846cb7a78b8a1de932082fdac8dc728b4/pics/all/page/interception/galeries-family.jpg" /><div class="card-description"><p class="card-title">Family</p><p class="card-text">Moments with loved ones.</p></div></a><a class="card" href="https://stock.adobe.com/collections/Bu15ac8qFsMkiARqRquUgkTsY2yFAphB?as_content=lp_gallery_nature&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand"><img src="https://s.ftcdn.net/r/v2013/7dba160b8ae2f1ae106a170cc0197efbf45bbfa4/pics/all/page/interception/galeries-nature.jpg" /><div class="card-description"><p class="card-title">Nature</p><p class="card-text">Beauty from the outdoors.</p></div></a></div></div></div><div class="col-24 content content--right"><div class="container-center"><div class="row"><div class="col-12"><div class="text-content"><p class="title-closure upper">Finding the perfect image is perfectly simple</p><br /><p class="texte-closure">With visual search powered by Adobe Sensei you can drop an image into the search bar to instantly find similar ones. Use aesthetic filters to fine tune your search by copy space, frame and duration rates, or depth of field. The “find similar” feature helps you refine your results even further.</p></div></div><div class="col-12"><div class="image-content closure-image-content-bw"></div></div></div></div></div><div class="col-24 content"><div class="container-center"><div class="row"><div class="col-12"><div class="image-content image-content--right-closure-bw"></div></div><div class="col-12"><div class="text-content text-content--right"><p class="title-closure upper">Easy workflow</p><br /><p class="texte-closure">Adobe Stock assets are available right inside your favorite apps, from Microsoft PowerPoint to Adobe Photoshop. All so you can spend less time searching, and more time creating.</p></div></div></div></div></div><div class="col-24 promotion-blade-content">
+<p>Retrieve Fotolia collections and much more on Adobe Stock</p>
+<p>Get started with 10 free images and choose from a variety of credit packs and subscriptions.</p>
+<div class="button-blue-bar">
+<a href="https://stock.adobe.com/?as_content=lp_go_to_stock&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="blue-button">Go to Adobe Stock</a>
+</div>
+</div>
+<div class="col-24 migration-blade-content">
+<div class="migration-cards">
+<div class="migration-card">
+<div class="migration-card-info">
+<img alt="" src="https://s.ftcdn.net/r/v2013/b4d694d65e2236cc183a49bcfae2f3d1170be737/pics/all/page/interception/user.svg" />
+<p>Fotolia members</p>
+<p>Eligible members can transfer their Fotolia account to Adobe Stock.</p>
+</div>
+<div>
+<a href="https://stock.adobe.com/fotolia/login?as_content=lp_migration_flow&amp;as_campaign=www_interception&amp;as_channel=dpcft&amp;as_source=ft_web&amp;as_campclass=brand" class="button-primary">Transfer your account</a>
+</div>
+</div>
+<div id="contact" class="col-24 form-container">
+<div id="feedbacks-container">
+<div class="feedbacks-inner">
+</div>
+</div>
+<div class="form-content">
+<h3 class="h3">Contact us</h3>
+<form id="contact-form" action="/#contact" method="post">
+<label class="form-closure" for="email">Email</label>
+<input type="text" name="email" id="email" value="" class="text-area-small" placeholder="Email" />
+<label class="form-closure" for="subject">Subject</label>
+<input type="text" name="subject" id="subject" value="" class="text-area-small" placeholder="Subject" />
+<label class="form-closure" for="body">Message</label>
+<textarea name="body" id="body" class="text-area-big" placeholder="Message" rows="24" cols="80"></textarea>
+<input type="hidden" name="send_message_submit" value="true" id="send_message_submit" /><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeEdiwUAAAAAJRR2dgwJRrTpzg2kMqHcMmT-cmw&amp;co=aHR0cHM6Ly93d3cuZm90b2xpYS5jb206NDQz&amp;hl=en&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;size=invisible&amp;cb=c4u9uwbw29ta" width="256" height="60" role="presentation" name="a-i70wmi2dr6cs" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><button name="send_message_submit" id="send_message_submit" value="Submit" class="button g-recaptcha" data-sitekey="6LeEdiwUAAAAAJRR2dgwJRrTpzg2kMqHcMmT-cmw" data-size="invisible" data-callback="recaptchaValidated" type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="col-24 content content--right">
+<div class="text-content container-center">
+<p class="title-closure center-content upper">Fotolia is now closed, learn more about Adobe Stock and the Fotolia Closure</p>
+<div class="row">
+<div class="accordion-wrapper js-accordion two-cols" id="faq-section" data-block="accordion">
+<div class="col-12 column">
+<div class="accordion__item">
+<div class="accordion__title accordion__title--secondary">
+<span class="texte-closure">Why has Fotolia closed?</span>
+</div>
+<div class="accordion__content accordion__content--secondary">
+<p class="texte-closure texte-closure--small">After fourteen years in business, Fotolia has transitioned its members to Adobe Stock on a voluntary basis in order to offer them a better and more streamlined service as well as deeper integration within Adobe Creative Cloud applications.</p>
+</div>
+</div>
+</div>
+<div class="column col-12">
+<div class="accordion__item">
+<div class="accordion__title accordion__title--secondary">
+<span class="texte-closure">What is the Transfer and Migration offer?</span>
+</div>
+<div class="accordion__content accordion__content--secondary">
+<p class="texte-closure texte-closure--small">
+The Adobe Stock Transfer and Migration Offer gives eligible Fotolia members the opportunity to convert their unused Fotolia credits to Adobe Stock credits.
+Additionally, your Fotolia license history, lightboxes, galleries, and other account information will transfer to Adobe Stock account.
+</p>
+<p class="texte-closure texte-closure--small">
+Customers who need more robust features and grants of rights should consider an Adobe Stock enterprise plan.
+Your Fotolia license history will still be transferred to your new Adobe Stock enterprise account with the additional benefits of the enterprise admin console.
+Please contact your local account manager to learn more.
+If you are unsure of who your local account manager may be, the Fotolia customer service team will be happy to connect you.
+</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&amp;render=explicit" async="" defer=""></script>
+</div>
+<div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div><div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"><iframe title="recaptcha challenge" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;k=6LeEdiwUAAAAAJRR2dgwJRrTpzg2kMqHcMmT-cmw&amp;cb=4wiil563kpqu" name="c-i70wmi2dr6cs" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>

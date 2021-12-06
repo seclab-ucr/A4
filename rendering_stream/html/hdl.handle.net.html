@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Handle Proxy</title>
+<style>
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+</style>
+</head>
+<body bgcolor="#ffffff"> <basefont size="3" />
+
+<img src="/static/images/res_tool.gif" width="270" height="40" alt="Handle.net Logo" />
+
+<h3 align="center">Resolve a Handle and View the Values</h3>
+
+<p align="left">The web form below will enable you to resolve individual
+handles and view their associated values. It uses a proxy server, which
+understands both  the Handle protocol and HTTP protocol.</p>
+
+<p align="left">If you type a handle into the text box, and that handle has a
+URL associated with it as one of its values, the proxy server will instruct
+your browser to display the location of that URL.  If you select
+"Don't Redirect to URLs", the proxy will display the handle record.</p>
+
+<p align="left">The Handle proxy server uses caching to speed handle
+resolution. If you check "Authoritative Query", the proxy will bypass
+the cache, go directly to the responsible handle server, and then refresh the
+cache with the data for that handle. </p>
+
+<p align="left">Simply appending a handle to the URL 
+<a href="http://hdl.handle.net/">http://hdl.handle.net/</a> and giving the
+string to a browser as a location will also resolve that handle.  
+The proxy also supports a REST API, returning handle records in JSON format.
+<a href="/help.html">Further documentation is available here.</a></p>
+
+<form action="/" method="POST">
+
+<center><table border="0"><tbody><tr>
+
+<td align="center">
+
+Handle: <input id="hdl" type="text" name="hdl" value="" size="45" />
+</td>
+</tr>
+<tr>
+<td align="LEFT" valign="TOP">
+
+<input type="checkbox" name="auth" value="" />Authoritative Query<br />
+<input type="checkbox" name="noredirect" value="" />Don't Redirect to URLs<br />
+<input type="checkbox" name="ignore_aliases" value="" />Don't Follow Aliases
+<br /><br /><input type="SUBMIT" value="Submit" /></td>
+
+</tr></tbody></table></center></form>
+
+<p><strong><em><small>
+<a href="/help.html">Handle Proxy Server Documentation</a><br />
+<a href="http://www.handle.net/">Handle.net Web Site</a>
+</small></em></strong><br />
+</p><p><i>Contact hdladmin@cnri.reston.va.us with your handle questions and comments</i>.
+
+<script>
+    document.getElementById('hdl').focus();
+</script>
+
+
+
+
+</p></body></html>

@@ -1,0 +1,1681 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <title>Official NORAD Santa Tracker</title>
+    <meta name="description" content="For over 60 years, NORAD and its predecessor, the Continental Air Defense Command (CONAD) have tracked Santa’s flight. Follow Santa as he makes his magical journey!" />
+    <meta name="keywords" content="NORAD Tracks Santa" />
+    <meta name="application-name" content="NORAD Tracks Santa" />
+    <meta property="og:image" content="http://www.noradsanta.org/images/static/NTS_Logo_with_Border.png" />
+    <meta property="og:title" content="Official NORAD Santa Tracker" />
+    <meta property="og:description" content="Follow Santa Claus as he makes his magical journey around the world!" />
+    <link rel="image_src" type="images/jpg" href="http://www.noradsanta.org/images/static/NTS_Web_Graphic_thumb.jpg" />
+    <meta name="msApplication-ID" content="NORADPublicAffairs.NORADTracksSanta" />
+    <meta name="msApplication-PackageFamilyName" content="NORADPublicAffairs.NORADTracksSanta_bzcj0d5cg39gj" />
+    <meta name="DCSdir.ClearVars" content="WT.z_clear" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <meta name="msapplication-cortanavcd" content="/script/vcd.xml" />
+    <link rel="manifest" href="/script/manifest.json" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Standard Style Libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="lib/jscrollpane/style/jquery.jscrollpane.min.css" />
+    <!-- END Standard Style Libraries -->
+    <!-- Custom Style Libraries -->
+    <link rel="stylesheet" type="text/css" href="style/cj-preloader-eight.css" /> <!-- Example Eight CSS -->
+    <link rel="stylesheet" type="text/css" href="style/dropdownarrow.css" /> <!-- Example Eight CSS -->
+    <link rel="stylesheet" type="text/css" href="style/weather.css" />
+    <link rel="stylesheet" type="text/css" href="script/countdown/jquery.countdown.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/drawling.css" />
+    <!--[if lt IE 10]>
+        <link href="style/style-ie9.css" rel="stylesheet" />
+    <![endif]-->
+    <!--[if IE 8]>
+        <style>.letsGoBackground {display : none !important;}</style>
+        <link href="style/style-ie8.css" rel="stylesheet" />
+    <![endif]-->
+    <!-- END Custom Style Libraries -->
+    <!-- Standard JavaScript Libraries (from Libman) -->
+    <script src="https://connect.facebook.net/en_US/sdk.js?hash=f34396208e8f17d4587368c80854a84c&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;kidDirectedSite=1&amp;version=v2.0"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--<script href="lib/jquery/jquery.min.js"></script>-->
+
+    <script src="lib/modernizr/modernizr.min.js"></script>
+    <script src="lib/jquery-cookie/jquery.cookie.min.js"></script>
+    <script src="lib/jquery-parallax/jquery-parallax-min.js"></script>
+    <script src="lib/jquery-localize/jquery.localize.min.js"></script>
+    <!--<script href="lib/jqueryui/jquery-ui.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="lib/jquery-color/jquery.color.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/instafeed/instafeed.min.js"></script>
+    <script src="lib/jscrollpane/script/jquery.jscrollpane.min.js"></script>
+    <!-- END JavaScript Libraries -->
+    <!-- JavaSCript Libraries (Not from Libman) -->
+    <script src="script/dropdownarrow.js"></script>
+    <script src="script/jquery.xdomainrequest.min.js"></script>
+    <script src="script/jquery.nprogress.min.js"></script>
+    <script src="script/jquery.touchSwipe.min.js"></script>
+    <script src="script/masonry.pkgd.min.js"></script>
+    <script src="script/imagesloaded.pkgd.min.js"></script>
+    <script src="script/jquery.mobile.custom.min.js"></script>
+    <script src="script/disclaimer.js"></script>
+    <script src="script/jquery.bpopup.min.js"></script>
+    <script src="script/windows.js"></script> <!-- Windows 10 -->
+    <script src="script/console.shim.js"></script>
+    <script src="script/cj-preloader.js"></script> <!-- Core Plugin Script -->
+    <script src="script/TimelineMax.min.js"></script>
+    <script src="script/countdown/jquery.plugin.js"></script>
+    <script src="script/countdown/jquery.countdown.min.js"></script>
+    <!--CDN links for the latest TweenLite, CSSPlugin, and EasePack-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script crossorigin="anonymous" src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script><meta name="react-scroll-to-bottom:version" content="4.0.0" /><meta name="react-film" content="version=3.0.0" /><meta name="web-speech-cognitive-services" content="version=7.0.2-master.6004e4b" /><meta name="botframework-directlinespeech:version" content="4.11.0" /><meta name="botframework-webchat:bundle:variant" content="full" /><meta name="botframework-webchat:bundle:version" content="4.11.0" /><meta name="botframework-webchat:core:version" content="4.11.0" /><meta name="botframework-webchat:ui:version" content="4.11.0" />
+    <!-- END Custom JS Libraries (Not from Libman) -->
+    <!--meta-->
+    <meta charset="UTF-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chromsvge=1'><![endif]-->
+    <!-- (Microsoft) App Insights Script -->
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f &amp;&amp; f(config, r, u, e, o); return s !== !0 &amp;&amp; t["_" + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: "b0f21ede-b28d-4fba-b257-2dafd74819b3"
+        });
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script><script src="https://az416426.vo.msecnd.net/scripts/a/ai.0.js"></script>
+    <!-- END (Microsoft) App Insights Script -->
+    <!-- IE Mobile tweak  (via MattStow via TimKadlec) -->
+    <script>
+        try {
+            if (document.domain.split('.').length &gt; 2) {
+                document.domain = document.domain.substr(document.domain.indexOf(".") + 1);
+            }
+        } catch (e) { }
+        (function () {
+            if ("-ms-user-select" in document.documentElement.style &amp;&amp; navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement("style");
+                msViewportStyle.appendChild(
+                    document.createTextNode("@-ms-viewport{width:auto!important}")
+                );
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+        })();
+    </script>
+    <!-- END IE Mobile tweak  (via MattStow via TimKadlec) -->
+<style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&gt;div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&gt;span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body class="DISABLEloading" oncontextmenu="return false;">
+    <!-- FB for likes footer -->
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;kidDirectedSite=1&amp;version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+            (document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- VISIBLE PRELOADER, PLACE THIS RIGHT BEFORE THE PAGE'S CLOSING BODY TAG -->
+    <!-- I have no idea what this does (Casey) -->
+    <div id="cj-preloader" style="text-align: center; z-index: 2147483647; display: none;" class="cj-hide-preloader">
+        <img class="loaderLogo" src="/images/static/65yr/NTS 65th Anniversary logo.png" style="margin-top:5%;" />
+        <div class="cj-bar">
+            <div class="cj-stripes" style="width: 200px;">
+                <span class="cj-lines cj-animation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+    <div id="root-container" style="">
+        <!-- HUD Controls -->
+        <!-- LOCALIZATION LANGUAGES -->
+        <div class="languageContainer">
+            <ul id="langSelDrop" class="langSelDrop">
+                <li>
+                    <span id="langSelDropCurrentValue">English</span>
+                    <ul class="langSelDropList--hide">
+                        <li class="langOpt" data-lang-str="en" style="cursor: pointer; padding-left:0px; margin-left:0px;">English</li>
+                        <li class="langOpt" data-lang-str="es" style="cursor: pointer; padding-left:0px; margin-left:0px;">Español</li>
+                        <li class="langOpt" data-lang-str="de" style="cursor: pointer; padding-left:0px; margin-left:0px;">Deutsch</li>
+                        <li class="langOpt" data-lang-str="fr" style="cursor: pointer; padding-left:0px; margin-left:0px;">Français</li>
+                        <!--<li class="langOpt" data-lang-str="hi" style="cursor: pointer; padding-left:0px; margin-left:0px;">हिन्दी</li>-->
+                        <li class="langOpt" data-lang-str="it" style="cursor: pointer; padding-left:0px; margin-left:0px;">Italiano</li>
+                        <li class="langOpt" data-lang-str="ja" style="cursor: pointer; padding-left:0px; margin-left:0px;">日本語</li>
+                        <li class="langOpt" data-lang-str="zh" style="cursor: pointer; padding-left:0px; margin-left:0px;">中文</li>
+                        <li class="langOpt" data-lang-str="pt" style="cursor: pointer; padding-left:0px; margin-left:0px;">Português</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="dda dda--closed">
+                <div class="dda__container" id="langArrow" style="cursor:pointer;">
+                    <svg id="icon__ddasvgClosed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="" viewBox="0 0 16 8">
+                        <path d="M-0.000,1.000 L8.000,8.000 L16.000,1.000 L13.000,-0.000 L8.000,5.000 L3.000,-0.000 L-0.000,1.000 Z" class="icon__ddasvg__shape"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- END LOCALIZATION LANGUAGES -->
+        <!--SOCIAL CONTACT-->
+        <div id="socialContainer">
+            <div class="countdownInternal">
+                <div id="countMsg" style="color: rgb(0, 0, 0); font-size: 1.9em;">
+                    <span id="countMsg_text" data-localize="earthPage.santaTrackerCountdown">Santa Tracker Countdown</span>
+                    <div id="countdownGraphic"><img src="/images/stopwatch.svg" alt="Countdown Stopwatch" /></div>
+                </div>
+                <div id="defaultCountdown" class="is-countdown" style="color: rgb(0, 0, 0);"><span class="countdown-row countdown-show4"><span class="countdown-section"><span class="countdown-amount">20</span><span class="countdown-period">Days</span></span><span class="countdown-section"><span class="countdown-amount">22</span><span class="countdown-period">Hours</span></span><span class="countdown-section"><span class="countdown-amount">03</span><span class="countdown-period">Minutes</span></span><span class="countdown-section"><span class="countdown-amount">17</span><span class="countdown-period">Seconds</span></span></span></div>
+            </div>
+        </div>
+        <!--END SOCIAL CONTACT-->
+        <!-- LEFT TOP CANDY -->
+        <div class="lefttopCandy">
+            <ul class="socialList style2">
+                <li id="iconTwitter"><a target="_blank" class="externalDisclaimer" href="https://twitter.com/NoradSanta">Twitter</a></li>
+                <li id="iconFacebook"><a target="_blank" class="externalDisclaimer" href="https://www.facebook.com/noradsanta">Facebook</a></li>
+                <li id="iconYouTube"><a target="_blank" class="externalDisclaimer" href="https://www.youtube.com/channel/UCraEo3em2y6izLUQl-gPXNg">YouTube</a></li>
+                <li id="iconNewsline"><a target="_blank" class="externalDisclaimer" href="https://newsroom.24-7pressrelease.com/noradsanta">Newsline</a></li>
+                <li id="iconInstagram"><a target="_blank" class="externalDisclaimer" href="https://www.instagram.com/noradtrackssanta_official/?hl=en">Instagram</a></li>
+            </ul>
+        </div>
+        <!-- END LEFT TOP CANDY -->
+        <!-- LEFT BOTTOM CANDY -->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+            <defs>
+                <symbol id="donutRadar-icon" viewBox="0 0 44 44">
+                    <path d="M22.2,0.9C21,0.9,20,1,19,1.2v8.3C20,9.2,21,9,22.2,9c7.2,0,12.9,5.8,12.9,13s-5.9,13-13.1,13S9,29.3,9,22.1&#10;&#9;C9,21,9.2,20,9.4,19H1.3C1.1,20,1,21,1,22.1c0,11.7,9.4,21.1,21,21.1S43.1,33.7,43.1,22S33.8,0.9,22.2,0.9z"/>
+                </symbol>
+            </defs>
+        </svg>
+        <div class="leftbottomCandy">
+            <div id="radarchatcontainer" style="padding-bottom: 15px; padding-left: 15px; display:none">
+                <a href="#" data-toggle="popover" alt="" data-original-title="" title="">
+                    <img src="/images/icons/radar_animated-legacy.gif" width="50%" height="auto" />
+                </a>
+            </div>
+            <div id="northPoleWeatherReport"></div>
+            <div id="userWeatherReport" style="padding-left: 15px;"></div>
+        </div>
+        <!-- END LEFT BOTTOM -->
+        <!-- NAVIGATION ICONS -->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+            <defs>
+                <symbol id="icon-village" viewBox="0 0 54 54">
+                    <title>Village Icon</title>
+                    <desc>An image of the village in front of a large north pole and three mountains.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.672,14.352l0.766,13.077l3.7,5.569l0.925-1.856l-3.089-17.05&#10;      &#9;&#9;&#9;c1.274-0.584,2.164-1.864,2.164-3.358V10.71c0-2.044-1.656-3.701-3.7-3.701c-2.043,0-3.7,1.657-3.7,3.701v0.023&#10;      &#9;&#9;&#9;C18.739,12.514,19.997,13.999,21.672,14.352z M22.438,38.567v-3.713h1.85l-5.549-9.282l-4.625,9.282h1.85v3.713h1.85v-3.713h2.775&#10;      &#9;&#9;&#9;v3.713H22.438z M35.387,38.567v-3.713h1.85l-5.55-9.282l-4.625,9.282h1.85v3.713h1.85v-3.713h2.775v3.713H35.387z M37.237,36.711&#10;      &#9;&#9;&#9;c-0.231,1.856,0,2.785,0,2.785h-9.249v-2.785h-3.7v2.785H14.114v-2.785c0,0-10.637,2.088-11.099,4.641&#10;      &#9;&#9;&#9;c-0.463,2.553,9.725,6.191,22.198,5.569C57.321,45.322,57.178,36.711,37.237,36.711z M31.688,22.788l8.324,12.995h4.625&#10;      &#9;&#9;&#9;l-6.474-11.139l-5.55-9.282l-5.549,7.426l0.925,4.641L31.688,22.788z M17.814,22.788l2.775,0.928v-3.713l-6.474-3.713l-1.85,9.282&#10;      &#9;&#9;&#9;H7.64L5.79,37.639l6.475-1.856L17.814,22.788z"/>
+                </symbol>
+                <symbol id="icon-arcade" viewBox="0 0 54 54">
+                    <title>Arcade Icon</title>
+                    <desc>An image of a video game controller with dpad and three buttons.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.68,13.091c-3.18-0.597-8.136-0.285-13.496,0.51L23.992,10&#10;      &#9;&#9;&#9;l-7.321,3.091l0.556,2.189c-4.064,0.905-7.933,1.95-11.015,2.962c-3.971,5.433-3.138,21.636-3.138,21.636L7.257,44&#10;      &#9;&#9;&#9;c0,0,10.462-8.432,11.505-12.364c0,0,9.622-0.152,13.597-3.091c2.804,3.825,14.632,5.144,14.632,5.144L51,30.717&#10;      &#9;&#9;&#9;C51,30.717,44.692,17.287,39.68,13.091z M12.905,26.953v2.81l-2.824,1.873V27.89l-2.824,0.937v-2.81l2.824-0.937v-2.81&#10;      &#9;&#9;&#9;l2.824-0.937v2.81l2.824-0.937l0.941,2.81L12.905,26.953z M31.31,24.413c-1.152,0-2.085-0.92-2.085-2.056s0.934-2.056,2.085-2.056&#10;      &#9;&#9;&#9;c1.152,0,2.085,0.92,2.085,2.056S32.461,24.413,31.31,24.413z M34.449,18.246c0-1.135,0.939-2.056,2.097-2.056&#10;      &#9;&#9;&#9;s2.097,0.92,2.097,2.056c0,1.135-0.939,2.056-2.097,2.056S34.449,19.381,34.449,18.246z M37.588,25.452&#10;      &#9;&#9;&#9;c-1.152,0-2.085-0.92-2.085-2.056c0-1.135,0.934-2.056,2.085-2.056c1.152,0,2.085,0.92,2.085,2.056&#10;      &#9;&#9;&#9;C39.674,24.532,38.74,25.452,37.588,25.452z"/>
+                </symbol>
+                <symbol id="icon-library" viewBox="0 0 54 54">
+                    <title>Library Icon</title>
+                    <desc>An image of a book.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33,3L11,14l7,35l20-12L33,3z M38,7l-2,1l5,31L24,50&#10;      &#9;&#9;&#9;l-0.514-0.343L40,38L35,7l-1-1l5,32L21.783,48.522L21,48l-2,1l5,2l19-11L38,7z"/>
+                </symbol>
+                <symbol id="icon-musicstage" viewBox="0 0 54 54">
+                    <title>Music Stage Icon</title>
+                    <desc>An image of a musical note.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M44,39.628c0-0.003,0-0.005,0-0.007&#10;      &#9;&#9;&#9;c0-0.504-0.065-0.991-0.176-1.461l-2.535-21.194l0.193-0.071V3L15.037,13.105l2.518,12.632l0.743-0.274l1.195,13.79&#10;      &#9;&#9;&#9;c-0.939-0.559-2.031-0.886-3.201-0.886c-3.475,0-6.292,2.828-6.292,6.316C10,48.172,12.817,51,16.292,51&#10;      &#9;&#9;&#9;c3.044,0,5.583-2.17,6.166-5.053h0.134l-0.059-0.494c0.031-0.253,0.051-0.508,0.051-0.769c0-0.785-0.149-1.533-0.41-2.226&#10;      &#9;&#9;&#9;L20.064,24.81l19.508-7.209l1.444,16.655c-0.962-0.599-2.093-0.95-3.308-0.95c-3.475,0-6.292,2.828-6.292,6.316&#10;      &#9;&#9;&#9;c0,3.488,2.817,6.316,6.292,6.316c3.472,0,6.286-2.822,6.292-6.306H44L44,39.628z"/>
+                </symbol>
+                <symbol id="icon-theater" viewBox="0 0 54 54">
+                    <title>Theater Icon</title>
+                    <desc>An image of a play button on a video square.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.49,13.667C8.055,15.313,3,17.222,3,17.222L4.811,43&#10;      &#9;&#9;&#9;c0,0,12.091-2.681,23.547-4.445C39.996,36.764,51,35.889,51,35.889V11C51,11,28.334,11.775,17.49,13.667z M22.924,32.222&#10;      &#9;&#9;&#9;l-1.811-12.444l12.679,4.444L22.924,32.222z"/>
+                </symbol>
+                <symbol id="icon-noradhq" viewBox="0 0 54 54">
+                    <title>NORAD HQ Icon</title>
+                    <desc>An image of a satellite dish.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3,50h24.2c-2-3-5-5.2-8-6.1l4-10.7c2.1-0.8,3.5-2.8,3.5-5.2c0-1.8-0.9-3.4-2.2-4.4C41.4,17,40.6,8.8,36,4.2&#10;&#9;c-2.5,2.5-6.9,6.9-11.5,11.5l-6.7-6.1c0.3-0.5,0.4-1.1,0.4-1.7c0-2.1-1.7-3.8-3.8-3.8c-2.1,0-3.8,1.7-3.8,3.8s1.7,3.8,3.8,3.8&#10;&#9;c0.6,0,1.2-0.2,1.8-0.4l6,6.8c-4.6,4.6-9.1,9.1-11.4,11.4c4.6,4.6,12.8,5.4,19.5,1.8c0.5,0.7,1.3,1.3,2.1,1.7l-6.6,10.8&#10;&#9;C21.9,44.4,18.5,46,16.3,50z"/>
+                </symbol>
+                <symbol id="icon-ask" viewBox="0 0 54 54">
+                    <title>Ask Santa Icon</title>
+                    <desc>An image of a question mark.</desc>
+                    <path d="M27,46.7c-2.7,0-5.2-0.5-7.7-1.5c-2.3-1-4.4-2.4-6.3-4.2c-1.8-1.8-3.2-3.9-4.2-6.3c-1-2.4-1.5-5-1.5-7.7&#10;        s0.5-5.2,1.5-7.7c1-2.3,2.4-4.4,4.2-6.3c1.8-1.8,3.9-3.2,6.3-4.2c2.4-1,5-1.5,7.7-1.5c2.7,0,5.2,0.5,7.7,1.5c2.3,1,4.4,2.4,6.3,4.2&#10;        c1.8,1.8,3.2,3.9,4.2,6.3c1,2.4,1.5,5,1.5,7.7s-0.5,5.2-1.5,7.7c-1,2.3-2.4,4.4-4.2,6.3c-1.8,1.8-3.9,3.2-6.3,4.2&#10;        C32.2,46.2,29.7,46.7,27,46.7z M27.3,34.7c-1.8,0-3,1.2-3,3c0,1.8,1.2,3,3,3c0.9,0,1.7-0.3,2.2-0.8c0.5-0.5,0.8-1.3,0.8-2.2&#10;        C30.3,35.9,29.1,34.7,27.3,34.7z M25.4,17.9c2.4,0,3.5,1.4,3.5,2.8c0,1.5-1.3,2.8-2.5,4.1c-1.3,1.3-2.6,2.6-2.6,4.2&#10;        c0,0.7,0.3,1.9,1,2.8l0,0c0.2,0.2,0.3,0.2,0.5,0.2h3.4c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.1-0.2,0-0.3v0l0,0&#10;        c-0.4-0.7-0.7-1.4-0.7-2.1c0-0.9,1-1.9,2.1-3c1.5-1.6,3.5-3.5,3.5-6.1c0-3.9-3-6.6-7.6-6.6c-2.7,0-4.7,0.7-5.8,1.2&#10;        c-0.2,0.1-0.2,0.3-0.2,0.5v3.1c0,0.1,0,0.2,0.1,0.2c0,0.1,0.1,0.1,0.2,0.1c0.1,0,0.1,0,0.2,0C21.9,18.4,23.3,17.9,25.4,17.9z"/>
+                </symbol>
+                <symbol id="icon-giftshop" viewBox="0 0 54 54">
+                    <title>Giftshop Icon</title>
+                    <desc>An image of a grocery basket.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M49.857,24.095h-18L43,8.986L36.143,5.5l-8.662,18.595H3&#10;                    l2.286,8.135l3.809,0.097l4.191,13.849L43,48.5l2.81-15.24L51,33.392L49.857,24.095z M17.857,42.689L16,32.5h3l1.143,10.189&#10;                    H17.857z M24.714,42.689L25,32.5h2l1.143,11.351L24.714,42.689z M36.143,42.689l-2.286,1.162L35,32.5h3L36.143,42.689z"/>
+                </symbol>
+                <symbol id="icon-selectionring" viewBox="0 0 72 72">
+                    <title>Icon Selection Ring</title>
+                    <desc>A Ring</desc>
+                    <path d="M36.344,71.308c-19.575,0-35.5-15.925-35.5-35.5s15.925-35.5,35.5-35.5&#10;          &#9;s35.5,15.925,35.5,35.5S55.919,71.308,36.344,71.308z M36.344,3.308c-17.92,0-32.5,14.58-32.5,32.5s14.58,32.5,32.5,32.5&#10;          &#9;s32.5-14.58,32.5-32.5S54.265,3.308,36.344,3.308z"/>
+                </symbol>
+                <symbol id="icon-labelbg" viewBox="0 0 148 54">
+                    <title>Label BG</title>
+                    <desc>A wonky square.</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.844,11.808l144-5l-11,39l-127-3L1.844,11.808z"/>
+                </symbol>
+            </defs>
+        </svg>
+        <!-- MOBILE NAVIGATION rwd hamburger -->
+        <div class="hnavListContainer" id="hamburgerControl">
+            <h2>NORAD TRACKS SANTA</h2>
+            <div class="hnavList accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+                <h3 class="hnavLiLabel ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" id="hnavPanel0" role="tab" aria-controls="ui-id-1" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon hnavLabel-collapsed"></span>Language</h3>
+                <div class="hnavLi hnav-is-expandable hnav-is-collapsed ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-1" aria-labelledby="hnavPanel0" role="tabpanel" aria-hidden="true" style="display: none;">
+                    <ul>
+                        <li id="enOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="en">English</a></li>
+                        <li id="esOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="es">Español</a></li>
+                        <li id="deOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="de">Deutsch</a></li>
+                        <li id="frOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="fr">Français</a></li>
+                        <!--<li id="hiOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="hi">हिन्दी</a></li>-->
+                        <li id="itOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="it">Italiano</a></li>
+                        <li id="jaOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="ja">日本語</a></li>
+                        <li id="zhOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="zh">中文</a></li>
+                        <li id="ptOpt_hnav"><a class="langOpt_hnavLink" data-lang-str="pt">Português</a></li>
+                    </ul>
+                </div>
+                <h3 class="hnavLiLabel ui-accordion-header ui-corner-top ui-state-default ui-accordion-header-active ui-state-active ui-accordion-icons" id="hnavPanel1" data-localize="navigation.northPole" role="tab" aria-controls="ui-id-2" aria-selected="true" aria-expanded="true" tabindex="0">North Pole</h3>
+                <div class="hnavLi ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-2" aria-labelledby="hnavPanel1" role="tabpanel" aria-hidden="false" style="display: block;">
+                    <ul>
+                        <li><a target="_blank" class="externalDisclaimer" id="hnavLinkGiftShop" href="https://www.shirtstoponline.com/stores/NoradSantaTrackerGear" data-localize="navigation.giftShop">Gift Shop</a></li>
+                        <li><a href="overlay/games/calendar/index.html" class="popupTrigger" id="hnavLinkGames" data-bpopup="overlay/games/calendar/index.html" data-localize="navigation.games">Games</a></li>
+                        <li><a href="overlay/popups/movies/index.html" class="popupTrigger" id="hnavLinkMovies" data-bpopup="overlay/popups/movies/index.html" data-localize="navigation.movies">Movies</a></li>
+                        <li><a href="overlay/popups/musicplayer/index.html" class="popupTrigger" id="hnavLinkMusic" data-bpopup="overlay/popups/musicplayer/index.html" data-localize="navigation.music">Music</a></li>
+                        <li><a href="overlay/popups/library/index.html" class="popupTrigger" id="hnavLinkLibrary" data-bpopup="overlay/popups/library/index.html" data-localize="navigation.library">Library</a></li>
+                        <li class="indent"><a href="overlay/popups/library/index.html?section=aboutSanta" class="popupTrigger" id="hnavLinkAboutSanta" data-bpopup="overlay/popups/library/index.html?section=aboutSanta" data-localize="santasVillage.theLibrary.aboutSanta.title">About Santa</a></li>
+                        <li class="indent"><a href="overlay/popups/library/index.html?section=santasSleigh" class="popupTrigger" id="hnavLinkSantasSleigh" data-bpopup="overlay/popups/library/index.html?section=santasSleigh" data-localize="santasVillage.theLibrary.regardingSantasSleigh.title">Regarding Santa’s Sleigh</a></li>
+                        <li class="indent"><a href="overlay/popups/library/index.html?section=holidayTraditions" class="popupTrigger" id="hnavLinkHolidayTraditions" data-bpopup="overlay/popups/library/index.html?section=holidayTraditions" data-localize="santasVillage.theLibrary.holidayTraditions.title">Holiday Traditions from around the world</a></li>
+                        <li class="indent"><a href="overlay/popups/library/index.html?section=holidayActivities" class="popupTrigger" id="hnavLinkHolidayActivities" data-bpopup="overlay/popups/library/index.html?section=holidayActivities" data-localize="santasVillage.theLibrary.holidayActivities.title">Holiday Activities</a></li>
+                    </ul>
+                </div>
+                <h3 class="hnavLiLabel ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" id="hnavPanel2" data-localize="navigation.noradHq" role="tab" aria-controls="ui-id-3" aria-selected="false" aria-expanded="false" tabindex="-1">NORAD HQ</h3>
+                <div class="hnavLi hnav-is-expandable hnav-is-collapsed ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-3" aria-labelledby="hnavPanel2" role="tabpanel" aria-hidden="true" style="display: none;">
+                    <ul>
+                        <li><a href="overlay/popups/noradhq/index.html?section=SecretSanta" id="hnavLinkSecretSantaFiles" class="popupTrigger" data-section="secretSantaContent" data-bpopup="overlay/popups/noradhq/index.html?section=SecretSanta" data-localize="noradHq.secretSantaFiles.title">Secret Santa Files</a></li>
+                        <li><a href="overlay/popups/noradhq/index.html?section=OurMission" id="hnavLinkNORADsMission" class="popupTrigger" data-section="contentMission" data-bpopup="overlay/popups/noradhq/index.html?section=OurMission" data-localize="noradHq.noradsMission.title">NORAD Mission</a></li>
+                        <li><a href="overlay/popups/noradhq/index.html?section=PressRoom" id="hnavLinkPressroom" class="popupTrigger" data-section="contentPressroom" data-bpopup="overlay/popups/noradhq/index.html?section=PressRoom" data-localize="footer.pressRoom">Media Opportunities</a></li>
+                        <li><a href="overlay/popups/noradhq/index.html?section=OurTeam" id="hnavLinkOurTeam" class="popupTrigger" data-section="contentTeam" data-bpopup="overlay/popups/noradhq/index.html?section=OurTeam" data-localize="noradHq.ourTeam.title">Our Team</a></li>
+                        <li><a href="overlay/popups/noradhq/index.html?section=ContactUs" id="hnavLinkContactUs" class="popupTrigger" data-section="contentContact" data-bpopup="overlay/popups/noradhq/index.html?section=ContactUs" data-localize="noradHq.contactUs.title">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END MOBILE NAVIGATION rwd hamburger -->
+        <!-- MUSIC PLAYER -->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+            <defs>
+                <symbol id="play_button" viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30"/>
+                    <polygon class="playpausepunchout" points="22.1,18.2 46.2,32.1 22.2,46.2 "/>
+                </symbol>
+                <symbol id="pause_button" viewBox="0 0 64 64">
+                    <circle class="st0" cx="32" cy="32" r="30"/>
+                    <path class="playpausepunchout" d="M24.3,46.2L24.3,46.2c-1.4,0-2.5-1.1-2.5-2.5v-23c0-1.4,1.1-2.5,2.5-2.5l0,0c1.4,0,2.5,1.1,2.5,2.5v23&#10;&#9;C26.8,45.1,25.6,46.2,24.3,46.2z"/>
+                    <path class="playpausepunchout" d="M39.3,46.2L39.3,46.2c-1.4,0-2.5-1.1-2.5-2.5v-23c0-1.4,1.1-2.5,2.5-2.5l0,0c1.4,0,2.5,1.1,2.5,2.5v23&#10;&#9;C41.8,45.1,40.6,46.2,39.3,46.2z"/>
+                </symbol>
+                <symbol id="fwd_button" viewBox="0 0 30 30">
+                    <polygon points="3.1,1.2 27.1,15.1 3.2,29.2 "/>
+                    <path d="M25.3,29.2L25.3,29.2c-1.4,0-2.5-1.1-2.5-2.5v-23c0-1.4,1.1-2.5,2.5-2.5l0,0c1.4,0,2.5,1.1,2.5,2.5v23&#10;&#9;C27.8,28.1,26.6,29.2,25.3,29.2z"/>
+                </symbol>
+                <symbol id="rev_button" viewBox="0 0 30 30">
+                    <polygon points="27.8,29.2 3.8,15.3 27.7,1.2 "/>
+                    <path d="M5.6,1.2L5.6,1.2c1.4,0,2.5,1.1,2.5,2.5v23c0,1.4-1.1,2.5-2.5,2.5l0,0c-1.4,0-2.5-1.1-2.5-2.5v-23&#10;&#9;C3.1,2.3,4.3,1.2,5.6,1.2z"/>
+                </symbol>
+            </defs>
+        </svg>
+
+
+        <section class="musicContainer" id="musicContainer">
+
+            <div class="musicContainer_inner">
+                <div class="musicContainer_left">
+                    <img id="musicContainer_eq" src="images/control/musiccontrol/equalizer_off_dr.gif" alt="Music equalizer off" />
+                </div>
+                <div class="musicContainer_player">
+                    <div class="musicContainer_PlayControls" style="user-select:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="music-icon music-icon-rev" id="revbutton"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rev_button"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="music-icon-lg" id="pausebutton" style="display: none;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pause_button"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="music-icon-lg" id="playbutton" style="display: inline-block;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play_button"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="music-icon music-icon-fwd" id="fwdbutton"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fwd_button"/></svg>
+                    </div>
+                </div>
+                <div class="musicContainer_right">
+                    <div style="float: right;">
+                        <div class="playlistCollection"><div class="ddlMusicDropdwnOuterPlaylist ddaMusicPlayerDropList--hide"><ul class="ddlMusicDropdwnPlaylist"><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/santaclausiscomingtotown.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/santaclausiscomingtotown.ogg" artist="US Air Force Academy Band" photoart=""><span>Santa Claus is Coming to Town</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/herecomessantaclaus.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/herecomessantaclaus.ogg" artist="The NORAD Commanders" photoart=""><span>Here Comes Santa Claus</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/goodkingwenceslas.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/goodkingwenceslas.ogg" artist="Meshbox Music" photoart=""><span>Good King Wenceslas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/hanginroundthemistletoe.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/hanginroundthemistletoe.ogg" artist="US Air Force Academy Band" photoart=""><span>Hangin Round the Mistletoe</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/jollyoldstnicholas.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/jollyoldstnicholas.ogg" artist="US Air Force Academy Band" photoart=""><span>Jolly Old St. Nicholas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/santaclausisbackintown.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/santaclausisbackintown.ogg" artist="US Air Force Academy Band" photoart=""><span>Santa Claus is Back in Town</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/whatchildisthis.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/whatchildisthis.ogg" artist="US Air Force Academy Band" photoart=""><span>What Child is This</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/winterwonderlandnorad.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/winterwonderlandnorad.ogg" artist="The NORAD Commanders" photoart=""><span>Winter Wonderland Norad</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/letitsnowletitsnow.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/letitsnowletitsnow.ogg" artist="US Air Force Academy Band" photoart=""><span>Let it Snow Let it Snow Let it Snow</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/winterwonderland.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/winterwonderland.ogg" artist="US Air Force Academy Band" photoart=""><span>Winter Wonderland</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/cantique_de_noel.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/cantique_de_noel.ogg" artist="US Air Force Academy Band" photoart=""><span>Cantique de Noel</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/that_night_in_bethlehem.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/that_night_in_bethlehem.ogg" artist="US Air Force Academy Band" photoart=""><span>That Night in Bethlehem</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/coolyule.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/coolyule.ogg" artist="Naden Band" photoart=""><span>Cool Yule</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/itsbeginningtolookalotlikechristmas.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/itsbeginningtolookalotlikechristmas.ogg" artist="Naden Band" photoart=""><span>It's Beginning To Look A Lot Like Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/littledrummerboy.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/littledrummerboy.ogg" artist="Naden Band" photoart=""><span>Little Drummer Boy</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/silentnight.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/silentnight.ogg" artist="Naden Band" photoart=""><span>Silent Night</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/sleighride.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/sleighride.ogg" artist="Naden Band" photoart=""><span>Sleigh Ride</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/thebestgift.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/thebestgift.ogg" artist="Naden Band" photoart=""><span>The Best Gift</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/achristmasfanfare.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/achristmasfanfare.ogg" artist="US Coast Guard Band" photoart=""><span>A Christmas Fanfare</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/miracleon34thstreet.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/miracleon34thstreet.ogg" artist="US Coast Guard Band" photoart=""><span>Miracle on 34th Street</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/jinglebells.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/jinglebells.ogg" artist="US Coast Guard Band" photoart=""><span>Jingle Bells</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/achristmasfestival.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/achristmasfestival.ogg" artist="US Coast Guard Band" photoart=""><span>A Christmas Festival</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/happybirthday.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/happybirthday.ogg" artist="US Merchant Marine Academy Band" photoart=""><span>Happy Birthday</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/battlehymnoftherepublic.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/battlehymnoftherepublic.ogg" artist="US Merchant Marine Academy Band" photoart=""><span>Battle Hymn of the Republic</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/thebigapplemarch.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/thebigapplemarch.ogg" artist="US Merchant Marine Academy Band" photoart=""><span>The Big Apple March</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/12daysofchristmas.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/12daysofchristmas.ogg" artist="Meshbox Music" photoart=""><span>12 Days of Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/deckthehall.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/deckthehall.ogg" artist="Meshbox Music" photoart=""><span>Deck the Halls</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/12%20Days%20of%20Christmas%20-%20USAF%20Heritage%20of%20America%20Band.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/12%20Days%20of%20Christmas%20-%20USAF%20Heritage%20of%20America%20Band.ogg" artist="USAF Heritage of America Band" photoart=""><span>12 Days of Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/18-Wheel%20Chrome%20and%20Steel%20Sleigh%20-%20Six-String%20Soldiers.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/18-Wheel%20Chrome%20and%20Steel%20Sleigh%20-%20Six-String%20Soldiers.ogg" artist="Six-String Soldiers" photoart=""><span>18-Wheel Chrome and Steel Sleigh</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Carol%20of%20the%20Bells%20-%20USAF%20Band.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Carol%20of%20the%20Bells%20-%20USAF%20Band.ogg" artist="USAF Band" photoart=""><span>Carol of the Bells</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Chanukah%20Celebration%20-%20Navy%20Band%20Northeast.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Chanukah%20Celebration%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><span>Chanukah Celebration</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Funk%20Lang%20Syne%20-%20USAFE%20Band.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Funk%20Lang%20Syne%20-%20USAFE%20Band.ogg" artist="USAFE Band" photoart=""><span>Funk Lang Syne</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Good%20Swing%20Wenceslas%20-%20Navy%20Band%20Northeast.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Good%20Swing%20Wenceslas%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><span>Good Swing Wenceslas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Greensleeves%20-%20Navy%20Band%20Northeast.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Greensleeves%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><span>Greensleeves</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/March%20of%20the%20Toys%20-%20Navy%20Band%20Northeast.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/March%20of%20the%20Toys%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><span>March of the Toys</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Sleigh%20Ride%20-%20Navy%20Band%20Northeast.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Sleigh%20Ride%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><span>Sleigh Ride</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Christmas%20Overture%20-%20ACC%20Heartland%20of%20America%20Band.mp3" style="cursor: pointer;" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Christmas%20Overture%20-%20ACC%20Heartland%20of%20America%20Band.ogg" artist="ACC Heartland of America Band" photoart=""><span>Christmas Overture</span></li></ul></div>
+                            <div class="ddaMusicPlayer ddaMusicPlayer--open">
+                                <div class="dda__container" id="musicArrow">
+                                    <svg id="icon__ddasvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="" viewBox="0 0 16 8">
+                                        <path d="M-0.000,1.000 L8.000,8.000 L16.000,1.000 L13.000,-0.000 L8.000,5.000 L3.000,-0.000 L-0.000,1.000 Z" class="icon__ddasvg__shape"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="musicTrackAndNodeContainer">
+                            <div class="floatLeft"><svg xmlns="http://www.w3.org/2000/svg" class="music-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-musicstage"/></svg></div>
+                            <div class="musicContainer__title">Santa Claus is Coming to Town</div>
+                            <div class="musicContainer__artist">US Air Force Academy Band</div>
+                        </div>
+                        <div class="popup__nav__playlist" style="display: none;"><ul class="playlistmusic"><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/santaclausiscomingtotown.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/santaclausiscomingtotown.ogg" artist="US Air Force Academy Band" photoart="" class="active"><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Santa Claus is Coming to Town</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/herecomessantaclaus.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/herecomessantaclaus.ogg" artist="The NORAD Commanders" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Here Comes Santa Claus</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/goodkingwenceslas.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/goodkingwenceslas.ogg" artist="Meshbox Music" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Good King Wenceslas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/hanginroundthemistletoe.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/hanginroundthemistletoe.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Hangin Round the Mistletoe</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/jollyoldstnicholas.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/jollyoldstnicholas.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Jolly Old St. Nicholas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/santaclausisbackintown.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/santaclausisbackintown.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Santa Claus is Back in Town</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/whatchildisthis.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/whatchildisthis.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>What Child is This</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/winterwonderlandnorad.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/winterwonderlandnorad.ogg" artist="The NORAD Commanders" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Winter Wonderland Norad</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/letitsnowletitsnow.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/letitsnowletitsnow.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Let it Snow Let it Snow Let it Snow</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/winterwonderland.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/winterwonderland.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Winter Wonderland</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/cantique_de_noel.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/cantique_de_noel.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Cantique de Noel</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/that_night_in_bethlehem.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/that_night_in_bethlehem.ogg" artist="US Air Force Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>That Night in Bethlehem</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/coolyule.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/coolyule.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Cool Yule</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/itsbeginningtolookalotlikechristmas.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/itsbeginningtolookalotlikechristmas.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>It's Beginning To Look A Lot Like Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/littledrummerboy.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/littledrummerboy.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Little Drummer Boy</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/silentnight.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/silentnight.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Silent Night</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/sleighride.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/sleighride.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Sleigh Ride</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/thebestgift.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/thebestgift.ogg" artist="Naden Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>The Best Gift</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/achristmasfanfare.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/achristmasfanfare.ogg" artist="US Coast Guard Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>A Christmas Fanfare</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/miracleon34thstreet.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/miracleon34thstreet.ogg" artist="US Coast Guard Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Miracle on 34th Street</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/jinglebells.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/jinglebells.ogg" artist="US Coast Guard Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Jingle Bells</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/achristmasfestival.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/achristmasfestival.ogg" artist="US Coast Guard Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>A Christmas Festival</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/happybirthday.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/happybirthday.ogg" artist="US Merchant Marine Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Happy Birthday</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/battlehymnoftherepublic.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/battlehymnoftherepublic.ogg" artist="US Merchant Marine Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Battle Hymn of the Republic</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/thebigapplemarch.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/thebigapplemarch.ogg" artist="US Merchant Marine Academy Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>The Big Apple March</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/12daysofchristmas.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/12daysofchristmas.ogg" artist="Meshbox Music" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>12 Days of Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/deckthehall.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/deckthehall.ogg" artist="Meshbox Music" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Deck the Halls</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/12%20Days%20of%20Christmas%20-%20USAF%20Heritage%20of%20America%20Band.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/12%20Days%20of%20Christmas%20-%20USAF%20Heritage%20of%20America%20Band.ogg" artist="USAF Heritage of America Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>12 Days of Christmas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/18-Wheel%20Chrome%20and%20Steel%20Sleigh%20-%20Six-String%20Soldiers.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/18-Wheel%20Chrome%20and%20Steel%20Sleigh%20-%20Six-String%20Soldiers.ogg" artist="Six-String Soldiers" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>18-Wheel Chrome and Steel Sleigh</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Carol%20of%20the%20Bells%20-%20USAF%20Band.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Carol%20of%20the%20Bells%20-%20USAF%20Band.ogg" artist="USAF Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Carol of the Bells</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Chanukah%20Celebration%20-%20Navy%20Band%20Northeast.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Chanukah%20Celebration%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Chanukah Celebration</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Funk%20Lang%20Syne%20-%20USAFE%20Band.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Funk%20Lang%20Syne%20-%20USAFE%20Band.ogg" artist="USAFE Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Funk Lang Syne</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Good%20Swing%20Wenceslas%20-%20Navy%20Band%20Northeast.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Good%20Swing%20Wenceslas%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Good Swing Wenceslas</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Greensleeves%20-%20Navy%20Band%20Northeast.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Greensleeves%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Greensleeves</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/March%20of%20the%20Toys%20-%20Navy%20Band%20Northeast.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/March%20of%20the%20Toys%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>March of the Toys</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Sleigh%20Ride%20-%20Navy%20Band%20Northeast.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Sleigh%20Ride%20-%20Navy%20Band%20Northeast.ogg" artist="Navy Band Northeast" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Sleigh Ride</span></li><li audiourlmp3="https://media.noradsanta.org/norad-web-audio/mp3/Christmas%20Overture%20-%20ACC%20Heartland%20of%20America%20Band.mp3" audiourloga="https://media.noradsanta.org/norad-web-audio/ogg/Christmas%20Overture%20-%20ACC%20Heartland%20of%20America%20Band.ogg" artist="ACC Heartland of America Band" photoart=""><img class="playlist__icon" src="../../../images/pop/musicstage/musical-note-with-hat.png" /><span>Christmas Overture</span></li></ul></div>
+                    </div>
+                </div>
+            </div>
+            <audio id="audio" src="https://media.noradsanta.org/norad-web-audio/mp3/santaclausiscomingtotown.mp3"></audio>
+        </section>
+        <!-- END MUSIC PLAYER -->
+        <!-- END HUD Controls -->
+        <!-- POPUP CONTAINER -->
+        <div id="element_to_pop_up" style="display:none;">
+            <span class="button b-close"><img src="images/close.png" /></span>
+            <span class="button b-back libraryBack"><img src="images/backBtn.png" /></span>
+            <span class="button b-back noradHqBack"><img src="images/backBtn.png" /></span>
+            <div class="content"></div>
+        </div>
+        <!-- END POPUP -->
+        <div id="page" class="DISABLEanimate">
+            <!-- VILLAGE SECTION -->
+            <section id="section-village" class="background-village" data-speed="10000" style="height: 600px;">
+                <span class="villageTitle"> </span>
+                <!-- phone elf nav -->
+                <div id="phoneElfContainer">
+                    <div class="phoneElfLogo"></div>
+                    <div id="phoneNavContainer">
+                        <div id="phoneNavNoradHQ" class="phoneNavButton phoneNavButtonLeft popupTrigger" data-bpopup="overlay/popups/noradhq/index.html"><a href="overlay/popups/noradhq/index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-noradhq"/></svg><br /><span data-localize="navigation.noradHq">NORAD HQ</span></a></div>
+                        <div id="phoneNavArcade" class="phoneNavButton  popupTrigger" data-bpopup="overlay/games/calendar/index.html"><a href="overlay/games/calendar/index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arcade"/></svg><br /><span data-localize="santasVillage.theArcade.title">The Arcade</span></a></div>
+                        <div id="phoneNavTheatre" class="phoneNavButton phoneNavButtonLeft popupTrigger" data-bpopup="overlay/popups/movies/index.html"><a href="overlay/popups/movies/index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-theater"/></svg><br /><span data-localize="santasVillage.theTheater.title">The Theater</span></a></div>
+                        <div id="phoneNavMusic" class="phoneNavButton popupTrigger " data-bpopup="overlay/popups/musicplayer/index.html"><a href="overlay/popups/musicplayer/index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-musicstage"/></svg><br /><span data-localize="santasVillage.theMusicStage.title">The Music Stage</span></a></div>
+                        <div id="phoneNavLibrary" class="phoneNavButton phoneNavButtonLeft popupTrigger" data-bpopup="overlay/popups/library/index.html"><a href="overlay/popups/library/index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-library"/></svg><br /><span data-localize="santasVillage.theLibrary.title">The Library</span></a></div>
+                        <div id="phoneNavShop" class="phoneNavButton"><a target="_blank" class="externalDisclaimer" href="https://www.shirtstoponline.com/stores/NoradSantaTrackerGear"><svg xmlns="http://www.w3.org/2000/svg" class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-giftshop"/></svg><br /><span data-localize="santasVillage.theGiftShop.title">Gift Shop</span></a></div>
+                    </div>
+                    <div id="phoneElf">
+                        <img src="images/village/phoneElf.png" />
+                    </div>
+                </div>
+                <div id="villageContentContainer">
+                    <!-- animated village -->
+                    <div id="village-animations" style="outline:1px black">
+                        <div id="village-musicstage" style="opacity: 0.948285;"><img disable-data-cj-preload="images/village/animation/lights-music.png" src="images/village/animation/lights-music.png" alt="Light in windows and doors coming from The Music Stage" /></div>
+                        <div id="village-library" style="opacity: 0.949265;"><img disable-data-cj-preload="images/village/animation/lights-library.png" src="images/village/animation/lights-library.png" alt="Light in windows and doors coming from The Library" /></div>
+                        <div id="village-theater" style="opacity: 0.834363;"><img disable-data-cj-preload="images/village/animation/lights-theatre.png" src="images/village/animation/lights-theatre.png" alt="Light in windows and doors coming from The Theatre" /></div>
+                        <div id="village-arcade" style="opacity: 0.106418;"><img disable-data-cj-preload="images/village/animation/lights-arcade.png" src="images/village/animation/lights-arcade.png" alt="Light in windows and doors coming from The Arcade" /></div>
+                        <div id="village-noradhq" style="opacity: 0.948285;"><img disable-data-cj-preload="images/village/animation/lights-noradhq.png" src="images/village/animation/lights-noradhq.png" alt="Light in windows and doors coming from Norad HQ" /></div>
+                        <div id="elf-snowmanmaker"><img disable-data-cj-preload="images/village/animation/elf_anim_snowmanmaker.gif" src="images/village/animation/elf_anim_snowmanmaker.gif" alt="Animated elf and snowman" /></div>
+                        <div id="elf-skywatch" style="background-position: 0% 0%;"></div>
+                        <div id="elf-chimneysweeper" style="background-position: 0% 0%;"></div>
+                        <div id="elf-mailboxchecker" style="background-position: 16.6667% 100%;"></div>
+                        <div id="elf-diver" style="background-position: 50% 66.6667%;"></div>
+                        <div id="elf-airtanker" style="background-position: 0% 40%;"></div>
+                        <div id="hqdish" style="background-position: 0% 75%;"></div>
+                        <div id="elf-iceskate-left" style="left: -22px;"><img disable-data-cj-preload="images/village/animation/elf_anim_iceskate_left.gif" src="images/village/animation/elf_anim_iceskate_left.gif" alt="Animated elfe ice skating" /></div>
+                        <div id="elf-iceskate-right"><img disable-data-cj-preload="images/village/animation/elf_anim_iceskate_right.gif" src="images/village/animation/elf_anim_iceskate_right.gif" alt="Animated elfe ice skating" /></div>
+                        <div id="elf-iceskate-left2" style="left: 122px;"><img disable-data-cj-preload="images/village/animation/elf_anim_iceskate_left.gif" src="images/village/animation/elf_anim_iceskate_left.gif" alt="Animated elfe ice skating" /></div>
+                        <div id="elf-iceskate-right2"><img disable-data-cj-preload="images/village/animation/elf_anim_iceskate_right.gif" src="images/village/animation/elf_anim_iceskate_right.gif" alt="Animated elfe ice skating" /></div>
+                        <div id="tree-blinking"><img disable-data-cj-preload="images/village/animation/tree-blinking.gif" src="images/village/animation/tree-blinking.gif" alt="Green tree wtih blinking lights" /></div>
+                    </div>
+
+                    <div id="villageForeground">
+                        <img disable-data-cj-preload="images/village/trees/ta.png" src="images/village/trees/ta.png" alt="Green tree" class="treeE" />
+                        <img disable-data-cj-preload="images/village/trees/tb.png" src="images/village/trees/td.png" alt="Green tree" class="treeH" />
+                        <img disable-data-cj-preload="images/village/trees/tb.png" src="images/village/trees/tb.png" alt="Green tree" class="treeI" />
+                    </div>
+
+                    <div id="village-links">
+                        <div id="waitOverSign" style="top:5%">
+                            <a class="popupTrigger" data-bpopup="overlay/tracking/map/index.html" href="/overlay/tracking/map/index.html"><img disable-data-cj-preload="images/pop/christmastide/trackNow_en.png" alt="Button: The wait is over track santa now" src="images/pop/christmastide/trackNow_en.png" style="height:auto; width:75%" /></a>
+                        </div>
+                        <!-- links absolute positioning-->
+                        <!-- ask Santa link -->
+                        <div class="linkBox" id="linkBoxGiftShop">
+                            <h1 data-localize="santasVillage.theGiftShop.title">Gift Shop</h1>
+                            <span data-localize="santasVillage.theGiftShop.subtitle">Buy Santa and NORAD gear</span>
+                        </div>
+
+                        <div class="linkBox" id="linkBoxArcade">
+                            <h1 data-localize="santasVillage.theArcade.title">The Arcade</h1>
+                            <span data-localize="santasVillage.theArcade.subtitle">Play a new game every day</span>
+                        </div>
+
+                        <!-- library link -->
+                        <div class="linkBox" id="linkBoxLibrary">
+                            <h1 data-localize="santasVillage.theLibrary.title">The Library</h1>
+                            <span data-localize="santasVillage.theLibrary.subtitle">Learn about Santa, his magic sleigh, and holiday traditions</span>
+                        </div>
+
+                        <!-- movies link -->
+                        <div class="linkBox" id="linkBoxMovies">
+                            <h1 data-localize="santasVillage.theTheater.title">The Theater</h1>
+                            <span data-localize="santasVillage.theTheater.subtitle">Watch movies about Santa and NORAD</span>
+                        </div>
+
+                        <!-- music link -->
+                        <div class="linkBox" id="linkBoxMusic">
+                            <h1 data-localize="santasVillage.theMusicStage.title">The Music Stage</h1>
+                            <span data-localize="santasVillage.theMusicStage.subtitle">Listen to Santa's favorite holiday songs</span>
+                        </div>
+
+                        <!-- noradhq link -->
+                        <div class="linkBox" id="linkBoxNoradHQ">
+                            <h1 data-localize="noradHq.title">NORAD HQ</h1>
+                            <span data-localize="noradHq.subtitle">Learn about NORAD and our mission</span>
+                        </div>
+
+                        <!-- link hitrects-->
+                        <!-- askSanta link -->
+                        <a target="_blank" class="linkGiftshop externalDisclaimer" href="https://www.shirtstoponline.com/stores/NoradSantaTrackerGear"> </a>
+
+                        <!-- arcade link -->
+                        <span class="linkArcade  popupTrigger" data-bpopup="overlay/games/calendar/index.html">
+                            <span class="linkText">
+                                <a href="#"></a>
+                            </span>
+                        </span>
+
+                        <!-- library link -->
+                        <span class="linkLibrary popupTrigger" data-bpopup="overlay/popups/library/index.html">
+                            <span>
+                                <a href="#"> </a>
+                            </span>
+                        </span>
+
+                        <!-- movies link -->
+                        <span class="linkMovies popupTrigger" data-bpopup="overlay/popups/movies/index.html">
+                            <span class="linkText">
+                                <a href="#"> </a>
+                            </span>
+                        </span>
+
+                        <!-- music link -->
+                        <span class="linkMusic popupTrigger" data-bpopup="overlay/popups/musicplayer/index.html">
+                            <span class="linkText">
+                                <a href="#"> </a>
+                            </span>
+                        </span>
+
+                        <!-- noradhq link -->
+                        <span class="linkNoradHQ popupTrigger" data-bpopup="overlay/popups/noradhq/index.html">
+                            <span class="linktext">
+                                <a href="#"> </a>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!--END VILLAGE section -->
+            <!-- hamburger navigation -->
+            <div id="hamburgerMenuButtonContainer">
+                <div class="hnavButtonRoot">
+                    <div class="hnavToggleButton hnavControl" id="hnavToggleButton"></div>
+                </div>
+            </div>
+
+
+            <!-- FOOTER SECTION -->
+
+            <section id="section-footer" style="height: 600px;">
+                <div id="section-footer-inner">
+                    <div id="section-footer-left">
+                        <div>
+                            <h4 data-localize="noradHq.contactUs.content.comeBackDecember1st" id="comeBackText">Come Back December 24th to track Santa’s flight around the world</h4>
+                            <h4 data-localize="noradHq.contactUs.content.theWaitIsOver" id="waitOverText" class="isInvisible">The Wait is Over! Start tracking Santa now!</h4>
+                            <ul class="contactus__list">
+                                <li>
+                                    <a class="contactvia__phone" href="tel:+1-877-HI-NORAD">
+                                        <img src="images/noradHq/icon-phone.svg" alt="Call NORAD Tracks Santa Icon" />
+                                        <span data-localize="noradHq.contactUs.content.viaPhone">Via Phone: 1-877-HI-NORAD</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="contactvia__email" href="mailto:noradtrackssanta@outlook.com">
+                                        <img src="images/noradHq/icon-email.svg" alt="Email NORAD Tracks Santa Icon" />
+                                        <span data-localize="noradHq.contactUs.content.viaEmail">Via Email: noradtrackssanta@outlook.com</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <br />
+                        <div id="section-footer-socialmedia">
+                            <h4 data-localize="footer.title">Join us all year round</h4>
+                            <div id="section-footer-socialmedia-icons" style="line-height:1px;">
+                                <ul>
+                                    <li id="imgfb"><a target="_blank" class="externalDisclaimer" href="https://www.facebook.com/noradsanta">Facebook</a></li>
+                                    <li id="imgtw"><a target="_blank" class="externalDisclaimer" href="https://twitter.com/NoradSanta">Twitter</a></li>
+                                    <li id="imgyt"><a target="_blank" class="externalDisclaimer" href="https://www.youtube.com/channel/UCraEo3em2y6izLUQl-gPXNg">YouTube</a></li>
+                                    <!-- <li id="imggp"><a target="_blank" class="externalDisclaimer" href="https://plus.google.com/105978913392534030365/posts">Google+</a></li> -->
+                                    <li id="imgis"><a target="_blank" class="externalDisclaimer" href="https://www.instagram.com/noradtrackssanta_official ">Instagram</a></li>
+                                    <li id="imgnl"><a target="_blank" class="externalDisclaimer" href="https://newsroom.24-7pressrelease.com/noradsanta">NORAD Newsline</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="section-footer-merch">
+                            <!-- Removed Merch Stuff -->
+                        </div>
+                    </div>
+                    <div id="section-footer-right">
+                        <div id="section-footer-mobileapps">
+                            <h4 data-localize="footer.downloadOfficialApps">Track Santa on the fly with our mobile apps</h4>
+                            <div id="section-footer-mobileapps-icons">
+                                <ul>
+                                    <li id="android"><a target="_blank" class="externalDisclaimer" href="https://play.google.com/store/apps/details?id=org.norad.santa" data-localize="footer.trackSantaFromAndroid">Track Santa from your Android</a></li>
+                                    <li id="ios"><a target="_blank" class="externalDisclaimer" href="https://itunes.apple.com/us/app/norad-santa-tracker/id1181633163" data-localize="footer.trackSantaFromiOS">Track Santa from your iPhone</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="section-footer-footerlinks">
+                        <!-- <a href="" id="footerContactUsLink" class="popupTrigger" data-bpopup="/overlay/popups/noradhq/index.html?section=PressRoom data-section="contentContact" data-localize="noradHq.contactUs.title">Contact Us</a> -->
+                        <a href="" id="footerPrivacyLink" class="popupTrigger" data-bpopup="overlay/popups/privacy/" data-localize="privacyPolicy.title">Privacy Policy</a>
+                        <a href="" id="footerPressRoomLink" class="popupTrigger" data-bpopup="/overlay/popups/noradhq/index.html?section=PressRoom" data-section="contentPressroom" data-localize="footer.pressRoom">Media Opportunities</a>
+                        <br />
+                        <div class="floatLeft" data-localize="footer.copyright">Copyright 2020 NORAD Tracks Santa</div>
+
+                    </div>
+                    <!-- <div id="section-footer-sharebuttons" class="socialMediaShareButtons floatLeft">
+                    <div style="width:80px;">
+                        <a href="https://twitter.com/share" class="twitter-share-button" {count} data-via="NoradSanta" data-size="large">Tweet</a>
+                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                        <!--<a class="twitter-share-button" href="https://twitter.com/share" data-via="NoradSanta">Tweet</a>
+                    <script type="text/javascript">window.twttr = (function (d, s, id) { var t, js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) { return } js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } }) }(document, "script", "twitter-wjs"));</script>-->
+                </div>
+                <div class="floatLeft">
+                    <div class="fb-like fb_iframe_widget" data-href="http://www.noradsanta.org" data-layout="button_count" data-size="large" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.noradsanta.org%2F&amp;kid_directed_site=true&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large"><span style="vertical-align: bottom; width: 100px; height: 28px;"><iframe name="f137c8aa298f398" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3ed3cca3804eb8%26domain%3Dwww.noradsanta.org%26origin%3Dhttps%253A%252F%252Fwww.noradsanta.org%252Ff2fb4b54de4549c%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.noradsanta.org%2F&amp;kid_directed_site=true&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;size=large" style="border: none; width: 100px; height: 28px; visibility: visible;" class=""></iframe></span></div>
+                </div>
+        </section></div> --&gt;
+        <div class="clearfix"></div>
+    </div>
+    <!-- Our Team -->
+    <div style="display: none;"><a id="fakeTeamPopupLink" class="popupTrigger" data-bpopup="/overlay/popups/noradhq/index.html?section=OurTeam">Our Partners</a></div>
+    <div style="display: none;"><a id="fakeActivities" class="popupTrigger" data-bpopup="/overlay/popups/library/index.html?section=holidayActivities">HA</a></div>
+    <!-- Game Popup -->
+    <div style="display: none;"><a id="fakeGamePopupLink" class="popupTrigger" data-bpopup="/overlay/games/calendar/index.html?deep=yes">Open Game XX</a></div>
+    <!-- Game Popup -->
+    <div style="display: none;"><a id="fakeMapPopupLink" class="popupTrigger" data-bpopup="overlay/tracking/map/index.html">Santa Tracking</a></div>
+    <div class="clearfix"></div>
+    
+    <!--END FOOTER section-->
+    
+
+    <!-- GDPR consent-->
+    <div id="cookieConsent" style="display: block;">
+        <div id="closeCookieConsent">x</div>
+        This website is using cookies. <a class="popupTrigger" data-bpopup="overlay/popups/privacy/">More info</a>. <a class="cookieConsentOK">Accept</a>
+    </div>
+
+    
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#cookieConsent").fadeIn(200);
+            }, 4000);
+            $("#closeCookieConsent, .cookieConsentOK").click(function () {
+                $("#cookieConsent").fadeOut(200);
+            });
+        });
+    </script>
+    <!-- </div> -->
+    <!--My javascript with default functions-->
+    <!--<script src="script/script.js"></script>-->
+    <!-- countdown script -->
+    <script>
+        /*======== COUNTDOWN =================== */
+        function getQueryVariable(variable) { //
+            var query = window.location.search.substring(1);
+            var vars = query.split("&amp;");
+            for (var i = 0; i &lt; vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return "1";
+            return (false);
+        }
+
+        // Countdown end date
+        var santasStartTime = new Date(Date.UTC(2020, 11, 24, 08, 59, 59));// Current Month -1 bcoz Jscript will start from 0
+        var chatbotStartTime = new Date(Date.UTC(2020, 11, 17, 08, 59, 59));
+        var currentDateTimeStamp = getServerTime(),
+            preloadFlagCookie = $.cookie('preloadFlag'),
+            processDeepLinks = function () {
+                var openPopup = function (popupTriggerSelector) {
+                    if (popupTriggerSelector) {
+                        $(popupTriggerSelector).click();
+                    }
+                },
+                getMountainTime = function (utcDate) {
+                    var utc = utcDate.getTime() + (utcDate.getTimezoneOffset() * 60000);
+                    return new Date(utc + (3600000 * -7));
+                },
+                openGame = function (gameNumber) {
+                    if (location.host.indexOf('noradsanta.org') === -1 &amp;&amp; location.host.indexOf('noradsanta2014') === -1) {
+                        currentDateTimeStamp = new Date('11/24/2017 11:00:00 UTC'); // set to 12/24 to test all
+                    }
+                    if (gameNumber &lt;= getMountainTime(currentDateTimeStamp).getDate()) {
+                        // open the game
+                        var $fakeGamePopupLink = $('#fakeGamePopupLink');
+                        $fakeGamePopupLink.data('bpopup', $fakeGamePopupLink.data('bpopup').replace('XX', gameNumber));
+                        $fakeGamePopupLink.click();
+                    } else {
+                        // open the calendar
+                        $('.linkArcade').click();
+                    }
+                },
+                openLibraryItem = function (libraryitem) {
+                    if (libraryitem) {
+                        var $fakeActivities = $('#fakeActivities');
+                        var url = $fakeActivities.data('bpopup').split('=')[0] + "=" + libraryitem;
+                        $fakeActivities.data('bpopup', url);
+                        $fakeActivities.click();
+
+                        console.log(url);
+                    }
+                },
+                deeplinks = {
+                    village: ["", function () { $('#section-village')[0].scrollIntoView(); }],
+                    games: [".linkArcade", function () { }],
+                    game1: ["", function () { openGame(1); }],
+                    game2: ["", function () { openGame(2); }],
+                    game3: ["", function () { openGame(3); }],
+                    game4: ["", function () { openGame(4); }],
+                    game5: ["", function () { openGame(5); }],
+                    game6: ["", function () { openGame(6); }],
+                    game7: ["", function () { openGame(7); }],
+                    game8: ["", function () { openGame(8); }],
+                    game9: ["", function () { openGame(9); }],
+                    game10: ["", function () { openGame(10); }],
+                    game11: ["", function () { openGame(11); }],
+                    game12: ["", function () { openGame(12); }],
+                    game13: ["", function () { openGame(13); }],
+                    game14: ["", function () { openGame(14); }],
+                    game15: ["", function () { openGame(15); }],
+                    game16: ["", function () { openGame(16); }],
+                    game17: ["", function () { openGame(17); }],
+                    game18: ["", function () { openGame(18); }],
+                    game19: ["", function () { openGame(19); }],
+                    game20: ["", function () { openGame(20); }],
+                    game21: ["", function () { openGame(21); }],
+                    game22: ["", function () { openGame(22); }],
+                    game23: ["", function () { openGame(23); }],
+                    movies: [".linkMovies", function () { }],
+                    music: [".linkMusic", function () { }],
+                    library: [".linkLibrary", function () { }],
+                    aboutsanta: ["", function () { openLibraryItem('aboutSanta'); }],
+                    santassleigh: ["", function () { openLibraryItem('santasSleigh'); }],
+                    holidaytraditions: ["", function () { openLibraryItem('holidayTraditions'); }],
+                    holidayactivities: ["", function () { openLibraryItem('holidayActivities'); }],
+                    snowblast: ["", function () { openLibraryItem('snowBlast'); }],
+                    giftShop: [".linkGiftshop", function () { }],
+                    noradHq: [".linkNoradHQ", function () { }],
+                    noradHqContact: ["#footerContactUsLink", function () { }],
+                    footer: ["", function () { $('#section-footer')[0].scrollIntoView(); }],
+                    footerContact: ["", function () { $('#section-footer')[0].scrollIntoView(); $('#footerContactUsLink').click(); }],
+                    footerPrivacy: ["#footerPrivacyLink", function () { }],
+                    footerPressroom: ["#footerPressRoomLink", function () { }],
+                    noradhqPartners: ["#fakeTeamPopupLink", function () { }],
+                    activities: ["#fakeActivities", function () { }]
+                };
+                var deepLinkTarget = getQueryVariable('visit');
+                if (deepLinkTarget &amp;&amp; Object.keys(deeplinks).indexOf(deepLinkTarget) &gt; -1) {
+                    openPopup(deeplinks[deepLinkTarget][0]);
+                    deeplinks[deepLinkTarget][1]();
+                }
+            },
+            unHideRootContainer = function () {
+                if ($.cookie('preloadFlag') == 'loaded') {
+                    setTimeout(function () {
+                        $('#root-container').show();
+                        $("#cj-preloader").css('display', 'none');
+
+
+                        // parse the deepLinks
+                        setTimeout(function () {
+                            processDeepLinks();
+                            if (getServerTime() &gt;= santasStartTime) {
+                                hoHoHo();
+                            }
+                        }, 500);
+                    }, 500);
+                }
+            };
+        if (preloadFlagCookie == 'loaded') {
+            $("#cj-preloader").css('display', 'none');
+            unHideRootContainer();
+
+            //isMusicOn();
+        }
+        // The restful service to get the current timing
+        function getServerTime() {
+            var currentTime;
+            $.ajax({
+                url: 'https://functions.noradsanta.org/api/timer',
+                success: function (data) {
+                    currentTime = new Date(data);
+                    currentDateTimeStamp = currentTime;//we have assigned currentTime to currentDateTimeStamp
+                    if (currentTime &gt;= chatbotStartTime &amp;&amp; currentTime &lt; santasStartTime) {
+                        showChatbot();
+                    }
+                    if (currentTime &gt;= santasStartTime) {
+                        hoHoHo();
+                    }
+                    return currentTime;
+                },
+                error: function (xhr, status, error) {
+                    //alert(xhr.responseText);
+                    // NOTE: Log this.
+                }
+            });
+        }
+
+        $('#defaultCountdown').countdown({ until: santasStartTime, format: 'DHMS', serverSync: getServerTime, onExpiry: hoHoHo, padZeroes: true });
+        $.countdown.setDefaults($.countdown.regionalOptions['']); //to load default language selection //}
+
+        function hoHoHo() {
+            $('#waitOverSign').css('display', 'block');
+            $('#exploreContainer').css('display', 'none');
+            $('#radarchatcontainer').css('display', 'none');
+            $('#fakeMapPopupLink').click();
+        }
+
+        function showChatbot() {
+            $('#radarchatcontainer').css('display', 'block');
+        }
+
+    </script>
+
+    <!-- Hamburger Nav -->
+    <script>
+        //hnav toggle.
+        var isNavigation = false;
+        var toggleHNav = function (forceClose) {
+            var $hnavListContainer = $('.hnavListContainer');
+            if (!forceClose || forceClose &amp;&amp; $hnavListContainer.hasClass('isVisible')) {
+                $('.hnavToggleButton').toggleClass('hnavToggleButton-expanded');//.siblings('div').slideToggle();
+                $hnavListContainer.toggleClass('isVisible');
+                $('body').toggleClass('overflowHidden');
+                if (isNavigation === false) {
+                    $('.hnavLi ul li#' + $.cookie('langName') + 'Opt_hnav a.langOpt_hnavLink').css('color', "#000000");
+                }
+            }
+        };
+        $('.hnavControl').click(function () {
+            toggleHNav(false);
+        });
+
+
+        //Setting the hamburger menu items to work like an accordion.
+        $(function () {
+            var icons = {
+                "header": "hnavLabel-collapsed",
+                "activeHeader": "hnavLabel-expanded"
+            };
+            $(".accordion").accordion({
+                icons: icons,
+                heightStyle: "content",
+                active: 1,
+                collapsible: true,
+                event: "click"
+            });
+
+
+        });
+    </script>
+
+    <!-- village rollovers -->
+    <script>
+        // library link
+        $(".linkLibrary").mouseenter(function () {
+            $('#linkBoxLibrary').css('display', 'inherit');
+        });
+        $(".linkLibrary").mouseleave(function () {
+            $('#linkBoxLibrary').css('display', 'none');
+        });
+
+        // arcade link
+        $(".linkArcade").mouseenter(function () {
+            $('#linkBoxArcade').css('display', 'inherit');
+        });
+        $(".linkArcade").mouseleave(function () {
+            $('#linkBoxArcade').css('display', 'none');
+        });
+
+        //NoradHQ
+        $(".linkNoradHQ").mouseenter(function () {
+            $('#linkBoxNoradHQ').css('display', 'inherit');
+        });
+        $(".linkNoradHQ").mouseleave(function () {
+            $('#linkBoxNoradHQ').css('display', 'none');
+        });
+
+        // music link
+        $(".linkMusic").mouseenter(function () {
+            $('#linkBoxMusic').css('display', 'inherit');
+        });
+        $(".linkMusic").mouseleave(function () {
+            $('#linkBoxMusic').css('display', 'none');
+        });
+
+        // movies link
+        $(".linkMovies").mouseenter(function () {
+            $('#linkBoxMovies').css('display', 'inherit');
+        });
+        $(".linkMovies").mouseleave(function () {
+            $('#linkBoxMovies').css('display', 'none');
+        });
+
+
+        //Ask Santa
+        $(".linkGiftshop").mouseenter(function () {
+            $('#linkBoxGiftShop').css('display', 'inherit');
+        });
+        $(".linkGiftshop").mouseleave(function () {
+            $('#linkBoxGiftShop').css('display', 'none');
+        });
+
+
+    </script>
+    <!-- Music Cookie and Script -->
+    <script>
+        var musicplaying;
+        if ($.cookie('musicplaying') === undefined) {
+            musicplaying = true;
+            $.cookie('musicplaying', musicplaying, 'expires=Thu, 01 Jan 1955 12:00:00 UTC');
+            var song;
+        } else {
+            musicplaying = $.cookie('musicplaying');
+        }
+    </script>
+
+    <!-- Musik -->
+    <script type="text/javascript" src="script/musicPlayer.js"></script>
+    <!-- document.ready() => DOMLoaded -->
+    <script>
+        var gsTimelines = [];
+        var pauseAnimations = function (state) {
+            var length = gsTimelines.length;
+            for (var i = 0; i &lt; length; i++) {
+                gsTimelines[i].paused(state);
+            }
+
+            if (state == 1) {
+                $('#donutty').removeClass('donutRadar-icon');
+            } else {
+                $('#donutty').addClass('donutRadar-icon');
+            }
+        };
+
+        // testing ---
+        $(document).ready(function () {
+            // &lt;!-- the preloader!!! --&gt;
+            var preloaderFunction = function () {
+                var preloader, progress, width;
+
+                // perc = the current percentage, 0-100
+                function updatePreloader(perc) {
+
+                    // updates percentage line
+                    progress.width(perc * width);
+
+                    // if percentage equals 100, preloading has finished
+                    if (perc === 100) {
+
+                        // visual pause to show that preloading has finished
+                        setTimeout(function () {
+
+                            // hide the preloader
+                            preloader.addClass('cj-hide-preloader');
+
+                            // stop the keyframe animation
+                            progress.children('cj-lines').removeClass('cj-animation');
+
+                            // cleanup
+                            preloader = progress = null;
+
+                        }, 500);
+
+                    } else if (perc === 99.999999) {
+                        // special case to handle globe not loaded
+                        progress = null;
+                    }
+                }
+
+                if (preloadFlagCookie == 'loaded') {
+                    if (musicplaying &amp;&amp; $(window).width() &gt; 760) {
+                        //playAudio();
+                        stopAudio();
+                    }
+
+                } else {
+                    // here we try to load
+                    preloader = $('#cj-preloader');
+                    preloader.css('display', 'inherit');
+
+                    if (!preloader.length) return;
+
+                    progress = preloader.find('.cj-stripes');
+                    if (!progress.length) return;
+
+                    width = parseInt(preloader.children('.cj-bar').css('width'), 10) * 0.01;
+
+                    // kick off the preloader
+                    $.cjPreloader({
+                        list: [
+                            'images/village/animation/village.png',
+                            'images/pop/christmastide/trackNow_en.png',
+                            'images/static/65yr/NTS 65th Anniversary logo.png',
+                            'images/village/animation/lights-music.png',
+                            'images/village/animation/lights-library.png',
+                            'images/village/animation/lights-theatre.png',
+                            'images/village/animation/lights-arcade.png',
+                            'images/village/animation/elf_anim_snowmanmaker.gif',
+                            'images/village/animation/elf_anim_skywatch_smallwbg.gif',
+                            'images/village/animation/elf_anim_iceskate_left.gif',
+                            'images/village/animation/elf_anim_iceskate_right.gif',
+                            'images/village/animation/elf_anim_iceskate_left.gif',
+                            'images/village/animation/elf_anim_iceskate_right.gif',
+                            'images/village/animation/tree-blinking.gif',
+                            'images/village/animation/elf_anim_airtankgirl_sheet.png',
+                            'images/village/animation/elf_anim_chimneysweep_sheet.png',
+                            'images/village/animation/elf_anim_diver_sheet.png',
+                            'images/village/animation/elf_anim_mailboxchecker_sheet.png',
+                            'images/village/animation/satellitedish_sheet.png',
+                            'images/village/trees/ta.png',
+                            'images/village/trees/tb.png',
+                            'images/village/trees/tb.png'
+                        ],
+                        onUpdate: updatePreloader,
+                        onComplete: function () {
+                            $.cookie('preloadFlag', 'loaded');
+                            unHideRootContainer();
+                            if (musicplaying &amp;&amp; $(window).width() &gt; 660) {
+                                stopAudio();
+                            }
+                            return true;
+                        }
+                    });
+                }
+            };
+            preloaderFunction();
+            var vpw = $(window).width();
+            var vph = $(window).height();
+
+            $('#section-village').css({ 'height': (vph) });
+            $('#section-footer').css({ 'height': (vph) });
+            $('#defaultCountdown,#countMsg').css('color', '#000000');
+            var $phoneElfContainer = $('#phoneElfContainer');
+            // Clamping village contents to max height when the css breaks
+            // kind of simulating object-fit: contain here. Kind of...
+            if ($("#village-animations").height() &gt;= vph ||
+                $("#village-animations").width() == 0) {
+                village_max_height = vph;
+                village_base_width = vph * 3.839171975;
+                $("#village-animations").css("height", vph + "px");
+                $("#village-animations").css("width", village_base_width + "px");
+                $("#village-links").css("height", vph + "px");
+                $("#village-links").css("width", village_base_width + "px");
+            };
+
+            //Safari Hack for globe and footer for iOS
+            var iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+            var iPad = /(iPad)/g.test(navigator.userAgent);
+
+            //var Android = "";
+            if (iOS) {
+                document.getElementById('section-footer').style.height = 'auto';
+            }
+
+            // &lt;!-- set the height of each section to the window height.  --&gt;
+            $(window).resize(function () {
+                var vpw = $(window).width();
+                var vph = $(window).height();
+
+                //$('#section-village').css({ 'height': (vph) });
+                //$('#section-footer').css({ 'height': (vph) });
+
+                var iPad = /(iPad)/g.test(navigator.userAgent);
+            });
+
+            //detect the distance we've scrolled
+            $(window).scroll(function () {
+                // Get the Heights of each main section
+                var vph = $(window).height();
+                var villageHeight = $("#section-village").height();
+                var footerHeight = $('#section-footer').height();
+                var musicContainerHeight = $('#musicContainer').height();
+
+                var navLinkHeight = $('#navLinkNorthPole').height();
+                var navTopPadding = $(window).height() * 0.2;
+
+                $('#defaultCountdown,#countMsg').css('color', '#000000');
+                $('#northPoleWeatherReport&gt;h3,#northPoleWeatherReport&gt;div').css('color', '#000000');
+                $('#userWeatherReport&gt;h3,#userWeatherReport&gt;div').css('color', '#000000');
+                $("#northPoleWeatherReport i").css('color', '#000000');
+                $("#userWeatherReport i").css('color', '#000000');
+                $('#musicArrow').css('fill', '#000000');
+
+                $(".langOpt").css('color', '#000000');
+                $("#langSelDropCurrentValue").css('color', '#000000');
+                $("#langArrow").css('fill', '#000000');
+                $("#iconTwitter").css('background-position', '-31px 0');
+                $("#iconFacebook").css('background-position', '5px 0');
+                $("#iconYouTube").css('background-position', '-70px 0');
+                $("#iconNewsline").css('background-position', '-179px 0');
+                $("#iconInstagram").css('background-position', '-144px 0');
+
+                $('#section-footer').css({ 'height': (vph) });
+            });
+
+            // &lt;!-- LOCALIZE --&gt;
+            var langName;
+            if ($.cookie('langName') === undefined) {
+                langName = "en";
+                $.cookie('langName', 'en');
+            } else {
+                langName = $.cookie('langName');
+            }
+
+            var opts = { language: langName, pathPrefix: "loc" };
+            $("[data-localize]").localize("lang", opts, { skipLanguage: "en-US" });
+            localizeImages(langName);
+            // Language Names
+            var langNames = {
+                'en': 'English',
+                'zh': '中文',
+                'fr': 'Français',
+                'hi': 'हिन्दी',
+                'de': 'Deutsch',
+                'it': 'Italiano',
+                'ja': '日本語',
+                'pt': 'Português',
+                'es': 'Español'
+            };
+
+            $('#langSelDropCurrentValue').text(langNames[langName]);
+            // switch the language
+            var switchLanguage = function (langName) {
+                $.cookie('langName', langName);
+                $("html").attr("lang", langName);//set html lang attribute for assesibility. 
+                var opts = { language: langName, pathPrefix: "loc" };
+                $("[data-localize]").localize("lang", opts, { skipLanguage: "en-US" });
+                $('#langSelDropCurrentValue').text(langNames[langName] + ' ');
+                localizeImages(langName);
+                $(".dda").click();
+                $(".langSelDrop").click();
+            };
+
+            // let's make some switches
+            $(".langOpt").click(function () {
+                switchLanguage($(this).data('langStr'));
+            });
+
+            $(".langOpt_hnavLink").on('tap click', function () {
+                isNavigation = true;
+                toggleHNav(true);
+                $(".hnavLi ul li a.langOpt_hnavLink").css('color', "#fff");
+                $(this).css('color', "#000000");
+                switchLanguage($(this).data('langStr'));
+            });
+
+            //localize images-//////////////////////////////////////////////
+            function localizeImages(langName) {
+                //$('.villageTitle').css('background-image', "url(images/village/title_" + langName + ".png)");
+                $('#waitOverSign').find('img').attr('src', 'images/pop/christmastide/trackNow_' + langName + '.png');
+                $('#windows10').find('img').attr('src', 'images/foot/Win_10_' + langName + '.png');
+                $('#countMsg').css('font-size', "1.9em");
+            }
+
+            // Flickering Light Scripts and other animations
+            var greensockAnimations = function () {
+                var light_musicstage = document.getElementById("village-musicstage");
+
+                var tl = new TimelineMax();
+                gsTimelines.push(tl);
+
+                tl.add(TweenLite.to(light_musicstage, 0.4, { opacity: 0.95 }));
+                tl.add(TweenLite.to(light_musicstage, 0.3, { opacity: 0.00 }));
+                tl.add(TweenLite.to(light_musicstage, 0.4, { opacity: 0.50 }));
+                tl.add(TweenLite.to(light_musicstage, 0.2, { opacity: 0.80 }));
+                tl.add(TweenLite.to(light_musicstage, 0.9, { opacity: 0.10 }));
+                tl.add(TweenLite.to(light_musicstage, 0.2, { opacity: 0.40 }));
+                tl.add(TweenLite.to(light_musicstage, 0.3, { opacity: 0.30 }));
+                tl.add(TweenLite.to(light_musicstage, 0.7, { opacity: 0.80 }));
+                tl.add(TweenLite.to(light_musicstage, 0.2, { opacity: 0.30 }));
+                tl.add(TweenLite.to(light_musicstage, 0.2, { opacity: 0.95 }));
+                tl.add(TweenLite.to(light_musicstage, 0.5, { opacity: 0.60 }));
+                tl.add(TweenLite.to(light_musicstage, 0.2, { opacity: 0.95 }));
+
+                tl.repeat(-1);
+
+
+                var light_library = document.getElementById("village-library");
+
+                var tl_library = new TimelineMax();
+                gsTimelines.push(tl_library);
+
+                tl_library.add(TweenLite.to(light_library, 0.4, { opacity: 0.95 }));
+                tl_library.add(TweenLite.to(light_library, 0.5, { opacity: 0.60 }));
+                tl_library.add(TweenLite.to(light_library, 0.2, { opacity: 0.95 }));
+                tl_library.add(TweenLite.to(light_library, 0.9, { opacity: 0.10 }));
+                tl_library.add(TweenLite.to(light_library, 0.2, { opacity: 0.40 }));
+                tl_library.add(TweenLite.to(light_library, 0.3, { opacity: 0.30 }));
+                tl_library.add(TweenLite.to(light_library, 0.7, { opacity: 0.80 }));
+                tl_library.add(TweenLite.to(light_library, 0.2, { opacity: 0.30 }));
+                tl_library.add(TweenLite.to(light_library, 0.3, { opacity: 0.00 }));
+                tl_library.add(TweenLite.to(light_library, 0.4, { opacity: 0.50 }));
+                tl_library.add(TweenLite.to(light_library, 0.2, { opacity: 0.80 }));
+                tl_library.add(TweenLite.to(light_library, 0.2, { opacity: 0.95 }));
+
+                tl_library.repeat(-1);
+
+                var light_theater = document.getElementById("village-theater");
+
+                var tl_theater = new TimelineMax();
+                gsTimelines.push(tl_theater);
+
+                tl_theater.add(TweenLite.to(light_theater, 0.2, { opacity: 0.40 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.5, { opacity: 0.30 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.7, { opacity: 0.80 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.4, { opacity: 0.50 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.2, { opacity: 0.80 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.2, { opacity: 0.30 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.7, { opacity: 0.00 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.9, { opacity: 0.95 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.4, { opacity: 0.60 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.2, { opacity: 0.95 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.9, { opacity: 0.10 }));
+                tl_theater.add(TweenLite.to(light_theater, 0.2, { opacity: 0.95 }));
+
+                tl_theater.repeat(-1);
+
+                var light_arcade = document.getElementById("village-arcade");
+
+                var tl_arcade = new TimelineMax();
+                gsTimelines.push(tl_arcade);
+
+                tl_arcade.add(TweenLite.to(light_arcade, 0.7, { opacity: 0.00 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.9, { opacity: 0.95 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.2, { opacity: 0.40 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.5, { opacity: 0.30 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.4, { opacity: 0.50 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.9, { opacity: 0.10 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.2, { opacity: 0.95 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.2, { opacity: 0.80 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.2, { opacity: 0.30 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.7, { opacity: 0.80 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.4, { opacity: 0.60 }));
+                tl_arcade.add(TweenLite.to(light_arcade, 0.2, { opacity: 0.95 }));
+
+                tl_arcade.repeat(-1);
+
+                var light_noradhq = document.getElementById("village-noradhq");
+
+                var tl_noradhq = new TimelineMax();
+                gsTimelines.push(tl_noradhq);
+
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.4, { opacity: 0.95 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.3, { opacity: 0.00 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.4, { opacity: 0.50 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.2, { opacity: 0.80 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.9, { opacity: 0.10 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.2, { opacity: 0.40 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.3, { opacity: 0.30 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.7, { opacity: 0.80 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.2, { opacity: 0.30 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.2, { opacity: 0.95 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.5, { opacity: 0.60 }));
+                tl_noradhq.add(TweenLite.to(light_noradhq, 0.2, { opacity: 0.95 }));
+
+                tl_noradhq.repeat(-1);
+
+                // Elf Ice Skating
+                var elf_iceskate_left = document.getElementById("elf-iceskate-left");
+                var elf_iceskate_right = document.getElementById("elf-iceskate-right");
+
+                var tl_elf_iceskate = new TimelineMax();
+                gsTimelines.push(tl_elf_iceskate);
+
+                tl_elf_iceskate.add(TweenLite.to(elf_iceskate_left, 20, { left: "-50px", ease: "Linear.easeNone" }));
+                tl_elf_iceskate.add(TweenLite.to(elf_iceskate_right, 20, { left: "1650px", ease: "Linear.easeNone" }));
+
+                tl_elf_iceskate.repeat(-1);
+
+                // Elf Ice Skating 2
+                var elf_iceskate_left2 = document.getElementById("elf-iceskate-left2");
+                var elf_iceskate_right2 = document.getElementById("elf-iceskate-right2");
+
+                var tl_elf_iceskate2 = new TimelineMax();
+                gsTimelines.push(tl_elf_iceskate2);
+
+                tl_elf_iceskate2.add(TweenLite.to(elf_iceskate_left2, 10, { left: "-50px", ease: "Linear.easeNone" }));
+                tl_elf_iceskate2.add(TweenLite.to(elf_iceskate_right2, 5, { left: "1650px", ease: "Linear.easeNone" }));
+
+                tl_elf_iceskate2.repeat(-1);
+
+                // Sprite Sheet animation assist function
+                var gridcellfinder = function (columns, rows, gcellx, gcelly) {
+                    //returns a pair of values wrapped up in text, ready for the Background-position attribute, eg.: "100% 0"
+                    var rowpercent = 100 / (rows - 1);
+                    var columnpercent = 100 / (columns - 1);
+                    return (columnpercent * gcellx - columnpercent + "%") + " " + (rowpercent * gcelly - rowpercent + "%");
+                };
+
+                // Elf - SkyWatch
+                var elf_skywatch = document.getElementById("elf-skywatch");
+                var tl_elf_skywatch = new TimelineMax();
+                gsTimelines.push(tl_elf_skywatch);
+                var e_skyw_gridinfo = {
+                    rows: 4,
+                    columns: 5,
+                };
+
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 10, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.5, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.5, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.5, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.5, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.add(TweenLite.to(elf_skywatch, 0.1, { backgroundPosition: gridcellfinder(e_skyw_gridinfo.columns, e_skyw_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_elf_skywatch.repeat(-1);
+
+                // Elf - Mailbox Checker
+                var elf_mailboxchecker = document.getElementById("elf-mailboxchecker");
+                var tl_elf_mailboxchecker = new TimelineMax();
+                gsTimelines.push(tl_elf_mailboxchecker);
+                var e_mbc_gridinfo = {
+                    rows: 5,
+                    columns: 7,
+                };
+
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 3.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 6, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 7, 1), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 6, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 7, 2), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 6, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 2.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 7, 3), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 1.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 6, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 7, 4), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 1, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 2, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 3, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 4, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 5, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.add(TweenLite.to(elf_mailboxchecker, 0.1, { backgroundPosition: gridcellfinder(e_mbc_gridinfo.columns, e_mbc_gridinfo.rows, 6, 5), ease: SteppedEase.config(1) }));
+                tl_elf_mailboxchecker.repeat(-1);
+
+                // Elf - ChimneySweeper
+                var elf_chimneysweeper = document.getElementById("elf-chimneysweeper");
+                var tl_elf_chimneysweeper = new TimelineMax();
+                gsTimelines.push(tl_elf_chimneysweeper);
+                var e_chsw_gridinfo = {
+                    rows: 5,
+                    columns: 8,
+                };
+
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 10, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 7, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 8, 1), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 7, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 8, 2), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 7, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 8, 3), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 7, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 8, 4), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 1, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 2, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 3, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 4, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 5, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.add(TweenLite.to(elf_chimneysweeper, 0.1, { backgroundPosition: gridcellfinder(e_chsw_gridinfo.columns, e_chsw_gridinfo.rows, 6, 5), ease: SteppedEase.config(1) }));
+                tl_elf_chimneysweeper.repeat(-1);
+
+                // Elf - airtanker (she who watches the diver and holds the air tank)
+                var elf_airtanker = document.getElementById("elf-airtanker");
+                var tl_elf_airtanker = new TimelineMax();
+                gsTimelines.push(tl_elf_airtanker);
+                var e_at_gridinfo = {
+                    rows: 6,
+                    columns: 5,
+                };
+
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 8, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.2, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 1.5, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.2, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 5), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 5), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 5), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 5), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 5), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 1, 6), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 2, 6), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 3, 6), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 4, 6), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.add(TweenLite.to(elf_airtanker, 0.1, { backgroundPosition: gridcellfinder(e_at_gridinfo.columns, e_at_gridinfo.rows, 5, 6), ease: SteppedEase.config(1) }));
+                tl_elf_airtanker.repeat(-1);
+
+                // Elf - diver (she who watches the diver and holds the air tank)
+                var elf_diver = document.getElementById("elf-diver");
+                var tl_elf_diver = new TimelineMax();
+                gsTimelines.push(tl_elf_diver);
+                var e_dvr_gridinfo = {
+                    rows: 4,
+                    columns: 7,
+                };
+
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 7, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 7, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 7, 1), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 7, 2), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 20, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 7, 3), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.add(TweenLite.to(elf_diver, 0.1, { backgroundPosition: gridcellfinder(e_dvr_gridinfo.columns, e_dvr_gridinfo.rows, 6, 4), ease: SteppedEase.config(1) }));
+                tl_elf_diver.repeat(-1);
+
+                // Elf - diver (she who watches the diver and holds the air tank)
+                var hqdish = document.getElementById("hqdish");
+                var tl_hqdish = new TimelineMax();
+                gsTimelines.push(tl_hqdish);
+                var hqdish_gridinfo = {
+                    rows: 5,
+                    columns: 5,
+                };
+
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 1, 1), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 2, 1), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 3, 1), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 4, 1), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 5, 1), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 1, 2), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 1.5, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 2, 2), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 3, 2), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 4, 2), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 5, 2), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 1, 3), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 2, 3), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 3, 3), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 4, 3), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 5, 3), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 10.5, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 1, 4), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 2, 4), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 3, 4), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 4, 4), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 5, 4), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 1, 5), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 2, 5), ease: SteppedEase.config(1) }));
+                tl_hqdish.add(TweenLite.to(hqdish, 0.1, { backgroundPosition: gridcellfinder(hqdish_gridinfo.columns, hqdish_gridinfo.rows, 3, 5), ease: SteppedEase.config(1) }));
+                tl_hqdish.repeat(-1);
+            };
+            greensockAnimations();
+        });
+    </script>
+
+
+    <!-- Popups -->
+    <script>
+        // popups
+        var musicStoppedByPopup = false;
+        ; (function ($) {
+            $(function () {
+                $('.popupTrigger').bind('click', function (e) {
+                    e.preventDefault();
+                    var self = $(this) //button
+                        , content = $('.content');
+
+                    $('#element_to_pop_up').bPopup({
+                        onOpen: function () {
+                            $('#hamburgerMenuButtonContainer').css('display', 'none');
+                            $('body').css('overflow', 'hidden');
+                            $("#playertop").css('z-index', '0');
+
+                            var iframeCodeFirstHalf = "&lt;iframe src='";
+                            var iframeCodeSecondHalf = "' frameborder='0' allowfullscreen allowtransparency=true&gt;&lt;/iframe&gt;";
+
+                            var popupUrl = self.data('bpopup');
+                            var iframeUrl = popupUrl.indexOf('?') &gt; -1 ? popupUrl + '&amp;' + location.search.substring(1) : popupUrl + location.search;
+                            content.html((iframeCodeFirstHalf + iframeUrl + iframeCodeSecondHalf) || '');
+                            pauseAnimations(true);
+                            musicStoppedByPopup = false;
+                        },
+                        position: [0, 0],
+                        escClose: true,
+                        positionStyle: 'fixed',
+                        speed: 500,
+                        transition: 'fadeIn',
+                        onClose: function () {
+                            $('#hamburgerMenuButtonContainer').css('display', 'inherit');
+                            $('body').css('overflow', 'auto');
+                            $("#playertop").css('z-index', '10000');
+
+                            content.empty();
+                            pauseAnimations(false);
+                            var popupUrl = self.data('bpopup');
+                            if (popupUrl.search('musicplayer') == -1 &amp;&amp; $('#audio')[0].paused &amp;&amp; musicStoppedByPopup)
+                                playAudio();
+                        }
+                    });
+                    toggleHNav(true);
+                });
+            });
+        })(jQuery);
+
+        function playOrStopMusicPlayer(isletters) {
+            if (isletters === 0 &amp;&amp; !$('#audio')[0].paused) {
+                stopAudio();
+                musicStoppedByPopup = true;
+            } else if (isletters === 1 &amp;&amp; $('#audio')[0].paused &amp;&amp; musicStoppedByPopup) {
+                playAudio();
+                musicStoppedByPopup = false;
+            }
+        }
+    </script>
+
+    <!--single-click to select embed codes-->
+    <script type="text/javascript">
+        $(function () {
+
+            function selectText(containerid) {
+                if (document.selection) {
+                    var range = document.body.createTextRange();
+                    range.moveToElementText(document.getElementById(containerid));
+                    range.select();
+                } else if (window.getSelection()) {
+                    var range = document.createRange();
+                    range.selectNodeContents(document.getElementById(containerid));
+                    window.getSelection().removeAllRanges();
+                    window.getSelection().addRange(range);
+                }
+            }
+
+            $('.codeBlock').on('click', function () { selectText(this.id); });
+        });
+
+        //prevent mouse wheel middle click for chrome
+        $(document).on('auxclick', 'a', function (e) {
+            if (e.which === 2) { //middle Click
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                return false;
+            }
+            return true;
+        });
+
+    </script>
+
+    <!--                                       Google Analytics                              -->
+    <!--                                      DO NOT EDIT                                    -->
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-46120476-1']);
+        _gaq.push(['_setDomainName', 'noradsanta.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+        $('[data-toggle="popover"]').popover({
+            placement : 'top',
+            html : true,
+            title : 'Chat with Radar &lt;a href="#" class="close" data-dismiss="alert"&gt;&amp;times;&lt;/a&gt;',
+            content : '&lt;div style="height: 400px;max-width: 250px"&gt;&lt;iframe src="https://noradtracksantachat-demo-as.azurewebsites.net" style="height: 400px;max-width: 250px;border:none;"&gt;&lt;/iframe&gt;&lt;/div&gt;'
+        });
+        $(document).on("click", ".popover .close" , function(){
+            $(this).parents(".popover").popover('hide');
+        });
+    </script>
+    <script>
+        var elmnt = document.getElementById("radarchatcontainer");
+        elmnt.scrollIntoView(false);
+    </script>
+
+
+</body></html>

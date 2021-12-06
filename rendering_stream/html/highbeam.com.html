@@ -1,0 +1,980 @@
+<!DOCTYPE html><!--[if lt IE 7 ]> <html class="ie ie6" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="app"> <![endif]--><!--[if IE 7 ]>    <html class="ie ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="app"> <![endif]--><!--[if IE 8 ]>    <html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="app"> <![endif]--><!--[if IE 9 ]>    <html class="ie ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="app"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-ng-app="app" class="no-touch ng-scope"><!--<![endif]--><head data-ng-controller="HeadController as hc" class="ng-scope"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <!--according to xdomain document, it is important to include it before any other library, so put it here for now -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//s.thebrighttag.com/tag?site=FIlmgbU&amp;H=-10997sg"></script><script async="" src="//s.btstatic.com/tag.js#site=FIlmgbU"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TCCBS97"></script><script type="text/javascript" src="/ruxitagentjs_ICA2SVfqru_10205201116183137.js" data-dtconfig="rid=RID_-1460304445|rpid=-916677428|domain=questia.com|reportUrl=/rb_bf72382oux|app=10d983ad2de17ec6|ssc=1|featureHash=ICA2SVfqru|vcv=2|rdnt=1|uxrgce=1|cuc=w8dugclo|dpvc=1|lastModification=1605727043353|dtVersion=10205201116183137|tp=500,50,0,1|uxdcw=1500|vs=2|agentUri=/ruxitagentjs_ICA2SVfqru_10205201116183137.js"></script><script src="https://qtastatic.com/content/20201201113516/XDomainJS.min.js"></script>
+    <script>
+        var slaves = {};
+                slaves["http://api.questia.com"]="/proxy.html";
+                slaves["https://api.questia.com"]="/proxy.html";
+
+
+        xdomain({
+            slaves: slaves
+        });
+
+    </script>  
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="msapplication-config" content="none" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-152x152-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-120x120-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-76x76-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+    
+  
+
+    
+    <script type="text/javascript">
+        var jslogEnabled = false;      
+    </script>
+  
+    <link href="https://qtastatic.com/content/20201201113516/SiteCSS.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/content/css/icon-font.css" media="all" />
+
+       
+        
+    <script src="https://qtastatic.com/content/20201201113516/SiteJS.min.js"></script>
+    <script src="https://api-messages.questia.com/events/hubs"></script>
+    <script src="https://qtastatic.com/content/20201201113516/AngularSiteJS.min.js"></script>
+    
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            var serverInfo = window.serverInfo = {
+                Api: {
+                    Url: "https://api.questia.com",
+                    BrokerAddress: "https://api-messages.questia.com",
+                    Token: "",
+                    UserId: "0cff1659-beea-4db2-8715-c27b7075591c",
+                    IsUserAuthenticated: "False",
+                    Key: "qta.com",
+                    Version: "1.2",
+                    TokenName: "QTA" + '_AUTH_COOKIE'
+                },
+                SiteId: 7,
+                AddThisEnabled: true,
+                WebViewEnabled: false
+            };
+
+            window.scrollToHandler = ["$stateParams", "ScrollService",
+                    function($stateParams, scrollService) {
+                        var scrollTo = $stateParams.scrollTo;
+                        scrollService.scrollTo(scrollTo);
+                    }
+            ];
+
+            var app = angular.module('app', ['ui.router', 'common', 'ngAria'])
+                .constant("ServerInfo", serverInfo)
+                .config([
+                    '$stateProvider', function($stateProvider) {
+                        $stateProvider
+                            .state('root', {
+                                url: '/:scrollTo',
+                                resolve: {
+                                    scroll: window.scrollToHandler
+                                }
+                            });
+                    }
+                ]);
+
+            Extensions.AngularBehaviorManager.setupAuthFailBehavior(app);
+            Extensions.AngularBehaviorManager.setupCacheBustingForHtmlTemplates(app, "20201201113516");
+            Extensions.AngularBehaviorManager.setupLogging(app, serverInfo.Api.Url,
+                serverInfo.Api.Key, serverInfo.Api.Version,
+                true);
+        })();
+
+</script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TCCBS97');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+
+    
+    <link href="https://qtastatic.com/content/20201201113516/InformationCSS.min.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://qtastatic.com/content/20201201113516/LibraryJS.min.js"></script>
+    
+        <title data-ng-bind="hc.title" data-ng-init="hc.setDefaultTitle('About Questia | Questia, Your Online Research Library')" class="ng-binding">About Questia | Questia, Your Online Research Library</title>
+    <meta name="description" content="Questia is an online library of more than 14 million books, journals, and articles, plus helpful citation tools to help students and instructors with their research." />
+    
+
+        <script type="text/javascript">
+            var pageName = "About Us";
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).bind('OMNITURE_CLICK', $.proxy(function (e, data) {
+                OmnitureClick(data.actionName, '', data.actionLabel);
+            }, this));
+            $('#returnToSearchResults').click(function (e) {
+                e.stopPropagation();
+                $(document).trigger('OMNITURE_CLICK', { actionName: 'Header|ReturnToSearchResults' });
+            });
+            $(document).bind('OMNITURE_FROM_ANGULAR_CLICK', $.proxy(function (e, data) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'customClick',
+                    eventCategory: 'Custom Click',
+                    eventAction: data,
+                    eventLabel: null
+                });
+            }, this));
+            $(document).bind('VIRTUALPAGEVIEW_FROM_ANGULAR', $.proxy(function (e, data) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push(data);
+            }, this));
+        });
+    </script>
+    <!--[if lt IE 9]>
+        <script src="/content/js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <script type="text/javascript">
+    var iOS = /(iPad|iPhone|iPod)/gi.test(navigator.userAgent);
+  
+    if(iOS)
+    {
+        var meta = document.createElement('meta');
+        meta.name = "apple-itunes-app";
+        meta.content = "app-id=331637962";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+      </script>
+
+
+<script type="text/javascript" src="https://www.upsellit.com/custom/questia.jsp"></script></head>
+<body click-listener="" class="user-abandon-non-auth" data-ng-class="{'menu-open' : menuOpen}">
+
+    <img class="print-logo" src="https://qtastatic.com/content/img/print-logo-full.jpg" alt="Questia: Trusted online research" width="183" height="45" />
+    
+        <!-- SiteMaintenanceMessage -->
+
+        
+             
+        <div id="errorContainer">
+            
+
+           
+        </div>
+   
+    
+    
+    
+
+    <div class="main-container" id="pageBackground"> 
+
+        <div class="interstitials">
+            
+        </div>
+
+               
+        <div class="main wrapper clearfix">            
+            
+
+
+<div id="accountMain" class="main-content-container">
+
+    <div id="mobilePageMenuBtn" class="btn btn-default mobile-page-menu-button">
+        <span class="menu-button" aria-hidden="true" data-icon="/"></span>
+        <strong>Menu</strong>
+        <div id="mobilePageMenu" class="mobile-sub-nav flyout">
+                <ul>
+                        <li><a href="/about-questia">About us</a></li>
+                        <li><a href="/#library">Take a tour</a></li>
+                        <li><a href="/user-agreements">User Agreements</a></li>
+                        <li><a href="https://www.cengage.com/privacy" target="_blank">Privacy policy</a></li>
+                        <li><a href="/contact-us">Contact us</a></li>
+                        <li><a href="/site-sunset">Site Sunset</a></li>
+                        <li><a href="/help">Help</a></li>
+                </ul>
+        </div>
+    </div>
+
+    
+
+    <h1>A Note for Former HighBeam Users</h1>
+    <p>
+        After many years of successfully serving the needs of our customers, HighBeam Research has been retired.
+        </p>
+    <p>
+        Because HighBeam Research has closed down we have taken you to our sister website Questia, an award-winning Cengage Learning product.
+    </p>
+<h1>About us</h1>
+<p>
+    Located in downtown Chicago, Questia is the premier online research and paper writing
+    resource. Since its founding in 1998, Questia has helped students find and cite
+    high-quality, scholarly research. With emphasis on subjects related to the humanities
+    and social sciences, Questia provides the resources needed to complete most college-level,
+    core-curriculum course assignments.
+</p>
+<p>
+    The Questia library contains books and journal articles on subjects such as history,
+    philosophy, economics, political science, English and literature, anthropology,
+    psychology, and sociology. It also includes magazine and newspaper articles.
+</p>
+<p>
+    In January 2010, Questia was acquired by Cengage Learning, the leading provider
+    of innovative teaching, learning, and research solutions for professional, library,
+    and academic audiences worldwide. Since then, Questia's library has continued to
+    grow, and advanced tools for research and writing have been fine-tuned to meet the
+    needs of the academic community. Today, more students are using Questia than ever
+    before.
+</p>
+
+<h2>Questia at a glance</h2>
+<ul class="bullet-list">
+    <li>More than 500,000 students have used Questia since its launch.</li>
+    <li>Experienced, on-staff librarians hand-select the books and periodicals offered.</li>
+    <li>More than 83,000 online books from reputable commercial and academic presses.</li>
+    <li>More than 14 million quality, citable journal, newspaper and magazine articles.</li>
+    <li>Organizational and paper-writing tools to help you manage your research and automatically
+        generate footnotes and bibliographies. </li>
+    <li>Instructors can select and assign students readings and/or research tutorials for writing a research paper to complete for their coursework.</li>
+    <li>Writing Center with tools and guidance to help you write your research paper
+        <ul>
+            <li>Topic Idea Generator, Thesis builder, Outline builder among others</li>
+            <li>9 steps to writing a research paper</li>
+            <li>Research tutorials consisting of videos, PDF examples and quizzes designed to help students write better research papers.</li>
+        </ul>
+    </li>
+</ul>
+<h2>Testimonials</h2>
+<div class="questimonial border-bottom first">
+    <p>
+        <span class="left-quote">“</span>This is the best online library I've come across on the net! I love the huge variety
+        of topics and tools available for comprehensive research. Yet, it's easy to use
+        and fun. Thank you so very much for being here.
+    </p>
+    <span class="byline">— Shari E., Philosophy graduate student at UCLA</span>
+</div>
+<div class="questimonial border-bottom">
+    <p>
+        <span class="left-quote">“</span>This is a great research tool. I wish I had known about it years sooner. Thank you.
+    </p>
+    <span class="byline">— Judy H., World History major at Grand View College</span>
+</div>
+<div class="questimonial">
+    <p>
+        <span class="left-quote">“</span>This saved my life in college...Thank you.
+    </p>
+    <span class="byline">— Kerri W., Political Science major at Indiana State University</span>
+</div>
+
+</div>
+
+<div id="informationLeftRail" class="section-nav-container">
+        <ul id="leftRailNav" class="section-nav">
+                    <li><a href="/about-questia">About us</a></li>
+                    <li><a href="/#library">Take a tour</a></li>
+                    <li><a href="/user-agreements">User Agreements</a></li>
+                    <li><a href="https://www.cengage.com/privacy" target="_blank">Privacy policy</a></li>
+                    <li><a href="/contact-us">Contact us</a></li>
+                    <li><a href="/site-sunset">Site Sunset</a></li>
+                    <li><a href="/help">Help</a></li>
+        </ul>
+    <div class="white-box">
+        <strong>Customer Service</strong><br />
+        Our Customer Service team is available 24/7. Just call<br />
+        <span class="phone">1-800-889-0097</span>.<br /><br />
+        <strong>Mailing address</strong><br />
+        Questia<br />
+        c/o Cengage Learning<br />
+        1 North State Street<br />
+        Suite 900<br />
+        Chicago, IL 60602<br />
+        USA
+    </div>
+</div>
+
+<div class="clear">
+</div>
+
+        </div>
+
+
+        <footer class="main-footer">
+            Questia is operated by <a href="http://www.cengage.com" target="_blank" omniture-click="Footer|Disclosure">Cengage Learning</a>.<br /> 
+            Copyright © 2020. All rights reserved.
+        </footer>
+
+    </div>
+
+    
+    <header data-ng-controller="HeaderCtrl as hc" id="headerNavigation" class="header-menu main-header ng-scope">
+        
+
+
+
+<nav class="main-navigation slide-navigation" data-ng-class="{'submenu-open' : (showLibraryMenu || showWritingCenterMenu)}">
+    <label data-ng-click="$parent.menuOpen = !$parent.menuOpen; showLibraryMenu = false; showWritingCenterMenu = false;" class="nav-close clickable" id="navMenuCloseButton" role="button" tabindex="0"><span aria-hidden="true" data-icon="Z"></span></label>
+    <div>
+        <ul class="primary no-bullet-list"> 
+            <li><a class="selected" href="/">Home</a></li>
+            <li><a data-ng-click="showLibraryMenu = !showLibraryMenu">Library <span aria-hidden="true" data-icon="h" class="chevron"></span></a></li>
+            <li><a data-ng-click="showWritingCenterMenu = !showWritingCenterMenu">Writing Center <span aria-hidden="true" data-icon="h" class="chevron"></span></a></li>
+            <li><a href="/research-tutorials">Tutorials</a></li>
+            <li><a href="/projects#!/home">Projects</a></li>
+        </ul>
+    </div>
+
+
+    <div>
+        <ul class="secondary no-bullet-list">
+            <li>
+                <a id="footerAboutUs" href="/about-questia" omniture-click="Footer|About Us">About us</a>
+            </li>
+            <li>
+                    <a id="footerTakeaTour" href="/#library" omniture-click="Footer|TakeaTour">Take a tour</a>
+            </li>
+            <li><a id="footerFeatureIndex" href="/feature-index">Feature index</a></li>
+            
+            <li><a id="footerPrivacy" href="https://www.cengage.com/privacy" target="_blank" omniture-click="Footer|Privacy">Privacy policy</a></li>
+            <li><a id="footerUserAgreement" href="/user-agreements" omniture-click="Footer|UserAgreement">User Agreements</a></li>
+            <li><a id="footerContactUs" href="/contact-us" omniture-click="Footer|Contact Us">Contact us</a></li>
+            <li><a id="footerSiteSunset" href="/site-sunset" omniture-click="Footer|Site Sunset">Site Sunset</a></li>
+            <li class="last"><a id="footerHelp" href="/help" omniture-click="Footer|Help">Help</a></li>
+        </ul>
+    </div>
+
+        <div class="footer-social">
+            <a class="social-icon" href="http://www.facebook.com/QuestiaOnlineLibrary" target="_blank" title="Follow us on Facebook"><span aria-hidden="true" data-icon="R"></span></a>
+            <a class="social-icon" href="http://twitter.com/Questia" target="_blank" title="Follow us on Twitter"><span aria-hidden="true" data-icon="S"></span></a>
+            <a class="social-icon" href="https://plus.google.com/u/0/b/100840110882015019129/" target="_blank" title="Follow us on Google+"><span aria-hidden="true" data-icon="T"></span></a>
+            <a class="social-icon" href="http://www.youtube.com/questiaresearch" target="_blank" title="Follow us on You Tube"><span aria-hidden="true" data-icon="U"></span></a>
+        </div>
+</nav>
+
+<nav class="slide-navigation sub-navigation library-navigation" data-ng-class="{'submenu-open' : showLibraryMenu}">
+    <label data-ng-click="$parent.menuOpen = !menuOpen; showLibraryMenu = false; showWritingCenterMenu = false;" class="nav-close clickable" role="button" tabindex="0"><span aria-hidden="true" data-icon="Z"></span></label>
+    <a class="back-link" data-ng-click="showLibraryMenu = false; showWritingCenterMenu = false">
+        <span aria-hidden="true" class="icon" data-icon="e"></span>
+        Back
+    </a>
+    <a class="main-nav-caps" id="navBrowse" ng-click="hc.toggleLibraryBrowse()" no-click="" omniture-click="Header|BrowseLibrary"><span aria-hidden="true"></span> Library</a>
+<div id="browseFlyout" class="nav-flyout browse-fo clearfix fade-or-slide fade-on-click" fade="" data-toggle-on="hc.isLibraryBrowseVisible">
+    <div class="col-topic">
+        <h3>By topic</h3>
+        <div class="col">
+            <ul>
+                    <li><a href="/library/art-and-architecture" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Art and Architecture' });">Art and Architecture</a>
+                    </li>
+                    <li><a href="/library/communication" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Communication' });">Communication</a>
+                    </li>
+                    <li><a href="/library/controversial-topics" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Controversial Topics' });">Controversial Topics</a>
+                    </li>
+                    <li><a href="/library/criminal-justice" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Criminal Justice' });">Criminal Justice</a>
+                    </li>
+                    <li><a href="/library/economics-and-business" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Economics and Business' });">Economics and Business</a>
+                    </li>
+                    <li><a href="/library/education" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Education' });">Education</a>
+                    </li>
+                    <li><a href="/library/history" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'History' });">History</a>
+                    </li>
+                    <li><a href="/library/law" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Law' });">Law</a>
+                    </li>
+                    <li><a href="/library/literature" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Literature' });">Literature</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                    <li><a href="/library/music-and-performing-arts" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Music and Performing Arts' });">Music and Performing Arts</a>
+                    </li> 
+                    <li><a href="/library/philosophy" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Philosophy' });">Philosophy</a>
+                    </li> 
+                    <li><a href="/library/politics-and-government" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Politics and Government' });">Politics and Government</a>
+                    </li> 
+                    <li><a href="/library/primary-sources-literary-and-historical" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Primary Sources (Literary and Historical)' });">Primary Sources (Literary and Historical)</a>
+                    </li> 
+                    <li><a href="/library/psychology" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Psychology' });">Psychology</a>
+                    </li> 
+                    <li><a href="/library/religion" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Religion' });">Religion</a>
+                    </li> 
+                    <li><a href="/library/science-and-technology" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Science and Technology' });">Science and Technology</a>
+                    </li> 
+                    <li><a href="/library/sociology-and-anthropology" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Sociology and Anthropology' });">Sociology and Anthropology</a>
+                    </li> 
+            </ul>
+        </div>
+    </div>
+    <div class="col-pubtype">
+        <h3>By publication</h3>
+        <ul>
+            <li>
+                <a href="/library/books">Books</a>
+                    <ul class="child">
+                        <li><a href="/library/free-books"><span class="tree-dash">– </span>Free books</a></li>
+                    </ul>
+            </li>
+            <li><a href="/library/academic-journal-articles">Academic journals</a> </li>
+            <li><a href="/library/magazine-articles">Magazines</a> </li>
+            <li><a href="/library/newspaper-articles">Newspapers</a></li>
+            <li><a href="/library/primary-sources">Primary sources</a></li>
+            <li><a href="/library/peer-reviewed">Peer-reviewed periodicals</a></li>
+        </ul>
+    </div>
+    <div class="fo-bottom-container view-all">
+        <a href="/library">View entire library</a>
+    </div>
+</div>
+</nav>
+
+<nav class="slide-navigation sub-navigation wc-navigation" data-ng-class="{'submenu-open' : showWritingCenterMenu}">
+    <label data-ng-click="$parent.menuOpen = !$parent.menuOpen; showLibraryMenu = false; showWritingCenterMenu = false;" class="nav-close clickable" role="button" tabindex="0"><span aria-hidden="true" data-icon="Z"></span></label>
+    <a class="back-link" data-ng-click="showLibraryMenu = false; showWritingCenterMenu = false">
+        <span aria-hidden="true" class="icon" data-icon="e"></span>
+        Back
+    </a>
+    <div class="nav-flyout browse-fo browse-fo-wc clearfix col">
+        <ul class="secondary no-bullet-list">
+            <li><a ng-click="hc.isWritingCenterBrowseVisible = false" no-click="" href="/writing-center#!/">Writing Center</a> </li>
+            <li><a ng-click="hc.isWritingCenterBrowseVisible = false" no-click="" href="/writing-center#!/topic-ideas/">Topic finder</a></li>
+            <li><a ng-click="hc.isWritingCenterBrowseVisible = false" no-click="" href="/writing-center#!/9-steps-to-writing-research-paper">9 writing steps</a></li>
+            <li><a href="/research-tutorials">Tutorials</a></li>
+        </ul>
+    </div>
+</nav>
+        <div class="meta-nav">
+            <a href="/" class="hdr-logo" tabindex="100"></a>
+            <nav>
+                <ul>
+                    <li class="menu-item search">
+                        <label id="btnSearch" ng-click="hc.toggleSearch(); focusInput=true" no-click="" class="clickable btn-search" tabindex="110" role="button">
+                            <span class="icon" aria-hidden="true" data-icon="w"></span>
+                            <span class="text">Search</span>
+                        </label>
+                    </li> 
+                    <li class="menu-item menu">
+                        <label data-ng-click="$parent.menuOpen = !$parent.menuOpen" class="clickable" tabindex="120" role="button">                            
+                            <span class="hamburger-icon icon">
+                                <span></span>
+                            </span>
+                            <span class="text">Menu</span>
+                        </label>
+                    </li> 
+                </ul>
+            </nav>
+        </div>        
+        <div id="globalSearchContainer" class="global-search-container" data-ng-class="{visible: hc.isSearchVisible}">
+
+    <form name="searchBoxForm" data-ng-submit="submitSearch(searchTerm)" novalidate="novalidate" class="ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength">
+        <div id="headerSearch" search-box="" data-toggle-search="hc.toggleSearch()" data-long-placeholder="Search over 14 million books and articles" data-short-placeholder="Search our library">
+           <div class="gs-searchbox-container">
+                <label class="placeholder-label" for="searchValue">Search our library...</label>
+
+                <div class="input-container">
+                    <input autocomplete="off" class="global-search-input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="searchValue" maxlength="200" name="searchInput" placeholder="Search our library..." required="" tabindex="120" type="search" data-ng-blur="hc.hideRecentSearches()" data-ng-focus="hc.showRecentSearches()" data-ng-model="searchTerm" aria-invalid="true" />                   
+                </div>
+
+                <div class="gs-filter-flyout nav-flyout flyout-recent-searches" role="menu" ng-class="{visible: hc.isRecentSearchesVisible &amp;&amp; listOfRecentSearches.length &gt; 0 &amp;&amp; searchTerm == string.Empty}">            
+                    <ul class="no-bullet-list" role="menu">
+                        <!-- ngRepeat: searchItem in listOfRecentSearches -->
+                    </ul>
+                </div>
+
+                <div class="global-search-filter-wrapper" data-ng-class="{'open': hc.isFilterVisible == true}">
+                    <span class="search-label">Search by...</span>
+                    <span class="btn btn-ghost search-by-btn" no-click="" ng-click="hc.toggleFilter()" aria-haspopup="true" tabindex="130" role="button">
+                        <span data-ng-bind="filterType" data-ng-hide="filterType == 'contributor'" class="ng-binding" aria-hidden="false">keywords</span>
+                        <span data-ng-show="filterType == 'contributor'" aria-hidden="true" class="ng-hide">Author</span>
+                        <span aria-hidden="true" data-icon="n" class="icon"></span>
+                    </span>
+                  
+                    <div class="gs-filter-flyout nav-flyout fade-or-slide fade-on-click" fade="" data-toggle-on="hc.isFilterVisible" role="menu">
+                        <div class="gs-filter-inner clearfix">
+                            <div class="gs-filter-col-1 gs-filter-col">
+                                <strong>Search by ...</strong>
+                                <ul class="no-bullet-list" role="menu">
+                                    <li ng-click="keywordClick()" tabindex="131" ng-class="{selected: filterType == 'keywords'}" role="menuitem" omniture-click="Results|KeywordFilter" class="selected"><a>Keyword<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="titleClick()" tabindex="132" ng-class="{selected: filterType == 'title'}" role="menuitem" omniture-click="Results|TitleFilter"><a>Title<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="authorClick()" tabindex="133" ng-class="{selected: filterType == 'contributor'}" role="menuitem" omniture-click="Results|AuthorFilter"><a>Author<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="subjectClick()" tabindex="134" ng-class="{selected: filterType == 'subject'}" role="menuitem" omniture-click="Results|SubjectFilter"><a>Subject<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="publisherClick()" tabindex="135" ng-class="{selected: filterType == 'publisher'}" role="menuitem" omniture-click="Results|PublisherFilter"><a>Publisher<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="gs-filter-col-2 gs-filter-col">
+                                <strong>Results should have ...</strong>
+                                <ul class="no-bullet-list" role="menu">
+                                    <li ng-click="allClick()" tabindex="136" ng-class="{selected: filterModifier == 'AllWords'}" role="menuitem" class="selected"><a>All of these words<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="anyClick()" tabindex="137" ng-class="{selected: filterModifier == 'AnyWords'}" role="menuitem"><a>Any of these words<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="exactClick()" tabindex="138" ng-class="{selected: filterModifier == 'ExactPhrase'}" role="menuitem"><a>This exact phrase<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="noneClick()" tabindex="139" ng-class="{selected: filterModifier == 'NoWords'}" role="menuitem"><a>None of these words<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="footnote" class="gs-filter-bottom-bar" ng-show="filterType == 'keywords'" aria-hidden="false">
+                            Keyword searches may also use the operators
+                            AND, OR, NOT, “ ”, ( )
+                        </div>
+                    </div>               
+                </div>
+
+                <div class="global-search-filter-wrapper" data-ng-class="{'open': hc.isFilter2Visible == true}">
+                    <span class="search-label">Show...</span>
+                    <span class="btn btn-ghost show-btn" no-click="" ng-click="hc.isFilter2Visible = ! hc.isFilter2Visible" aria-haspopup="true" tabindex="140" role="button">                        
+                        <span data-ng-show="searchType == 'All'" aria-hidden="false">All Results</span>
+                        <span data-ng-show="searchType == 'primarySources'" aria-hidden="true" class="ng-hide">Primary Sources</span>
+                        <span data-ng-show="searchType == 'PeerReviewedType'" aria-hidden="true" class="ng-hide">Peer-reviewed</span>
+                        <span aria-hidden="true" data-icon="n" class="icon"></span>
+                    </span>
+                    <div class="gs-filter-flyout nav-flyout gs-filter-flyout2 fade-or-slide fade-on-click" fade="" data-toggle-on="hc.isFilter2Visible" role="menu">
+                        <div class="gs-filter-inner clearfix">
+                            <div class="gs-filter-col">
+                                <strong>Show ...</strong>
+                                <ul class="no-bullet-list" role="menu">
+                                    <li ng-click="allResultsClick()" tabindex="140" ng-class="{selected: searchType == 'All'}" role="menuitem" omniture-click="SearchType|AllResults" class="selected"><a>All Results<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="primaryClick()" tabindex="141" ng-class="{selected: searchType == 'primarySources'}" role="menuitem" omniture-click="SearchType|PrimarySources"><a>Primary Sources<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                    <li ng-click="peerClick()" tabindex="142" ng-class="{selected: searchType == 'PeerReviewedType'}" role="menuitem" omniture-click="SearchType|PeerReviewed"><a>Peer-reviewed<span aria-hidden="true" data-icon="W" class="icon"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="global-search-controls">           
+                    <button class="btn btn-primary" type="submit" value="Search" tabindex="151">
+                        Search
+                    </button>
+                </div>            
+            </div>
+        </div>
+        <span class="close-btn clickable" aria-hidden="true" data-icon="Z" ng-click="hc.toggleSearch()" no-click="" tabindex="152" role="button"></span>
+    </form>
+</div> 
+        <div class="utility-container">
+            <div class="mobile-login-controls clearfix ng-scope" data-ng-controller="StatusHeaderController as shc" data-ng-hide="shc.isProcessing" aria-hidden="false">
+
+    <div class="mobile-logout ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; shc.isAbandoner" aria-hidden="true">
+        <a href="/logout">
+            <span class="icon-lock" aria-hidden="true" data-icon="B"></span>Log out
+        </a>
+    </div>
+    <div class="mobile-complete-reg ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; shc.isAbandoner" aria-hidden="true">
+        <a id="QTA_RegCTA_Abandoner_Header_Mobile" href="/subscribe/registration2">Upgrade your membership</a>
+    </div>
+
+    <div class="mobile-login" data-ng-hide="shc.isAuthenticated" aria-hidden="false">
+        <a href="/member-login">
+            <span class="icon-lock" aria-hidden="true" data-icon="B"></span>Log in
+        </a>
+    </div>
+    <div class="mobile-signup" data-ng-hide="shc.isAuthenticated" aria-hidden="false">
+        <a id="QTA_RegCTA_Header_Mobile" href="/subscribe">Buy instant access</a>
+    </div>
+</div>                   
+            <div data-qt-projects-header=""><div class="hdr-ap-container clearfix ng-hide" data-ng-show="phc.isAuthenticated" aria-hidden="true">
+    <div class="hdr-ap-container-inner">
+        <strong class="active-project-label">Active project:</strong>
+        <div class="busy-indicator" data-ng-show="busyWhen" data-busy-indicator="" data-busy-when="true" data-text-version="true" style="display: inline-block" aria-hidden="false">
+    <div data-ng-show="textVersion" aria-hidden="false">
+        <span class="img-loading"></span>
+    </div>
+
+    <div data-ng-hide="textVersion" class="busy-inner ng-hide" aria-hidden="true">
+        <div class="message-loading shown">
+            One moment ... 
+        </div>
+    </div>
+</div>
+        
+        <div ng-show="!phc.projectsLoading" class="hdr-active-project ng-hide" tabindex="8" ng-click="phc.toggleProjects()" no-click="" onclick="$(document).trigger('OMNITURE_CLICK', { actionName: 'Header|YourProjects' });" role="button" aria-hidden="true">
+            <a id="projectsLink" class="hdr-projects-link ng-binding" data-ng-bind="phc.activeProjectName"></a>
+            <span class="arrow-down" aria-hidden="true" data-icon="n" data-ng-class="{'open': phc.isProjectsVisible == true}"></span>
+        </div>
+
+        <div id="projectsFlyout" class="nav-flyout projects-fo fade-or-slide fade-on-click" fade="" data-toggle-on="phc.isProjectsVisible">
+
+            <div id="ProjectHeaderMenuError" ng-show="phc.errorProjects" class="alert alert-error ng-hide" aria-hidden="true">
+                <strong>We encountered a problem.</strong>
+                <span>The project you wish to activate no longer exists.</span>
+            </div>
+
+            <div class="hdr-projects-title-bar clearfix">
+                <div class="left-col">
+                    Project title
+                </div>
+                <div class="middle-col">
+                    Items
+                </div>
+                <div class="right-col">
+                    Active
+                </div>
+            </div>
+            <div id="projectMenuItemList" class="project-menu-item-list">
+                <!-- ngRepeat: project in phc.projects -->
+            </div>
+            <div class="project-new-form ng-hide" data-ng-show="phc.isNewProjectFormVisible" aria-hidden="true">
+                <form data-ng-submit="phc.createProject()" class="ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength">
+                    <div class="form-element-wrapper">
+                        <p class="alert alert-error ng-hide" ng-show="phc.errorSaveProject" aria-hidden="true">We encountered a problem. Please try again.</p>
+                        <p class="alert alert-error ng-hide" ng-show="phc.errorNameProject" aria-hidden="true">A project with this name already exists.</p>                        
+                        <label for="inputProjectTitleHeader">
+                            Project name <span>(required)</span>
+                        </label>
+                        <div class="form-input">
+                            <input value="" ng-model="phc.projectTitle" data-ng-required="true" type="text" id="inputProjectTitleHeader" maxlength="30" required="required" class="ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" aria-invalid="true" />
+                            <br />
+                            <label>
+                                <span class="active-checkbox">
+                                    <input type="checkbox" ng-model="phc.projectIsActive" class="ng-pristine ng-untouched ng-valid" aria-invalid="false" />
+                                    Make this your currently active project
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input class="btn btn-primary" type="submit" value="Save" />
+                        <button type="button" class="btn btn-default" data-ng-click="phc.cancelNewProject()">Cancel</button>
+                        <span data-ng-show="phc.savingProject" aria-hidden="true" class="ng-hide"><span class="busy-icon ng-isolate-scope" qt-busy-icon="" data-size="25">
+    <svg version="1.1" id="Svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" ng-attr-width="{{size}}" ng-attr-height="{{size}}" viewBox="5 0 35 35" enable-background="new 0 0 40 40" xml:space="preserve" width="25" height="25">
+        <path opacity="0.3" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946&#10;        s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634&#10;        c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0&#10;        C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(23.999 20 20)">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="1s" repeatCount="indefinite"/>
+        </path>
+    </svg>
+</span></span>
+                    
+                    </div>
+                </form>
+            </div>
+            <button type="button" class="btn btn-full btn-primary btn-new-project" data-ng-hide="phc.isNewProjectFormVisible" data-ng-click="phc.setProjectFormVisible()" aria-hidden="false">
+                <span aria-hidden="true" data-icon="X"></span> New project
+            </button>
+            
+        </div>
+
+        <span class="add-item-icon">+1</span>
+        <span class="remove-item-icon">-1</span>
+    </div>
+</div></div>
+            <div data-qt-status-header=""><div class="login-controls clearfix" data-ng-hide="shc.isProcessing" aria-hidden="false">
+
+    <!-- Start: Tour link -->
+    <div class="hdr-login hdr-tour">
+        <a href="/tour" data-omniture-click="Header|TakeaTour" data-ng-show="shc.isAuthenticated" tabindex="10" aria-hidden="true" class="ng-hide">Take a tour</a>
+        <a href="/#library" data-qt-scroll-to="library" data-omniture-click="Header|TakeaTour" data-ng-hide="shc.isAuthenticated" tabindex="20" aria-hidden="false">Take a tour</a>
+    </div>
+    <!-- End: Tour link -->
+    
+    
+
+    <!-- Start: Center link -->
+    <div class="hdr-signup ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; shc.isAbandoner &amp;&amp; !isRegistration" aria-hidden="true">
+        <a id="QTA_RegCTA_Abandoner_Header" href="/subscribe/registration2" tabindex="30">Upgrade your membership</a>
+    </div>
+    <div class="hdr-signup ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; shc.isReactivate &amp;&amp; !isRegistration" aria-hidden="true">
+        <a id="QTA_Reactivate_CTA_Header" href="/account/reactivation" tabindex="40">Reactivate</a>
+    </div>
+    <div class="hdr-signup" data-ng-hide="shc.isAuthenticated || isRegistration" aria-hidden="false">
+        <a id="QTA_RegCTA_Header" href="/subscribe" data-omniture-click="Header|Reg" tabindex="50">Buy instant access</a>
+    </div>
+    <!-- End: Center link -->
+    
+    
+
+    <!-- Start: Logout link -->
+    <div class="hdr-login ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; shc.isAbandoner &amp;&amp; !isRegistration" aria-hidden="true">
+        <a data-ng-click="shc.logoutAndRedirectTo('/logout')" tabindex="60">
+            <span class="icon-lock" aria-hidden="true" data-icon="B"></span>Log out
+        </a>
+    </div>
+
+    <div id="accountLink" class="hdr-account-btn ng-hide" data-ng-show="shc.isAuthenticated &amp;&amp; !shc.isAbandoner &amp;&amp; !isRegistration" aria-hidden="true">
+        <a id="UserGreeting" class="clearfix" ng-click="shc.toggleUserGreeting()" no-click="" tabindex="70">
+            <span class="icon" aria-hidden="true" data-icon="5"></span>
+            <span class="arrow-down" aria-hidden="true" data-icon="n" data-ng-class="{'open': shc.isUserGreetingVisible == true}"></span>
+        </a>
+        <div id="UserMenu" class="nav-flyout account-fo fade-or-slide fade-on-click" fade="" data-toggle-on="shc.isUserGreetingVisible">
+            <ul>
+                <li><strong class="user-greeting ng-binding" data-ng-bind="shc.userGreeting"></strong></li>
+                <li><a href="/account" tabindex="72">My account</a></li>
+                <li><a data-ng-click="shc.logoutAndRedirectTo('/logout')" tabindex="74">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End: Logout link -->
+    
+    
+
+    <!-- Start: Login link -->
+    <div class="hdr-login" data-ng-hide="shc.isAuthenticated || (isRegistration &amp;&amp; hideLogin)" aria-hidden="false">
+        <a href="/member-login" tabindex="80">
+            <span class="icon-lock" aria-hidden="true" data-icon="B"></span>Log in
+        </a>
+    </div>
+    <!-- End: Login link -->
+
+</div></div>
+        </div>           
+    </header>
+
+     <a class="back-to-top" aria-hidden="true" data-icon="j"></a> 
+
+    <div id="mdModalContainer">                
+        <div class="md-overlay"></div>
+    </div>
+
+
+    <!-- SiteCatalyst code version: H.10.
+            Copyright 1997-2007 Omniture, Inc. More info available at
+            http://www.omniture.com -->
+    <script type="text/javascript">
+            var OmnitureSuite = "highbeamquestia";
+            var CustomClickPropNumber = '34';
+    </script>
+<script src="https://qtastatic.com/content/20201201113516/SiteBodyEndJS.min.js"></script>    <script type="text/javascript">
+    /*&lt;![CDATA[*//*----&gt;*/
+    s.pageName="About Us";
+    s.channel="myrc";
+    s.server="www.questia.com";
+        s.campaign="none";
+                s.prop20="QUESTIA";
+    s.prop25="first";
+    s.prop35="";
+    s.prop38="www.questia.com/hbr-welcome";
+    s.prop50="";
+    s.prop51="";
+    s.prop52="";
+    s.prop53="";
+    s.prop54="";
+
+    s.eVar20="QUESTIA";
+    s.eVar25="first";
+    s.eVar43="";
+
+    s.hier2="guest";
+    s.hier4="";
+
+                /*--*//*]]&gt;*/
+    </script>
+    <script type="text/javascript">
+&lt;!--
+    if (navigator.appVersion.indexOf('MSIE') &gt;= 0) document.write(unescape('%3C') + '\!-' + '-')
+//--&gt;</script>
+    <!--/DO NOT REMOVE/-->
+    <!-- End SiteCatalyst code version: H.10. -->
+
+    <script type="text/javascript">
+    /*&lt;![CDATA[*//*----&gt;*/
+
+
+    var page = {
+        Domain: window.location.host,
+        Environment: "www.questia.com",
+        Name: "About Us",
+        Section: "myrc",
+        URL: window.location.href,
+    };
+
+    var user = {
+        DemographicLevel1: "",
+        QuestiaID: "",
+        IsRepeatVisit: "first",
+        Status: "guest",
+        Partner: "QUESTIA",
+        CourseName: "",
+        CourseISBN: "",
+        SSOID: "",
+        GradeLevel: "",
+        CountryCode: ""
+    };
+
+    var book = {
+        ID: "",
+        Title: "",
+        ISBN: "",
+        PageID: "",
+        PageCount: "",
+        Publisher: "",
+        Aggregator: "",
+        PagesViewed: ""
+
+    };
+    var article = {
+        ID: "",
+        Title: "",
+        CharacterCount: ""
+    };
+    var publication = {
+        Article: article,
+        ISSN: "",
+        Publisher: "",
+        Aggregator: "",
+        Type: "",
+        Date: "",
+        PublicationID: "",
+        Title: "",
+        Category: ""
+
+    };
+
+    var profile = {
+        ID: "",
+        Title: "",
+        ContentType: ""
+    };
+
+    var siteIndex = {
+        Page: "",
+        Type: ""
+    };
+    var topic = {
+        Name: "",
+        Category: ""
+    };
+    var order = {};
+    var subscription = {};
+
+    var isBook = false;
+    var isArticle = false;
+    var isProfile = false;
+    var isSiteIndex = false;
+    var isTopic = false;
+    var isRegConfirmation = false;
+
+
+
+        
+
+
+
+    if (page.Name != 'Search') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "virtualPageView",
+            page: page,
+            user: user,
+            book: isBook ? book : null,
+            publication: isArticle ? publication : null,
+            profile: isProfile ? profile : null,
+            siteIndex: isSiteIndex ? siteIndex : null,
+            topic: isTopic ? topic : null,
+            order: isRegConfirmation ? order : null,
+            subscription: isRegConfirmation ? subscription : null,
+            search: null
+        })
+    }
+
+
+    /*--*//*]]&gt;*/
+</script>
+    
+    <!--/#wrapperMain-->
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdupZQUAAAAABfctIX-R6ZcPmJKlRiJJuuSbP8E"></script>
+
+    
+    
+
+        <script type="text/javascript">
+            function USI_installCode() {
+                var USI_headID = document.getElementsByTagName("head")[0];
+                var USI_installID = document.createElement('script');
+                USI_installID.type = 'text/javascript';
+                USI_installID.src = 'http'+ (document.location.protocol=='https:'?'s://www':'://www')+ '.upsellit.com/custom/questia.jsp';
+                USI_headID.appendChild(USI_installID);
+            }
+            if (window.addEventListener){
+                window.addEventListener('load', USI_installCode, true);
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', USI_installCode);
+            } else {
+                USI_installCode();
+            }
+        </script>
+
+    <script type="text/javascript">
+        (function () {
+            var tagjs = document.createElement("script");
+            var s = document.getElementsByTagName("script")[0];
+            tagjs.async = true;
+            tagjs.src = "//s.btstatic.com/tag.js#site=FIlmgbU";
+            s.parentNode.insertBefore(tagjs, s);
+        }());
+    </script>
+    <noscript>
+        &lt;iframe src="//s.thebrighttag.com/iframe?c=FIlmgbU" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&gt;&lt;/iframe&gt;
+    </noscript>
+
+        
+<!-- You are on ohcinqtaweb07 -->
+
+
+        <div data-ng-controller="GlobalApplicationController as gac" class="ng-scope">
+            <!-- If the application fails for whatever reason, we need to provide feedback and guidance to the user. -->
+            <div data-qt-modal="gac.appFailedModal" data-title="Oops!" data-classname="global-error-modal" data-hide-close="true" data-is-small="true" data-show-title="false" class="ng-isolate-scope">
+    <div class="md-modal wc-modal global-error-modal small-modal" data-ng-class="{'small-modal': isSmall}">
+        <div class="md-content">
+            <h2 data-ng-hide="isSmall &amp;&amp; !showTitle" class="ng-binding ng-hide" aria-hidden="true"><span aria-hidden="true" class="icon ng-hide" data-ng-show="modalIcon" data-icon=""></span>Oops!</h2>
+            <div class="md-content-inner">
+                <span class="icon-close md-close ng-hide" data-ng-click="hide()" aria-hidden="true" data-icon="Z" data-ng-hide="hideClose" role="button" tabindex="0"></span>
+
+                <div class="transclude-content">
+                <h3 class="ng-scope">Oops!</h3>
+                <p class="ng-scope">An unknown error has occurred. Please click the button below to reload the page. If the problem persists, please try again in a little while.</p>
+
+                <div class="buttons ng-scope">
+                    <a class="btn btn-sm btn-primary" data-ng-click="gac.reload()"><span aria-hidden="true" data-icon="4"></span> Reload</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div data-ng-show="gac.showCookiePolicy" class="cookies-footer ng-hide" aria-hidden="true">                
+                We use cookies to deliver a better user experience and to show you ads based on your interests. By using our website, you agree to the use of cookies as described in our <a href="https://www.cengage.com/privacy" target="_blank">Privacy Policy</a>
+                <button data-ng-click="gac.acceptCookiePolicy()" class="close-button">
+                    <span aria-hidden="true" data-icon="Z"></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="ie8-modal-placeholder"></div>
+        <script>
+            $(document).ready(function(){
+                if($('html').hasClass("ie8") &amp;&amp; sessionStorage['dismissedIE8']!=="true") {
+                    $.ajax({
+                        url: "ie8-not-supported.html",
+                        success: function(html) {
+                            $("#ie8-modal-placeholder").html(html);
+                            uiUtils.openMdModal($("#BrowserDetectionModal"));
+                        },
+                        error: function() {
+                            alert("IE 8 is not supported.");
+                        }
+                    });
+                }
+            });
+        </script>
+
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdupZQUAAAAABfctIX-R6ZcPmJKlRiJJuuSbP8E&amp;co=aHR0cHM6Ly93d3cucXVlc3RpYS5jb206NDQz&amp;hl=en&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;size=invisible&amp;cb=b6dzw8rzt3yx" width="256" height="60" role="presentation" name="a-8ic1ffuq4b63" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><script type="text/javascript" id="">(function(){var a=google_tag_manager["GTM-TCCBS97"].macro(22),b=google_tag_manager["GTM-TCCBS97"].macro(23);console.log("GA Universal ("+a+") pageview fired from GTM ("+b+")")})();</script></body></html>

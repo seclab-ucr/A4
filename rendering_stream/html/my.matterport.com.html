@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" class="mdl-js"><head>
+    <title>Sign in</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="/style/header.css" />
+    <script type="text/javascript" async="" src="https://widget.intercom.io/widget/toxdrc11"></script><script type="text/javascript" async="" src="https://edge.fullstory.com/s/fs.js" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://cdn.segment.com/analytics.js/v1/jNeTdCiFu3W29cC1xC7Jtk7DTfg8zsJK/analytics.min.js"></script><script type="text/javascript">
+      var environment = JSON.parse(atob("eyJhcHBzIjp7ImF1dGhuLnVybCI6Imh0dHBzOi8vYXV0aG4ubWF0dGVycG9ydC5jb20iLCJjYXJ0LnVybCI6Imh0dHBzOi8vYnV5Lm1hdHRlcnBvcnQuY29tIiwib3JkZXJzLnVybCI6Imh0dHBzOi8vb3JkZXJzLm1hdHRlcnBvcnQuY29tIiwic3VwcG9ydC51cmwiOiJodHRwczovL2NzLm1hdHRlcnBvcnQuY29tIiwid2ViLnVybCI6Imh0dHBzOi8vbXkubWF0dGVycG9ydC5jb20ifSwiY2xvdWQiOnsic2VnbWVudF9rZXkiOiJqTmVUZENpRnUzVzI5Y0MxeEM3SnRrN0RUZmc4enNKSyJ9LCJjYXJ0Ijp7InNlZ21lbnRfa2V5IjoibVhzWFU3MVhoN1BjQWYySUtCZmtpVnVwWTViMXN6M2oifSwib3JkZXJzIjp7InNlZ21lbnRfa2V5IjoiIn0sInN1cHBvcnQiOnsic2VnbWVudF9rZXkiOiIifSwibG9naW4iOnsidGFyZ2V0IjoiaHR0cHM6Ly9teS5tYXR0ZXJwb3J0LmNvbS8ifX0="));
+    </script>
+
+    <script defer="" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="/scripts/target.js"></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/segment.js"></script>
+
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <script src="/scripts/cookieConsent.js"></script>
+    <link rel="stylesheet" href="/style/cookieConsent.css" />
+
+</head>
+<body onload="doOnLoad()"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-block cc-bottom cc-left " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Matterport uses cookies to provide a great user experience. By using our website, you accept our use of cookies. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://matterport.com/cookie-policy/" rel="noopener noreferrer nofollow" target="_blank">Details</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got It</a></div><!--googleon: all--></div>
+<div class="pl">
+    <div id="hb">
+        <img id="hlogo" src="/images/logotype-dark.svg" alt="Matterport logo" align="left" />
+    </div>
+    <div id="nb">
+        <div class="icon material-icons">block</div>
+        <div id="nmsg"></div>
+        <div class="hh icon material-icons" onclick="closeNotification()">close</div>
+    </div>
+
+<div class="pc">
+    <script src="/scripts/loginMP.js"></script>
+    <script type="text/javascript">document.title="Sign in";</script>
+    <div class="ph">Sign In</div>
+    <div class="spcr"></div>
+    <form id="login" action="javascript:;" onkeydown="return handleEnterKey(event)" onsubmit="return handleLogin(event)">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+            <input class="mdl-textfield__input" type="email" id="email" oninput="handleEmailChange(event.target)" />
+            <label class="mdl-textfield__label" for="email">Email Address</label>
+            <span class="mdl-textfield__error" id="emailError">Invalid Email Address</span>
+        </div>
+        <div class="spcr"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+            <input class="mdl-textfield__input" type="password" id="password" />
+            <label class="mdl-textfield__label" for="password">Password</label>
+            <span class="mdl-textfield__error" id="passwordError">Invalid Password</span>
+        </div>
+        <div class="lh">
+            <label id="remPass" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="remember-me" data-upgraded=",MaterialCheckbox,MaterialRipple">
+                <input type="checkbox" id="remember-me" class="mdl-checkbox__input" />
+                <span class="mdl-checkbox__label">Remember Me</span>
+            <span class="mdl-checkbox__focus-helper"></span><span class="mdl-checkbox__box-outline"><span class="mdl-checkbox__tick-outline"></span></span><span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+            <a id="resetPass" class="undl" href="/auth/reset-password">Forgot Password?</a>
+        </div>
+        <div>
+            <button id="submitBtn" disabled="">Sign In</button>
+        </div>
+        <div id="freeAcc">Don't have an account?
+            <a id="freeAcc-link" class="undl" href="https://buy.matterport.com/free-account-register">Sign up for free</a>
+        </div>
+        <div class="spcr"></div>
+        <div class="spcr"></div>
+        <div class="spcr"></div>
+        <div class="spcr"></div>
+        <div id="single"><a class="undl" href="/auth/sso-email">Single sign-on</a></div>
+    </form>
+</div>
+       <div id="footerLinks" class="fo">
+        <div class="fos">
+          <a class="fl" href="https://buy.matterport.com" target="_blank">Buy</a>
+          <a class="fl" href="https://support.matterport.com" target="_blank">Support</a>
+          <a class="fl" href="https://community.matterport.com" target="_blank"><span>Community Forum</span></a>
+          <a class="fl" href="https://matterport.com/terms-of-service/" target="_blank">Terms of Service</a>
+          <a class="fl" href="https://matterport.com/privacy-policy/" target="_blank">Privacy Policy</a>
+          <a class="fl" href="https://matterport.com/cookie-policy/" target="_blank">Cookie Policy</a>
+        </div>
+        <div class="fos">
+          <a href="https://www.facebook.com/MatterPort" target="_blank"><i aria-hidden="true" class="ico ico-fb"></i></a>
+          <a href="https://www.linkedin.com/company/matterport" target="_blank"><i aria-hidden="true" class="ico ico-linkedin"></i></a>
+          <a href="https://twitter.com/Matterport" target="_blank"><i aria-hidden="true" class="ico ico-twitter"></i></a>
+          <a href="https://vimeo.com/matterport" target="_blank"><i aria-hidden="true" class="ico ico-vimeo"></i></a>
+          <a href="https://www.youtube.com/user/MatterPort" target="_blank"><i aria-hidden="true" class="ico ico-youtube"></i></a>
+          <a class="fl" href="https://matterport.com/">©<span id="cprdate">2020</span> Matterport</a>
+      </div>
+      </div>
+    </div>
+  
+
+
+</body></html>

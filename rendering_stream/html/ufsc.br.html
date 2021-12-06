@@ -1,0 +1,843 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="SeTIC-UFSC" />
+    <meta name="generator" content="WordPress 4.7.19" />
+    <meta name="description" content="" />
+    <meta name="copyright" content="Universidade Federal de Santa Catarina" />
+    <meta name="Keywords" content="universidade, federal, santa, catarina, a universidade, faculdade, estudantes, faculdade, ensino superior, licenciatura, mestrado, doutorado, pós-graduações, bolsas, candidatura ao ensino superior" />
+
+    <title>Universidade Federal de Santa Catarina</title>        
+
+    <link rel="stylesheet" type="text/css" href="http://ufsc.br/wp-content/themes/brasilGov/css/reset.css?ver=1597688944" />
+    <link rel="stylesheet" type="text/css" href="http://ufsc.br/wp-content/themes/brasilGov/css/style.css?ver=1597688944" />
+    <link rel="stylesheet" type="text/css" href="http://ufsc.br/wp-content/themes/brasilGov/css/mobile.css?ver=1597688944" />
+    <link rel="alternate stylesheet" type="text/css" href="http://ufsc.br/wp-content/themes/brasilGov/css/high.css?ver=1597688944" title="high" disabled="" />
+    <link rel="shortcut icon" type="image/png" href="http://ufsc.br/wp-content/themes/brasilGov/img/favicon.ico?ver=1597688944" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,400" rel="stylesheet" type="text/css" />
+    <script src="http://ufsc.br/wp-content/themes/brasilGov/js/modernizr-2.7.min.js?ver=1597688944"></script>
+    <script src="http://ufsc.br/wp-content/themes/brasilGov/js/font-resizer.js?ver=1597688944"></script>           
+
+    <link rel="dns-prefetch" href="//ufsc.br" />
+<link rel="dns-prefetch" href="//ufsc3.paginas.ufsc.br" />
+<link rel="dns-prefetch" href="//s.w.org" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/ufsc.br\/wp-includes\/js\/wp-emoji.js?ver=4.7.19","twemoji":"http:\/\/ufsc.br\/wp-includes\/js\/twemoji.js?ver=4.7.19"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext &amp;&amp; canvas.getContext( '2d' );
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji4" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var stringFromCharCode = String.fromCharCode,
+			flag, flag2, technologist, technologist2;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * This works because the image will be one of three things:
+				 * - Two empty squares, if the browser doesn't render emoji
+				 * - Two squares with 'U' and 'N' in them, if the browser doesn't render flag emoji
+				 * - The United Nations flag
+				 *
+				 * The first two will encode to small images (1-2KB data URLs), the third will encode
+				 * to a larger image (4-5KB data URL).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56826, 55356, 56819 ), 0, 0 );
+				if ( canvas.toDataURL().length &lt; 3000 ) {
+					return false;
+				}
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				/*
+				 * Test for rainbow flag compatibility. As the rainbow flag was added out of sequence with
+				 * the usual Unicode release cycle, some browsers support it, and some don't, even if their
+				 * Unicode support is up to date.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + rainbow emoji).
+				 */
+				context.fillText( stringFromCharCode( 55356, 57331, 65039, 8205, 55356, 57096 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57331, 55356, 57096 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				return flag !== flag2;
+			case 'emoji4':
+				/*
+				 * Emoji 4 has the best technologists. So does WordPress!
+				 *
+				 * To test for support, try to render a new emoji (woman technologist: medium skin tone),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (woman technologist: medium skin tone + personal computer).
+				 */
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 8205, 55357, 56507), 0, 0 );
+				technologist = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55357, 56425, 55356, 57341, 55357, 56507), 0, 0 );
+				technologist2 = canvas.toDataURL();
+
+				return technologist !== technologist2;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji4' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii &lt; tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything &amp;&amp; settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag &amp;&amp; settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag &amp;&amp; ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji &amp;&amp; src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="dashicons-css" href="http://ufsc.br/wp-includes/css/dashicons.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="thickbox-css" href="http://ufsc.br/wp-includes/js/thickbox/thickbox.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="patrocinio-css" href="http://ufsc.br/wp-content/plugins/patrocinio/patrocinio.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="ai1ec_style-css" href="//ufsc3.paginas.ufsc.br/wp-content/uploads/ai1ec_static/3713f69c_ai1ec_parsed_css.css?ver=2.3.1" type="text/css" media="all" />
+<link rel="stylesheet" id="collapseomatic-css-css" href="http://ufsc.br/wp-content/mu-plugins/jquery-collapse-o-matic/style.css?ver=1.5.1" type="text/css" media="all" />
+<link rel="stylesheet" id="contact-form-7-css" href="http://ufsc.br/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.9.2" type="text/css" media="all" />
+<link rel="stylesheet" id="sharity-style-css" href="http://ufsc.br/wp-content/plugins/email-sharity/style/sharity-style.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="auto-thickbox-css" href="http://ufsc.br/wp-content/plugins/auto-thickbox/css/styles-pre39.css?ver=20140420" type="text/css" media="all" />
+<link rel="stylesheet" id="youtube-channel-gallery-css" href="http://ufsc.br/wp-content/plugins/youtube-channel-gallery/styles.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery.magnific-popup-css" href="http://ufsc.br/wp-content/plugins/youtube-channel-gallery/magnific-popup.css?ver=4.7.19" type="text/css" media="all" />
+<link rel="stylesheet" id="slideshow-css3-css" href="http://ufsc.br/wp-content/themes/brasilGov/js/pikachoose/styles/css3.css?ver=0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="http://ufsc.br/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/mu-plugins/jquery-collapse-o-matic/collapse.min.js?ver=1.3.5"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/themes/brasilGov/js/ufsc.js?ver=4.7.19"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/themes/brasilGov/js/functions.js?ver=4.7.19"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/themes/brasilGov/js/pikachoose/lib/jquery.pikachoose.js?ver=4.7.19"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/themes/brasilGov/js/pikachoose/lib/jquery.jcarousel.min.js?ver=4.7.19"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/plugins/email-sharity/js/sharity.js?ver=4.7.19"></script>
+<script type="text/javascript" src="http://ufsc.br/wp-content/plugins/email-sharity/fancybox/source/jquery.fancybox.pack.js?v=2.1.4&amp;ver=4.7.19"></script>
+<link rel="https://api.w.org/" href="http://ufsc.br/wp-json/" />
+ 
+    <link href="/wp-content/mu-plugins/videojs/video-js.min.css" rel="stylesheet" />
+    <script src="/wp-content/mu-plugins/videojs/video.min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+    _V_.options.flash.swf = "/wp-content/mu-plugins/videojs/video-js.swf";
+  </script>
+
+    
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var thickboxL10n = {"next":"Próximo &amp;gt;","prev":"&amp;lt; Anterior","image":"Imagem","of":"de","close":"Fechar","loadingAnimation":"http:\/\/ufsc.br\/wp-content\/plugins\/auto-thickbox\/images\/loadingAnimation.gif"};
+try{convertEntities(thickboxL10n);}catch(e){};;
+/* ]]&gt; */
+</script>
+<style type="text/css" media="all">#barra-brasil div,#barra-brasil a,#barra-brasil ul,#barra-brasil li{margin:0;padding:0;font-size:100%;font-family:inherit;vertical-align:baseline}#barra-brasil ul{list-style:none}@font-face{font-family:"Open Sans";font-style:normal;font-weight:700;src:local("Open Sans Bold"),local("OpenSans-Bold"),url("//barra.brasil.gov.br/static/opensans-bold.woff") format("woff")}#barra-brasil{height:32px;background:#f1f1f1;font-weight:bold;font-size:12px;line-height:32px;font-family:"Open Sans",Arial,Helvetica,sans-serif;border-bottom:1px solid #dfdfdf;box-sizing:content-box}#barra-brasil a{text-decoration:none}body.contraste #barra-brasil{background:#000 !important}div#wrapper-barra-brasil{position:relative;overflow:hidden;margin:0 auto;width:100%;max-width:960px;height:100%}#barra-brasil .brasil-flag{float:left;padding:7px 0 6px;width:115px;height:19px;border-right:2px solid #dfdfdf}#barra-brasil .brasil-flag .link-barra{display:block;padding-left:42px;width:43px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAATCAMAAAC5m+00AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACrUExURQCXSF27iQCWRQOWSQCWSRCdVACSSgCWRwCVSRKcVv/oAP/yAAIvh/bjBQKVTP/rAK3PF/3sARZBkg05ima2LCqiPg+ZRR9JoermBbGwLwEqkgCST1GwMRqdQZfIHdzgCSdSlTlYbEWrNyNKeouUPHOgtEJsn2WOrSClX2m/lF+6i3q8JsDVEBpCgWN2WefTD8i/IYSstzKmO3eIUaa2h3SOjfvlHjVfq6OmNShvDYIAAAFISURBVCjPbVHXksMgDNQBljC4l9iOndjp5VKv//+XnXByb7fDADO7rNAK9v4DngPv/h/24BHBuEhqB3pCeUxJIAWKtMZlIVCTciogH3yhWMpinM2t7ZctS5UgAR74kVICpMauNrfmaucTpMj5e+4VUNTOEvuzCoL8EvZLJCH1SIHAqKjtehowposwTmbIcqZIt+UpNV/3zWa3HYLp2sZ1gegoPXkNU5M238Ow3d132cIYEyel9MHDLo2NcX4519puPkPmbOIowrdTbGyTZXk2BEH1kZo4LPSjFgq2DFcVc3lWNZbt2rGWIIiwTOztzJZV9W77glCp8RsSNHdc1NfL6rxoxp5JCcmUC1cJjdx0GKZ1hxq0eqYBkuPlzLHrjXuiOAwaDUGQFJyWBpyU7EUaQI/xckGeA98jksqNQLmp8BnB4Xh8+ReHX640GNLt25uiAAAAAElFTkSuQmCC") 8px center no-repeat;text-transform:uppercase;line-height:19px}#barra-brasil .acesso-info{position:absolute;left:130px}#barra-brasil .list{position:absolute;top:0;right:0}#barra-brasil .list .first{border-left:2px solid #dfdfdf}#barra-brasil .list-item{display:inline-block;height:32px;border-right:2px solid #dfdfdf}#barra-brasil .list-item a{padding:0 15px 8px 13px}#barra-brasil .link-barra{color:#606060}body.contraste #barra-brasil .link-barra{color:#FF0 !important;text-decoration:underline}#menu-icon{position:absolute;top:3px;border-top:15px double #606060;border-bottom:5px solid #606060;display:none;width:20px;right:5px}@media only screen and (max-width: 959px){#barra-brasil #menu-icon{display:inline-block;padding:5px 3px 0px 3px}#barra-brasil .list .first{border-left:1px solid #dfdfdf}#barra-brasil nav:hover #menu-icon,#barra-brasil nav:active #menu-icon,#barra-brasil nav:focus #menu-icon{background-color:#DDD}body.contraste #barra-brasil nav:hover #menu-icon,body.contraste #barra-brasil nav:active #menu-icon,body.contraste #barra-brasil nav:focus #menu-icon{background-color:#606060 !important}#barra-brasil ul.list,#barra-brasil ul.list:active,#barra-brasil ul.list:focus{overflow:hidden;height:0px;transition:0.3s;padding-top:32px;width:auto;position:absolute;z-index:9}#barra-brasil .list-item{display:block;text-align:center;height:30px;background:#EEE;border:1px solid #dfdfdf}#barra-brasil .list-item a{padding:8px 30px 8px 28px}body.contraste #barra-brasil .list-item{background:#000 !important}body.contraste #menu-icon{border-top:15px double #fff !important;border-bottom:5px solid #fff !important}#barra-brasil .list a:active li,#barra-brasil .list a:focus li,#barra-brasil .list a:hover li{background:#DDD}body.contraste #barra-brasil .list a:active li,body.contraste #barra-brasil .list a:focus li,body.contraste #barra-brasil .list a:hover li{background:#606060 !important}#barra-brasil nav:active ul.list,#barra-brasil nav:focus ul.list,#barra-brasil nav:hover ul.list{height:150px;transition:0.5s}div#wrapper-barra-brasil{overflow:visible}}@media screen and (min-width: 960px){#wrapper-barra-brasil{width:960px}}@media print{#barra-brasil .list{display:none}#barra-brasil .acesso-info .link-barra:after{content:" - Barra GovBr"}}</style><style type="text/css" media="all">div#wrapper-footer-brasil{position:relative;overflow:hidden;margin:0 auto;width:auto;padding:0 20px;max-width:960px}#wrapper-footer-brasil .logo-acesso-footer{float:left;width:107px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAAAxCAMAAADqdKevAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAFZUExURQAAAP////7+/v////////39/f////////////////v7+/qnHv7+/v////qmGv////X19f////qnHPqmGuaqR/qmGvepKvqmGvqmGsvMzuTl5vn38+jdy/fx5tTU1u+gHt7c1827ns3Oz/jivvCdGP////yuGfunGv/LFvyyGf24F//WE/upGfCfF/21GP6+Fv/QFP/EFv67F//hif7Qb//HFv/BFgCZTP3FWv/Xd//ffgCEQgB6Pv/glP7ckwKKRQCgTv7iptiMEgCSSP/OY+OVFfy7Sf7gnf/aif7Ufv7sx0CkO/qzOD2SNvuuKP/GP3G3lP/bbnq6mv7lsf7cmsV7DrJrCv3VieLQof7nuM+EEdfMGv/YSq7Hk5+2J4a1K2eyjfO4VPbEb41MA1SPMO63GZXAmPPNjSGTW+rj12iyM4iiKVOrgNi2fr6nIN/BG8bJfpi6dsGymid2QgoAAAAldFJOUwDvkd9AEGC/gLBSl6Fw7M8zIH4g/RBQPb9ogNXq9yD319en97/AhMqTAAAFFUlEQVRYw+3X+1faSBQH8LxnEgkBq23dvtsdAjSxoKBBFq1IVOTRWotYrFr73Lbbff3/P+y9M0TRlp72NP60vQc5IUo+fm9mJokk/awLqcsTV5MuVvLq5JWLhC5NoOMNC7zJSxckTU+A0w36y6sbT5eXm8F6F7jJ6QvpXtL1go2tZzucWt7s95tB23OTF9BJCNXe2IqoTagmVADZJuOnvObW1tbO6upGLaIqzVKptO65E3FT3ac8FFIHb5+8PVhqViqlEsf8iZipHdG/jVrt4AnU44OKsBqNddePsY2XXW9ZULVabQ+lx49f/F3ZRqkRBIDFNkCmk25peKpqtfkDQb34p/GIVxAEXT85HVsH28NTVZufn3+L1B+/r3SKCwsP5vL52Vw348XVxUvQwWH/gJo/QKlarX4sF4tDLJPxb40GI2T80dLE1L8Wa/3Z6gm1tPcCpWr1r/IQQ+tMMIsxa/zhNGKP/2XS68P8HUpLS88PV7AOs9lRzE+efiEhs4SkJyAAJQk9bRIzZZKERAmBf4F/HEddcbtILUdUobB/dHS0XygUQBNdRMu/fPIN1XRkiTBiJpgiE5MppsmoaTCisjT0UGHmOGvSDZ7yVSmi7otCrFyOgo1M6BRTEiwF0SRZJhCROYbJHMtkusVszCuPPZ1X3ZKgliJq/6h1tI9YFIw3cSr6gsKgFG6plFLdVplGVaYySWNUosxwyPjT1eQLIFLbSB0uYh1yjAcTVvtm1EJH02RV5a1LKDZVHGZSh1FmOiwFlqKOtWDEbw6ppSxY+wA9fLi4uD8aDCw3FQ1qGGcK0UxCoF+EwpAwFBwWYmzosJ+Otzb7SFUq28+zEOsDUoB9EMGiJvr+zI9PZdfr9/ECUtnexlj3W5x6uNg6b/0Si9UU1PNs9husNNXEhk6V9Nij6tQw9C9YKPFYZQzW4j1c5NbIQPTdoYWDTaxUzBlvGarMUl+wSiJWoyysNT4OwTqdYHwcWieWYRg0bTDV1m0IaeBHi9o6taUUxdQGtdOUWrhhnJ1fXtDkF+BHRbQKrTXE1taEVSxGc/lYO7EITDAV3xz4sWADt5nMmK3AmwafZFuWmaHAPvPc0suvv9vZIg8GFq/Wmbns++/0ESvlMIkRjSm6TAgzJObo+IKJnYCFBI6v2wqjsgONPntR7vJLfePBAgTLFjornFppcerUui6NWDBluWVLDsHDMcJf1JFNCAkn1JTBgl2UnVs4AqQeoQVYZ0VUJ3tmOWwrn1tpZlrMHLUYsSGOahlEhb9TZUuVz1+WG2jNCaxT5VS1I6gHeRHrpfW5Be9MTY1asIPZBpw0Azc0mcnG+esy3FMEYAFWLHeqojqCErHCkxZ+Symq8ZX7DbTyAjuxihHFYxnfYSVUc/wNRxet2fwctHGh85uo1wunVNi99j1LUUrTx1uYq52bzWO0j0PrECSg8GSF/o4V0z3bpLsOlctxbO6NCNZBiafywvClGde9aNIDqpvJZHKzoOXfvMYOvoGtWdHAsH1Nj4m64raBcj3EhJb/Mx9JGb8etm+k43twaK93/fpuKDTgeOVQ8sJ6+PJGKrYnh6TbHey+erXbExpyOQ6BNKj772JrIFSI0GDq079Tvd26n4nK8+uDQXj8Xonz4evXXm9q7/rdGWnmzlR9d7dX5zXo9erh8T1Ti/WZUrt3I2GJPs3c+TQV1uu93qBev3X87n0iXulc3Zy5e3sP6/1txdKln/X/rP8A6HRZ8kCrrTMAAAAASUVORK5CYII=") center no-repeat;height:49px}#wrapper-footer-brasil .logo-brasil-footer{float:right;width:153px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAAAwCAMAAAA1kSiuAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAFiUExURQAAAP/////////////////////////dAICUGYa2J////////////////////////////////////////////////////////////////////////////6PBH97PCY2fGMDCEFSIKV6EIv/dAP/dACd2OCuHPil+OyqBPCh6OSuKPyqEPSJkMCyTQyyNQS2gSCZwNS2bRiFfLiRtNCRqMy2dRydzNx9bLCNnMi2YRR1UKS2WRCyQQip8OcnIDyBYKiZyNvfZAiyRQvWGHcbADSBioqy7F/////uoFkaFMEiVNpimFztyLJ21HPaPG3GuLiBQjvyxE3GdJ+nUBvmYGTeRPY24JEekPmGJJd7NCFqXMoKbH9TQDtKTJlipN/mgGKKvF7fFF4GvJ0VymbKGRKmaJ/vHCKODJO2nGdrl8N6WKry8EYp0WGSOuoisza7D2nd7JEpYcrWacEN9stekWsTR4lEu4eYAAABIdFJOUwDzBb3oLXhAcHA7EJJUhJ6wRxpg0NrhI2jHbnOpX0hfUd2Nqf///////////////////////////////////////////////nia+rQAAAnqSURBVFjD7ZnXf9tIDoApkdTuSVTvtjZll8kmci+JHSeiQ5sRrWIpkSNbkuMap9dt//9hBphhkXd/93b3cPNiZkAAHzDAUJlREumIFlP4iBqaloryx3gpocQy/DGhaVoRX1C1UjrHn3JaXEkZOFtWI4WkEhgq6Oj8KQ1PKMxrmppFcRwm0bgCto0oadVUeihrbCpd1bNxnIgV9XiJKEt5pZhHCFfXyzhZiOnVFOq6Ws5I02ytXHHLAbLijK6jv4yh6wn+VCnoMxHEzWq6jhEqbjZO5EouQtEousuUI9lyOo261RmgI+6YGo9EiUxVZ4nBSBZmiaymElnOzaGqn6yaIexMSSWLlSq8htpZMEk4bj4ZocSk0iJWJCtWEjMuBqDC8qRriuAxxFMyS7EUipoaJbJEIYJ2Em5ciZaCy1k0KjSRSWezkixaylPOslmRs2qE/ES1YjGS8JHlI0aGJuKRWo3yDSZdXZAZBikX8nGSl92oTmRKSjMKhWiQTIJmVMPA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") center no-repeat;height:48px}body.contraste #footer-brasil{background:#000 !important}@media screen and (min-width: 960px){#wrapper-footer-brasil{width:960px}}@media print{#wrapper-footer-brasil{border-top:2px solid #dfdfdf}#wrapper-footer-brasil:before{content:"Barra GovBr";color:#606060;font-size:12px;font-family:"Open Sans",Arial,Helvetica,sans-serif}}</style></head>
+<body><div id="barra-brasil"><div id="wrapper-barra-brasil"><div class="brasil-flag"><a href="http://brasil.gov.br" class="link-barra">Brasil</a></div><span class="acesso-info"><a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a></span><nav><ul class="list"><li><a href="#" id="menu-icon"></a></li><li class="list-item first"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li><li class="list-item"><a href="http://www.servicos.gov.br/?pk_campaign=barrabrasil" class="link-barra" id="barra-brasil-orgao">Serviços</a></li><li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li><li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li></ul></nav></div>
+</div>
+
+<div id="wrapper">
+    <header id="header">
+                <div id="header_grid" class="grid">
+
+            <div>
+                <ul id="shortcuts" class="hide_mobile">
+                    <li><a accesskey="1" href="#conteudo">Ir para o conteúdo <span>1</span></a></li>
+                    <li><a accesskey="2" href="#menu">Ir para o menu <span>2</span></a></li>
+                    <li><a accesskey="3" href="#s">Ir para a busca <span>3</span></a></li>
+                    <li><a accesskey="4" href="#rodape">Ir para o rodapé <span>4</span></a></li>
+                </ul>
+                <ul id="topbar">
+		    <li><a href="http://structure.ufsc.br/" target="_self" class="language">English</a></li>
+                    <li><a accesskey="7" href="/acessibilidade" class="accessibility">Acessibilidade</a></li>
+                    <li><a accesskey="8" href="#" id="contrast" class="accessibility">Alto Contraste</a></li>
+                    <li><a accesskey="9" href="/mapa-do-site" class="accessibility">Mapa do Site</a></li>
+                </ul>
+                <div id="logo">
+                    <a href="/" accesskey="0" id="portal-logo">
+                        <img id="brasaoUfsc_Header" src="http://ufsc.br/wp-content/themes/brasilGov/img/brasao_site_ufsc.svg?ver=1597688944" atl="Brasão UFSC" />
+                        <!-- <h1 id="portal-title"></h1> -->
+                    </a>
+                </div>
+                <form action="http://www.google.com/cse" id="cse-search-box">
+                    <input type="text" placeholder="Buscar no portal" id="s" name="q" class="placeholder" />
+				<input type="hidden" name="cx" value="000084558572711826897:ax1ew-no0w8" />
+                                <input type="hidden" name="ie" value="UTF-8" />
+                                <input name="siteurl" type="hidden" value="www.google.com/cse/home?cx=000084558572711826897:ax1ew-no0w8" />
+
+                </form>
+                <ul id="social" class="hide_mobile">
+                    <li><a href="https://webmail.ufsc.br" title="Acesse o Webmail UFSC" class="icon-envelope"></a></li>
+                    <li><a href="https://pt-br.facebook.com/UniversidadeUFSC" title="Curta no Facebook" class="icon-facebook"></a></li>
+                    <li><a href="https://twitter.com/ufsc" title="Siga no Twitter" class="icon-twitter"></a></li>
+                    <li><a href="https://www.youtube.com/user/tvufsc" title="Vídeos no Youtube" class="icon-youtube"></a></li>
+                    <li><a href="https://www.instagram.com/universidadeufsc" title="Veja no Instagram" class="icon-camera"></a></li>
+                    <li><a href="/feed" title="Assine as atualizações via RSS" class="icon-feed"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="menu-nav">
+            <ul>
+                <li id="menu-link-nav-imprensa">
+                    <a href="http://agecom.ufsc.br/atendimento-a-imprensa/">Imprensa</a>
+                </li>
+                <li id="menu-link-nav-telefones" class="menu-link-nav">
+                    <a href="http://telefones.ufsc.br/">Telefones</a>
+                </li>
+                <li id="menu-link-nav-ouvidoria" class="menu-link-nav">
+                    <a href="http://ouvidoria.ufsc.br/">Ouvidoria</a>
+                </li>
+                <li id="menu-link-nav-acessoinformacao" class="menu-link-nav">
+                    <a href="http://acessoainformacao.ufsc.br/">Acesso à Informação</a>
+                </li>
+                <li id="menu-link-nav-contato" class="menu-link-nav">
+                    <a href="http://estrutura.ufsc.br/contatos/">Contato</a>
+                </li>
+            </ul>
+            <a href="#dropmenu" class="menu-link"><span aria-hidden="true" class="icon-menu"></span> Menu</a>
+                    </div>
+    </header>
+    <section class="grid section group clearfix">
+
+
+
+
+
+
+
+
+
+
+                
+<section id="home" class="section group clearfix">		
+
+    <div id="sidebar_left" name="menu" class="hide_mobile">				
+                    <ul role="navigation" class="hide_mobile">
+                <li>			            
+                    <dl id="margin_space"> 
+                        <div class="pagenav"><ul id="menu-campi" class="pagenav"><li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19"><a href="http://ararangua.ufsc.br">Araranguá</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="http://blumenau.ufsc.br">Blumenau</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a href="http://curitibanos.ufsc.br">Curitibanos</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a href="http://joinville.ufsc.br">Joinville</a></li>
+</ul></div>                    </dl>
+                </li>
+            </ul>
+        			    
+        <ul id="nav_menu-6" class="widget widget_nav_menu"><li><h2>Institucional</h2><div class="pagenav"><ul id="menu-ufsc" class="menu hide_mobile"><li id="menu-item-161" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-161"><a href="http://estrutura.ufsc.br/">Apresentação</a></li>
+<li id="menu-item-163" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163"><a href="http://estrutura.ufsc.br/mapa/">Mapa da UFSC</a></li>
+<li id="menu-item-594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-594"><a href="https://transparencia.ufsc.br/">Transparência</a></li>
+<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="http://estrutura.ufsc.br/legislacao/">Legislação</a></li>
+<li id="menu-item-164" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-164"><a href="http://dpgi.seplan.ufsc.br/ufsc-em-numeros/">UFSC em números</a></li>
+</ul></div></li></ul><ul id="nav_menu-11" class="widget widget_nav_menu"><li><h2>Comunidade</h2><div class="pagenav"><ul id="menu-comunidade" class="menu hide_mobile"><li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-198"><a href="http://estrutura.ufsc.br/servicos-gratuitos/">Serviços gratuitos</a></li>
+<li id="menu-item-206" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-206"><a href="http://secarte.ufsc.br/">Arte e Cultura</a></li>
+<li id="menu-item-547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-547"><a href="https://portalcds.ufsc.br/extensao-atividades-fisicas-para-a-comunidade/">Atividades físicas</a></li>
+<li id="menu-item-550" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-550"><a href="http://inscricoes.ufsc.br/">Cursos e oficinas</a></li>
+<li id="menu-item-548" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-548"><a href="http://www.cursosextra.com/">Extracurriculares</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-323"><a href="http://agecom.ufsc.br/">Agecom</a></li>
+<li id="menu-item-201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-201"><a href="http://tv.ufsc.br/">TV UFSC</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244"><a href="https://classificados.inf.ufsc.br/">Classificados</a></li>
+</ul></div></li></ul><ul id="nav_menu-3" class="widget widget_nav_menu"><li><h2>Ensino</h2><div class="pagenav"><ul id="menu-ensino" class="menu hide_mobile"><li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="http://ndi.ufsc.br">Infantil</a></li>
+<li id="menu-item-37" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a href="http://www.ca.ufsc.br/">Fundamental e Médio</a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-38"><a href="https://vestibular2019.ufsc.br/guia-de-cursos/">Graduação</a></li>
+<li id="menu-item-39" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39"><a href="http://propg.ufsc.br/cap/programas-de-pos-graduacao/">Pós-Graduação</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a href="http://www.sead.ufsc.br/educacao-a-distancia/">Educação a Distância</a></li>
+<li id="menu-item-551" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-551"><a href="http://dae.ufsc.br/calendario-academico-de-graduacao/">Calendário</a></li>
+</ul></div></li></ul><ul id="nav_menu-4" class="widget widget_nav_menu"><li><h2>Ingresso</h2><div class="pagenav"><ul id="menu-ingresso" class="menu hide_mobile"><li id="menu-item-276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-276"><a href="http://coperve.ufsc.br">Vestibular</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="http://saad.ufsc.br/">Ações Afirmativas</a></li>
+<li id="menu-item-278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-278"><a href="http://sisu2018.ufsc.br/">SiSU</a></li>
+<li id="menu-item-279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-279"><a href="https://dae.ufsc.br/transferencias-e-retornos/">Transferências e Retornos</a></li>
+<li id="menu-item-280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-280"><a href="http://concursos.ufsc.br/">Concursos e Processos Seletivos</a></li>
+</ul></div></li></ul><ul id="nav_menu-10" class="widget widget_nav_menu"><li><h2>Estudante</h2><div class="pagenav"><ul id="menu-estudante" class="menu hide_mobile"><li id="menu-item-165" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-165"><a href="http://calouros.ufsc.br/">Calouro</a></li>
+<li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="http://sinter.ufsc.br/">Internacional</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-80"><a href="http://dae.ufsc.br/">Administração Escolar</a></li>
+<li id="menu-item-549" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-549"><a href="https://prae.ufsc.br/">Assistência Estudantil</a></li>
+<li id="menu-item-190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="http://cagr.sistemas.ufsc.br/">CAGR</a></li>
+<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="https://capg.sistemas.ufsc.br">CAPG</a></li>
+<li id="menu-item-259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-259"><a href="https://moodle.ufsc.br/">Moodle</a></li>
+<li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a href="http://cae.ufsc.br/">Acessibilidade</a></li>
+<li id="menu-item-591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-591"><a href="https://cdgen.saad.ufsc.br/2020/07/23/solicitacao-do-nome-social-durante-a-pandemia/">Nome Social</a></li>
+<li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a href="http://apoiopedagogico.prograd.ufsc.br/">Apoio Pedagógico</a></li>
+<li id="menu-item-325" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-325"><a href="http://sapsi.paginas.ufsc.br/">Atenção Psicológica</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="http://portal.estagios.ufsc.br/estagio/ofertas-de-estagio/">Estágio</a></li>
+</ul></div></li></ul><ul id="nav_menu-13" class="widget widget_nav_menu"><li><h2>Portais</h2><div class="pagenav"><ul id="menu-portais" class="menu hide_mobile"><li id="menu-item-330" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-330"><a href="http://servidor.ufsc.br/">Servidor</a></li>
+<li id="menu-item-248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-248"><a href="https://repositorio.ufsc.br/">Repositório</a></li>
+<li id="menu-item-249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-249"><a href="https://periodicos.ufsc.br/">Periódicos</a></li>
+<li id="menu-item-475" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-475"><a href="http://www.agu.gov.br/unidade/PFUFSC">Procuradoria</a></li>
+<li id="menu-item-585" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-585"><a href="https://boletimoficial.ufsc.br">Boletim Oficial</a></li>
+</ul></div></li></ul><ul id="nav_menu-8" class="widget widget_nav_menu"><li><h2>Estrutura</h2><div class="pagenav"><ul id="menu-estrutura" class="menu hide_mobile"><li id="menu-item-101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-101"><a href="http://estrutura.ufsc.br/reitoria/">Reitoria</a></li>
+<li id="menu-item-102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-102"><a href="http://estrutura.ufsc.br/pro-reitorias/">Pró-Reitorias</a></li>
+<li id="menu-item-103" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-103"><a href="http://estrutura.ufsc.br/secretarias/">Secretarias</a></li>
+<li id="menu-item-104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-104"><a href="http://estrutura.ufsc.br/centros-de-ensino/">Centros de Ensino</a></li>
+<li id="menu-item-107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a href="http://www.hu.ufsc.br/">Hospital</a></li>
+<li id="menu-item-108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108"><a href="http://ru.ufsc.br/">Restaurante</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-109"><a href="http://portal.bu.ufsc.br/">Biblioteca</a></li>
+<li id="menu-item-110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-110"><a href="http://museu.ufsc.br/">Museu</a></li>
+<li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-111"><a href="http://editora.paginas.ufsc.br/">Editora</a></li>
+</ul></div></li></ul>		    	
+    </div>
+
+
+    <div class="col" name="conteudo">		
+                <div id="main_navigation">
+    <div id="content">
+        <div id="slideshow" style="height: 351.995px;">                
+            
+                    <div class="item post-218114">
+                        <a href="http://noticias.ufsc.br/2020/12/conselho-universitario-aprova-calendario-academico-2020-2/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos.jpg 776w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos-300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos-768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos-100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/10/destaque60anos-200x121.jpg 200w" sizes="(max-width: 776px) 100vw, 776px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/12/conselho-universitario-aprova-calendario-academico-2020-2/">Conselho Universitário aprova Calendário Acadêmico 2020.2</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-217703" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/12/sead-apresenta-espaco-para-reunir-praticas-pedagogicas-inspiradoras/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC-.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC-.jpg 774w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC--300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC--768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC--100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaques_PPI_UFSC--200x121.jpg 200w" sizes="(max-width: 774px) 100vw, 774px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/12/sead-apresenta-espaco-para-reunir-praticas-pedagogicas-inspiradoras/">Sead apresenta espaço para reunir práticas pedagógicas inspiradoras</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-218065" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/12/conscientizacao-e-prevencao-sao-as-principais-mensagens-do-dezembro-vermelho/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor.jpg 775w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor-300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor-768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor-100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_brasao_cinza_cor-200x121.jpg 200w" sizes="(max-width: 775px) 100vw, 775px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/12/conscientizacao-e-prevencao-sao-as-principais-mensagens-do-dezembro-vermelho/">Conscientização e prevenção são as principais mensagens do Dezembro Vermelho</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-218058" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/12/livro-sobre-abelhas-produzido-por-alunos-do-colegio-de-aplicacao-e-publicado-pela-epagri/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1.jpg 2272w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1-300x225.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1-768x576.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1-1024x768.jpg 1024w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1-100x75.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/12/Foto-1-200x150.jpg 200w" sizes="(max-width: 2272px) 100vw, 2272px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/12/livro-sobre-abelhas-produzido-por-alunos-do-colegio-de-aplicacao-e-publicado-pela-epagri/">Livro sobre abelhas produzido por alunos do Colégio de Aplicação é publicado pela Epagri</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-218016" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/11/projetos-da-ufsc-nas-areas-marinha-e-oceanica-sao-contemplados-em-editais-da-uniao-europeia/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao.jpg 775w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao-300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao-768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao-100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_mosaico_azul_institucional_brasao-200x121.jpg 200w" sizes="(max-width: 775px) 100vw, 775px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/11/projetos-da-ufsc-nas-areas-marinha-e-oceanica-sao-contemplados-em-editais-da-uniao-europeia/">Projetos da UFSC nas áreas marinha e oceânica são contemplados em editais da União Europeia</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-217961" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/11/com-ciencia-pela-vida-setores-que-terao-trabalho-presencial-precisam-solicitar-autorizacao/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca.jpg 1042w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca-300x168.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca-768x431.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca-1024x575.jpg 1024w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca-100x56.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/11/Destaque_guia_biosseguranca-200x112.jpg 200w" sizes="(max-width: 1042px) 100vw, 1042px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/11/com-ciencia-pela-vida-setores-que-terao-trabalho-presencial-precisam-solicitar-autorizacao/">Com Ciência, Pela Vida: setores que terão trabalho presencial precisam solicitar autorização</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-217973" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/11/conselho-universitario-delibera-sobre-ingresso-nos-cursos-de-graduacao-e-calendario-academico-em-sessao-on-line-nesta-terca/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional.jpg 775w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional-300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional-768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional-100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_azul_reitoria_brasao_institucional-200x121.jpg 200w" sizes="(max-width: 775px) 100vw, 775px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/11/conselho-universitario-delibera-sobre-ingresso-nos-cursos-de-graduacao-e-calendario-academico-em-sessao-on-line-nesta-terca/">Conselho Universitário delibera sobre ingresso nos cursos de graduação e calendário acadêmico em sessão on-line nesta terça</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                    
+                    <div class="item post-217833" style="display: none;">
+                        <a href="http://noticias.ufsc.br/2020/11/servidores-dividem-experiencias-sobre-trabalho-remoto-e-cuidados-com-as-criancas/">
+                            <img src="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde.jpg" class="attachment-larger size-larger wp-post-image" alt="" srcset="http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde.jpg 774w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde-300x181.jpg 300w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde-768x464.jpg 768w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde-100x60.jpg 100w, http://noticias.ufsc.br/wp-content/blogs.dir/349/files/2020/05/destaque_NDI_UFSC_institucional_verde-200x121.jpg 200w" sizes="(max-width: 774px) 100vw, 774px" />                        </a>
+                        <div class="shade" style="top: 351.995px;">
+                            <div class="text">
+                                <h3><a href="http://noticias.ufsc.br/2020/11/servidores-dividem-experiencias-sobre-trabalho-remoto-e-cuidados-com-as-criancas/">Servidores dividem experiências sobre trabalho remoto e cuidados com as crianças</a></h3>
+                            </div>
+                        </div>                            
+                    </div>
+
+
+                                <div id="slide-controls" style="display: block;">
+                <p id="slideshow-button" class="disable"><a href="#" onclick="slideshow();&#10;                        return false;">slideshow</a></p>
+                <p id="slide-nav"> 
+                    <a id="slide-link-0" href="#" onclick="slide(0,8); return false;" class="on"> 1 </a>
+<a id="slide-link-1" href="#" onclick="slide(1,8); return false;" class="on"> 2 </a>
+<a id="slide-link-2" href="#" onclick="slide(2,8); return false;" class="on"> 3 </a>
+<a id="slide-link-3" href="#" onclick="slide(3,8); return false;" class="on"> 4 </a>
+<a id="slide-link-4" href="#" onclick="slide(4,8); return false;" class="on"> 5 </a>
+<a id="slide-link-5" href="#" onclick="slide(5,8); return false;" class="on"> 6 </a>
+<a id="slide-link-6" href="#" onclick="slide(6,8); return false;" class="on"> 7 </a>
+<a id="slide-link-7" href="#" onclick="slide(7,8); return false;" class="on"> 8 </a>
+                </p>
+            </div>                
+        </div>
+
+                <!-- Não usado
+        <div id="featured">
+                </div>
+        -->
+    </div>
+</div>
+		
+
+                
+        <div id="col_esq">
+            <div id="news">
+                <h2 class="title">Destaques</h2>				
+                <ul class="news">			
+                                <!-- <li class="post-218144"> -->
+                                <!-- <span class="date">02/12/2020 - 18:06</span> -->
+        <!-- <span class="category"> &#151; <a href="<?php print_style('/categoria/');?>comunidade">Comunidade</a>, <a href="<?php print_style('/categoria/');?>destaque2">Destaque2</a>, <a href="<?php print_style('/categoria/');?>estudante">Estudante</a>, <a href="<?php print_style('/categoria/');?>professor">Professor</a>, <a href="<?php print_style('/categoria/');?>stae">STAE</a></span> -->
+        <li class="clearfix">
+            <a class="news_title" href="http://noticias.ufsc.br/2020/12/administracao-central-da-ufsc-emite-nota-sobre-portaria-n-1-030mec/"><h1>Administração Central da UFSC emite nota sobre Portaria n° 1.030/MEC</h1></a>
+            <p>
+                </p><p>A Administração Central da UFSC, considerando a Portaria n° 1.030/MEC, informa que estão mantidos integralmente os termos da Portaria Normativa  n° 379/GR/2020, prorrogando a suspensão de atividades presenciais até […]</p>
+            <p></p>
+        </li>
+        <!-- </li> -->
+                    <!-- <li class="post-218131"> -->
+                                <!-- <span class="date">02/12/2020 - 10:49</span> -->
+        <!-- <span class="category"> &#151; <a href="<?php print_style('/categoria/');?>comunidade">Comunidade</a>, <a href="<?php print_style('/categoria/');?>destaque2">Destaque2</a>, <a href="<?php print_style('/categoria/');?>ensino">Ensino</a>, <a href="<?php print_style('/categoria/');?>estudante">Estudante</a>, <a href="<?php print_style('/categoria/');?>extensão">Extensão</a>, <a href="<?php print_style('/categoria/');?>pesquisa">Pesquisa</a>, <a href="<?php print_style('/categoria/');?>professor">Professor</a>, <a href="<?php print_style('/categoria/');?>stae">STAE</a></span> -->
+        <li class="clearfix">
+            <a class="news_title" href="http://noticias.ufsc.br/2020/12/cnpq-aprova-projeto-da-ufsc-de-qualificacao-de-profissionais-e-gestores-da-saude/"><h1>CNPq aprova projeto da UFSC de qualificação de profissionais e gestores da saúde</h1></a>
+            <p>
+                </p><p>O projeto Qualificação profissional e de gestores de Santa Catarina em doenças crônicas não-transmissíveis foi aprovado na Chamada CNPq/MS/SAPS/DEPROS nº 28/2020, de formação em doenças […]</p>
+            <p></p>
+        </li>
+        <!-- </li> -->
+                    <!-- <li class="post-218099"> -->
+                                <!-- <span class="date">02/12/2020 - 10:32</span> -->
+        <!-- <span class="category"> &#151; <a href="<?php print_style('/categoria/');?>comunidade">Comunidade</a>, <a href="<?php print_style('/categoria/');?>destaque2">Destaque2</a>, <a href="<?php print_style('/categoria/');?>estudante">Estudante</a>, <a href="<?php print_style('/categoria/');?>professor">Professor</a>, <a href="<?php print_style('/categoria/');?>stae">STAE</a></span> -->
+        <li class="clearfix">
+            <a class="news_title" href="http://noticias.ufsc.br/2020/12/forum-nos-dias-8-e-9-para-avaliacao-das-atividades-pedagogicas-nao-presenciais-na-ufsc/"><h1>Fórum nos dias 8 e 9 para avaliação das atividades pedagógicas não presenciais na UFSC</h1></a>
+            <p>
+                </p><p>A Pró-Reitoria de Graduação (Prograd) convida todos os docentes e técnicos-administrativos da UFSC a se inscreverem e participarem do Fórum de avaliação das atividades pedagógicas não […]</p>
+            <p></p>
+        </li>
+        <!-- </li> -->
+                    <!-- <li class="post-218125"> -->
+                                <!-- <span class="date">02/12/2020 - 09:47</span> -->
+        <!-- <span class="category"> &#151; <a href="<?php print_style('/categoria/');?>comunidade">Comunidade</a>, <a href="<?php print_style('/categoria/');?>destaque2">Destaque2</a>, <a href="<?php print_style('/categoria/');?>estudante">Estudante</a>, <a href="<?php print_style('/categoria/');?>pesquisa">Pesquisa</a>, <a href="<?php print_style('/categoria/');?>professor">Professor</a>, <a href="<?php print_style('/categoria/');?>stae">STAE</a></span> -->
+        <li class="clearfix">
+            <a class="news_title" href="http://noticias.ufsc.br/2020/12/e-book-gratuito-aborda-efeitos-sanitarios-sociais-politicos-economicos-e-culturais-da-covid-19/"><h1>E-book gratuito aborda efeitos sanitários, sociais, políticos, econômicos e culturais da Covid-19 </h1></a>
+            <p>
+                </p><p>Resultado de um esforço coletivo realizado em um tempo excepcional, segundo seus organizadores, o livro Cientistas sociais e o coronavírus reúne textos escritos por cerca […]</p>
+            <p></p>
+        </li>
+        <!-- </li> -->
+                        </ul>
+            </div>
+
+	    <div id="ultimos_videos">
+	    <h2 class="ultimos_videos">Últimos Vídeos</h2>
+	    	<div class="ytcshort ytccf"><div class="youtubechannelgallery"><div id="ytc-1"><div id="ytc-wrapper"><div class="ytc-pslb ytcplayer-wrapper" style="width:100%;">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe id="ytcplayer1" class="ytcplayer" allowfullscreen="" src="https://www.youtube.com/embed/-CyuAFYDjKc?version=3&amp;theme=dark&amp;color=red&amp;modestbranding=&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;wmode=transparent" frameborder="0"></iframe>
+  </div>
+</div>
+<div class="ytc-pslb ytc-thumbnails container-fluid ytc-thumb16x9 ytc-thumb-align-none">
+
+
+		    	
+    	    				<div class="ytc-row row">
+							
+		<div class="ytc-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="ytcthumb-cont public">
+  <a class="ytcthumb ytclink" href="https://www.youtube.com/watch?v=-CyuAFYDjKc" data-playerid="ytcplayer1" data-quality="medium" title="Relatório final LINC Digital 2020" style="background-image:url(https://i.ytimg.com/vi/-CyuAFYDjKc/mqdefault.jpg);">
+        <div class="ytcplay"></div>
+  </a>
+  </div>
+
+<h5 class="ytctitle">
+	  		<a class="ytclink" href="https://www.youtube.com/watch?v=-CyuAFYDjKc" data-playerid="ytcplayer1" data-quality="medium" alt="Relatório final LINC Digital 2020" title="Relatório final LINC Digital 2020">
+	  			Relatório final LINC Digital 2020			</a>
+	</h5>		</div>     	
+				
+    	    	
+		<div class="ytc-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="ytcthumb-cont public">
+  <a class="ytcthumb ytclink" href="https://www.youtube.com/watch?v=rAl0dU9wNP8" data-playerid="ytcplayer1" data-quality="medium" title="Convite para Autoavaliação Institucional" style="background-image:url(https://i.ytimg.com/vi/rAl0dU9wNP8/mqdefault.jpg);">
+        <div class="ytcplay"></div>
+  </a>
+  </div>
+
+<h5 class="ytctitle">
+	  		<a class="ytclink" href="https://www.youtube.com/watch?v=rAl0dU9wNP8" data-playerid="ytcplayer1" data-quality="medium" alt="Convite para Autoavaliação Institucional" title="Convite para Autoavaliação Institucional">
+	  			Convite para Autoavaliação Institucional			</a>
+	</h5>		</div>     	
+				
+    	    					</div>
+				<div class="ytc-row row">
+							
+		<div class="ytc-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="ytcthumb-cont public">
+  <a class="ytcthumb ytclink" href="https://www.youtube.com/watch?v=vbHH-anDuhQ" data-playerid="ytcplayer1" data-quality="medium" title="Professor da UFSC fala sobre as vacinas contra o coronavírus" style="background-image:url(https://i.ytimg.com/vi/vbHH-anDuhQ/mqdefault.jpg);">
+        <div class="ytcplay"></div>
+  </a>
+  </div>
+
+<h5 class="ytctitle">
+	  		<a class="ytclink" href="https://www.youtube.com/watch?v=vbHH-anDuhQ" data-playerid="ytcplayer1" data-quality="medium" alt="Professor da UFSC fala sobre as vacinas contra o coronavírus" title="Professor da UFSC fala sobre as vacinas contra o coronavírus">
+	  			Professor da UFSC fala sobre as vacinas contra o coronavírus			</a>
+	</h5>		</div>     	
+				
+    	    	
+		<div class="ytc-column col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="ytcthumb-cont public">
+  <a class="ytcthumb ytclink" href="https://www.youtube.com/watch?v=FgMO3imSHOE" data-playerid="ytcplayer1" data-quality="medium" title="Bem-vindos de volta à UFSC" style="background-image:url(https://i.ytimg.com/vi/FgMO3imSHOE/mqdefault.jpg);">
+        <div class="ytcplay"></div>
+  </a>
+  </div>
+
+<h5 class="ytctitle">
+	  		<a class="ytclink" href="https://www.youtube.com/watch?v=FgMO3imSHOE" data-playerid="ytcplayer1" data-quality="medium" alt="Bem-vindos de volta à UFSC" title="Bem-vindos de volta à UFSC">
+	  			Bem-vindos de volta à UFSC			</a>
+	</h5>		</div>     	
+				
+	</div> 
+		
+</div> 
+
+<div class="ytc-pslb ytc-links container-fluid">
+	<div class="ytc-row row">
+		
+					<div class="ytc-youtubelink col-xs-12">
+				<a href="https://www.youtube.com/playlist?list=PLKn_jNaorZU9twc_K8e5DrPhxNZIDH_4Y" class="ytcmore">
+					Ver mais vídeos»				</a>
+			</div>
+			</div>
+</div>
+
+</div></div></div></div>	    </div>
+
+        </div>
+
+                <div id="col_dir">
+<ul id="text-41" class="widget widget_text"><li>			<div class="textwidget"><a href="https://coronavirus.ufsc.br/numeros-da-ufsc-contra-o-coronavirus/">
+<img src="http://noticias.paginas.ufsc.br/files/2020/07/bannerAcoes.jpg" />
+</a>
+</div>
+		</li></ul><ul id="text-39" class="widget widget_text"><li>			<div class="textwidget"><a href="https://noticias.ufsc.br/capacitacao-durante-a-pandemia-de-covid-19/">
+<img src="http://noticias.paginas.ufsc.br/files/2020/08/Cursos_Comciencia.jpg" />
+</a></div>
+		</li></ul><ul id="text-40" class="widget widget_text"><li>			<div class="textwidget"><a href="https://noticias.ufsc.br/editais-de-apoio-durante-a-pandemia-de-covid-19/">
+<img src="http://noticias.paginas.ufsc.br/files/2020/08/Editais_comciencia.jpg" />
+</a>
+<p></p></div>
+		</li></ul><ul id="text-42" class="widget widget_text"><li>			<div class="textwidget"><a href="https://noticias.ufsc.br/orientacoes-para-o-ensino-nao-presencial/">
+<img src="http://noticias.paginas.ufsc.br/files/2020/08/Orientacoes_comciencia.jpg" />
+</a>
+<p></p></div>
+		</li></ul><ul id="text-37" class="widget widget_text"><li>			<div class="textwidget"><br />
+<a href="https://noticias.ufsc.br/tags/ufsc-solidaria/">
+<img src="http://noticias.paginas.ufsc.br/files/2020/03/ufscSolidariaDestaque.jpg" />
+</a></div>
+		</li></ul><ul id="text-19" class="widget widget_text"><li>			<div class="textwidget"><br />
+<a href="https://noticias.ufsc.br/2020/08/rotinas-de-comunicacao-da-ufsc-sofrem-alteracoes-durante-periodo-eleitoral/">
+<img src="http://ufsc3.paginas.ufsc.br/files/2018/06/site-ufsc_banner-comunicacao-periodo-eleitoral-v_01-banner-lateral.jpg" />
+</a></div>
+		</li></ul><ul id="text-33" class="widget widget_text"><li>			<div class="textwidget"><br />
+<a href="http://ciencia.ufsc.br/">
+<img src="http://ufsc3.paginas.ufsc.br/files/2019/12/WhatsApp-Image-2019-12-27-at-08.27.29-1.jpeg" />
+</a></div>
+		</li></ul><ul id="text-17" class="widget widget_text"><li><h2 class="title">Inscrições</h2>			<div class="textwidget"><a href="https://noticias.ufsc.br/programas-de-pos-graduacao-da-ufsc-com-inscricoes-abertas/">
+<img src="http://ufsc3.paginas.ufsc.br/files/2019/09/mestrado-e-doutorado-horizontal.png" />
+</a></div>
+		</li></ul><ul id="text-16" class="widget widget_text"><li><h2 class="title">Vestibular</h2>			<div class="textwidget"><a href="https://processoseletivo20202.ufsc.br/">
+<img src="http://ufsc3.paginas.ufsc.br/files/2019/12/WhatsApp-Image-2019-12-27-at-08.27.28-1.jpeg" />
+</a></div>
+		</li></ul><ul id="text-26" class="widget widget_text"><li><h2 class="title">Divulga</h2>			<div class="textwidget"><a href="https://noticias.paginas.ufsc.br/assinaturadodivulga/">
+<img src="http://ufsc3.paginas.ufsc.br/files/2019/06/Banner-Divulga-2.png" />
+</a></div>
+		</li></ul></div>        
+        </div>
+
+
+        <div id="noticias">
+            <h2 class="title">Notícias</h2>
+            <div class="news">
+                <ul class="news_collumn news_left news">
+                
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Pesquisa"><a href=" http://noticias.ufsc.br/categoria/pesquisa-2/ ">Pesquisa</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/laboratorio-de-oceanografia-costeira-da-ufsc-coordena-monitoramento-sismologico-e-oceanografico-do-litoral-do-sudeste-brasileiro/">Laboratório de Oceanografia Costeira da UFSC coordena monitoramento sismológico e oceanográfico do litoral do sudeste brasileiro</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Ensino"><a href=" http://noticias.ufsc.br/categoria/ensino-2/ ">Ensino</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/tutoria-a-alunos-de-graduacao-nas-disciplinas-de-fisica-1-pre-calculo-e-calculo-1a/">Tutoria a alunos de graduação nas disciplinas de ‘Física 1’, ‘Pré-Cálculo’ e ‘Cálculo 1/A’</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Extensão"><a href=" http://noticias.ufsc.br/categoria/extensao-2/ ">Extensão</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/pos-em-enfermagem-realiza-aula-de-abertura-do-2o-semestre-e-lanca-doutorado-internacional/">Pós em Enfermagem realiza aula de abertura do 2º semestre e lança doutorado internacional</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Geral"><a href=" http://noticias.ufsc.br/categoria/geral/ ">Geral</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/revista-do-necat-abre-chamada-de-artigos-cientificos-sobre-a-covid-19-em-sc/">Revista do Necat abre chamada de artigos científicos sobre a Covid-19 em SC</a></div>
+                    </li>
+
+                                </ul><ul class="news_collumn news_right news">
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Geral"><a href=" http://noticias.ufsc.br/categoria/geral/ ">Geral</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/programacao-de-dezembro-da-mostra-dominio-publico-cine-ufsc/">Programação de dezembro da Mostra Domínio Público – Cine UFSC</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Extensão"><a href=" http://noticias.ufsc.br/categoria/extensao-2/ ">Extensão</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/12/aberta-a-chamada-para-apresentacao-de-artigos-cientificos-ao-ensus-2021/">Aberta a chamada para apresentação de artigos científicos ao Ensus 2021</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Pesquisa"><a href=" http://noticias.ufsc.br/categoria/pesquisa-2/ ">Pesquisa</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/11/carreira-do-pesquisador-em-engenharia-e-tema-de-evento-on-line/">Carreira do pesquisador em Engenharia é tema de evento on-line</a></div>
+                    </li>
+
+                    
+                    <li class="clearfix">
+                                                    <div class="news_categories">
+                                                                        <span class="news_category news_category_Geral"><a href=" http://noticias.ufsc.br/categoria/geral/ ">Geral</a></span>
+                                                                    </div>
+                            
+                        <div class="news_link"><a href="http://noticias.ufsc.br/2020/11/sbpc-prorroga-matriculas-para-minicursos-de-dezembro-de-sua-reuniao-anual/">SBPC prorroga matrículas para minicursos de dezembro de sua reunião anual </a></div>
+                    </li>
+
+                                </ul><table col="2">
+                                
+                        
+                        </table>
+            </div>
+
+            <a href="http://noticias.ufsc.br" class="all mais_noticias">Veja mais notícias</a>
+        </div>
+
+        <div class="fotos">
+
+            <h2 class="title">Fotos</h2>
+
+            <div class="galeria">
+                <a href="/galeria" id="flickr_holder"></a>
+                 <script language="javascript" type="text/javascript">
+        jQuery(document).ready(
+        function (){
+            jQuery("#pikame").PikaChoose({carousel:true,carouselOptions:{wrap:'circular'}});
+        });
+    </script> <div class="pikachoose">
+        <div class="pika-stage"><a href="http://galeria.ufsc.br/d/120572-2/C__o-guia - Foto Henrique Almeida.jpg" title="" target=""><img src="http://galeria.ufsc.br/d/120572-2/C__o-guia - Foto Henrique Almeida.jpg" style="left: 0px;" /></a><div class="pika-imgnav"><a class="pause"></a><a class="previous"></a><a class="next"></a><span class="pika-counter">1/32</span></div><div class="caption" style="display: block; opacity: 0.153928;">'Cão-guia - Foto Henrique Almeida'</div><div class="pika-aniwrap"><img style="display: none;" /><div class="pika-ani" style="position: relative;"><div col="0" row="0"></div><div col="1" row="0"></div><div col="2" row="0"></div><div col="3" row="0"></div><div col="4" row="0"></div><div col="0" row="1"></div><div col="1" row="1"></div><div col="2" row="1"></div><div col="3" row="1"></div><div col="4" row="1"></div><div col="0" row="2"></div><div col="1" row="2"></div><div col="2" row="2"></div><div col="3" row="2"></div><div col="4" row="2"></div><div col="0" row="3"></div><div col="1" row="3"></div><div col="2" row="3"></div><div col="3" row="3"></div><div col="4" row="3"></div><div col="0" row="4"></div><div col="1" row="4"></div><div col="2" row="4"></div><div col="3" row="4"></div><div col="4" row="4"></div></div></div><div class="pika-textnav"><a class="previous">Previous</a><a class="next">Next</a></div><div class="pika-loader" style="display: none;">Loading</div></div><div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;"><div class="jcarousel-clip jcarousel-clip-horizontal" style="position: relative;"><ul id="pikame" class="pika-thumbs jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; width: 5028px; left: 0px;"><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal active" jcarouselindex="1" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120572-2/C__o-guia - Foto Henrique Almeida.jpg" title="Cão-guia - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.678206;" class="active" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120575-2/_MG_2052.jpg" title="Praça da Cidadania - Aérea - Foto Jair Quint" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120586-2/Conviv__ncia reflexo - Foto Henrique Almeida.jpg" title="Convivência reflexo - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120588-2/Reflexo na __gua Centro de Eventos - Foto Henrique Almeida.jpg" title="Reflexo na água Centro de Eventos - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="5" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120592-2/Campus 2015 - BU - Foto Henrique Almeida-10.jpg" title="BU - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-6 jcarousel-item-6-horizontal" jcarouselindex="6" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120594-2/Campus 2015 - BU - Foto Henrique Almeida-7.jpg" title="BU - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-7 jcarousel-item-7-horizontal" jcarouselindex="7" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/120596-2/Nova pista de atletismo - Foto Henrique Almeida-9.jpg" title="Pista de atletismo - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-8 jcarousel-item-8-horizontal" jcarouselindex="8" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122724-2/Pra__a da Cidadania - Foto Henrique Almeida.jpg" title="Praça da Cidadania - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-9 jcarousel-item-9-horizontal" jcarouselindex="9" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122726-2/Centro de Conviv__ncia __ noite - Foto Henrique Almeida.jpg" title="Centro de Convivência à noite - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-10 jcarousel-item-10-horizontal" jcarouselindex="10" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122728-2/Entrada Trindade - Foto Henrique Almeida.jpg" title="Entrada Trindade - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-11 jcarousel-item-11-horizontal" jcarouselindex="11" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122730-2/Biblioteca Universit__ria - Foto Henrique Almeida.jpg" title="Biblioteca Universitária - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-12 jcarousel-item-12-horizontal" jcarouselindex="12" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122732-2/Campus Curitibanos - Foto Jair Quint.jpg" title="Campus Curitibanos - Foto Jair Quint" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-13 jcarousel-item-13-horizontal" jcarouselindex="13" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122734-2/CCE - Foto Henrique Almeida.jpg" title="CCE - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-14 jcarousel-item-14-horizontal" jcarouselindex="14" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122738-2/Reitoria - Foto Henrique Almeida.jpg" title="Reitoria - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-15 jcarousel-item-15-horizontal" jcarouselindex="15" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/122740-2/Fazenda da Ressacada - Foto __talo Padilha.jpg" title="Fazenda da Ressacada - Foto Ítalo Padilha" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-16 jcarousel-item-16-horizontal" jcarouselindex="16" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/126121-2/DSC_0049.jpg" title="Homenagem Catatau - Foto Ítalo Padilha" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-17 jcarousel-item-17-horizontal" jcarouselindex="17" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/126165-2/Monumentos UFSC - V__timas do Descobrimento - Foto Henrique Almeida-2.jpg" title="Monumentos UFSC - Vítimas do Descobrimento - Foto Henrique Almeida-2" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-18 jcarousel-item-18-horizontal" jcarouselindex="18" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/126167-2/Boitat__ - Foto Henrique Almeida-5.jpg" title="Boitatá - Foto Henrique Almeida-5" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-19 jcarousel-item-19-horizontal" jcarouselindex="19" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/130066-2/Vestibular 2017 - Foto Henrique Almeida-17.jpg" title="Campus Florianópolis - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-20 jcarousel-item-20-horizontal" jcarouselindex="20" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133084-2/Campus Ararangua - Foto Jair Quint.jpg" title="Campus Ararangua - Foto Jair Quint" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-21 jcarousel-item-21-horizontal" jcarouselindex="21" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133086-2/Campus Blumenau - Foto Henrique Almeida.jpg" title="Campus Blumenau - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-22 jcarousel-item-22-horizontal" jcarouselindex="22" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133088-2/Campus Curitibanos  - Foto Jair Quint.jpg" title="Campus Curitibanos  - Foto Jair Quint" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-23 jcarousel-item-23-horizontal" jcarouselindex="23" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133092-2/Centro de Conviv__ncia - Foto Henrique Almeida.jpg" title="Centro de Convivência - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-24 jcarousel-item-24-horizontal" jcarouselindex="24" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133094-2/CTC - Foto Henrique Almeida.jpg" title="CTC - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-25 jcarousel-item-25-horizontal" jcarouselindex="25" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133096-2/MArque - Foto Henrique Almeida.jpg" title="MArque - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-26 jcarousel-item-26-horizontal" jcarouselindex="26" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133098-2/Gar__a no Campus Florian__polis - Foto Henrique Almeida.jpg" title="Garça no Campus Florianópolis - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-27 jcarousel-item-27-horizontal" jcarouselindex="27" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133100-2/Entrada Trindade - Foto Henrique Almeida_001.jpg" title="Entrada Trindade - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-28 jcarousel-item-28-horizontal" jcarouselindex="28" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133104-2/Templo Ecum__nico  - Foto Henrique Almeida.jpg" title="Templo Ecumênico  - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-29 jcarousel-item-29-horizontal" jcarouselindex="29" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133106-2/Centro Tecnol__gico - Foto Henrique Almeida.jpg" title="Centro Tecnológico - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-30 jcarousel-item-30-horizontal" jcarouselindex="30" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/133108-2/Garapuvu - Foto Henrique Almeida.jpg" title="Garapuvu - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-31 jcarousel-item-31-horizontal" jcarouselindex="31" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/152923-2/Inaugura____o do Campus no Perini Business Park - Foto Henrique Almeida-9.jpg" title="Inauguração do Campus no Perini Business Park - Foto Henrique Almeida-9" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li><li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-32 jcarousel-item-32-horizontal" jcarouselindex="32" style="float: left; list-style: none;"><div class="clip"><img src="http://galeria.ufsc.br/d/166945-2/Reitoria iluminada Outubro Rosa - Foto Henrique Almeida.jpg" title="Reitoria iluminada Outubro Rosa - Foto Henrique Almeida" style="width: 100%; display: inline; opacity: 0.271282;" /></div></li></ul></div><div class="jcarousel-prev jcarousel-prev-horizontal" style="display: block;"></div><div class="jcarousel-next jcarousel-next-horizontal" style="display: block;"></div></div><div class="pika-tooltip" style="display: none;"></div></div>                <div class="mais_fotos">
+                    <a href="http://galeria.ufsc.br/agecom/GaleriaPortal/" class="all">Mais fotos</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section></section></div>
+        
+
+
+<footer id="footer" class="clearfix" name="rodape">
+    <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+    <div class="section group grid clearfix" name="footer">
+
+	    <div id="cnpj">
+		<p>CNPJ: 83.899.526-0001/82</p>
+		<p>Central: (48) 3721-9000</p>
+            </div>
+
+        <li id="linkcat-83" class="linkcat"><h2 class="linkcat">Acesso à Informação</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://cartadeservicos.ufsc.br/" title="Carta de Serviços ao Cidadão – UFSC">Carta de Serviços</a></li>
+<li><a href="https://acesso.egestao.ufsc.br/atendimento/" title="Tramitação de Processos na UFSC ">Consulta de Processos</a></li>
+<li><a href="http://estrutura.ufsc.br/perguntas-frequentes/">Perguntas frequentes</a></li>
+<li><a href="http://pdi.ufsc.br">Plano de Desenvolvimento Institucional</a></li>
+<li><a href="http://acessoainformacao.ufsc.br/">Sistema de Informação ao Cidadão</a></li>
+<li><a href="http://www.portaltransparencia.gov.br/">Transparência Pública</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-47648" class="linkcat"><h2 class="linkcat">Redes Sociais</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://facebook.com/UniversidadeUFSC">Facebook</a></li>
+<li><a href="https://www.instagram.com/universidadeufsc/">Instagram</a></li>
+<li><a href="https://twitter.com/ufsc">Twitter</a></li>
+<li><a href="https://www.youtube.com/user/tvufsc">YouTube</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-529109" class="linkcat"><h2 class="linkcat">RSS</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://noticias.ufsc.br/feed/">Assine</a></li>
+<li><a href="http://noticias.ufsc.br/feed/1" title="1.0">O que é?</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-125" class="linkcat"><h2 class="linkcat">UFSC</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://segesp.ufsc.br/ddpp/concursos/">Concursos</a></li>
+<li><a href="http://www.egressos.ufsc.br/">Egressos</a></li>
+<li><a href="http://identidade.ufsc.br/">Identidade Visual</a></li>
+<li><a href="http://noticias.ufsc.br/">Notícias</a></li>
+<li><a href="http://oportunidadesinternacionais.ufsc.br/">Oportunidades internacionais</a></li>
+<li><a href="http://coperve.ufsc.br/">Vestibular</a></li>
+
+	</ul>
+</li>
+		
+
+    </div>
+    
+    <div id="footer-brasil"></div>
+</footer>
+
+<div id="extra-footer" class="hide_mobile">	
+    <p>
+        Desenvolvido com o CMS de código aberto <a href="https://br.wordpress.org/.org">Wordpress</a>
+    </p>
+</div>
+</body></html>

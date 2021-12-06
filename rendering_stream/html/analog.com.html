@@ -1,0 +1,1251 @@
+<!DOCTYPE html><!--[if IE 7]>		   <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]--><!--[if IE 8]>		   <html class="no-js lt-ie9" lang="en"> <![endif]--><!--[if IE 9]>		   <html class="no-js lt-ie10" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><!--<![endif]--><!-- 857cb8b0-0fd6-4aab-9372-16572fec6078|p|w --><head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="follow, index" />
+    <title>Mixed-signal and digital signal processing ICs | Analog Devices</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Analog Devices is a global leader in the design and manufacturing of analog, mixed signal, and DSP integrated circuits to help solve the toughest engineering challenges." />
+    <meta name="viewport" id="adiviewport" content="width=1024" />
+    <meta name="keywords" content="analog devices, adi, digital signal processing, analog, dsp integrated circuits" />
+    <meta name="breadcrumb" content="Home" />
+    <meta name="pageInfoType" content="Home" />
+    <meta name="verify-v1" content="EH6D19wZGxG0dpmm3/iUbsWFvGU/hZp9p5Vs5UuoIXI=" />
+    <meta name="y_key" content="fdd5bc59ae0e6340" />
+    <meta name="msvalidate.01" content="739DEB4E2F14C3A552E581E88FA542AC" />
+    <meta name="baidu-site-verification" content="cSddD8r1N7" />
+    <meta name="yandex-verification" content="86a60d9bcaab43f0" />
+    <meta name="google-site-verification" content="aVOSmh5Dsd1VpzYMM3a_ZvOQcjP9G5GDlvU-atf48ss" />
+        <link rel="canonical" href="https://www.analog.com/en/index.html" />
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+
+
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,500,500i,600,600i,700,700i|Barlow:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap" rel="stylesheet" />
+<link href="https://assets.analog.com/css/bootstrap.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/vendor.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/global.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/print.css" rel="stylesheet" media="print" />
+    <link href="https://assets.analog.com/lib/css/components.css" rel="stylesheet" />
+
+    <iframe src="javascript:void(0)" title="" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><script>
+        var isForceDesktopCookie = (document.cookie.indexOf("forcedesktopview") &gt; -1) ? document.cookie.substring(document.cookie.indexOf("forcedesktopview"),
+            (document.cookie.indexOf(";", document.cookie.indexOf("forcedesktopview")) &gt; -1) ?
+                document.cookie.indexOf(";", document.cookie.indexOf("forcedesktopview")) : document.cookie.length) : "";
+
+        isForceDesktopCookie = (isForceDesktopCookie) ? isForceDesktopCookie.split("=")[1] : '';
+
+        if ((window.innerWidth &gt; 640 &amp;&amp; window.innerWidth &lt; 960) || isForceDesktopCookie) {
+            var mvp = document.getElementById('adiviewport');
+            mvp.setAttribute('content', 'width=1024');
+        }
+    </script>
+
+
+<script src="https://assets.analog.com/js/adi/modernizr.js" type="text/javascript"></script>
+
+            <link href="https://assets.analog.com/lib/css/home.css" rel="stylesheet" />
+
+
+
+    <script src="https://assets.analog.com/js/adi/vendor.js" type="text/javascript"></script>
+
+    <script src="/lib/scripts/reactScript/client.min.js"></script>
+
+  <script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"true","rua.cpush":"true","rua.upre":"true","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-916b5218-f50b-4281-a58e-fd8d91fe7c55","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false"}]);</script>
+  <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="BBYKJ-QTC84-T74CF-8TNKL-DHE3B",function(){function n(e){a.BOOMR_onload=e&amp;&amp;e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&amp;&amp;!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"BBYKJ-QTC84-T74CF-8TNKL-DHE3B",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("&lt;bo"+'dy onload="document._l();"&gt;'),_.close()}}(),"".length&gt;0)if(a&amp;&amp;"performance"in a&amp;&amp;a.performance&amp;&amp;"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="true"=="true"?1:0,t="",n="vhvruz5yd4nwax6iyluq-f-9f4f80474-clientnsv4-s.akamaihd.net",i={"ak.v":"29","ak.cp":"82680","ak.ai":parseInt("215232",10),"ak.ol":"0","ak.cr":13,"ak.ipv":4,"ak.proto":"h2","ak.rid":"128a0d3f","ak.r":39730,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"169.235.26.0","ak.cport":39774,"ak.gh":"23.58.92.14","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1606992617","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==5mvxNoh1Fr7rqMWM4P/bYz/NUL/0KU5L7stB6X9ZJSUeb0II6zdLvcnHvEPN+1xiZwZV9dppYjgX8556vQDE3AL2HdgGOANdJTCVSda3gwSbHR2ba55i0Rcb0Uy0dkfjp7/bU1h9rUfE4Fbg3vGDMg7bVqy0XoNFuZehhu3rTwssjF0ccLBEU11IcOXJqAEnqmcU0vFvewZz4gJV6UKaZtG3FQvMCyZizQh2VNghgFmclNXupISNiCFQLa3H1jMAZunXbtT6ezUMtY+P1MmZkTDNGXMRKJ/8lBlobpJ17YRs7giAam/q4eq8GTUAUe4c+eAAvIR7UYXXiljSN5De22ZpTEsK6ivMUUwbKH18idOZ9krevBUHKZxD2KFQZQpLjJ9Bo4eMecZDwaThvlXvPpzvYYSjFvVwKadoRKkNztQ=","ak.pv":"443","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&amp;&amp;(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><style type="text/css">@media all and (max-width: 767px){ .tools-header .logomenu .iconbar:hover{background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;} .tools-header .logomenu .iconbar:hover .iconbar-icon{ background-position: -10px -40px;} .tools-header .logomenu .iconbar:hover .submenu{display:none}}</style><style type="text/css">@media all and (max-width: 767px){ .tools-header .logomenu .iconbar:hover{background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;} .tools-header .logomenu .iconbar:hover .iconbar-icon{ background-position: -10px -40px;} .tools-header .logomenu .iconbar:hover .submenu{display:none}}</style></head>
+<body class="home modal-open" data-adi-spy="scroll"><div id="cookie-consent-container" class="modal fade in" role="dialog" data-id="gdpr-consent" style="display: block;"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"><img src="https://assets.analog.com/images/en/ADI_Logo_AWP.png" alt="ADI" /> Analog Devices Uses Cookies for Enhanced Online Performance </h4></div><div class="modal-body"><div class="short-description"><p> Some cookies are required for secure log-ins but others are optional for functional activities. Our data collection is used to improve our products and services. We recommend you accept our cookies to ensure you’re receiving the best performance and functionality our site can provide. For additional information you may view the <a href="#" data-id="cookie-details">cookie details</a>. Read more about our <a href="http://www.analog.com/en/about-adi/landing-pages/001/privacy_security_statement.html#cookies">privacy policy</a>. </p><a href="#" class="btn btn-success" data-id="consent"><em class="fa fa-check"></em> Accept and proceed </a></div><div class="long-description"><a href="#" class="btn btn-success" data-id="consent"><i class="fa fa-check"></i> Accept and proceed </a><p>The cookies we use can be categorized as follows:</p><dl><dt>Strictly Necessary Cookies:</dt><dd> These are cookies that are required for the operation of analog.com or specific functionality offered. They either serve the sole purpose of carrying out network transmissions or are strictly necessary to provide an online service explicitly requested by you. </dd><dt>Analytics/Performance Cookies:</dt><dd> These cookies allow us to carry out web analytics or other forms of audience measuring such as recognizing and counting the number of visitors and seeing how visitors move around our website. This helps us to improve the way the website works, for example, by ensuring that users are easily finding what they are looking for. </dd><dt>Functionality Cookies:</dt><dd> These cookies are used to recognize you when you return to our website. This enables us to personalize our content for you, greet you by name and remember your preferences (for example, your choice of language or region). Loss of the information in these cookies may make our services less functional, but would not prevent the website from working. </dd><dt>Targeting/Profiling Cookies:</dt><dd> These cookies record your visit to our website and/or your use of the services, the pages you have visited and the links you have followed. We will use this information to make the website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose. </dd></dl><a href="#" class="btn btn-link" data-id="decline">Decline cookies</a></div></div></div></div></div>
+
+        <ol class="list-inline nbm hide">
+
+        </ol>
+
+
+    
+ <header class="common" data-isnoncore="False"><div class="saveToMyAnalog visible-sm"><button id="myAnalogWidgetBtn" class="widget-Btn" name="myAnalog"><img class="add-plus" src="https://assets.analog.com/images/myAnalog/add.svg" alt="add" /><!-- <img class="add-check" src="" alt="added" /> --><img class="myAnalog-saveTo" src="https://assets.analog.com/images/myAnalog/myAnalog-logo.svg" alt="myAnalog" /></button></div><nav class="navbar navbar-default"><div class="container"><div class="navbar-collapse collapse"><ul class="site-family nav nav-bar-nav"><li><a class="AnD-link" href="http://www.analog.com/en/analog-dialogue.html" target=""><strong>Analog</strong>Dialogue </a></li><li><a class="ez-link" href="https://ez.analog.com" target=""><strong>Engineer</strong>Zone </a></li><li class="last"><a class="wiki-link" href="https://wiki.analog.com/" target=""><strong>Wiki</strong></a></li></ul><ul class="regional nav nav-bar-nav navbar-right"><li><a href="https://shoppingcart.analog.com/ShoppingCartPage.aspx" target="" title="Cart" class="cart" name="Cart_8697d4f3-2cf9-4e3a-8fee-f7b834be2f9f"><strong></strong></a></li><li class="insert-language js-insert-language">
+                    <a href="#" data-toggle="dropdown" name="Region_7fe452b3-5379-47e8-aa31-5b3ddffd9ec6">
+
+                        <span data-toggle="dropdown" class="region"></span>
+                        <span class="arrow-down-transparent"></span>
+                    </a>
+
+        <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <ul>
+                <li><strong>Region</strong></li>
+                                <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/india-welcome.html" target="" title="" name="India_d28fd230-86d1-43a5-a921-270db9a11aef">India</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/korea-welcome.html" target="" title="" name="Korea_154f8b08-52bc-4468-a8e2-90eae4f85b44">Korea</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/singapore-welcome.html" target="" title="" name="Singapore_13a09ebe-e404-43e9-a609-c21f2b2da0a9">Singapore</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/taiwan-welcome.html" target="" title="" name="Taiwan_3146147e-7236-4692-b1a8-18240f3e01e0">Taiwan</a>
+                    </li>
+
+        </ul>
+        <ul class="setLang">
+                    <li>
+                        <strong>Languages</strong>
+                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/en/index.html" title="English" name="English_e33369c5-cf6f-415c-a408-fcf42c2a6c19"><strong>English</strong></a>
+                                        </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/cn/index.html" title="简体中文" name="Chinese_42e59427-ab8e-4088-8e78-b229a94f639d">简体中文</a>
+                                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/jp/index.html" title="日本語" name="Japanese_36645878-0d31-42ed-80fd-4101c6c03573">日本語</a>
+                                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/ru/index.html" title="Руccкий" name="Russian_c5a43e16-297b-4109-938d-6fd2c28e272b">Руccкий</a>
+                                    </li>
+
+        </ul>
+
+        </div>
+
+
+
+            </li><li><a href="https://careers.analog.com" target="" title="" class="" name="Careers_1ce06318-42f2-415b-9698-8e2c40f8adec"><strong><strong>Careers</strong></strong></a></li></ul></div></div></nav></header><header id="header" data-assets-path="https://assets.analog.com"><div class="col-md-12 ie-support"><div><span class="support-desc">Browser Compatibility Issue: We no longer support this version of Internet Explorer. For optimal site performance we recommend you update your browser to the latest version.</span><span class="update-ie-button"><a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads" class="btn btn-primary anchor-class-ie">Update Microsoft Internet Explorer</a></span></div></div><nav class="navbar linkbar" role="navigation"><section class="masthead"><div class="container"><div class="row"><div class="col-md-3" data-qa-widget="logo_navbar_analog"><a href="http://www.analog.com/en/index.html" class="home-link" data-qa-element="link_return_home"><img src="https://assets.analog.com/images/en/ADI_Logo_AWP.png" alt="" /></a></div><div class="col-md-6" data-qa-widget="div_global_search"><form method="get" action="https://www.analog.com/en/search.html" class="global-search" autocomplete="off"><label class="sr-only">Search</label><input type="text" autocomplete="off" id="text-global-search" class="text-global-search" name="q" placeholder="Search" data-qa-element="textarea_global_search" /><div class="controls"><button type="reset" data-qa-element="button_clear_search" data-search="true" class="clear"><span class="sr-only">Clear</span><i class="fa fas fa-times"></i></button><button type="submit" data-qa-element="button_submit_search" data-search="true" class="searchIcon submit"><span class="sr-only">Search</span><i class="fa fa-search"></i></button></div><div class="helpful-links"><a href="https://www.analog.com/cpsearch/CrossReferenceSearch.aspx" data-search="true">Cross Reference Search</a></div><ul class="auto-complete"></ul></form></div></div></div></section></nav><section class="bottomnav mega-menu" data-domain="https://assets.analog.com/" data-adi-root="https://www.analog.com/" data-manifest="cdp/adicommon/versionconfig.json" data-fail="client/Home/GetNavigationContent?navigation={tab}&amp;languageCode={lang}" data-my-analog="https://my.analog.com/"><nav class="navbar"><div class="container primary"><ul class="nav navbar-nav"><li class="company"><a href="/company" data-qa-element="link_company"><span> Company </span></a></li><li class="myAnalog"><a href="/https://my.analog.com" data-qa-element="link_myAnalog"><span> MyAnalog <img src="https://assets.analog.com/images/myanalog/logo-wave-blue.svg" /></span></a></li><li class="products"><a href="/products" data-qa-element="link_products"><span> Products </span></a></li><li class="applications"><a href="/applications" data-qa-element="link_applications"><span> Applications </span></a></li><li class="designcenter"><a href="/designcenter" data-qa-element="link_designcenter"><span> Design Center </span></a></li><li class="education"><a href="/education" data-qa-element="link_education"><span> Education </span></a></li><li class="support"><a href="/support" data-qa-element="link_support"><span> Support </span></a></li></ul></div></nav><div class="company menu content" role="navigation"><div class="emptybar"></div><div class="container padded"><section class="company__section"></section></div></div><div class="myAnalog menu content"><div class="emptybar"></div><div class="container"><div class="row pre-login"></div><div class="row widgets"><div class="col-md-2"><div class="widget profile" data-widget="profile"></div></div><div class="col-md-10"><div class="row"><div class="col-md-3 widget projects" data-widget="projects"></div><div class="col-md-3 widget products" data-widget="products"></div><div class="col-md-3 widget productcategory" data-widget="productcategory"></div><div class="col-md-3 widget applications" data-widget="applications"></div></div><div class="row"><div class="col-md-3 widget parametric-search" data-widget="parametric-search"></div><div class="col-md-3 widget resources" data-widget="resources"></div><div class="col-md-3 widget engineerzone" data-widget="engineerzone"></div><div class="col-md-3 widget orders" data-widget="orders"></div></div></div></div></div></div><div class="products menu content"><div class="category-container"><div class="small-search"><div class="search small"><div class="field"><i class="fa fa-search"></i><input type="text" placeholder="Category" autocomplete="off" /></div></div></div><ul class="categories"><li class="separator"><hr /></li><li><a href="http://www.analog.com/en/products/landing-pages/new-products-listing.html"><span>New Products</span></a></li><li class="separator"><hr /></li></ul></div><div class="main"><div class="meta"><div class="pst-help left"><i class="fa fa-table"></i><span class="header">Parametric Table</span><a><i class="fa fa-question-circle-o"></i></a><div class="info"><div class="pointer"></div><i class="fa fa-table fa-2x"></i><p>Click icons below for Parametric Table</p></div></div><div class="header" style="display: none;"></div></div><div class="search large"><div class="field"><i class="fa fa-search"></i><input type="text" placeholder="Type Category" autocomplete="off" /></div></div><div class="splash"><div class="row"><div class="col-md-4"><div><div class="outline-card previous-categories"><div class="header4">Previously Visited Categories</div><ul></ul></div></div></div><div class="col-md-8"><div><div class="outline-card new-products"><div class="header4">New Products</div><ul></ul></div></div></div></div></div><div class="results"></div></div></div><div class="applications menu content" role="navigation"><div class="emptybar"></div><div class="container padded"><section class="applications__section"></section></div></div><div class="designcenter menu content" role="navigation"><div class="emptybar"></div><section class="design-center-section"></section></div><div class="education menu content" role="navigation"><div class="emptybar"></div><div class="container padded"><div class="education__section"></div></div></div><div class="support menu content" role="navigation"><div class="emptybar"></div><section class="support-section"></section></div></section><script type="text/x-handlebars-template" id="template__megamenu__company__column">&lt;div class="company__nav"&gt; {{#Links}} &lt;div class="company__nav__parent"&gt;&lt;div class="header3"&gt;&lt;a href="{{ItemLink.Url}}" title={{{ItemLink.Title}}}&gt;{{{ItemLink.Text}}}&lt;/a&gt;&lt;/div&gt;&lt;ul class="company__nav__children"&gt; {{#Children}} &lt;li&gt;&lt;a href="{{ItemLink.Url}}" title={{{ItemLink.Title}}}&gt;{{{ItemLink.Text}}}&lt;/a&gt;&lt;/li&gt; {{/Children}} &lt;/ul&gt;&lt;/div&gt; {{/Links}} &lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;div class="menu-promo__title__information__name"&gt;{{{Title}}}&lt;/div&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script type="text/x-handlebars-template" id="template__megamenu__education__column">&lt;div class="education__nav"&gt; {{#Links}} &lt;div class="education__nav__parent"&gt;&lt;div class="header3"&gt;&lt;a href="{{ItemLink.Url}}" title={{{ItemLink.Title}}}&gt;{{{ItemLink.Text}}}&lt;/a&gt;&lt;/div&gt;&lt;ul class="education__nav__children"&gt; {{#Children}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}" title={{{ItemLink.Title}}}&gt; {{{ItemLink.Text}}} &lt;/a&gt;&lt;/li&gt; {{/Children}} &lt;/ul&gt;&lt;/div&gt; {{/Links}} &lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;div class="menu-promo__title__information__name"&gt;{{{Title}}}&lt;/div&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script type="text/x-handlebars-template" id="template__megamenu__myhistory__column">&lt;div class="myhistory__nav "&gt; {{#Links}} &lt;div class="myhistory__nav__parent"&gt;&lt;div class="header3"&gt;&lt;a href="#" title={{{ItemName}}}&gt;{{{ItemName}}} Viewed&lt;/a&gt;&lt;/div&gt; {{#if Children}} &lt;ul class="myhistory__nav__children"&gt; {{#Children}} {{#if dataSheet}} &lt;li class="myhistory__col_2"&gt;&lt;a href="{{#decode url}}{{/decode}}" title="{{#decode code}}{{/decode}}"&gt;{{#decode code}}{{/decode}}&lt;/a&gt;&lt;span&gt;&lt;/span&gt;&lt;a href="{{dataSheet}}" title="Data Sheet"&gt;Data Sheet&lt;/a&gt;&lt;/li&gt; {{else}} &lt;li&gt;&lt;a href="{{#decode url}}{{/decode}}" title="{{#decode code}}{{/decode}}"&gt;{{#decode code}}{{/decode}}&lt;/a&gt;&lt;/li&gt; {{/if}} {{/Children}} &lt;/ul&gt; {{ else }} {{#if noData}} &lt;p&gt;{{ noData }}&lt;/p&gt; {{/if}} {{/if}} &lt;/div&gt; {{/Links}} &lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;div class="menu-promo__title__information__name"&gt;{{{Title}}}&lt;/div&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script type="text/x-handlebars-template" id="template__megamenu_applications">&lt;div class="applications__nav"&gt; {{#Links}} &lt;div class="row"&gt;&lt;div class="applications__nav__parent col-md-12"&gt;&lt;div class="header3"&gt;&lt;a href="{{{Url}}}"&gt;{{{Title}}}&lt;/a&gt;&lt;/div&gt;&lt;ul class="applications__nav__children"&gt; {{#Children}} {{#if Title}} &lt;li&gt;&lt;a data-category="{{{Title}}}" href="{{{Url}}}" title="{{{Title}}}"&gt; {{{Title}}} &lt;/a&gt; {{#if New}}&lt;span&gt;New&lt;/span&gt;{{/if}} &lt;/li&gt; {{else}} &lt;li class="applications__nav__children__empty"&gt;&amp;nbsp;&lt;/li&gt; {{/if}} {{/Children}} &lt;/ul&gt;&lt;/div&gt;&lt;/div&gt; {{/Links}} &lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;div class="menu-promo__title__information__name"&gt;{{{Title}}}&lt;/div&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script type="text/x-handlebars-template" id="template_megamenu_designcenter">&lt;div class="row featured-section bg-grey"&gt;&lt;div class="container"&gt; {{#Links}} {{#if IsFeatured}} &lt;div class="col-md-6"&gt;&lt;div class="secondary-nav-block clearfix"&gt;&lt;h3&gt;&lt;a href="{{{ItemLink.Url}}}"&gt;&lt;span&gt; {{{ItemLink.Text}}}&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul class="col-md-6 nav__children"&gt; {{#Children}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}" title={{{ItemLink.Title}}}&gt; {{{ItemLink.Text}}} &lt;/a&gt;&lt;/li&gt; {{/Children}} &lt;/ul&gt; {{#if ImageUrl}} &lt;img class="col-md-6" src={{{ImageUrl}}} /&gt; {{/if}} &lt;/div&gt;&lt;/div&gt; {{/if}} {{/Links}} &lt;/div&gt;&lt;/div&gt;&lt;div class="row featured-section-sub"&gt;&lt;div class="container"&gt; {{#Links}} {{#if IsFeatured}} {{else}} &lt;div class="col-md-6"&gt;&lt;div class="secondary-nav-block clearfix"&gt;&lt;h3&gt;&lt;a href="{{{ItemLink.Url}}}"&gt; {{{ItemLink.Text}}}&lt;/a&gt;&lt;/h3&gt;&lt;ul class="nav__children"&gt; {{#Children}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}" title={{{ItemLink.Title}}}&gt; {{{ItemLink.Text}}} &lt;/a&gt;&lt;/li&gt; {{/Children}} &lt;/ul&gt;&lt;/div&gt;&lt;/div&gt; {{/if}} {{/Links}} &lt;/div&gt;&lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;div class="menu-promo__title__information__name"&gt;{{{Title}}}&lt;/div&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script type="text/x-handlebars-template" id="megamenu_support">&lt;div class="row featured-section bg-grey"&gt;&lt;div class="container"&gt;&lt;div class="search-support"&gt;&lt;div class="control-form"&gt;&lt;form class="form form-findanswers col-md-9" role="form" method="get" action="https://www.analog.com/en/support/searchsupport.html"&gt;&lt;div class="form-group"&gt;&lt;label class="sr-only" for="text-findanswer"&gt;Search within Support&lt;/label&gt;&lt;span class="twitter-typeahead"&gt;&lt;span class="twitter-typeahead" style="position: relative; display: inline-block;"&gt;&lt;input type="text" class="form-control tt-hint" data-data-source="https://www.analog.com/en/client/Search/GetPredictiveSearchResultsJson?q=%QUERY&amp;amp;moduleFacets={1EC6C453-FA49-4F49-97A6-FDE9DFB2C6ED}" autocomplete="off" spellcheck="false" dir="ltr" data-autosuggest-text="Search" readonly="" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"&gt;&lt;input type="text" class="form-control tt-hint tt-input" data-data-source="https://www.analog.com/en/client/Search/GetPredictiveSearchResultsJson?q=%QUERY&amp;amp;moduleFacets={1EC6C453-FA49-4F49-97A6-FDE9DFB2C6ED}" autocomplete="off" spellcheck="false" dir="ltr" data-autosuggest-text="Search" readonly="" tabindex="-1" style="position: relative; vertical-align: top; background-color: transparent;"&gt;&lt;pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"&gt;&lt;/pre&gt;&lt;div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"&gt;&lt;div class="tt-dataset tt-dataset-contentsearch-undefined"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class="twitter-typeahead" style="position: relative; display: inline-block;"&gt;&lt;input type="text" class="form-control tt-input tt-hint" data-data-source="https://www.analog.com/en/client/Search/GetPredictiveSearchResultsJson?q=%QUERY&amp;amp;moduleFacets={1EC6C453-FA49-4F49-97A6-FDE9DFB2C6ED}" autocomplete="off" spellcheck="false" dir="ltr" data-autosuggest-text="Search" readonly="" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"&gt;&lt;input type="text" class="form-control tt-input" data-data-source="https://www.analog.com/en/client/Search/GetPredictiveSearchResultsJson?q=%QUERY&amp;amp;moduleFacets={1EC6C453-FA49-4F49-97A6-FDE9DFB2C6ED}" autocomplete="off" spellcheck="false" dir="auto" data-autosuggest-text="Search" placeholder="Search within Support" id="text-findanswer-943d6e18-ff15-487c-b6b6-99fc39eaf4c4" name="q" style="position: relative; vertical-align: top; background-color: transparent;"&gt;&lt;pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"&gt;&lt;/pre&gt;&lt;div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"&gt;&lt;div class="tt-dataset tt-dataset-contentsearch-text-findanswer-943d6e18-ff15-487c-b6b6-99fc39eaf4c4"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/span&gt;&lt;button type="submit"&gt;&lt;i class="fa fa-search fa-lg"&gt;&lt;/i&gt;&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;&lt;/form&gt;&lt;/div&gt;&lt;/div&gt; {{#Links}} {{#if IsFeatured}} &lt;div class="col-md-4"&gt;&lt;div class="secondary-nav-block clearfix"&gt; {{#if ImageUrl}} &lt;h3 class="{{{ImageLogo}}}"&gt;&lt;a href={{{ItemLink.Url}}}&gt;&lt;img src="{{{ImageUrl}}}" alt="{{ItemName}}" /&gt;&lt;/a&gt;&lt;/h3&gt; {{else}} &lt;h3&gt;&lt;a href="{{{ItemLink.Url}}}"&gt;{{{ItemLink.Text}}}&lt;/a&gt;&lt;/h3&gt; {{/if}} {{#if PageDescription}} &lt;p class="support__featured__description"&gt;{{{PageDescription}}}&lt;/p&gt; {{/if}} {{#if IsDropdown}} &lt;div class="ez"&gt;&lt;div class="dropdown ez-dropdown"&gt;&lt;button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"&gt;&lt;i class="fa pull-right fa-angle-down fa-2x"&gt;&lt;/i&gt;&lt;span&gt; Select {{#Children}}{{#isStringEqual ItemName "Community"}} {{{ItemName}}}{{/isStringEqual}}{{/Children}} &lt;/span&gt;&lt;/button&gt;&lt;ul class="dropdown-menu support-dropdown-community"&gt; {{#each Children}} {{#isStringEqual ItemName "Community"}} {{#Children}} &lt;li&gt;&lt;a href="{{{Url}}}" title={{{Title}}}&gt; {{{ItemName}}} &lt;/a&gt;&lt;/li&gt; {{/Children}} {{/isStringEqual}} {{/each}} &lt;/ul&gt;&lt;/div&gt; {{#each Children}} {{#isStringEqual ItemName "ADI Community User Forums Terms of Use"}} &lt;a class="support-link" href={{{ItemLink.Url}}}&gt;{{{ItemLink.Text}}}&lt;/a&gt; {{/isStringEqual}} {{/each}} &lt;/div&gt;&lt;ul class="register"&gt; {{#each Children}} {{#isStringEqual ItemName "Register Now"}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}"&gt;{{{ItemName}}}&lt;/a&gt;&lt;/li&gt; {{/isStringEqual}} {{#isStringEqual ItemName "ADI Partner Zone"}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}"&gt;{{{ItemName}}}&lt;/a&gt;&lt;/li&gt; {{/isStringEqual}} {{/each}} &lt;/ul&gt; {{else}} &lt;ul class="nav__children"&gt; {{#Children}} {{#if RegionKey}} &lt;li class="support__regional__email"&gt;&lt;img src="{{../../assetsUrl}}/images/header/menu/icon-support-email.svg" alt="{{Title}}"&gt;&lt;a href="mailto:{{EmailId}}?subject={{NorthAmericaSubjectLine}}"&gt;{{ Title }}&lt;/a&gt;&lt;/li&gt;&lt;li class="support__regional__phone"&gt;&lt;img src="{{../../assetsUrl}}/images/header/menu/icon-support-phone.svg" alt="{{Title}}"&gt;&lt;div class="support__regional__phone__toll-free"&gt;&lt;span class="support__regional__phone__number"&gt;{{{ ContactNumber }}}&lt;/span&gt;&lt;span class="support__regional__phone__hours"&gt; {{ PrimaryWorkingDays }}:&lt;br&gt; {{ PrimaryWorkTimings }} &lt;/span&gt;&lt;/div&gt;&lt;div class="support__regional__phone__direct"&gt;&lt;span class="support__regional__phone__number"&gt;{{{ AltContactNumber }}}&lt;/span&gt;&lt;span class="support__regional__phone__hours"&gt; {{ SecondaryWorkingDays }}:&lt;br&gt; {{ SecondaryWorkTimings }} &lt;/span&gt;&lt;/div&gt;&lt;/li&gt; {{else}} &lt;li&gt;&lt;img src="{{LinkIcon.Src}}" alt="" /&gt;&lt;a href="{{{ItemLink.Url}}}" title="{{{ItemLink.Title}}}"&gt;{{{ItemLink.Text}}} &lt;/a&gt;&lt;/li&gt; {{/if}} {{/Children}} &lt;/ul&gt; {{/if}} &lt;/div&gt;&lt;/div&gt; {{/if}} {{/Links}} &lt;/div&gt;&lt;/div&gt;&lt;div class="row featured-section-sub"&gt;&lt;div class="container"&gt; {{#Links}} {{#if IsFeatured}} {{else}} &lt;div class="col-md-4"&gt;&lt;div class="secondary-nav-block clearfix"&gt;&lt;h3&gt; {{#if ItemLink}} &lt;a href="{{{ItemLink.Url}}}"&gt;{{{ItemLink.Text}}}&lt;/a&gt; {{else}} {{ItemName}} {{/if}} &lt;/h3&gt;&lt;ul class="nav__children"&gt; {{#Children}} &lt;li&gt;&lt;a href="{{{ItemLink.Url}}}" title={{{ItemLink.Title}}}&gt; {{{ItemLink.Text}}} &lt;/a&gt;&lt;/li&gt; {{/Children}} &lt;/ul&gt;&lt;/div&gt;&lt;/div&gt; {{/if}} {{/Links}} &lt;/div&gt;&lt;/div&gt; {{#NavigationPanelData}} {{#if PromoBannerDetails}} {{#PromoBannerDetails}} &lt;div class="menu-promo" style="background-image: url(&amp;quot;{{{BackgroundImageUrl}}}&amp;quot;);"&gt;&lt;div class="{{#if PipeSeparator}}menu-promo__thumbnail--pipe {{else}} menu-promo__thumbnail{{/if}}"&gt;&lt;img class="menu-promo__thumbnail__image" src={{{SupportingImageUrl}}}&gt;&lt;/div&gt;&lt;div class="menu-promo__title"&gt;&lt;div class="menu-promo__title__information"&gt;&lt;p class="menu-promo__title__information__name"&gt; {{{Title}}} &lt;/p&gt; {{#if Body}} &lt;div class="menu-promo__title__information__description"&gt;{{{Body}}}&lt;/div&gt; {{/if}} &lt;a href={{{CTA.Url}}} class="link-learn-more"&gt; {{{CTA.Name}}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/PromoBannerDetails}} {{/if}} {{/NavigationPanelData}} </script><script id="login-widget-template" type="text/x-handlebars-template">&lt;div class="col-md-8 register"&gt; {{#if videoId}} &lt;div class="col-md-6"&gt;&lt;div class="header"&gt;{{registerNow}}&lt;/div&gt;&lt;p&gt;{{description}}&lt;/p&gt;&lt;button class="btn btn-primary"&gt;{{getStarted}}&lt;/button&gt;&lt;/div&gt;&lt;div class="col-md-6"&gt;&lt;div class="video"&gt;&lt;div id="videoTemplate"&gt;&lt;div&gt;&lt;div class="deferred-video-player" data-account="{{accountId}}" data-application-id="" data-controls data-embed="{{embed}}" data-player="{{playerId}}" data-video-id="{{videoId}}"&gt;&lt;i class="fa fa-spinner fa-spin fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a class="explore" href={{exploreUrl}}&gt;{{explore}}&lt;/a&gt;&lt;/div&gt; {{else}} &lt;div class="col-md-12"&gt;&lt;div class="header"&gt;{{registerNow}}&lt;/div&gt;&lt;p&gt;{{description}}&lt;/p&gt;&lt;button class="btn btn-primary"&gt;{{getStarted}}&lt;/button&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;div class="col-md-4 login"&gt;&lt;form autocomplete="off"&gt;&lt;div class="header"&gt;{{login}}&lt;/div&gt;&lt;p&gt;{{youWillBeRedirected}}&lt;/p&gt;&lt;button type="submit" class="ma btn btn-primary"&gt;{{loginToMyAnalog}}&lt;/button&gt;&lt;p&gt;{{{dontHaveAccount}}}&lt;a href={{route}}&gt;{{registerNow}}&lt;/a&gt;&lt;/p&gt;&lt;/form&gt;&lt;/div&gt;</script><script id="project-widget-template" type="text/x-handlebars-template">&lt;div class="title"&gt;&lt;a href={{route}}&gt;&lt;span&gt;{{title}}&lt;/span&gt; {{#if count}} &lt;span&gt;({{count}})&lt;/span&gt; {{/if}} &lt;/a&gt;&lt;/div&gt;&lt;div class="content"&gt;&lt;div class="details"&gt; {{#if defaultState}} &lt;div class="default state"&gt;{{{defaultState}}}&lt;/div&gt; {{else}} &lt;div class="project"&gt;&lt;a href={{{projectRoute}}} class="name"&gt;{{name}}&lt;/a&gt;&lt;p class="timestamp"&gt;{{modifiedOn}}&lt;span&gt;{{date}}&lt;/span&gt;&lt;/p&gt;&lt;div class="info"&gt;&lt;div class="contributors"&gt;&lt;span class="count"&gt;{{contributors.count}}&lt;/span&gt;&lt;span&gt;{{contributors.title}}&lt;/span&gt; {{#if contributors.new}} &lt;div class="new flag"&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;div class="product"&gt;&lt;span class="count"&gt;{{product.count}}&lt;/span&gt;&lt;span&gt;{{product.title}}&lt;/span&gt; {{#if product.new}} &lt;div class="new flag"&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;div class="resources"&gt;&lt;span class="count"&gt;{{resources.count}}&lt;/span&gt;&lt;span&gt;{{resources.title}}&lt;/span&gt; {{#if resources.new}} &lt;div class="new flag"&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;div class="notes"&gt;&lt;span class="count"&gt;{{notes.count}}&lt;/span&gt;&lt;span&gt;{{notes.title}}&lt;/span&gt; {{#if notes.new}} &lt;div class="new flag"&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/if}} &lt;a class="create project" href={{{route}}}&gt;{{createProject}}&lt;/a&gt;&lt;/div&gt; {{#if seeAllYourProjects}} &lt;div class="more"&gt;&lt;a href={{{route}}}&gt;{{seeAllYourProjects}}&lt;/a&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;</script><script id="product-widget-template" type="text/x-handlebars-template">&lt;div class="title"&gt;&lt;a href={{route}}&gt;&lt;span&gt;{{title}}&lt;/span&gt; {{#if count}} &lt;span&gt;({{count}})&lt;/span&gt; {{/if}} &lt;/a&gt;&lt;/div&gt;&lt;div class="content"&gt;&lt;div class="details"&gt; {{#if defaultState}} &lt;div class="default state"&gt;{{{defaultState}}}&lt;/div&gt; {{else}} &lt;div class="info"&gt;&lt;ul&gt; {{#each productsData}} &lt;li&gt;&lt;span&gt;&lt;a href={{{url}}}&gt;{{name}}&lt;/a&gt;&lt;/span&gt;&lt;span class="datasheet"&gt;&lt;a target="_blank" href="{{../datasheetRoute}}/{{name}}/datasheet"&gt;{{../datasheet}}&lt;/a&gt;&lt;/span&gt;&lt;/li&gt; {{/each}} &lt;/ul&gt;&lt;/div&gt; {{/if}} &lt;/div&gt; {{#if seeAllYourProducts}} &lt;div class="more"&gt;&lt;a href={{{route}}}&gt;{{seeAllYourProducts}}&lt;/a&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;</script><script id="list-widget-template" type="text/x-handlebars-template">&lt;div class="title"&gt;&lt;a href={{route}}&gt;&lt;span&gt;{{title}}&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class="content"&gt;&lt;div class="details"&gt; {{#if defaultState}} &lt;div class="default state"&gt;{{{defaultState}}}&lt;/div&gt; {{else}} &lt;ul&gt; {{#each list}} &lt;li&gt;&lt;a href={{{url}}}&gt;{{{title}}}&lt;/a&gt; {{#if desc}} &lt;p&gt;{{desc}}&lt;/p&gt; {{/if}} &lt;/li&gt; {{/each}} &lt;/ul&gt; {{/if}} &lt;/div&gt; {{#if seeAll}} &lt;div class="more"&gt;&lt;a href={{route}}&gt;{{seeAll}}&lt;/a&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;</script><script id="profile-widget-template" type="text/x-handlebars-template">&lt;div class="{{avatarColor}} completeness"&gt;&lt;svg class="doughnut"&gt;&lt;circle class="total" cx="72" cy="72" r="56.5" fill="transparent" stroke-width="7" fill="pink"&gt;&lt;/circle&gt;&lt;circle class="complete" cx="72" cy="72" r="56.5" fill="transparent" stroke-width="7" fill="hotpink" stroke-dasharray={{avatarFilled}}&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;div&gt;&lt;div class="{{avatarColor}} avatar editable"&gt;&lt;span class="initials"&gt;{{initials}}&lt;/span&gt;&lt;a class="edit" href={{editRoute}}&gt;{{edit}}&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="details"&gt;&lt;div class="username"&gt;{{username}}&lt;/div&gt;&lt;div class="company"&gt;{{company}}&lt;/div&gt;&lt;div&gt;&lt;a class="logout" href={{signOutUrl}}&gt;{{signOut}}&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;a class="link dashboard" href={{route}}&gt;{{{dashboard}}}&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a class="local sales" href={{salesContactLink}}&gt;&lt;img src="https://assets.analog.com/images/myanalog/sales-contact.svg" /&gt;&lt;div&gt;{{{salesContact}}}&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a class="distributor portal" href={{distributorPortalLink}}&gt;&lt;img src="https://assets.analog.com/images/myanalog/hyperion-logo.svg" /&gt;&lt;div&gt;{{distributorPortal}}&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;</script><div class="container"><div class="socialmediawidget socialmediawidget-main visible-desktop hidden"><ul class="clearfix visible-lg visible-md"><li class="link print" onclick="window.print();return false;"><a href="#" name="Print"> Print </a></li><li class="saveToMyAnalog"><button id="myAnalogWidgetBtn" class="widget-Btn" name="myAnalog"><img class="add-plus" src="https://assets.analog.com/images/myanalog/add.svg" alt="add" /><img class="add-check" src="" alt="added" /><img class="myAnalog-saveTo" src="https://assets.analog.com/images/myanalog/myAnalog-logo.svg" alt="myAnalog" /></button></li></ul><div id="myAnalog-widget" style="display:none"></div><script id="template-save-to-myAnalog-prelogin" type="text/x-handlebars-template">&lt;div class="saveToMyAnalog widget"&gt;&lt;div class="authenticate"&gt;&lt;p class="message"&gt;{{message}}&lt;/p&gt;&lt;button class="btn btn-primary"&gt;{{loginToMyAnalog}}&lt;/button&gt;&lt;div class="other actions"&gt;&lt;span&gt;{{dontHaveAnAccount}}&lt;/span&gt;&amp;nbsp; &lt;a href={{registerLink}}&gt;{{registerNow}}&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</script><script id="template-save-to-myAnalog-postlogin" type="text/x-handlebars-template">&lt;div class="saveToMyAnalog widget"&gt;&lt;div class="saveTo createProject"&gt;&lt;div class="tab-header"&gt;&lt;ul&gt;&lt;li data-tab="saveToWidget" class="active"&gt;{{saveTo}}&lt;/li&gt;&lt;li data-tab="createProject"&gt;{{newProject}}&lt;/li&gt;&lt;/ul&gt;&lt;span class="helper-text"&gt;* {{required}}&lt;/span&gt;&lt;/div&gt; {{#if RESOURCES}} &lt;div class="selected-resources" id="selectedResources"&gt;&lt;span class="count"&gt;0&lt;/span&gt;&lt;span&gt; {{selected}}&lt;/span&gt;&lt;/div&gt; {{/if}} &lt;div class="save-to-widget tab active" id="saveToWidget"&gt; {{#if PST}} &lt;label&gt;* {{saveModelsTo}}&lt;/label&gt; {{/if}} {{#if PDP}} &lt;label&gt;* &lt;span class="productLabel"&gt;{{saveTo}}&lt;/span&gt;&lt;span&gt;{{saveProductTo}}&lt;/span&gt;&lt;/label&gt; {{/if}} {{#if RESOURCES}} &lt;label&gt;* {{saveResourceTo}}&lt;/label&gt; {{/if}} &lt;div class="select-product dropdown"&gt;&lt;div class="selected-value"&gt;&lt;span&gt;myAnalog&lt;/span&gt;&lt;img class="angle down" alt="down" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" /&gt;&lt;img class="angle up" alt="up" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" /&gt;&lt;/div&gt;&lt;ul class="hide"&gt;&lt;li&gt;myAnalog&lt;/li&gt; {{#if projects}} {{#each projects}} &lt;li id="{{ id }}"&gt;{{ title }}&lt;/li&gt; {{/each}} {{/if}} &lt;/ul&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="create-new-item-widget tab" id="createProject"&gt;&lt;div class="input-control"&gt;&lt;label&gt;* {{createNewProject}}&lt;/label&gt;&lt;input type="text" placeholder="{{projectName}}" id="newProjectTitle" maxlength="128"/&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="add item active"&gt;&lt;button class="outline-button"&gt;&lt;img class="plus-icon" src="https://assets.analog.com/images/myanalog/plus.svg" alt="add" /&gt;{{addDescription}}&lt;/button&gt;&lt;textarea id="projectDescription"&gt;&lt;/textarea&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{#if PST}} &lt;div class="pst-table-name"&gt;&lt;div class="input-control"&gt;&lt;label&gt;* {{tableName}}&lt;/label&gt;&lt;input type="text" placeholder="{{enterTableName}}" id="pstTableName" /&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="add item active"&gt;&lt;button class="outline-button"&gt;&lt;img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" /&gt;{{addNote}}&lt;/button&gt;&lt;textarea id="tableNote"&gt;&lt;/textarea&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; {{/if}} {{#if RESOURCES}} &lt;div class="add item active"&gt;&lt;button class="outline-button"&gt;&lt;img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" /&gt;{{addNote}}&lt;/button&gt;&lt;textarea id="resourceNote"&gt;&lt;/textarea&gt;&lt;div class="validation-message" style="display:none"&gt;&lt;/div&gt;&lt;/div&gt; {{/if}} {{#if PST}} &lt;div class="widget-footer single btn"&gt;&lt;button class="btn btn-primary pst" id="saveProductToMyanalog"&gt;{{savePST}}&lt;/button&gt;&lt;/div&gt; {{/if}} {{#if PDP}} &lt;div class="widget-footer single btn"&gt;&lt;button class="btn btn-primary pdp" id="saveProductToMyanalog"&gt;&lt;span class="productLabel"&gt;{{saveProduct}}&lt;/span&gt;&lt;span&gt;{{save}}&lt;/span&gt;&lt;/button&gt;&lt;/div&gt; {{/if}} {{#if RESOURCES}} &lt;div class="widget-footer single btn"&gt;&lt;button class="btn btn-primary resource" id="saveProductToMyanalog"&gt;{{saveResource}}&lt;/button&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;div class="saved info hide" id="savedInfo"&gt;&lt;h5&gt;&lt;span&gt;{{savedTo}}&lt;/span&gt;&lt;img class="saved-myAnalog-logo" alt="myAnalog" src="https://assets.analog.com/images/myanalog/myAnalog-logo.svg" alt="myAnalog" /&gt;&lt;/h5&gt;&lt;div class="saved-message"&gt; {{#if PDP }} &lt;h5&gt;&lt;span class="productLabel"&gt;{{productSavedTo}}&lt;/span&gt;&lt;span&gt;{{resourceSavedTo}}&lt;/span&gt; "&lt;span id="savedTo"&gt;&lt;/span&gt;"&lt;/h5&gt; {{/if}} {{#if PST }} &lt;h5&gt;{{tableSavedTo}} "&lt;span id="savedTo"&gt;&lt;/span&gt;"&lt;/h5&gt; {{/if}} {{#if RESOURCES }} &lt;h5&gt;{{resourceSavedTo}} "&lt;span id="savedTo"&gt;&lt;/span&gt;"&lt;/h5&gt; {{/if}} {{#if PDP }} &lt;div class="pcn-notification"&gt;&lt;div class="switch"&gt;&lt;input type="checkbox" class="toggle" name="PCNPDNNotification" id="pcnNotify" /&gt;&lt;label for="pcnNotify"&gt;&lt;/label&gt;&lt;/div&gt;&lt;span&gt;&lt;label for="pcnNotify"&gt;{{ turnOnPCNNotification }}&lt;/label&gt;&lt;/span&gt;&lt;/div&gt; {{/if}} &lt;/div&gt;&lt;/div&gt;&lt;div class="widget-footer single hide" id="mySavedFooter"&gt;&lt;a href="#" target="_blank"&gt;&lt;img class="share-icon" src="https://assets.analog.com/images/myanalog/link.svg" alt="share-icon" /&gt; {{#if PDP}} &lt;span class="productLabel"&gt;{{viewMySavedProducts}}&lt;/span&gt;&lt;span&gt;{{viewMySavedResources}}&lt;/span&gt; {{/if}} {{#if PST}} &lt;span&gt;{{viewMySavedProducts}}&lt;/span&gt; {{/if}} {{#if RESOURCES}} &lt;span&gt;{{viewMySavedResources}}&lt;/span&gt; {{/if}} &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</script></div></div><div class="breadcrumb adicrumb visible-desktop" name="adi_breadcrumb"><div class="container"><ol class="list-inline nbm"><li><a href="http://www.analog.com/en/index.html" class="home" alt="Home" title="Home"></a></li>
+
+        </ol></div></div></header><div class="modal fade" id="search_tips_modal" tab-index="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-center"><div class="search_model_content"><div class="search_model_content_header"><button type="button" class="close search-close" data-dismiss="modal" aria-hidden="true">×</button><span class="search-title-head">Four Easy Search Tips</span></div><div class="hr_line"><div class="modal-content-search content_search"><div class="content-search-txt"><div class="wrap-search-txt">1.</div><div>Press the Enter key or click the Search Icon to get general search results</div></div><div class="wrap-search-img"><span style="background-image:url('https://assets.analog.com/images/en/enter.jpg');" class="search-tips-img"></span></div></div></div><div class="hr_line1 "><div class="content_search"><div class="content-search-txt"><div class="wrap-search-txt">2.</div><div>Click a suggested result to go directly to that page</div></div><div class="wrap-search-img"><span style="background-image:url('https://assets.analog.com/images/en/suggested.jpg');" class="suggested-img"></span></div></div></div><div class="hr_line1"><div class="content_search-result"><div class="content-search-txt"><div class="wrap-search-txt">3.</div><div>Click Search to get general search results based on this suggestion</div></div><div class="wrap-search-img"><span style="background-image:url('https://assets.analog.com/images/en/search.jpg');" class="search-img"></span></div></div></div><div class="hr_line1"><div class="content_search"><div class="content-search-txt"><div class="wrap-search-txt">4.</div><div>On Search Results page use Filters found in the left hand column to refine your search</div></div><div class="wrap-search-img"><span style="background-image:url('https://assets.analog.com/images/en/filters.jpg');" class="filters-img"></span></div></div></div></div></div></div> 
+
+
+    <noscript>Enable javascript</noscript>
+    <div class="content" role="main">
+
+        
+
+        
+
+
+
+        <div>
+
+
+
+
+
+
+
+<div class="row visible-desktop">
+
+        <h1 class="container page-title title-nophoto" style="display:none" data-page-title-fallback="Analog Devices | Mixed-signal and digital signal processing ICs"></h1>
+
+    </div>
+<div id="myPageContainer" data-ezuser="lallison" data-ezcount="100"> </div>
+             <div class="personalized-content done" id="MainPersonalized-Content6" data-placeholder-name="Main/Personalized-Content6" data-item-name="/en/index.html" data-unique-id="6">
+    <div data-personalizedcontent="adi-home_default" data-component="Hero Carousel">
+    <div class="row ">
+        <div id="carousel-main-home" class="slider-hero slider-hero-bg " name="adi_homepage_carousel" data-slides="1" data-autoplay="true" data-autoplayspeed="9000" data-defaultvideoindex="0" data-moveby="1" data-pauseonhover="true" data-animationspeed="1500" data-direction="left">
+
+            <div class="adi-nr-slider owl-carousel owl-theme slides slides-layout-3 singleSlider-0 owl-loaded" data-items="1" data-autoplay="true" data-loop="true" data-autoplaytimeout="9000" data-autoplayhoverpause="true" data-dots="False">
+
+                    
+
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="width: 5330px; transform: translate3d(-2132px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item cloned" style="width: 1056px; margin-right: 10px;"><div class="sliderItem">
+                            <div class="home-hero-bg">
+                                <div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture="">
+
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"></div>    
+                                                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"></div>  
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"></div> 
+                                        <![endif]-->
+                                    <img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" />
+                                </div>
+                            </div>
+
+
+
+
+                        <div class="container">
+
+                            <div class="row home-hero-area col-md-6 visible-desktop ">
+                                <div class="title ">
+<span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>                                </div>
+
+                                <div class="description rte visible-desktop">
+<p>Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.</p>
+                                </div>
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                            <span></span>
+                                    </a>
+                            </div>
+
+
+                            <div class="row home-hero-area visible-phone ">
+
+                                    <div class="title">
+
+                                        <span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>
+                                    </div>                                               
+
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                    </a>
+                            </div>
+                        </div>
+
+                    </div></div><div class="owl-item cloned" style="width: 1056px; margin-right: 10px;"><div class="sliderItem">
+                            <div class="home-hero-bg">
+                                <div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture="">
+
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"></div>    
+                                                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"></div>  
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"></div> 
+                                        <![endif]-->
+                                    <img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" />
+                                </div>
+                            </div>
+
+
+
+
+                        <div class="container">
+
+                            <div class="row home-hero-area col-md-6 visible-desktop ">
+                                <div class="title ">
+<span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>                                </div>
+
+                                <div class="description rte visible-desktop">
+<p>Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.</p>
+                                </div>
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                            <span></span>
+                                    </a>
+                            </div>
+
+
+                            <div class="row home-hero-area visible-phone ">
+
+                                    <div class="title">
+
+                                        <span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>
+                                    </div>                                               
+
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                    </a>
+                            </div>
+                        </div>
+
+                    </div></div><div class="owl-item active" style="width: 1056px; margin-right: 10px;"><div class="sliderItem">
+                            <div class="home-hero-bg">
+                                <div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture="">
+
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"></div>    
+                                                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"></div>  
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"></div> 
+                                        <![endif]-->
+                                    <img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" />
+                                </div>
+                            </div>
+
+
+
+
+                        <div class="container">
+
+                            <div class="row home-hero-area col-md-6 visible-desktop ">
+                                <div class="title ">
+<span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>                                </div>
+
+                                <div class="description rte visible-desktop">
+<p>Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.</p>
+                                </div>
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                            <span></span>
+                                    </a>
+                            </div>
+
+
+                            <div class="row home-hero-area visible-phone ">
+
+                                    <div class="title">
+
+                                        <span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>
+                                    </div>                                               
+
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                    </a>
+                            </div>
+                        </div>
+
+                    </div></div><div class="owl-item cloned" style="width: 1056px; margin-right: 10px;"><div class="sliderItem">
+                            <div class="home-hero-bg">
+                                <div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture="">
+
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"></div>    
+                                                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"></div>  
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"></div> 
+                                        <![endif]-->
+                                    <img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" />
+                                </div>
+                            </div>
+
+
+
+
+                        <div class="container">
+
+                            <div class="row home-hero-area col-md-6 visible-desktop ">
+                                <div class="title ">
+<span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>                                </div>
+
+                                <div class="description rte visible-desktop">
+<p>Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.</p>
+                                </div>
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                            <span></span>
+                                    </a>
+                            </div>
+
+
+                            <div class="row home-hero-area visible-phone ">
+
+                                    <div class="title">
+
+                                        <span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>
+                                    </div>                                               
+
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                    </a>
+                            </div>
+                        </div>
+
+                    </div></div><div class="owl-item cloned" style="width: 1056px; margin-right: 10px;"><div class="sliderItem">
+                            <div class="home-hero-bg">
+                                <div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture="">
+
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"></div>    
+                                                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"></div>  
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"></div> 
+                                        <![endif]-->
+                                    <img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" />
+                                </div>
+                            </div>
+
+
+
+
+                        <div class="container">
+
+                            <div class="row home-hero-area col-md-6 visible-desktop ">
+                                <div class="title ">
+<span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>                                </div>
+
+                                <div class="description rte visible-desktop">
+<p>Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.</p>
+                                </div>
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                            <span></span>
+                                    </a>
+                            </div>
+
+
+                            <div class="row home-hero-area visible-phone ">
+
+                                    <div class="title">
+
+                                        <span class="text-highlights">Powering a Sustainable Future with EV Battery Technology</span>
+                                    </div>                                               
+
+                                    <a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name="Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50">
+                                        Read the full story on ADI Signals+
+                                    </a>
+                            </div>
+                        </div>
+
+                    </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button></div></div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>                                      
+<noscript>
+    &lt;div class="row "&gt;
+        &lt;div id="carousel-main-home" class="slider-hero slider-hero-bg " name="adi_homepage_carousel" data-slides="1" data-autoplay="true" data-autoplayspeed="9000" data-defaultvideoindex="0" data-moveby="1" data-pauseonhover="true" data-animationspeed="1500" data-direction="left"&gt;
+
+            &lt;div class="adi-nr-slider owl-carousel owl-theme slides slides-layout-3" data-items="1"
+                data-autoplay="true" data-loop="true" data-autoplaytimeout="9000" data-autoplayhoverpause="true"
+                        data-dots="False"&gt;
+
+                    &lt;div  class="sliderItem"&gt;
+                            &lt;div class="home-hero-bg"&gt;
+                                &lt;div data-class="img-responsive" data-title="Automotive battery pack zoomed in" data-alt="Automotive battery pack zoomed in" data-picture=""&gt;
+
+                                        &lt;div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-mobile.jpg?la=en"&gt;&lt;/div&gt;    
+                                                                            &lt;div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en" data-media="(min-width: 640px)"&gt;&lt;/div&gt;  
+                                        &lt;!--[if (lt IE 9) &amp; (!IEMobile)]&gt;
+                                            &lt;div data-src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"&gt;&lt;/div&gt; 
+                                        &lt;![endif]--&gt;
+                                    &lt;img alt="Automotive battery pack zoomed in" class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/hp2020/sustainable-future-desktop.jpg?la=en"&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+
+
+
+                        &lt;div class="container"&gt;
+
+                            &lt;div class="row home-hero-area col-md-6 visible-desktop "&gt;
+                                &lt;div class="title "&gt;
+&lt;span class='text-highlights'&gt;Powering a Sustainable Future with EV Battery Technology&lt;/span&gt;                                &lt;/div&gt;
+
+                                &lt;div class="description rte visible-desktop"&gt;
+&lt;p&gt;Read the latest on Signals+ about ADI’s perspective on the future of electric vehicle batteries and how their reuse is impacting renewable energy resources around the globe.&lt;/p&gt;
+                                &lt;/div&gt;
+                                    &lt;a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name='Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50'  &gt;
+                                        Read the full story on ADI Signals+
+                                            &lt;span&gt;&lt;/span&gt;
+                                    &lt;/a&gt;
+                            &lt;/div&gt;
+
+
+                            &lt;div class="row home-hero-area visible-phone "&gt;
+
+                                    &lt;div class="title"&gt;
+
+                                        &lt;span class='text-highlights'&gt;Powering a Sustainable Future with EV Battery Technology&lt;/span&gt;
+                                    &lt;/div&gt;                                               
+
+                                    &lt;a href="/signals/articles/powering-sustainable-future-electric-vehicle-battery-technology.html" class="link-learn-more" target="" name='Read_the_full_story_on_ADI_Signals+_740151ed-e458-4734-ae1a-8a74b0313f50'  &gt;
+                                        Read the full story on ADI Signals+
+                                    &lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+
+            &lt;/div&gt;
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+</noscript>    <div class="row bg-grey">
+        <div class="new-products-component container">
+            <div class="col-xs-12 col-md-4 featured-new-product ">
+
+                    <h4>New Products</h4>
+
+                    <div class="featured-new-product-container clearfix">
+
+                        <a href="https://www.analog.com/en/products/adum4221.html">
+                                <div class="product-description">
+                                    <p><span>ADuM4221</span></p>
+                                    <p>
+                                        Isolated, Half Bridge Gate Driver with Adjustable Dead Time, Dual Input, 4 A Output
+                                    </p>
+                                </div>
+                                                            <div class="product-image">
+                                    <img class="img-responsive" src="https://www.analog.com/-/media/analog/en/home/tiles/adum4221-npi.jpg?la=en" alt="ADUM4221" />
+                                </div>
+                        </a>
+                    </div>
+            </div>
+
+            <ul class="col-xs-12 col-md-4">
+                    <li>
+                        <a href="https://www.analog.com/en/products/lt8604.html">
+                            <span>LT8604</span>
+                            High Efficiency 42V/120mA Synchronous Buck
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.analog.com/en/products/adrf5515.html">
+                            <span>ADRF5515</span>
+                            Dual-Channel, 3.3 GHz to 4.0 GHz, 20 W Receiver Front End
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.analog.com/en/products/ltc4246.html">
+                            <span>LTC4246</span>
+                            30mΩ RON 12V Octal Electronic Circuit Breaker with SPI Interface
+                        </a>
+                    </li>
+            </ul>
+            <ul class="col-xs-12 col-md-4">
+                
+                    <li>
+                        <a href="https://www.analog.com/en/products/ltc3307b.html">
+                            <span>LTC3307B</span>
+                            5V, 3A, 10MHz Synchronous Step-Down Silent Switcher in 2mm x 2mm LQFN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.analog.com/en/products/lt6372-1.html">
+                            <span>LT6372-1</span>
+                            Precision Instrumentation Amplifier with Level Shift and Output Clamping
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.analog.com/en/products/lt6372-0.2.html">
+                            <span>LT6372-0.2</span>
+                            Precision, Funneling Instrumentation Amplifier with Level Shift and Output Clamping
+                        </a>
+                    </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="row bg-grey">
+        <div class="new-products-link container">
+            <div class="col-xs-12 col-md-8 featured-new-product ">
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <a class="new-products-cta" href="https://www.analog.com/en/products/landing-pages/new-products-listing.html">
+                    VIEW ALL NEW PRODUCTS
+                </a>
+            </div>
+        </div>
+    </div>
+
+             <div class="personalized-content done" id="MainPersonalized-Content5" data-placeholder-name="Main/Personalized-Content5" data-item-name="/en/index.html" data-unique-id="5">
+    <div data-personalizedcontent="adi-home_default-tiles" data-component="Tiles List">
+    <!--Check for left nav compatibilty-->
+        <div class="container">
+            <section data-type="personalized-content" class="articles row " data-personalizedcontent="homepage_v44">
+
+                            <article class="col-md-4 col-sm-12">
+                                <a href="https://www.analog.com/en/education/education-library/webcasts/what-really-drives-your-ev.html">
+                                        <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-desktop.jpg?la=en" alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" />
+                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-desktop.jpg?la=en" alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" />
+                                                                            <img alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-mobile.jpg?la=en" />
+                                    <h3 class="title">Webcast: What Really Drives Your Electric Vehicle (EV)?</h3>
+                                    <div class="description">
+                                        <p>This webcast addresses where isolation is necessary in EV applications and introduces some solutions to aid in a successful EV design.</p>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="col-md-4 col-sm-12">
+                                <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html">
+                                        <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice.jpg?la=en" alt="LTspice" />
+                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice.jpg?la=en" alt="LTspice" />
+                                                                            <img alt="LTspice" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice-mobile-1.jpg?la=en" />
+                                    <h3 class="title">Download LTspice®</h3>
+                                    <div class="description">
+                                        <p>A powerful simulation software, schematic capture and waveform viewer for improving the simulation of analog circuits.</p>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="col-md-4 col-sm-12">
+                                <a href="https://www.analog.com/en/analog-dialogue.html">
+                                        <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-desktop.jpg?la=en" alt="Analog Dialogue November Issue" />
+                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-desktop.jpg?la=en" alt="Analog Dialogue November Issue" />
+                                                                            <img alt="Analog Dialogue November Issue" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-mobile.jpg?la=en" />
+                                    <h3 class="title">Analog Dialogue: November Edition</h3>
+                                    <div class="description">
+                                        <p>In this month’s edition of Analog Dialogue learn about the interleaved inverting charge pump, the ease of multiparameter vital signs monitoring, and RF amplifier model structures combining linear S-parameter and nonlinear data.</p>
+                                    </div>
+                                </a>
+                            </article>
+            </section>
+        </div>
+</div>
+
+</div>                                      
+<noscript>
+    &lt;!--Check for left nav compatibilty--&gt;
+        &lt;div class="container"&gt;
+            &lt;section data-type="personalized-content" class="articles row " data-personalizedcontent="homepage_v44"&gt;
+
+                            &lt;article class="col-md-4 col-sm-12"&gt;
+                                &lt;a href="https://www.analog.com/en/education/education-library/webcasts/what-really-drives-your-ev.html" &gt;
+                                        &lt;img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-desktop.jpg?la=en" alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" /&gt;
+                                                                            &lt;img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-desktop.jpg?la=en" alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" /&gt;
+                                                                            &lt;img alt="Webcast: What Really Drives Your Electric Vehicle (EV)?" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/ev-webcast-mobile.jpg?la=en" /&gt;
+                                    &lt;h3 class="title"&gt;Webcast: What Really Drives Your Electric Vehicle (EV)?&lt;/h3&gt;
+                                    &lt;div class="description"&gt;
+                                        &lt;p&gt;This webcast addresses where isolation is necessary in EV applications and introduces some solutions to aid in a successful EV design.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/article&gt;
+                            &lt;article class="col-md-4 col-sm-12"&gt;
+                                &lt;a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" &gt;
+                                        &lt;img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice.jpg?la=en" alt="LTspice" /&gt;
+                                                                            &lt;img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice.jpg?la=en" alt="LTspice" /&gt;
+                                                                            &lt;img alt="LTspice" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/homepage-tile-ltspice-mobile-1.jpg?la=en" /&gt;
+                                    &lt;h3 class="title"&gt;Download LTspice®&lt;/h3&gt;
+                                    &lt;div class="description"&gt;
+                                        &lt;p&gt;A powerful simulation software, schematic capture and waveform viewer for improving the simulation of analog circuits.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/article&gt;
+                            &lt;article class="col-md-4 col-sm-12"&gt;
+                                &lt;a href="https://www.analog.com/en/analog-dialogue.html" &gt;
+                                        &lt;img class="overlay" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-desktop.jpg?la=en" alt="Analog Dialogue November Issue" /&gt;
+                                                                            &lt;img class="banner" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-desktop.jpg?la=en" alt="Analog Dialogue November Issue" /&gt;
+                                                                            &lt;img alt="Analog Dialogue November Issue" class="mobile visible-xs" src="https://www.analog.com/-/media/analog/en/home/tiles/ad-nov20-mobile.jpg?la=en" /&gt;
+                                    &lt;h3 class="title"&gt;Analog Dialogue: November Edition&lt;/h3&gt;
+                                    &lt;div class="description"&gt;
+                                        &lt;p&gt;In this month’s edition of Analog Dialogue learn about the interleaved inverting charge pump, the ease of multiparameter vital signs monitoring, and RF amplifier model structures combining linear S-parameter and nonlinear data.&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/a&gt;
+                            &lt;/article&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+</noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row fca-row one-columnspot ignore-top-spacing ignore-bottom-spacing " style="">
+            <div class="container">
+                <div class=" rte">
+                                                    <div class="full-image-container tac">
+                                    <div class="hero-image">
+                                        <div data-picture="" data-alt="Section Divider" data-title="Section Divider" data-class="img-responsive">
+                                            <div data-src="https://www.analog.com/-/media/analog/en/landing-pages/section_divider_white.jpg?la=en&amp;w=340"></div>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/landing-pages/section_divider_white.jpg?la=en&amp;w=960" data-media="(min-width: 640px)"></div>
+                                            <!--[if (lt IE 9) & (!IEMobile)]>
+                                            <div data-src="https://www.analog.com/-/media/analog/en/landing-pages/section_divider_white.jpg?la=en?w=960"></div>
+                                            <![endif]-->
+                                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                                            <noscript>
+                                                &lt;img src="https://www.analog.com/-/media/analog/en/landing-pages/section_divider_white.jpg?la=en&amp;amp;w=960" alt="Section Divider"&gt;
+                                            </noscript>
+
+                                        <img alt="Section Divider" class="img-responsive" title="Section Divider" src="https://www.analog.com/-/media/analog/en/landing-pages/section_divider_white.jpg?la=en&amp;w=960" /></div>
+                                            <div align="center"></div>
+                                    </div>
+                                </div>
+                                        <div class="clearfix rte">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+<div class="row campaign fca-row ignore-top-spacing  bottom-spacing-32 " style="">
+    <div class="row campaign fca-row ">
+        <div class="container product-content ">
+
+
+            <div class="row clearfix">
+                        <div class="col-md-6 product-section">
+                                    <div data-class="img-responsive" data-title="What If ..." data-alt="What If ..." data-picture="">
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/what_if_ad_spotlight_50_50.jpg?la=en&amp;w=900"></div>
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/what_if_ad_spotlight_50_50.jpg?la=en&amp;w=900" data-media="(min-width: 640px)"></div>
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                                <div data-src="https://www.analog.com/-/media/analog/en/home/what_if_ad_spotlight_50_50.jpg?la=en?w=355"></div>
+                                            <![endif]-->
+                                        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                                        <noscript>
+                                            &lt;img src="https://www.analog.com/-/media/analog/en/home/what_if_ad_spotlight_50_50.jpg?la=en&amp;amp;w=900" alt="What If ..."&gt;
+                                        </noscript>
+                                    <img alt="What If ..." class="img-responsive" title="What If ..." src="https://www.analog.com/-/media/analog/en/home/what_if_ad_spotlight_50_50.jpg?la=en&amp;w=900" /></div>
+
+
+                            <div class="rte"><h3>ADI video ads make you think, “What if…”</h3>
+<p>Watch ADI’s thought-provoking marketing videos and see how we build upon our position as trusted problem solvers and demonstrate “where what if becomes what is.”
+</p>
+<p><a href="https://www.analog.com/en/signals/videos/what-if.html"><span class="analog-rounded-button">Watch the videos</span></a></p></div>
+
+                        </div>
+                        <div class="col-md-6 product-section">
+                                    <div data-class="img-responsive" data-title="myAnalog" data-alt="myAnalog" data-picture="">
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/myanalog_spotlight_50_50.jpg?la=en&amp;w=900"></div>
+                                        <div data-src="https://www.analog.com/-/media/analog/en/home/myanalog_spotlight_50_50.jpg?la=en&amp;w=900" data-media="(min-width: 640px)"></div>
+                                        <!--[if (lt IE 9) & (!IEMobile)]>
+                                                <div data-src="https://www.analog.com/-/media/analog/en/home/myanalog_spotlight_50_50.jpg?la=en?w=355"></div>
+                                            <![endif]-->
+                                        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                                        <noscript>
+                                            &lt;img src="https://www.analog.com/-/media/analog/en/home/myanalog_spotlight_50_50.jpg?la=en&amp;amp;w=900" alt="myAnalog"&gt;
+                                        </noscript>
+                                    <img alt="myAnalog" class="img-responsive" title="myAnalog" src="https://www.analog.com/-/media/analog/en/home/myanalog_spotlight_50_50.jpg?la=en&amp;w=900" /></div>
+
+
+                            <div class="rte"><h3>myAnalog –Your personalized access to the full analog.com experience!</h3>
+<p>Enhance your analog.com experience with easier to manage PCNs, faster navigation, project collaboration, and more.</p>
+<p><a href="https://www.analog.com/en/landing-pages/001/new-myanalog-experience.html?icid=homepagespotlight_en_hp"><span class="analog-rounded-button">See the fully redesigned myAnalog today</span></a></p></div>
+
+                        </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="row bg-grey homepage-carousel-main " name="Carousel_Analog_Signals_6faeaaa5-9c40-49b3-b9a8-d7859dd5c1b9">
+        <div class="container col-md-12 clearfix">
+
+            <div class="">
+            <div class="clearfix padding-top-spacing-16">
+                <h2 class="pull-left">Analog News</h2>
+
+            </div>
+            <div class="carousel-container video-resource-container clearfix" data-target="#6faeaaa5-9c40-49b3-b9a8-d7859dd5c1b9">
+                <div class="static-carousel" data-slides="3" data-autoplay="false" data-carouselnav="true" data-autoplayspeed="5" data-defaultvideoindex="0" data-pauseonhover="False" data-animationspeed="600">
+
+
+                    <ul class="tile-slider owl-carousel owl-theme slides slides-layout-2 tileSlider-0 owl-loaded owl-drag" data-items="3">
+                                
+                                
+                                
+
+
+                    <div class="owl-stage-outer"><div class="owl-stage" style="width: 874px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item active" style="width: 281.333px; margin-right: 10px;"><li class="sliderItem">
+                                    <div>
+                                        <span class="header4">
+                                            Press Releases
+                                                <span class="date">
+                                                    NOV 30 2020
+                                                </span>
+                                        </span>
+                                        <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2020/11-30-2020-analog-participate-credit-suisse-24th-annual-technology-conference.html" class="slide-title" target="__blank" name="11-30-2020-analog-participate-credit-suisse-24th-annual-technology-conference_213273ce-0900-4cce-b549-eff15e39cacb"><h3>Analog Devices to Participate in the Credit Suisse 24<sup>th</sup> Annual Technology...</h3></a>
+
+                                    </div>
+                                </li></div><div class="owl-item active" style="width: 281.333px; margin-right: 10px;"><li class="sliderItem">
+                                    <div>
+                                        <span class="header4">
+                                            Press Releases
+                                                <span class="date">
+                                                    NOV 30 2020
+                                                </span>
+                                        </span>
+                                        <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2020/11-30-2020-analog-to-participate-nasdaq-43rd-investor-conference.html" class="slide-title" target="__blank" name="11-30-2020-analog-to-participate-nasdaq-43rd-investor-conference_b641095a-6211-4eed-a40e-2fe786120b21"><h3>Analog Devices to Participate in Nasdaq’s 43<sup>rd</sup> Investor Conference</h3></a>
+
+                                    </div>
+                                </li></div><div class="owl-item active" style="width: 281.333px; margin-right: 10px;"><li class="sliderItem">
+                                    <div>
+                                        <span class="header4">
+                                            Press Releases
+                                                <span class="date">
+                                                    NOV 30 2020
+                                                </span>
+                                        </span>
+                                        <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2020/11-30-2020-analog-devices-named-a-worlds-best-employer.html" class="slide-title" target="__blank" name="11-30-2020-analog-devices-named-a-worlds-best-employer_1835de2d-6a0c-41ed-8f0c-981fefe7aaa8"><h3>Analog Devices Named a World’s Best Employer and Top Place to Work</h3></a>
+
+                                    </div>
+                                </li></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next disabled"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"><button role="button" class="owl-dot active"><span>1</span></button></div></ul>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row category-list-embed">
+        <div class="section-bar">
+            <div class="container">
+                <div class="row offset-block">
+                    <div class="section-heading clearfix">
+                                    <h3>Product Categories</h3>
+                        <span> <a href="#" class="close-icon">X</a> <a href="#" class="expand-icon">+</a> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-content">
+            <div class="container">
+                <div class="mobilerow linked-list-item">
+                    <div class="categories-list">
+                                    <ul class="column3 clearfix">
+                                <li>
+                                <a href="https://www.analog.com/en/products/amplifiers.html" name="amplifiers"> Amplifiers </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/analog-functions.html" name="analog-functions"> Analog Functions </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/analog-to-digital-converters.html" name="analog-to-digital-converters"> A/D Converters (ADC) </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/audio-video.html" name="audio-video"> Audio &amp; Video Products </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/clock-and-timing.html" name="clock-and-timing"> Clock &amp; Timing </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/digital-to-analog-converters.html" name="digital-to-analog-converters"> D/A Converters (DAC) </a>
+                                </li>                                                            
+                                    </ul>
+                                    <ul class="column3 clearfix">
+                                <li>
+                                <a href="https://www.analog.com/en/products/high-speed-logic.html" name="high-speed-logic"> High Speed Logic &amp; Data Path Management </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/industrial-ethernet.html" name="industrial-ethernet"> Industrial Ethernet </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/interface-isolation.html" name="interface-isolation"> Interface &amp; Isolation </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/monitor-control-protection.html" name="monitor-control-protection"> Power Monitor, Control, &amp; Protection </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/optical.html" name="optical"> Optical Communications &amp; Sensing </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/power-management.html" name="power-management"> Power Management </a>
+                                </li>                                                            
+                                    </ul>
+                                    <ul class="column3 clearfix">
+                                <li>
+                                <a href="https://www.analog.com/en/products/processors-microcontrollers.html" name="processors-microcontrollers"> Processors &amp; Microcontrollers </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/rf-microwave.html" name="rf-microwave"> RF &amp; Microwave </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/sensors-mems.html" name="sensors-mems"> Sensors &amp; MEMS </a>
+                                </li>                                                            
+                                <li>
+                                <a href="https://www.analog.com/en/products/switches-multiplexers.html" name="switches-multiplexers"> Switches &amp; Multiplexers </a>
+                                </li>                                                            
+                </ul></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">		
+   
+if(typeof MutationObserver !== 'undefined' &amp;&amp; MutationObserver)
+     {
+          //Select the target node 
+	  var homepageCarouselTarget = document.getElementsByClassName("homepage-carousel-main"); 
+
+	  // create an observer instance
+	  var homepageObserver = new MutationObserver(function(mutations) 
+          {
+                 var carouselCount = 0;
+                 $(".homepage-carousel-main").each(function () {
+                    if (carouselCount % 2 === 0) { $(this).addClass("bg-grey"); }
+                    else { $(this).removeClass("bg-grey"); }
+                    carouselCount++;
+                });
+                  
+               homepageObserver.disconnect();
+	  });
+		 
+	  // configuration of the observer:
+	  var homepageObserverConfig = { attributes: true };
+		 
+	  // pass in the target node, as well as the observer options
+          homepageObserver.observe(homepageCarouselTarget[homepageCarouselTarget.length-1], homepageObserverConfig );
+     }
+</script><script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"url": "https://www.analog.com/en/index.html",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.analog.com/en/search.html?q={search_term_string}",
+"query-input": "required name=search_term_string"
+}
+}
+</script>
+
+</div>
+
+
+        <div class="special-content">
+            <li class="dropdown dropdown-region">
+                    <a href="#" data-toggle="dropdown" name="Region_7fe452b3-5379-47e8-aa31-5b3ddffd9ec6">
+
+                        <span data-toggle="dropdown" class="region"></span>
+                        <span class="arrow-down-transparent"></span>
+                    </a>
+
+        <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <ul>
+                <li><strong>Region</strong></li>
+                                <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/india-welcome.html" target="" title="" name="India_d28fd230-86d1-43a5-a921-270db9a11aef">India</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/korea-welcome.html" target="" title="" name="Korea_154f8b08-52bc-4468-a8e2-90eae4f85b44">Korea</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/singapore-welcome.html" target="" title="" name="Singapore_13a09ebe-e404-43e9-a609-c21f2b2da0a9">Singapore</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/taiwan-welcome.html" target="" title="" name="Taiwan_3146147e-7236-4692-b1a8-18240f3e01e0">Taiwan</a>
+                    </li>
+
+        </ul>
+        <ul class="setLang">
+                    <li>
+                        <strong>Languages</strong>
+                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/en/index.html" title="English" name="English_e33369c5-cf6f-415c-a408-fcf42c2a6c19"><strong>English</strong></a>
+                                        </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/cn/index.html" title="简体中文" name="Chinese_42e59427-ab8e-4088-8e78-b229a94f639d">简体中文</a>
+                                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/jp/index.html" title="日本語" name="Japanese_36645878-0d31-42ed-80fd-4101c6c03573">日本語</a>
+                                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/ru/index.html" title="Руccкий" name="Russian_c5a43e16-297b-4109-938d-6fd2c28e272b">Руccкий</a>
+                                    </li>
+
+        </ul>
+
+        </div>
+
+
+
+            </li>
+        </div>
+        <div class="special-content">
+                    <div class="accordion-group language-footer-block">
+                        <div class="accordion-heading">
+                            <span class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#English">
+                                English<span class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                            </span>
+                        </div>
+                        <div id="English" class="accordion-body collapse">
+                            <div class="accordion-inner language-footer">
+                                    <a href="https://www.analog.com/en/index.html">
+                                        <img data-image-source="https://assets.analog.com/images/language_en.jpg" class="mobile-images" width="100%" alt="English" />
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group language-footer-block">
+                        <div class="accordion-heading">
+                            <span class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#简体中文">
+                                简体中文<span class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                            </span>
+                        </div>
+                        <div id="简体中文" class="accordion-body collapse">
+                            <div class="accordion-inner language-footer">
+                                    <a href="https://www.analog.com/cn/index.html">
+                                        <img data-image-source="https://assets.analog.com/images/language_cn.jpg" class="mobile-images" width="100%" alt="简体中文" />
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group language-footer-block">
+                        <div class="accordion-heading">
+                            <span class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#日本語">
+                                日本語<span class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                            </span>
+                        </div>
+                        <div id="日本語" class="accordion-body collapse">
+                            <div class="accordion-inner language-footer">
+                                    <a href="https://www.analog.com/jp/index.html">
+                                        <img data-image-source="https://assets.analog.com/images/language_jp.jpg" class="mobile-images" width="100%" alt="日本語" />
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group language-footer-block">
+                        <div class="accordion-heading">
+                            <span class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#Руccкий">
+                                Руccкий<span class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                            </span>
+                        </div>
+                        <div id="Руccкий" class="accordion-body collapse">
+                            <div class="accordion-inner language-footer">
+                                    <a href="https://www.analog.com/ru/index.html">
+                                        <img data-image-source="https://assets.analog.com/images/language_ru.jpg" class="mobile-images" width="100%" alt="Руccкий" />
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+</div>
+<iframe id="ifrmPrint" style="width: 0pt; height: 0pt; border: none;"></iframe>
+<iframe id="trackVisitor" class="track-visitor-class"></iframe>
+<label for="itemId" class="hidden"></label>
+<input type="hidden" id="itemId" name="itemId" value="df300df4-e134-49c7-82e6-5af72f5cfa65" />
+
+
+
+
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row footer-top visible-desktop" name="adi_footer_top">
+                
+<div class="col-md-8">
+             <div class="row">
+            <div class="tiles-big" name="adi_tiles_big">
+                <ul class="list-inline ">
+                   
+            <a href="https://www.analog.com/en/about-adi.html" target="" name="problem-solvers_53c6a6a3-7113-400e-b299-320e2f5f43ae">
+                        <li class="boxes blue ">
+
+                           
+                            
+                            <div class="number">16,000</div>
+                                <div class="fact">Problem Solvers</div>
+                              
+                            
+                        </li>
+              
+                        </a>
+            <a href="https://www.analog.com/en/about-adi.html" target="" name="patents_1350c01c-8972-4593-a0bf-0eb6ba1be865">
+                        <li class="boxes blue ">
+
+                           
+                            
+                            <div class="number">4,700+</div>
+                                <div class="fact">Patents Worldwide</div>
+                              
+                            
+                        </li>
+              
+                        </a>
+            <a href="https://www.analog.com/en/about-adi.html" target="" name="customers_af6aaac4-a660-4ac9-86ee-fd52e3adddf9">
+                        <li class="boxes blue ">
+
+                           
+                            
+                            <div class="number">125,000</div>
+                                <div class="fact">Customers</div>
+                              
+                            
+                        </li>
+              
+                        </a>
+            <a href="https://www.analog.com/en/landing-pages/001/future-turns-fifty.html" target="" name="years_f0252945-126f-49a1-8fbb-1c465709aa1e">
+                        <li class="boxes blue last">
+
+                           
+                            
+                            <div class="number">55</div>
+                                <div class="fact">Years</div>
+                              
+                            
+                        </li>
+              
+                        </a>
+                </ul>
+                <div class="clearfix"> </div>
+              
+                <div class="row">
+                        <div class="col-xs-12">
+                            <div class="dividertop"> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 dividerbottom"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span class="tac header4">Analog Devices. Dedicated to solving the toughest engineering challenges.</span>
+                        </div>
+                    </div>
+             
+            </div>
+       </div>
+             </div>
+
+
+
+
+    <div class="col-md-4">
+        <div class="callout">
+            <span class="ntm header3">Ahead of What's Possible</span>	        <div class="bg-head"> </div>
+<p></p><h4>Analog Devices is a global leader in the design and manufacturing of analog, mixed signal, and DSP integrated circuits to help solve the toughest engineering challenges.<br />
+<br />
+<a href="https://www.analog.com/en/landing-pages/001/ahead-of-whats-possible.html">See the Innovations</a></h4><p></p>        </div>
+    </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+ <a class="backtotop" href="#header"> </a><footer class="footer" id="footer" data-session="https://analogb2c.b2clogin.com/tfp/analogb2c.onmicrosoft.com/b2c_1a_adi_signuporsigninwithkmsi/oauth2/v2.0/authorize?client_id=63aa5bf0-fc9b-4ab2-8f60-ad90b639eb32&amp;nonce=0c6ead94-f4e4-42bf-b761-fe32f97aa7bb&amp;redirect_uri=https://my.analog.com/app/session-exist&amp;scope=https://analogb2c.onmicrosoft.com/myanalog/read&amp;response_type=code&amp;prompt=none"><div class="container"><div class="row footer-bottom" name="adi_footer_bottom"><div class="col-md-12 clearfix"><div class="visible-desktop"><div class="col-md-2" name="Footer_Social_Media_Links_eee39a50-a6b0-4426-9c6a-78dd1523c507"><div class="row"><div class="sociallinks"><span class="header4"><a href="#" class="footer-collapse dropdown-toggle" data-toggle="dropdown"> Social<span class="expand-icon visible-phone"></span></a></span><ul class="pull-right list-social footer-dropdown-menu"><li class="ez-color"><a href="https://ez.analog.com" target="" title="Join Analog Devices on EngineerZone"></a></li><li><a class="instagram" href="https://www.instagram.com/analogdevices/?hl=en" target="_blank" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li><li><a class="facebook" href="http://www.facebook.com/AnalogDevicesInc" target="_blank" title="Visit Analog Devices on Facebook"><i class="fab fa-facebook-f"></i></a></li><li><a class="twitter" href="https://twitter.com/#!/adi_news" target="_blank" title="Follow Analog Devices on Twitter"><i class="fab fa-twitter"></i></a></li><li><a class="linkedin" href="http://www.linkedin.com/company/3450" target="_blank" title="Join Analog Devices on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li><li><a class="youtube" href="http://www.youtube.com/user/AnalogDevicesInc" target="_blank" title="View Analog Devices on YouTube"><i class="fab fa-youtube"></i></a></li></ul><div id="weixin-modal" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body"><img src="https://assets.analog.com/images/zh/weixin-qr-code.jpg" alt="" /></div></div></div></div></div></div></div><div class="col-md-4 quick" name="adi_footer_quicklinks"><div class="quicklinks"><span class="header4 open"><a href="#" class="footer-collapse dropdown-toggle expanded" data-toggle="dropdown" aria-expanded="true">Quick Links<span class="pull-right expand-icon visible-phone"></span></a></span><ul class="list-unstyled footer-dropdown-menu"><li class=""><a href="http://www.analog.com/en/about-adi.html" target="" title="About ADI" name="About_ADI_a18d047b-e6c9-43eb-ac39-f2433cb55f1f">About ADI</a></li><li class=""><a href="http://www.analog.com/en/about-adi/partners.html" target="_blank" title="" name="Partners_5e47a5a2-8dd5-4b8d-b949-bb78e7c8b52d">Partners</a></li><li class=""><a href="http://www.analog.com/en/analog-dialogue.html" target="" title="Analog Dialogue" name="Analog_Dialogue_41ade380-bf31-4791-8015-2a7cc8211984">Analog Dialogue</a></li><li class=""><a href="https://careers.analog.com" target="" title="Careers" name="Careers_d3bc9a5a-eaac-4f74-a4eb-9588b983bae8">Careers</a></li><li class=""><a href="http://www.analog.com/en/about-adi/contact-us.html" target="" title="Contact us" name="Contact_us_95dc0fe9-dc2d-4f85-81fa-1a49595a3d0d">Contact us</a></li><li class=""><a href="http://investor.analog.com/" target="" title="Investor Relations" name="Investor_Relations_2ffc3744-f828-4aa2-8db4-3e3bb8854bb7">Investor Relations</a></li><li class=""><a href="http://www.analog.com/en/about-adi/news-room.html" target="" title="News Room" name="News_Room_0b77676a-6e78-428a-b729-3b12f20cb0d0">News Room</a></li><li class=""><a href="http://www.analog.com/en/about-adi/quality-reliability.html" target="" title="Quality &amp; Reliability" name="Quality_N_Reliability_9f2071ca-97a4-4e6c-85f8-a28480bc998c">Quality &amp; Reliability</a></li><li class=""><a href="http://www.analog.com/en/about-adi/corporate-information/sales-distribution.html" target="" title="Sales &amp; Distributors" name="Sales_N_Distributors_c71f89eb-3bca-4ca9-a79d-73a1172cfa1a">Sales &amp; Distribution</a></li><li class=""><a href="http://www.analog.com/en/landing-pages/001/analog-garage.html" target="" title="" name="analog-garage_be449ed0-c547-481c-a209-e5816db3b6ce">Analog Garage</a></li></ul></div></div></div><div class="visible-phone"><div class="col-md-4 quick" name="adi_footer_quicklinks"><div class="quicklinks"><span class="header4 open"><a href="#" class="footer-collapse dropdown-toggle expanded" data-toggle="dropdown" aria-expanded="true">Quick Links<span class="pull-right expand-icon visible-phone"></span></a></span><ul class="list-unstyled footer-dropdown-menu"><li class=""><a href="http://www.analog.com/en/about-adi.html" target="" title="About ADI" name="About_ADI_a18d047b-e6c9-43eb-ac39-f2433cb55f1f">About ADI</a></li><li class=""><a href="http://www.analog.com/en/about-adi/partners.html" target="_blank" title="" name="Partners_5e47a5a2-8dd5-4b8d-b949-bb78e7c8b52d">Partners</a></li><li class=""><a href="http://www.analog.com/en/analog-dialogue.html" target="" title="Analog Dialogue" name="Analog_Dialogue_41ade380-bf31-4791-8015-2a7cc8211984">Analog Dialogue</a></li><li class=""><a href="https://careers.analog.com" target="" title="Careers" name="Careers_d3bc9a5a-eaac-4f74-a4eb-9588b983bae8">Careers</a></li><li class=""><a href="http://www.analog.com/en/about-adi/contact-us.html" target="" title="Contact us" name="Contact_us_95dc0fe9-dc2d-4f85-81fa-1a49595a3d0d">Contact us</a></li><li class=""><a href="http://investor.analog.com/" target="" title="Investor Relations" name="Investor_Relations_2ffc3744-f828-4aa2-8db4-3e3bb8854bb7">Investor Relations</a></li><li class=""><a href="http://www.analog.com/en/about-adi/news-room.html" target="" title="News Room" name="News_Room_0b77676a-6e78-428a-b729-3b12f20cb0d0">News Room</a></li><li class=""><a href="http://www.analog.com/en/about-adi/quality-reliability.html" target="" title="Quality &amp; Reliability" name="Quality_N_Reliability_9f2071ca-97a4-4e6c-85f8-a28480bc998c">Quality &amp; Reliability</a></li><li class=""><a href="http://www.analog.com/en/about-adi/corporate-information/sales-distribution.html" target="" title="Sales &amp; Distributors" name="Sales_N_Distributors_c71f89eb-3bca-4ca9-a79d-73a1172cfa1a">Sales &amp; Distribution</a></li><li class=""><a href="http://www.analog.com/en/landing-pages/001/analog-garage.html" target="" title="" name="analog-garage_be449ed0-c547-481c-a209-e5816db3b6ce">Analog Garage</a></li></ul></div></div><div class="col-md-2" name="Footer_Social_Media_Links_eee39a50-a6b0-4426-9c6a-78dd1523c507"><div class="row"><div class="sociallinks"><span class="header4"><a href="#" class="footer-collapse dropdown-toggle" data-toggle="dropdown"> Social<span class="expand-icon visible-phone"></span></a></span><ul class="pull-right list-social footer-dropdown-menu"><li class="ez-color"><a href="https://ez.analog.com" target="" title="Join Analog Devices on EngineerZone"></a></li><li><a class="instagram" href="https://www.instagram.com/analogdevices/?hl=en" target="_blank" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li><li><a class="facebook" href="http://www.facebook.com/AnalogDevicesInc" target="_blank" title="Visit Analog Devices on Facebook"><i class="fab fa-facebook-f"></i></a></li><li><a class="twitter" href="https://twitter.com/#!/adi_news" target="_blank" title="Follow Analog Devices on Twitter"><i class="fab fa-twitter"></i></a></li><li><a class="linkedin" href="http://www.linkedin.com/company/3450" target="_blank" title="Join Analog Devices on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li><li><a class="youtube" href="http://www.youtube.com/user/AnalogDevicesInc" target="_blank" title="View Analog Devices on YouTube"><i class="fab fa-youtube"></i></a></li></ul><div id="weixin-modal" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">×</button></div><div class="modal-body"><img src="https://assets.analog.com/images/zh/weixin-qr-code.jpg" alt="" /></div></div></div></div></div></div></div></div><!--[if gt IE 8]><!--><!--<![endif]--><div class="col-md-2 visible-desktop"><span class="header4">Languages</span><div class="quicklinks" name="adi_footer_languages_quicklinks"><ul class="list-unstyled"><li><a href="https://www.analog.com/en/" target="" title="English" name="English_2c0dae2c-e343-42a4-8ce2-cd8350c8ec55">English</a></li><li><a href="https://www.analog.com/cn/" target="" title="简体中文" name="Chinese_8f00bfa0-df96-41b4-b43b-9937d78c4452">简体中文</a></li><li><a href="https://www.analog.com/jp/" target="" title="日本語" name="Japanese_28d4203f-f1f1-4a94-acf1-e5023759cda3">日本語</a></li><li><a href="https://www.analog.com/ru/" target="" title="Руccкий" name="Russian_08ad222c-9e19-46af-997d-9e7a12a99c0b">Руccкий</a></li></ul></div></div><div class="col-md-4 visible-desktop"><div class="newsletter" name="Callouts_Newsletter_b24a4bad-d9d0-4b9a-bb7d-149bf3a624cf"><span class="header4">Newsletters</span><p>Interested in the latest news and articles about ADI products, design tools, training and events? Choose from one of our 12 newsletters that match your product area of interest, delivered monthly or quarterly to your inbox.</p><div class="control-form"><a class="btn btn-primary" name="Newsletter_Sign Up_b24a4bad-d9d0-4b9a-bb7d-149bf3a624cf" href="https://my.analog.com/en/app/subscriptions">Sign Up</a></div></div><div class="switch-mobile-view"><a href="" id="btn-force-mobile-view" class="btn btn-primary">Switch to mobile view</a></div></div></div><div class="col-md-12 clearfix visible-phone"><div class="container text-center"><button type="button" id="btn-force-desktop-view" class="btn btn-primary"> Desktop View </button></div></div><div class="col-md-12"><div class="row copyright" name="adi_footer_copyright"><div class="col-md-5 visible-phone"><div data-src="https://assets.analog.com/images/footer_logo.gif" class="visible-phone"><img src="https://assets.analog.com/images/footer_logo.gif" alt="Analog Logo" width="100" /></div><span class="copy">©</span> 1995 - 2020 Analog Devices, Inc. All Rights Reserved <span id="CN-ICP-number" style="display:none;">沪ICP备09046653号</span></div><ul class="list-inline pull-left visible-desktop links"><li> © </li><li> 1995 - 2020 Analog Devices, Inc. All Rights Reserved </li><li id="CN-ICP-number"> 沪ICP备09046653号 </li></ul><ul class="list-inline pull-right visible-desktop" name="adi_footer_horizontal_links"><li class=""><a href="http://www.analog.com/en/sitemap.html" target="" title="Sitemap" name="Sitemap_b8effdcc-bc20-42ab-af7b-e2a546667326">Sitemap</a></li><li class=""><a href="http://www.analog.com/en/about-adi/landing-pages/001/privacy_security_statement.html" target="" title="Privacy &amp; Security" name="Privacy_N_Security_7bd22b0b-d67b-4530-ae22-266045bc4d73">Privacy &amp; Security</a></li><li class=""><a href="http://www.analog.com/en/landing-pages/001/privacy-settings.html" target="" title="Privacy Settings" name="Privacy_Settings_c3370251-faa8-4c65-b2b4-1bfeab8d75ea">Privacy Settings</a></li><li class=""><a href="http://www.analog.com/en/about-adi/landing-pages/001/terms_of_use.html" target="" title="Terms of use" name="Terms_of_Use_fd8a5f4a-6e7a-4d1d-9605-56488afcf6c6">Terms of use</a></li></ul></div></div></div></div><script type="text/javascript"> var ADIAssetsPath = "https://assets.analog.com"; var cookiesToDelete = [ { "Domain": ".analog.com", "Cookie": [ "__qca", "adiHintCookie", "bCrumbs", "dmdbase_cdc", "ELOQUA", "FedAuthentication", "gpv_p14", "gpv_v100", "myAnalog_id", "Mysite_info", "s_cc", "s_dfa", "s_fid", "s_gad", "s_gpv", "s_invisit", "s_lv", "s_nr", "s_ptc", "s_sq", "s_vi", "s_vnum", "es_visited", "AdiSessionAuthCookie", "AdiSecureDlCookie" ] }, { "Domain": ".investor.analog.com", "Cookie": [ "ADI_BRIEFCASE", "ADI_SESSION" ] }, { "Domain": "careers.analog.com", "Cookie": [ "in_ref", "Per_UniqueID", "PLAY_SESSION", "VISITED_COUNTRY", "VISITED_LANG", "ext_trk", "_gat_UA-84784380-31" ] }, { "Domain": "distiadmin-dev.corpnt.analog.com", "Cookie": [ "ASP.NET_SessionId" ] }, { "Domain": "distributor-dev.corpnt.analog.com", "Cookie": [ "FedAuth1", "FedAuth", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_Email Address", "dmdbase", "_sdsat_DevQaOrProd" ] }, { "Domain": "ez.analog.com", "Cookie": [ "containerSecurityToken", "jive.security.context", "X-JCAPI-Token ", "BIGipServerpool_vanity_analog.jiveon.com", "JSESSIONID", "jive.login.ts" ] }, { "Domain": "form.analog.com", "Cookie": [ "AdiSessionAuthCookie", "FedAuth1", "FedAuth", "ASP.NET_SessionId", "AlteonP", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_DevQaOrProd", "adicftlassetdata", "AdiSessionAuthCookie", "_sdsat_Membership Status", "_sdsat_Email Address" ] }, { "Domain": "registration.analog.com", "Cookie": [ "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "registration-dev.corpnt.analog.com", "_sdsat_Email Address", "FedAuth1", "FedAuth", "_sdsat_Membership Status", "AlteonP", "ASP.NET_SessionId" ] }, { "Domain": "sdk.analog.com", "Cookie": [ "dmdbase", "_sdsat_DevQaOrProd", "ipe_30155_fov", "ipe.30155.pageViewedCount", "_sdsat_Membership Status", "_sdsat_Email Address", "ipe_s", "AdiSessionAuthCookie", "FedAuth1" ] }, { "Domain": "shoppingcart.analog.com", "Cookie": [ "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "dmdbase", "_sdsat_DevQaOrProd", "_sdsat_Membership Status", "_sdsat_Email Address", "ASP.NET_SessionId", "adiSessionAuth", "FedAuth", "FedAuth1", "analogp", "USERID", "SHOPPINGCARTID", "DISTI_COUNTRY_CODE", "AlteonP" ] }, { "Domain": "webuseradmin.analog.com", "Cookie": [ "ASP.NET_SessionId" ] }, { "Domain": "wiki.analog.com", "Cookie": [ "DokuWiki", "DW&lt;hash&gt;", "DOKU_PREFS" ] }, { "Domain": "www.analog.com", "Cookie": [ "__atuvc", "__atuvs", "_sdsat_Email Address", "_sdsat_Membership Status", "DisclaimerConfirmation", "dmdbase", "downloadGoals", "sc.ASP.NET_SESSIONID", "sc.Status", "SC_ANALYTICS_GLOBAL_COOKIE", "website#lang", "ipe.30155.pageViewedCount", "ipe_30155_fov", "ipe_s", "_sdsat_DevQaOrProd", "ASP.NET_SessionId" ] } ]; </script></footer> 
+
+
+
+
+<script type="text/javascript">
+
+                (function (d) {
+                    var scripts = [];
+                    scripts.push("//assets.adobedtm.com/bc68b7886092/2a726ea8b70d/launch-a4a6d55de309.min.js");
+
+            function loadScript(src) {
+                var script = d.createElement('script');
+                script.src = src;
+                script.async = true;
+                d.body.appendChild(script);
+            }
+
+            function loadScripts() {
+                scripts.forEach(loadScript);
+            }
+
+            window.addEventListener('load', loadScripts, false);
+
+        })(document);
+</script>
+
+
+<script id="image-modal-template" type="text/x-handlebars-template">
+    &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
+        &lt;h4 class="modal-title" id="image-label"&gt;{{{title}}}&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-body"&gt;
+        &lt;ul class="control-icons"&gt;
+            &lt;li&gt;
+                {{#if data_download}}
+                &lt;a class="downloadimagelink" href="{{data_download}}" download="{{data_download}}"&gt;
+                    &lt;span id="downbutton" class="icon-download"&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                {{else}}
+                &lt;a class="downloadimagelink" href="{{src}}" download="{{src}}"&gt;
+                    &lt;span id="downbutton" class="icon-download"&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                {{/if}}
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a class="print pull-right"&gt;&lt;span class="icon-print"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br /&gt;
+        &lt;img alt="{{{title}}}" class="img-responsive" title="{{{title}}}" src="{{src}}" /&gt;
+        &lt;br /&gt;
+    &lt;/div&gt;
+
+</script>
+<div class="modal fade product-modal" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="product-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<div class="modal" id="adi-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="html5Videoplayer" type="text/x-handlebars-template">
+    &lt;div class="deferred-video-player"
+         data-account="{{accountid}}"
+         data-application-id
+         data-controls
+         data-embed="{{embed}}"
+         data-player="{{playerid}}"
+         data-video-id="{{videoid}}"&gt;
+        &lt;i class="fa fa-spinner fa-spin fa-2x"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+</script>
+
+
+<link href="https://assets.analog.com/css/vendor.css" rel="stylesheet" />
+<script src="https://assets.analog.com/js/adi/global.js" type="text/javascript"></script>
+
+
+
+             <div class="personalized-content done" id="BlogBuzzPersonalized-Content8" data-placeholder-name="BlogBuzz/Personalized-Content8" data-item-name="/en/index.html" data-unique-id="8">
+    
+
+</div>                                      
+<noscript>
+    &lt;div class="blog-updates "&gt;
+        &lt;div class="text-container"&gt;
+                &lt;img src="https://www.analog.com/-/media/analog/en/common/icon/bee_icon_anim.gif?la=en" alt="Bee" class="bee-icon"&gt;
+                            &lt;a href=https://thebuzz.web.analog.com class="" target="_blank"&gt;Analog.com Buzz&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="site-container"&gt;
+                &lt;a href=https://thebuzz.web.analog.com class="blog-icon" target="_blank"&gt;&lt;/a&gt;
+        &lt;/div&gt;       
+    &lt;/div&gt;
+</noscript>
+
+<input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="DF300DF4E13449C782E65AF72F5CFA65" />
+
+<div class="modal-backdrop fade in"></div><div class="modal fade product-modal modal-video-window" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div><script src="//assets.adobedtm.com/bc68b7886092/2a726ea8b70d/launch-a4a6d55de309.min.js" async=""></script></body></html>

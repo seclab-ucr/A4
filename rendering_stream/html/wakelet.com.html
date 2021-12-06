@@ -1,0 +1,4417 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" data-useragent="&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3441.0 Safari/537.36&quot;"><head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Wakelet – Save, organize and share content</title>
+    <meta name="description" content="Save, organize and share content from across the web with Wakelet. Save articles, videos, images, Tweets and more, organize them into stunning collections, and revisit them anywhere, anytime." />
+
+
+    <meta property="og:title" content="Wakelet – Save, organize and share content" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://assets.wakelet.com/monomer/thumbnail/wakelet-thumbnail.png" />
+
+    <!--
+      If deploying to a non-root path, replace href="/" with the full path to the project root.
+      For example: href="/polymer-starter-kit/relative-path-example/"
+    -->
+    <base href="/" />
+
+    <link rel="icon" href="https://assets.wakelet.com/logo/favicon.ico" />
+
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/iomokcfebnfiflpgcpcijfkfmafgkjgh" />
+
+    <link rel="canonical" href="https://wakelet.com/" />
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Wakelet" />
+
+    
+
+
+    <script async="" src="https://static-v.tawk.to/697/app.js" charset="UTF-8" crossorigin="*"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=auth2/exm=client/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_1" async=""></script><script src="https://js.hs-banner.com/7869297.js" type="text/javascript" id="cookieBanner-7869297" data-cookieconsent="ignore" data-loader="hs-scriptloader" data-hsjs-portal="7869297" data-hsjs-env="prod"></script><script src="https://js.hscollectedforms.net/collectedforms.js" type="text/javascript" id="CollectedForms-7869297" crossorigin="anonymous" data-leadin-portal-id="7869297" data-leadin-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="7869297" data-hsjs-env="prod"></script><script src="https://js.hs-analytics.net/analytics/1606992300000/7869297.js" type="text/javascript" id="hs-analytics"></script><script src="https://connect.facebook.net/en_US/sdk.js?hash=f34396208e8f17d4587368c80854a84c&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=client/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_0" async=""></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://embed.tawk.to/5f045005223d045fcb7b7612/default" charset="UTF-8" crossorigin="*"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KKMQ83"></script><script type="text/javascript" async="" src="//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"></script><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script src="https://resource.wakelet.com/v2/5.19.0/components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+
+    <script>
+      window.Wakelet = window.Wakelet || {};
+      window.Wakelet.Global = window.Wakelet.Global || {};
+      window.Wakelet.Global.APIURL = 'https://api.wakelet.com';
+      window.Wakelet.Global.GRAPHQLAPI = 'https://graphql.wakelet.com';
+      window.Wakelet.Global.SETTING_API = 'https://settings.wakelet.com';
+      window.Wakelet.Global.UPLOAD_ROOT = 'https://uploads.wakelet.com';
+      window.Wakelet.Global.ACCOUNT_API='https://accounts.wakelet.com';
+      window.Wakelet.Global.PIXEL = 'https://track.wakelet.com';
+      window.Wakelet.Global.FEATURE_TOGGLES = 'easy-reorder,layout,cover-image,twitter-notification';
+      window.Wakelet.Global.STATIC_URL = 'https://resource.wakelet.com/2.13.4';
+
+        window.Wakelet.Global.COOKIE_SET = false;
+
+        window.FEATURE_TOGGLES = {"16-9-images":true,"7-day-referral":true,"anonymous-create-collection":true,"collaborate-by-code-button":true,"collection-sidebar":true,"content-inserter-media":false,"copy-allowed":true,"create-wake-changes":false,"create-wake-onboarding":true,"education-onboarding":true,"fake-save-others-items":true,"flipgrid-onboarding":true,"home-route":false,"immersive-reader":true,"inline-reader":false,"inline-reader-wake":"true","invite-in-collection":true,"language-translator":false,"languages":true,"masonry-layout":true,"multiselect":false,"new-search-design":true,"new-share-dialog":false,"new-user-onboarding":true,"profile-share":true,"push-notifications":true,"real-time":true,"rewards":false,"screencastify":true,"sharetoteams":true,"show-currently-editing":true,"single-sign-on":true,"sort-collections":true,"user-insights":true,"user-insights-prompt":true,"youtube":true,"reactions":false,"auto-save":true,"move-collection":true,"onedrive":true,"shorts-video":true,"spaces":true,"collection-sidebar-permissions":true,"import-google-drive":true,"notifications":true,"permissions":true,"sections":true,"collaborate-by-code":true};
+
+      window.Wakelet.Global.wake = {};
+
+      window.Wakelet.Global.locale = 'en-US';
+
+      window.Wakelet.Global.locale_common = {"buttons":{"followingVerb":"$t(buttons.following)","addToExistingCollection":"Add to existing collection","close":"Close","next":"Next","notify":"Notify","send":"Send","skip":"Skip","reader":"Reader","enterCode":"Enter code","viewItem":"View Item","returnHome":"Return Home","apply":"Apply","login":"Login","signup":"Sign up","freeSignup":"Sign up, it's free","viewOn":"View on {{domain}}","confirm":"Confirm","resend":"Resend","changeImage":"Change Image","followers":"Followers","edit":"Edit","editCollection":"Edit Collection","publicLibrary":"From Public Library","upload":"Upload","addLink":"Add link","connect":"Connect","connected":"Connected","copy":"Copy","create":"Create","join":"Join","disconnect":"Disconnect","back":"Back","saveToBookmarks":"Save to bookmarks","saveToCollection":"Save to collection","following":"Following","follow":"Follow","unfollow":"Unfollow","viewOnVimeo":"View on Vimeo","viewOnYoutube":"View on YouTube","okay":"Okay, got it!","leave":"Leave","save":"Save","deleteCollection":"Delete Collection","share":"Share","add":"Add","cancel":"Cancel","done":"Done"},"labels":{"removeMember":"Remove member","selected":"Selected","deleteSingleItem":"Are you sure you want to delete 1 item?","deleteItems":"Are you sure you want to delete {{count}} items?","current":"Current","unfollowProfile":"Unfollow profile","seeMyItems":"See My Items","seeCollection":"See Collection","savedToMyItems":"Saved to my items","savedToCollection":"Saved to collection","noItemsMatchingFilter":"There are no items matching the filters you used.","changesSaved":"Changes saved","dragAndDropToReorder":"Drag and Drop to reorder","select":"Select","freeToUseSecondary":"You don't need to pay anything to get started","currentlyEditing":"Currently editing","learnMore":"Learn more","freeToUse":"One more thing, we're free to use","showmore":"Show more…","invite_plural":"invites","remove":"Remove","cannotEdit":"Cannot edit this bookmark","shareLink":"Share Link","links":"Links","tweets":"Tweets","deleteBookmark":"Are you sure you want to delete this bookmark?","browserExtension":"browser extension","videos":"Videos","wakeletCollection":"Wakelet Collection","addedBy":"Added by:","addLink":"Add a link","searchBookmarks":"Search Bookmarks","newCollection":"Create a new collection","copyCollection":"Copy collection","people":"People","seeMore":"See more","collectionTitle":"Collection title","email":"Email","bookmarks":"Bookmarks","viewCollection":"View Collection","topPicks":"Top Picks","change":"Change","saveItem":"Save item","searchCollections":"Search Collections","collections":"Collections","groupCollections":"Group collections","delete":"Delete","invite":"Invite","search":"Search","user":"User"},"moveCollectionDialog":{"move":"Move","noSpace":"You don't have any spaces to move this collection to. Create a new space to move collections to it!","button":"Move","description":"Remember, if you move this collection, it will no longer appear on the public profile for this space."},"error":{"invalidEmail":"Invalid email address","invalidResponse":"Invalid response","somethingWentWrongDeletingBookmark":"Oops, something went wrong when deleting the bookmark","somethingWentWrongEditingBookmark":"Oops, something went wrong when editing the bookmark","somethingWentWrongUploadingImage":"Oops! Something went wrong while uploading image","somethingWentWrongUploadingYourImage":"Oops! Something went wrong while uploading your image.","somethingWentWrongWithAlreadyLoadedImage":"Oops! Something went wrong with your already uploaded image.","selectImageType":"Please select a png, jpg or gif.","pageNotFound":"Oops! This page can’t be found.","privateOrMissingPage":"This page is private, has been removed or the link may be incorrect. Please check the link or return to home.","duplicateNotification":"Cannot send duplicate notification","somethingWentWrong":"Oops! Something went wrong"},"of":"of","cookies":{"text":"Wakelet is using {{cookies}} to help give you the best experience we can","cookies":"cookies"},"date":{"pick":"Pick a date","from":"From:","to":"To:","setFilter":"Set date filter"},"toasts":{"notificationSent":"Notification Sent","codeCopied":"Code copied","linkCopied":"Link copied"},"site":{"pageTitle":"Wakelet - Save, curate and share the things you love"},"card":{"video":{"autoPlay":"Auto play next video"},"error":{"description":"The url has been added but we couldn't fetch any details.","title":"There was an error fetching this URL"}},"links":{"educators":"For Educators","privacy":"Privacy","terms":"Terms","rules":"Rules","about":"About","blog":"Blog","brand":"Brand","support":"Support","community":"Community","press":"Press","showcase":"Showcase","home":"Home","explore":"Explore"},"createCollection":{"description":{"placeholder":"Give your collection a description"},"info":"Wakes are private until you make them public. You can always add links or edit wake at any time.","title":{"placeholder":"Give your collection a name"}},"validation":{"required":"Required"},"Add a link to a video, article, image etc":"Add a link to a video, article, image etc...","header":{"dropdown":{"tooltip":"Clicking this button will take you out of your home area, but you will remain logged in","links":{"settings":"Account Settings","profile":"View Public Profile","switchAccount":"Switch Accounts","logout":"Log Out","spaces":"View Spaces"},"apps":{"title":"Get the app:"}}},"email":{"newAddress":"New email address"},"saveItemDialog":{"noCollections":"There are no collections for this profile.","noResults":"There are no results for \"{{searchQuery}}\"."},"readMode":{"notReady":{"help":"Click below to visit the original page","message":"Looks like this site isn’t ready for Read Mode yet!"},"buttons":{"immersiveReader":"Immersive Reader","visitOriginal":"Visit Original"}},"item":{"label":"{{count}} item","label_plural":"{{count}} items"},"createdBy":{"you":"You","label":"Created by"},"delete":{"description":{"p1":"Are you sure you want to delete this Collection? You cannot undo this action."}},"search":{"placeholder":"Enter your search term..."}};
+
+      window.Wakelet.Global.locale_path = 'https://assets.wakelet.com/locales/v37';
+
+      window.Wakelet.Global.supportedLocales = [{"code":"en-US","english_name":"English (US)","local_name":"English (US)","locale":"en","region":"US","is_base_language":true},{"code":"en-GB","english_name":"English (UK)","local_name":"English (UK)","locale":"en","region":"GB","is_base_language":false},{"code":"es-ES","english_name":"Spanish","local_name":"Español","locale":"es","region":"ES","is_base_language":false},{"code":"pl","english_name":"Polish","local_name":"Polski","is_base_language":false},{"code":"hr","english_name":"Croatian","local_name":"Hrvatski","locale":"hr","is_base_language":false},{"code":"it-IT","english_name":"Italian","local_name":"Italiano","locale":"it","region":"IT","is_base_language":false}];
+
+      window.Wakelet.Global.items = {};
+
+      window.Wakelet.Global.collections = {};
+
+      window.Wakelet.Global.spaces = [];
+
+      window.Wakelet.Global.space = {};
+
+      window.Wakelet.Global.profile = {};
+
+      window.Wakelet.Global.viewableProfile = {};
+
+      window.Wakelet.Global.viewableCollections = {};
+
+      window.Wakelet.Global.topPicks = {};
+
+      window.Wakelet.webVersion = '5.19.0';
+
+      window.Wakelet.log = false;
+
+      var isIE10 = false;
+     /*@cc_on
+         if (/^10/.test(@_jscript_version)) {
+             isIE10 = true;
+         }
+     @*/
+      if (isIE10) {
+        //window.location.href = '/assets/browser.html';
+      }
+
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
+      window.Polymer = {rootPath: '/'};
+
+      // Register the base URL
+      const baseUrl = document.querySelector('base').href;
+      const initialStorage = {};
+
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          //navigator.serviceWorker.register('https://resource.wakelet.com/v2/5.19.0/service-worker.js');
+        });
+      }
+    </script>
+
+    <script src="https://resource.wakelet.com/v2/5.19.0/components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="https://resource.wakelet.com/v2/5.19.0/main.bundle.js"></script>
+<custom-style>
+  <style is="custom-style">[hidden] {
+  display: none !important;
+}
+
+</style>
+</custom-style>
+<custom-style>
+  <style is="custom-style">html {
+  --layout_-_display:  flex;;
+
+      --layout-inline_-_display:  inline-flex;;
+
+      --layout-horizontal_-_display:  var(--layout_-_display); --layout-horizontal_-_-ms-flex-direction:  row; --layout-horizontal_-_-webkit-flex-direction:  row; --layout-horizontal_-_flex-direction:  row;;
+
+      --layout-horizontal-reverse_-_display:  var(--layout_-_display); --layout-horizontal-reverse_-_-ms-flex-direction:  row-reverse; --layout-horizontal-reverse_-_-webkit-flex-direction:  row-reverse; --layout-horizontal-reverse_-_flex-direction:  row-reverse;;
+
+      --layout-vertical_-_display:  var(--layout_-_display); --layout-vertical_-_-ms-flex-direction:  column; --layout-vertical_-_-webkit-flex-direction:  column; --layout-vertical_-_flex-direction:  column;;
+
+      --layout-vertical-reverse_-_display:  var(--layout_-_display); --layout-vertical-reverse_-_-ms-flex-direction:  column-reverse; --layout-vertical-reverse_-_-webkit-flex-direction:  column-reverse; --layout-vertical-reverse_-_flex-direction:  column-reverse;;
+
+      --layout-wrap_-_-ms-flex-wrap:  wrap; --layout-wrap_-_-webkit-flex-wrap:  wrap; --layout-wrap_-_flex-wrap:  wrap;;
+
+      --layout-wrap-reverse_-_-ms-flex-wrap:  wrap-reverse; --layout-wrap-reverse_-_-webkit-flex-wrap:  wrap-reverse; --layout-wrap-reverse_-_flex-wrap:  wrap-reverse;;
+
+      --layout-flex-auto_-_-ms-flex:  1 1 auto; --layout-flex-auto_-_-webkit-flex:  1 1 auto; --layout-flex-auto_-_flex:  1 1 auto;;
+
+      --layout-flex-none_-_-ms-flex:  none; --layout-flex-none_-_-webkit-flex:  none; --layout-flex-none_-_flex:  none;;
+
+      --layout-flex_-_-ms-flex:  1 1 0.000000001px; --layout-flex_-_-webkit-flex:  1; --layout-flex_-_flex:  1; --layout-flex_-_-webkit-flex-basis:  0.000000001px; --layout-flex_-_flex-basis:  0.000000001px;;
+
+      --layout-flex-2_-_-ms-flex:  2; --layout-flex-2_-_-webkit-flex:  2; --layout-flex-2_-_flex:  2;;
+
+      --layout-flex-3_-_-ms-flex:  3; --layout-flex-3_-_-webkit-flex:  3; --layout-flex-3_-_flex:  3;;
+
+      --layout-flex-4_-_-ms-flex:  4; --layout-flex-4_-_-webkit-flex:  4; --layout-flex-4_-_flex:  4;;
+
+      --layout-flex-5_-_-ms-flex:  5; --layout-flex-5_-_-webkit-flex:  5; --layout-flex-5_-_flex:  5;;
+
+      --layout-flex-6_-_-ms-flex:  6; --layout-flex-6_-_-webkit-flex:  6; --layout-flex-6_-_flex:  6;;
+
+      --layout-flex-7_-_-ms-flex:  7; --layout-flex-7_-_-webkit-flex:  7; --layout-flex-7_-_flex:  7;;
+
+      --layout-flex-8_-_-ms-flex:  8; --layout-flex-8_-_-webkit-flex:  8; --layout-flex-8_-_flex:  8;;
+
+      --layout-flex-9_-_-ms-flex:  9; --layout-flex-9_-_-webkit-flex:  9; --layout-flex-9_-_flex:  9;;
+
+      --layout-flex-10_-_-ms-flex:  10; --layout-flex-10_-_-webkit-flex:  10; --layout-flex-10_-_flex:  10;;
+
+      --layout-flex-11_-_-ms-flex:  11; --layout-flex-11_-_-webkit-flex:  11; --layout-flex-11_-_flex:  11;;
+
+      --layout-flex-12_-_-ms-flex:  12; --layout-flex-12_-_-webkit-flex:  12; --layout-flex-12_-_flex:  12;;
+
+      
+
+      --layout-start_-_-ms-flex-align:  start; --layout-start_-_-webkit-align-items:  flex-start; --layout-start_-_align-items:  flex-start;;
+
+      --layout-center_-_-ms-flex-align:  center; --layout-center_-_-webkit-align-items:  center; --layout-center_-_align-items:  center;;
+
+      --layout-end_-_-ms-flex-align:  end; --layout-end_-_-webkit-align-items:  flex-end; --layout-end_-_align-items:  flex-end;;
+
+      --layout-baseline_-_-ms-flex-align:  baseline; --layout-baseline_-_-webkit-align-items:  baseline; --layout-baseline_-_align-items:  baseline;;
+
+      
+
+      --layout-start-justified_-_-ms-flex-pack:  start; --layout-start-justified_-_-webkit-justify-content:  flex-start; --layout-start-justified_-_justify-content:  flex-start;;
+
+      --layout-center-justified_-_-ms-flex-pack:  center; --layout-center-justified_-_-webkit-justify-content:  center; --layout-center-justified_-_justify-content:  center;;
+
+      --layout-end-justified_-_-ms-flex-pack:  end; --layout-end-justified_-_-webkit-justify-content:  flex-end; --layout-end-justified_-_justify-content:  flex-end;;
+
+      --layout-around-justified_-_-ms-flex-pack:  distribute; --layout-around-justified_-_-webkit-justify-content:  space-around; --layout-around-justified_-_justify-content:  space-around;;
+
+      --layout-justified_-_-ms-flex-pack:  justify; --layout-justified_-_-webkit-justify-content:  space-between; --layout-justified_-_justify-content:  space-between;;
+
+      --layout-center-center_-_-ms-flex-align:  var(--layout-center_-_-ms-flex-align); --layout-center-center_-_-webkit-align-items:  var(--layout-center_-_-webkit-align-items); --layout-center-center_-_align-items:  var(--layout-center_-_align-items); --layout-center-center_-_-ms-flex-pack:  var(--layout-center-justified_-_-ms-flex-pack); --layout-center-center_-_-webkit-justify-content:  var(--layout-center-justified_-_-webkit-justify-content); --layout-center-center_-_justify-content:  var(--layout-center-justified_-_justify-content);;
+
+      
+
+      --layout-self-start_-_-ms-align-self:  flex-start; --layout-self-start_-_-webkit-align-self:  flex-start; --layout-self-start_-_align-self:  flex-start;;
+
+      --layout-self-center_-_-ms-align-self:  center; --layout-self-center_-_-webkit-align-self:  center; --layout-self-center_-_align-self:  center;;
+
+      --layout-self-end_-_-ms-align-self:  flex-end; --layout-self-end_-_-webkit-align-self:  flex-end; --layout-self-end_-_align-self:  flex-end;;
+
+      --layout-self-stretch_-_-ms-align-self:  stretch; --layout-self-stretch_-_-webkit-align-self:  stretch; --layout-self-stretch_-_align-self:  stretch;;
+
+      --layout-self-baseline_-_-ms-align-self:  baseline; --layout-self-baseline_-_-webkit-align-self:  baseline; --layout-self-baseline_-_align-self:  baseline;;
+
+      
+
+      --layout-start-aligned_-_-ms-flex-line-pack:  start; --layout-start-aligned_-_-ms-align-content:  flex-start; --layout-start-aligned_-_-webkit-align-content:  flex-start; --layout-start-aligned_-_align-content:  flex-start;;
+
+      --layout-end-aligned_-_-ms-flex-line-pack:  end; --layout-end-aligned_-_-ms-align-content:  flex-end; --layout-end-aligned_-_-webkit-align-content:  flex-end; --layout-end-aligned_-_align-content:  flex-end;;
+
+      --layout-center-aligned_-_-ms-flex-line-pack:  center; --layout-center-aligned_-_-ms-align-content:  center; --layout-center-aligned_-_-webkit-align-content:  center; --layout-center-aligned_-_align-content:  center;;
+
+      --layout-between-aligned_-_-ms-flex-line-pack:  justify; --layout-between-aligned_-_-ms-align-content:  space-between; --layout-between-aligned_-_-webkit-align-content:  space-between; --layout-between-aligned_-_align-content:  space-between;;
+
+      --layout-around-aligned_-_-ms-flex-line-pack:  distribute; --layout-around-aligned_-_-ms-align-content:  space-around; --layout-around-aligned_-_-webkit-align-content:  space-around; --layout-around-aligned_-_align-content:  space-around;;
+
+      
+
+      --layout-block_-_display:  block;;
+
+      --layout-invisible_-_visibility:  hidden !important;;
+
+      --layout-relative_-_position:  relative;;
+
+      --layout-fit_-_position:  absolute; --layout-fit_-_top:  0; --layout-fit_-_right:  0; --layout-fit_-_bottom:  0; --layout-fit_-_left:  0;;
+
+      --layout-scroll_-_-webkit-overflow-scrolling:  touch; --layout-scroll_-_overflow:  auto;;
+
+      --layout-fullbleed_-_margin:  0; --layout-fullbleed_-_height:  100vh;;
+
+      
+
+      --layout-fixed-top_-_position:  fixed; --layout-fixed-top_-_top:  0; --layout-fixed-top_-_left:  0; --layout-fixed-top_-_right:  0;;
+
+      --layout-fixed-right_-_position:  fixed; --layout-fixed-right_-_top:  0; --layout-fixed-right_-_right:  0; --layout-fixed-right_-_bottom:  0;;
+
+      --layout-fixed-bottom_-_position:  fixed; --layout-fixed-bottom_-_right:  0; --layout-fixed-bottom_-_bottom:  0; --layout-fixed-bottom_-_left:  0;;
+
+      --layout-fixed-left_-_position:  fixed; --layout-fixed-left_-_top:  0; --layout-fixed-left_-_bottom:  0; --layout-fixed-left_-_left:  0;;
+}
+
+</style>
+</custom-style><style>[hidden] { display: none !important; }</style>
+<custom-style>
+  <style is="custom-style">html {
+  --google-red-100: #f4c7c3;
+      --google-red-300: #e67c73;
+      --google-red-500: #db4437;
+      --google-red-700: #c53929;
+
+      --google-blue-100: #c6dafc;
+      --google-blue-300: #7baaf7;
+      --google-blue-500: #4285f4;
+      --google-blue-700: #3367d6;
+
+      --google-green-100: #b7e1cd;
+      --google-green-300: #57bb8a;
+      --google-green-500: #0f9d58;
+      --google-green-700: #0b8043;
+
+      --google-yellow-100: #fce8b2;
+      --google-yellow-300: #f7cb4d;
+      --google-yellow-500: #f4b400;
+      --google-yellow-700: #f09300;
+
+      --google-grey-100: #f5f5f5;
+      --google-grey-300: #e0e0e0;
+      --google-grey-500: #9e9e9e;
+      --google-grey-700: #616161;
+
+      
+
+      --paper-red-50: #ffebee;
+      --paper-red-100: #ffcdd2;
+      --paper-red-200: #ef9a9a;
+      --paper-red-300: #e57373;
+      --paper-red-400: #ef5350;
+      --paper-red-500: #f44336;
+      --paper-red-600: #e53935;
+      --paper-red-700: #d32f2f;
+      --paper-red-800: #c62828;
+      --paper-red-900: #b71c1c;
+      --paper-red-a100: #ff8a80;
+      --paper-red-a200: #ff5252;
+      --paper-red-a400: #ff1744;
+      --paper-red-a700: #d50000;
+
+      --paper-pink-50: #fce4ec;
+      --paper-pink-100: #f8bbd0;
+      --paper-pink-200: #f48fb1;
+      --paper-pink-300: #f06292;
+      --paper-pink-400: #ec407a;
+      --paper-pink-500: #e91e63;
+      --paper-pink-600: #d81b60;
+      --paper-pink-700: #c2185b;
+      --paper-pink-800: #ad1457;
+      --paper-pink-900: #880e4f;
+      --paper-pink-a100: #ff80ab;
+      --paper-pink-a200: #ff4081;
+      --paper-pink-a400: #f50057;
+      --paper-pink-a700: #c51162;
+
+      --paper-purple-50: #f3e5f5;
+      --paper-purple-100: #e1bee7;
+      --paper-purple-200: #ce93d8;
+      --paper-purple-300: #ba68c8;
+      --paper-purple-400: #ab47bc;
+      --paper-purple-500: #9c27b0;
+      --paper-purple-600: #8e24aa;
+      --paper-purple-700: #7b1fa2;
+      --paper-purple-800: #6a1b9a;
+      --paper-purple-900: #4a148c;
+      --paper-purple-a100: #ea80fc;
+      --paper-purple-a200: #e040fb;
+      --paper-purple-a400: #d500f9;
+      --paper-purple-a700: #aa00ff;
+
+      --paper-deep-purple-50: #ede7f6;
+      --paper-deep-purple-100: #d1c4e9;
+      --paper-deep-purple-200: #b39ddb;
+      --paper-deep-purple-300: #9575cd;
+      --paper-deep-purple-400: #7e57c2;
+      --paper-deep-purple-500: #673ab7;
+      --paper-deep-purple-600: #5e35b1;
+      --paper-deep-purple-700: #512da8;
+      --paper-deep-purple-800: #4527a0;
+      --paper-deep-purple-900: #311b92;
+      --paper-deep-purple-a100: #b388ff;
+      --paper-deep-purple-a200: #7c4dff;
+      --paper-deep-purple-a400: #651fff;
+      --paper-deep-purple-a700: #6200ea;
+
+      --paper-indigo-50: #e8eaf6;
+      --paper-indigo-100: #c5cae9;
+      --paper-indigo-200: #9fa8da;
+      --paper-indigo-300: #7986cb;
+      --paper-indigo-400: #5c6bc0;
+      --paper-indigo-500: #3f51b5;
+      --paper-indigo-600: #3949ab;
+      --paper-indigo-700: #303f9f;
+      --paper-indigo-800: #283593;
+      --paper-indigo-900: #1a237e;
+      --paper-indigo-a100: #8c9eff;
+      --paper-indigo-a200: #536dfe;
+      --paper-indigo-a400: #3d5afe;
+      --paper-indigo-a700: #304ffe;
+
+      --paper-blue-50: #e3f2fd;
+      --paper-blue-100: #bbdefb;
+      --paper-blue-200: #90caf9;
+      --paper-blue-300: #64b5f6;
+      --paper-blue-400: #42a5f5;
+      --paper-blue-500: #2196f3;
+      --paper-blue-600: #1e88e5;
+      --paper-blue-700: #1976d2;
+      --paper-blue-800: #1565c0;
+      --paper-blue-900: #0d47a1;
+      --paper-blue-a100: #82b1ff;
+      --paper-blue-a200: #448aff;
+      --paper-blue-a400: #2979ff;
+      --paper-blue-a700: #2962ff;
+
+      --paper-light-blue-50: #e1f5fe;
+      --paper-light-blue-100: #b3e5fc;
+      --paper-light-blue-200: #81d4fa;
+      --paper-light-blue-300: #4fc3f7;
+      --paper-light-blue-400: #29b6f6;
+      --paper-light-blue-500: #03a9f4;
+      --paper-light-blue-600: #039be5;
+      --paper-light-blue-700: #0288d1;
+      --paper-light-blue-800: #0277bd;
+      --paper-light-blue-900: #01579b;
+      --paper-light-blue-a100: #80d8ff;
+      --paper-light-blue-a200: #40c4ff;
+      --paper-light-blue-a400: #00b0ff;
+      --paper-light-blue-a700: #0091ea;
+
+      --paper-cyan-50: #e0f7fa;
+      --paper-cyan-100: #b2ebf2;
+      --paper-cyan-200: #80deea;
+      --paper-cyan-300: #4dd0e1;
+      --paper-cyan-400: #26c6da;
+      --paper-cyan-500: #00bcd4;
+      --paper-cyan-600: #00acc1;
+      --paper-cyan-700: #0097a7;
+      --paper-cyan-800: #00838f;
+      --paper-cyan-900: #006064;
+      --paper-cyan-a100: #84ffff;
+      --paper-cyan-a200: #18ffff;
+      --paper-cyan-a400: #00e5ff;
+      --paper-cyan-a700: #00b8d4;
+
+      --paper-teal-50: #e0f2f1;
+      --paper-teal-100: #b2dfdb;
+      --paper-teal-200: #80cbc4;
+      --paper-teal-300: #4db6ac;
+      --paper-teal-400: #26a69a;
+      --paper-teal-500: #009688;
+      --paper-teal-600: #00897b;
+      --paper-teal-700: #00796b;
+      --paper-teal-800: #00695c;
+      --paper-teal-900: #004d40;
+      --paper-teal-a100: #a7ffeb;
+      --paper-teal-a200: #64ffda;
+      --paper-teal-a400: #1de9b6;
+      --paper-teal-a700: #00bfa5;
+
+      --paper-green-50: #e8f5e9;
+      --paper-green-100: #c8e6c9;
+      --paper-green-200: #a5d6a7;
+      --paper-green-300: #81c784;
+      --paper-green-400: #66bb6a;
+      --paper-green-500: #4caf50;
+      --paper-green-600: #43a047;
+      --paper-green-700: #388e3c;
+      --paper-green-800: #2e7d32;
+      --paper-green-900: #1b5e20;
+      --paper-green-a100: #b9f6ca;
+      --paper-green-a200: #69f0ae;
+      --paper-green-a400: #00e676;
+      --paper-green-a700: #00c853;
+
+      --paper-light-green-50: #f1f8e9;
+      --paper-light-green-100: #dcedc8;
+      --paper-light-green-200: #c5e1a5;
+      --paper-light-green-300: #aed581;
+      --paper-light-green-400: #9ccc65;
+      --paper-light-green-500: #8bc34a;
+      --paper-light-green-600: #7cb342;
+      --paper-light-green-700: #689f38;
+      --paper-light-green-800: #558b2f;
+      --paper-light-green-900: #33691e;
+      --paper-light-green-a100: #ccff90;
+      --paper-light-green-a200: #b2ff59;
+      --paper-light-green-a400: #76ff03;
+      --paper-light-green-a700: #64dd17;
+
+      --paper-lime-50: #f9fbe7;
+      --paper-lime-100: #f0f4c3;
+      --paper-lime-200: #e6ee9c;
+      --paper-lime-300: #dce775;
+      --paper-lime-400: #d4e157;
+      --paper-lime-500: #cddc39;
+      --paper-lime-600: #c0ca33;
+      --paper-lime-700: #afb42b;
+      --paper-lime-800: #9e9d24;
+      --paper-lime-900: #827717;
+      --paper-lime-a100: #f4ff81;
+      --paper-lime-a200: #eeff41;
+      --paper-lime-a400: #c6ff00;
+      --paper-lime-a700: #aeea00;
+
+      --paper-yellow-50: #fffde7;
+      --paper-yellow-100: #fff9c4;
+      --paper-yellow-200: #fff59d;
+      --paper-yellow-300: #fff176;
+      --paper-yellow-400: #ffee58;
+      --paper-yellow-500: #ffeb3b;
+      --paper-yellow-600: #fdd835;
+      --paper-yellow-700: #fbc02d;
+      --paper-yellow-800: #f9a825;
+      --paper-yellow-900: #f57f17;
+      --paper-yellow-a100: #ffff8d;
+      --paper-yellow-a200: #ffff00;
+      --paper-yellow-a400: #ffea00;
+      --paper-yellow-a700: #ffd600;
+
+      --paper-amber-50: #fff8e1;
+      --paper-amber-100: #ffecb3;
+      --paper-amber-200: #ffe082;
+      --paper-amber-300: #ffd54f;
+      --paper-amber-400: #ffca28;
+      --paper-amber-500: #ffc107;
+      --paper-amber-600: #ffb300;
+      --paper-amber-700: #ffa000;
+      --paper-amber-800: #ff8f00;
+      --paper-amber-900: #ff6f00;
+      --paper-amber-a100: #ffe57f;
+      --paper-amber-a200: #ffd740;
+      --paper-amber-a400: #ffc400;
+      --paper-amber-a700: #ffab00;
+
+      --paper-orange-50: #fff3e0;
+      --paper-orange-100: #ffe0b2;
+      --paper-orange-200: #ffcc80;
+      --paper-orange-300: #ffb74d;
+      --paper-orange-400: #ffa726;
+      --paper-orange-500: #ff9800;
+      --paper-orange-600: #fb8c00;
+      --paper-orange-700: #f57c00;
+      --paper-orange-800: #ef6c00;
+      --paper-orange-900: #e65100;
+      --paper-orange-a100: #ffd180;
+      --paper-orange-a200: #ffab40;
+      --paper-orange-a400: #ff9100;
+      --paper-orange-a700: #ff6500;
+
+      --paper-deep-orange-50: #fbe9e7;
+      --paper-deep-orange-100: #ffccbc;
+      --paper-deep-orange-200: #ffab91;
+      --paper-deep-orange-300: #ff8a65;
+      --paper-deep-orange-400: #ff7043;
+      --paper-deep-orange-500: #ff5722;
+      --paper-deep-orange-600: #f4511e;
+      --paper-deep-orange-700: #e64a19;
+      --paper-deep-orange-800: #d84315;
+      --paper-deep-orange-900: #bf360c;
+      --paper-deep-orange-a100: #ff9e80;
+      --paper-deep-orange-a200: #ff6e40;
+      --paper-deep-orange-a400: #ff3d00;
+      --paper-deep-orange-a700: #dd2c00;
+
+      --paper-brown-50: #efebe9;
+      --paper-brown-100: #d7ccc8;
+      --paper-brown-200: #bcaaa4;
+      --paper-brown-300: #a1887f;
+      --paper-brown-400: #8d6e63;
+      --paper-brown-500: #795548;
+      --paper-brown-600: #6d4c41;
+      --paper-brown-700: #5d4037;
+      --paper-brown-800: #4e342e;
+      --paper-brown-900: #3e2723;
+
+      --paper-grey-50: #fafafa;
+      --paper-grey-100: #f5f5f5;
+      --paper-grey-200: #eeeeee;
+      --paper-grey-300: #e0e0e0;
+      --paper-grey-400: #bdbdbd;
+      --paper-grey-500: #9e9e9e;
+      --paper-grey-600: #757575;
+      --paper-grey-700: #616161;
+      --paper-grey-800: #424242;
+      --paper-grey-900: #212121;
+
+      --paper-blue-grey-50: #eceff1;
+      --paper-blue-grey-100: #cfd8dc;
+      --paper-blue-grey-200: #b0bec5;
+      --paper-blue-grey-300: #90a4ae;
+      --paper-blue-grey-400: #78909c;
+      --paper-blue-grey-500: #607d8b;
+      --paper-blue-grey-600: #546e7a;
+      --paper-blue-grey-700: #455a64;
+      --paper-blue-grey-800: #37474f;
+      --paper-blue-grey-900: #263238;
+
+      
+      --dark-divider-opacity: 0.12;
+      --dark-disabled-opacity: 0.38; 
+      --dark-secondary-opacity: 0.54;
+      --dark-primary-opacity: 0.87;
+
+      
+      --light-divider-opacity: 0.12;
+      --light-disabled-opacity: 0.3; 
+      --light-secondary-opacity: 0.7;
+      --light-primary-opacity: 1.0;
+}
+
+</style>
+</custom-style>
+
+<custom-style>
+  <style is="custom-style">html {
+  --primary-text-color: var(--light-theme-text-color);
+      --primary-background-color: var(--light-theme-background-color);
+      --secondary-text-color: var(--light-theme-secondary-color);
+      --disabled-text-color: var(--light-theme-disabled-color);
+      --divider-color: var(--light-theme-divider-color);
+      --error-color: var(--paper-deep-orange-a700);
+
+      
+      --primary-color: var(--paper-indigo-500);
+      --light-primary-color: var(--paper-indigo-100);
+      --dark-primary-color: var(--paper-indigo-700);
+
+      --accent-color: var(--paper-pink-a200);
+      --light-accent-color: var(--paper-pink-a100);
+      --dark-accent-color: var(--paper-pink-a400);
+
+
+      
+      --light-theme-background-color: #ffffff;
+      --light-theme-base-color: #000000;
+      --light-theme-text-color: var(--paper-grey-900);
+      --light-theme-secondary-color: #737373;  
+      --light-theme-disabled-color: #9b9b9b;  
+      --light-theme-divider-color: #dbdbdb;
+
+      
+      --dark-theme-background-color: var(--paper-grey-900);
+      --dark-theme-base-color: #ffffff;
+      --dark-theme-text-color: #ffffff;
+      --dark-theme-secondary-color: #bcbcbc;  
+      --dark-theme-disabled-color: #646464;  
+      --dark-theme-divider-color: #3c3c3c;
+
+      
+      --text-primary-color: var(--dark-theme-text-color);
+      --default-primary-color: var(--primary-color);
+}
+
+</style>
+</custom-style>
+/* Most common used flex styles*/
+<dom-module id="iron-flex">
+  <template>
+    <style>
+      .layout.horizontal,
+      .layout.vertical {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      .layout.inline {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+      }
+
+      .layout.horizontal {
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+      }
+
+      .layout.vertical {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+
+      .layout.wrap {
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .layout.no-wrap {
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+      }
+
+      .layout.center,
+      .layout.center-center {
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .layout.center-justified,
+      .layout.center-center {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+
+      .flex {
+        -ms-flex: 1 1 0.000000001px;
+        -webkit-flex: 1;
+        flex: 1;
+        -webkit-flex-basis: 0.000000001px;
+        flex-basis: 0.000000001px;
+      }
+
+      .flex-auto {
+        -ms-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+      }
+
+      .flex-none {
+        -ms-flex: none;
+        -webkit-flex: none;
+        flex: none;
+      }
+    </style>
+  </template>
+</dom-module>
+/* Basic flexbox reverse styles */
+<dom-module id="iron-flex-reverse">
+  <template>
+    <style>
+      .layout.horizontal-reverse,
+      .layout.vertical-reverse {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      .layout.horizontal-reverse {
+        -ms-flex-direction: row-reverse;
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+
+      .layout.vertical-reverse {
+        -ms-flex-direction: column-reverse;
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+      }
+
+      .layout.wrap-reverse {
+        -ms-flex-wrap: wrap-reverse;
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+      }
+    </style>
+  </template>
+</dom-module>
+/* Flexbox alignment */
+<dom-module id="iron-flex-alignment">
+  <template>
+    <style>
+      /**
+       * Alignment in cross axis.
+       */
+      .layout.start {
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+      }
+
+      .layout.center,
+      .layout.center-center {
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .layout.end {
+        -ms-flex-align: end;
+        -webkit-align-items: flex-end;
+        align-items: flex-end;
+      }
+
+      .layout.baseline {
+        -ms-flex-align: baseline;
+        -webkit-align-items: baseline;
+        align-items: baseline;
+      }
+
+      /**
+       * Alignment in main axis.
+       */
+      .layout.start-justified {
+        -ms-flex-pack: start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+      }
+
+      .layout.center-justified,
+      .layout.center-center {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+
+      .layout.end-justified {
+        -ms-flex-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+      }
+
+      .layout.around-justified {
+        -ms-flex-pack: distribute;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+      }
+
+      .layout.justified {
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+      }
+
+      /**
+       * Self alignment.
+       */
+      .self-start {
+        -ms-align-self: flex-start;
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
+      }
+
+      .self-center {
+        -ms-align-self: center;
+        -webkit-align-self: center;
+        align-self: center;
+      }
+
+      .self-end {
+        -ms-align-self: flex-end;
+        -webkit-align-self: flex-end;
+        align-self: flex-end;
+      }
+
+      .self-stretch {
+        -ms-align-self: stretch;
+        -webkit-align-self: stretch;
+        align-self: stretch;
+      }
+
+      .self-baseline {
+        -ms-align-self: baseline;
+        -webkit-align-self: baseline;
+        align-self: baseline;
+      }
+
+      /**
+       * multi-line alignment in main axis.
+       */
+      .layout.start-aligned {
+        -ms-flex-line-pack: start;  /* IE10 */
+        -ms-align-content: flex-start;
+        -webkit-align-content: flex-start;
+        align-content: flex-start;
+      }
+
+      .layout.end-aligned {
+        -ms-flex-line-pack: end;  /* IE10 */
+        -ms-align-content: flex-end;
+        -webkit-align-content: flex-end;
+        align-content: flex-end;
+      }
+
+      .layout.center-aligned {
+        -ms-flex-line-pack: center;  /* IE10 */
+        -ms-align-content: center;
+        -webkit-align-content: center;
+        align-content: center;
+      }
+
+      .layout.between-aligned {
+        -ms-flex-line-pack: justify;  /* IE10 */
+        -ms-align-content: space-between;
+        -webkit-align-content: space-between;
+        align-content: space-between;
+      }
+
+      .layout.around-aligned {
+        -ms-flex-line-pack: distribute;  /* IE10 */
+        -ms-align-content: space-around;
+        -webkit-align-content: space-around;
+        align-content: space-around;
+      }
+    </style>
+  </template>
+</dom-module>
+/* Non-flexbox positioning helper styles */
+<dom-module id="iron-flex-factors">
+  <template>
+    <style>
+      .flex,
+      .flex-1 {
+        -ms-flex: 1 1 0.000000001px;
+        -webkit-flex: 1;
+        flex: 1;
+        -webkit-flex-basis: 0.000000001px;
+        flex-basis: 0.000000001px;
+      }
+
+      .flex-2 {
+        -ms-flex: 2;
+        -webkit-flex: 2;
+        flex: 2;
+      }
+
+      .flex-3 {
+        -ms-flex: 3;
+        -webkit-flex: 3;
+        flex: 3;
+      }
+
+      .flex-4 {
+        -ms-flex: 4;
+        -webkit-flex: 4;
+        flex: 4;
+      }
+
+      .flex-5 {
+        -ms-flex: 5;
+        -webkit-flex: 5;
+        flex: 5;
+      }
+
+      .flex-6 {
+        -ms-flex: 6;
+        -webkit-flex: 6;
+        flex: 6;
+      }
+
+      .flex-7 {
+        -ms-flex: 7;
+        -webkit-flex: 7;
+        flex: 7;
+      }
+
+      .flex-8 {
+        -ms-flex: 8;
+        -webkit-flex: 8;
+        flex: 8;
+      }
+
+      .flex-9 {
+        -ms-flex: 9;
+        -webkit-flex: 9;
+        flex: 9;
+      }
+
+      .flex-10 {
+        -ms-flex: 10;
+        -webkit-flex: 10;
+        flex: 10;
+      }
+
+      .flex-11 {
+        -ms-flex: 11;
+        -webkit-flex: 11;
+        flex: 11;
+      }
+
+      .flex-12 {
+        -ms-flex: 12;
+        -webkit-flex: 12;
+        flex: 12;
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="iron-positioning">
+  <template>
+    <style>
+      .block {
+        display: block;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .invisible {
+        visibility: hidden !important;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .fit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      body.fullbleed {
+        margin: 0;
+        height: 100vh;
+      }
+
+      .scroll {
+        -webkit-overflow-scrolling: touch;
+        overflow: auto;
+      }
+
+      /* fixed position */
+      .fixed-bottom,
+      .fixed-left,
+      .fixed-right,
+      .fixed-top {
+        position: fixed;
+      }
+
+      .fixed-top {
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .fixed-right {
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .fixed-bottom {
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .fixed-left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+  </template>
+</dom-module>
+
+<custom-style>
+  <style is="custom-style">html {
+  --shadow-transition_-_transition:  box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);;
+
+      --shadow-none_-_box-shadow:  none;;
+
+      
+
+      --shadow-elevation-2dp_-_box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2);;
+
+      --shadow-elevation-3dp_-_box-shadow:  0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 8px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 3px -2px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-4dp_-_box-shadow:  0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-6dp_-_box-shadow:  0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 5px -1px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-8dp_-_box-shadow:  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    0 5px 5px -3px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-12dp_-_box-shadow:  0 12px 16px 1px rgba(0, 0, 0, 0.14),
+                    0 4px 22px 3px rgba(0, 0, 0, 0.12),
+                    0 6px 7px -4px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-16dp_-_box-shadow:  0 16px 24px 2px rgba(0, 0, 0, 0.14),
+                    0  6px 30px 5px rgba(0, 0, 0, 0.12),
+                    0  8px 10px -5px rgba(0, 0, 0, 0.4);;
+
+      --shadow-elevation-24dp_-_box-shadow:  0 24px 38px 3px rgba(0, 0, 0, 0.14),
+                    0 9px 46px 8px rgba(0, 0, 0, 0.12),
+                    0 11px 15px -7px rgba(0, 0, 0, 0.4);;
+}
+
+</style>
+</custom-style>
+<dom-module id="paper-material-styles">
+  <template>
+    <style>
+      html {
+        --paper-material: {
+          display: block;
+          position: relative;
+        };
+        --paper-material-elevation-1: {
+          @apply --shadow-elevation-2dp;
+        };
+        --paper-material-elevation-2: {
+          @apply --shadow-elevation-4dp;
+        };
+        --paper-material-elevation-3: {
+          @apply --shadow-elevation-6dp;
+        };
+        --paper-material-elevation-4: {
+          @apply --shadow-elevation-8dp;
+        };
+        --paper-material-elevation-5: {
+          @apply --shadow-elevation-16dp;
+        };
+      }
+      .paper-material {
+        @apply --paper-material;
+      }
+      .paper-material[elevation="1"] {
+        @apply --paper-material-elevation-1;
+      }
+      .paper-material[elevation="2"] {
+        @apply --paper-material-elevation-2;
+      }
+      .paper-material[elevation="3"] {
+        @apply --paper-material-elevation-3;
+      }
+      .paper-material[elevation="4"] {
+        @apply --paper-material-elevation-4;
+      }
+      .paper-material[elevation="5"] {
+        @apply --paper-material-elevation-5;
+      }
+
+      /* Duplicate the styles because of https://github.com/webcomponents/shadycss/issues/193 */
+      :host {
+        --paper-material: {
+          display: block;
+          position: relative;
+        };
+        --paper-material-elevation-1: {
+          @apply --shadow-elevation-2dp;
+        };
+        --paper-material-elevation-2: {
+          @apply --shadow-elevation-4dp;
+        };
+        --paper-material-elevation-3: {
+          @apply --shadow-elevation-6dp;
+        };
+        --paper-material-elevation-4: {
+          @apply --shadow-elevation-8dp;
+        };
+        --paper-material-elevation-5: {
+          @apply --shadow-elevation-16dp;
+        };
+      }
+      :host(.paper-material) {
+        @apply --paper-material;
+      }
+      :host(.paper-material[elevation="1"]) {
+        @apply --paper-material-elevation-1;
+      }
+      :host(.paper-material[elevation="2"]) {
+        @apply --paper-material-elevation-2;
+      }
+      :host(.paper-material[elevation="3"]) {
+        @apply --paper-material-elevation-3;
+      }
+      :host(.paper-material[elevation="4"]) {
+        @apply --paper-material-elevation-4;
+      }
+      :host(.paper-material[elevation="5"]) {
+        @apply --paper-material-elevation-5;
+      }
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-helpers">
+  <template>
+    <style>
+
+        --wk-transition-slow: 1.2s;
+        --wk-transition-medium: 0.8s;
+        --wk-transition-fast: 0.4s;
+        --wk-transition-xfast: 0.2s;
+
+        .width--full {
+          width: 100%;
+        }
+
+        .stop-scrolling {
+          height: 100%;
+          overflow: hidden;
+        }
+
+        /* Position */
+        /*---------------------------------------*/
+
+        .t0 {
+            top: 0;
+        }
+
+        .r0 {
+            right: 0;
+        }
+
+        .b0 {
+            bottom: 0;
+        }
+
+        .l0 {
+            left: 0;
+        }
+
+        .t50p {
+          top: 50%;
+        }
+
+        .l50p {
+          left: 50%;
+        }
+
+        .absolute {
+          position: absolute;
+        }
+
+        .relative {
+          position: relative;
+        }
+
+        .fixed {
+          position: fixed;
+        }
+
+        .sticky {
+          position: -webkit-sticky;
+          position: sticky;
+        }
+
+        /* Vertical Alignment */
+        /*---------------------------------------*/
+
+        .vertical-top {
+            vertical-align: top;
+        }
+
+        .vertical-middle {
+          vertical-align: middle;
+        }
+
+        .vertical-bottom {
+          vertical-align: bottom;
+        }
+
+        /* Text colours */
+        /*---------------------------------------*/
+
+        .text--primary {
+          color: var(--wk-primary-green);
+        }
+
+        .text--primary-blue {
+          color: var(--wk-primary-blue);
+        }
+
+        .text--secondary {
+          color: var(--wk-brand-grey-d);
+        }
+
+        .text--default {
+          color: var(--wk-secondary-color);
+        }
+
+        .text--light {
+          color: var(--wk-light-color);
+        }
+
+        .text--warning {
+          color: var(--wk-warning-color);
+        }
+
+        /* Background colours */
+        /*---------------------------------------*/
+
+        .bg--primary {
+            background-color: var(--wk-primary-green);
+        }
+
+        .bg--primary-blue {
+            background-color: var(--wk-primary-blue);
+        }
+
+        .bg--default {
+            background-color: var(--wk-light-color);
+        }
+
+        .bg--light {
+          background-color: var(--wk-light-color);
+        }
+
+        .bg--dark {
+          background-color: var(--wk-secondary-color);
+        }
+
+
+        /* Border radius */
+        /*---------------------------------------*/
+
+        .br--none {
+          border-radius: 0;
+        }
+
+        .br--xs {
+          border-radius: 2px;
+        }
+
+        .br--s {
+          border-radius: 3px;
+        }
+
+        .br--m {
+          border-radius: 4px;
+        }
+
+        .br--l {
+          border-radius: 5px;
+        }
+
+        .br--full {
+          border-radius: 1000px;
+        }
+
+        .br--circle {
+          border-radius: 50%;
+        }
+
+        /* Cursor */
+        /*---------------------------------------*/
+
+        .cursor--default {
+          cursor: default;
+        }
+
+        .cursor--pointer {
+          cursor: pointer;
+        }
+
+        .cursor--zoom-in {
+            cursor: zoom-in;
+        }
+
+        .cursor--zoom-out {
+            cursor: zoom-out;
+        }
+
+        .pointer-events--none{
+          pointer-events: none;
+        }
+
+        /* Overflow */
+        /*---------------------------------------*/
+
+        .overflow--hidden {
+          overflow: hidden;
+        }
+
+        .overflow--scroll {
+          overflow: scroll;
+        }
+
+        .overflow--visible {
+          overflow: visible
+        }
+
+        .overflow--auto {
+          overflow: auto;
+        }
+
+        .overflow-y--hidden {
+          overflow-y: hidden;
+        }
+
+        .overflow-y--scroll {
+          overflow-y: scroll;
+        }
+
+        .overflow-y--auto {
+          overflow-y: auto;
+        }
+
+        .overflow-x--hidden {
+          overflow-x: hidden;
+        }
+
+        .overflow-x--scroll {
+          overflow-x: scroll;
+        }
+
+
+        /* Display Elements */
+        /*---------------------------------------*/
+
+        .block {
+          display: block;
+        }
+
+        .inline {
+          display: inline;
+        }
+
+        .inline-block {
+          display: inline-block;
+        }
+
+        .hidden {
+          display: none!important;
+        }
+
+
+        /* Text Alignment */
+        /*---------------------------------------*/
+
+        .text-left {
+          text-align: left;
+        }
+
+        .text-right {
+          text-align: right;
+        }
+
+        .text-center {
+          text-align: center;
+        }
+
+
+        /* Floats */
+        /*---------------------------------------*/
+
+        .float--center {
+          margin-left: auto;
+          margin-right: auto;
+
+        }
+
+        /* Text styling */
+        /*---------------------------------------*/
+
+        .underline {
+          text-decoration: underline;
+        }
+
+        .underline--hover:hover {
+          text-decoration: underline!important;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .lowercase {
+          text-transform: lowercase;
+        }
+
+        .capitalize {
+          text-transform: capitalize;
+        }
+
+
+        /* Height */
+        /*---------------------------------------*/
+
+        .height--full {
+          height: 100%;
+        }
+
+        .width--full {
+          width: 100%;
+        }
+
+        .width--half {
+          width: 50%;
+        }
+
+        /* Clear fix */
+        /*---------------------------------------*/
+
+        .clearfix {
+          *zoom: 1; // This will show as an empty selector in Webkit/FF
+        }
+
+        .clearfix:before, .clearfix:after {
+          content: "";
+          display: table;
+        }
+
+        .clearfix:after {
+          clear: both;
+        }
+
+        /* Text &amp; Line ellipses */
+        /*---------------------------------------*/
+
+        .text-overflow {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+
+        /* No select */
+        /*---------------------------------------*/
+
+        .no-select{
+          user-select: none;
+        }
+
+        /* Inline block white space remover */
+        /*---------------------------------------*/
+
+        .inlinefix {
+          font-size: 0;
+        }
+
+        /* Translate */
+        /*---------------------------------------*/
+
+        .translate--x {
+            transform: translate(-50%, 0);
+        }
+
+        .translate--y {
+            transform: translate(0, -50%);
+        }
+
+        .translate--xy {
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* Transition */
+        /*---------------------------------------*/
+
+        .transition--slow {
+            transition: all ease var(--wk-transition-slow);
+        }
+
+        .transition--medium {
+            transition: all ease var(--wk-transition-medium);
+        }
+
+        .transition--fast {
+            transition: all ease var(--wk-transition-fast);
+        }
+
+        .transition--xfast {
+            transition: all ease var(--wk-transition-xfast);
+        }
+
+        .overlay {
+          background-color: rgba(0, 0, 0, 0.6);
+          border: 4px solid transparent !important;
+        }
+
+        .overlay:hover {
+          background-color: rgba(0, 0, 0, 0.6);
+          border-color: var(--wk-primary-green) !important;
+        }
+
+        /* Error Message */
+        /*---------------------------------------*/
+
+        .error {
+          font-size: 13px;
+          color: var(--wk-warning-color);
+        }
+
+        /* Padding */
+        /*---------------------------------------*/
+
+        .p--none{padding:0}
+        .p--xs {padding:.25rem}
+        .p--s {padding:.5rem}
+        .p--m {padding:1rem}
+        .p--l {padding:1.5rem}
+        .p--xl{padding:2rem}
+        .p--xxl {padding:2.5rem}
+        .pt--none {padding-top:0}
+        .pt--xs {padding-top:.25rem}
+        .pt--s {padding-top:.5rem}
+        .pt--m {padding-top:1rem}
+        .pt--l {padding-top:1.5rem}
+        .pt--xl{padding-top:2rem}
+        .pt--xxl{padding-top:2.5rem}
+        .pr--none{padding-right:0}
+        .pr--xs{padding-right:.25rem}
+        .pr--s{padding-right:.5rem}
+        .pr--m{padding-right:1rem}
+        .pr--l{padding-right:1.5rem}
+        .pr--xl{padding-right:2rem}
+        .pr--xxl{padding-right:2.5rem}
+        .pb--none{padding-bottom:0}
+        .pb--xs{padding-bottom:.25rem}
+        .pb--s{padding-bottom:.5rem}
+        .pb--m{padding-bottom:1rem}
+        .pb--l{padding-bottom:1.5rem}
+        .pb--xl{padding-bottom:2rem}
+        .pb--xxl{padding-bottom:2.5rem}
+        .pl--none{padding-left:0}
+        .pl--xs{padding-left:.25rem}
+        .pl--s{padding-left:.5rem}
+        .pl--m{padding-left:1rem}
+        .pl--l{padding-left:1.5rem}
+        .pl--xl{padding-left:2rem}
+        .pl--xxl{padding-left:2.5rem}
+
+        /* Margin */
+        /*---------------------------------------*/
+
+        .g--none{margin:0}
+        .g--xs{margin:.25rem}
+        .g--s{margin:.5rem}
+        .g--m{margin:1rem}
+        .g--l{margin:1.5rem}
+        .g--xl{margin:2rem}
+        .g--xxl{margin:2.5rem}
+        .gt--none{margin-top:0}
+        .gt--xs{margin-top:.25rem}
+        .gt--s{margin-top:.5rem}
+        .gt--m{margin-top:1rem}
+        .gt--l{margin-top:1.5rem}
+        .gt--xl{margin-top:2rem}
+        .gt--xxl{margin-top:2.5rem}
+        .gr--none{margin-right:0}
+        .gr--xs{margin-right:.25rem}
+        .gr--s{margin-right:.5rem}
+        .gr--m{margin-right:1rem}
+        .gr--l{margin-right:1.5rem}
+        .gr--xl{margin-right:2rem}
+        .gr--xxl{margin-right:2.5rem}
+        .gb--none{margin-bottom:0}
+        .gb--xs{margin-bottom:.25rem}
+        .gb--s{margin-bottom:.5rem}
+        .gb--m{margin-bottom:1rem}
+        .gb--l{margin-bottom:1.5rem}
+        .gb--xl{margin-bottom:2rem}
+        .gb--xxl{margin-bottom:2.5rem}
+        .gl--none{margin-left:0}
+        .gl--xs{margin-left:.25rem}
+        .gl--s{margin-left:.5rem}
+        .gl--m{margin-left:1rem}
+        .gl--l{margin-left:1.5rem}
+        .gl--xl{margin-left:2rem}
+        .gl--xxl{margin-left:2.5rem}
+
+        /* Z-Index */
+        /*---------------------------------------*/
+
+        .z-level--1 {
+          z-index: 1;
+        }
+
+        .z-level--2 {
+          z-index: 2;
+        }
+
+        .z-level--3 {
+          z-index: 3;
+        }
+
+        .z-level--4 {
+          z-index: 4;
+        }
+
+        .z-level--5 {
+          z-index: 5;
+        }
+
+        .z-level--6 {
+          z-index: 6;
+        }
+
+        .z-level--7 {
+          z-index: 7;
+        }
+
+        .z-level--8 {
+          z-index: 8;
+        }
+
+        .z-level--9 {
+          z-index: 9;
+        }
+
+        .z-level--10 {
+          z-index: 10;
+        }
+
+        /* Opacity */
+        /*---------------------------------------*/
+
+        .opacity--0 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+          filter: alpha(0);
+          opacity: 0;
+        }
+
+        .opacity--1 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+          filter: alpha(10);
+          opacity: 0.1;
+        }
+
+        .opacity--2 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+          filter: alpha(20);
+          opacity: 0.2;
+        }
+
+        .opacity--3 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+          filter: alpha(30);
+          opacity: 0.3;
+        }
+
+        .opacity--4 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+          filter: alpha(40);
+          opacity: 0.4;
+        }
+
+        .opacity--5 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+          filter: alpha(50);
+          opacity: 0.5;
+        }
+
+        .opacity--6 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+          filter: alpha(60);
+          opacity: 0.6;
+        }
+
+        .opacity--7 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+          filter: alpha(70);
+          opacity: 0.7;
+        }
+
+        .opacity--8 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+          filter: alpha(80);
+          opacity: 0.8;
+        }
+
+        .opacity--9 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+          filter: alpha(90);
+          opacity: 0.9;
+        }
+
+        .opacity--10 {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+          filter: alpha(100);
+          opacity: 1;
+        }
+
+        /* Visibility */
+        /*---------------------------------------*/
+
+        .visibility--hidden {
+          visibility: hidden;
+        }
+
+        /* Font Weight */
+        /*---------------------------------------*/
+
+        .fw--l {
+          font-weight: 300;
+        }
+
+        .fw--r {
+          font-weight: 400;
+        }
+
+        .fw--m {
+          font-weight: 500;
+        }
+
+        .fw--sb {
+          font-weight: 600;
+        }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-global">
+  <template>
+    <style>
+
+        :host &gt; * {
+          --wk-font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+
+          --paper-font-common-code: {
+            font-family: var(--wk-font-style);
+          }
+
+          --paper-font-common-base: {
+            @apply --paper-font-common-code;
+          }
+
+          --paper-font-subhead: {
+            @apply --paper-font-common-code;
+          }
+
+          --paper-font-body1: {
+            @apply --paper-font-common-code;
+          }
+
+          --paper-input-container-shared-input-style: {
+            @apply --paper-font-common-code;
+            width: 100%;
+            max-width: 100%;
+          }
+
+          --shadow-elevation-2dp: {
+            box-shadow: 0 0 0;
+          }
+
+        }
+
+        [hidden] {
+          display: none!important;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          background: transparent;
+        }
+
+        a:active,
+        a:hover {
+          outline: 0;
+          cursor: pointer;
+          color: var(--wk-primary-green);
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+          color: inherit; /* 1 */
+          font: inherit; /* 2 */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        ul {
+          padding: 0;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+        }
+
+        b,
+        strong {
+          font-weight: 700;
+        }
+
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-colors">
+  <template>
+    <style>
+
+      :host, :host &gt; * {
+
+        /* Brand Colours */
+
+        --wk-primary-blue: #03a9f4;
+        --wk-primary-blue-hover: #0286c2;
+        --wk-primary-blue-disabled: #92dcfe;
+        --wk-primary-green: #34BA0B;
+        --wk-primary-green-hover: #29a005;
+        --wk-primary-green-disabled: #9bdd8f;
+        --wk-secondary-color: #000;
+        --wk-warning-color: #D50000;
+        --wk-warning-color-hover: #bf0606;
+        --wk-light-color: #fff;
+        --wk-dark-blue: #0082D9;
+
+        /* Greys */
+
+        --wk-brand-grey-a: #eee;
+        --wk-brand-grey-b: #ddd;
+        --wk-brand-grey-c: #ccc;
+        --wk-brand-grey-d: #888;
+        --wk-brand-grey-e: #555;
+
+        /* Text Colors */
+
+        --text-default: var(--wk-secondary-color);
+        --text-primary: var(--wk-primary-green);
+        --text-primary-blue: var(--wk-primary-blue);
+        --text-secondary: var(--wk-brand-grey-d);
+        --text-warning: var(--wk-warning-color);
+        --text-light: var(--wk-light-color);
+
+        --wk-input-placeholder: #B9CDDB;
+
+        /* Card Colors */
+
+        --wk-item-desc: var(--wk-brand-grey-d);
+        --wk-item-border: var(--wk-brand-grey-b);
+        --wk-item-border-hover: var(--wk-brand-grey-c);
+
+        /* Banner Color */
+
+        --wk-banner-color: #EC407A;
+
+      }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-font-size">
+  <template>
+    <style>
+
+    .fs--xxs{
+      line-height:1.4;
+      font-size:11px;
+      font-size:.6875rem
+    }
+
+    .fs--xs{
+      line-height:1.4;
+      font-size:12px;
+      font-size:.75rem
+    }
+
+    .fs--s{
+      line-height:1.375;
+      font-size:13px;
+      font-size:.8125rem
+    }
+
+    .fs--m{
+      line-height:1.35;
+      font-size:14px;
+      font-size:.875rem
+    }
+
+    .fs--l,.fs--ml{
+      line-height:1.5;
+    }
+
+    .fs--ml{
+      font-size:16px;
+      font-size:1rem
+    }
+
+    .fs--l{
+      font-size:18px;
+      font-size:1.125rem
+    }
+
+    .fs--xl{
+      line-height:1.25;
+      font-size:22px;
+      font-size:1.375rem
+    }
+
+    .fs--lxl{
+      line-height:1.25;
+      font-size:26px;
+      font-size:1.625rem
+    }
+
+    .fs--xxl {
+      line-height: 1.17;
+      font-size: 32px;
+      font-size: 2rem;
+    }
+
+    .fs--xxxl {
+      line-height: 1.2;
+      font-size: 36px;
+      font-size: 2.25rem;
+    }
+
+    .fs--xxxxl {
+      line-height: 1.2;
+      font-size: 40px;
+      font-size: 2.5rem;
+    }
+
+    @media only screen and (min-width:600px){
+      .fs--xxs{
+        font-size:12px;
+        font-size:.75rem
+      }
+
+      .fs--xs{
+        font-size:13px;
+        font-size:.8125rem
+      }
+
+      .fs--s{
+        font-size:14px;
+        font-size:.875rem
+      }
+
+      .fs--m{
+        font-size:16px;
+        font-size:1rem
+      }
+
+      .fs--ml{
+        font-size:18px;
+        font-size:1.125rem
+      }
+
+      .fs--l{
+        font-size:20px;
+        font-size:1.25rem
+      }
+
+      .fs--xl{
+        font-size:24px;
+        font-size:1.5rem
+      }
+
+      .fs--lxl{
+        font-size:28px;
+        font-size:1.75rem
+      }
+
+      .fs--xxl {
+        font-size: 37px;
+        font-size: 2.3125rem;
+      }
+
+      .fs--xxxl {
+        font-size: 42px;
+        font-size: 2.625rem;
+      }
+
+      .fs--xxxxl {
+        font-size: 56px;
+        font-size: 3.5rem;
+      }
+
+    }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-dialog">
+  <template>
+    <style>
+
+        paper-dialog &gt; * {
+          padding: 0;
+          margin: 0;
+        }
+
+        .dialog__close {
+          border: 2px solid #ddd;
+          height: 32px;
+          width: 32px;
+          margin-top: -16px;
+          margin-right: -16px;
+          background: #212325;
+          padding: 0;
+        }
+
+        .dialog__close:hover {
+          background: #171819;
+        }
+
+        .dialog__close iron-icon {
+          width: 10px;
+          height: 10px;
+        }
+
+        .dialog__container h2 {
+          margin-top: 0;
+        }
+
+        paper-dialog {
+          height: auto;
+          margin: 0 16px;
+          border-radius: 9px;
+          width: auto;
+        }
+
+        paper-dialog.mobile--fill {
+          margin: 0;
+          border-radius: 0;
+          width: 100%;
+          height: 100vh;
+          max-height: 92vh!important;
+          overflow-y: auto;
+        }
+
+        .mobile--fill .dialog__close {
+          margin-top: 4px;
+          margin-right: 4px;
+        }
+
+        .dialog {
+          padding: 32px;
+        }
+
+        .dialog--transparent {
+          background-color: transparent;
+          box-shadow: 0 0 0;
+        }
+
+        .dialog--transparent .dialog__container,
+        .dialog__remote-learning .dialog__container {
+          padding: 0!important;
+        }
+
+        .dialog--xs,
+        .dialog--s,
+        .dialog--sm,
+        .dialog--m,
+        .dialog--ml,
+        .dialog--l,
+        .dialog--xl {
+          width: 100%;
+        }
+
+        .dialog--xs {
+          max-width: 380px
+        }
+        .dialog--s {
+          max-width: 440px
+        }
+        .dialog--sm {
+          max-width: 480px
+        }
+        .dialog--m {
+          max-width: 600px
+        }
+        .dialog--ml {
+          max-width: 750px
+        }
+        .dialog--l {
+          max-width: 900px
+        }
+
+        .dialog--xl {
+          max-width: 1024px
+        }
+
+        .visibility__dialog {
+          max-width: 500px;
+          width: 100%;
+        }
+
+        .survey__dialog .dialog__container {
+          padding: 24px;
+        }
+
+        .signup__promo .dialog__container {
+          padding: 0px;
+        }
+
+        @media all and (max-width: 599px) {
+          paper-dialog.mobile--fill {
+            top: 0!important;
+          }
+        }
+
+
+        @media all and (min-width: 600px) {
+
+          paper-dialog.mobile--fill {
+            margin: 0 16px;
+            border-radius: 9px;
+            width: auto;
+            height: inherit;
+            max-height: inherit;
+            overflow-y: visible;
+          }
+
+          .mobile--fill .dialog__close {
+            margin-top: -16px;
+            margin-right: -16px;
+          }
+
+        }
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-button">
+  <template>
+    <style>
+
+
+      paper-button {
+        font-weight: 600;
+        min-width: 80px;
+        height: 40px;
+        text-transform: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 9px 16px;
+        margin: 0;
+        border-radius: 5px;
+        transition: background 0.2s ease, border 0.2s ease, color 0.2s ease;
+
+        --paper-button-flat-keyboard-focus: {
+          font-weight: 600;
+        }
+
+        --paper-button-raised-keyboard-focus: {
+          font-weight: 600;
+        }
+
+      }
+
+      paper-icon-button {
+        transition: background 0.2s ease, border 0.2s ease, color 0.2s ease;
+      }
+
+      paper-fab {
+        --paper-fab: {
+          transition: border 0.2s ease, color 0.2s ease, background 0.2s ease;
+        }
+      }
+
+      .btn--primary {
+         background: var(--wk-primary-green);
+         line-height: 20px;
+         color: var(--wk-light-color);
+      }
+
+      .btn--primary:hover {
+        background: var(--wk-primary-green-hover);
+      }
+
+      .btn--primary[disabled],[disabled] .btn--primary {
+        background: var(--wk-primary-green-disabled)!important;
+        color: var(--wk-light-color)!important;
+      }
+
+      .btn--primary-blue {
+         background: var(--wk-primary-blue);
+         line-height: 20px;
+         color: var(--wk-light-color);
+      }
+
+      .btn--primary-blue:hover {
+        background: var(--wk-primary-blue-hover);
+      }
+
+      .btn--primary-blue[disabled],[disabled] .btn--primary-blue {
+        background: var(--wk-primary-blue-disabled)!important;
+        color: var(--wk-light-color)!important;
+      }
+
+      .btn--secondary {
+        background: var(--wk-light-color);
+        color: var(--wk-primary-green);
+        border: 2px solid var(--wk-primary-green);
+      }
+
+      .btn--secondary:hover {
+        color: var(--wk-primary-green-hover);
+        border-color: var(--wk-primary-green-hover);
+      }
+
+      .btn--secondary[disabled] {
+        border-color: var(--wk-primary-green-disabled)!important;
+        color: var(--wk-primary-green-disabled)!important;
+        background: var(--wk-light-color)!important;
+      }
+
+      .btn--tertiary {
+        color: #000;
+        background: var(--wk-brand-grey-a);
+      }
+
+      .btn--tertiary:hover {
+        background: var(--wk-brand-grey-b);;
+      }
+
+      .btn--tertiary[disabled],
+      .btn--tertiary.disabled {
+        background: #f7f7f7!important;
+        color: #d5d5d5!important;
+        pointer-events: auto !important;
+        cursor: default;
+      }
+
+      .btn--inverse {
+        color: var(--wk-light-color);
+        border: 2px solid var(--wk-light-color);
+      }
+
+      .btn--inverse:hover {
+        background:rgba(255,255,255,.3);
+      }
+
+      .btn--inverse-light {
+        color: #000;
+        border: 1px solid var(--wk-brand-grey-b);
+      }
+
+      .btn--inverse-light:hover {
+        background: var(--wk-brand-grey-a);
+      }
+
+      .btn--negative {
+        color: var(--wk-light-color);
+        background: var(--wk-warning-color);
+      }
+
+      .btn--negative:hover {
+        background: var(--wk-warning-color-hover);
+      }
+
+      .btn--negative[disabled] {
+        background: #eb8388;
+      }
+
+      paper-fab {
+        box-shadow: 0 0 0 0;
+      }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-toast">
+  <template>
+    <style>
+
+      paper-toast {
+        --paper-toast-background-color: var(--wk-primary-green);
+        --paper-toast-color: var(--wk-light-color);
+      }
+
+      paper-toast.error {
+        --paper-toast-background-color: var(--wk-warning-color);
+        --paper-toast-color: var(--wk-light-color);
+        border: 1px solid transparent;
+        border-radius: 3px;
+      }
+
+      paper-toast.info {
+        --paper-toast-background-color: var(--wk-light-color);
+        --paper-toast-color: #000;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+      }
+
+      paper-toast.info iron-icon {
+        color: var(--text-default);
+      }
+
+      paper-toast.info span {
+        color: var(--text-default);
+      }
+
+      paper-toast span {
+        color: var(--wk-light-color);
+      }
+
+      paper-toast iron-icon {
+        color: var(--wk-light-color);
+      }
+
+      paper-toast .icon-container {
+        border: 2px solid var(--wk-light-color);
+        border-radius: 50%;
+        padding: 7px;
+      }
+
+      paper-toast .icon-container iron-icon {
+        --iron-icon-width: 15px;
+        --iron-icon-height: 13px;
+        margin-top: -2px;
+      }
+
+    </style>
+  </template>
+</dom-module><link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic" /><custom-style>
+  <style is="custom-style">html {
+  --paper-font-common-base_-_font-family:  'Roboto', 'Noto', sans-serif; --paper-font-common-base_-_-webkit-font-smoothing:  antialiased;;
+
+      --paper-font-common-code_-_font-family:  'Roboto Mono', 'Consolas', 'Menlo', monospace; --paper-font-common-code_-_-webkit-font-smoothing:  antialiased;;
+
+      --paper-font-common-expensive-kerning_-_text-rendering:  optimizeLegibility;;
+
+      --paper-font-common-nowrap_-_white-space:  nowrap; --paper-font-common-nowrap_-_overflow:  hidden; --paper-font-common-nowrap_-_text-overflow:  ellipsis;;
+
+      
+
+      --paper-font-display4_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-display4_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-display4_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-display4_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-display4_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-display4_-_font-size:  112px; --paper-font-display4_-_font-weight:  300; --paper-font-display4_-_letter-spacing:  -.044em; --paper-font-display4_-_line-height:  120px;;
+
+      --paper-font-display3_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-display3_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-display3_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-display3_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-display3_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-display3_-_font-size:  56px; --paper-font-display3_-_font-weight:  400; --paper-font-display3_-_letter-spacing:  -.026em; --paper-font-display3_-_line-height:  60px;;
+
+      --paper-font-display2_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-display2_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-display2_-_font-size:  45px; --paper-font-display2_-_font-weight:  400; --paper-font-display2_-_letter-spacing:  -.018em; --paper-font-display2_-_line-height:  48px;;
+
+      --paper-font-display1_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-display1_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-display1_-_font-size:  34px; --paper-font-display1_-_font-weight:  400; --paper-font-display1_-_letter-spacing:  -.01em; --paper-font-display1_-_line-height:  40px;;
+
+      --paper-font-headline_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-headline_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-headline_-_font-size:  24px; --paper-font-headline_-_font-weight:  400; --paper-font-headline_-_letter-spacing:  -.012em; --paper-font-headline_-_line-height:  32px;;
+
+      --paper-font-title_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-title_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-title_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-title_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-title_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-title_-_font-size:  20px; --paper-font-title_-_font-weight:  500; --paper-font-title_-_line-height:  28px;;
+
+      --paper-font-subhead_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-subhead_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-subhead_-_font-size:  16px; --paper-font-subhead_-_font-weight:  400; --paper-font-subhead_-_line-height:  24px;;
+
+      --paper-font-body2_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-body2_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-body2_-_font-size:  14px; --paper-font-body2_-_font-weight:  500; --paper-font-body2_-_line-height:  24px;;
+
+      --paper-font-body1_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-body1_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-body1_-_font-size:  14px; --paper-font-body1_-_font-weight:  400; --paper-font-body1_-_line-height:  20px;;
+
+      --paper-font-caption_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-caption_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-caption_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-caption_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-caption_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-caption_-_font-size:  12px; --paper-font-caption_-_font-weight:  400; --paper-font-caption_-_letter-spacing:  0.011em; --paper-font-caption_-_line-height:  20px;;
+
+      --paper-font-menu_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-menu_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-menu_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-menu_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-menu_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-menu_-_font-size:  13px; --paper-font-menu_-_font-weight:  500; --paper-font-menu_-_line-height:  24px;;
+
+      --paper-font-button_-_font-family:  var(--paper-font-common-base_-_font-family); --paper-font-button_-_-webkit-font-smoothing:  var(--paper-font-common-base_-_-webkit-font-smoothing); --paper-font-button_-_white-space:  var(--paper-font-common-nowrap_-_white-space); --paper-font-button_-_overflow:  var(--paper-font-common-nowrap_-_overflow); --paper-font-button_-_text-overflow:  var(--paper-font-common-nowrap_-_text-overflow); --paper-font-button_-_font-size:  14px; --paper-font-button_-_font-weight:  500; --paper-font-button_-_letter-spacing:  0.018em; --paper-font-button_-_line-height:  24px; --paper-font-button_-_text-transform:  uppercase;;
+
+      --paper-font-code2_-_font-family:  var(--paper-font-common-code_-_font-family); --paper-font-code2_-_-webkit-font-smoothing:  var(--paper-font-common-code_-_-webkit-font-smoothing); --paper-font-code2_-_font-size:  14px; --paper-font-code2_-_font-weight:  700; --paper-font-code2_-_line-height:  20px;;
+
+      --paper-font-code1_-_font-family:  var(--paper-font-common-code_-_font-family); --paper-font-code1_-_-webkit-font-smoothing:  var(--paper-font-common-code_-_-webkit-font-smoothing); --paper-font-code1_-_font-size:  14px; --paper-font-code1_-_font-weight:  500; --paper-font-code1_-_line-height:  20px;;
+}
+
+</style>
+</custom-style><dom-module id="paper-dialog-shared-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 24px 40px;
+
+        background: var(--paper-dialog-background-color, var(--primary-background-color));
+        color: var(--paper-dialog-color, var(--primary-text-color));
+
+        @apply --paper-font-body1;
+        @apply --shadow-elevation-16dp;
+        @apply --paper-dialog;
+      }
+
+      :host &gt; ::slotted(*) {
+        margin-top: 20px;
+        padding: 0 24px;
+      }
+
+      :host &gt; ::slotted(.no-padding) {
+        padding: 0;
+      }
+
+      
+      :host &gt; ::slotted(*:first-child) {
+        margin-top: 24px;
+      }
+
+      :host &gt; ::slotted(*:last-child) {
+        margin-bottom: 24px;
+      }
+
+      /* In 1.x, this selector was `:host &gt; ::content h2`. In 2.x &lt;slot&gt; allows
+      to select direct children only, which increases the weight of this
+      selector, so we have to re-define first-child/last-child margins below. */
+      :host &gt; ::slotted(h2) {
+        position: relative;
+        margin: 0;
+
+        @apply --paper-font-title;
+        @apply --paper-dialog-title;
+      }
+
+      /* Apply mixin again, in case it sets margin-top. */
+      :host &gt; ::slotted(h2:first-child) {
+        margin-top: 24px;
+        @apply --paper-dialog-title;
+      }
+
+      /* Apply mixin again, in case it sets margin-bottom. */
+      :host &gt; ::slotted(h2:last-child) {
+        margin-bottom: 24px;
+        @apply --paper-dialog-title;
+      }
+
+      :host &gt; ::slotted(.paper-dialog-buttons),
+      :host &gt; ::slotted(.buttons) {
+        position: relative;
+        padding: 8px 8px 8px 24px;
+        margin: 0;
+
+        color: var(--paper-dialog-button-color, var(--primary-color));
+
+        @apply --layout-horizontal;
+        @apply --layout-end-justified;
+      }
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-input">
+  <template>
+    <style>
+
+    paper-input {
+      --paper-input-container-color: var(--text-secondary);
+
+      --paper-input-container-input: {
+        padding-bottom: 8px;
+        font-size: 16px;
+      }
+
+      --paper-input-container-label: {
+        padding-bottom: 8px;
+        font-size: 16px;
+      }
+
+      --paper-input-error: {
+        font-size: 12px;
+        padding-top: 4px;
+      }
+
+      --paper-input-container-underline: {
+        border-color: var(--wk-brand-grey-c);
+      }
+
+      --paper-input-container-underline-focus: {
+        border-color: var(--wk-primary-green);
+      }
+
+      --paper-input-container-label-focus: {
+        color: var(--wk-primary-green);
+      }
+
+    }
+
+    .link__inputfield {
+      height: 40px;
+      border-radius: 3px;
+      background-color: var(--wk-light-color);
+      border: 1px solid var(--wk-brand-grey-c);
+
+      --paper-input-container: {
+        padding: 0;
+      }
+
+      --paper-input-container-input: {
+        padding: 7px 0 7px 10px;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 0;
+        font-family: var(--wk-font-style);
+        width: calc(100% - 10px);
+        padding-bottom: 7px;
+        padding-top: 7px;
+        padding-left: 10px;
+        font-weight: 400;
+      };
+
+      --paper-input-container-underline-focus: {
+        display: none;
+      };
+
+      --paper-input-container-underline: {
+        display: none;
+      };
+
+      --paper-input-container-label: {
+        padding-top: 7px!important;
+        padding-right: 0!important;
+        padding-bottom: 7px!important;
+        padding-left: 10px!important;
+        font-family: var(--wk-font-style);
+        font-size: 16px;
+        line-height: 1.5;
+        width: calc(100% - 10px);
+        font-weight: 400;
+      }
+
+      --paper-input-error: {
+        padding: 0;
+        top: -2px;
+      }
+
+    }
+
+    .link__inputfield:hover {
+      background-color: #fff;
+    }
+
+    .link__inputfield[focused], .link__inputfield:hover[focused] {
+      border-color: var(--wk-primary-green);
+    }
+
+    .link__inputfield--joined {
+      border-radius: 3px 0 0 3px;
+      border-right: 0;
+    }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-menu">
+  <template>
+    <style>
+
+      #dropDown {
+        width: 100%;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        position: relative;
+        z-index: 5;
+      }
+
+      .dropdown-parent {
+        padding-top: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 14px;
+      }
+
+      .dropdown-content {
+        display: block;
+        padding: 8px 0;
+        background: var(--wk-light-color);
+        border: 1px solid var(--wk-brand-grey-b);
+        color: #000;
+        border-radius: 3px;
+        outline: none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.14);
+      }
+
+      .arrow-center .dropdown__content--up::before,
+      .arrow-center .dropdown__content--down::after {
+        left: 50%;
+        margin-left: -8px;
+      }
+
+      .arrow-right .dropdown__content--up::before, .arrow-right .dropdown__content--down::after {
+        right: 24px;
+      }
+
+      .arrow-left .dropdown__content--up::before, .arrow-left .dropdown__content--down::after {
+        left: 32px;
+        bottom: 7px;
+      }
+
+      .dropdown__content--up::before {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 5px;
+        border-top: 1px solid var(--wk-brand-grey-b);
+        border-left: 1px solid var(--wk-brand-grey-b);
+      }
+
+      .dropdown__content--down::after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        bottom: 3px;
+        border-bottom: 1px solid var(--wk-brand-grey-b);
+        border-right: 1px solid var(--wk-brand-grey-b);
+      }
+
+      .dropdown__content--down::after, .dropdown__content--up::before {
+        height: 14px;
+        width: 14px;
+        display: block;
+        content: "";
+        background: var(--wk-light-color);
+        position: absolute;
+      }
+
+      paper-menu-button {
+        --paper-menu-button-dropdown-background: transparent;
+        --paper-menu-button: {
+          padding: 0;
+        }
+        --paper-menu-button-content: {
+          box-shadow: 0 0 0 0;
+        }
+
+      }
+
+      paper-menu-button paper-button {
+        --paper-button-flat-keyboard-focus: {
+          font-weight: 400;
+        }
+      }
+
+      paper-item {
+        --paper-item-min-height: 36px;
+        --paper-item-selected-weight: normal;
+        --paper-item: {
+          font-size: 16px;
+          line-height: 24px;
+          font-size: 15px;
+          padding: 0px 16px;
+          cursor: pointer;
+          white-space: nowrap;
+        } --paper-item-focused: {
+        background: transparent;
+      } --paper-item-selected: {
+        background: transparent;
+      } --paper-item-focused-before: {
+        background: transparent;
+      }
+
+      }
+
+      paper-item:hover {
+        background: #f7f7f7;
+      }
+
+      paper-listbox {
+        --paper-listbox: {
+          border: 1px solid var(--wk-brand-grey-b);
+          color: var(--wk-brand-grey-e);
+          background: var(--wk-light-color);
+          padding: 8px 0;
+          display: block;
+          border-radius: 3px;
+          top: -11px;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-item-card">
+  <template>
+    <style>
+
+      :host {
+        position: relative;
+        box-shadow: 0 0 0;
+        display: block;
+        cursor: pointer;
+      }
+
+      /* Scrapping Animation */
+
+      :host(.dragged) {
+        border: 1px solid var(--wk-primary-green) !important;
+        background: white;
+        padding: 16px;
+        cursor: move !important;
+        cursor: grabbing !important;
+        cursor: -moz-grabbing !important;
+        cursor: -webkit-grabbing !important;
+      }
+
+      @keyframes placeHolderShimmerImg {
+        0% {
+          background-position: -250px 0
+        }
+        100% {
+          background-position: 468px 0
+        }
+      }
+
+      @keyframes placeHolderShimmer {
+        0% {
+          background-position: -468px 0
+        }
+        100% {
+          background-position: 468px 0
+        }
+      }
+
+      .scraping-true .title,
+      .scraping-true .description,
+      .scraping-true .domain,
+      .scraping-true .image,
+      .scraping-true .media {
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+      }
+
+      .scraping-true .image,
+      .scraping-true .media {
+        animation-name: placeHolderShimmerImg;
+      }
+
+      .scraping-true .title,
+      .scraping-true .description,
+      .scraping-true .domain {
+        margin-bottom: 8px;
+        height: 12px;
+        margin-left: 1rem;
+      }
+
+      .scraping-true .title {
+        width: 226px;
+      }
+
+      .scraping-true .description {
+        width: 370px;
+      }
+
+      .scraping-true.masonry .domain {
+        margin-left: 0px;
+      }
+
+      .scraping-true.masonry .title {
+        margin-left: 0px;
+      }
+
+      .scraping-true.masonry .description {
+        width: 190px;
+        margin-left: 0px;
+      }
+
+      .scraping-true .domain {
+        width: 106px;
+      }
+
+      /* End of Scrapping Animation */
+
+      /* General Card Styling */
+
+      .item-card {
+        border: 1px solid var(--wk-item-border);
+        background: #fff;
+        border-radius: 8px;
+        color: #000;
+      }
+
+      .item-card:hover {
+        border-color: var(--wk-item-border-hover);
+      }
+
+      .item-card:hover .title {
+        text-decoration: underline;
+
+        --wk-ui-text: {
+          cursor: pointer;
+        }
+      }
+
+      .item-card:hover .description {
+        --wk-ui-text: {
+          cursor: pointer;
+        }
+      }
+
+      .description, .title {
+        -webkit-transition: background-color 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000), width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -moz-transition: background-color 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000), width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -o-transition: background-color 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000), width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        transition: background-color 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000), width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -webkit-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -moz-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -o-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+        line-height: 1.375;
+        width: 100%;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+
+      .description {
+        color: var(--wk-brand-grey-d);
+        display: inline-block;
+      }
+
+      .media {
+        position: relative;
+        display: block;
+        border: 1px solid var(--wk-brand-grey-a);
+      }
+
+      .image {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .domain iron-icon {
+        --iron-icon: {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .icon--camera {
+        --paper-icon-button: {
+          background: rgba(0, 0, 0, 0.8);
+          height: 40px;
+          width: 40px;
+          padding: 11px;
+          border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+      }
+
+      .icon--camera:hover {
+        --paper-icon-button: {
+          background: rgba(0, 0, 0, 0.9);
+          height: 40px;
+          width: 40px;
+          padding: 11px;
+          border: 1px solid rgba(255, 255, 255, 1);
+        }
+      }
+
+      .favicon {
+        height: 16px;
+        width: 16px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .btn--inverse {
+        background: rgba(0,0,0,.8)!important;
+      }
+
+      .btn--inverse:hover {
+        background: rgba(0,0,0,.9)!important;
+      }
+
+      .icon--edit {
+        --iron-icon: {
+          width: 16px;
+          heigh: 16px;
+        }
+      }
+
+      .edit-controls .flex {
+        display: none;
+      }
+
+      .edit-controls .flex.grid.edit-mode {
+        display: inline-block;
+      }
+
+      .compact .btn--edit-image {
+        bottom: -106px;
+      }
+
+      /* List Cards */
+
+      .list .image {
+        width: 100%;
+      }
+
+
+      /* Grid Cards */
+
+      .grid .item__content {
+        padding: 8px;
+        height: 151px;
+      }
+
+      .grid .item__content.contributed {
+        height: 190px;
+      }
+
+      .grid .image {
+        width: 100%;
+        padding-top: 75%;
+        border-radius: 7px 7px 0 0;
+        border-bottom: 1px solid var(--wk-brand-grey-a);
+      }
+
+      /* Masonry Cards */
+
+      .masonry .item__content {
+        padding: 16px;
+      }
+
+      .masonry .title {
+        font-size: 16px;
+      }
+
+      .masonry .description {
+        font-size: 14px;
+      }
+
+      .masonry .image {
+        width: 100%;
+        padding-top: 75%;
+        border-radius: 7px 7px 0 0;
+        border-bottom: 1px solid var(--wk-brand-grey-a);
+      }
+
+      /* Compact Cards */
+
+      .compact .image {
+        width: 70px;
+        height: 52px;
+        border: 1px solid var(--wk-brand-grey-a);
+      }
+
+      /* Edit Mode */
+
+      .item-card.edit-mode:hover {
+        cursor: default;
+      }
+
+      .item-card.edit-mode:hover .title {
+        --wk-ui-text: {
+          text-decoration: none;
+          cursor: text;
+        }
+      }
+
+      .item-card.edit-mode:hover .description {
+        --wk-ui-text: {
+          cursor: text;
+        }
+      }
+
+      .item-card.compact.edit-mode {
+        padding: 24px;
+        min-height: 210px;
+      }
+
+      .compact .image.edit-mode {
+        min-width: 140px;
+        height: 105px;
+      }
+
+      .grid .item__content.edit-mode {
+        height: auto;
+        padding-top: 69px;
+      }
+
+      .grid .title.edit-mode {
+        overflow: visible;
+        max-height: 100%;
+      }
+
+      .list.item-card--link,
+      .compact.item-card--link,
+      .compact.item-card--image,
+      .compact.item-card--video,
+      .grid .item__content,
+      .compact.item-card--richmedia,
+      .list.item-card--video .item__content,
+      .list .item__content-domain-desc,
+      .grid .item__content-domain-desc {
+        padding: 8px;
+      }
+
+      .list.collapsed-mode,
+      .grid.collapsed-mode,
+      .compact.collapsed-mode {
+        padding: 4px!important;
+      }
+
+
+      /* Easy Reorder Mode */
+
+      .list.collapsed-mode .image,
+      .grid.collapsed-mode .image,
+      .compact.collapsed-mode .image {
+        width: 56px;
+        height: 42px;
+        padding: 0;
+        border-radius: 0;
+        border: 1px solid var(--wk-brand-grey-a);
+      }
+
+      .list.collapsed-mode .item__content,
+      .grid.collapsed-mode .item__content,
+      .compact.collapsed-mode .item__content {
+        padding: 0 0 0 8px!important;
+      }
+
+      .collapsed-mode .title {
+        font-size: 14px!important;
+        overflow: hidden;
+        max-height: 20px!important;
+      }
+
+      .item-card.collapsed-mode .domain {
+        padding-top: 2px;
+        padding-bottom: 2px;
+      }
+
+      .collapsed-mode .item__content {
+        max-width: calc(100% - 95px);
+      }
+
+      .collapsed-mode .description {
+        display: none;
+      }
+
+      .collapsed-mode.grid .item__content {
+        height: auto;
+      }
+
+      .collapsed-mode.list .item__content-domain-desc,
+      .collapsed-mode.grid .item__content-domain-desc {
+        padding: 0;
+      }
+
+      .item-card--note.collapsed-mode {
+        border: 1px solid #ddd;
+        --wk-easy-reorder-note-padding: 0;
+      }
+
+      .item-card--note.collapsed-mode [part="content"] &gt; .ql-editor {
+        padding: 0;
+        max-height: 40px;
+        overflow: hidden;
+      }
+
+      .list .item__content,
+      .compact .item__content {
+        -ms-flex: 1 1 0.000000001px;
+        -webkit-flex: 1;
+        flex: 1;
+        -webkit-flex-basis: 0.000000001px;
+        flex-basis: 0.000000001px;
+      }
+
+      .item-card .domain {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .item-card--link.list .item__content {
+        padding-left: 8px;
+      }
+
+      .compact .item__content,
+      .item-card--link.list .item__content {
+        padding-left: 8px;
+        max-width: calc(100% - 70px);
+      }
+
+      @media (min-width: 600px) {
+
+        /* Grid Cards */
+
+        .grid .item__content {
+          padding: 16px;
+          height: 173px;
+        }
+
+        .grid .item__content.contributed {
+          height: 220px;
+        }
+
+        .list.item-card--link,
+        .compact.item-card--link,
+        .compact.item-card--image,
+        .compact.item-card--video,
+        .grid .item__content,
+        .compact.item-card--richmedia,
+        .list.item-card--video .item__content,
+        .list .item__content-domain-desc,
+        .grid .item__content-domain-desc {
+          padding: 16px;
+        }
+
+        .grid .item__content-domain-desc {
+          padding-top: 9px;
+          padding-bottom: 10px;
+        }
+
+        .compact .item__content {
+          max-width: calc(100% - 70px);
+        }
+
+        .compact .item__content.edit-mode {
+          max-width: calc(100% - 132px);
+        }
+
+        .item-card--link.list .item__content {
+          max-width: calc(100% - 140px);
+        }
+
+        .compact .item__content,
+        .item-card--link.list .item__content {
+          padding-left: 16px;
+        }
+
+      }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-tooltip">
+  <template>
+    <style>
+
+      paper-tooltip {
+        --paper-tooltip-background: var(--wk-secondary-color);
+        --paper-tooltip: {
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: 12px;
+        }
+      }
+
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-line-overflow">
+  <template>
+    <style>
+
+      .line-overflow--two,
+      .line-overflow--three,
+      .line-overflow--four {
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+      }
+
+      .line-overflow--two {
+        -webkit-line-clamp:2;
+        line-clamp: 2;
+      }
+
+      .line-overflow--three {
+        -webkit-line-clamp:3;
+        line-clamp: 3;
+      }
+
+      .line-overflow--four {
+        -webkit-line-clamp:4;
+        line-clamp: 4;
+      }
+
+
+    </style>
+  </template>
+</dom-module><dom-module id="wakelet-paper-styles">
+  <template>
+    <style>
+      [hidden] {
+        display: none !important;
+      }
+
+      .wk-ui-text {
+        line-height: 1.375;
+      }
+
+      :host &gt; * {
+
+        /* Paper Elememt Colors */
+
+
+        --paper-dialog-background-color: var(--wk-light-color);
+        --paper-dialog-color: var(--wk-secondary-color);
+        --paper-checkbox-unchecked-color: var(--wk-brand-grey-c);
+        --paper-checkbox-label-color: var(--wk-brand-grey-d);
+        --paper-menu-background-color: var(--wk-light-color);
+        --paper-menu-color: var(--wk-brand-grey-d);
+        --paper-tooltip-opacity: 1;
+        --paper-tooltip-background: var(--wk-secondary-color);
+        --paper-slider-active-color: var(--wk-primary-green);
+        --paper-slider-knob-color: var(--wk-primary-green);
+        --paper-fab-keyboard-focus-background: inherit;
+        --paper-progress-active-color: var(--wk-primary-green);
+        --paper-tabs-selection-bar-color: var(--wk-light-color);
+        --paper-radio-button-label-color: var(--wk-brand-grey-e);
+        --paper-radio-button-unchecked-color: var(--wk-brand-grey-c);
+        --paper-item-focused: var(--wk-light-color);
+        --paper-item-focused-before: var(--wk-light-color);
+        --paper-item-focused-after: var(--wk-light-color);
+
+        /* Font Styling */
+
+        --wk-font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+
+
+
+        /*paper-toggle-button */
+
+        --paper-toggle-button-checked-bar-color: var(--wk-primary-green);
+        --paper-toggle-button-checked-button-color: var(--wk-light-color);
+        --paper-toggle-button-checked-ink-color: var(--wk-primary-green);
+        --paper-toggle-button-unchecked-bar-color: var(--wk-brand-grey-c);
+        --paper-toggle-button-unchecked-button-color: var(--wk-light-color);
+        --paper-toggle-button-unchecked-ink-color: var(--wk-light-color);
+        --paper-toggle-button-label-color: var(--wk-light-color);
+        --paper-toast-color: var(--wk-primary-green);
+        --paper-font-common-base: {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        };
+
+        --paper-font-common-code: {
+          font-family: var(--wk-font-style);
+        }
+
+        --paper-toggle-button-checked-bar: {
+          opacity: 1;
+        };
+
+        --paper-input-container: {
+          font-family: var(--wk-font-style);
+        };
+
+        --paper-input-container-input: {
+          font-family: var(--wk-font-style);
+        };
+
+        --paper-item: {
+          font-family: var(--wk-font-style);
+        };
+
+        --paper-item-selected: {
+          font-weight: normal;
+        };
+
+        --paper-checkbox-label: {
+          font-family: var(--wk-font-style);
+        };
+
+        --paper-tooltip: {
+          font-size: 12px;
+          padding: 6px 8px;
+        };
+
+        --paper-icon-button: {
+          padding: 6px;
+          width: 32px;
+          height: 32px;
+        };
+
+        --paper-menu-button: {
+          padding: 0;
+        };
+
+        --paper-dialog: {
+          font-family: var(--wk-font-style);
+          font-weight: 400;
+        };
+
+        --paper-checkbox-checked-color: var(--wk-primary-green);
+
+        --paper-dialog-title: {
+          font-family: var(--wk-font-style);
+          font-weight: 400 !important;
+          font-size: 24px;
+        };
+
+        --wk-page-container: {
+          margin: 0 auto;
+          max-width: 1100px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+      }
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-avatar">
+  <template>
+    <style>
+
+      .avatar {
+        display:inline-block;
+        vertical-align:top;
+        overflow:hidden;
+        position:relative;
+        border-radius:50%;
+        z-index:2;
+        transition:all .2s ease;
+        -webkit-backface-visibility:hidden;
+        backface-visibility:hidden
+      }
+
+      .avatar--lxl,
+      .avatar--l,
+      .avatar--m,
+      .avatar--sm,
+      .avatar--s,
+      .avatar--xs,
+      .avatar--xxs {
+        border:1px solid #ddd
+      }
+
+      .avatar img {
+        display:block;
+        position:relative;
+        z-index:1;
+        width:100%;
+      }
+
+      .avatar--xxs {
+        height:24px;
+        width:24px;
+      }
+
+      .avatar--xs {
+        height:32px;
+        width:32px;
+      }
+
+      .avatar--s {
+        height:40px;
+        width:40px;
+      }
+
+      .avatar--sm {
+        height:48px;
+        width:48px;
+      }
+
+      .avatar--m {
+        height:56px;
+        width:56px;
+      }
+
+      .avatar--l {
+        height:70px;
+        width:70px;
+      }
+
+      .avatar--lxl {
+        height:88px;
+        width:88px;
+      }
+
+      .avatar--xl {
+        height:100px;
+        width:100px;
+      }
+
+      .avatar--xxl {
+        height:90px;
+        width:90px;
+        border:2px solid #f7f7f7;
+      }
+
+      @media all and (min-width:600px){
+
+        .avatar--xxl {
+          height:155px;
+          width:155px;
+          border:5px solid #f7f7f7;
+        }
+
+      }
+
+      .verified {
+        background-color:#03a9f4;
+        border:1px solid #fff;
+        display:block;
+        position:absolute;
+        border-radius:1000px;
+        z-index:2;
+      }
+
+      .verified .verified__icon {
+        top:50%;
+        left:50%;
+        position:absolute;
+        -webkit-transform:translate(-50%,-50%);
+        transform:translate(-50%,-50%);
+        color:#fff;
+        height:12px;
+        width:12px
+      }
+
+      .avatar--s + .verified {
+        bottom:-3px;
+        right:-3px;
+        height:20px;
+        width:20px
+      }
+
+      .avatar--sm + .verified {
+        bottom:-3px;
+        right:-3px;
+        height:20px;
+        width:20px
+      }
+
+      .avatar--m + .verified {
+        bottom:0;
+        right:0;
+        height:20px;
+        width:20px
+      }
+
+      .avatar--l + .verified {
+        bottom:3px;
+        right:3px;
+        height:20px;
+        width:20px
+      }
+
+      .avatar--l + .verified .verified__icon {
+        height: 9px;
+        width: 9px;
+      }
+
+      .avatar--xl + .verified {
+        bottom:4px;
+        right:4px;
+        height:24px;
+        width:24px
+      }
+
+      .avatar--xxl + .verified {
+        bottom:3px;
+        right:3px;
+        height:20px;
+        width:20px
+      }
+
+      @media all and (min-width:600px) {
+
+        .verified {
+          border-width:2px
+        }
+
+        .avatar--xxl + .verified {
+          bottom:10px;
+          right:6px;
+          height:28px;
+          width:28px
+        }
+
+      }
+
+      .avatar--xxl + .verified .verified__icon {
+        width:14px;
+        height:14px
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+    <script src="/push-service-worker.js" defer=""></script>
+    <script src="/push-service-worker2.js" defer=""></script>
+    <script defer="" src="https://teams.microsoft.com/share/launcher.js"></script>
+
+
+      <script src="https://www.screencastify.com/libs-api/castify-api.js" defer=""></script>
+
+<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&amp;]*)")))?l[1]:null};g&amp;&amp;c(g,"state")&amp;&amp;(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&amp;&amp;(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&amp;&amp;(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&amp;&amp;(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h&lt;k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&amp;&amp;"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("13616e3a9a8e8cb28c4e5dd92ce1bbd7");</script><!-- end Mixpanel -->
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800&amp;display=swap" rel="stylesheet" />
+    <!-- Add any global styles for body, document, etc. -->
+    <style>
+
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        min-height: 100%;
+        width: 100%;
+        font-size: 100%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      .stop-scrolling {
+        overflow: hidden;
+        height: calc(100vh);
+      }
+
+      .stop-scrolling {
+        overflow: hidden;
+        height: calc(100vh);
+      }
+
+      body {
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        background-color: #fff;
+      }
+
+      iron-overlay-backdrop.opened {
+        opacity: 0.9;
+      }
+
+      .IE11 {
+        display: none;
+      }
+
+      html[data-useragent*='rv:11.0'] .IE11 {
+        display: block;
+      }
+
+      html[data-useragent*='Safari/601'] .IE11 {
+        display: block;
+      }
+
+      .IE11 .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        z-index: 99999;
+      }
+
+      .IE11 .modal-content {
+        background-color: #FFFFFF;
+        margin: 10% auto;
+        padding: 32px;
+        border: 1px solid #888;
+        z-index: 99999;
+        width: 606px;
+        height: 354px;
+      }
+
+      /* The Close Button */
+      .IE11 .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .IE11 .close:hover,
+      .IE11 .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .IE11 .block {
+        display: block;
+      }
+
+      .IE11 .float-left {
+        float: left;
+      }
+
+      .IE11 .center {
+        text-align: center;
+      }
+
+      .hide-scroll {
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+      }
+
+      .hide-scroll::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+        height: 0 !important;
+        -webkit-appearance: none;
+        background: transparent;
+      }
+    </style>
+
+    <script>
+      function getParameterByName(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&amp;');
+        var regex = new RegExp('[?&amp;]' + name + '(=([^&amp;#]*)|&amp;|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+
+      var utmc = getParameterByName('utm_campaign');
+      if(utmc != '' &amp;&amp; utmc != null){
+        var obj = {
+          'campaign' : utmc,
+          'medium' : getParameterByName('utm_medium'),
+          'source' : getParameterByName('utm_source')
+        };
+        localStorage.setItem('signupMeta',JSON.stringify(obj));
+        setTimeout(function(){
+          if(!window.mixpanel) return;
+          window.mixpanel.track("Seen UTM",obj);
+        },200);
+      }
+    </script>
+
+  <dom-module id="wakelet-styles">
+  <template>
+    <style>
+
+      .arrow-right .dropdown__content--down::after,.arrow-right .dropdown__content--up::before{right:8px}
+      .radio-group-toggle{padding-left:1px}
+      .radio-group-toggle paper-radio-button{position:relative;padding:0;vertical-align:top;margin-left:-1px}
+      .share__input-field{border:1px solid #ccc;padding:6px 0 6px 8px;border-radius:3px;font-size:16px;outline:0;line-height:20px;width:100%}
+      .dropdown__content--down::after,.dropdown__content--up::before{height:14px;width:14px;display:block;content:"";background:#fff;position:absolute}
+      .share__input-field:focus{border-color:#03a9f4}
+      paper-button.dropdown-trigger{margin:0}
+      #contentWrapper.iron-dropdown .dropdown-content{overflow:visible}
+      paper-menu.dropdown__content--down,paper-menu.dropdown__content--up{overflow:hidden;border-radius:3px}
+      .dropdown__content--up::before{-webkit-transform:rotate(45deg);transform:rotate(45deg);top:-7px;border-top:1px solid #eee;border-left:1px solid #eee}
+      .arrow-left .dropdown__content--up::before{left:8px}
+      .arrow-center .dropdown__content--up::before{left:50%;margin-left:-8px}
+      .dropdown__content--down::after{-webkit-transform:rotate(45deg);transform:rotate(45deg);bottom:-7px;border-bottom:1px solid #eee;border-right:1px solid #eee}
+      .fab-menu #contentWrapper.iron-dropdown .dropdown-content,.fab-menu paper-material.paper-menu-button{background:0 0;box-shadow:0 0 0}
+      .arrow-left .dropdown__content--down::after{left:8px}
+      .arrow-center .dropdown__content--down::after{left:50%;margin-left:-8px}
+      .fab-menu .iron-dropdown iron-icon{width:16px;height:16px}
+      paper-item:focus::after,paper-item:focus::before{display:none}
+
+
+    </style>
+  </template>
+</dom-module>
+<custom-style>
+  <style is="custom-style">html {
+  --paper-input-container-shared-input-style_-_position:  relative; --paper-input-container-shared-input-style_-_outline:  none; --paper-input-container-shared-input-style_-_box-shadow:  none; --paper-input-container-shared-input-style_-_padding:  0; --paper-input-container-shared-input-style_-_margin:  0; --paper-input-container-shared-input-style_-_width:  100%; --paper-input-container-shared-input-style_-_max-width:  100%; --paper-input-container-shared-input-style_-_background:  transparent; --paper-input-container-shared-input-style_-_border:  none; --paper-input-container-shared-input-style_-_color:  var(--paper-input-container-input-color, var(--primary-text-color)); --paper-input-container-shared-input-style_-_-webkit-appearance:  none; --paper-input-container-shared-input-style_-_text-align: apply-shim-inherit; --paper-input-container-shared-input-style_-_vertical-align:  var(--paper-input-container-input-align, bottom); --paper-input-container-shared-input-style_-_font-family:  var(--paper-font-subhead_-_font-family); --paper-input-container-shared-input-style_-_-webkit-font-smoothing:  var(--paper-font-subhead_-_-webkit-font-smoothing); --paper-input-container-shared-input-style_-_font-size:  var(--paper-font-subhead_-_font-size); --paper-input-container-shared-input-style_-_font-weight:  var(--paper-font-subhead_-_font-weight); --paper-input-container-shared-input-style_-_line-height:  var(--paper-font-subhead_-_line-height);;
+}
+
+</style>
+</custom-style>
+<dom-module id="paper-item-shared-styles">
+  <template>
+    <style>
+      :host, .paper-item {
+        display: block;
+        position: relative;
+        min-height: var(--paper-item-min-height, 48px);
+        padding: 0px 16px;
+      }
+
+      .paper-item {
+        @apply --paper-font-subhead;
+        border:none;
+        outline: none;
+        background: white;
+        width: 100%;
+        text-align: left;
+      }
+
+      :host([hidden]), .paper-item[hidden] {
+        display: none !important;
+      }
+
+      :host(.iron-selected), .paper-item.iron-selected {
+        font-weight: var(--paper-item-selected-weight, bold);
+
+        @apply --paper-item-selected;
+      }
+
+      :host([disabled]), .paper-item[disabled] {
+        color: var(--paper-item-disabled-color, var(--disabled-text-color));
+
+        @apply --paper-item-disabled;
+      }
+
+      :host(:focus), .paper-item:focus {
+        position: relative;
+        outline: 0;
+
+        @apply --paper-item-focused;
+      }
+
+      :host(:focus):before, .paper-item:focus:before {
+        @apply --layout-fit;
+
+        background: currentColor;
+        content: '';
+        opacity: var(--dark-divider-opacity);
+        pointer-events: none;
+
+        @apply --paper-item-focused-before;
+      }
+    </style>
+  </template>
+</dom-module><dom-module id="wk-style-paper-checkbox">
+  <template>
+    <style>
+
+      paper-checkbox {
+        --paper-checkbox-checked-color: var(--wk-primary-green);
+        --paper-checkbox-unchecked-color: var(--wk-brand-grey-d);
+
+        --paper-checkbox-label: {
+          font-size: 14px;
+        }
+
+        --paper-checkbox-label-color: var(--wk-brand-grey-d);
+
+      }
+
+    </style>
+  </template>
+</dom-module><iron-iconset-svg name="wakelet" size="24" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <g id="pulse">
+      <path d="M19,21c0,0-0.1,0-0.1,0c-0.4,0-0.7-0.3-0.8-0.7L14.8,8.9l-3.9,8.5C10.7,17.8,10.4,18,10,18c0,0,0,0,0,0&#10;        c-0.4,0-0.8-0.2-0.9-0.6L6.8,12l-2,2.6C4.6,14.9,4.3,15,4,15H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2.5l2.7-3.6C6.4,9.1,6.8,9,7.1,9&#10;        c0.4,0,0.7,0.3,0.8,0.6l2.1,4.9l4.1-8.9c0.2-0.4,0.5-0.6,1-0.6c0.4,0,0.8,0.3,0.9,0.7l3.3,11.7l2.8-4.9c0.3-0.5,0.9-0.6,1.4-0.4&#10;        c0.5,0.3,0.6,0.9,0.4,1.4l-4,7C19.7,20.8,19.4,21,19,21z"/>
+    </g>
+    <g id="send">
+      <path d="M0.7,22c-0.2,0-0.3,0-0.5-0.2c-0.4-0.4-0.3-0.7,0.9-3.1C2,16.9,4,12.8,4.3,11.9C4,10.9,1.6,6,0.7,4.3&#10;  C0.2,3.2,0.2,3.2,0.2,3.1c0,0-0.2-0.3-0.2-0.6S0.3,2,0.6,1.9S1,1.8,12.2,6.4c10.8,4.5,11,4.6,11.3,4.8c0.3,0.2,0.5,0.4,0.5,0.6&#10;  c0,0.2-0.2,0.5-0.4,0.6c-0.1,0.1,0.1,0.1-11.2,4.8c-0.4,0.2-10.9,4.5-11.1,4.5C1.3,21.9,0.9,22,0.7,22z M5.9,12.8&#10;  c-0.3,0.9-1.2,2.7-3,6.5c3.6-1.5,11.1-4.5,15.7-6.5C14,12.8,7.8,12.8,5.9,12.8z M6.9,11c0.2,0,0.5,0,0.8,0l10.8,0&#10;  C14,9.1,6.5,6,2.9,4.5c1.9,3.8,2.7,5.6,3,6.5C6.2,11,6.5,11,6.9,11z"/>
+    </g>
+    <g id="add">
+    <path d="M22.4,10.3h-8.8V1.6C13.7,0.7,13,0,12.1,0c-0.9,0-1.6,0.7-1.6,1.6v8.8h-9C0.7,10.3,0,11,0,11.9&#10;c0,0.9,0.7,1.6,1.6,1.6h9v9c0,0.9,0.7,1.6,1.6,1.6c0.9,0,1.6-0.7,1.6-1.6v-9h8.8c0.9,0,1.6-0.7,1.6-1.6C24,11,23.3,10.3,22.4,10.3z"/>
+    </g>
+
+    <g id="menu">
+      <path d="M24,3.5v3H0v-3H24z M0,13.5h24v-3H0V13.5z M0,20.5h24v-3H0V20.5z"/>
+    </g>
+
+    <g id="export">
+      <path d="M20.9,4.6l-3.9-3.9c-0.4-0.4-1-0.7-1.6-0.7H5.8C4.5,0,3.5,1,3.5,2.3v19.5c0,1.2,1,2.2,2.2,2.2h13.5&#10;        c1.2,0,2.2-1,2.2-2.2V6.2C21.5,5.6,21.3,5,20.9,4.6z M19.1,6h-3.6V2.4L19.1,6z M5.8,21.8V2.3h7.5v4.9c0,0.6,0.5,1.1,1.1,1.1&#10;        c0,0,0,0,0,0h4.9v13.5L5.8,21.8z"/>
+    </g>
+
+    <g id="comment">
+      <path d="M12,1.6c6.1,0,11,3.9,11,8.7c0,4.8-4.9,8.8-11,8.8c-0.6,0-1.2,0-1.9-0.1l-0.5-0.1l-0.3,0.3&#10;    c-1.1,1.1-2.7,2.4-4.7,2.7c0.5-0.8,1.1-2,1.3-3.6L6,17.7l-0.6-0.3c-2.8-1.7-4.5-4.2-4.5-7C1,5.5,5.9,1.6,12,1.6 M12,0.6&#10;    C5.4,0.6,0,5,0,10.4c0,3.2,1.9,6.1,4.9,7.9c-0.3,2.5-1.8,4-1.8,4C3,22.4,3,22.6,3,22.8c0.1,0.2,0.3,0.3,0.5,0.3&#10;    c2.9,0,5.2-1.9,6.5-3.1c0.6,0.1,1.3,0.1,2,0.1c6.6,0,12-4.4,12-9.8C24,5,18.6,0.6,12,0.6L12,0.6z"/>
+    </g>
+    <g id="triple-dot">
+      <path d="M21.5,9.4c1.5,0,2.6,1.2,2.6,2.6c0,1.4-1.1,2.6-2.6,2.6c-1.4,0-2.6-1.1-2.6-2.6S20,9.4,21.5,9.4z M14.7,12.1&#10;  c0-1.4-1.1-2.6-2.6-2.6c-1.4,0-2.6,1.1-2.6,2.6s1.1,2.6,2.6,2.6C13.4,14.7,14.7,13.4,14.7,12.1z M5.2,12.1c0-1.4-1.1-2.6-2.6-2.6&#10;  c-1.4,0-2.6,1.1-2.6,2.6s1.1,2.6,2.6,2.6S5.2,13.4,5.2,12.1z"/>
+    </g>
+
+    <g id="triple-dot-outline">
+      <path d="M21.5,10.4c0.9,0,1.6,0.7,1.6,1.6c0,0.9-0.7,1.6-1.6,1.6s-1.6-0.7-1.6-1.6C19.9,11.1,20.6,10.4,21.5,10.4&#10;    M12.1,10.5c0.9,0,1.6,0.7,1.6,1.6c0,0.7-0.9,1.6-1.6,1.6c-0.9,0-1.6-0.7-1.6-1.6C10.5,11.2,11.2,10.5,12.1,10.5 M2.6,10.5&#10;    c0.9,0,1.6,0.7,1.6,1.6c0,0.8-0.7,1.6-1.6,1.6C1.7,13.7,1,13,1,12.1C1,11.2,1.7,10.5,2.6,10.5 M21.5,9.4c-1.5,0-2.6,1.1-2.6,2.6&#10;    s1.2,2.6,2.6,2.6c1.5,0,2.6-1.2,2.6-2.6S23,9.4,21.5,9.4L21.5,9.4z M12.1,9.5c-1.4,0-2.6,1.1-2.6,2.6s1.1,2.6,2.6,2.6&#10;    c1.3,0,2.6-1.3,2.6-2.6C14.7,10.7,13.6,9.5,12.1,9.5L12.1,9.5z M2.6,9.5C1.2,9.5,0,10.6,0,12.1s1.1,2.6,2.6,2.6s2.6-1.3,2.6-2.6&#10;    C5.2,10.7,4.1,9.5,2.6,9.5L2.6,9.5z"/>
+    </g>
+
+    <g id="play">
+      <path class="st1" d="M25,1C11.8,1,1,11.8,1,25s10.8,24,24,24s24-10.8,24-24S38.2,1,25,1z M34.3,25.3L20,32.5c-0.1,0-0.1,0-0.1,0&#10;  s-0.2,0-0.3,0c-0.1-0.1-0.1-0.2-0.1-0.3V17.8c0-0.1,0.1-0.2,0.1-0.3c0.1-0.1,0.2-0.1,0.3,0l14.4,7.2c0.1,0.1,0.2,0.2,0.2,0.3&#10;  S34.4,25.2,34.3,25.3z"/>
+      <path class="st2" d="M25,0C11.2,0,0,11.2,0,25s11.2,25,25,25s25-11.2,25-25S38.8,0,25,0z M25,49C11.8,49,1,38.2,1,25S11.8,1,25,1&#10;  s24,10.8,24,24S38.2,49,25,49z"/>
+      <path class="st2" d="M19.9,17.5c-0.1-0.1-0.2-0.1-0.3,0c0,0.1-0.1,0.2-0.1,0.3v14.4c0,0.1,0,0.2,0.1,0.3c0.1,0,0.3,0,0.3,0&#10;  s0,0,0.1,0l14.3-7.2c0.1-0.1,0.2-0.2,0.2-0.3s-0.1-0.2-0.2-0.3L19.9,17.5z"/>
+    </g>
+
+    <g id="wk-card-grid-outline">
+      <path d="M0,11h11V0H0V11z M1,1h9v9H1V1z M0,24h11V13H0V24z M1,14h9v9H1V14z M13,0v11h11V0H13z M23,10h-9V1h9V10z M13,24h11V13H13V24&#10;  z M14,14h9v9h-9V14z"/>
+    </g>
+
+    <g id="wk-card-grid-filled">
+      <path d="M0,0h11v11H0V0z M13,0v11h11V0H13z M0,24h11V13H0V24z M13,24h11V13H13V24z"/>
+    </g>
+
+    <g id="wk-card-masonry-filled">
+      <path d="M0,0h11v9H0V0z M13,0v17h11V0H13z M0,24h11V11H0V24z M13,24h11v-5H13V24z"/>
+    </g>
+
+    <g id="wk-card-compact-outline">
+      <path d="M0,14.5h5v-5H0V14.5z M1,10.5h3v3H1V10.5z M0,5h5V0H0V5z M1,1h3v3H1V1z M0,24h5v-5H0V24z M1,20h3v3H1V20z M8,21h16v1H8V21z&#10;   M24,2v1H8V2H24z M8,11.5h16v1H8V11.5z"/>
+    </g>
+
+    <g id="wk-card-compact-filled">
+      <path d="M0,0h7v7H0V0z M0,24h7v-7H0V24z M0,15.5h7v-7H0V15.5z M10,2.5v2h14v-2H10z M10,13h14v-2H10V13z M10,21.5h14v-2H10V21.5z"/>
+    </g>
+
+    <g id="wk-card-list-outline">
+      <path d="M0,0v11h24V0H0z M23,10H1V1h22V10z M0,24h24V13H0V24z M1,14h22v9H1V14z"/>
+    </g>
+
+    <g id="wk-card-list-filled">
+      <path d="M24,0v11H0V0H24z M0,24h24V13H0V24z"/>
+    </g>
+
+    <g id="delete"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></g>
+
+    <g id="delete-outline">
+      <path d="M4,21.2C4,22.7,5.2,24,6.7,24h10.7c1.5,0,2.7-1.3,2.7-2.8l0-16.3H4L4,21.2z M5.6,6.4h12.9l0,14.7c0,0.7-0.5,1.2-1.1,1.2H6.7&#10;  c-0.6,0-1.1-0.6-1.1-1.2L5.6,6.4z M21.4,1.4v1.7H2.6V1.4h4.7L8.7,0h6.7l1.3,1.4H21.4z"/>
+    </g>
+
+    <g id="home">
+      <path d="M21.8,11.4l-2.5-2.5c0,0,0,0,0,0l-6.7-6.7c-0.3-0.3-0.9-0.3-1.2,0l-9.2,9.2c-0.3,0.3-0.3,0.9,0,1.2c0.2,0.2,0.4,0.2,0.6,0.2&#10;  c0.2,0,0.4-0.1,0.6-0.2L12,4l5.8,5.8v10.5H6.2v-6.7c0-0.5-0.4-0.8-0.8-0.8s-0.8,0.4-0.8,0.8v7.5c0,0.5,0.4,0.8,0.8,0.8h13.3&#10;  c0.5,0,0.8-0.4,0.8-0.8v-9.7l1.1,1.1c0.2,0.2,0.4,0.2,0.6,0.2c0.2,0,0.4-0.1,0.6-0.2C22.1,12.3,22.1,11.7,21.8,11.4z"/>
+    </g>
+
+    <g id="horizontal-outline">
+      <path d="M0,15.5h7v-7H0V15.5z M1,9.5h5v5H1V9.5z M8.5,15.5h7v-7h-7V15.5z M9.5,9.5h5v5h-5V9.5z M17,8.5v7h7v-7H17z M23,14.5h-5v-5h5&#10;V14.5z"/>
+    </g>
+
+    <g id="horizontal-filled">
+      <path d="M0,8.5h7v7H0V8.5z M8.5,15.5h7v-7h-7V15.5z M17,8.5v7h7v-7H17z"/>
+    </g>
+
+    <g id="explore">
+      <path d="M6.5,17.5L15,15l2.5-8.5L9,9L6.5,17.5z M15,9l-1.5,4.5L9,15l1.5-4.5L15,9z M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12&#10;  s12-5.4,12-12S18.6,0,12,0z M12,22C6.1,22,2,17.9,2,12S6.1,2,12,2s10,4.1,10,10S17.9,22,12,22z"/>
+    </g>
+
+    <g id="search">
+      <path d="M17.2,15.1h-1.1l-0.4-0.4c1.3-1.6,2.2-3.6,2.2-5.8c0-4.9-4-8.9-8.9-8.9S0,4,0,8.9s4,8.9,8.9,8.9&#10;  c2.2,0,4.2-0.8,5.8-2.1l0.4,0.4v1.1L22,24l2-2C24,22,17.2,15.1,17.2,15.1z M8.9,15.1c-3.4,0-6.2-2.8-6.2-6.2s2.8-6.2,6.2-6.2&#10;  s6.2,2.8,6.2,6.2S12.3,15.1,8.9,15.1z"/>
+    </g>
+
+    <g id="activity">
+      <path d="M22,0v24h-2V0H22z M14,24h2V8h-2V24z M8,24h2V4H8V24z M2,24h2V12H2V24z"/>
+    </g>
+
+    <g id="solid-arrow-down">
+      <path d="M24,6L12,18L0,6H24z"/>
+    </g>
+
+    <g id="camera">
+      <path d="M24,7.5v12c0,0.8-0.7,1.5-1.5,1.5h-21C0.7,21,0,20.3,0,19.5v-12C0,6.7,0.7,6,1.5,6H6l0.7-2.2C6.9,3.4,7.4,3,7.8,3h8.3&#10;  c0.4,0,0.9,0.4,1.1,0.8L18,6h4.5C23.3,6,24,6.7,24,7.5z M16.5,13.5c0-2.5-2-4.5-4.5-4.5c-2.5,0-4.5,2-4.5,4.5c0,2.5,2,4.5,4.5,4.5&#10;  C14.5,18,16.5,16,16.5,13.5z"/>
+    </g>
+
+    <g id="edit-outline">
+      <path d="M20.3,2L20.3,2L22,3.7l-16,16l-2.8,1.1L4.3,18L20.3,2C20.3,2,20.3,2,20.3,2 M20.3,0c-0.5,0-1,0.2-1.4,0.6L2.6,16.8&#10;      c0,0.1-0.1,0.1-0.1,0.2L0,23.3c-0.1,0.2,0,0.4,0.1,0.6C0.2,23.9,0.4,24,0.5,24c0.1,0,0.1,0,0.2,0L7,21.5c0.1,0,0.1-0.1,0.2-0.1&#10;      L23.4,5.1c0.8-0.8,0.8-2.1,0-2.8l-1.7-1.7C21.3,0.2,20.8,0,20.3,0L20.3,0z"/>
+    </g>
+    
+    <g id="edit">
+      <path d="M0,19v5h5L19.8,9.2l-5-5C14.8,4.2,0,19,0,19z M23.6,5.4c0.5-0.5,0.5-1.4,0-1.9l-3.1-3.1c-0.5-0.5-1.4-0.5-1.9,0&#10;  l-2.4,2.4l5,5C21.2,7.8,23.6,5.4,23.6,5.4z"/>
+    </g>
+
+    <g id="wk-logo">
+      <path d="M22.1,13.6c1.6-0.3,3.2-0.4,4.7-0.5l-4.1,13.5c-0.2,0.6-0.5,1-1.3,1h-2.8c-0.7,0-1.1-0.4-1.3-1l-3.1-10.9&#10;c1.3-0.5,2.6-0.9,3.9-1.2l2,7.1h0L22.1,13.6z M28.2,8.5c0-0.1,0-0.2,0-0.3c0-0.3-0.1-0.5-0.6-0.5h-3.1c-0.7,0-1.1,0.3-1.2,0.9&#10;l-0.7,2.9c1.7-0.4,3.3-0.7,4.9-0.8L28.2,8.5z M41,20.6v0.6c-0.6,1.3-2.3,2.8-4.3,2.8c-3,0-4.3-2.9-4.3-6.3c0-1.9,0.4-3.4,1.1-4.4&#10;c-1.7-0.2-3.5-0.2-5.3-0.2c-0.5,1.4-0.8,3.1-0.8,5c0,5.3,2.6,10.1,8.3,10.1c1.9,0,4.1-1,5.4-2.3v0.8c0,0.6,0.3,1,0.9,1h3&#10;c0.6,0,0.9-0.3,0.9-1v-2.3v-1.4v-4.3V16c-1.6-0.5-3.3-1-4.9-1.4V20.6z M45,7.7h-2.8c-0.5,0-0.8,0.3-0.9,0.7l-0.1,1.1&#10;c-1-1.4-3-2.4-5.2-2.4c-2.5,0-5,1.2-6.6,3.4c6-0.3,11.3,1,16.4,2.9V8.6C45.9,7.9,45.5,7.7,45,7.7z M47.3,26.5c0,0.6,0.3,1,0.9,1h3&#10;c0.6,0,0.9-0.3,0.9-1v-2.3v-5.9c-1.6-0.6-3.3-1.2-4.9-1.8V26.5z M56.8,15.9l5.8-7.4c0.1-0.2,0.2-0.3,0.2-0.5c0-0.2-0.2-0.4-0.5-0.4&#10;h-3.6c-0.5,0-0.8,0.1-1.1,0.6l-5.3,7.4h-0.1V6.1V0.9c0-0.7-0.3-0.9-0.8-0.9c-0.1,0-0.2,0-0.3,0l-3,0.4c-0.6,0.1-0.9,0.3-0.9,1v12.5&#10;c4,1.6,7.9,3.6,11.8,5.5L56.8,15.9z M5.3,8.4C5.2,7.9,5,7.7,4.2,7.7H0.9C0.3,7.7,0,7.8,0,8.2c0,0.1,0,0.2,0,0.3l3.5,11.7&#10;c1.3-0.9,2.6-1.7,3.9-2.4L5.3,8.4z M8.3,21.4L8.3,21.4l-0.7-3c-1.3,0.6-2.6,1.3-4,2.1l1.8,6c0.2,0.6,0.6,1,1.3,1h2.7&#10;c0.7,0,1.1-0.3,1.3-0.9l3.1-10.8c-1.4,0.5-2.9,1.1-4.3,1.8L8.3,21.4z M16.5,8.3c-0.1-0.5-0.5-0.7-1.1-0.7h-2.3&#10;c-0.5,0-0.9,0.2-1.1,0.8l-2.3,8c2.8-1.5,5.5-2.7,8.1-3.6L16.5,8.3z M105.8,23.4c0-0.1-0.1-0.2-0.1-0.3c-4.2,1.9-8,3.1-11.7,3.8&#10;c1.4,0.7,3.1,1,5,1c2.1,0,4.8-0.4,6.8-1.3c0.5-0.2,0.6-0.4,0.6-0.7c0-0.1,0-0.3-0.1-0.5L105.8,23.4z M113.6,11.1h4.5&#10;c0.5,0,0.8-0.3,0.8-0.8V8.3c0-0.5-0.3-0.7-0.8-0.7h-4.6V0.9c0-0.6-0.2-0.9-0.8-0.9c-0.1,0-0.1,0-0.2,0l-2.9,0.4c-0.6,0.1-1,0.3-1,1&#10;v18.8c0,0,0,0.1,0,0.1c1.6-0.7,3.2-1.5,4.9-2.4V11.1z M104.8,9.6c1.9,2,2.4,4.5,2.4,7.3v0.6c0,1-0.3,1.2-1.3,1.2H94&#10;c0.3,2.8,2.2,4.9,4.8,5.3c-2.4,0.7-4.7,1.2-7,1.6c-2-1.8-3.1-4.6-3.1-8c0-6.1,4-10.4,10.1-10.4C101.4,7.1,103.4,8.1,104.8,9.6z&#10; M102.4,15c-0.1-2.1-1.3-4.1-3.8-4.1c-2.6,0-4.2,2.1-4.5,4.5h8.3C102.4,15.4,102.4,15.1,102.4,15z M120,26l-0.4-2&#10;c-0.1-0.3-0.2-0.5-0.5-0.5c-0.1,0-0.2,0-0.4,0.1c-0.7,0.2-1.6,0.5-2.6,0.5c-1,0-1.5-0.3-1.9-0.9c-0.4-0.7-0.5-1.6-0.5-2.8v-1.5&#10;c-1.7,1-3.3,1.9-4.9,2.8c0,2.1,0.3,3.4,1.3,4.6c1,1.2,2.8,1.7,4.9,1.7c1.6,0,3.3-0.4,4.5-0.9c0.4-0.2,0.6-0.4,0.6-0.8&#10;C120,26.2,120,26.2,120,26z M78.4,9.6c1.9,2,2.4,4.5,2.4,7.3v0.6c0,1-0.3,1.2-1.3,1.2H67.6c0.3,3.2,2.6,5.3,5.8,5.3&#10;c1.7,0,3.5-0.4,5-1c0.2,0,0.3-0.1,0.4-0.1c0.3,0,0.5,0.2,0.6,0.5l0.6,2.1c0,0.2,0.1,0.4,0.1,0.5c0,0,0,0,0,0.1&#10;c-3.6-0.3-7-0.9-10.3-1.7c-2.3-0.9-4.6-1.9-6.8-3c-0.3-1.2-0.5-2.4-0.5-3.8c0-6.1,4-10.4,10.1-10.4C75,7.1,77,8.1,78.4,9.6z M76,15&#10;c-0.1-2.1-1.3-4.1-3.8-4.1c-2.6,0-4.2,2.1-4.5,4.5H76C76,15.4,76,15.1,76,15z M72.6,28c1.9,0,4.2-0.3,6.1-1c-3.1-0.6-6.1-1.5-9-2.6&#10;c-2.2-0.6-4.3-1.2-6.4-1.9C64.8,25.9,68,28,72.6,28z M60.3,21.3c-2.5-0.9-5-1.9-7.4-2.8l4.9,8.2c0.4,0.7,0.9,0.9,1.6,0.9h3.5&#10;c0.4,0,0.8-0.1,0.8-0.5c0-0.2-0.1-0.5-0.3-0.8L60.3,21.3z M86.3,0c-0.1,0-0.2,0-0.3,0l-2.9,0.4c-0.5,0.1-0.8,0.3-0.8,1v24.7&#10;c1.6,0,3.2,0,4.9-0.1V0.9C87.2,0.2,86.8,0,86.3,0z"/>
+    </g>
+
+
+    <g id="create-collection">
+    <path d="M8,6c0,0.8-0.6,1.4-1.4,1.4H5.4v1.2C5.4,9.4,4.8,10,4,10c-0.8,0-1.4-0.6-1.4-1.4V7.4H1.4C0.6,7.4,0,6.8,0,6&#10;s0.6-1.4,1.4-1.4h1.2V3.4C2.6,2.6,3.2,2,4,2c0.8,0,1.4,0.6,1.4,1.4v1.2h1.2C7.4,4.6,8,5.2,8,6z M9.4,12h13.1c0.8,0,1.4-0.7,1.4-1.5&#10;S23.4,9,22.6,9H9.4C8.6,9,8,9.7,8,10.5S8.6,12,9.4,12z M22.6,14H9.4C8.6,14,8,14.7,8,15.5S8.6,17,9.4,17h13.1c0.8,0,1.4-0.7,1.4-1.5&#10;S23.4,14,22.6,14z M22.6,19H9.4C8.6,19,8,19.7,8,20.5S8.6,22,9.4,22h13.1c0.8,0,1.4-0.7,1.4-1.5S23.4,19,22.6,19z"/>
+    </g>
+
+    <g id="private-collection">
+      <path d="M12.8,13.7H6.6v5.2h6.3V13.7z M9.7,17.4c-0.6,0-1.1-0.5-1.1-1.1c0-0.6,0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1&#10;        C10.8,16.9,10.3,17.4,9.7,17.4z M11.4,12.7H8.1v-1.1c0-0.9,0.8-1.6,1.6-1.6c0.9,0,1.6,0.7,1.6,1.6V12.7z M24,0v19.1h-2.9V2.9H4.9V0&#10;        H24z M0,24h19.1V4.9H0V24z M5.5,13.7c0-0.6,0.5-1.1,1.1-1.1h0.5v-1.1C7.1,10.2,8.2,9,9.7,9s2.6,1.2,2.6,2.6v1.1h0.5&#10;        c0.6,0,1.1,0.5,1.1,1.1v5.2c0,0.6-0.5,1.1-1.1,1.1H6.6c-0.6,0-1.1-0.5-1.1-1.1V13.7z"/>
+    </g>
+
+    <g id="add-link">
+      <path d="M11.1,22.1c-2.5,2.5-6.6,2.5-9.2,0c-2.5-2.6-2.5-6.7,0-9.2l3.4-3.4c-0.1,1.3,0,2.6,0.5,3.7L4,15c-1.4,1.4-1.4,3.6,0,4.9&#10;    s3.6,1.4,4.9,0l3.7-3.7c1.4-1.4,1.4-3.6,0-4.9c-0.6-0.6-0.6-1.6,0-2.1s1.6-0.6,2.1,0c2.5,2.6,2.5,6.7,0,9.2L11.1,22.1z M18.7,14.5&#10;    c0.1-1.3,0-2.5-0.5-3.7L20,9c1.4-1.4,1.4-3.6,0-4.9S16.4,2.7,15,4l-3.7,3.7c-1.4,1.4-1.4,3.6,0,5c0.6,0.6,0.6,1.5,0,2.1&#10;    c-0.6,0.6-1.5,0.6-2.1,0c-2.5-2.6-2.5-6.7,0-9.2l3.7-3.7c2.6-2.6,6.7-2.6,9.2,0c2.6,2.5,2.6,6.6,0,9.2L18.7,14.5z"/>
+    </g>
+
+    <g id="add-note">
+      <path d="M20.9,7.6l-7.5-7.5C13.3,0.1,13.1,0,13,0H4.5C3.7,0,3,0.7,3,1.5v21C3,23.3,3.7,24,4.5,24h15&#10;  c0.8,0,1.5-0.7,1.5-1.5V8C21,7.9,20.9,7.7,20.9,7.6z M6,5h7v2H6V5z M15,19H6v-2h9V19z M18,13H6v-2h12V13z"/>
+    </g>
+
+    <g id="facebook">
+      <path d="M24,22.5c0,0.8-0.7,1.5-1.5,1.5h-6v-9.3h3l0.5-3.5h-3.5V8.5c0-1,0.5-1.5,1.5-1.5h2.2V3.8c0,0-1-0.2-2.5-0.2&#10;        c-3.3,0-5,1.8-5,4.6v3h-3v3.5h3V24H1.5C0.7,24,0,23.3,0,22.5v-21C0,0.7,0.7,0,1.5,0h21C23.3,0,24,0.7,24,1.5V22.5z"/>
+    </g>
+
+    <g id="facebook-square">
+      <path d="M0,0v24h24V0H0z M14.6,12h-1.7c0,2.7,0,6,0,6h-2.5c0,0,0-3.3,0-6H9.2V9.9h1.2V8.5c0-1,0.5-2.5,2.5-2.5l1.8,0&#10;  v2.1c0,0-1.1,0-1.3,0c-0.2,0-0.5,0.1-0.5,0.6v1.2h1.9L14.6,12z"/>
+    </g>
+
+    <g id="twitter-square">
+      <path d="M0,0v24h24V0H0z M16.8,9.6c0,0.1,0,0.2,0,0.3c0,3.3-2.5,7-7,7c-1.4,0-2.7-0.4-3.8-1.1c0.2,0,0.4,0,0.6,0&#10;    c1.2,0,2.2-0.4,3.1-1.1c-1.1,0-2-0.7-2.3-1.7c0.2,0,0.3,0,0.5,0c0.2,0,0.4,0,0.6-0.1c-1.1-0.2-2-1.2-2-2.4c0,0,0,0,0,0&#10;    c0.3,0.2,0.7,0.3,1.1,0.3c-0.7-0.4-1.1-1.2-1.1-2c0-0.5,0.1-0.9,0.3-1.2c1.2,1.5,3,2.5,5.1,2.6c0-0.2-0.1-0.4-0.1-0.6&#10;    c0-1.4,1.1-2.5,2.5-2.5c0.7,0,1.3,0.3,1.8,0.8c0.6-0.1,1.1-0.3,1.6-0.6c-0.2,0.6-0.6,1.1-1.1,1.4c0.5-0.1,1-0.2,1.4-0.4&#10;    C17.7,8.8,17.3,9.2,16.8,9.6z"/>
+    </g>
+
+    <g id="twitter">
+      <path d="M21.6,7.1c0,0.2,0,0.4,0,0.6c0,6.5-4.9,14-14,14c-2.8,0-5.4-0.6-7.6-2c0.4,0.1,0.8,0.1,1.2,0.1c2.3,0,4.4-1,6.1-2.3&#10;      c-2.1,0-4-1.5-4.6-3.4c0.3,0.1,0.6,0.1,0.9,0.1c0.4,0,0.9-0.1,1.3-0.2C2.7,13.5,1,11.6,1,9.2c0,0,0,0,0-0.1&#10;      c0.7,0.4,1.4,0.6,2.2,0.6C1.9,8.8,1,7.3,1,5.6C1,4.7,1.3,4,1.7,3.2c2.4,3,6.1,4.8,10.1,5.1c-0.1-0.4-0.1-0.8-0.1-1.1&#10;      c0-2.7,2.2-4.9,4.9-4.9c1.4,0,2.7,0.6,3.6,1.5c1.1-0.2,2.2-0.6,3.1-1.2c-0.4,1.1-1.1,2.1-2.2,2.7c1-0.1,1.9-0.4,2.8-0.8&#10;      C23.3,5.6,22.5,6.4,21.6,7.1z"/>
+    </g>
+
+    <g id="linkedin">
+      <path d="M2.9,5.7C1.2,5.7,0,4.5,0,3c0-1.5,1.2-2.7,3-2.7c1.8,0,3,1.2,3,2.7C6,4.5,4.8,5.7,2.9,5.7L2.9,5.7z M5.5,8.2v15.5h-5V8.2&#10;  H5.5z M13.5,14.7c0-2,1.3-3,2.8-3s2.7,1,2.7,3.5v8.5h5v-9c0-4.5-2.5-7-6-7c-2,0-3.5,1.1-4.5,2.6l-0.2-2.1H8.4&#10;  c0,0.5,0.1,3.5,0.1,3.5v12h5V14.7z"/>
+    </g>
+
+    <g id="instagram">
+      <path d="M24,3.5v17c0,1.9-1.6,3.5-3.5,3.5h-17C1.6,24,0,22.4,0,20.5v-17C0,1.6,1.6,0,3.5,0h17C22.4,0,24,1.6,24,3.5z M21.5,10.5&#10;  h-2.7c0.1,0.5,0.2,1,0.2,1.5c0,3.9-3.1,7-7,7s-7-3.1-7-7c0-0.5,0-1,0.2-1.5H2.5V21c0,0.3,0.2,0.5,0.5,0.5h18c0.3,0,0.5-0.2,0.5-0.5&#10;  V10.5z M7.5,12c0,2.5,2,4.5,4.5,4.5s4.5-2,4.5-4.5s-2-4.5-4.5-4.5S7.5,9.5,7.5,12z M21.5,3c0-0.3-0.2-0.5-0.5-0.5h-3&#10;  c-0.3,0-0.5,0.2-0.5,0.5v3c0,0.3,0.2,0.5,0.5,0.5h3c0.3,0,0.5-0.2,0.5-0.5V3z"/>
+    </g>
+
+    <g id="pinterest">
+      <path d="M21.3,7.9c0,5.4-3,9.4-7.4,9.4c-1.5,0-2.9-0.8-3.4-1.7c0,0-0.8,3.2-1,3.8c-0.6,2.2-2.3,4.3-2.5,4.5&#10;  c-0.1,0.1-0.3,0.1-0.3-0.1c0-0.3-0.5-3,0.1-5.3c0.2-1.1,1.7-7.5,1.7-7.5s-0.4-0.9-0.4-2.2c0-2.1,1.2-3.6,2.6-3.6&#10;  c1.3,0,1.9,0.9,1.9,2.1c0,1.3-0.8,3.1-1.2,4.9C11,13.8,12.1,15,13.6,15c2.6,0,4.4-3.4,4.4-7.3c0-3-2-5.3-5.7-5.3&#10;  C8,2.4,5.4,5.5,5.4,8.9c0,1.2,0.4,2.1,0.9,2.7c0.2,0.3,0.3,0.4,0.2,0.8c-0.1,0.3-0.2,0.9-0.3,1.1c-0.1,0.4-0.4,0.5-0.7,0.4&#10;  C3.6,13.1,2.7,11,2.7,8.6C2.7,4.7,6,0,12.6,0C17.8,0,21.3,3.8,21.3,7.9z"/>
+    </g>
+
+    <g id="youtube">
+      <path d="M24,12c0,8.5,0,8.5-12,8.5S0,20.5,0,12s0-8.5,12-8.5S24,3.5,24,12z M16.5,12L9,7.5v9L16.5,12z"/>
+    </g>
+
+    <g id="vimeo">
+      <path d="M20.5,1.5c2,0,3.5,1.6,3.5,4.1c0,6.4-9.5,16.9-12.7,16.9c-2.8,0-3.8-3-4.3-4.5L4,8.5C3.6,7.3,3,7,1,8.5L0,7.3&#10;  c0,0,4.5-5.8,7.5-5.8s3.1,4.5,3.5,7c0.4,2.5,1.2,6.5,2.2,6.5c1,0,3.8-4.5,3.8-6.5C17,7,16,6,14,7C15,3,18.5,1.5,20.5,1.5z"/>
+    </g>
+
+    <g id="googleplus">
+      <path d="M24,1.4c0.1-0.8-0.6-1.5-1.4-1.4c-7,0-14,0-21,0C1.3,0,1,0,0.7,0.1C0.2,0.4,0,0.9,0,1.4c0,7.1,0,14.1,0,21.2&#10;      c-0.1,0.8,0.6,1.5,1.4,1.4c7.1,0,14.1,0,21.2,0c0.8,0.1,1.5-0.6,1.4-1.4C24,15.5,24,8.5,24,1.4z M12.8,14.7c-1,1.3-3,1.7-4.5,1.2&#10;      c-1.7-0.5-2.9-2.2-2.8-4c-0.1-2.2,1.8-4.2,4-4.2c1.1-0.1,2.2,0.3,3,1c-0.3,0.4-0.7,0.7-1.1,1.1c-0.7-0.4-1.6-0.8-2.5-0.5&#10;      c-1.4,0.4-2.2,2-1.7,3.4c0.4,1.4,2.1,2.2,3.5,1.6c0.7-0.2,1.2-0.9,1.4-1.6c-0.8,0-1.6,0-2.4,0c0-0.5,0-0.9,0-1.4c1.3,0,2.7,0,4,0&#10;      C13.7,12.6,13.5,13.8,12.8,14.7z M18.6,12.6c-0.4,0-0.8,0-1.2,0c0,0.4,0,0.8,0,1.2c-0.4,0-0.8,0-1.2,0c0-0.4,0-0.8,0-1.2&#10;      c-0.4,0-0.8,0-1.2,0c0-0.4,0-0.8,0-1.2c0.4,0,0.8,0,1.2,0c0-0.4,0-0.8,0-1.2c0.4,0,0.8,0,1.2,0c0,0.4,0,0.8,0,1.2c0.4,0,0.8,0,1.2,0&#10;      C18.6,11.8,18.6,12.2,18.6,12.6z"/>
+    </g>
+
+    <g id="googleplus-square">
+      <path d="M-0.6-0.6v25.2h25.2V-0.6H-0.6z M9.3,16.8c-2.6,0-4.8-2.1-4.8-4.8s2.1-4.8,4.8-4.8c1.2,0,2.4,0.5,3.2,1.2&#10;        c-1,0.9-1,1-1.4,1.4c-0.5-0.4-1-0.7-1.8-0.7c-1.6,0-2.8,1.3-2.8,2.8s1.2,2.8,2.8,2.8c1.5,0,2.2-0.7,2.6-1.9c-0.7,0-2.6,0-2.6,0v-1.9&#10;        c0,0,3.6,0,4.6,0C14.2,13.3,13.3,16.8,9.3,16.8z M19.6,12.3h-1.7V14h-1.2v-1.7h-1.7v-1.2h1.7V9.5h1.2v1.7h1.7V12.3z"/>
+    </g>
+
+    <g id="add-social">
+      <path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12&#10;S5.9,1,12,1s11,4.9,11,11S18.1,23,12,23z M12.5,11.5H18v1h-5.5V18h-1v-5.5H6v-1h5.5V6h1V11.5z"/>
+    </g>
+
+    <g id="web">
+      <path d="M24,12c0,6.6-5.4,12-12,12S0,18.6,0,12S5.4,0,12,0S24,5.4,24,12z M22.5,12c0-5.8-4.7-10.5-10.5-10.5c-0.3,0-0.6,0-0.9,0.1&#10;  c-0.2,0.5-1.1,1.2-0.8,1.7c0.4,0.8,1.5-0.3,2-0.5C12.9,2.6,14,2.3,14,3.2c0,0.6-0.6,1.2-0.6,1.9c0.7,0.2,1.2-1,1.8-0.3&#10;  c0.6,0.6-0.2,1.4-0.6,1.8c-0.6,0.7-0.6,1-0.9,1.8c-0.5,1.3-0.5-0.1-0.8-0.4c-0.4-0.5-1.4-0.5-1.8-0.2c-0.7,0.4-0.7,1-0.5,1.7&#10;  c0.8,2,3.1,0.5,4.6,1.3c1.4,0.8,1.7,3.6,0.6,4.5c-0.4,0.3-1.2,0.7-1.5,1.3c-0.2,0.3-0.1,0.7-0.2,1.1c-0.1,0.2-1.1,2.4-1.6,1.6&#10;  l-0.5-0.4c-1.1-1.1-0.4-3.4-1.6-4.7c-0.6-0.6-1.3-0.8-1.2-1.8c0.1-0.8,0.5-0.9,0.9-1.4c0.6-1-1.3-2-2.4-2.1c-0.7-0.1-1,0.7-1.4-0.2&#10;  c-0.2-0.6-0.1-1.4-0.1-2c-0.1-0.9-0.4-2-1.2-2.6C3,5.9,1.5,8.8,1.5,12c0,5.8,4.7,10.5,10.5,10.5C17.8,22.5,22.5,17.8,22.5,12z"/>
+    </g>
+
+    <g id="flickr">
+      <path d="M5.5,17.5C2.5,17.5,0,15,0,12s2.5-5.5,5.5-5.5C8.5,6.5,11,9,11,12S8.5,17.5,5.5,17.5z M18.5,17.5c-3,0-5.5-2.5-5.5-5.5&#10;  s2.5-5.5,5.5-5.5c3,0,5.5,2.5,5.5,5.5S21.5,17.5,18.5,17.5z"/>
+    </g>
+
+    <g id="behance">
+      <path d="M12.3,14.9c0,2.3-1.3,4.5-5.6,4.5c-3.3,0-6.8,0-6.8,0v-15c0,0,4.5,0,7.3,0c2.7,0,4.6,1.4,4.6,3.9c0,2.2-1.4,2.8-1.8,3.1&#10;      C10,11.3,12.3,11.9,12.3,14.9z M3.4,10.3h3.2c1.2,0,2.2-0.4,2.2-1.7C8.8,7.3,7.9,7,6.2,7H3.4V10.3z M9.1,14.6&#10;      c0-1.2-0.8-1.9-2.4-1.9H3.4v4h3.2C8.6,16.8,9.1,15.9,9.1,14.6z M24,14.7h-7.8c0,1.7,1.2,2.7,2.7,2.7c1.6,0,2.1-1.2,2.1-1.2h2.9&#10;      c-0.5,2.1-2.5,3.5-5.1,3.5c-3.2,0-5.4-2-5.4-5.6c0-3.9,2.3-5.8,5.3-5.8c3.4,0,5.3,2.2,5.3,5.8V14.7z M22,4.9h-6.5v1.5H22V4.9z&#10;        M21.1,12.8c0-1.3-1-2.3-2.4-2.3c-1.5,0-2.3,1.1-2.4,2.3H21.1z"/>
+    </g>
+
+    <g id="blogger">
+      <path d="M24,10.5v6c0,4.1-3.4,7.5-7.5,7.5h-9C3.4,24,0,20.6,0,16.5v-9C0,3.4,3.4,0,7.5,0H12c4.1,0,7.5,3.4,7.5,7.5&#10;      c0,0.8,0.6,1.5,1.3,1.5h1.7C23.3,9,24,9.7,24,10.5z M6,7.5C6,8.3,6.7,9,7.5,9H12c0.8,0,1.5-0.7,1.5-1.5S12.8,6,12,6H7.5&#10;      C6.7,6,6,6.7,6,7.5z M18,16.5c0-0.8-0.7-1.5-1.5-1.5h-9C6.7,15,6,15.7,6,16.5S6.7,18,7.5,18h9C17.3,18,18,17.3,18,16.5z"/>
+    </g>
+
+    <g id="delicious">
+      <path d="M0,12h12v12H0V12z M12,0h12v12H12V0z"/>
+    </g>
+
+    <g id="dribbble">
+      <path d="M0,12c0-0.2,0-0.4,0-0.6c5-0.1,9.1-0.6,12.5-1.7c0.4,0.8,0.7,1.5,1.1,2.3c-0.3,0.1-0.6,0.2-0.9,0.3c-3.8,1.3-7,3.9-9.5,7.8&#10;      C1.2,18,0,15.1,0,12z M0.2,9.6C1,5.8,3.6,2.7,7,1.1c1.9,2.3,3.5,4.7,4.7,7C8.6,9,4.8,9.5,0.2,9.6z M12,24c-2.8,0-5.4-1-7.4-2.6&#10;      c2.8-4.4,6.2-6.7,9.7-7.7c1.3,3.4,2,6.6,2.5,9.3C15.2,23.7,13.7,24,12,24z M9,0.4C10,0.1,11,0,12,0c3.1,0,5.9,1.2,8,3.1&#10;      c-1.6,1.9-3.7,3.3-6.3,4.4C12.4,5.1,10.9,2.7,9,0.4z M15.6,11.6c-0.3-0.8-0.7-1.7-1.1-2.5c2.8-1.1,5-2.7,6.8-4.7&#10;      C23,6.4,24,9.1,24,11.9C21,11.3,18.2,11.1,15.6,11.6z M18.6,22c-0.5-2.6-1.2-5.5-2.3-8.7c2.6-0.4,5.2-0.1,7.6,0.5&#10;      C23.4,17.2,21.4,20.2,18.6,22z"/>
+    </g>
+
+    <g id="foursquare">
+      <path d="M18.5,0c0,0-11,0-12.8,0C3.9,0,3.4,1.3,3.4,2.2c0,0.8,0,20.3,0,20.3c0,0.9,0.5,1.3,0.8,1.4&#10;        c0.3,0.1,1.1,0.2,1.5-0.3c0,0,6-7,6.1-7.1c0.2-0.2,0.2-0.2,0.3-0.2c0.3,0,2.6,0,3.9,0c1.6,0,1.9-1.2,2.1-1.9&#10;        c0.1-0.6,1.7-8.8,2.3-11.4C20.9,1.1,20.4,0,18.5,0z M18.2,14.4c0.1-0.6,1.7-8.8,2.3-11.4 M17.7,3.5l-0.5,2.8&#10;        c-0.1,0.3-0.4,0.6-0.8,0.6c-0.4,0-5,0-5,0c-0.6,0-1,0.4-1,0.9v0.6c0,0.6,0.4,1,1,1c0,0,3.8,0,4.2,0c0.4,0,0.8,0.4,0.7,0.9&#10;        c-0.1,0.4-0.5,2.5-0.5,2.8c0,0.2-0.3,0.6-0.8,0.6c-0.4,0-3.5,0-3.5,0c-0.6,0-0.8,0.1-1.2,0.6c-0.4,0.5-4.2,5.1-4.2,5.1&#10;        c0,0-0.1,0-0.1,0V3.4c0-0.4,0.3-0.8,0.8-0.8c0,0,9.9,0,10.3,0C17.5,2.6,17.8,3,17.7,3.5z"/>
+    </g>
+
+    <g id="quora">
+      <path d="M20.2,21.7l0.3,2c-0.6,0.2-1.2,0.3-1.7,0.3c-1.8,0-3.5-1.1-4.4-2.9c-0.9,0.2-1.8,0.3-2.7,0.3c-6.2,0-10.1-4-10.1-10.8&#10;      C1.6,4.4,6.2,0,12.3,0s10.1,3.8,10.1,10.6c0,4.1-2,7.4-5,9.3c0.7,1.3,1.5,1.8,2.6,1.8H20.2z M15.9,16.9c1-1.3,1.6-3.4,1.6-6.2&#10;      c0-5.4-2.1-8-5.5-8c-3.4,0-5.4,2.8-5.4,8c0,6.1,2.1,8.1,5.4,8.1c0.5,0,0.9-0.1,1.3-0.2c-0.6-1.1-1.2-1.6-2.2-1.6&#10;      c-0.1,0-0.2,0-0.4,0l-0.3-1.8c0.5-0.2,1.1-0.4,1.7-0.4C13.6,14.8,15,15.6,15.9,16.9z"/>
+    </g>
+
+
+
+    <g id="reddit">
+      <path d="M22.9,13.2c0.1,0.5,0.2,0.9,0.2,1.4c0,4.2-4.9,7.7-11,7.7c-6.1,0-11-3.4-11-7.7c0-0.5,0.1-1,0.2-1.4C0.5,12.7,0,11.9,0,11&#10;        c0-1.5,1.2-2.6,2.6-2.6c0.7,0,1.3,0.3,1.8,0.7C6.4,7.8,9,7,11.9,7l1.5-4.5C13.5,2.2,13.7,2,14,2.1l4,0.8c0.4-0.7,1.1-1.2,1.9-1.2&#10;        c1.2,0,2.2,1,2.2,2.2S21.1,6,19.9,6c-1.1,0-2.1-0.9-2.1-2l-3.5-0.7L13.1,7c2.5,0.2,4.8,0.9,6.5,2.1c0.5-0.4,1.1-0.7,1.8-0.7&#10;        c1.5,0,2.6,1.2,2.6,2.6C24,11.9,23.5,12.7,22.9,13.2z M8.4,14.6c0.9,0,1.7-0.8,1.7-1.7c0-0.9-0.8-1.7-1.7-1.7S6.7,12,6.7,13&#10;        C6.7,13.9,7.5,14.6,8.4,14.6z M16.1,17.4c-0.2-0.2-0.5-0.3-0.8-0.1c-0.9,0.7-2.1,1.1-3.3,1.1c-1.2,0-2.4-0.4-3.3-1.1&#10;        c-0.2-0.2-0.6-0.1-0.8,0.1C7.7,17.7,7.8,18,8,18.2c1.1,0.8,2.5,1.3,4,1.3c1.5,0,2.9-0.5,4-1.3C16.2,18,16.3,17.7,16.1,17.4z&#10;        M17.3,13c0-0.9-0.8-1.7-1.7-1.7S13.9,12,13.9,13c0,0.9,0.8,1.7,1.7,1.7S17.3,13.9,17.3,13z"/>
+    </g>
+
+    <g id="soundcloud">
+      <path d="M23.7,15.5c0,0-0.4,0.8-1.2,1.2c-0.8,0.5-1.5,0.4-1.5,0.4l-8.4,0c0,0-0.3,0-0.3-0.3c0-0.3,0-9.4,0-9.4&#10;      s0-0.3,0.3-0.4c0,0,0.3-0.2,0.6-0.2c0.3-0.1,0.6-0.1,0.9-0.2c0.3,0,0.4,0,0.6,0c0.2,0,0.3,0,0.4,0s0.4,0,0.7,0.1&#10;      c0.3,0.1,0.8,0.2,1.4,0.6c0.6,0.4,0.9,0.7,1.4,1.2s0.7,1.2,0.9,1.6c0.1,0.4,0.2,0.7,0.2,1s0,0.2,0,0.2s0.4-0.1,0.7-0.2&#10;      c0.3,0,0.6-0.1,1.3,0.1c0.6,0.1,1.2,0.6,1.2,0.6s0.7,0.5,1,1.6C24.2,14.7,23.7,15.5,23.7,15.5z M11.4,7.8c-0.2,0-0.5,0-0.5,0&#10;      s-0.2,0-0.2,0.3c0,0.3-0.2,6.2-0.2,6.2l0.2,2.5c0,0,0,0.3,0.4,0.3c0.4,0,0.5-0.3,0.5-0.3l0.2-2.5l-0.2-6.2&#10;      C11.6,8.1,11.6,7.8,11.4,7.8z M9.2,8.8c-0.4,0-0.4,0.4-0.4,0.4l-0.2,5.3l0.2,2.5c0,0,0,0.3,0.4,0.3c0.4,0,0.4-0.3,0.4-0.3l0.2-2.5&#10;      c0,0-0.2-4.8-0.2-5.2C9.6,8.8,9.2,8.8,9.2,8.8z M7.4,8.9c-0.3,0-0.3,0.2-0.3,0.2L7,14.4l0.2,2.5c0,0,0,0.2,0.3,0.2s0.3-0.2,0.3-0.2&#10;      L8,14.4c0,0-0.3-5.1-0.3-5.3S7.4,8.9,7.4,8.9z M5.6,9.4c-0.3,0-0.3,0.2-0.3,0.2L5,14.5l0.3,2.6c0,0,0,0.2,0.3,0.2&#10;      c0.3,0,0.3-0.2,0.3-0.2l0.3-2.6c0,0-0.3-4.7-0.3-4.9C5.9,9.4,5.6,9.4,5.6,9.4z M3.8,11.1c-0.1,0-0.2,0.1-0.2,0.1l-0.3,3L3.7,17&#10;      c0,0,0,0.2,0.2,0.2c0.2,0,0.2-0.2,0.2-0.2l0.4-2.8c0,0-0.5-2.9-0.5-3C4,11.1,3.8,11.1,3.8,11.1z M1.9,11.4c-0.2,0-0.2,0.1-0.2,0.1&#10;      l-0.3,2.8l0.3,2.6c0,0,0,0.1,0.2,0.1c0.2,0,0.2-0.1,0.2-0.1l0.4-2.6c0,0-0.4-2.7-0.4-2.8S1.9,11.4,1.9,11.4z M0.3,12.5&#10;      C0.2,12.5,0.2,12.6,0.3,12.5L0,14.2l0.3,1.6c0,0,0,0.1,0.1,0.1c0.1,0,0.1-0.1,0.1-0.1l0.3-1.6c0,0-0.3-1.5-0.3-1.6&#10;      C0.5,12.5,0.3,12.5,0.3,12.5z"/>
+    </g>
+
+    <g id="tumblr">
+      <path d="M14.3,24c-4.5,0-6.5-2-6.5-6v-7.5H4.2V7c3-1,5-2.5,5.5-7h3.5v6h5.5v4.5h-5.5v6c0,2.5,0.5,3.5,3,3.5c1.5,0,3.5-1,3.5-1v3.7&#10;      C19.8,22.7,17.7,24,14.3,24z"/>
+    </g>
+
+    <g id="vine">
+      <path d="M22.2,15.3c-0.8,0-1.6,0-2.3-0.2c-1.6,3.4-3.8,6.2-6.9,8.5c-0.3,0.2-0.6,0.4-1,0.4c-0.3,0-0.7-0.2-0.9-0.3&#10;      c-5.8-4-9.3-11.4-9.3-20.2h3.4c0,7.1,2.5,13.1,6.8,16.6c2-1.7,3.6-3.8,4.7-6.2C13.6,12.1,12,8.6,12,5.1C12,2.4,13.8,0,17.1,0&#10;      c3.3,0,5.2,2.5,5.2,5.1c0,1.7-0.2,3.2-0.4,4.9h-3.4c0.2-1.3,0.4-3,0.4-4.7c0-1.3-0.7-1.9-1.7-1.9c-1.1,0-1.7,0.6-1.7,1.9&#10;      c0,3.8,2.5,7.2,6.8,7.2V15.3z"/>
+    </g>
+
+    <g id="wordpress">
+      <path d="M24,12c0,6.6-5.4,12-12,12C5.4,24,0,18.6,0,12S5.4,0,12,0C18.6,0,24,5.4,24,12z M22.5,12c0-5.8-4.7-10.5-10.5-10.5&#10;      C6.2,1.5,1.5,6.2,1.5,12S6.2,22.5,12,22.5C17.8,22.5,22.5,17.8,22.5,12z M3,12c0,3.6,2.1,6.6,5,8.1L3.8,8.4C3.3,9.5,3,10.7,3,12z&#10;        M16.4,6.9c0-0.8,0.6-1.6,1.5-1.6H18C16.4,3.9,14.3,3,12,3C8.9,3,6.1,4.6,4.5,7.1c0.2,0,0.4,0,0.6,0c0.9,0,2.4-0.1,2.4-0.1&#10;      c0.5,0,0.5,0.7,0.1,0.7c0,0-0.5,0-1,0.1l3.3,9.7l2-5.9l-1.4-3.8c-0.5,0-0.9-0.1-0.9-0.1c-0.5,0-0.4-0.8,0.1-0.7&#10;      c0,0,1.5,0.1,2.4,0.1c0.9,0,2.4-0.1,2.4-0.1c0.5,0,0.6,0.7,0.1,0.7c0,0-0.5,0-1,0.1l3.2,9.7l0.9-3c0.4-1.3,0.7-2.1,0.7-2.9&#10;      c0-1.1-0.4-1.9-0.7-2.5C16.8,8.3,16.4,7.7,16.4,6.9z M12.1,12.8l-2.7,7.9c0.8,0.2,1.7,0.4,2.6,0.4c1,0,2-0.2,2.9-0.5L12.1,12.8z&#10;      M19.9,7.7c0.1,0.3,0.1,0.6,0.1,0.9c0,0.9-0.2,1.9-0.7,3.2l-2.8,7.9c2.7-1.6,4.5-4.5,4.5-7.8C21,10.4,20.6,9,19.9,7.7z"/>
+    </g>
+
+    <g id="wakelet-w">
+      <path d="M24,4.1c0,0.1,0,0.2,0,0.3l-0.6,1.8c-1.4,0.1-2.7,0.4-4.2,0.7l0.6-2.5c0.1-0.5,0.4-0.8,1-0.8h2.7&#10;      C23.9,3.6,24,3.8,24,4.1z M14,4.2c-0.1-0.4-0.4-0.6-0.9-0.6h-1.9c-0.4,0-0.8,0.2-0.9,0.7l-2,6.8c2.4-1.3,4.7-2.3,6.9-3.1L14,4.2z&#10;      M4.5,4.3c-0.1-0.4-0.3-0.7-1-0.7H0.7C0.2,3.6,0,3.8,0,4.1c0,0.1,0,0.2,0,0.3L3,14.2c1.1-0.7,2.2-1.4,3.3-2.1L4.5,4.3z M17.2,15.3&#10;      L17.2,15.3l-1.7-6c-1.1,0.3-2.2,0.6-3.3,1l2.7,9.2c0.2,0.6,0.4,0.9,1.1,0.9h2.4c0.6,0,0.9-0.3,1.1-0.8l3.5-11.4&#10;      c-1.3,0.1-2.6,0.2-4,0.4L17.2,15.3z M7,15.2L7,15.2l-0.6-2.5c-1.1,0.5-2.2,1.1-3.4,1.8l1.5,5.1c0.1,0.5,0.5,0.8,1.1,0.8H8&#10;      c0.6,0,0.9-0.2,1.1-0.8l2.6-9.1C10.5,10.9,9.2,11.4,8,12L7,15.2z"/>
+    </g>
+
+    <g id="wakelet-domain">
+      <path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M10.6,6.5h2.9l0.9,3.2&#10;      c-1.9,0.6-3.7,1.4-5.4,2.2L10.6,6.5z M3.2,6.5L3.2,6.5l3.7,0l1.3,5.8c-1.4,0.8-2.4,1.4-2.9,1.7L3.2,6.5z M17.2,18.5h-3.3L12,11.8&#10;      l-1.9,6.7H6.7L5.4,14c1-0.5,2-0.9,2.9-1.2l0.2,0.8l0.3-1c1.9-0.7,3.9-1.3,5.9-1.8l0.8,2.8l0.8-3.2c1.3-0.3,2.5-0.4,3.4-0.5&#10;      L17.2,18.5z M20.2,8.3C19,8.5,17.9,8.7,16.7,9l0.6-2.5h3.5l0,0L20.2,8.3z"/>
+    </g>
+
+    <g id="facebook-circle">
+      <path d="M15,23.6v-9.1h2.6l0.4-3h-3V8.9c0-0.9,0.4-1.4,1.3-1.4h1.9V4.7c0,0-0.9-0.2-2.2-0.2c-2.9,0-4.3,1.6-4.3,4v3H9v3h2.7V24&#10;      C5.2,23.9,0,18.5,0,12C0,5.4,5.4,0,12,0c6.6,0,12,5.4,12,12C24,17.6,20.2,22.3,15,23.6z"/>
+    </g>
+
+    <g id="twitter-circle">
+      <path d="M24,12c0,6.6-5.4,12-12,12C5.4,24,0,18.6,0,12S5.4,0,12,0C18.6,0,24,5.4,24,12z M21,7.6c-0.6,0.3-1.3,0.4-2,0.5&#10;      c0.7-0.4,1.2-1.1,1.5-1.9c-0.7,0.4-1.4,0.7-2.1,0.8C17.8,6.4,16.9,6,15.9,6c-1.9,0-3.4,1.5-3.4,3.4c0,0.2,0,0.5,0.1,0.8&#10;      c-2.8-0.1-5.4-1.5-7.1-3.6C5.2,7.1,5.1,7.7,5.1,8.3c0,1.2,0.6,2.2,1.5,2.8c-0.6,0-1.1-0.2-1.5-0.4v0c0,1.7,1.2,3,2.7,3.4&#10;      c-0.3,0.1-0.6,0.1-0.9,0.1c-0.2,0-0.4,0-0.6-0.1c0.4,1.4,1.7,2.3,3.2,2.3c-1.2,0.9-2.6,1.6-4.2,1.6c-0.3,0-0.6,0-0.8-0.1&#10;      c1.5,1,3.3,1.5,5.2,1.5c6.3,0,9.7-5.2,9.7-9.7c0-0.1,0-0.3,0-0.4C20,8.9,20.5,8.3,21,7.6z"/>
+    </g>
+
+    <g id="instagram-circle">
+      <path d="M23.9,12c0,6.6-5.4,12-12,12c-6.6,0-12-5.4-12-12s5.4-12,12-12C18.5,0,23.9,5.4,23.9,12z M18.9,7c0-1.1-0.9-2-2-2h-10&#10;      c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2V7z M15.9,12c0,2.2-1.8,4-4,4s-4-1.8-4-4c0-0.3,0-0.7,0.1-1H6.4v6&#10;      c0,0.3,0.2,0.5,0.5,0.5h10c0.3,0,0.5-0.2,0.5-0.5v-6h-1.6C15.9,11.3,15.9,11.7,15.9,12z M11.9,14.5c1.4,0,2.5-1.1,2.5-2.5&#10;      s-1.1-2.5-2.5-2.5S9.4,10.6,9.4,12S10.5,14.5,11.9,14.5z M16.9,6.5h-1.5c-0.3,0-0.5,0.2-0.5,0.5v1.5c0,0.3,0.2,0.5,0.5,0.5h1.5&#10;      c0.3,0,0.5-0.2,0.5-0.5V7C17.4,6.7,17.2,6.5,16.9,6.5z"/>
+    </g>
+
+    <g id="youtube-circle">
+      <path d="M24,12c0,6.6-5.4,12-12,12S0,18.6,0,12S5.4,0,12,0S24,5.4,24,12z M19.5,12c0-5.5,0-5.5-7.5-5.5s-7.5,0-7.5,5.5&#10;      s0,5.5,7.5,5.5S19.5,17.5,19.5,12z M10,9l5,3l-5,3V9z"/>
+    </g>
+
+    <g id="private">
+      <path d="M9.7,16c0-1.3,1-2.3,2.3-2.3s2.3,1,2.3,2.3c0,1.3-1,2.3-2.3,2.3S9.7,17.3,9.7,16z M21.1,10.3v11.4&#10;c0,1.3-1,2.3-2.3,2.3H5.1c-1.3,0-2.3-1-2.3-2.3V10.3C2.9,9,3.9,8,5.1,8h1.1V5.7C6.3,2.6,8.8,0,12,0s5.7,2.6,5.7,5.7V8h1.1&#10;C20.1,8,21.1,9,21.1,10.3z M8.5,8h7.1V5.7c0-2-1.6-3.5-3.5-3.5S8.5,3.8,8.5,5.7V8z M18.9,10.3H5.1v11.4h13.7V10.3z"/>
+    </g>
+
+    <g id="unlisted">
+      <path d="M19.2,5.9l3.6-3.6l-1.1-1.1l-3.9,3.9C16,4.2,14.1,3.7,12,3.7c-5.5,0-10.1,3.4-12,8.2c1,2.5,2.7,4.6,4.9,6&#10;      l-3.7,3.7l1.1,1.1l4-4c1.7,0.8,3.6,1.3,5.7,1.3c5.5,0,10.1-3.4,12-8.2C23,9.5,21.3,7.4,19.2,5.9z M1.7,11.9c1.8-4,5.8-6.6,10.3-6.6&#10;      c1.6,0,3.2,0.3,4.6,1l-2.8,2.8c-0.5-0.3-1.1-0.5-1.7-0.5c-1.8,0-3.3,1.5-3.3,3.3c0,0.6,0.2,1.2,0.5,1.7l-3.2,3.2&#10;      C4.2,15.7,2.7,14,1.7,11.9z M12,18.5c-1.6,0-3.1-0.3-4.4-0.9l2.8-2.8c0.5,0.3,1,0.4,1.6,0.4c1.8,0,3.3-1.5,3.3-3.3&#10;      c0-0.6-0.2-1.1-0.4-1.6l3.2-3.2c1.8,1.1,3.3,2.8,4.2,4.8C20.4,15.9,16.5,18.5,12,18.5z"/>
+    </g>
+
+    <g id="public">
+      <path d="M20.5,3.5C18.2,1.2,15.2,0,12,0S5.8,1.2,3.5,3.5S0,8.8,0,12s1.3,6.2,3.5,8.5C5.8,22.7,8.8,24,12,24c3.2,0,6.2-1.3,8.5-3.5&#10;    c2.3-2.3,3.5-5.3,3.5-8.5S22.7,5.8,20.5,3.5z M11.9,1.8C11.9,1.8,11.9,1.8,11.9,1.8c2.8,0,5.4,1.1,7.3,3c1.6,1.6,2.6,3.7,2.9,6&#10;    l0,0.4h-4.8l0-0.3c-0.1-1.7-0.3-3.2-0.6-4.6c-0.7-0.6-1.5-1-2.3-1.3c0.6,1.6,1,3.6,1.1,5.9l0,0.4H8.4l0-0.4C8.5,8.3,9,6.2,9.6,4.4&#10;    C10.3,2.8,11.2,1.8,11.9,1.8z M1.8,10.7c0.3-2.3,1.3-4.3,2.9-6c0.9-0.9,1.9-1.6,3.1-2.1l0.9-0.4L8.3,3.1C8.1,3.3,8,3.6,7.9,3.8&#10;    c-0.8,1.9-1.3,4.4-1.4,6.9l0,0.3H1.8L1.8,10.7z M7.8,21.4c-1.1-0.5-2.2-1.2-3.1-2.1l0,0c-1.6-1.6-2.6-3.7-2.9-6l0-0.4h4.8l0,0.3&#10;    c0.1,2.6,0.6,5,1.4,6.9c0.1,0.3,0.2,0.5,0.3,0.7l0.5,0.9L7.8,21.4z M14.4,19.6c-0.7,1.7-1.6,2.7-2.4,2.7c-0.8,0-1.7-1-2.4-2.7&#10;    c-0.7-1.7-1.1-3.9-1.2-6.3l0-0.4h7.2l0,0.4C15.5,15.7,15,17.9,14.4,19.6L14.4,19.6z M22.2,13.3c-0.3,2.3-1.3,4.3-2.9,6l0,0&#10;    c-0.9,0.9-2,1.6-3.1,2.1l-0.9,0.4l0.5-0.9c0.1-0.2,0.2-0.4,0.3-0.7c0.8-1.9,1.3-4.4,1.4-6.9l0-0.3h4.8L22.2,13.3z"/>
+    </g>
+
+    <g id="like">
+      <path d="M12.4,22.4c-0.1,0.1-0.2,0.1-0.4,0.1c-0.1,0-0.3-0.1-0.4-0.1L3.3,14c-4-4-4.2-8.1-1.7-10.6c2.5-2.5,6.6-2.5,9.2,0&#10;      c0.5,0.5,0.9,1,1.2,1.6c0.3-0.6,0.7-1.1,1.2-1.6c2.5-2.6,6.6-2.6,9.2,0c2.5,2.5,2.3,6.6-1.7,10.6L12.4,22.4z"/>
+    </g>
+
+    <g id="like-outline">
+    <path d="M17.7,3c1.3,0,2.6,0.5,3.5,1.5c2.1,2.1,1.4,5.3-1.7,8.5L12,20.6L4.4,13c-1.9-1.9-2.9-3.9-2.9-5.6c0-1.1,0.4-2.1,1.2-2.9&#10;      C3.7,3.5,4.9,3,6.2,3s2.6,0.5,3.5,1.5c0.4,0.4,0.7,0.8,0.9,1.2L12,8.1l1.3-2.4c0.2-0.4,0.6-0.9,0.9-1.2C15.2,3.5,16.4,3,17.7,3&#10;        M17.7,1.5c-1.7,0-3.3,0.6-4.6,1.9c-0.5,0.5-0.9,1-1.2,1.6c-0.3-0.6-0.7-1.1-1.2-1.6C9.6,2.2,7.9,1.5,6.2,1.5S2.9,2.2,1.7,3.4&#10;      C-0.9,5.9-0.6,10.1,3.3,14l8.3,8.3c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.2-0.1,0.4-0.1l8.3-8.3c4-4,4.2-8.1,1.7-10.6&#10;      C21.1,2.1,19.4,1.5,17.7,1.5L17.7,1.5z"/>
+    </g>
+
+    <g id="top-picks">
+      <path d="M18,15.7l1.5,7.8c0,0.2-0.1,0.4-0.2,0.5C19.2,24,19.1,24,19,24c-0.1,0-0.2,0-0.3-0.1L12,19.6l-6.7,4.3&#10;    c-0.2,0.1-0.4,0.1-0.6,0c-0.2-0.1-0.3-0.3-0.2-0.5L6,15.7L0.1,9.9C0,9.7,0,9.5,0,9.3C0.1,9.1,0.3,9,0.5,9h7.7l3.4-8.7&#10;    C11.6,0.1,11.8,0,12,0s0.4,0.1,0.5,0.3L15.8,9h7.7c0.2,0,0.4,0.1,0.5,0.3c0.1,0.2,0,0.4-0.1,0.6L18,15.7z"/>
+    </g>
+
+    <g id="popular">
+      <path d="M22.1,14.9c0,3-1.1,4.6-2.8,6.2c-1.7,1.6-4.1,2.9-4.1,2.9s1.9-2.1,1.7-5.3c-0.2-3.2-1-4.5-2.1-6.2s-2.7-2.8-2.7-2.8&#10;    s0.7,1.9,0.1,3.6c-0.6,1.7-1.5,3.3-1.5,3.3s-0.3-0.7-0.2-1.7c0-1,0.2-1.8,0.2-1.8S9,13.8,7.8,16c-1.2,2.4-1.3,2.2-1.3,4.3&#10;    C6.5,21.8,8,24,8,24s-3.5-1.5-4.8-3.4c-1.3-2-1.3-2.9-1.3-4.5c0-1.5,1.6-4.5,2.5-6.2s0.5-3.5,0.5-3.5s1.4,0.2,1.8,2&#10;    c0.3,1.5-0.2,2.1-0.2,2.1s1-0.9,2.1-2.9s1.2-1.9,1.7-4.5C10.8,0.6,10.1,0,10.1,0s1.9,0.2,3.4,1.8s1.9,2.4,2.4,3.8&#10;    c0.5,1.5,0.7,2.5,0.7,2.5s0.9-0.3,1.1-1.2c0.3-1.4-1-2.7-1-2.7s2.2,0.4,3.9,3.5C22.1,10.9,22.1,11.9,22.1,14.9z"/>
+    </g>
+
+    <g id="arrow-next">
+      <path d="M22.3,10.3h-8.6V1.7C13.7,0.8,12.9,0,12,0s-1.7,0.8-1.7,1.7v8.6H1.7C0.8,10.3,0,11.1,0,12s0.8,1.7,1.7,1.7h8.6&#10;  v8.6c0,0.9,0.8,1.7,1.7,1.7s1.7-0.8,1.7-1.7v-8.6h8.6c0.9,0,1.7-0.8,1.7-1.7S23.2,10.3,22.3,10.3z"/>
+    </g>
+
+    <g id="arrow-back">
+      <path d="M24,13.1H4.5l9.3,9.2L12.1,24L0,12L12.1,0l1.7,1.6l-9.3,9.2H24V13.1z"/>
+    </g>
+
+    <g id="arrow-left">
+      <path d="M5.1,12l12-12l1.9,1.9L8.8,12l10.1,10.1L17.1,24L5.1,12z"/>
+    </g>
+
+    <g id="arrow-up">
+      <path d="M12,8.8L1.9,19L0,17.1L12,5l12,12.1L22.1,19L12,8.8z"/>
+    </g>
+
+    <g id="arrow-down">
+      <path d="M0,7l1.9-1.9L12,15.2L22.1,5.1L24,7l-12,12L0,7z"/>
+    </g>
+
+    <g id="arrow-right">
+      <path d="M5,22.1L15.2,12L5,1.9L7,0l12,12L7,24L5,22.1z"/>
+    </g>
+
+    <g id="arrow-right-circle">
+    <path d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,22.5C6.2,22.5,1.5,17.8,1.5,12S6.2,1.5,12,1.5&#10;    S22.5,6.2,22.5,12S17.8,22.5,12,22.5z M12.9,6.5l5.3,5.3L12.9,17l-1-1l3.5-3.5H7.9V11h7.5l-3.5-3.5L12.9,6.5z"/>
+    </g>
+
+    <g id="expand">
+      <path d="M11.1,14.6l-6.9,6.9h7.2V24H0V12.5h2.5v7.2l6.9-6.9L11.1,14.6z M24,0v11.5h-2.5V4.3l-6.9,6.9l-1.8-1.8l6.9-6.9h-7.2V0H24z"/>
+    </g>
+
+    <g id="close">
+      <path d="M14.5,12l9.5,9.5L21.5,24L12,14.5L2.5,24L0,21.5L9.5,12L0,2.5L2.5,0L12,9.5L21.5,0L24,2.5L14.5,12z"/>
+    </g>
+
+    <g id="copy">
+      <path transform="scale(0.025)" d="M644,175H179C135,175,100,210,100,254V921C100,965,135,1000,179,1000H644C687,1000,723,965,723,921V254C722,210,687,175,644,175zM667,921C667,934,656,945,643,945H178C165,945,155,934,155,921V254C155,241,165,230,178,230H643C656,230,667,241,667,254V921zM821,0H356C313,0,277,35,277,79C277,94,290,107,305,107C320,107,333,94,333,79C333,66,343,55,356,55H821C834,55,845,66,845,79V746C845,759,834,770,821,770C806,770,794,782,794,797C794,813,806,825,821,825C865,825,900,790,900,746V79C900,35,865,0,821,0z"/>
+    </g>
+
+    <g id="tick-circle">
+    <path class="st0" d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,22C6.5,22,2,17.5,2,12&#10;C2,6.5,6.5,2,12,2s10,4.5,10,10C22,17.5,17.5,22,12,22z M17.5,6.8l1.4,1.4l-9.3,9.4L5.1,13l1.4-1.4l3.1,3.1L17.5,6.8z"/>
+    </g>
+
+    <g id="tick">
+      <path d="M7.6,17.1l-5.7-5.7L0,13.4L7.6,21L24,4.6l-1.9-1.9L7.6,17.1z"/>
+    </g>
+
+    <g id="tick-thick">
+      <path d="M8,21c-0.5,0-0.9-0.2-1.3-0.5l-6.2-6.1c-0.7-0.7-0.7-1.9,0-2.6c0.7-0.7,1.9-0.7,2.6,0L8,16.5l12.9-13c0.7-0.7,1.9-0.7,2.6,0&#10;  c0.7,0.7,0.7,1.9,0,2.6L9.3,20.5C8.9,20.8,8.5,21,8,21z"/>
+    </g>
+
+    <g id="tip">
+      <path d="M15.2,19.5c0,0.4-0.4,0.8-0.8,0.8H9.6c-0.4,0-0.8-0.3-0.8-0.8s0.4-0.8,0.8-0.8h4.8&#10;    C14.8,18.8,15.2,19.1,15.2,19.5z M14.4,21H9.6c-0.4,0-0.8,0.3-0.8,0.8s0.4,0.8,0.8,0.8c0,0.8,0.7,1.5,1.6,1.5h1.6&#10;    c0.9,0,1.6-0.7,1.6-1.5c0.4,0,0.8-0.3,0.8-0.8S14.8,21,14.4,21z M12,1.5c3.5,0,6.4,2.7,6.4,6c0,2.1-1.2,4.1-3.2,5.2l-0.8,0.4V14v2.5&#10;    H9.6V14v-0.9l-0.8-0.4c-2-1.1-3.2-3-3.2-5.2C5.6,4.2,8.5,1.5,12,1.5 M12,0C7.6,0,4,3.4,4,7.5c0,2.8,1.6,5.2,4,6.5v2.5&#10;    C8,17.3,8.7,18,9.6,18h4.8c0.9,0,1.6-0.7,1.6-1.5V14c2.4-1.3,4-3.7,4-6.5C20,3.4,16.4,0,12,0L12,0z"/>
+    </g>
+
+    <g id="mail">
+      <path d="M12,13.5l-12-9C0,3.7,0.7,3,1.5,3h21C23.3,3,24,3.7,24,4.5L12,13.5z M12,16.2l12-9v12.3c0,0.8-0.7,1.5-1.5,1.5h-21&#10;      C0.7,21,0,20.3,0,19.5V7.2L12,16.2z"/>
+    </g>
+
+    <g id="share">
+      <path d="M24,12c0,0.2-0.1,0.4-0.3,0.5l-12,7.4C11.6,20,11.5,20,11.4,20c-0.1,0-0.2,0-0.3-0.1c-0.2-0.1-0.4-0.3-0.4-0.5v-4&#10;      C3,15.6,1.2,18,1.2,18c-0.1,0.2-0.3,0.3-0.5,0.3H0.5C0.2,18.2,0,18,0,17.7c0-0.1-0.2-3.6,2.5-6.3c1.9-1.8,4.6-2.8,8.2-2.9v-4&#10;      c0-0.2,0.1-0.4,0.4-0.5c0.2-0.1,0.5-0.1,0.6,0l12,7.4C23.9,11.7,24,11.8,24,12z"/>
+    </g>
+
+    <g id="share-outline">
+      <path d="M11.7,5.2l11,6.8l-11,6.8v-3.3v-1l-1,0C4.8,14.6,2.1,16,1,16.8c0.1-1.1,0.6-3.1,2.2-4.7c1.7-1.7,4.3-2.5,7.5-2.6l1,0v-1&#10;        V5.2 M11.4,3.9c-0.1,0-0.2,0-0.3,0.1c-0.3,0.1-0.4,0.3-0.4,0.5v4c-3.6,0.1-6.3,1.1-8.2,2.9C-0.2,14.1,0,17.6,0,17.7&#10;        c0,0.3,0.2,0.5,0.5,0.6h0.2c0.2,0,0.4-0.1,0.5-0.3c0,0,1.8-2.4,9.5-2.6v4c0,0.2,0.2,0.4,0.4,0.5c0.1,0.1,0.2,0.1,0.3,0.1&#10;        s0.2,0,0.3-0.1l12-7.4c0.2-0.1,0.3-0.3,0.3-0.5s-0.1-0.3-0.3-0.6L11.7,4C11.6,4,11.5,3.9,11.4,3.9L11.4,3.9z"/>
+    </g>
+
+    <g id="embed">
+      <path d="M16.6,1H7.4C3.3,1,0,4.4,0,8.5v7C0,19.6,3.3,23,7.4,23h9.3c4.1,0,7.4-3.4,7.4-7.5v-7C24,4.4,20.7,1,16.6,1z&#10;       M22.5,15.5c0,3.3-2.6,5.9-5.8,5.9H7.4c-3.2,0-5.8-2.7-5.8-5.9v-7c0-3.3,2.6-5.9,5.8-5.9h9.3c3.2,0,5.8,2.7,5.8,5.9V15.5z M8.6,9.4&#10;      l-2.6,2.5l2.6,2.5c0.3,0.3,0.3,0.8,0,1.1c-0.1,0.2-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2l-3.1-3c-0.1-0.1-0.2-0.3-0.2-0.5&#10;      c0-0.2,0.1-0.4,0.2-0.5l3.1-3c0.3-0.3,0.8-0.3,1.1,0C9,8.7,8.9,9.1,8.6,9.4z M19.5,11.3c0.1,0.1,0.2,0.3,0.2,0.5s-0.1,0.4-0.2,0.5&#10;      l-3.1,3c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2c-0.3-0.3-0.3-0.8,0-1.1l2.6-2.5l-2.6-2.5c-0.3-0.3-0.3-0.8,0-1.1&#10;      c0.3-0.3,0.8-0.3,1.1,0L19.5,11.3z"/>
+    </g>
+
+    <g id="image">
+      <path d="M24,4.5v15c0,0.8-0.7,1.5-1.5,1.5h-21C0.7,21,0,20.3,0,19.5v-15C0,3.7,0.7,3,1.5,3h21C23.3,3,24,3.7,24,4.5z M3,8.3&#10;    c0,1.3,1,2.2,2.3,2.2c1.2,0,2.2-1,2.2-2.2S6.5,6,5.3,6C4,6,3,7,3,8.3z M15,9l-5.5,7L6,13.5L3,18h18L15,9z"/>
+    </g>
+
+    <g id="image-thick">
+      <path d="M0,21V3h24v18H0z M21.7,18.8V5.2H2.3v13.5H21.7z M6.2,11.1c-1.1,0-2.1-0.9-2.1-2s0.9-2,2.1-2c1.2,0,2.1,0.9,2.1,2&#10;    S7.4,11.1,6.2,11.1z M5,17l4.1-5.4l1.9,1.2l3.1-4.6l5.1,8.8h-2.6l-2.6-4.6l-2.3,3.4l-2-1.3L7.8,17H5z"/>
+    </g>
+
+    <g id="tick-circle2">
+      <path d="M10.5,15.1L20.7,5l1.7-1.7L24,4.9l-2,2L10.5,18.2L4.2,12l1.6-1.6L10.5,15.1z M20.3,11c0,0.3,0.1,0.7,0.1,1&#10;    c0,5.1-4.2,9.2-9.3,9.2S1.8,17.1,1.8,12c0-5.1,4.2-9.2,9.3-9.2c2.5,0,4.9,1,6.5,2.7l1.3-1.3c-2-2-4.8-3.2-7.8-3.2C5,1,0,5.9,0,12&#10;    s5,11,11.1,11s11.1-4.9,11.1-11c0-0.9-0.1-1.7-0.3-2.5L20.3,11z"/>
+    </g>
+
+    <g id="error-circle">
+      <path d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,22.2C6.4,22.2,1.8,17.6,1.8,12S6.4,1.8,12,1.8&#10;    S22.2,6.4,22.2,12S17.6,22.2,12,22.2z M18.6,6.8L13.4,12l5.2,5.2l-1.4,1.4L12,13.4l-5.2,5.2l-1.4-1.4l5.2-5.2L5.4,6.8l1.4-1.4&#10;    l5.2,5.2l5.2-5.2L18.6,6.8z"/>
+    </g>
+
+    <g id="bullets">
+      <path d="M4,5c0,1.1-0.9,2-2,2S0,6.1,0,5c0-1.1,0.9-2,2-2S4,3.9,4,5z M2,10c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2&#10;      C4,10.9,3.1,10,2,10z M2,17c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2C4,17.9,3.1,17,2,17z M7,4v2h17V4H7z M16,11H7v2h9V11z M7,20&#10;      h14v-2H7V20z"/>
+    </g>
+
+    <g id="info">
+      <path d="M11.1,9.1h1.8v9.7h-1.8V9.1z M12,5.2c-0.6,0-1.1,0.5-1.1,1.1c0,0.6,0.4,1.1,1.1,1.1c0.7,0,1.1-0.5,1.1-1.1&#10;      C13.1,5.7,12.7,5.2,12,5.2z M24,12c0,6.6-5.4,12-12,12S0,18.6,0,12C0,5.4,5.4,0,12,0S24,5.4,24,12z M23,12c0-6.1-4.9-11-11-11&#10;      S1,5.9,1,12s4.9,11,11,11S23,18.1,23,12z"/>
+    </g>
+
+    <g id="info-i">
+      <path d="M24,12c0,3.2-1.3,6.2-3.5,8.5S15.2,24,12,24C5.4,24,0,18.6,0,12c0-3.2,1.3-6.2,3.5-8.5S8.8,0,12,0C18.6,0,24,5.4,24,12z&#10;   M21.6,12c0-5.3-4.3-9.6-9.6-9.6c-2.6,0-5,1-6.8,2.8S2.4,9.4,2.4,12c0,5.3,4.3,9.6,9.6,9.6c2.6,0,5-1,6.8-2.8S21.6,14.6,21.6,12z&#10;   M10.8,5.9h2.4v2.4h-2.4V5.9z M10.8,9.8h2.4v8.3h-2.4V9.8z"/>
+    </g>
+
+    <g id="bookmark">
+      <path d="M19,2v18.8L13.1,17L12,16.4L10.9,17L5,20.8V2H19 M19.5,0h-15C3.7,0,3,0.7,3,1.5v22c0,0.2,0.1,0.4,0.3,0.5&#10;      c0.1,0,0.1,0,0.2,0c0.1,0,0.3,0,0.4-0.1l8.1-5.1l8.1,5.1c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.1,0,0.2,0c0.2-0.1,0.3-0.3,0.3-0.5v-22&#10;      C21,0.7,20.3,0,19.5,0L19.5,0z"/>
+    </g>
+
+    <g id="bookmark-thin">
+      <path d="M19.1,1c0.8,0,1.4,0.6,1.4,1.4v20.6l-8-5L12,17.5l-0.5,0.3l-8,5V2.1C3.5,1.6,4.1,1,4.9,1H19.1 M19.1,0H4.9&#10;      C3.6,0,2.5,1.1,2.5,2.1v21.4c0,0.2,0.2,0.4,0.5,0.5c0.1,0,0.2,0,0.3,0c0.2,0,0.4,0,0.6-0.1l8.1-5.1l8.1,5.1c0.2,0.1,0.4,0.1,0.6,0.1&#10;      c0.1,0,0.2,0,0.3,0c0.3-0.1,0.5-0.3,0.5-0.5V2.4C21.5,1.1,20.4,0,19.1,0L19.1,0z"/>
+    </g>
+
+    <g id="save">
+      <path d="M19.1,0H4.9C3.6,0,2.5,1.1,2.5,2.1v21.4c0,0.2,0.2,0.4,0.5,0.5c0.1,0,0.2,0,0.3,0c0.2,0,0.4,0,0.6-0.1l8.1-5.1l8.1,5.1&#10;      c0.2,0.1,0.4,0.1,0.6,0.1c0.1,0,0.2,0,0.3,0c0.3-0.1,0.5-0.3,0.5-0.5V2.4C21.5,1.1,20.4,0,19.1,0z"/>
+    </g>
+
+    <g id="high-five">
+      <path d="M16.8,14.8L16.7,15l0,0.2l-0.1,0c-0.3-0.2-3-1.8-5.9-0.1c1.9,2.9,0.2,5.4,0,5.7l-0.2-0.1h-0.2l0-0.1&#10;      c0.2-0.3,1.7-2.6,0-5.2c-0.1,0.1-0.3,0.2-0.4,0.3l-0.3-0.3C13.1,12.6,16.4,14.5,16.8,14.8z M19.5,6.6v10.6c0,0,0,0,0,0.1&#10;      c0,1.7-0.6,3.2-1.7,4.4c-1.1,1.2-2.6,1.8-4.1,1.8c-1.1,0-2.2-0.3-3.1-1c0,0-0.1,0-0.1,0c-2.9,0-5.2-2.5-5.3-5.5h0v-0.4V9.6&#10;      C5.1,8.7,5.7,8,6.6,8h0.2c0.4,0,0.8,0.2,1,0.5V3.1c0-1,0.7-1.7,1.6-1.7c0.5,0,0.9,0.2,1.2,0.6c0.1-0.8,0.8-1.4,1.6-1.4&#10;      c0.9,0,1.6,0.8,1.6,1.7v0c0.3-0.3,0.7-0.5,1.2-0.5c0.9,0,1.6,0.8,1.6,1.7v2C16.9,5.2,17.3,5,17.7,5H18C18.8,5,19.5,5.7,19.5,6.6z&#10;        M19.1,6.6c0-0.7-0.5-1.2-1.1-1.2h-0.2c-0.6,0-1.1,0.5-1.1,1.2v5.5c-0.1-0.1-0.3-0.2-0.4-0.3V3.5c0-0.7-0.5-1.3-1.2-1.3&#10;      c-0.7,0-1.2,0.6-1.2,1.3v7.7c-0.1,0-0.2,0-0.3,0c0,0-0.1,0-0.1,0V2.2c0-0.7-0.5-1.3-1.2-1.3c-0.7,0-1.2,0.6-1.2,1.3v9.3&#10;      c-0.1,0-0.3,0-0.4,0V3.1c0-0.7-0.5-1.3-1.2-1.3S8.3,2.3,8.3,3.1v11.7C8.1,14.8,8,14.9,7.9,15V9.6c0-0.6-0.5-1.2-1.1-1.2H6.6&#10;      C6,8.4,5.5,9,5.5,9.6v6.9h0c0,0.1,0,0.1,0,0.2c0,2.9,2.2,5.3,4.9,5.3c0.1,0,0.2,0,0.2,0c0.9,0.6,1.9,1,3,1c3,0,5.4-2.6,5.5-5.9&#10;      c0,0,0,0,0,0V6.6z"/>
+    </g>
+
+    <g id="arrow-top">
+      <path d="M10.6,5.7C11,5.3,11.5,5.1,12,5.1c0.5,0,1,0.2,1.4,0.6l9.7,9.9c1.2,1.3,0.3,3.4-1.4,3.4H2.3c-1.8,0-2.7-2.1-1.4-3.4&#10;L10.6,5.7z M23.7,2.3H0.3v2.8H12h11.7V2.3z"/>
+    </g>
+    <g id="arrow-bottom">
+      <path d="M13.4,15.6C13,16,12.5,16.2,12,16.2c-0.5,0-1-0.2-1.4-0.6L0.9,5.7c-1.2-1.3-0.3-3.4,1.4-3.4h19.3c1.8,0,2.7,2.1,1.4,3.4&#10;    L13.4,15.6z M0.3,19h23.3v-2.8H12H0.3V19z"/>
+    </g>
+
+    <g id="arrow-top-solid">
+      <path d="M10.6,5.7l-9.7,9.9C-0.3,16.9,0.6,19,2.3,19h19.3c1.8,0,2.7-2.1,1.4-3.4l-9.7-9.9C12.6,4.9,11.4,4.9,10.6,5.7z"/>
+    </g>
+    <g id="arrow-bottom-solid">
+      <path d="M13.4,18.7l9.7-9.9c1.2-1.3,0.3-3.4-1.4-3.4H2.3c-1.8,0-2.7,2.1-1.4,3.4l9.7,9.9C11.4,19.6,12.6,19.6,13.4,18.7z"/>
+    </g>
+
+    <g id="compose-message">
+      <path d="M13,11.2v1.7H6.8v-1.7H13z M12.2,21.8H3.9l2-2.2L5.3,19C1.4,15.2,1.4,9,5.2,5.1c3.8-3.8,10-3.8,14,0&#10;      c1.6,1.5,2.5,3.4,2.8,5.5h1.7c-0.3-2.5-1.4-4.8-3.3-6.8C15.8-0.6,8.4-0.6,3.9,4c-4.3,4.3-4.4,11.1-0.5,15.6L0,23.5h11.8h0.3&#10;      c1.7,0,3.5-0.5,5.1-1.1l-1.6-1.1C14.5,21.5,13.4,21.8,12.2,21.8z M6.8,16.5h8.1v-1.7H6.8V16.5z M17.5,7.6H6.8v1.7h10.7V7.6z&#10;        M20.8,16v-3.2H19V16h-3.2v1.7H19V21h1.7v-3.2H24V16H20.8z"/>
+    </g>
+
+    <g id="messages">
+      <path d="M5.9,6.2h9.3v1.5H5.9V6.2z M11.3,9.3H5.9v1.5h5.4V9.3z M5.9,13.9h7v-1.5h-7V13.9z M20.6,10c0,2.7-1,5.2-2.9,7.1&#10;    c-1.9,1.9-4.5,3-7.1,3l-0.3,0L0,20l3-3.4C-0.4,12.7-0.3,6.7,3.4,3C7.3-1,13.7-1,17.6,2.9C19.5,4.8,20.6,7.3,20.6,10z M19.1,10&#10;    c0-2.3-0.9-4.4-2.5-6C13.2,0.7,7.8,0.7,4.5,4c-3.3,3.3-3.3,8.7,0.1,12.1l0.5,0.5l-1.7,1.9l7.2,0c2.3,0,4.5-0.9,6.1-2.5&#10;    C18.2,14.4,19.1,12.3,19.1,10z"/>
+    </g>
+
+    <g id="group">
+      <path d="M16,12c-2.8,0-5,2.2-5,5s2.2,5,5,5s5-2.2,5-5S18.8,12,16,12z M18.2,17.5h-1.8v1.8c0,0.3-0.2,0.5-0.5,0.5&#10;      s-0.5-0.2-0.5-0.5v-1.8h-1.8c-0.3,0-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5h1.8v-1.8c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v1.8h1.8&#10;      c0.3,0,0.5,0.2,0.5,0.5S18.5,17.5,18.2,17.5z M10.1,17.9c0.1,0.6,0.3,1.2,0.5,1.7H4.5c-0.9,0-1.7-0.8-1.7-1.7V17&#10;      c0-2.7,2.1-4.8,4.8-4.8c1,0,1.5,0.6,3.2,0.6c0.4,0,0.7,0,1-0.1c-0.5,0.5-0.9,1.1-1.3,1.8c-1-0.1-2-0.3-3-0.5c-1.7,0-3.1,1.4-3.1,3.1&#10;      v0.9H10.1z M10.8,11.6c2.8,0,5.1-2.3,5.1-5.1s-2.3-5.1-5.1-5.1S5.7,3.7,5.7,6.5C5.7,9.3,8,11.6,10.8,11.6z M10.8,3.1&#10;      c1.9,0,3.4,1.5,3.4,3.4s-1.5,3.4-3.4,3.4S7.4,8.4,7.4,6.5C7.4,4.6,8.9,3.1,10.8,3.1z"/>
+    </g>
+
+    <g id="feed">
+      <path d="M18.5,1.5v7h-17v-7H18.5 M5.5,13.5v4h-4v-4H5.5 M19,0H1C0.4,0,0,0.4,0,1v8c0,0.6,0.4,1,1,1h18c0.6,0,1-0.4,1-1&#10;        V1C20,0.4,19.6,0,19,0L19,0z M6,12H1c-0.6,0-1,0.4-1,1v5c0,0.6,0.4,1,1,1h5c0.6,0,1-0.4,1-1v-5C7,12.4,6.6,12,6,12L6,12z M18.5,13&#10;        h-10v1.5h10V13L18.5,13z M15.5,16h-7v1.5h7V16L15.5,16z"/>
+    </g>
+
+    <g id="existing-items">
+      <path d="M19.5,3.2h-15V1h15V3.2z M22.5,4.8h-21V7h21V4.8z M0,8.5V23h24V8.5H0z"/>
+    </g>
+
+    <g id="write-something">
+      <path d="M4.2,13.2l2.5-7.3h0l2.4,7.3H4.2z M5.7,4L0,19.8h2L3.6,15h6.2l1.6,4.7h2.1L7.8,4H5.7z M24,19.7&#10;        c-0.4,0.2-0.8,0.3-1.2,0.3c-0.4,0-0.8-0.1-1.1-0.4c-0.3-0.4-0.4-0.9-0.4-1.3c-0.4,0.6-1,1-1.7,1.3C19,19.9,18.3,20,17.6,20&#10;        c-0.5,0-0.9-0.1-1.4-0.2c-0.4-0.1-0.8-0.3-1.1-0.6c-0.3-0.3-0.6-0.6-0.7-1c-0.2-0.5-0.3-1-0.3-1.5c0-0.5,0.1-1.1,0.3-1.6&#10;        c0.2-0.4,0.5-0.7,0.8-1c0.3-0.3,0.7-0.5,1.1-0.6c0.4-0.1,0.9-0.2,1.3-0.3c0.5-0.1,0.9-0.2,1.4-0.2c0.4,0,0.8-0.1,1.1-0.2&#10;        c0.3-0.1,0.6-0.2,0.8-0.4c0.2-0.2,0.3-0.5,0.3-0.8c0-0.3-0.1-0.7-0.2-1c-0.1-0.2-0.3-0.4-0.6-0.6c-0.2-0.1-0.5-0.2-0.8-0.3&#10;        c-0.3,0-0.5-0.1-0.8-0.1c-0.6,0-1.3,0.1-1.8,0.5c-0.5,0.4-0.8,1-0.8,1.7h-1.7c0-0.6,0.1-1.2,0.4-1.8c0.2-0.5,0.6-0.9,1-1.2&#10;        c0.4-0.3,0.9-0.5,1.4-0.7c0.6-0.1,1.1-0.2,1.7-0.2c0.5,0,0.9,0,1.4,0.1c0.4,0.1,0.9,0.2,1.3,0.5c0.4,0.2,0.7,0.6,0.9,1&#10;        c0.3,0.5,0.4,1,0.3,1.6v5.9c0,0.3,0,0.7,0.1,1c0,0.2,0.2,0.3,0.5,0.3c0.2,0,0.4,0,0.5-0.1V19.7z M21.2,13.9&#10;        c-0.3,0.2-0.5,0.3-0.9,0.4c-0.4,0.1-0.7,0.1-1.1,0.2c-0.4,0.1-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.2-1.1,0.3c-0.3,0.1-0.6,0.4-0.8,0.6&#10;        c-0.2,0.3-0.3,0.7-0.3,1.1c0,0.3,0.1,0.5,0.2,0.8c0.1,0.2,0.3,0.4,0.4,0.5c0.2,0.1,0.4,0.2,0.6,0.3c0.3,0.1,0.5,0.1,0.8,0.1&#10;        c0.5,0,1-0.1,1.5-0.3c0.4-0.1,0.7-0.4,1-0.6c0.2-0.2,0.4-0.5,0.6-0.8c0.1-0.3,0.2-0.6,0.2-0.8V13.9z"/>
+    </g>
+
+    <g id="image-bg">
+    <path d="M19.1,8.5c0,1.4-1.1,2.5-2.5,2.5c-1.4,0-2.5-1.1-2.5-2.5c0-1.4,1.1-2.5,2.5-2.5C17.9,6,19.1,7.1,19.1,8.5z M24,5v14&#10;  c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2V5c0-1.1,0.9-2,2-2h20C23.1,3,24,3.9,24,5z M22.5,5c0-0.3-0.2-0.5-0.5-0.5H2&#10;  C1.7,4.5,1.5,4.7,1.5,5v11.4L7,10l5.5,7L17,13l5.3,6.4c0.1-0.1,0.2-0.2,0.2-0.4V5z"/>
+    </g>
+
+    <g id="image-cover">
+      <path d="M12.3,5.4h2.3c-0.4-0.4-0.9-0.6-1.4-0.5C12.8,4.9,12.5,5.1,12.3,5.4z M3.6,13.2v-0.8l-0.4,0.4L3.6,13.2z&#10;      M2.7,17.9L0.8,6c0-0.2,0.1-0.4,0.3-0.5l16.6-2.6c0.2,0,0.4,0.1,0.5,0.3l0.3,2.1h0.8L19,3.2c-0.1-0.7-0.7-1.1-1.4-1L1,4.8&#10;    C0.4,4.9-0.1,5.5,0,6.1L1.9,18c0.1,0.7,0.7,1.1,1.4,1l0.4-0.1v-0.8l-0.5,0.1C2.9,18.2,2.7,18.1,2.7,17.9z M24,7.8v12&#10;    c0,0.7-0.5,1.2-1.2,1.2H6c-0.7,0-1.2-0.5-1.2-1.2v-12c0-0.7,0.5-1.2,1.2-1.2h16.8C23.5,6.6,24,7.1,24,7.8z M23.2,7.8&#10;    c0-0.2-0.2-0.4-0.4-0.4H6c-0.2,0-0.4,0.2-0.4,0.4v12c0,0.2,0.2,0.4,0.4,0.4h16.8c0.2,0,0.4-0.2,0.4-0.4V7.8z M16.4,10.2&#10;    c0-0.9,0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6c0,0.9-0.7,1.6-1.6,1.6S16.4,11.1,16.4,10.2z M17.2,10.2c0,0.4,0.4,0.8,0.8,0.8&#10;    s0.8-0.4,0.8-0.8c0-0.4-0.4-0.8-0.8-0.8S17.2,9.8,17.2,10.2z M15.1,15.8l-3.9-5.3l-4.2,3.4l0.5,0.6l3.6-3l4,5.5l2.6-2.6l3.6,3.6&#10;    l0.6-0.6l-4.2-4.1L15.1,15.8z"/>
+    </g>
+
+    <g id="play-arrow">
+
+      <path d="M0.2,23.9C0.1,23.8,0,23.7,0,23.5v-23c0-0.2,0.1-0.3,0.2-0.4C0.4,0,0.6,0,0.7,0.1l23,11.5c0.2,0.1,0.3,0.3,0.3,0.4&#10;      c0,0.2-0.1,0.4-0.3,0.4l-23,11.5C0.6,24,0.6,24,0.5,24S0.3,24,0.2,23.9z"/>
+    </g>
+
+    <g id="reorder">
+      <path d="M24,5v4c0,1.1-0.9,2-2,2H11c-1.1,0-2-0.9-2-2V5c0-1.1,0.9-2,2-2h11C23.1,3,24,3.9,24,5z M22.5,5&#10;      c0-0.3-0.2-0.5-0.5-0.5H11c-0.3,0-0.5,0.2-0.5,0.5v4c0,0.3,0.2,0.5,0.5,0.5h11c0.3,0,0.5-0.2,0.5-0.5V5z M24,15v4c0,1.1-0.9,2-2,2&#10;      H11c-1.1,0-2-0.9-2-2v-4c0-1.1,0.9-2,2-2h11C23.1,13,24,13.9,24,15z M22.5,15c0-0.3-0.2-0.5-0.5-0.5H11c-0.3,0-0.5,0.2-0.5,0.5v4&#10;      c0,0.3,0.2,0.5,0.5,0.5h11c0.3,0,0.5-0.2,0.5-0.5V15z M8,7L4.6,4.2v2.2C2.9,6.8,0,8,0,12c0,5.7,5.7,5.8,5.8,5.8v-1.5&#10;      c-0.2,0-4.3,0-4.3-4.2c0-2.7,1.9-3.7,3.1-4v1.9L8,7z"/>
+    </g>
+
+    <g id="move">
+      <path d="M24,4v1.5H0V4H24z M0,12.5h24V11H0V12.5z M0,19.5h24V18H0V19.5z"/>
+    </g>
+
+    <g id="full-cover">
+      <path d="M24,1v18H0V1H24z M0,23h24v-2H0V23z"/>
+    </g>
+
+    <g id="half-cover">
+      <path d="M24,5.5v9H0v-9H24z M0,18.5h24v-2H0V18.5z"/>
+    </g>
+
+    <g id="no-cover">
+      <path d="M0,13h24v-2H0V13z"/>
+    </g>
+
+    <g id="notify">
+        <path d="M22,8V4c0-1.1-0.9-2-2-2l-8.5,4H2.1C0.9,6,0,6.9,0,8.1v4.8C0,14.1,0.9,15,2.1,15h1.3L5,22c0,0.6,0.4,1,1,1h4&#10;    c0.6,0,1-0.4,1-1l-1.6-7h2.1l8.5,4c1.1,0,2-0.9,2-2v-4l2-1.5v-2L22,8z M9.3,21.5H6.4L4.9,15h2.9L9.3,21.5z M9,13.5H3H2.1&#10;    c-0.3,0-0.6-0.3-0.6-0.6V8.1c0-0.3,0.3-0.6,0.6-0.6h9.4v6H9z M20.5,17c0,0.2-0.1,0.4-0.3,0.4L13,14V7l7.2-3.4&#10;    c0.2,0.1,0.3,0.3,0.3,0.4V17z"/>
+    </g>
+
+    <g id="notifications">
+          <path transform="translate(-1121.891 -18.107)" d="M1145.4,34.6l-0.3-0.3c0,0-4.4-4.1-4.8-9.9l-0.3-4.7&#10;    l-0.5-0.3c-0.1-0.1-2.2-1.3-5.5-1.3h-0.2c-3.3,0-5.4,1.2-5.4,1.3l-0.5,0.3l-0.3,4.7c-0.4,5.8-4.8,9.9-4.9,9.9l-0.4,0.3V37h23.1V34.6&#10;    z M1125.1,34.8c1.5-1.7,4.2-5.4,4.6-10.3l0.3-3.5c1.2-0.5,2.6-0.7,3.9-0.7h0.2c1.3,0,2.7,0.2,3.9,0.7l0.3,3.5&#10;    c0.4,4.9,3,8.6,4.5,10.3L1125.1,34.8z M1133.9,40c-0.9,0-1.6-0.5-2-1.3h-2.2c0.5,2.3,2.7,3.8,5.1,3.3c1.7-0.3,3-1.7,3.3-3.3h-2.2&#10;    C1135.5,39.5,1134.8,40,1133.9,40L1133.9,40z M1133.9,42.1c-0.8,0-1.6-0.2-2.4-0.7c-1-0.6-1.6-1.6-1.8-2.7l0,0h2.2l0,0&#10;    c0.3,0.8,1.1,1.3,2,1.3c0,0,0,0,0,0l0,0c0.9,0,1.6-0.5,2-1.3l0,0h2.2l0,0c-0.3,1.7-1.7,3-3.3,3.3&#10;    C1134.5,42.1,1134.2,42.1,1133.9,42.1z M1129.7,38.7c0.2,1.1,0.9,2.1,1.8,2.7c1,0.6,2.1,0.8,3.2,0.6c1.7-0.3,3-1.6,3.3-3.3h-2.2&#10;    c-0.3,0.8-1.1,1.3-2,1.3c0,0,0,0,0,0l0,0c-0.9,0-1.6-0.5-2-1.3H1129.7z M1145.5,37h-23.1v-2.4l0,0l0.4-0.3c0,0,1.1-1,2.3-2.8&#10;    c1.1-1.6,2.4-4.1,2.6-7.1l0.3-4.7l0.5-0.3c0,0,2.1-1.3,5.5-1.3h0.2c3.2,0,5.2,1.1,5.5,1.3l0.5,0.3l0,0l0.3,4.7&#10;    c0.4,5.6,4.4,9.5,4.8,9.9l0,0l0.4,0.3V37z M1122.3,36.9h23.1v-2.3l-0.4-0.3c-0.4-0.4-4.4-4.3-4.8-9.9l-0.3-4.7l-0.5-0.3&#10;    c-0.2-0.1-2.3-1.3-5.4-1.3h-0.2c-3.3,0-5.4,1.2-5.4,1.3l-0.5,0.3l-0.3,4.7c-0.2,3-1.5,5.6-2.6,7.1c-1.2,1.7-2.3,2.8-2.3,2.8&#10;    l-0.4,0.3V36.9z M1142.7,34.8l-17.6,0l0,0c1.6-1.7,4.2-5.4,4.6-10.3l0.3-3.6l0,0c1.2-0.5,2.5-0.7,3.8-0.7c0,0,0,0,0.1,0h0.2&#10;    c0,0,0,0,0.1,0c1.3,0,2.6,0.2,3.8,0.7l0,0l0,0l0.3,3.5c0.2,2.2,0.8,4.3,1.8,6.4C1140.9,32.6,1142,34,1142.7,34.8L1142.7,34.8z&#10;      M1125.2,34.8l17.5,0c-0.7-0.8-1.8-2.2-2.7-3.9c-1.1-2.1-1.7-4.2-1.8-6.4l-0.3-3.5c-1.2-0.5-2.5-0.7-3.8-0.7c0,0,0,0-0.1,0h-0.2&#10;    c0,0,0,0-0.1,0c-1.3,0-2.6,0.2-3.8,0.7l-0.3,3.5C1129.4,29.4,1126.7,33,1125.2,34.8z"/>
+      </g>
+
+    <g id="storify">
+      <path d="M23.1,8.5c0.3,0.6,0.4,1.3,0.6,2.1c0.2,0.7,0.3,1.5,0.3,2.3c0,0.8-0.1,1.6-0.2,2.4c-0.2,0.8-0.4,1.6-0.8,2.4&#10;    s-0.8,1.5-1.4,2.2c-0.6,0.7-1.3,1.3-2.1,1.9c-0.8,0.6-1.7,1-2.9,1.4c-1.1,0.4-2.3,0.6-3.6,0.8l-0.3-0.7c0.1,0,0.2,0,0.3-0.1&#10;    c0.1,0,0.4-0.1,0.7-0.3c0.4-0.1,0.7-0.3,1-0.5c0.3-0.2,0.7-0.5,1.1-0.9c0.4-0.4,0.7-0.8,1-1.2c0.3-0.4,0.5-1,0.7-1.6&#10;    c0.2-0.7,0.3-1.4,0.3-2.1c0-0.7-0.1-1.4-0.3-2c-0.2-0.6-0.5-1.2-0.8-1.6c-0.3-0.4-0.7-0.9-1-1.3c-0.4-0.4-0.8-0.8-1.1-1.2&#10;    c-0.4-0.4-0.7-0.7-1.1-1.1c-0.3-0.4-0.6-0.8-0.8-1.2c-0.2-0.4-0.3-0.9-0.3-1.4c0-0.9,0.4-1.7,1.1-2.3c0.7-0.6,1.7-1,2.9-1&#10;    c0.4,0,0.7,0,1.1,0.1c0.4,0.1,0.8,0.2,1.3,0.4c0.5,0.2,1,0.5,1.5,0.9c0.5,0.3,1,0.8,1.5,1.5C22.2,6.9,22.7,7.6,23.1,8.5&#10;    C23.1,8.5,23.1,8.5,23.1,8.5z M0.9,15.4c-0.3-0.6-0.5-1.3-0.7-2C0.1,12.7,0,12,0,11.2c0-0.8,0.1-1.6,0.2-2.4C0.4,7.9,0.7,7.1,1,6.3&#10;    c0.4-0.8,0.8-1.5,1.4-2.2c0.6-0.7,1.3-1.3,2.1-1.9c0.8-0.6,1.7-1,2.9-1.4C8.6,0.4,9.8,0.2,11.1,0l0.3,0.7c-0.1,0-0.2,0-0.3,0.1&#10;    c-0.1,0-0.4,0.1-0.7,0.3c-0.4,0.2-0.7,0.3-1,0.5C9.1,1.8,8.7,2.1,8.3,2.5s-0.7,0.8-1,1.2C7,4.1,6.8,4.7,6.6,5.3&#10;    C6.4,6,6.3,6.7,6.3,7.5c0,0.7,0.1,1.4,0.3,2c0.2,0.6,0.4,1.2,0.8,1.6c0.3,0.5,0.7,0.9,1.1,1.3c0.4,0.4,0.8,0.8,1.1,1.2&#10;    c0.4,0.4,0.7,0.7,1.1,1.1c0.3,0.4,0.6,0.8,0.8,1.2c0.2,0.4,0.3,0.9,0.3,1.4c0,0.9-0.4,1.7-1,2.3c-0.7,0.6-1.7,1-2.9,1&#10;    c-0.4,0-0.7,0-1.1-0.1c-0.4-0.1-0.8-0.2-1.3-0.4c-0.5-0.2-1-0.5-1.5-0.9c-0.5-0.3-1-0.8-1.5-1.5C1.9,17,1.4,16.3,0.9,15.4&#10;    C1,15.5,0.9,15.4,0.9,15.4z"/>
+      </g>
+
+    <g id="token">
+      <path style="fill: #c4920a;" d="M2,10c0-5.2,3.9-9.4,9-9.9C10.7,0,10.3,0,10,0C4.5,0,0,4.5,0,10s4.5,10,10,10c0.3,0,0.7,0,1-0.1&#10;        C5.9,19.4,2,15.2,2,10z"/>
+      <path style="fill: #ffd155;" d="M12,0c-0.3,0-0.7,0-1,0.1c5.1,0.5,9,4.8,9,9.9s-3.9,9.4-9,9.9c0.3,0,0.7,0.1,1,0.1c5.5,0,10-4.5,10-10&#10;        S17.5,0,12,0z"/>
+      <path style="fill: #ffd155;" d="M11.2,6.7C11.1,6.8,11,6.9,11,7s-0.1,0.3-0.1,0.4c0,0.3,0.1,0.5,0.3,0.6c0.2,0.1,0.4,0.3,0.8,0.3v-2&#10;        c-0.1,0-0.3,0-0.4,0.1S11.3,6.6,11.2,6.7z"/>
+      <path style="fill: #ffd155;" d="M20,10c0-5.2-3.9-9.4-9-9.9C5.9,0.6,2,4.8,2,10s3.9,9.4,9,9.9C16.1,19.4,20,15.2,20,10z M15.6,12.2&#10;        c-0.1,0.3-0.2,0.5-0.5,0.8c-0.2,0.3-0.5,0.5-0.9,0.7c-0.4,0.2-0.9,0.3-1.5,0.4v1H12v-1c-0.9-0.1-1.6-0.3-2.1-0.8S9.1,11.9,9,11h1.7&#10;        c0,0.5,0.1,0.8,0.4,1.1s0.6,0.4,0.9,0.5v-2.5c0,0-0.1,0-0.2-0.1c-0.1,0-0.1,0-0.2-0.1c-0.3-0.1-0.6-0.2-0.9-0.3&#10;        c-0.3-0.1-0.5-0.3-0.8-0.4C9.7,9.1,9.5,8.9,9.4,8.6C9.3,8.3,9.2,8,9.2,7.6c0-0.4,0.1-0.8,0.2-1.1C9.6,6.2,9.8,5.9,10,5.7&#10;        s0.6-0.4,0.9-0.5C11.3,5.1,11.6,5,12,5V4.1h0.7V5c0.4,0,0.7,0.1,1,0.2c0.3,0.1,0.6,0.3,0.8,0.5c0.2,0.2,0.4,0.5,0.6,0.8&#10;        c0.2,0.3,0.2,0.7,0.3,1.1h-1.7c0-0.3-0.1-0.6-0.3-0.8c-0.2-0.2-0.4-0.3-0.7-0.3v2.1c0.1,0,0.2,0,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1&#10;        c0.6,0.2,1,0.4,1.4,0.6c0.3,0.2,0.6,0.5,0.7,0.7c0.2,0.3,0.2,0.5,0.3,0.8c0,0.3,0,0.5,0,0.7C15.7,11.7,15.6,11.9,15.6,12.2z"/>
+      <path style="fill: #ffd155;" d="M12.7,10.3v2.3c0.1,0,0.3,0,0.5-0.1c0.2-0.1,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.2,0.3-0.4s0.1-0.3,0.1-0.5&#10;        c0-0.3-0.1-0.5-0.3-0.7C13.5,10.6,13.2,10.4,12.7,10.3z"/>
+      <path style="fill: #c4920a;" d="M15.4,10c-0.2-0.3-0.4-0.5-0.7-0.7c-0.3-0.2-0.8-0.4-1.4-0.6c-0.1,0-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3-0.1V6.4&#10;        c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.5,0.3,0.8h1.7c0-0.4-0.1-0.8-0.3-1.1c-0.2-0.3-0.3-0.6-0.6-0.8c-0.2-0.2-0.5-0.4-0.8-0.5&#10;        c-0.3-0.1-0.7-0.2-1-0.2V4.1H12V5c-0.4,0-0.7,0.1-1,0.2c-0.3,0.1-0.6,0.3-0.9,0.5S9.6,6.2,9.4,6.5C9.3,6.8,9.2,7.2,9.2,7.6&#10;        c0,0.4,0.1,0.7,0.2,1c0.1,0.3,0.3,0.5,0.5,0.7c0.2,0.2,0.5,0.3,0.8,0.4c0.3,0.1,0.6,0.2,0.9,0.3c0.1,0,0.2,0,0.2,0.1&#10;        c0.1,0,0.1,0,0.2,0.1v2.5c-0.4-0.1-0.7-0.2-0.9-0.5s-0.4-0.6-0.4-1.1H9c0.1,0.9,0.4,1.7,0.9,2.1s1.2,0.8,2.1,0.8v1h0.7v-1&#10;        c0.6,0,1.1-0.2,1.5-0.4c0.4-0.2,0.7-0.4,0.9-0.7c0.2-0.3,0.4-0.5,0.5-0.8c0.1-0.3,0.1-0.5,0.1-0.7c0-0.2,0-0.4,0-0.7&#10;        C15.6,10.5,15.5,10.3,15.4,10z M12,8.4c-0.4-0.1-0.7-0.2-0.8-0.3c-0.2-0.1-0.3-0.3-0.3-0.6c0-0.2,0-0.3,0.1-0.4s0.1-0.2,0.2-0.3&#10;        s0.2-0.1,0.3-0.2s0.3-0.1,0.4-0.1V8.4z M13.9,11.9c-0.1,0.1-0.2,0.3-0.3,0.4c-0.1,0.1-0.3,0.2-0.4,0.2c-0.2,0.1-0.3,0.1-0.5,0.1&#10;        v-2.3c0.5,0.1,0.8,0.3,1,0.4c0.2,0.2,0.3,0.4,0.3,0.7C14,11.6,13.9,11.8,13.9,11.9z"/>
+
+      </g>
+
+
+      <g id="pdf">
+      <path d="M14.1,0H5.2c-1.1,0-2,0.9-2,2v20c0,1.1,0.9,2,2,2h14.5c1.1,0,2-0.9,2-2V7.7L14.1,0z M20.2,22c0,0.3-0.2,0.5-0.5,0.5H5.2&#10; c-0.3,0-0.5-0.2-0.5-0.5V2c0-0.3,0.2-0.5,0.5-0.5h7.6v5.2c0,1.1,0.9,2,2,2h5.5V22z"/>
+      </g>
+
+      <g id="resize-small">
+      <path d="M12.9,5h-2L5.5,19h2L9,14.8h5.9l1.6,4.2h2.1L12.9,5z M9.5,13.3l1.5-4.1c0.3-0.9,0.6-1.8,0.8-2.7c0.2,0.8,0.5,1.7,1,2.9&#10;    l1.5,3.9H9.5z"/>
+      </g>
+
+      <g id="resize-3um">
+      <path d="M13,3h-2.6L3.5,21H6l2-5.5h7.5l2.1,5.5h2.7L13,3z M8.7,13.6l2-5.3c0.4-1.1,0.7-2.3,1-3.4c0.3,1,0.7,2.2,1.3,3.7l1.9,5H8.7z"/>
+      </g>
+
+      <g id="resize-large">
+      <path d="M13.3,1h-3.1L1.8,23h3.1l2.4-6.7h9.2L19,23h3.3L13.3,1z M8.1,14l2.4-6.5c0.5-1.4,0.9-2.8,1.2-4.2C12,4.5,12.6,6,13.3,7.9&#10;l2.3,6.1H8.1z"/>
+      </g>
+
+      <g id="google-drive">
+        <path d="M16,14.7L8.2,1.3h7.5l7.8,13.3H16z M7.2,3.1L0,16l3.7,6.5L11,9.6L7.2,3.1z M9.4,15.9l-4.1,6.6l14.9,0.1l3.8-6.8H9.4z"/>
+      </g>
+
+      <g id="filter">
+        <path d="M3,8.8H0V7.2h3V8.8z M24,7.2H14v1.5h10V7.2z M21,16.8h3v-1.5h-3V16.8z M0,16.8h10v-1.5H0V16.8z M12,8c0,1.9-1.6,3.5-3.5,3.5&#10;  S5,9.9,5,8s1.6-3.5,3.5-3.5S12,6.1,12,8z M10.8,8c0-1.2-1-2.2-2.2-2.2S6.2,6.8,6.2,8s1,2.2,2.2,2.2S10.8,9.2,10.8,8z M19,16&#10;  c0,1.9-1.6,3.5-3.5,3.5S12,17.9,12,16s1.6-3.5,3.5-3.5S19,14.1,19,16z M17.8,16c0-1.2-1-2.2-2.2-2.2s-2.2,1-2.2,2.2s1,2.2,2.2,2.2&#10;  S17.8,17.2,17.8,16z"/>
+      </g>
+
+      <g id="edit-new">
+        <path d="M20.3,1.5c0.1,0,0.2,0,0.2,0.1l1.9,1.9c0.1,0.1,0.1,0.2,0.1,0.2s0,0.2-0.1,0.2L6.2,20.2l-4,1.6l1.6-4L20,1.6&#10;        C20.1,1.5,20.2,1.5,20.3,1.5 M20.3,0c-0.5,0-0.9,0.2-1.3,0.5L2.6,16.9C2.6,16.9,2.6,17,2.5,17L0,23.3c-0.1,0.2,0,0.4,0.1,0.6&#10;        C0.3,23.9,0.4,24,0.5,24c0.1,0,0.1,0,0.2,0L7,21.5c0.1,0,0.1-0.1,0.2-0.1L23.5,5c0.7-0.7,0.7-1.9,0-2.6l-1.9-1.9&#10;        C21.2,0.2,20.7,0,20.3,0L20.3,0z"/>
+      </g>
+
+      <g id="select-new">
+        <path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,22.5C6.2,22.5,1.5,17.8,1.5,12&#10;        S6.2,1.5,12,1.5S22.5,6.2,22.5,12S17.8,22.5,12,22.5z M18.5,7.7c0.3,0.3,0.3,0.8,0,1.1l-8.9,9l-4.2-4.2c-0.3-0.3-0.3-0.8,0-1.1&#10;        c0.3-0.3,0.8-0.3,1.1,0l3.1,3.1l7.8-7.9C17.8,7.4,18.2,7.4,18.5,7.7z"/>
+      </g>
+
+      <g id="share-new">
+        <path d="M12.2,5.4l9.6,6.6l-9.6,6.6v-2.8v-1.5l-1.5,0c-4.7,0.1-7.4,1.1-9,2.1c0.2-1.2,0.8-2.6,1.9-3.8c1.6-1.7,4-2.6,7.2-2.7&#10;        l1.5,0V8.2V5.4 M11.4,3.2c-0.1,0-0.2,0-0.3,0.1c-0.2,0.1-0.4,0.3-0.4,0.6v4.5c-3.6,0.1-6.3,1.2-8.2,3.2C-0.2,14.3,0,18.2,0,18.3&#10;        c0,0.3,0.2,0.5,0.5,0.6h0.1c0.2,0,0.4-0.1,0.5-0.3c0,0,1.9-2.7,9.6-2.9v4.5c0,0.2,0.1,0.5,0.4,0.6c0.1,0,0.2,0.1,0.3,0.1&#10;        c0.1,0,0.2,0,0.4-0.1l12-8.2c0.2-0.1,0.3-0.3,0.3-0.5c0-0.2-0.1-0.4-0.3-0.5l-12-8.2C11.6,3.2,11.5,3.2,11.4,3.2L11.4,3.2z"/>
+      </g>
+
+      <g id="delete-new">
+        <path d="M13.8,19.5c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8v-12c0-0.4-0.3-0.8-0.8-0.8s-0.8,0.3-0.8,0.8V19.5z M9.5,6.8&#10;        c-0.4,0-0.8,0.3-0.8,0.8v12c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8v-12C10.2,7.1,9.9,6.8,9.5,6.8z M21.2,3h-2.8&#10;        C19.3,3,20,3.7,20,4.5h1.2c0.4,0,0.8-0.3,0.8-0.8C22,3.3,21.7,3,21.2,3z M5.5,3H2.8C2.3,3,2,3.3,2,3.8c0,0.4,0.3,0.8,0.8,0.8H4&#10;        C4,3.7,4.7,3,5.5,3z M18.5,22.5h-13v-18H4v18C4,23.3,4.7,24,5.5,24h13c0.8,0,1.5-0.7,1.5-1.5v-18h-1.5V22.5z M9.5,4.5&#10;        C8.7,4.5,8,3.8,8,3H5.5C4.7,3,4,3.7,4,4.5h1.5H9.5z M18.5,3H16c0,0.8-0.7,1.5-1.5,1.5h4H20C20,3.7,19.3,3,18.5,3z M8.8,7.5v12&#10;        c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8v-12c0-0.4-0.3-0.8-0.8-0.8S8.8,7.1,8.8,7.5z M14.5,20.2c0.4,0,0.8-0.3,0.8-0.8v-12&#10;        c0-0.4-0.3-0.8-0.8-0.8s-0.8,0.3-0.8,0.8v12C13.8,19.9,14.1,20.2,14.5,20.2z M9.5,1.5h5V3H16V1.5C16,0.7,15.3,0,14.5,0h-5&#10;        C8.7,0,8,0.7,8,1.5V3h1.5V1.5z M9.5,4.5h5C15.3,4.5,16,3.8,16,3h-1.5h-5H8C8,3.8,8.7,4.5,9.5,4.5z"/>
+      </g>
+
+      <g id="add-new">
+        <path d="M17.6,1.5C17.8,1.5,18,1.7,18,2v19.2l-4.9-5.1L12,14.9l-1.1,1.1L6,21.2V2c0-0.3,0.2-0.5,0.4-0.5H17.6 M17.6,0H6.4&#10;        c-1,0-1.9,0.9-1.9,2v21.4c0,0.3,0.1,0.5,0.4,0.6C5,24,5,24,5.1,24c0.2,0,0.3-0.1,0.5-0.2l6.4-6.7l6.4,6.7c0.1,0.1,0.3,0.2,0.5,0.2&#10;        c0.1,0,0.2,0,0.2,0c0.2-0.1,0.4-0.4,0.4-0.6V2C19.5,0.9,18.7,0,17.6,0L17.6,0z"/>
+      </g>
+
+      <g id="shorts">
+        <path d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M18.9,12c0,1.2-1,2.2-2.2,2.2h-2.5v2.5c0,1.2-1,2.2-2.2,2.2&#10;        H12c-1.2,0-2.2-1-2.2-2.2v-2.5H7.3c-1.2,0-2.2-1-2.2-2.2V12c0-1.2,1-2.2,2.2-2.2h2.5V7.3c0-1.2,1-2.2,2.2-2.2H12&#10;        c1.2,0,2.2,1,2.2,2.2v2.5h2.5C18,9.8,18.9,10.7,18.9,12L18.9,12L18.9,12z"/>
+      </g>
+
+      <g id="inline-reader">
+        <path d="M19,0H5C3.9,0,3,0.9,3,2v20c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C21,0.9,20.1,0,19,0z M19,22H5V2h14V22z M17,6H7V4h10V6z&#10;        M17,10H7V8h10V10z M13,14H7v-2h6V14z"/>
+      </g>
+
+      <g id="leave">
+        <path d="M16,16.2l3.3-3.2H8v-1.9h11.3L16,7.8l1.4-1.3L23,12l-5.6,5.5L16,16.2z M17,21c0,0.6-0.4,1-1,1H4c-0.6,0-1-0.4-1-1V3&#10;        c0-0.6,0.4-1,1-1h12c0.6,0,1,0.4,1,1v2h2V3c0-1.7-1.3-3-3-3H4C2.3,0,1,1.3,1,3v18c0,1.7,1.3,3,3,3h12c1.7,0,3-1.3,3-3v-2h-2V21z"/>
+      </g>
+
+      <g id="warning">
+        <path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,22.5C6.2,22.5,1.5,17.8,1.5,12&#10;        S6.2,1.5,12,1.5S22.5,6.2,22.5,12S17.8,22.5,12,22.5z M11.2,6h1.5v9h-1.5V6z M11.2,16.2h1.5v1.5h-1.5V16.2z"/>
+      </g>
+      <g id="settings">
+        <path d="M23.2,15.4c0.2,0.1,0.2,0.3,0.1,0.5c-0.5,1.4-1.3,2.8-2.3,3.9c-0.1,0.2-0.3,0.2-0.5,0.1l-2.9-1c-0.7,0.6-1.5,1.1-2.4,1.4&#10;        l-0.6,3c0,0.2-0.2,0.4-0.4,0.4C13.5,23.9,12.8,24,12,24c-0.8,0-1.5-0.1-2.3-0.2c-0.2,0-0.4-0.2-0.4-0.4l-0.6-3&#10;        c-0.9-0.3-1.7-0.8-2.4-1.4l-2.9,1c-0.2,0.1-0.4,0-0.5-0.1c-1-1.1-1.8-2.5-2.3-3.9c-0.1-0.2,0-0.4,0.1-0.5l2.3-2C3,12.9,3,12.5,3,12&#10;        s0-0.9,0.1-1.4l-2.3-2C0.6,8.5,0.6,8.3,0.7,8.1c0.5-1.4,1.3-2.8,2.3-3.9C3.1,4,3.3,3.9,3.5,4l2.9,1C7.1,4.4,7.9,4,8.8,3.6l0.6-3&#10;        c0-0.2,0.2-0.4,0.4-0.4c1.5-0.3,3.1-0.3,4.6,0c0.2,0,0.4,0.2,0.4,0.4l0.6,3C16.1,4,16.9,4.4,17.6,5l2.9-1c0.2-0.1,0.4,0,0.5,0.1&#10;        c1,1.1,1.8,2.5,2.3,3.9c0.1,0.2,0,0.4-0.1,0.5l-2.3,2C21,11.1,21,11.5,21,12s0,0.9-0.1,1.4L23.2,15.4z M16.5,12&#10;        c0-2.5-2-4.5-4.5-4.5c-2.5,0-4.5,2-4.5,4.5c0,2.5,2,4.5,4.5,4.5C14.5,16.5,16.5,14.5,16.5,12z"/>
+      </g>
+      <g id="arrowRightInsideSquare">
+        <path d="M5.1435 13.071V10.929C5.1439 10.7585 5.21182 10.595 5.33241 10.4744C5.45301 10.3538 5.61646 10.2859 5.787 10.2855H12V6.696C12.0011 6.56926 12.0396 6.44567 12.1106 6.34072C12.1817 6.23578 12.2822 6.15415 12.3994 6.10609C12.5167 6.05802 12.6456 6.04566 12.7699 6.07055C12.8941 6.09544 13.0083 6.15648 13.098 6.246L18.402 11.55C18.4618 11.6098 18.5093 11.6807 18.5417 11.7588C18.574 11.837 18.5907 11.9207 18.5907 12.0053C18.5907 12.0898 18.574 12.1735 18.5417 12.2517C18.5093 12.3298 18.4618 12.4007 18.402 12.4605L13.098 17.7585C13.0083 17.848 12.8941 17.9091 12.7699 17.9339C12.6456 17.9588 12.5167 17.9465 12.3994 17.8984C12.2822 17.8503 12.1817 17.7687 12.1106 17.6638C12.0396 17.5588 12.0011 17.4352 12 17.3085V13.7145H5.7855C5.61522 13.7137 5.45215 13.6456 5.33188 13.5251C5.21161 13.4045 5.14389 13.2413 5.1435 13.071V13.071ZM24 2.571V21.429C23.9996 22.1107 23.7286 22.7645 23.2465 23.2465C22.7645 23.7286 22.1108 23.9996 21.429 24H2.571C1.88925 23.9996 1.23554 23.7286 0.753467 23.2465C0.271397 22.7645 0.000397406 22.1107 0 21.429L0 2.571C0.000397406 1.88925 0.271397 1.23554 0.753467 0.753468C1.23554 0.271398 1.88925 0.000397406 2.571 0H21.429C22.1108 0.000397406 22.7645 0.271398 23.2465 0.753468C23.7286 1.23554 23.9996 1.88925 24 2.571ZM21.429 21.1065V2.8935C21.4286 2.80849 21.3947 2.72707 21.3345 2.66695C21.2744 2.60684 21.193 2.57289 21.108 2.5725H2.8935C2.80849 2.57289 2.72707 2.60684 2.66695 2.66695C2.60684 2.72707 2.57289 2.80849 2.5725 2.8935V21.1065C2.57289 21.1915 2.60684 21.2729 2.66695 21.333C2.72707 21.3932 2.80849 21.4271 2.8935 21.4275H21.1065C21.1918 21.4275 21.2736 21.3937 21.334 21.3336C21.3945 21.2734 21.4286 21.1918 21.429 21.1065V21.1065Z"/>
+      </g>
+      <g id="tick-solid">
+        <path d="M24,12c0,6.6-5.4,12-12,12S0,18.6,0,12S5.4,0,12,0S24,5.4,24,12z M10.6,18.4l8.9-8.9&#10;        c0.3-0.3,0.3-0.8,0-1.1c0,0,0,0,0,0l-1.1-1.1c-0.3-0.3-0.8-0.3-1.1,0c0,0,0,0,0,0l-7.3,7.3l-3.4-3.4c-0.3-0.3-0.8-0.3-1.1,0&#10;        c0,0,0,0,0,0l-1.1,1.1c-0.3,0.3-0.3,0.8,0,1.1c0,0,0,0,0,0l5,5C9.8,18.7,10.3,18.7,10.6,18.4C10.6,18.4,10.6,18.4,10.6,18.4&#10;        L10.6,18.4z"/>
+      </g>
+      <g id="removeUser">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13">
+          <path class="a" d="M14.849,6l1.035-1.035a.4.4,0,0,0,0-.565L15.6,4.118a.4.4,0,0,0-.565,0L14,5.153,12.966,4.118a.4.4,0,0,0-.565,0l-.283.283a.4.4,0,0,0,0,.565L13.154,6,12.118,7.036a.4.4,0,0,0,0,.565l.283.283a.4.4,0,0,0,.565,0L14,6.848l1.035,1.035a.4.4,0,0,0,.565,0l.283-.283a.4.4,0,0,0,0-.565ZM5.6,7.2A3.6,3.6,0,1,0,2,3.6,3.6,3.6,0,0,0,5.6,7.2Zm0-6A2.4,2.4,0,1,1,3.2,3.6,2.4,2.4,0,0,1,5.6,1.2Zm2.24,6.4c-.72,0-1.06.4-2.24.4s-1.52-.4-2.24-.4A3.361,3.361,0,0,0,0,10.961v.64a1.2,1.2,0,0,0,1.2,1.2H10a1.2,1.2,0,0,0,1.2-1.2v-.64A3.361,3.361,0,0,0,7.841,7.6Zm2.16,4H1.2v-.64A2.164,2.164,0,0,1,3.36,8.8a9.789,9.789,0,0,0,2.24.4,9.7,9.7,0,0,0,2.24-.4A2.164,2.164,0,0,1,10,10.961Z"/>
+        </svg>
+      </g>
+  </svg>
+</iron-iconset-svg><style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&gt;div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&gt;span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-KKMQ83"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KKMQ83');</script>
+    <!-- End Google Tag Manager -->
+    <div class="IE11">
+
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p class="fs--l fw--m gb--l">Please upgrade your browser to get the best experience on Wakelet</p>
+          <p class="fs--s pb--xs gb--m">We built Wakelet using the latest technologies to make it faster and easier to use. Unfortunately, your browser doesn’t support those technologies.</p>
+          <p class="fs--s gb--xl">We recommend using the latest version of one of these great browsers:</p>
+          <div class="layout horizontal center-justified center">
+            <div>
+              <a href="https://www.microsoft.com/en-us/windows/microsoft-edge#xjEl7G0VAG9ZLVUZ.97" class="browser__link layout vertical center gl--xl gr--xl underline--hover float-left" target="_blank">
+                <div style="background:url('https://assets.wakelet.com/logo/browser/edge.jpg'); width: 70px; height: 65px; background-repeat: none; background-size: 70px 65px;" class="gb--s"></div>
+                <span class="fw--m block text-center">Edge</span>
+              </a>
+              <a href="https://www.google.com/chrome/browser/desktop/index.html" class="browser__link layout vertical center gl--xl gr--xl underline--hover float-left" target="_blank">
+                <div style="background:url('https://assets.wakelet.com/logo/browser/chrome.jpg'); width: 70px; height: 65px; background-repeat: none; background-size: 70px 65px;" class="gb--s"></div>
+                <span class="fw--m block text-center">Chrome</span>
+              </a>
+              <a href="https://www.mozilla.org/en-GB/firefox/new/" class="browser__link layout vertical center gl--xl gr--xl underline--hover float-left" target="_blank">
+                <div style="background:url('https://assets.wakelet.com/logo/browser/firefox.jpg'); width: 70px; height: 65px; background-repeat: none; background-size: 70px 65px;" class="gb--s"></div>
+                <span class="fw--m block text-center">Firefox</span>
+              </a>
+              <a href="http://www.opera.com/" class="browser__link layout vertical center gl--xl gr--xl underline--hover float-left" target="_blank">
+                <div style="background:url('https://assets.wakelet.com/logo/browser/opera.jpg'); width: 70px; height: 65px; background-repeat: none; background-size: 70px 65px;" class="gb--s"></div>
+                <span class="fw--m block text-center">Opera</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <my-app page="newhomepage"></my-app>
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+
+    <script src="//instagram.com/embed.js" defer=""></script>
+
+    <script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js" defer=""></script>
+
+    <script src="https://apis.google.com/js/api.js" async="" defer="" gapi_processed="true"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/5f045005223d045fcb7b7612/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+
+    <script type="text/javascript" src="https://cloudfront.loggly.com/js/loggly.tracker-latest.min.js" async=""></script>
+    <script>
+      var _LTracker = _LTracker || [];
+      _LTracker.push({
+        'logglyKey': 'c793ab7f-fd93-4ad2-a84d-37dc30327473',
+        'sendConsoleErrors' : false,
+        'tag' : 'loggly-jslogger'
+      });
+    </script>
+  
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.96fd96193cc66c3e11d4c5e4c7c7ec97.html?origin=https%3A%2F%2Fwakelet.com" title="Twitter settings iframe" style="display: none;"></iframe><script type="text/javascript" id="" src="https://apis.google.com/js/platform.js" gapi_processed="true"></script>
+<script type="text/javascript" id="hs-script-loader" src="//js.hs-scripts.com/7869297.js"></script><script type="text/javascript" id="">function getOriginalTarget(a){return"composedPath"in a?a.composedPath()[0]:"path"in a?a.path[0]:"originalTarget"in a?a.originalTarget:"srcElement"in a?a.srcElement:a.target}
+document.addEventListener("click",function(a){a=getOriginalTarget(a);if(("paper-button"===a.nodeName.toLowerCase()||"iron-icon"===a.nodeName.toLowerCase()||a.dataset&amp;&amp;a.dataset.clickTrack)&amp;&amp;a.innerText)dataLayer.push({event:"CClick",targetElement:a||""});else if("a"===a.nodeName.toLowerCase()&amp;&amp;a.classList.contains("item__link")||a.parentElement&amp;&amp;"a"===a.parentElement.nodeName.toLowerCase()&amp;&amp;a.parentElement.classList.contains("item__link"))a="a"===a.nodeName.toLowerCase()?a:a.parentElement,0&lt;a.getElementsByClassName("item__text").length&amp;&amp;
+dataLayer.push({event:"CClick",targetElement:a||""})},!1);</script><script type="text/javascript" id="">function getOriginalTarget(a){return"composedPath"in a?a.composedPath()[0]:"path"in a?a.path[0]:"originalTarget"in a?a.originalTarget:"srcElement"in a?a.srcElement:a.target}
+document.addEventListener("click",function(a){if((a=getOriginalTarget(a))&amp;&amp;a.classList&amp;&amp;a.classList.contains("lp-pom-button")||a.parentElement&amp;&amp;a.parentElement.classList&amp;&amp;a.parentElement.classList.contains("lp-pom-button")||"img"===a.nodeName.toLowerCase()&amp;&amp;(-1&lt;a.src.indexOf("pp-store-badge-us-uk-135x40_03c01003c010000000.png")||-1&lt;a.src.indexOf("google-play-badge_03v01i03u01i000000.png"))){var c=a.innerText.toLowerCase(),b;""!==c&amp;&amp;(-1&lt;c.indexOf("sign")&amp;&amp;(b="signup"),-1&lt;c.indexOf("start now")&amp;&amp;(b=
+"startnow1"),-1&lt;c.indexOf("start now!")&amp;&amp;(b="startnow2"));a.src&amp;&amp;-1&lt;a.src.indexOf("pp-store-badge-us-uk-135x40_03c01003c010000000.png")&amp;&amp;(b="getiOSApp");a.src&amp;&amp;-1&lt;a.src.indexOf("google-play-badge_03v01i03u01i000000.png")&amp;&amp;(b="getAndroidApp");dataLayer.push({event:"LClick",landingClick:{label:window.location.hostname.split(".")[0],action:b}})}});</script><iron-a11y-announcer></iron-a11y-announcer><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe"></iframe>
+<iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" aria-hidden="true" frame-border="0" style="position: absolute; width: 1px; height: 1px; left: -9999px; top: -9999px; right: -9999px; bottom: -9999px; display: none;" src="https://accounts.google.com/o/oauth2/iframe#origin=https%3A%2F%2Fwakelet.com&amp;rpcToken=516395458.33473897&amp;clearCache=1"></iframe><iframe owner="archetype" style="display: none; visibility: hidden;"></iframe><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>

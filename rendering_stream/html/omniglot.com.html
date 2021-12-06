@@ -1,0 +1,458 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="UTF-8" />
+<script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://partner.googleadservices.com/gampad/cookie.js?domain=omniglot.com&amp;callback=_gfp_s_&amp;client=ca-pub-6396844742497208"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20201201/r20190131/show_ads_impl.js" id="google_shimpl"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=false;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length&gt;3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&amp;&amp;func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&amp;&amp;timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i&lt;item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&amp;&amp;items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&amp;]ezq=([^&amp;#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count&gt;200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=191-3&amp;cb=1', false, [], true, false, true, false);</script><script src="/detroitchicago/boise.js?gcb=191-3&amp;cb=1" async=""></script>
+<script type="text/javascript">(function(){function storageAvailable(type){var storage;try{storage=window[type];var x='__storage_test__';storage.setItem(x,x);storage.removeItem(x);return true;}
+catch(e){return e instanceof DOMException&amp;&amp;(e.code===22||e.code===1014||e.name==='QuotaExceededError'||e.name==='NS_ERROR_DOM_QUOTA_REACHED')&amp;&amp;(storage&amp;&amp;storage.length!==0);}}
+function remove_ama_config(){if(storageAvailable('localStorage')){localStorage.removeItem("google_ama_config");}}
+remove_ama_config()})()</script>
+<script type="text/javascript">var ezoicTestActive = true</script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":2,"ad_count_adjustment":1,"ad_lazyload_version":3,"ad_location_ids":"","ad_transform_level":2,"adx_ad_count":0,"bidder_method":1,"bidder_version":3,"city":"Riverside","country":"US","days_since_last_visit":-1,"display_ad_count":0,"domain_id":188776,"ds_adsize_opt_id":-1,"engaged_time_visit":0,"ezcache_level":0,"forensiq_score":-1,"form_factor_id":1,"framework_id":1,"has_bad_image":0,"has_bad_words":0,"iab_category":"","iab_category_0":"132","iab_category_1":"147","is_from_recommended_pages":false,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"max_ads":3,"metro_code":803,"optimization_version":1,"page_ad_positions":"","page_view_count":0,"page_view_id":"93c86ef6-5584-47e0-6e8e-63d8107723c1","position_selection_id":39,"postal_code":"92521","pv_event_count":0,"response_time_orig":441,"serverid":"52.27.185.57:8578","state":"CA","sub_page_ad_positions":"","t_epoch":1606992768,"template_id":147,"time_on_site_visit":0,"url":"https://omniglot.com/","user_id":0,"word_count":274,"worst_bad_word_level":0};var _ezim_d = {};var _ezat = {"domain_id":188776,"form_factor_id":1,"framework_id":1,"pageview_date":"2020-12-03","pageview_id":"93c86ef6-5584-47e0-6e8e-63d8107723c1","template_id":147,"url":"https://omniglot.com/","visit_uuid":"d5b13234-db5f-46d4-63e4-d78fcce15d28"};</script><script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false" type="text/javascript">__ez.queue.addFile('banger.js', '/porpoiseant/banger.js?cb=191-3&amp;bv=92&amp;v=35&amp;PageSpeed=off', true, [], true, false, false, true);</script><script src="/porpoiseant/banger.js?cb=191-3&amp;bv=92&amp;v=35&amp;PageSpeed=off" async=""></script>
+<script>__ez.queue.addFile('/detroitchicago/anaheim.js', '/detroitchicago/anaheim.js?gcb=3&amp;cb=1', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">__ez.dot={};__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=191-3&amp;cb=2', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=191-3&amp;cb=1', false, [], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&amp;&amp;__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&amp;&amp;document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&amp;&amp;pixels.length&gt;0){while(pixels.length&gt;0){var j=5;if(j&gt;pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);(new Image()).src=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&amp;v="+btoa(JSON.stringify(pushPixels));}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script src="/detroitchicago/memphis.js?gcb=191-3&amp;cb=2" async=""></script><script src="/detroitchicago/minneapolis.js?gcb=191-3&amp;cb=1" async=""></script><script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&amp;&amp;__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}
+function AddPixelById(impFullId,pixelData,isOrig){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&amp;&amp;vals.length===3&amp;&amp;__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&amp;&amp;document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&amp;&amp;pixels.length&gt;0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length&gt;0){var isOrig=pixels[0].is_orig||false;var j=5;if(j&gt;pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&amp;sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&amp;&amp;isAmp&amp;&amp;typeof window._ezaq!=='undefined'&amp;&amp;_ezaq.hasOwnProperty("domain_id")){pixelURL+="&amp;visit_uuid="+_ezaq['visit_uuid'];}
+(new Image()).src=pixelURL;}})}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&amp;&amp;_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=191-3&amp;cb=2', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=191-3&amp;cb=1', false, [], true, false, true, false);</script><script src="/detroitchicago/raleigh.js?gcb=191-3&amp;cb=2" async=""></script><script src="/detroitchicago/tampa.js?gcb=191-3&amp;cb=1" async=""></script>
+<script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false" type="text/javascript">__ez.queue.addFile('rochester.js', '/detroitchicago/rochester.js?cb=191-3&amp;v=9', false, [], true, false, true, true);</script><script src="/detroitchicago/rochester.js?cb=191-3&amp;v=9" async=""></script>
+<title>Omniglot - the encyclopedia of writing systems and languages</title>
+<meta name="description" content="A guide to writing systems and languages, with useful phrases, tips on learning languages, multilingual texts, and much more." />
+
+<link href="styles/homestyles.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="writing systems written language abjads abuguida alphabet syllabary syllabaries syllabics script glyph encoding multilingual hieroglyphs cuneiform rune accent diacritic unicode character chinese kanji hanzi hanja letter symbol foreign font phrase translation learning" />
+<meta name="robots" content="all" />
+<meta name="dcterms.rightsHolder" content="Simon Ager" />
+<meta name="dcterms.dateCopyrighted" content="1998-2020" />
+<meta property="og:image" content="https://www.omniglot.com/images/logos/omniglot_thumbnail.jpg" />
+<meta property="og:type" content="https://www.facebook.com/pg/Omniglot-100430558332117/posts/" />
+<meta property="og:title" content="Omniglot - the online encyclopedia of writing systems and languages" />
+<meta property="og:description" content="A guide to writing systems and languages, with useful phrases, tips on learning languages, multilingual texts, and much more." />
+<meta name="verify-v1" content="cejfTn0YXFcpYIF6JuzyUteTyNRv4s4aS5x3VCjUArg=" />
+<meta name="alexaVerifyID" content="wKIsOEDpxF2wpUUvoe5aASy3-t8" />
+<meta name="p:domain_verify" content="a19490d87c886156e96c5ac6a1a61ad5" />
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, width=device-width" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script>
+ window.cookieconsent_options = {"message":"Cookies from Google and other advertisers are used on this site to personalise ads and to analyse traffic. Information about your use of this site is shared with Google. By using this site you agree to its use of cookies.","dismiss":"Okay!","learnMore":"More info","link":"http://www.omniglot.com/privacy.htm","theme":"light-bottom"};
+</script><script src="https://omniglot.com/porpoiseant/nmash.js?v=1"></script><script src="/detroitchicago/anaheim.js?gcb=3&amp;cb=1" async=""></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+<style>.ezoic-ad{display:inline-block;}
+.ezoic-ad .ezoic-adl {border:1px #c0c0c047 solid;border-radius:6px;overflow:hidden;background:url("/utilcave_com/l.svg") no-repeat center center}.ezoic-ad .ezfound,.ezmob-footer .ezoic-ad .ezoic-ad,.ezoic-ad-adaptive &gt; .ezoic-ad, .ezoic-ad-rl {background:0 0;border-radius:0;border:none}
+.adtester-container-122,.adtester-container-145,.adtester-container-150,.adtester-container-149,.adtester-container-152,.adtester-container-103,.adtester-container-113,.adtester-container-101,.adtester-container-105,.adtester-container-108,.adtester-container-125,.adtester-container-102,.adtester-container-140,.adtester-container-115,.adtester-container-124,.adtester-container-128,.adtester-container-111,.adtester-container-120,.adtester-container-127,.adtester-container-148,.adtester-container-144,.adtester-container-141,.adtester-container-147,.adtester-container-154,.adtester-container-156,.adtester-container-153{display:none!important}
+.ezoic-floating-bottom { display: none!important; }</style><link rel="canonical" href="https://omniglot.com/" />
+
+<script data-ezscrex="false" data-cfasync="false" type="text/javascript">window.google_analytics_uacct = "UA-161943801-46";</script>
+<script data-ezscrex="false" data-cfasync="false" type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(function(){
+	_gat._createTracker('UA-161943801-46', 'e');
+});
+_gaq.push(function(){
+	_gat._createTracker('UA-38339005-1', 'f');
+});
+_gaq.push(['e._setDomainName', 'omniglot.com']);
+_gaq.push(['f._setDomainName', 'omniglot.com']);
+_gaq.push(['e._setCustomVar',1,'template','pub_site_noads',3]);
+_gaq.push(['e._setCustomVar',2,'t','147',3]);
+_gaq.push(['e._setCustomVar',3,'rid','0',2]);
+_gaq.push(['e._setCustomVar',4,'bra','mod62-c',3]);
+_gaq.push(['e._setAllowAnchor',true]);
+_gaq.push(['e._setSiteSpeedSampleRate', 10]);
+_gaq.push(['f._setCustomVar',1,'template','pub_site_noads',3]);
+_gaq.push(['f._setCustomVar',2,'domain','omniglot.com',3]);
+_gaq.push(['f._setSiteSpeedSampleRate', 20]);
+_gaq.push(['e._trackPageview']);
+_gaq.push(['f._trackPageview']);
+
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">var ezouid = "1";</script><base href="https://omniglot.com/" /><script type="text/javascript">
+var ezoTemplate = 'pub_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type="text/javascript">
+var soc_app_id = '0';
+var did = 188776;
+var ezdomain = 'omniglot.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false" type="text/javascript" style="display:none">
+__ez.queue.addFile('__ezf_ezosuigeneris', '//g.ezoic.net/ezosuigeneris.js', true, [], true, false, false, false);
+var __ez_ezosuigenerisEvt = function() { if(typeof(ezosuigeneris) != 'undefined'){__ez.bit.AddAndFire(_ezaq['page_view_id'], [(new __ezDotData('universal_user_id', ezosuigeneris))]); }};
+__ez.queue.addFunc('__ez_ezosuigenerisEvt', '__ez_ezosuigenerisEvt', null, false, ['__ezf_ezosuigeneris','/detroitchicago/minneapolis.js','/detroitchicago/memphis.js'], false, false, false, false);</script><script src="//g.ezoic.net/ezosuigeneris.js" async=""></script><script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false" type="text/javascript" style="display:none">__ez.queue.addFile('__ezf_ezosuigenerisc', '//g.ezoic.net/ezosuigenerisc.js?nogen=1', true, ["/detroitchicago/boise.js"], true, false, false, false);</script><script src="//g.ezoic.net/ezosuigenerisc.js?nogen=1" async=""></script>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+(function(){
+	var div = document.createElement('div');
+	div.id = 'dmo1';
+	div.style = 'display:none';
+	var s = document.createElement('script');
+	var code = `var googleAdClient = "ca-pub-6396844742497208";
+			  window.google_ad_client = googleAdClient;
+			  /* dmo */
+			  window.google_ad_slot = "dmo";
+			  window.google_ad_width = 88;
+			  window.google_ad_height = 31;
+			  (adsbygoogle = window.adsbygoogle || []).push({
+				  google_ad_client: googleAdClient,
+				  enable_page_level_ads: false
+			  });`;
+	var ss = document.createElement('script');
+	ss.src = '//pagead2.googlesyndication.com/pagead/show_ads.js';
+	ss.type = 'text/javascript';
+	ss.async = false;
+	try {
+		s.appendChild(document.createTextNode(code));
+	} catch (e) {
+		s.text = code;
+	}
+	div.appendChild(s);
+	div.appendChild(ss);
+	if (document.readyState == 'interactive' || document.readyState == 'complete') {
+		document.body.appendChild(div);
+	} else {
+		document.addEventListener("DOMContentLoaded", function(event) {
+			document.body.appendChild(div);
+		});
+	}
+}());
+</script>
+<script data-ezscrex="false" data-pagespeed-no-defer="" data-cfasync="false">
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_188776=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["93c86ef6-5584-47e0-6e8e-63d8107723c1", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script><script src="/detroitchicago/edmonton.webp?a=a&amp;cb=191-3&amp;shcb=34" async=""></script><script src="/porpoiseant/jellyfish.webp?a=a&amp;cb=191-3&amp;shcb=34" async=""></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=omniglot.com" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=omniglot.com"></script><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/light-bottom.css" /></head>
+<body>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-2367787-1', 'auto');
+ ga('send', 'pageview');
+</script>
+<div id="header"><h1><a href="/index.htm"><img src="images/logos/header_omniglot.png" width="600" height="70" alt="Omniglot - the online encyclopedia of writing systems &amp; languages" /></a></h1>
+</div>
+<div id="content">
+<ul>
+ <li><a href="writing/index.htm"><img src="images/home/writing.jpg" width="100" height="100" alt="ꨑ" title="A letter from the Cham script" /></a>
+ <h2><a href="writing/index.htm">Writing Systems</a></h2>
+ <p><a href="writing/alphabets.htm">Alphabets</a> | 
+ <a href="writing/alphabetic.htm">Abjads</a> | 
+ <a href="writing/syllabic.htm">Abugidas</a> | 
+ <a href="writing/syllabaries.htm">Syllabaries</a> | 
+ <a href="writing/semanto-phonetic.php">Semanto-phonetic scripts</a> | 
+ <a href="writing/alternative.htm">Alternative scripts</a> | 
+ <a href="writing/undeciphered.htm">Undeciphered scripts</a> | 
+ <a href="writing/index.htm">A-Z index</a> | 
+ <a href="writing/direction.htm">Index by writing direction</a> | 
+ <a href="mlcomputing/qkeyboard.htm">Q International Keyboard</a>
+ </p>
+</li>
+ <li><a href="conscripts/index.htm"><img src="images/home/cons.jpg" width="100" height="100" alt="A letter from Demano" /></a>
+ <h2><a href="conscripts/index.htm">Constructed scripts</a></h2>
+ <p><a href="conscripts/natlangs.htm">For natural languages</a> | 
+ <a href="conscripts/conlangs.htm">For constructed languages</a> | 
+ <a href="conscripts/colourscripts.htm">Colour-based</a> | 
+ <a href="conscripts/phonetic.htm">Phonetic/Universal</a> | 
+ <a href="conscripts/adaptations.htm">Adapted</a> | 
+ <a href="conscripts/fictional.htm">Fictional</a> | 
+ <a href="conscripts/magical.htm">Magical</a> | 
+ <a href="conscripts/index.htm">A-Z index</a> | 
+ <a href="conscripts/howto.htm">How to submit a constructed script</a></p>
+ </li>
+ <li><a href="writing/languages.htm"><img src="images/home/languages.jpg" width="100" height="100" alt="語" title="Language in Chinese and Japanese" /></a>
+ <h2><a href="writing/languages.htm">Languages</a></h2>
+<p><a href="writing/languages.htm">Languages profiles</a> | 
+ <a href="language/index.htm">How to learn languages</a> | 
+ <a href="language/videos/index.htm">Language lessons</a> | 
+ <a href="language/names.htm">Language names</a> | 
+ <a href="writing/langfam.htm">Language families</a> | 
+ <a href="language/celtic/index.php">Celtic languages</a> | 
+ <a href="language/articles/index.htm">Articles</a> | 
+ <a href="books/index.htm">Language learning materials</a></p>
+ </li>
+ <li><a href="writing/languages.htm"><img src="images/home/ml.jpg" width="100" height="100" alt="ሰላም / բարև / Γειά / Привет / 今日は" title="Hello in Amharic, Tigrinya, Eastern Armenian, Greek, Russian and Japanese" /></a>
+ <h2><a href="language/ml.htm">Multilingual pages</a></h2>
+<p><a href="language/phrases/phraseindex.htm">Useful phrases</a> | 
+ <a href="language/phrases/useful.htm">Silly phrases</a> | 
+ <a href="language/phrases/phrasefinder.php">Multilingual Phrase Finder</a> | 
+ <a href="language/numbers/index.htm">Numbers</a> | 
+ <a href="language/time/index.htm">Time</a> | 
+ <a href="language/colours/index.php">Colours</a> | 
+ <a href="language/kinship/index.htm">Family words</a> | 
+ <a href="language/endearment/index.htm">Terms of endearment</a> | 
+ <a href="language/idioms/index.php">Idioms</a> | 
+<a href="language/proverbs/index.htm">Proverbs</a> | 
+ <a href="language/tonguetwisters/index.htm">Tongue twisters</a> | 
+ <a href="songs/index.php">Songs</a>
+ </p></li>
+ <li><a href="news/index.htm"><img src="images/home/new.jpg" width="100" height="100" alt="News / 新闻" title="The word news in English and simplified Chinese" /></a>
+<h2><a href="news/index.htm">What's new?</a></h2>
+<p><strong>Writing systems</strong>: 
+<a href="writing/purvalicchavi.htm">Purva Licchavi</a>,
+<a href="writing/toto2.htm">Toto</a>,
+<a href="writing/bhujimol.htm">Bhujimol</a>, 
+<a href="writing/olonal.htm">Ol Onal</a> | 
+<strong>Languages</strong>: 
+<a href="writing/sadri.htm">Sadri</a>,
+<a href="writing/turkana.htm">Turkana</a>,
+<a href="writing/toto.htm">Toto</a> | 
+<strong>Con-scripts</strong>:  
+<a href="conscripts/zhlachgavni.htm">Zhlachgavni-Iulji</a> | 
+<strong>Phrases</strong>:
+<a href="language/phrases/uropi.htm">Uropi</a>, 
+<a href="language/phrases/thingamajig.htm">Thingamajig</a> | 
+<strong>Numbers</strong>:
+<a href="language/numbers/saterlandfrisian.htm">Saterland Frisian</a>,
+<a href="language/numbers/khmer.htm">Khmer</a>, 
+<a href="language/numbers/lao.htm">Lao</a> | 
+<a href="https://www.omniglot.com/bloggle/"><strong>Blog</strong></a>:
+<a href="https://www.omniglot.com/bloggle/?p=20232">Yulemonth</a>, 
+<a href="https://www.omniglot.com/bloggle/?p=20229">Quiz</a> | 
+<a href="https://www.omniglot.com/radio/"><strong>Podcast</strong></a>: <a href="https://www.omniglot.com/radio/?p=1050">Success and Failure</a> | 
+<a href="http://www.omniglot.com/celtiadur/"><strong>Celtiadur</strong></a>: <a href="https://www.omniglot.com/celtiadur/2020/12/02/fingers/">Fingers</a></p></li>
+</ul>
+</div>
+<div id="mobile">
+<p><a href="writing/types.htm"><img src="images/home/vertical.gif" width="50" height="300" alt="Some letters from various writing systems" /></a>
+</p>
+<ul>
+ <li><a href="writing/index.htm">Writing Systems</a></li>
+ <li><a href="conscripts/index.htm">Constructed scripts</a></li>
+ <li><a href="writing/languages.htm">Languages</a></li>
+ <li><a href="language/phrases/index.htm">Phrases</a></li>
+ <li><a href="language/ml.htm">Other multilingual pages</a></li>
+ <li><a href="news/index.htm">What's new?</a></li>
+</ul>
+</div>
+<br style="clear:both;" />
+<div id="footer">
+<p class="icons"><a href="http://www.omniglot.com/bloggle/"><img src="images/buttons/blog.png" width="50" height="50" alt="Omniglot Blog" /></a>
+ <a href="http://www.omniglot.com/radio/"><img src="images/buttons/podcast.png" width="50" height="50" alt="Radio Omniglot Podcast" /></a>
+ <a href="http://www.omniglot.com/celtiadur/"><img src="images/buttons/celtiadur.png" width="50" height="50" alt="Celtiadur" /></a>
+ <a href="http://www.youtube.com/user/omniglot"><img src="images/buttons/youtube.png" width="50" height="50" alt="Omniglot YouTube Channel" /></a>
+ <a href="https://soundcloud.com/simon-ager"><img src="images/buttons/soundcloud.png" width="50" height="50" alt="Tunes, songs and podcasts on SoundCloud" /></a>
+ <a href="https://www.facebook.com/groups/omniglot/"><img src="images/buttons/facebook.png" width="50" height="50" alt="Omniglot Facebook Fan Club" /></a>
+ <a href="https://twitter.com/Omniglossia"><img src="images/buttons/twitter.png" width="50" height="50" alt="Twitter" /></a>
+</p>
+<ul>
+ <li><a href="index.htm">Home</a></li>
+ <li><a href="links/index.htm">Links</a></li>
+ <li><a href="books/index.htm">Books</a></li>
+ <li><a href="gallery/index.htm">Gallery</a></li>
+ <li><a href="puzzles.htm">Puzzles</a></li>
+ <li><a href="search.htm">Search</a></li>
+ <li><a href="faqs.htm">FAQs</a></li>
+ <li><a href="events/index.htm">Events</a></li>
+ <li><a href="news/index.htm">News</a></li>
+ <li><a href="about.htm">About</a></li>
+ <li><a href="contact.htm">Contact</a></li>
+ <li><a href="media.htm">Media</a></li>
+ <li><a href="donations.htm">Contribute</a></li>
+ <li><a href="advertising.htm">Advertising</a></li>
+</ul>
+<p class="copyright"><a href="/copyright.htm">Copyright</a> © 1998-2020 <a href="/aboutme.htm">Simon Ager</a> | <a href="http://my.kualo.com/uk/go/00572">Hosted by Kualo</a></p></div>
+<div class="homeads">
+<ul>
+ <li><a href="https://omniglot.krtra.com/t/F3SkAIlcW9Za">Learn languages quickly</a></li>
+ <li><a href="https://shop.mondly.com/affiliate.php?ACCOUNT=ATISTUDI&amp;AFFILIATE=82359&amp;PATH=https%3A%2F%2Fwww.mondly.com%2Foffer%2Flifetime-en%3FAFFILIATE%3D82359" rel="nofollow">Learn languages with Mondly</a></li>
+ <li><a href="https://utalk.com/plans/omniglot?utm_source=omniglot&amp;utm_medium=webads&amp;utm_campaign=omniglot">Learn languages fast with uTalk</a></li>
+ <li><a href="https://www.echineselearning.com/free-trial/?ecl=refEEEEE&amp;aff=Simon0902">One-to-one online Chinese lessons</a></li>
+ <li><a href="https://gz267.isrefer.com/go/omniglot-welcome/omniglot/" rel="nofollow">Learn French with Comme une Française</a></li>
+ <li><a href="http://www.translation-services-usa.com/?affiliateID=vVpgqbUcLe" rel="nofollow">Translation Services USA</a></li>
+ <li><a href="language/articles/englishinnewyork.htm">Learn English in New York</a></li>
+ <li><a href="language/articles/frenchinparis.htm">Learn French in Paris</a></li>
+ <li><a href="language/articles/italianinrome.htm">Learn Italian in Rome</a></li>
+ <li><a href="http://bit.ly/37vAg5P">Create Doodle Videos</a></li>
+ <li><a href="http://my.kualo.com/uk/go/00572" target="_blank">Unlimited Green Web Hosting with Kualo</a></li>
+ <li><a href="http://www.bestlanguageservices.com" rel="nofollow">Translation services agency</a></li>
+    <li><a href="https://brokescholar.com/coupon-codes/rosetta-stone">Rosetta Stone Discount Codes</a></li> <li><a href="https://www.northgateacademy.com/homeschool-online/">Homeschooling Online</a></li></ul>
+</div>
+
+<script type="text/javascript">
+				var __inScopeForCCPA = true;
+		function __uspapi(command, version, callback) {
+			var response = null;
+			var successs = false;
+			if (command === "getUSPData" &amp;&amp; version === 1) {
+				var uspString = "1"; // Version
+				if (__inScopeForCCPA) {
+					uspString += "N"; // Has Explicit Notice for Opt Out been provided (ex footer or minor consent modal)
+					var result;
+					var consentCookie = (result = new RegExp('(?:^|; )ezoccpaconsent=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+					if (consentCookie === "nonconsent") {
+						uspString += "Y";
+					}
+					else {
+						uspString += "N";
+					}
+					uspString += "N" // Is pub a signatory to the IAB Limited Service Provider Agreement (http://www.iabprivacy.com/)
+				}
+				else {
+					uspString += "---";
+				}
+				response = {
+					uspString: uspString,
+					version: 1
+				};
+				success = true;
+			}
+			return callback(response, success);
+		};
+		function __receiveUspapiMessage(event) {
+			if (event.data.hasOwnProperty('__uspapiCall')) {
+				__uspapi('getUSPData', 1, function(uspData, success) {
+					event.source.postMessage({
+						__uspapiReturn: {
+							returnValue: uspData,
+							success: success,
+							callId: event.data.__uspapiCall.callId
+						}
+					},
+					event.origin);
+				});
+			}
+			return null;
+		};
+		window.addEventListener("message", __receiveUspapiMessage, false);
+</script>
+
+		<script type="text/javascript">
+		(function(f,a){function g(b,a,c){b.addEventListener?b.addEventListener(a,c):b.attachEvent("on"+a,function(){c.call(b)})}function k(b){b&amp;&amp;("string"==typeof b["class"]&amp;&amp;b["class"]&amp;&amp;a.getElementById("uglipop_popbox").setAttribute("class",b["class"]),b.keepLayout&amp;&amp;!b["class"]&amp;&amp;a.getElementById("uglipop_popbox").setAttribute("style","position:relative;height:300px;width:300px;background-color:white;opacity:1;"),"string"==typeof b.content&amp;&amp;b.content&amp;&amp;"html"==b.source&amp;&amp;(a.getElementById("uglipop_popbox").innerHTML=b.content),"string"==typeof b.content&amp;&amp;b.content&amp;&amp;"div"==b.source&amp;&amp;(a.getElementById("uglipop_popbox").innerHTML=a.getElementById(b.content).innerHTML));a.getElementById("uglipop_overlay_wrapper").style.display="";a.getElementById("uglipop_overlay").style.display="";a.getElementById("uglipop_content_fixed").style.display=""}function h(){a.getElementById("uglipop_overlay_wrapper").style.display="none";a.getElementById("uglipop_overlay").style.display="none";a.getElementById("uglipop_content_fixed").style.display="none"}g(a,"DOMContentLoaded",function(){var b=a.createElement("div"),e=a.createElement("div"),c=a.createElement("div"),d=a.createElement("div");e.id="uglipop_content_fixed";e.setAttribute("style","position:fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);opacity:1;z-index:10000000;");c.id="uglipop_popbox";d.id="uglipop_overlay_wrapper";d.setAttribute("style","position:absolute;top:0;bottom:0;left:0;right:0;display:none");b.id="uglipop_overlay";b.setAttribute("style","position:fixed;top:0;bottom:0;left:0;right:0;opacity:0.3;width:100%;height:100%;background-color:black;");d.appendChild(b);e.appendChild(c);a.body.appendChild(d);a.body.appendChild(e);a.getElementById("uglipop_overlay_wrapper").style.display="none";a.getElementById("uglipop_overlay").style.display="none";a.getElementById("uglipop_content_fixed").style.display="none";d.addEventListener("click",h);g(f,"keydown",function(a){27==a.keyCode&amp;&amp;h()});f.uglipop=k})})(window,document);
+			var ezRBA = (function() {
+			  function init() {
+				var reportAdsBtns = document.querySelectorAll('.ez-report-ad-button');
+				for (var i = 0; i &lt; reportAdsBtns.length; i++) {
+				  reportAdsBtns[i].addEventListener('click', function(e) {
+					var url = '&lt;iframe src="https://svc.ezoic.com/pub/reportads/reportads.html' + e.target.getAttribute('name') + '" width="400" height="500" style="border-radius: 10px; box-shadow: 2px 2px 30px 6px rgba(0,0,0,0.75); border: 1px solid black;"&gt;&lt;/iframe&gt;'
+					uglipop({
+					  class: 'none',
+					  source: 'html',
+					  content: url,
+					});
+				  });
+				}
+				function bindEvent(element, eventName, eventHandler) {
+					if (element.addEventListener) {
+						element.addEventListener(eventName, eventHandler, false);
+					} else if (element.attachEvent) {
+						element.attachEvent('on' + eventName, eventHandler);
+					}
+				}
+				bindEvent(window, 'message', function(e) {
+					if (e.data === 'close-report-ad-modal') {
+						document.getElementById('uglipop_overlay_wrapper').style.display = 'none';	
+						document.getElementById('uglipop_overlay').style.display = 'none';	
+						document.getElementById('uglipop_content_fixed').style.display = 'none';	
+					}
+				})
+			  }
+
+			  return {
+				init: init
+			  };
+			})();
+			ezRBA.init();
+		</script>
+<script type="text/javascript" data-cfasync="false"></script>
+<script type="text/javascript" style="display:none;">var __ez_dims = (function() {
+		var setCookie = function( name, content, expiry ) {
+			return document.cookie = name+'='+content+((expiry)?';expires='+(new Date(Math.floor(new Date().getTime()+expiry*1000)).toUTCString()):'')+';path=/';
+		};
+		var ffid = 1;
+		var oh = window.screen.height;
+		var ow = window.screen.width;
+		var h = ffid === 1 ? oh : (oh &gt; ow) ? oh : ow;
+		var w = ffid === 1 ? ow : (oh &gt; ow) ? ow : oh;
+		var uh = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+		var uw = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+		setCookie('ezds', encodeURIComponent('ffid='+ffid+',w='+w+',h='+h), (31536e3*7));
+		setCookie('ezohw', encodeURIComponent('w='+uw+',h='+uh), (31536e3*7));
+	})();</script><script type="text/javascript" style="display:none;" async="">
+__ez.queue.addFile('edmonton.php', '/detroitchicago/edmonton.webp?a=a&amp;cb=191-3&amp;shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('jellyfish.php', '/porpoiseant/jellyfish.webp?a=a&amp;cb=191-3&amp;shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="omniglot_com",_audins_did=188776;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=191-3");</script><noscript>&lt;div style="display:none;"&gt;&lt;img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.omniglot_com,DomainId.188776" border="0" height="1" width="1" alt="Quantcast"/&gt;&lt;/div&gt;</noscript><noscript>&lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=20015427&amp;cv=2.0&amp;cj=1"/&gt;</noscript><script type="text/javascript" onload="__ezcl.handle(true);" async="" src="/utilcave_com/inc/ezcl.webp?cb=4"></script>
+<div id="dmo1" style="display: none;"><script>var googleAdClient = "ca-pub-6396844742497208";
+			  window.google_ad_client = googleAdClient;
+			  /* dmo */
+			  window.google_ad_slot = "dmo";
+			  window.google_ad_width = 88;
+			  window.google_ad_height = 31;
+			  (adsbygoogle = window.adsbygoogle || []).push({
+				  google_ad_client: googleAdClient,
+				  enable_page_level_ads: false
+			  });</script><script src="//pagead2.googlesyndication.com/pagead/show_ads.js" type="text/javascript"></script></div><div id="uglipop_overlay_wrapper" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; display: none;"><div id="uglipop_overlay" style="position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; opacity: 0.3; width: 100%; height: 100%; background-color: black; display: none;"></div></div><div id="uglipop_content_fixed" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; z-index: 10000000; display: none;"><div id="uglipop_popbox"></div></div><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; width: 0px; background-color: transparent; visibility: visible;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?guci=2.2.0.0.2.2.0.0&amp;us_privacy=1NNN&amp;client=ca-pub-6396844742497208&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1606992769&amp;plaf=1%3A2%2C2%3A2%2C3%3A2%2C4%3A2%2C5%3A2&amp;plat=1%3A136%2C2%3A136%2C8%3A128%2C9%3A32904%2C10%3A32%2C11%3A32%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C27%3A128%2C30%3A1048704%2C32%3A32%2C40%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fomniglot.com%2F&amp;ea=0&amp;flash=0&amp;pra=5&amp;wgl=1&amp;tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hZHNlcnZpY2UuZ29vZ2xlLmNvbSIsInN0YXRlIjowfSx7Imlzc3Vlck9yaWdpbiI6Imh0dHBzOi8vYXR0ZXN0YXRpb24uYW5kcm9pZC5jb20iLCJzdGF0ZSI6MH1d&amp;dt=1606992769533&amp;bpp=6&amp;bdt=698&amp;idt=142&amp;shv=r20201201&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=429493576027&amp;frm=20&amp;pv=2&amp;ga_vid=61381681.1606992769&amp;ga_sid=1606992769&amp;ga_hid=1866873091&amp;ga_fc=1&amp;ga_wpids=UA-161943801-46&amp;u_tz=-480&amp;u_his=2&amp;u_java=0&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_nplug=0&amp;u_nmime=0&amp;adx=-12245933&amp;ady=-12245933&amp;biw=785&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=42530671%2C21066973&amp;oid=3&amp;pvsid=1907068548456189&amp;pem=778&amp;rx=0&amp;eae=2&amp;fc=1408&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=8192&amp;bc=31&amp;ifi=0&amp;uci=a!0&amp;fsb=1&amp;dtd=169" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_6485017101074" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"></ins></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20201201/r20190131/zrt_lookup.html#" data-ad-client="ca-pub-6396844742497208" style="display: none;"></iframe></html><!--[selectron:done]-->

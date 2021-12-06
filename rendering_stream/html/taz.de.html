@@ -1,0 +1,1181 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:my="mynames" lang="de"><!-- DEBUG start 11:45:17+01:00 page_id=4608 :: taz.de--><!--
+		Content Management: openNewspaper www.opennewspaper.org based on TYPO3 www.typo3.org
+		Community Platform: Invsision Power Board www.invisionpower.com via ipbwi.com + manufactured PHP
+		Presentation Layer: XML, XSL, HTML, CSS, JS (+ toil, tears and sweat) webmaster@taz.de
+	--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+			page_id :: 4608--><meta http-equiv="Content-Script-Type" content="text/javascript" /><meta name="robots" content="index,follow,noarchive" /><meta name="language" content="de" /><meta name="copyright" content="TAZ Verlags- und Vertriebs GmbH" /><title>taz.de - taz.de</title><meta name="author" content="taz. die tageszeitung" /><meta name="description" content="Kritischer, unabhängiger Journalismus der linken Nachrichtenseite taz: Analysen, Hintergründe, Kommentare, Interviews, Reportagen. Genossenschaft seit 1992." /><meta name="keywords" content="taz.de, Nachrichten, News, taz, tageszeitung " /><meta name="taz:title" data-id="p4608" content="taz.de" /><meta name="generator" content="tazxslt, 0.55; " /><meta property="fb:pages" content="171844246207985,162775943776229,136860635948,337939896245563,185657208283671,1141409319297464,255160261177600,1252816681448318,240508363106685,669240916596907" />
+<!-- piwik/matomo (0.6) --><script src="https://cdn.ampproject.org/rtv/012010270040000/amp4ads-host-v0.js"></script><script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script type="text/javascript" id="piwik-loaded" async="" defer="" src="https://taz.de/lib/share/js/piwik.js"></script><script id="piwik-init" type="text/javascript">
+
+// ====================================================== taz piwik library === //
+window.patOtaz_de = window.patOtaz_de || new Object;
+window.patOtaz_de.piwik = window.patOtaz_de.piwik || new (function (debug) {
+    
+    // for a better readability
+    Array.prototype.clone = Array.prototype.slice;
+
+    // ES6 features
+    var hasHistoryApi = function() {
+        if ( history &amp;&amp; history.replaceState instanceof Function )  return true;
+        return false;
+    };
+    
+    // === private static members
+    var version = "patOtaz_de.piwik-0.6",
+        debug   =  debug || false;
+    
+    // === logging in debug mode or from outside
+    var log = function(args) {
+        if ( debug &amp;&amp; arguments.length ) {
+            var items = [];
+            Array.prototype.push.apply( items, arguments );
+            console.log( "PIWIK-LOG:", items );
+        }
+        return true;
+    };
+    
+    // === clean up strings with a whitelist
+    var removeCharsWithWhitelist = function(validChars, inputString) {
+        var regex = new RegExp( '[^'+ validChars +']', 'g' );
+        return inputString.replace( regex, '' );
+    };
+
+    // === clean up #matomo url fragment and return matomo part
+    var removeHashParam = function(fragment_key) {
+        if ( fragment_key === undefined )  return '';
+        var href          = location.href;
+        var href_base     = href.split('#')[0];
+        var fragment_pos  = href.indexOf('#');
+        var fragment_full = href.substring( fragment_pos +1 );
+        if ( fragment_pos &gt;0  &amp;&amp;  fragment_key.length &gt;0 ) {
+            var fragment_regex = new RegExp( '(.*?)#?'+ fragment_key +':([^#]+)#?(.*)' );
+            var fragment_match = fragment_full.match( fragment_regex );
+            if ( fragment_match ) {  
+                var fragment_this    = fragment_match[2];
+                var fragment_lhs     = fragment_match[1];
+                var fragment_rhs     = fragment_match[3];
+                var fragment_cleaned = ( fragment_lhs ? fragment_lhs : '' )+( fragment_lhs &amp;&amp; fragment_rhs ? '#' : '' )+( fragment_rhs ? fragment_rhs : '' );
+                if ( fragment_this.length &gt;0 ) {
+                    var new_href = href_base +( !fragment_lhs &amp;&amp; !fragment_rhs ? '' : '#' )+ fragment_cleaned;
+                    if ( hasHistoryApi )  history.replaceState( {}, document.title, new_href );
+                    return fragment_this;
+                }
+            }
+        }
+        return '';
+    };
+    
+    // === track search results list page
+    var trackSiteSearch = function(keyword, category, count) {
+        var tmp = Array.prototype.clone.call( arguments );
+        tmp.unshift("trackSiteSearch");
+        _paq.push( tmp );
+        log( "search result", { keyword:keyword, category:category, count:count } );
+        return true;
+    };
+    
+    // === track funnels
+    var trackFunnel = function(funnel, category) {
+        if ( funnel.length ) {
+            _paq.push([ 'trackEvent', category, 'Funnel', funnel ]);
+            log( "goal event", { funnel:funnel, category:category } );
+        }
+        return true;
+    };
+    
+    // === track events
+    var trackEvent = function(category, action, name, value) {
+        var tmp = Array.prototype.clone.call( arguments );
+        tmp.unshift("trackEvent");
+        _paq.push( tmp );
+        log( "event", { category:category, action:action, name:name, value:value } );
+        return true;
+    }
+
+    // === debugging
+    log( version );
+    
+    // === public interface
+    this.log              =log;
+    this.removeHashParam  =removeHashParam;
+    this.trackSiteSearch  =trackSiteSearch;
+    this.trackFunnel      =trackFunnel;
+    this.trackEvent       =trackEvent;
+    // this.trackPageType    =trackPageType;
+
+})(false); // patOtaz_de.piwik
+
+
+// ====================================================== piwik bucket === //
+window._paq = window._paq || [];
+
+
+// ====================================================== piwik setup === //
+(function(){
+
+    // === private members
+    var p = patOtaz_de.piwik,
+        o = {
+            version               :"0.6" // String
+            , piwik_script        :"https://taz.de/stats/piwik.php" // String
+            , page_id_enc         :"p4608" // String
+            , page_title_enc      :"p4608: taz.de" // String
+            , custom_url_enc      :"/!p4608" // String
+            , channel             :"web" // String
+            , area                :"Startseite" // String
+            , department          :"p4608" // String
+            , piwik_site_id       : 1  // Number
+            , is_tag              : false  // Boolean
+            , is_article          : false  // Boolean
+            , has_tags            : false  // Boolean
+    };
+    
+    // === url decode strings
+    o.page_id         =decodeURIComponent( o.page_id_enc    );
+    o.page_title      =decodeURIComponent( o.page_title_enc );
+    o.custom_url      =decodeURIComponent( o.custom_url_enc );
+    
+    // === page title
+    !function( node ) {
+        try {
+            var id    = node.getAttribute('data-id').toString()
+                , title = node.getAttribute('content').toString()
+                ;
+            o.title = ( id.length &gt;0 &amp;&amp; title.length &gt;0 ) ? id +": "+ title : "ZOMBIE";
+        } catch (err) {
+            o.title = "ZOMBIE";
+            console.log("ERROR-piwik: page title");
+        }
+    } ( document.head.querySelector( 'meta[ name="taz:title" ]' ) );
+
+    // === page url
+    o.url = location.href;
+    
+    // === process and clean #matomo fragment, if present
+    o.url_fragment = decodeURIComponent( p.removeHashParam('matomo') );
+    if ( o.url_fragment.length &gt;0 )  o.custom_url += '#'+ o.url_fragment;
+    
+    // === track tags
+    if ( o.is_article &amp;&amp; o.has_tags ) {
+        o.tag_list=[];
+        o.tag_list.toString = function() {
+            var string="";
+            // Get tag title and concat. So that no permutations are stored for the same set of tags, pull tag titles sorted by their id.
+            this.sort( function(a,b){ return ( parseInt(a.id) - parseInt(b.id) ) } ).forEach( function(tag){ string += tag.title +";" });
+            return string;
+        };
+        !function( tag_list ) {
+            var count=0;
+            try {
+				tag_list.forEach( function(tag) {
+					o.tag_list.push({
+						title     :tag.getAttribute('content')
+						,id       :tag.getAttribute('data-tag-id')
+						,category :tag.getAttribute('data-tag-category')? tag.getAttribute('data-tag-category'): "PLAIN-VANILLA"
+					});
+					count++;
+				});
+                if (count===0)  o.tag_list.push({ title:'ZOMBIE', id:0, category:'ZOMBIE' });
+                o.tag_list.string = o.tag_list.toString();
+            } catch(err) {
+                o.tag_list.push({ title:'ZOMBIE', id:0, category:'ZOMBIE' });
+                console.log("ERROR-piwik: tag_list");
+            }
+        }( document.head.querySelectorAll("meta[name='taz:tag']") );
+    }
+    
+    // === setup piwik bucket
+    _paq.push([ "setCustomUrl"       ,o.custom_url ]);
+    _paq.push([ "setDocumentTitle"   ,o.page_title ]);
+    _paq.push([ "setCustomVariable"  ,1 ,"channel"    ,o.channel    ,"page" ]);
+    _paq.push([ "setCustomVariable"  ,2 ,"area"       ,o.area       ,"page" ]);
+    _paq.push([ "setCustomVariable"  ,3 ,"department" ,o.department ,"page" ]);
+    if ( o.is_article &amp;&amp; o.has_tags )  _paq.push([ "setCustomVariable", 4, "tag", o.tag_list.toString(), "page" ]);
+    _paq.push([ "trackPageView"      ]);
+    _paq.push([ "enableLinkTracking" ]);
+    
+    // === load and setup piwik tracking
+    (function() {
+        var d=document
+          , g=d.createElement("script")
+          , s=d.getElementById("piwik-init")
+          ;
+        _paq.push([ "setTrackerUrl" ,o.piwik_script  ]);
+        _paq.push([ "setSiteId"     ,o.piwik_site_id ]);
+        g.type   = "text/javascript";
+        g.id     = "piwik-loaded";
+        g.async  = true;
+        g.defer  = true;
+        g.src    = "https://taz.de/lib/share/js/piwik.js";
+        g.onload = function() { p.log( 'setup', o ) }
+        s.parentNode.insertBefore( g, s );
+    })();
+    
+    // === tag tracking
+    if ( o.is_article &amp;&amp; o.has_tags ) {
+        o.tag_list.forEach( function(tag) {    p.trackEvent( "TAG", "TAG-ARTICLE-"+ tag.category, "TAG - t"+ tag.id +": "+ tag.title ) });
+    }
+    if ( o.is_tag ) {
+        p.trackEvent( "TAG", "TAG-LANDINGPAGE", "TAG - "+ o.title );
+    }
+    
+    // === debugging
+    //p.log( _paq );
+
+})(); // piwik setup
+
+    </script><!-- end: piwik/matomo (0.6) -->
+<link rel="preload" href="/lib/share/fonts/AktivGroteskBold/AktivGrotesk_W_Bd.woff" as="font" type="font/woff" crossorigin="anonymous" /><link rel="preload" href="/lib/ch/web/pix/tazze46.png" as="image" media="(min-width: 49px)" /><link rel="canonical" href="https://taz.de/" /><link rel="alternate" type="application/rss+xml" title="taz.de - taz.de" href="rss.xml" /><link rel="home" type="text/html" title="taz.de - Schlagzeilen" href="/" /><link rel="copyright" type="text/html" title="Impressum" href="/6/impressum/" /><link rel="stylesheet" type="text/css" media="screen, print" href="/lib/ch/web/css/news2020-10-20_55.css" /><link href="/lib/ch/web/css/local/print.css" type="text/css" rel="stylesheet" media="print" /><!--[if lte IE 6]> <link rel="stylesheet" type="text/css" href="/lib/style/ie6.css"> <![endif]--><!--[if lte IE 7]><style type="text/css">
+			ul.topbar                      >li      >a>span,
+			.secthead>ul[role='navigation']>li      >a>span	{  border-left: 1px solid; padding: 0px 4px;  }
+			ul.topbar                      >li.first>a>span,
+			.secthead>ul[role='navigation']>li.first>a>span	{  border:none; padding-left:0px;  }
+			ul.topbar                      >li      >a>span  {  border-color:white;    }
+			.secthead>ul[role='navigation']>li      >a>span  {  border-color:#888888;  }
+			.box h2 {  line-height:20px;  }
+			.author  {	display:inline;	float:none;	}
+			.sect_spb .sectbody {	padding-top:8px;	}
+			/* fil 2011-04-08 */
+			.sect_article >.sectfoot ul.toolbar >li,
+			#reward >ul.toolbar  {  height:28px;  }
+			.sect_article >.sectfoot ul.toolbar >li,
+			#reward ul.toolbar >li  {  float: left !important;  }
+			#reward >div  {  clear:both;  }
+			.sect_article >.sectfoot ul.toolbar  {  position:relative !important; top:0px; left:0px; height:24px;  }
+			#micropay ul.toolbar  {  height:52px;  }
+			.sect_article >.sectfoot {  padding-bottom:30px  }
+		</style><![endif]--><!--[if lte IE 8]><style type="text/css">
+			p.article,
+			.sect_article >.sectbody >h6,
+			p.caption,
+			.price-tag >.info,
+			.ad_badge,
+			li.tag >a,
+			.secthead > ul.toolbar,
+			.sect_meta,
+			.sect_service >.sectbody,
+			.head >.search >.frame >input,
+			.person >h5 {
+  			font-family: Verdana, DejaVu Sans, Bitstream Vera Sans, Helvetica, sans-serif;
+  		}
+		</style><![endif]--><script type="text/javascript" src="/uploads/cmp/yieldlove_cmp.js"></script><script type="text/javascript" src="/uploads/cmp/yieldlove.js"></script><script>
+
+			if(! HTMLCollection.prototype.last ) HTMLCollection.prototype.last = function(){ return this[ this.length -1 ]; }; 
+			if(! document.getLatestElement ) document.getLatestElement = function(){ 
+				var scripts = document.getElementsByTagName("script"); var thisScript = scripts[scripts.length - 1];
+				return ( this.currentScript || thisScript ).previousSibling;
+				};
+    
+		</script><script type="text/javascript" src="/lib/ch/web/js/2020-10-20_55.js"></script><script type="text/javascript"> if( filOtaz_de &amp;&amp; filOtaz_de.goMobile )  filOtaz_de.goMobile(); </script><!-- piwik/matomo (custom-0.2) --><script class="piwik-custom" type="text/javascript">
+
+// ====================================================== piwik customizing === //
+(function(){
+
+    // === private members
+    var p = patOtaz_de.piwik,
+        o = {
+            version           :"custom-0.2" // String
+            , page_id_enc     :"p4608" // String
+            , form_funnel     :"" // String
+            , search_term     :"" // String
+            , rootline        :"" // String
+            , is_article      : false  // Boolean
+            , is_corp         : false  // Boolean
+            , is_searchresult : false  // Boolean
+            , is_form         : false  // Boolean
+            , search_count    : NaN  // Number
+    };
+    
+    // === url decode strings
+    o.page_id = decodeURIComponent( o.page_id_enc );
+    
+    // === track search results
+    if ( o.is_searchresult )  p.trackSiteSearch( o.search_term, false, o.search_count );
+
+    // === track events
+    if ( window.jQuery ) {
+        $(document).ready(function(){
+
+            if ( $("#pages.news &gt;.article").length ) { p.trackEvent( 'TZI', 'displayed', 'ARTIKELAUFRUF') };
+            if ( $("#pages.news &gt;.article.longread").length ) { p.trackEvent( 'TZI', 'displayed', 'ARTIKELAUFRUF-LONGREAD') };
+            if ( $("#pages.news &gt;.article").length &amp;&amp; $("#tzi-paywahl-fg").length ) { 
+            p.trackEvent( 'TZI', 'displayed', 'ARTIKELAUFRUF_mit_Layer') };
+            if ( $("#pages.news &gt;.article").length &amp;&amp; !$("#tzi-paywahl-fg").length ) { 
+            p.trackEvent( 'TZI', 'displayed', 'ARTIKELAUFRUF_ohne_Layer') };
+
+            $(document).on("click", "#tzi-paywahl-fg .tzi-paywahl__yes"        ,function(event){ p.trackEvent( 'TZI', 'clicked', 'LAYER-JA'            ) });
+            $(document).on("click", "#tzi-paywahl-fg .tzi-paywahl__close"      ,function(event){ p.trackEvent( 'TZI', 'clicked', 'LAYER-GERADE-NICHT'  ) });
+            $(document).on("click", "#tzi-paywahl-fg .tzi-paywahl__subscriber" ,function(event){ p.trackEvent( 'TZI', 'clicked', 'LAYER-SCHON-DABEI'   ) });
+            $(document).on("click", "#tzi-shackle    .tzi-shackle__yes"        ,function(event){ p.trackEvent( 'TZI', 'clicked', 'LASCHE-JA'           ) });
+
+            // 2. check for not closing overlay
+            if ( $("#tzi-paywahl-fg").length &amp;&amp; "MutationObserver" in window ){
+                p.trackEvent( 'TZI', 'displayed', 'LAYER_SHOWN_OBSERVE_TEST');    
+                var paywahl = document.getElementById('tzi-paywahl-fg');
+                var observer = new MutationObserver(function(mutations) {
+                  p.trackEvent( 'TZI', 'displayed', 'LAYER_CLOSED_OBSERVE_TEST');    
+                  observer.disconnect();
+                });
+                observer.observe(paywahl, { 
+                    attributes: true, 
+                    attributeFilter: ['style'] 
+                });
+            }
+
+            $(document).on("click", ".sect_end a"                         ,function(event){ p.trackEvent( 'Element', 'clicked', 'ABBINDER'             ) });
+            $(document).on("click", "#mainFlyout a"                       ,function(event){ p.trackEvent( 'Element', 'clicked', 'FLYOUT'               ) });
+            $(document).on("click", "ul.navbar &gt;li &gt;a"                    ,function(event){ p.trackEvent( 'Element', 'clicked', 'NAVBAR'               ) });
+
+        // mar: reactivated for tracking of special menu
+            $(document).on("click", "ul.navbar.news.newsnavigation a "    ,function(event){ p.trackEvent( 'Navi', 'R_Desktop_MenuImHeader', $(this).find("span").text() ) });
+
+        /*  navi-tracking paused          
+            $(document).on("click", "ul.navbar.news.newsnavigation a "    ,function(event){ p.trackEvent( 'Navi', 'R_Desktop_MenuImHeader', $(this).find("span").text() ) });
+            $(document).on("click", "#mainFlyout .navigation.news a"      ,function(event){ p.trackEvent( 'Navi', 'R_Desktop_Flyout', $(this).find("span").text() )       });
+            $(document).on("click", "ul.navbar.corp.newsnavigation a "    ,function(event){ p.trackEvent( 'Navi', 'V_Desktop_MenuImHeader', $(".head &gt;h1 a").text() + ' &gt; ' + $(this).find("span").text() ) });
+            $(document).on("click", "#globalnavigation a"                 ,function(event){ p.trackEvent( 'Navi', 'V_Desktop_Schwarze_Navi', $(this).find("span").text() )});
+            $(document).on("click", "#mainFlyout .navigation.corp a"      ,function(event){ p.trackEvent( 'Navi', 'V_Desktop_Flyout_tazze', $(this).find("span").text() ) });
+            $(document).on("click", "#footer .sitemap &gt; .news a"          ,function(event){ p.trackEvent( 'Navi', 'R_Desktop_Footer', $(this).find("span").text() ) });
+            $(document).on("click", "#footer .sitemap &gt; .corp a"          ,function(event){ p.trackEvent( 'Navi', 'V_Desktop_Footer', $(this).find("span").text() ) });
+        */ 
+            $(document).on("click", "ul.navbar &gt;li.more ul.flyout &gt;li &gt;a" ,function(event){ p.trackEvent( 'Element', 'clicked', 'NAVBARMORE'           ) });
+            $(document).on("click", ".insert.dep4534"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUB1'            ) });
+            $(document).on("click", ".insert.dep4536"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'TRENNER'              ) });
+            $(document).on("click", ".insert.dep4777"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUB2'            ) });
+            $(document).on("click", ".insert.dep4219"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUB3'            ) });
+            $(document).on("click", ".insert.dep5178"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'MOBEINSCHUB1'         ) });
+            $(document).on("click", ".insert.dep5179"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'MOBEINSCHUB2'         ) });
+            $(document).on("click", ".insert.dep5180"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'MOBEINSCHUB3'         ) });
+            $(document).on("click", ".insert.dep5181"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'MOBEINSCHUB4'         ) });
+            $(document).on("click", ".insert.dep4755"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBNORD'         ) });
+            $(document).on("click", ".insert.dep4828"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBOEKE'         ) });
+            $(document).on("click", ".insert.dep4832"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBPOLITIK'      ) });
+            $(document).on("click", ".insert.dep5013"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBSPORT'        ) });
+            $(document).on("click", ".insert.dep5020"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBGESELLSCHAFT' ) });
+            $(document).on("click", ".insert.dep4956"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBKULTUR'       ) });
+            $(document).on("click", ".insert.dep4939"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBPAYWAHL'      ) });
+            $(document).on("click", ".insert.dep4704"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'EINSCHUBBERLIN'       ) });
+            $(document).on("click", ".sect_seealso a"                     ,function(event){ p.trackEvent( 'Element', 'clicked', 'COMBOLINKBOX'         ) });
+
+
+// home page all news teaser
+
+// mar: tracking aller Startseiten-Teaser am 04.12. deaktiviert
+
+/* 
+
+            $(document).on("click", ".sect_tdt &gt;ul &gt;li &gt; a" ,function(event){ 
+                p.trackEvent( 'Element', 'clicked', 'THEMEN DES TAGES ' + parseInt( $(this).parent().index() + 1 )  ); 
+            });
+
+            $(document).on("click", "#pages.news.home &gt;.news.page a.nolead.objlink" ,function(event){ 
+                var teaserNr = parseInt(   $(this).parents( 'li.brief' ).index(  'li.brief'  ) + 1  );
+                p.trackEvent( 'Element', 'clicked', 'Home &gt; Ressort: Newskamin Miniteaser Nr: ' + teaserNr  ); 
+            });
+
+            $(document).on("click", "#pages.news.home &gt;.news.page a.article.objlink" ,function(event){ 
+                // newskamin or not
+                var ressortName = $(this).parents('.news.page').find(' .nose &gt; h2 &gt; a &gt; span ').text() == '' ? 'Newskamin' : $(this).parents('.news.page').find(' .nose &gt; h2 &gt; a &gt; span ').text();
+                var teaserNr = ressortName == 'Newskamin' ?  parseInt(   $(this).parents( 'li.article:not(.brief)' ).index(  'li.article:not(.brief)'  ) + 1 ) : parseInt(   $(this).parents( 'li.article' ).index() + 1 );
+                var schwerpName = $(this).parents('.sect_spb').find('.secthead &gt; h2 &gt; a &gt; span ').text();
+                p.trackEvent( 'Element', 'clicked', 'Home &gt; Ressort: ' +  ressortName + ' ' + schwerpName +  ', Nr: ' + teaserNr  ); 
+            });
+*/
+
+            $(document).on("click", ".longread.article .sect_related a"  ,function(event){ p.trackEvent( 'Element', 'clicked', 'WEITERE-ARTIKEL-LONGREAD' ) });
+	        $(document).on("click", ".longread.article .sect_mostread a"  ,function(event){ p.trackEvent( 'Element', 'clicked', 'MEISTGELESEN-LONGREAD' ) });
+            $(document).on("click", ".article .tail .sect_related a"  ,function(event){ p.trackEvent( 'Element', 'clicked', 'WEITERE-ARTIKEL' );  });
+            $(document).on("click", ".news.article.page:not(.longread) .tail .sect_adr a"  ,function(event){p.trackEvent( 'Element', 'clicked', 'Verlagsplatz im Artikel' ) });
+            $(document).on("click", ".news.article.page:not(.longread) ~ div[class*='thema_clip'] a"  ,function(event){ p.trackEvent( 'Element', 'clicked', 'Schwerpunkt-Clip Artikelebene ' )  });
+            $(document).on("click", ".news.page:not(.longread) .abtest.testshow a"  ,function(event){ p.trackEvent( 'Element', 'clicked', $( this ).closest(".abtest.testshow" ).attr("class").replace("testshow","").replace("rack","").replace("first_rack","") ) });
+
+            $(document).on("click", ".sect_service a", function(event){
+                p.trackEvent( 'Element', 'clicked', 'SERVICEBOX: ' + $(this).attr('href') ) });
+            $(document).on("click", ".sectfoot li.shariff-button", function(event){
+                p.trackEvent( 'Element', 'clicked', 'SOCIAL-MEDIA-BUTTON: ' + $(this).attr('class').split(" ")[1]  ) 
+                });  
+
+            // mar: scroll detection: Add elem to "detectElement" and text to "trackingActionText" arrays
+            var detectElement = [ $('.shariff'), $('.article:not(.longread) .sect_related:visible'), $('.news.article.page:not(.longread) .tail .sect_adr:visible'), $('.news.article.page:not(.longread) ~ div[class*="thema_clip"]')  ];
+            var scrollToDetected = []; // detect each only once
+            var trackingActionText = [ 'zu Social Media Buttons gescrollt', 'zu weitere Artikel gescrollt', 'zum Verlagsplatz (Artikel) gescrollt', 'zum Schwerpunkt-Clip gescrollt' ];
+
+            $(window).on('scroll', function() {
+               for (var i = 0; i &lt; detectElement.length; i++) {
+                var scrElem = detectElement[i];
+                if ( scrollToDetected[i] === undefined &amp;&amp; scrElem.length &amp;&amp; (elemReached(scrElem)) ) {
+                    _paq.push([ 'trackEvent', 'Element', 'scrolled', trackingActionText[i] ]);       
+                    scrollToDetected[i] = true;
+                }
+              }
+
+            $( ".abtest.testshow" ).each(function( i ) {
+                var scrElem = $( this );
+
+                if ( scrollToDetected[i + 1000] === undefined &amp;&amp; scrElem.length &amp;&amp; (elemReached(scrElem)) ) {
+                    _paq.push([ 'trackEvent', 'Element', 'scrolled', $( this ).attr('class').replace('testshow','').replace('rack','').replace('first_rack','') ]);       
+                    scrollToDetected[i + 1000] = true;
+                }
+
+                });
+            });
+    
+            function elemReached(scrElem) {
+                    var docViewTop = $(window).scrollTop(); var docViewBottom = docViewTop + $(window).height();
+                    var elemTop = $(scrElem).offset().top + 40; return ((elemTop &lt;= docViewBottom) &amp;&amp; (elemTop &gt;= docViewTop))
+                }
+
+        }); // $(document).ready()
+    } // track events
+
+    // === debugging
+    p.log( 'custom', o );
+    //console.log( "output _paq: ", _paq );
+
+})(); // piwik customizing
+
+    </script><!--IVW--><script type="text/javascript" src="https://script.ioam.de/iam.js"></script><script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script><script type="text/javascript">
+		// Google Publisher Tag - https://developers.google.com/doubleclick-gpt/reference
+		var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; 
+	(function(){
+		var adArea = 'Startseite';	//
+		googletag.cmd.push( function() {
+			var pa = googletag.pubads();
+			pa.setForceSafeFrame(true);
+			pa.collapseEmptyDivs();
+			pa.setTargeting('position', [ adArea ]);
+      //pa.setTargeting('test', ['fireplace']); //       * * * test only ! * * *
+      //pa.setTargeting('test', ['wallpaper']);   //       * * * test only ! * * *
+      pa.setTargeting('page_id', ['p4608']);
+			if( location.protocol =='https' )
+				pa.setTargeting('ssl', ['ja']);
+			googletag.enableServices();
+			});
+		})();
+	</script><script>
+		// expect jQuery already to be loaded
+	(function() {
+		if( !window.filOtaz_de )		window.filOtaz_de		= Object;
+		if( !window.filOtaz_de.ads )		window.filOtaz_de.ads		= Object;
+		if( !window.filOtaz_de.ads.gpt )	window.filOtaz_de.ads.gpt	= Object;
+
+        var sizes = {
+             'artikel_medrec-1'    :[300,250]
+            ,'artikel_medrec-2'    :[300,250]
+            ,'artikel_medrec_mitte' :[300,250]
+            ,'ros_sidebar-1'       :[300,250]
+            ,'ros_sidebar-2'       :[300,100]
+            ,'uebersicht_medrec-1' :[300,250]
+            ,'uebersicht_medrec-2' :[300,250]
+            ,'uebersicht_medrec-3' :[300,250]
+            ,'uebersicht_medrec-4' :[300,250]
+            ,'uebersicht_medrec-5' :[300,250]
+            ,'uebersicht_board-1'  :[624,150]
+            ,'ros_billboard-1'     :[870,250]
+            ,'mobile_banner-1'     :[[300,250],[320,50],[320,100]]
+            ,'mobile_banner-2'     :[[300,250],[320,50],[320,100]]
+            ,'mobile_banner-3'     :[[300,250],[320,50],[320,100]]
+            ,'mobile_banner-4'     :[[300,250],[320,50],[320,100]]
+            ,'ros_top-links'       :[[120,600],[160,600],[300,600]]
+            ,'ros_top-mitte'       :[[728,90],[800,250],[870,250],[970,90],[970,250]]
+            ,'ros_top-rechts'      :[[120,600],[160,600],[300,600]]
+            ,'ros_leaderboard-1'   :[728,90]
+            ,'fireplace-mitte'     :[[970,90],[728,90]]
+            ,'fireplace-links'     :[160,601]
+            ,'fireplace-rechts'    :[160,600]
+            ,'fireplace_bg'        :[1,1]
+            };
+        var roadblocks = {};
+  
+  
+      roadblocks = {
+         'ros_top-mitte'   :['ros_billboard_1', 'fireplace_mitte']
+        ,'ros_billboard-1' :['fireplace_mitte']
+        ,'ros_top-rechts'  :['fireplace_mitte'] 
+      };
+    
+    
+		// general ad handling
+
+		// --&gt; to be triggered for ad_zone if ad is (to be) delivered
+		filOtaz_de.ads.fitIn = function( container ) {	// make space for ad in layout
+			var container = $( container );
+//console.log('fit '+ container.attr('id') );
+			if( !container.is('.ad_zone') ) return;
+			var packing = container.parent('.ad_bin');
+			packing.addClass('shown');
+			container.addClass('ad_zone_shown');
+			if( container.hasClass('ad_zone_contentad') ) {
+				packing.prev('.sect_leads').addClass('aded_'+( container.height() &gt;120 ?'big' :'small' ) );
+				var badge = container.hasClass('ad_zone_sold') ? 'Anzeige' : 'taz-Angebot';
+				container.before('&lt;div class="ad_badge"&gt;'+ badge +'&lt;/div&gt;');
+				}
+			container.trigger('TAZadInserted').trigger('TAZboxChange');
+			};
+
+		// --&gt; to be triggered for ad_zone if no ad is (to be) delivered
+		// redundant?
+		filOtaz_de.ads.reclaim = function( container ) {	// remove whitespace from non-delivered ad
+			var container = $( container );
+//console.log('reclaim '+ container.attr('id') );
+			if( !container.is('.ad_zone') ) return;
+			var packing = container.parent('.ad_bin');
+			packing.removeClass('shown');
+			container.removeClass('ad_zone_shown');
+			if( container.hasClass('ad_zone_contentad') ) {
+				packing.prev('.sect_leads').removeClass('aded_big aded_small');
+				}
+			container.trigger('TAZadRemoved').trigger('TAZboxChange');
+			};
+    
+    
+
+		var fuzeAdFrame = function( frame ) {	// register frame for messages, fire if one is from our content
+console.log('legacy fuzeAdFrame', frame  );
+			};
+    
+    
+    // Hintergrund per Message
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+    window[eventMethod](messageEvent, function(e) {
+      if (e.data.toString().indexOf("color") != -1) {
+        $("#background").css("background-color", e.data.split(" ")[1]);
+        }
+      }, false);
+    
+    
+		// activate ad frame
+		var adZoneHandled = {};
+    
+    var get_id = function( name ) {
+      return $('div[name=' + name + ']').attr('id');
+      };
+    
+    var get_name = function( id ) {
+      return $('#'+ id ).attr('name');
+      };
+    
+    unblock = function( id, rb_id ) {
+      var name = get_name(id);
+      var index = roadblocks[name].indexOf(rb_id);
+      if ( index &gt; -1 ) {
+        roadblocks[name].splice(index, 1);
+        }
+      if ( !roadblocks[name].length ) {
+        googletag.defineSlot( '/118803185/' + name, sizes[name], id ).addService( googletag.pubads() );
+        googletag.display( id );
+        }
+      };
+    
+    filOtaz_de.ads.gpt.activateAdFrame = function( id ) {  
+			if( !id ) return;
+			if( adZoneHandled[id] ) return; adZoneHandled[id] = true; // only one active zone per id
+ 
+			var packing   = $('#ad_bin_'+ id );
+			id = 'ad_zone_'+ id;
+			var container = packing.find('&gt;#'+ id );
+  
+			var name = container.attr('name');
+			if( !name || !sizes[name] ) return;
+   
+			// handle custom ad load events
+			container.on('filOtaz_de.ads.gpt.noBanner',   function(){  return false;  });
+			container.on('filOtaz_de.ads.gpt.preBanner',  function(){
+				filOtaz_de.ads.fitIn( container );
+				return false;
+				});
+			container.on('filOtaz_de.ads.gpt.postBanner', function(){  return false;  });
+
+
+			// define content
+			googletag.cmd.push( function() {
+				var pa = googletag.pubads();
+        if ( roadblocks[name] ) {
+          pa.addEventListener('slotRenderEnded', function (e) {
+            for (var i=0; i&lt;roadblocks[name].length; i++) {
+              if ( e.slot.getSlotElementId() == 'ad_zone_' + roadblocks[name][i] ) {
+
+		    if ( e.isEmpty ) {
+                  unblock(id, roadblocks[name][i]);
+                  }
+                else {
+                  document.getElementById(id).style.display = 'none';
+                  for (var key in roadblocks) {
+                    if ( !roadblocks.hasOwnProperty(key) ) continue;
+                    for ( var j=0; j&lt;roadblocks[key].length; j++ )
+                    if ( id == 'ad_zone_' + roadblocks[key][j] ) {
+                      unblock(get_id(key), roadblocks[key][j]);
+                      break;
+                      }
+                    }
+                  }
+                }
+              }
+			    }); // pa.addEventListener
+			    //	    console.log('roadblocks' + id);
+          googletag.display(id);
+          }
+        else {
+          pa.display( '/118803185/'+ name, sizes[name], id );
+	// console.log( 'asked for', '/118803185/'+ name, sizes[name], id );
+          }
+				pa.addEventListener('slotRenderEnded', function(e) {
+			    if( e.slot.getSlotElementId() != id )  return;	// not our slot
+			    container.trigger( e.isEmpty ? 'filOtaz_de.ads.gpt.noBanner' : 'filOtaz_de.ads.gpt.preBanner' );
+console.log( name +( e.isEmpty ? ' isEmpty' : '' ) );
+					});
+        });
+      }; //filOtaz_de.ads.gpt.activateAdFrame
+
+		// activate wallpaper combo add frame
+/*
+		filOtaz_de.ads.gpt.wallpaper = function() {
+			console.log('filOtaz_de.ads.gpt.wallpaper not yet supported');
+			};
+*/
+
+		})();
+	</script><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" /><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" /><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" /><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /><link rel="manifest" href="/manifest.json" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="/ms-icon-144x144.png" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#d50d2e" /><meta name="theme-color" content="#ffffff" /><script type="text/javascript" src="https://de.ioam.de/tx.io?st=taz&amp;cp=Startseite&amp;sv=ke&amp;ct=01000000000000&amp;pt=CP&amp;ps=lin&amp;er=N22&amp;rf=&amp;r2=&amp;ur=taz.de&amp;xy=800x600x24&amp;lo=US%2FCalifornia&amp;cb=0013&amp;i2=0013b2e34eebb171c5fc8c223&amp;ep=1631262638&amp;vr=418&amp;id=5tx5x3&amp;i3=nocookie&amp;n1=1&amp;dntt=0&amp;lt=1606992419608&amp;ev=&amp;cs=k499wa&amp;mo=1"></script><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020111901.js" async=""></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=taz.de" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=taz.de"></script><link rel="prefetch" href="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" /></head><body class="homepage js vga svga noxga nosxga"><a id="tzi-shackle" target="_blank" href="https://taz.de/Regelmaessig-zahlen-per-Bankeinzug/!115932/#!formfill:via=Lasche" class="notPaying" style=""><div><span class="tzi-shackle__yes">Unterstützen Sie jetzt die <span>taz!</span></span></div></a><noscript>&lt;img src="https://taz.de/stats/piwik.php?idsite=1&amp;amp;rec=1&amp;amp;action_name=NOSCRIPT" style="border:0" alt=""&gt;&lt;/img&gt;</noscript><ul style="display: none" itemscope="" itemtype="http://schema.org/Webpage"><li itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization " style=" display:none; "><span itemprop="url" content="http://www.taz.de"></span><span itemprop="name" content="TAZ Verlags- und Vertriebs GmbH"></span><span itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url" alt="taz logo" src="/lib/ch/web/pix/taz_logo_web.jpg" /></span><span content="https://www.facebook.com/taz.kommune/" itemprop="sameAs"></span><span content="https://twitter.com/tazgezwitscher" itemprop="sameAs"></span><span content="https://www.instagram.com/taz.die_tageszeitung" itemprop="sameAs"></span><span content="https://flipboard.com/@taz_de" itemprop="sameAs"></span><span content="https://www.reddit.com/user/dietageszeitung" itemprop="sameAs"></span><span content="https://pod.geraspora.de/u/taz" itemprop="sameAs"></span></li></ul><script type="text/javascript">(function(){
+	var body = $(document.body);
+	body.addClass('js');
+	if( screen.width &gt;=640 )	body.addClass('vga');	else body.addClass('novga');
+	if( screen.width &gt;=800 )	body.addClass('svga');	else body.addClass('nosvga');
+	if( screen.width &gt;=1024 )	body.addClass('xga');	else body.addClass('noxga');
+	if( screen.width &gt;=1280 )	body.addClass('sxga');	else body.addClass('nosxga');
+	})();		</script><div class="topo_wit" id="counter"><!-- ================ begin: ivw (szm 2.0) ================ --><script xmlns="" type="text/javascript">
+            var iam_data = {
+                "st": "taz",
+                "cp": "Startseite",
+                "sv": "i2"
+            };
+            if ( typeof( iom ) !=='undefined' &amp;&amp; iom.c ) iom.c(iam_data,1);
+        </script><!-- ================ end: ivw (szm 2.0) ================ --></div><div id="adOverlay" class="topo_lay"></div><div id="fake" class="topo_wit"></div><div id="background" class="topo_bin"><div id="skirt" style="top: 1500px;"></div><div id="centered"><script type="text/javascript">	// to be called inline early in #centered
+//console.log( $('#background') );
+//console.log( $('#centered') );
+//console.log( $('#pages') );
+		var checkHash = function() {
+			var hashURL = window.location.hash.slice(1);
+			if( hashURL.indexOf('!tom=')         ==0 ) new filOtaz_de.TomOL( hashURL.substr(5) );
+			if( hashURL.indexOf('!g')            ==0 ) new filOtaz_de.Gallery('/'+ hashURL );
+			if( hashURL.indexOf('!vimeo=')       ==0 ) new filOtaz_de.VimeoVideo('/'+ hashURL );
+			if( hashURL.indexOf('berlinfolgen')  ==0 ) new patOtaz_de.Berlinfolgen( hashURL );
+			if( hashURL.indexOf('!bbi')          ==0 ) new patOtaz_de.BbiFluglaermkarte();
+			if( hashURL.indexOf('!pwatch')       ==0 ) new patOtaz_de.ParteispendenWatch();
+			if( hashURL.indexOf('!ackerkartell') ==0 ) new patOtaz_de.Ackerkartell();
+			if( hashURL.indexOf('!wm2014')       ==0 ) new patOtaz_de.Wm2014();
+			if( hashURL.indexOf('!track=')        ==0 ) {
+				var tracking_key = hashURL.substr(7);
+				console.log( "DEBUG TRACKURL tracking_key="+ tracking_key );
+				window.location.hash = '';
+				
+				if ( tracking_key =="TZISOCIALMEDIA" ) {
+					_paq.push([ 'trackEvent', 'Verlag', 'Funnel', 'TZISOCIALMEDIA' ]);
+					console.log("DEBUG-piwik TZISOCIALMEDIA");
+				}
+				if ( tracking_key =="TZIANZEIGE1" ) {
+					_paq.push([ 'trackEvent', 'Verlag', 'Funnel', 'TZIANZEIGE1' ]);
+					console.log("DEBUG-piwik TZIANZEIGE1");
+				}
+				if ( tracking_key =="TZIANZEIGE2" ) {
+					_paq.push([ 'trackEvent', 'Verlag', 'Funnel', 'TZIANZEIGE2' ]);
+					console.log("DEBUG-piwik TZIANZEIGE2");
+				}
+				if ( tracking_key =="TZIEPAPER" ) {
+					_paq.push([ 'trackEvent', 'Verlag', 'Funnel', 'TZIEPAPER' ]);
+					console.log("DEBUG-piwik TZIEPAPER");
+				}
+			}
+			//if( hashURL.search(/^![0-9]/) ==0 )	new filOtaz_de.Wtf('/'+ hashURL );
+			};
+		checkHash();
+		$(window).hashchange( checkHash );
+	</script><span id="ad_bin_fireplace_bg" class="ad_bin" style=""><div id="ad_zone_fireplace_bg" name="fireplace_bg" class="ad_zone" data-google-query-id="CPSRqKPRse0CFUqxfgodwFQCOQ" style="display: none;"><div id="google_ads_iframe_/118803185/fireplace_bg_0__container__" style="border: 0pt none; width: 1px; height: 1px;"></div></div></span><span id="ad_bin_fireplace_mitte" class="ad_bin" style=""><div id="ad_zone_fireplace_mitte" name="fireplace-mitte" class="ad_zone" data-google-query-id="CNGXqKPRse0CFVArfgod1IwOvg" style="display: none;"><div id="google_ads_iframe_/118803185/fireplace-mitte_0__container__" style="border: 0pt none; width: 970px; height: 90px;"></div></div></span><span id="ad_bin_fireplace_links" class="ad_bin" style=""><div id="ad_zone_fireplace_links" name="fireplace-links" class="ad_zone" data-google-query-id="CMWqqKPRse0CFcItfwod-w0G3w" style="display: none;"><div id="google_ads_iframe_/118803185/fireplace-links_0__container__" style="border: 0pt none; width: 160px; height: 601px;"></div></div></span><span id="ad_bin_fireplace_rechts" class="ad_bin" style=""><div id="ad_zone_fireplace_rechts" name="fireplace-rechts" class="ad_zone" data-google-query-id="COGEqKPRse0CFRM2fwodVX0Fvw" style="display: none;"><div id="google_ads_iframe_/118803185/fireplace-rechts_0__container__" style="border: 0pt none; width: 160px; height: 600px;"></div></div></span><span id="ad_bin_fireplace_script" class="ad_bin"><div id="ad_zone_fireplace_script" name="fireplace-script" class="ad_zone"></div></span><script type="text/javascript">
+(function(){
+  var parent = $('#ad_bin_fireplace_rechts').parent();
+  if( !parent.is('.wing') || parent.is('.floating.wing') )  // for wings only run when already floating
+    filOtaz_de.ads.gpt.activateAdFrame('fireplace_rechts');
+  })(); 
+(function(){
+  var parent = $('#ad_bin_fireplace_bg').parent();
+  if( !parent.is('.wing') || parent.is('.floating.wing') )  // for wings only run when already floating
+    filOtaz_de.ads.gpt.activateAdFrame('fireplace_bg');
+  })(); 
+(function(){
+  var parent = $('#ad_bin_fireplace_mitte').parent();
+  if( !parent.is('.wing') || parent.is('.floating.wing') )  // for wings only run when already floating
+    filOtaz_de.ads.gpt.activateAdFrame('fireplace_mitte');
+  })(); 
+(function(){
+  var parent = $('#ad_bin_fireplace_links').parent();
+  if( !parent.is('.wing') || parent.is('.floating.wing') )  // for wings only run when already floating
+    filOtaz_de.ads.gpt.activateAdFrame('fireplace_links');
+  })(); 
+              </script><div id="adzone_wall" class=""><span id="ad_bin_ros_top_rechts" class="ad_bin shown" style=""><div id="ad_zone_ros_top_rechts" name="ros_top-rechts" class="ad_zone ad_zone_shown" data-google-query-id="CN7srqPRse0CFRGFfgodLKMD9A"><div id="google_ads_iframe_/118803185/ros_top-rechts_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 600px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/ros_top-rechts_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="600" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="c" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'ros_top_rechts';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script><span id="ad_bin_ros_top_mitte" class="ad_bin"><div id="ad_zone_ros_top_mitte" name="ros_top-mitte" class="ad_zone" style="display: none;"></div></span><script type="text/javascript"> (function(){
+		var domId = 'ros_top_mitte';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></div><div id="pages" class="news home"><ul role="navigation" id="globalnavigation" class="navbar" style="overflow: visible;"><li class="first odd trodd"><a href="/Abo/!p4209/" id="menu_p4209"><span>Abo</span></a></li><li class="even trodd"><a href="/Genossenschaft/!p4271/" id="menu_p4271"><span>Genossenschaft</span></a></li><li class="odd treven"><a href="https://taz.de/!p4697/#matomo:pk_campaign" id="menu_p5149"><span>taz zahl ich</span></a></li><li class="even trodd"><a href="/Info/!p4206/" id="menu_p4206"><span>Info</span></a></li><li class="odd trodd"><a href="/!p4233/" id="menu_p5311"><span>Veranstaltungen</span></a></li><li class="even treven"><a href="https://shop.taz.de/#pk_campaign" target="_blank" id="menu_p4378"><span>Shop</span></a></li><li class="odd trodd"><a href="/Anzeigen/!p4288/" id="menu_p4288"><span>Anzeigen</span></a></li><li class="more"><a><span>weitere</span></a><ul class="flyout" style="display: none;"><li class="even trodd"><a href="/!p5099/" id="menu_p5106"><span>taz FUTURZWEI</span></a></li><li class="odd treven"><a href="https://taz.de/!p4791/#matomo:pk_campaign" id="menu_p5133"><span>Neue App</span></a></li><li class="even trodd"><a href="/Podcast/!p5171/" id="menu_p5171"><span>Podcast</span></a></li><li class="odd trodd"><a href="/Bewegung/!p4715/" id="menu_p4715"><span>Bewegung</span></a></li><li class="even treven"><a href="/Kantine/!p4237/" id="menu_p4237"><span>Kantine</span></a></li><li class="odd trodd"><a href="//blogs.taz.de/" id="menu_p4366"><span>Blogs &amp; Hausblog</span></a></li><li class="even trodd"><a href="/!p5298/" id="menu_p5319"><span>taz Talk</span></a></li><li class="odd treven"><a href="/!p5297/" id="menu_p4955"><span>taz in der Kritik</span></a></li><li class="even trodd"><a href="/!p4662/" id="menu_p5148"><span>taz am Wochenende</span></a></li><li class="odd trodd"><a href="/Nord/!p4962/" id="menu_p4962"><span>Nord</span></a></li><li class="even treven"><a href="/Panter-Preis/!p4207/" id="menu_p4207"><span>Panter Preis</span></a></li><li class="odd trodd"><a href="/Panter-Stiftung/!p4258/" id="menu_p4258"><span>Panter Stiftung</span></a></li><li class="even trodd"><a href="/Reisen-in-die-Zivilgesellschaft/!p4310/" id="menu_p4310"><span>Reisen in die Zivilgesellschaft</span></a></li><li class="odd treven"><a href="//monde-diplomatique.de/" id="menu_p4387"><span>LE MONDE diplomatique</span></a></li><li class="even trodd"><a href="/Recherchefonds-Ausland/!p5062/" id="menu_p5062"><span>Recherchefonds Ausland</span></a></li><li class="odd trodd"><a href="/Archiv/!p4311/" id="menu_p4311"><span>Archiv</span></a></li><li class="even treven"><a href="https://taz.de/!p4905/" id="menu_p5284"><span>taz lab 2021</span></a></li><li class="odd trodd"><a href="/!p5044/" id="menu_p5123"><span>Christian Specht</span></a></li></ul></li><li class="last even trodd right"><a href="/Hilfe/!p4591/" id="menu_p4591"><span>Hilfe</span></a></li></ul><span id="ad_bin_ros_billboard_1" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_ros_billboard_1" name="ros_billboard-1" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CIrIrqPRse0CFU_ufgodjBgFoA"><div id="google_ads_iframe_/118803185/ros_billboard-1_0__container__" style="border: 0pt none; display: inline-block; width: 870px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/ros_billboard-1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="870" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="d" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'ros_billboard_1';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script><div class="full prefixed news page first odd first_page n1"><span class="body" role="main" style="min-height: 1104px;"><div role="region" id="xid479555" class="first last odd sect sect_text " style="display: none;"><div class="secthead" role="heading"><h2><a name="Javascript deaktiviert"><span>Javascript deaktiviert</span></a></h2></div><div class="sectbody"><img src="/uploads/images/70/baustelle.jpeg" alt="" title="" /><p>  Das neue taz.de hat ein dynamischeres Layout und setzt dafür viel Javascript ein. Wir arbeiten daran, dass alles ohne Javascript zugänglich ist.   </p></div></div><script>$('#xid479555').hide();</script><div role="region" id="xid459785" class="first odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   subjective commentary article leaded pictured"><a href="/Die-US-Demokraten-nach-Trump/!5729057/" ratiourl-ressource="5729057" class="objlink subjective commentary article leaded pictured noavatar" role="link"><h4>Die US-Demokraten nach Trump</h4><h3>Normal verliert</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Bernd Pickert</b> </p></span></span><p>Viele in den USA und auf der Welt wünschen sich nach vier Jahren Trump eine Rückkehr zur „Normalität“. Das wäre ein Rezept zum Scheitern.  </p><img src="/picture/4543242/624/US-Demokraten-Team-Biden-1.jpeg" alt="Joe Biden und Kamala Haris mit den Nominierten zum national Security Team: John Kerry , Antony Blinken , Jake Sullivan , Linda Thomas-Greenfield, Jake Sullivan , Avril Haines, Alejandro Mayorkas" title="Joe Biden und Kamala Haris mit den Nominierten zum national Security Team: John Kerry , Antony Blinken , Jake Sullivan , Linda Thomas-Greenfield, Jake Sullivan , Avril Haines, Alejandro Mayorkas" /></a><ul role="directory" class="teaserstuff"><li class=" first odd trodd   brief  report article leaded"><a href="/Biden-benennt-weiteres-Spitzenpersonal/!5732135/" ratiourl-ressource="5732135" class="objlink nolead" role="link"><h4>Biden benennt weiteres Spitzenpersonal</h4><h3>Erfahren, weiblich, Biden</h3></a></li><li class=" even trodd   brief  report article leaded"><a href="/Donald-Trump-streitet-weiter-um-US-Wahl/!5732098/" ratiourl-ressource="5732098" class="objlink nolead" role="link"><h4>Donald Trump streitet weiter um US-Wahl</h4><h3>Vollkommen haltlos, aber laut</h3></a></li><li class=" last odd treven   brief  report article leaded"><a href="/Nachfolge-im-Weissen-Haus/!5731872/" ratiourl-ressource="5731872" class="objlink nolead" role="link"><h4>Nachfolge im Weißen Haus</h4><h3>Trump gibt nach</h3></a></li></ul></li><li class="sectbody even trodd online   report article leaded pictured"><a href="/Nachruf-auf-Valery-Giscard-dEstaing/!5736464/" ratiourl-ressource="5736464" class="objlink report article leaded pictured noavatar" role="link"><h4>Nachruf auf Valéry Giscard d'Estaing</h4><h3>Der unverstandene Modernisierer</h3><p>Frankreichs früherer Präsident Valéry Giscard d'Estaing ist im Alter von 94 Jahren gestorben. In seine Amtszeit fielen wichtige Gesellschaftsreformen.  <span class="author">Rudolf Balmer</span></p><img src="/picture/4545495/192/26394866-1.jpeg" alt="Valery Giscard d'Estaing in Nahaufnahme" title="Valery Giscard d'Estaing in Nahaufnahme" /></a></li><li class="sectbody last odd treven online   report article leaded pictured"><a href="/Corona-und-Menschen-mit-Behinderung/!5729036/" ratiourl-ressource="5729036" class="objlink report article leaded pictured noavatar" role="link"><h4>Corona und Menschen mit Behinderung</h4><h3>Verhinderte Karrieren</h3><p>Für Menschen mit Behinderung hat die Coronapandemie die Lage gravierend verschlechtert. Gerade auf dem Arbeitsmarkt kämpfen viele.  <span class="author">Manuela Heim</span></p><img src="/picture/4544206/192/263915241-1.jpeg" alt="Portrait von Oliver Biermann" title="Portrait von Oliver Biermann" /></a><ul role="directory" class="teaserstuff"><li class=" first odd trodd   brief  report article leaded"><a href="/Aktuelle-Entwicklungen-in-der-Coronakrise/!5736463/" ratiourl-ressource="5736463" class="objlink nolead" role="link"><h4>Aktuelle Entwicklungen in der Coronakrise</h4><h3>Giscard d'Estaing stirbt an Covid-19</h3></a></li><li class=" last even trodd   brief  report article leaded"><a href="/Blinde-Fotografinnen-in-Berlin/!5727822/" ratiourl-ressource="5727822" class="objlink nolead" role="link"><h4>Blinde Fotograf:innen in Berlin</h4><h3>Zart und unheimlich leuchten</h3></a></li></ul></li></ul></div><div role="region" id="xid490804" class="even sect sect_leads style_leads oddpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Drehbuchautorin-klagt-wegen-Belaestigung/!5735045/" ratiourl-ressource="5735045" class="objlink report article leaded pictured noavatar" role="link"><h4>Drehbuchautorin klagt wegen Belästigung</h4><h3>#MeToo in Chinas Staatsfernsehen</h3><p>Als die Chinesin Zhou Xiaoxuan ihre Belästigungserfahrung öffentlich machte, wurde sie zensiert und bedroht. Ihr Fall landet nun vor Gericht.  <span class="author">Fabian Kretschmer</span></p><img src="/picture/4543230/192/Zhou-Xiaoxuan-china-me-too-1.jpeg" alt="Zhou Xiaoxuan läuft neben Unterstützerinnen mit Plakaten am Mittwoch vor dem Gericht in Peking entlang und weint" title="Zhou Xiaoxuan läuft neben Unterstützerinnen mit Plakaten am Mittwoch vor dem Gericht in Peking entlang und weint" /></a></li><li class="sectbody even trodd online   subjective column article leaded pictured"><a href="/Knuddeln-in-der-Pandemie/!5729032/" ratiourl-ressource="5729032" class="objlink subjective column article leaded pictured avatar" role="link"><h4>Knuddeln in der Pandemie</h4><h3>Hugbefehl</h3><span class="category_and_name avatar"><img itemprop="image" class="avatar_image" src="/kommune/files/images/profile/70x70/25938.png" /><span>Kolumne<b> Habibitus </b></span><span class="author"><p>von <b>Hengameh Yaghoobifarah</b> </p></span><p>Statt sich eng zu umschlingen und fest zuzudrücken, definierte sich der Alman-Hug über weit ausgestreckte Arme. Für wen lässt man diese Lücke?  </p></span><img src="/picture/4542662/192/Habibitus-Kolumne-1.jpeg" alt="Detailaufnahme einer Umarmung" title="Detailaufnahme einer Umarmung" /></a></li><li class="sectbody last odd treven online   report article leaded pictured"><a href="/Buch-ueber-Model-Naomi-Campbell/!5729284/" ratiourl-ressource="5729284" class="objlink report article leaded pictured noavatar" role="link"><h4>Buch über Model Naomi Campbell</h4><h3>Bilder mit Sophistication</h3><p>Naomi Campbell ist dieses Jahr 50 geworden. Eine zweibändige Prachtausgabe feiert das bekannteste schwarze Supermodel.  <span class="author">Brigitte Werneburg</span></p><img src="/picture/4542864/192/Naomi-Campbell-1.jpeg" alt="Ein Foto von Peter Lindbergh von Naomi Campell in schwarz-weiß" title="Ein Foto von Peter Lindbergh von Naomi Campell in schwarz-weiß" /></a></li></ul></div><span id="ad_bin_uebersicht_board_1" class="ad_bin sold contentad" style=""><div id="ad_zone_uebersicht_board_1" name="uebersicht_board-1" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold" data-google-query-id="CJOzqKPRse0CFWQHfwodlakE_w" style="display: none;"><div id="google_ads_iframe_/118803185/uebersicht_board-1_0__container__" style="border: 0pt none; width: 624px; height: 150px;"></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_board_1';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script><div role="region" id="xid510501" class="even sect sect_leads style_leads evenpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   subjective commentary article"><a href="/Drohende-Neuwahlen-in-Israel/!5729062/" ratiourl-ressource="5729062" class="objlink subjective commentary article noavatar" role="link"><h4>Drohende Neuwahlen in Israel</h4><h3>Von den Toten erwecken</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Judith Poppe</b> </p></span></span></a></li><li class="sectbody last even trodd online   report article"><a href="/Aktuelle-Entwicklungen-in-der-Coronakrise/!5736463/" ratiourl-ressource="5736463" class="objlink report article noavatar" role="link"><h4>Aktuelle Entwicklungen in der Coronakrise</h4><h3>Giscard d'Estaing stirbt an Covid-19</h3></a></li></ul></div></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; width: 0px; height: 1215px;"><div class="rightbar"><span class="wing floating" role="complementary" style=""><div class="rack first_rack" id="xid756513">
+    
+	<div xmlns="" class="sect sect_service box style_taz first_box">
+	
+	<div role="heading" class="secthead"><h2><a name="die%20aktuelle%20Ausgabe%20der%20taz" shape="rect">die aktuelle Ausgabe der taz</a></h2></div>
+	
+	<ul class="sectbody" role="directory">
+	 	<li style="padding-left:208px; height:100px;">
+<a role="link" href="/e-kiosk/!114771/" target="_blank" style="margin:0px;"><div class="frame" style="width:205px; height:102px; overflow:hidden; position:absolute; top:0px; left:0px;"><img class="full" src="/static/images/seite1.jpg" /></div></a><ul role="navigation">
+				<li><a href="/e-Paper/Abo/!p4352/" style="margin:0px;"><span>ePaper Abo</span></a></li>
+				<li><a href="https://taz.de/e-kiosk/!114771/" style="margin:0px;"><span>eKiosk</span></a></li>
+				<li><a href="/static/pdf/seite1.pdf" style="margin:0px;"><span>Vorschau</span></a></li>
+			</ul>
+		</li>
+ 	</ul>
+
+</div>
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script><div class="rack style_accordion js" id="xid698385">
+    
+
+<div role="region" class="first odd sect sect_galleries style_galleries shown active"><div class="secthead" role="heading"><h2><a name="Bildergalerie "><span>Bildergalerie </span></a></h2></div><ul role="directory" class="sectbody   directory"><li class=" first last odd trodd    gallery pictured"><a href="/Galerie/HIV--im-Schatten-von-Corona/!g5734534/" ratiourl-ressource="g5734534" class="objlink pictured noavatar" role="link"><h3>HIV – im Schatten von Corona</h3><img src="/picture/4538102/140/26384828-1-9.jpeg" alt="Schulmädchen passieren eine mobile Klinik , die vom Reproduktive Gesundheits- und HIV-Institut (RHI) in Soshanguve, nördlich von Pretoria betrieben wird" title="Schulmädchen passieren eine mobile Klinik , die vom Reproduktive Gesundheits- und HIV-Institut (RHI) in Soshanguve, nördlich von Pretoria betrieben wird" /><div class="extent">8 Bilder</div></a></li></ul></div><script type="text/javascript"> 
+	$('.gallery').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		me.click( function(){
+			//window.location.hash = '!g='+ me.attr('name');
+			window.location.hash = '!g'+ me.find('&gt;a').attr('href').split('!g')[1];
+			return false;
+			});
+		});
+	</script>
+
+
+
+    
+	<div role="region" class="even sect sect_moreleads style_moreleads "><div class="secthead" role="heading"><h2><a name="meistgelesen"><span>meistgelesen</span></a></h2></div><ul role="directory" class="sectbody news  directory"><li class=" first odd trodd online   report article"><a href="/Gefluechtete-in-Deutschland/!5734361/" ratiourl-ressource="5734361" class="objlink report article noavatar" role="link"><h4>Geflüchtete in Deutschland</h4><h3>Eritreer fordern Familiennachzug</h3></a></li><li class=" even trodd online   longread article"><a href="/Krise-der-Gastronomie-in-der-Provinz/!5729105/" ratiourl-ressource="5729105" class="objlink longread article noavatar" role="link"><h4>Krise der Gastronomie in der Provinz</h4><h3>Hoffen, hoffen, hoffen</h3></a></li><li class=" odd treven online   report article"><a href="/Elliot-Page-outet-sich-als-trans/!5729033/" ratiourl-ressource="5729033" class="objlink report article noavatar" role="link"><h4>Elliot Page outet sich als trans</h4><h3>That’s not my name</h3></a></li><li class=" even trodd online   interview article"><a href="/Browser-Ballett-ueber-Satire/!5729068/" ratiourl-ressource="5729068" class="objlink interview article noavatar" role="link"><h4>Browser Ballett über Satire</h4><h3>„Nicht nach unten treten“</h3></a></li><li class=" last odd trodd online   report article"><a href="/Corona-und-Menschen-mit-Behinderung/!5729036/" ratiourl-ressource="5729036" class="objlink report article noavatar" role="link"><h4>Corona und Menschen mit Behinderung</h4><h3>Verhinderte Karrieren</h3></a></li></ul></div>
+    
+
+<div role="region" class="odd sect sect_shop style_shop "><div class="secthead" role="heading"><h2><a name="meistkommentiert"><span>meistkommentiert</span></a></h2></div><ul role="directory" class="sectbody   directory"><li class=" first odd trodd   "><a href="/Islamkritik/!5728937/" class="objlink noavatar" role="link"><h4>Islamkritik</h4><h3>Die andere Freiheit</h3></a></li><li class=" even trodd   "><a href="/Regierungskrise-in-Sachsen-Anhalt/!5734787/" class="objlink noavatar" role="link"><h4>Regierungskrise in Sachsen-Anhalt</h4><h3>Die AfD lacht sich ins Fäustchen</h3></a></li><li class=" odd treven   "><a href="/Elliot-Page-outet-sich-als-trans/!5729033/" class="objlink noavatar" role="link"><h4>Elliot Page outet sich als trans</h4><h3>That’s not my name</h3></a></li><li class=" last even trodd   "><a href="/Konsequenzen-der-Amokfahrt-in-Trier/!5728990/" class="objlink noavatar" role="link"><h4>Konsequenzen der Amokfahrt in Trier</h4><h3>Schutz durch Technik</h3></a></li></ul></div>
+
+
+    
+
+	<div role="region" class="last even sect sect_tomkari style_tomkari "><div class="secthead" role="heading"><h2><a name="Karikatur &amp; Toms Touché"><span>Karikatur &amp; Toms Touché</span></a></h2></div><div class="sectbody karikatur_icons_rechts"><a class="sect_tomkari_kari" href="/static/images/kari.jpg" target="_blank"><img src="/fileadmin/seite1/kari/kari_preview.jpg" /></a><a class="sect_tomkari_tom" target="_blank" href="/scripts/tom/tomdestages.php"><img src="/fileadmin/seite1/tom/tom_preview.jpg" /></a></div></div><script type="text/javascript"> $('.sect_tomkari').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+
+		var kari = {};
+		me.find('.sect_tomkari_kari').click( function(){
+
+			if( !kari.win )  kari.win = new filOtaz_de.Overlay()
+				.addClass('body')
+				.append('&lt;div class="sect sect_kari"&gt;&lt;div class="sectbody"&gt;&lt;img src="/static/images/kari.jpg" /&gt;&lt;/div&gt;&lt;/div&gt;')
+				;
+
+			kari.win.beforeOpen( function () {
+        patOtaz_de.ivw({ gig: 'web', agof: true, name: 'kari' });
+      });
+      
+      kari.win.pop();
+
+			return false;
+			
+    });
+
+		me.find('.sect_tomkari_tom').click( function(){
+			window.location.hash = '!tom=tomdestages';
+			return false;
+			});
+
+		}); //.each (tomkari)
+	</script>
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			 filOtaz_de.accordion( $(document.getLatestElement()).filter('.rack') , 1); </script><span id="ad_bin_ros_sidebar_1" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_ros_sidebar_1" name="ros_sidebar-1" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CLvtqaPRse0CFcmufgodGDUNnw"><div id="google_ads_iframe_/118803185/ros_sidebar-1_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/ros_sidebar-1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="b" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'ros_sidebar_1';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script><div class="rack" id="xid836462">
+    
+
+<div role="region" id="" class="first odd sect sect_number-teaser2 style_bold "><div class="secthead" role="heading"><h2><a name="zahl ich"><span>zahl ich</span></a></h2></div><div class="sectbody number-teaser2 obj"><h3 style="opacity: 0;">... Menschen sind unsere BFFs</h3><p class="brief"></p><div class="corpus"><a data-value="25.281" href="/!p4697"><script>
+			0
+		</script><noscript class="no-js">25.281</noscript></a><script>
+		  initNumAni('default');
+		
+	</script></div></div></div>
+
+
+    
+
+
+
+	<div class="rack" id="xid837513">
+    
+
+	<div role="region" id="" class="first odd sect sect_text  no_body"><div class="secthead" role="heading"><h2><a name="Aus der taz – Neues vom linken Medienhaus:"><span>Aus der taz – Neues vom linken Medienhaus:</span></a></h2></div><div class="sectbody"></div></div>
+
+    
+
+	<div role="region" id="xid837509" class="last even sect sect_adr style_adr "><ul role="directory" class="sectbody corp  directory"><li class=" first odd trodd online   story"><a class="dept" href="/Info/!p4206/">Info</a><a href="/Wie-geht-es-der-taz-in-diesen-Zeiten-/!172087/" ratiourl-ressource="172087" class="objlink story noavatar" role="link"><h4>Wie geht es der taz in diesen Zeiten? </h4><h3>Es coronachtet sehr</h3></a></li><li class=" even trodd online   story"><a class="dept" href="/Info/!p4206/">Info</a><a href="/Freie-Stellen-bei-der-taz-/!126893/" ratiourl-ressource="126893" class="objlink story noavatar" role="link"><h4>Freie Stellen bei der taz </h4><h3>Wir sind anders. Sind Sie es auch?</h3></a></li><li class=" last odd treven online   story"><a class="dept" href="/Info/!p4206/">Info</a><a href="/Neuer-Erfolg-von-taz-zahl-ich/!172084/" ratiourl-ressource="172084" class="objlink story noavatar" role="link"><h4>Neuer Erfolg von taz zahl ich</h4><h3>25.000 taz-System­relevante</h3></a></li></ul></div>
+
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script>
+
+ 
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script></span></div></div></div><script type="text/javascript">(function () {	// align skirt top with first page's bottom asap
+$( document ).ready(function() {
+  var skirt_top = $('.sect_tdt &gt;.sectbody').length ? $('.sect_tdt &gt;.sectbody').first().offset().top -4 : 1500;
+  $('#skirt').css({'top': ''+ skirt_top +'px'});
+});
+	})();	</script><div class="news page even n2 full no_rightbar longread"><div class="nose" role="heading" id="pg823934_hd"><h2><a name="Reportage und Recherche" href="/Reportage-und-Recherche/!p5265/"><span>Reportage und Recherche</span></a></h2></div><span class="body" role="main"><div role="region" id="xid824018" class="first last odd sect style_leads evenpicts style_carousel js sect_carousel"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online longread article leaded pictured active"><a href="/Krise-der-Gastronomie-in-der-Provinz/!5729105/" ratiourl-ressource="5729105" class="objlink longread article leaded pictured noavatar" role="link"><h4>Krise der Gastronomie in der Provinz</h4><h3>Hoffen, hoffen, hoffen</h3><p>Die Gaststätte „Sonne“ ist dicht. Das Ehepaar Reichert hält sich mit Essenslieferungen über Wasser. Zu Besuch bei einer am Boden liegenden Branche.  <span class="author">Daniel Schulz</span></p><img src="/picture/4544070/948/26357441-1.jpeg" alt="ein Mann und eine Frau sitzen an einem runden Kneipentisch" title="ein Mann und eine Frau sitzen an einem runden Kneipentisch" /></a></li><li class="sectbody even trodd online   longread article leaded pictured"><a href="/Tuebingen-will-klimaneutral-werden/!5728858/" ratiourl-ressource="5728858" class="objlink longread article leaded pictured noavatar" role="link"><h4>Tübingen will klimaneutral werden</h4><h3>Öko ohne Samtpfötchen</h3><p>Autos raus, Ölheizungen verbieten, dafür kostenlose Wasserstoffbusse und Ökostrom für alle. Wie das gehen soll? Eine Radrundfahrt mit OB Boris Palmer.  <span class="author">Bernhard Pötter</span></p><img src="/picture/4535100/948/26379488-1.jpeg" alt="Brücke" title="Brücke" /></a></li><li class="sectbody odd treven online   longread article leaded pictured"><a href="/Abriss-Berliner-Grenzanlagen-1990/!5728741/" ratiourl-ressource="5728741" class="objlink longread article leaded pictured noavatar" role="link"><h4>Abriss Berliner Grenzanlagen 1990</h4><h3>Mauer nicht von Dauer</h3><p>Franz John ist 1990 in Eile. Er will ein Bauwerk dokumentieren, das gerade zu Schotter zermahlen wird. Von der Berliner Mauer blieb kaum etwas übrig.  <span class="author">Denis Giessler</span></p><img src="/picture/4530039/948/berliner-mauer-abriss-1990-1.jpeg" alt="Abriss der Berliner Mauer" title="Abriss der Berliner Mauer" /></a></li><li class="sectbody even trodd online   longread article leaded pictured"><a href="/Aerzte-und-Pflegende-in-der-Coronakrise/!5729518/" ratiourl-ressource="5729518" class="objlink longread article leaded pictured noavatar" role="link"><h4>Ärzte und Pflegende in der Coronakrise</h4><h3>Zwischen Wut und Routine</h3><p>Im April gaben uns eine OP-Schwester, ein Pfleger und ein Hausarzt Einblick in ihre Arbeit. Jetzt erzählen sie, wie sich ihr Alltag entwickelt hat.  <span class="author">Antje Lang-Lendorff, Jan Pfaff</span></p><img src="/picture/4527744/948/Corona-Intensivbetten-Klinik-1.jpeg" alt="Personal mit Schutzkkleidung rund um einen Patienten" title="Personal mit Schutzkkleidung rund um einen Patienten" /></a></li><li class="sectbody odd trodd online   longread article leaded pictured"><a href="/200-Geburtstag-von-Friedrich-Engels/!5729535/" ratiourl-ressource="5729535" class="objlink longread article leaded pictured noavatar" role="link"><h4>200. Geburtstag von Friedrich Engels</h4><h3>Der Erfinder des Marxismus</h3><p>Am 28. November ist der 200. Geburtstag von Friedrich Engels. Er stand zeitlebens im Schatten seines Freundes Karl Marx. Zu Unrecht. Eine Würdigung.  <span class="author">Ulrike Herrmann</span></p><img src="/picture/4526885/948/26357067-1.jpeg" alt="Friedrich-Engels-Statue in Rot vor einer Marx-Statue in Grau" title="Friedrich-Engels-Statue in Rot vor einer Marx-Statue in Grau" /></a></li><li class="sectbody last even treven online   longread article leaded pictured"><a href="/Thanksgiving-in-den-USA/!5727512/" ratiourl-ressource="5727512" class="objlink longread article leaded pictured noavatar" role="link"><h4>Thanksgiving in den USA</h4><h3>Das Virus reist mit</h3><p>Larry Levner wird am Donnerstag seinen Enkel nicht in die Arme schließen. Die Pandemie ist der Feind des wichtigsten Feiertags in den USA.  <span class="author">Dorothea Hahn</span></p><img src="/picture/4522848/948/Coronavirus-Thanksgiving-1.jpeg" alt="Mebnschen tragen SChutzmasken, zwei umarmen sich" title="Mebnschen tragen SChutzmasken, zwei umarmen sich" /></a></li></ul><div class="left cursor" style="display: none;"></div><div class="right cursor"></div></div></span><script> 
+					
+						filOtaz_de.carousel( $(document.getLatestElement() ).find('.sect').addClass('style_carousel ').removeClass('first_sect_leads').removeClass('sect_leads') );
+						$( document.getLatestElement() ).parents('.news.page').first().removeClass('mini').addClass('full no_rightbar longread');
+						
+				</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"></div></div></div><div class="full thema clip_small no_rightbar news page odd n3"><div class="head" role="head"><h2><a name="Themen des Tages" href="/Themen-des-Tages/!p15"><span>Themen des Tages</span></a></h2><ul role="navigation" class="news navbar newsnavigation"></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid834887" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts sect_thema clip_small"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   subjective commentary article leaded pictured"><a href="/Konsequenzen-der-Amokfahrt-in-Trier/!5728990/" ratiourl-ressource="5728990" class="objlink subjective commentary article leaded pictured noavatar" role="link"><h4>Konsequenzen der Amokfahrt in Trier</h4><h3>Schutz durch Technik</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Gereon Asmuth</b> </p></span></span><p>Stoppt die Raser! Nehmt ihnen die Waffen weg! Wie? Mit den Mitteln der Autoindustrie: Smarte Technik wie automatischer Tempolimitierung etwa.  </p><img src="/picture/4544564/624/Trier-Tatort-Auto-1.jpeg" alt="Der Rangerover steht auf einem Abschleppwagen" title="Der Rangerover steht auf einem Abschleppwagen" /></a></li><li class="sectbody even trodd online   report article leaded pictured"><a href="/Streit-um-Rundfunk-in-Sachsen-Anhalt/!5734786/" ratiourl-ressource="5734786" class="objlink report article leaded pictured noavatar" role="link"><h4>Streit um Rundfunk in Sachsen-Anhalt</h4><h3>Krise verschoben</h3><p>In Sachsen-Anhalt verhindern SPD, Grüne und CDU in einem zähen Ringen das Ende der Koalition. Doch das ist vorerst nur eine Woche aufgeschoben.  <span class="author">Stefan Reinecke</span></p><img src="/picture/4540972/300/Haseloff-1.jpeg" alt="Auf einem Laptop-Bildschirm: Ein Mann im Anzug sitzt an einem Tisch" title="Auf einem Laptop-Bildschirm: Ein Mann im Anzug sitzt an einem Tisch" /></a></li><li class="sectbody last odd treven online   report article leaded pictured"><a href="/Corona-in-Russland/!5734376/" ratiourl-ressource="5734376" class="objlink report article leaded pictured noavatar" role="link"><h4>Corona in Russland</h4><h3>Wieder neue Spitzenwerte</h3><p>569 Tote werden an nur einem Tag gemeldet. Ein Drittel aller Infektionen entfällt auf die beiden Metropolen Moskau und Sankt Petersburg.  <span class="author">Klaus-Helge Donath</span></p><img src="/picture/4539120/300/26312971-1.jpeg" alt="Erschöpfte Fachkräfte in Schutzkleidung sitzen nebeneinander in einem zum Krankenhaus umgewandeltem Ausstellungsraum in Moskau" title="Erschöpfte Fachkräfte in Schutzkleidung sitzen nebeneinander in einem zum Krankenhaus umgewandeltem Ausstellungsraum in Moskau" /></a></li></ul></div></span><a class="button cta" href="/Themen-des-Tages/!p15">Alle Artikel zum Thema</a><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg_hd" style="z-index: 0;"><h2><a name="Themen des Tages" href="/Themen-des-Tages/!p15/"><span>Themen des Tages</span></a></h2></div></div></div></div><div class="insert dep4534"><div role="region" id="xid446765" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first odd trodd first_sectbody online   leaded pictured leaded story"><a class="dept" href="/Bewegung/!p4715/">Bewegung</a><a href="/Solidemo-in-Fulda-am-0312/!172093/" ratiourl-ressource="172093" class="objlink leaded pictured leaded story noavatar" role="link"><h4>Solidemo in Fulda am 03.12.</h4><h3>Unabhängige Aufklärung jetzt! </h3><p class="brief">            Matiullah J. wurde 2018 durch Polizeischüsse getötet. Bislang ist der Fall nicht aufgeklärt. Ein Gastbeitrag.  </p><img src="/uploads/images/300/Matiullah.jpg" alt="" title="" /></a></li><li class="sectbody even trodd online   leaded pictured leaded remote story"><a class="dept" href="//www.kontextwochenzeitung.de/">KONTEXT: Wochenzeitung</a><a href="https://www.kontextwochenzeitung.de/debatte/505/volle-kraft-zurueck-7160.html" target="_blank" class="objlink leaded pictured leaded remote story noavatar" role="link"><h4>Von unserer Kooperationspartnerin</h4><h3>Mit voller Kraft zurück</h3><p class="brief">   Stuttgarts neuer OB Frank Nopper – ein Mann der Vergangenheit, sein schwarzer Fanclub eine Retro-Runde.    </p><img src="/uploads/images/300/Ktx_Bild1_49.2020.jpg" alt="" title="" /></a></li><li class="sectbody last odd treven online   leaded pictured leaded remote story"><a class="dept" href="/blogs/!p4774/">blogs</a><a href="https://blogs.taz.de/dissenspodcast/klassismus/" target="_blank" class="objlink leaded pictured leaded remote story noavatar" role="link"><h4>Dissens Podcast: Klassismus</h4><h3>Solidarisch gegen Diskriminierung</h3><p class="brief">       Francis Seeck und Brigitte Theißl klären auf über die Diskriminierung von Erwerbslosen und Arbeiter:innen. 									        </p><img src="/uploads/images/300/2zu1-Klassismus-Dissens-Klasse-Klassenzugehoerigkeit-Diskriminierung-Taz_01.jpg" alt="" title="" /></a></li></ul></div></div><div class="full thema clip_large news page even n4"><div class="head" role="head"><a class="pictured" name="Coronavirus" href="/Schwerpunkt-Coronavirus/!t5660746"><img src="/picture/3940809/948/Covid-19-Virus.jpg" /></a><h2><a name="Coronavirus" href="/Schwerpunkt-Coronavirus/!t5660746"><span>Coronavirus</span></a></h2><ul role="navigation" class="news navbar newsnavigation"><li class="topic"><a href="/Coronainfo-multilingual/!t5671953/" id="menu_t5671953"><span>Coronainfo multilingual</span></a></li><li class="topic"><a href="/Corona-Live-Ticker/!t5679126/" id="menu_t5679126"><span>Corona Live-Ticker</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid721894" class="first odd sect sect_leads style_leads  first_sect_leads oddpicts sect_thema clip_large"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Coronavakzin-im-Vereinigten-Koenigreich-zugelassen/!5734737/" ratiourl-ressource="5734737" class="objlink report article leaded pictured noavatar" role="link"><h4>Coronavakzin im Vereinigten Königreich zugelassen</h4><h3>Briten können losimpfen</h3><p>Als erstes Land hat Großbritannien den Corona-Impfstoff von Biontech und Pfizer zugelassen. Im Königreich kann jetzt die Immunisierung beginnen.  </p><img src="/picture/4539975/624/biontech_impfung-1.jpeg" alt="Hier erhielt im Mai ein Impfstoff-Proband das Biontech-Vakzin" title="Hier erhielt im Mai ein Impfstoff-Proband das Biontech-Vakzin" /></a></li><li class="sectbody even trodd online   report article leaded pictured"><a href="/Razzia-wegen-Corona-Hilfe-in-Moschee/!5728879/" ratiourl-ressource="5728879" class="objlink report article leaded pictured noavatar" role="link"><h4>Razzia wegen Corona-Hilfe in Moschee</h4><h3>Großrazzia wegen 14.000 Euro</h3><p>In Berlin gab es eine Razzia in einer Moschee wegen angeblichen Subventionsbetrugs. Unverhältnismäßig, sagt Imam Sabri von der Dar-as-Salam-Gemeinde  <span class="author">Gareth Joswig</span></p><img src="/picture/4539471/300/Imam_Taha_Sabri_Neukoellner_Begegnungsstaette_Razzia_Corona-Hilfe_Subventionsbetrug_Soforthilfe_-1.jpeg" alt="Der Imam Taha Sabri von der Neuköllner Begegnungsstätte nimmt an einer Friedenskundgebung des Zentralrates der Muslime teil. Er trägt einen Mundschutz und liest in einer Mappe" title="Der Imam Taha Sabri von der Neuköllner Begegnungsstätte nimmt an einer Friedenskundgebung des Zentralrates der Muslime teil. Er trägt einen Mundschutz und liest in einer Mappe" /></a></li><li class="sectbody odd treven online   report article leaded pictured"><div class="meta"><ul role="navigation" class="left toolbar"><li class="date">1. 12. 2020</li></ul><ul role="navigation" class="right rootline toolbar"></ul></div><div class="metadata" itemscope=""><meta itemprop="cms-article-ID" content="5728936" /><meta itemprop="cms-obj-ID" content="4539312" /></div><a href="/Mehr-Aufgaben-fuer-Euro-Rettungsfonds/!5728936/" ratiourl-ressource="5728936" class="objlink report article leaded pictured noavatar" role="link"><h4>Mehr Aufgaben für Euro-Rettungsfonds</h4><h3>ESM soll Banken retten</h3><p>Die Institution bekommt neue Pflichten. Aber in der Coronakrise hat der ESM noch nicht geholfen. Seine Hilfen gelten in vielen Ländern als „toxisch“.  <span class="author">Eric Bonse</span></p><img src="/picture/4539312/300/26348310-1.jpeg" alt="Frankreichs Finanzminister Bruno Le Maire" title="Frankreichs Finanzminister Bruno Le Maire" /></a></li><li class="sectbody last even trodd online   report article leaded pictured"><div class="meta"><ul role="navigation" class="left toolbar"><li class="date">1. 12. 2020</li></ul><ul role="navigation" class="right rootline toolbar"></ul></div><div class="metadata" itemscope=""><meta itemprop="cms-article-ID" content="5734161" /><meta itemprop="cms-obj-ID" content="4536913" /></div><a href="/Impfstoffe-gegen-Corona/!5734161/" ratiourl-ressource="5734161" class="objlink report article leaded pictured noavatar" role="link"><h4>Impfstoffe gegen Corona</h4><h3>„Wir können loslegen“</h3><p>Auch Biontech beantragt eine Zulassung für seinen Corona-Impfstoff – sei die erteilt, könne man sofort losimpfen, sagt das Mainzer Unternehmen.  <span class="author">Ingo Arzt</span></p><img src="/picture/4536913/300/26306810-1.jpeg" alt="Eine Spritze vor dem moderna-Logo" title="Eine Spritze vor dem moderna-Logo" /></a></li></ul></div><!-- DEBUG belly: 0 extras here, 0 from directory Schwerpunkt Coronavirus, thats 0 merged--></span><span class="wing" role="complementary"><div class="rack first_rack" id="xid508431">
+    
+	<!--template mode="layout" match="display[ @obj='descr' ]":start-->
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script><!-- DEBUG tagclipwing: 0 extras here, 1 from directory Schwerpunkt Coronavirus, thats 1 merged-->
+      
+      <div class="webelement-content-container" webelementid="html-5729780"><div class="webelement-content-container-content sectbody activated" style="background-color: rgb(255, 255, 255); padding: 0px;"><iframe title="Neuinfektionen mit dem Coronavirus in Deutschland seit dem Sommer" aria-label="Interactive line chart" id="datawrapper-chart-N7y22" src="https://datawrapper.dwcdn.net/N7y22/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="545"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&amp;&amp;(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+</script></div><div class="webelement-content-container-inner" style="visibility: hidden; height: 0px; padding: 0px; display: none;"><label class="checkbox-switch"><input type="checkbox" /><span class="checkbox-switch-slider-round"></span><span class="webelement-checkbox-switch-text">Externen Inhalt deaktivieren</span></label><p class="webelemnt-checkbox-switch-disclaimer"></p></div><div class="webelement-html-content" webelementid="html-5729780"><noscript class="html-content" type="text/plain">&lt;iframe title="Neuinfektionen mit dem Coronavirus in Deutschland seit dem Sommer" aria-label="Interactive line chart" id="datawrapper-chart-N7y22" src="https://datawrapper.dwcdn.net/N7y22/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="545"&gt;&lt;/iframe&gt;&lt;script type="text/javascript"&gt;!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&amp;&amp;(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+&lt;/script&gt;</noscript></div><div class="webelement-js-content"><script type="text/javascript">steffiOtaz_de.WebelementSwitch().setWebelementSwitch('html-5729780');</script></div></div>
+    </span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a class="button cta" href="/Schwerpunkt-Coronavirus/!t5660746">Alle Artikel zum Thema</a><a itemprop="mainEntityOfPage" href="//!p4608"></a></div><div class="full news page odd n5"><div class="head" role="head"><ul role="navigation" class="news navbar subnavigation"><li class="first odd trodd"><a href="/Politik/Deutschland/!p4616/" id="menu_p4616"><span>Deutschland</span></a></li><li class="even trodd"><a href="/Politik/Europa/!p4617/" id="menu_p4617"><span>Europa</span></a></li><li class="odd treven"><a href="/Politik/Amerika/!p4618/" id="menu_p4618"><span>Amerika</span></a></li><li class="even trodd"><a href="/Politik/Afrika/!p4621/" id="menu_p4621"><span>Afrika</span></a></li><li class="odd trodd"><a href="/Politik/Asien/!p4619/" id="menu_p4619"><span>Asien</span></a></li><li class="even treven"><a href="/Politik/Nahost/!p4620/" id="menu_p4620"><span>Nahost</span></a></li><li class="last odd trodd"><a href="/Politik/Netzpolitik/!p4622/" id="menu_p4622"><span>Netzpolitik</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid489742" class="first odd sect sect_leads style_leads first_sect_leads evenpicts aded_big"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   subjective commentary article leaded pictured"><a href="/Unterstuetzung-fuer-Opposition-in-Belarus/!5736465/" ratiourl-ressource="5736465" class="objlink subjective commentary article leaded pictured noavatar" role="link"><h4>Unterstützung für Opposition in Belarus</h4><h3>Luft nach oben</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Barbara Oertel</b> </p></span></span><p>Die von Maas angedeutete Möglichkeit einer Ausweitung der EU-Sanktionen gegen Belarus sollte nicht überbewertet werden. Echte Hilfe fehlt.  </p><img src="/picture/4545501/624/26383408-1.jpeg" alt="Silhouette eines Menschen hinter einer belarussischen Flagge" title="Silhouette eines Menschen hinter einer belarussischen Flagge" /></a></li><li class="sectbody even trodd online   report article leaded pictured"><a href="/Regierungskrise-in-Sachsen-Anhalt/!5734787/" ratiourl-ressource="5734787" class="objlink report article leaded pictured noavatar" role="link"><h4>Regierungskrise in Sachsen-Anhalt</h4><h3>Die AfD lacht sich ins Fäustchen</h3><p>Die Krise der Keniakoalition in Sachsen-Anhalt gefällt den radikal Rechten. Die CDU ist jetzt dort, wo die AfD sie am liebsten hat: in der Klemme.  <span class="author">Sabine am Orde</span></p><img src="/picture/4542652/192/Sachsen-Anhalt-afd-1.jpeg" alt="Ministerpräsident Reiner Haseloff (l) traegt gesichtsmaske und schaut zum Fraktionsvorsitzenden der AfD Oliver Kirchner" title="Ministerpräsident Reiner Haseloff (l) traegt gesichtsmaske und schaut zum Fraktionsvorsitzenden der AfD Oliver Kirchner" /></a></li><li class="sectbody odd treven online  brief  report article leaded"><a href="/Nach-Mord-an-slowakischem-Journalisten/!5735266/" ratiourl-ressource="5735266" class="objlink brief report article leaded noavatar" role="link"><h4>Nach Mord an slowakischem Journalisten</h4><h3>Kuciak-Mörder muss 25 Jahre in Haft</h3><p>Das Urteil zu 23 Jahren Haft wegen Mordes an einem Journalisten war zu mild, so das Oberste Gericht der Slowakei. Es verlängerte die Strafe.  <span class="author">Alexandra Mostyn</span></p></a></li><li class="sectbody last even trodd online  brief  report article leaded"><a href="/Regierungskrise-in-Israel/!5729083/" ratiourl-ressource="5729083" class="objlink brief report article leaded noavatar" role="link"><h4>Regierungskrise in Israel</h4><h3>Zeichen stehen auf Neu-Neu-Neuwahl</h3><p>Die Regierungskoalition von Premier Netanjahus ist erst sieben Monate alt. Nun droht ihr das Aus. In Israel rückt die vierte Wahl in zwei Jahren nahe.  <span class="author">Judith Poppe</span></p></a></li></ul></div><span id="ad_bin_uebersicht_medrec_1" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_uebersicht_medrec_1" name="uebersicht_medrec-1" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CLiO1qPRse0CFVCAfgodVnoPYg"><div id="google_ads_iframe_/118803185/uebersicht_medrec-1_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/uebersicht_medrec-1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="6" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_medrec_1';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg461236_hd" style="z-index: 0;"><h2><a name="Politik" href="/Politik/!p4615/"><span>Politik</span></a></h2></div><span class="headed wing floating" role="complementary"><div role="region" id="" class="first odd sect sect_videos style_videos "><ul role="directory" class="sectbody   directory"><li class=" first last odd trodd    video embed  pictured leaded" name="video_taz Podcast: Vorgelesen – Von Leser:innen für Hörer:innen"><a class="objlink pictured leaded noavatar" role="link"><h3>taz Podcast: Vorgelesen – Von Leser:innen für Hörer:innen</h3><p>Ein Podcast von taz-Leser:innen für taz-Hörer:innen – und jene, die sich taz-Texte lieber vorlesen lassen.   </p><img src="/uploads/images/300/tzPodcast_vorgelesen_Kindesperk_16-9.jpg" alt="" title="" /><style class="referenced" type="text/html">&lt;div role="region" id="" class="first last odd sect sect_video style_video "&gt;&lt;div class="secthead" role="heading"&gt;&lt;h2&gt;&lt;a name="taz Podcast: Vorgelesen – Von Leser:innen für Hörer:innen"&gt;&lt;span&gt;taz Podcast: Vorgelesen – Von Leser:innen für Hörer:innen&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div class="sectbody"&gt;&lt;div class="webelement-content-container" webelementid="video-tazodcastorgelesenoneserinnenfrrerinnen"&gt;&lt;div class="webelement-content-container-content sectbody isoverlay"&gt;&lt;h6&gt;Wir würden Ihnen hier gerne einen externen Inhalt zeigen. Sie entscheiden, ob sie dieses Element auch sehen wollen.&lt;/h6&gt;&lt;p&gt;Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden. &lt;a href="https://taz.de/!166598" target="_blank"&gt;Mehr dazu in unserer Datenschutzerklärung.&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-content-container-inner"&gt;&lt;label class="checkbox-switch"&gt;&lt;input type="checkbox"&gt;&lt;/input&gt;&lt;span class="checkbox-switch-slider-round"&gt;&lt;/span&gt;&lt;span class="webelement-checkbox-switch-text"&gt;Externen Inhalt erlauben&lt;span id="consentPreview"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;p class="webelemnt-checkbox-switch-disclaimer"&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-js-content"&gt;&lt;script type="text/javascript"&gt;steffiOtaz_de.WebelementSwitch().setWebelementSwitch('video-tazodcastorgelesenoneserinnenfrrerinnen');&lt;/script&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="caption"&gt;    Zu Beginn der Coronaepidemie schlug uns ein Leser vor, Texte aus der taz für seinen isolierten Vater einzulesen. Nicht nur wir fanden diese Idee toll, auch in der taz-Community haben sich inzwischen viele tolle Vorleser:innen gefunden, die täglich Texte aus der taz vorlesen. Eine Auswahl veröffentlichen wir an dieser Stelle jeden Samstag als Podcast. | Mehr taz für die Ohren gibts auf &lt;a xmlns="" href="http://www.taz.de/!p5171/" target="_blank"&gt;taz.de/podcast&lt;/a&gt;     &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</style><div class="webelement-html-content" webelementid="video-tazodcastorgelesenoneserinnenfrrerinnen" data-initial-state="true"><noscript class="html-content webelement-html-content" type="text/plain">&lt;script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://taz-vorgelesen.podigee.io//embed?context=external"&gt;&lt;/script&gt;</noscript></div></a></li></ul></div><script type="text/javascript">
+	$('.video,.embed').each( function( i, n ){
+		var style='videos';
+		if( style =='videos' ) style ='video';
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		// script.referenced also in vimeoVideo.js
+		var html = me.find('&gt;a.objlink &gt;style.referenced').text();	
+
+		var open = function(){
+			var name = me.attr('name');
+			if( name.indexOf('Vimeo-video_') ==0 )
+				window.location.hash = '!vimeo='+ name.replace(/^Vimeo-video_/, '');
+			else	{
+				new filOtaz_de.Embed( html, { 
+					id: me.attr('name'),
+					type: style
+					} );
+				}
+			return false;
+			} 
+		me.click( open );
+
+		var checkHash = function() {
+			var hashURL = window.location.hash.slice(1);
+			if( hashURL.indexOf('!embed=') ==0 ) if( hashURL.split('=')[1] == i+1 ) open();
+			};
+		checkHash(); $(window).hashchange( checkHash );
+
+		});
+	</script><script type="text/javascript"> 
+	$('.gallery').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		me.click( function(){
+			//window.location.hash = '!g='+ me.attr('name');
+			window.location.hash = '!g'+ me.find('&gt;a').attr('href').split('!g')[1];
+			return false;
+			});
+		});
+	</script><div role="region" id="" class="last odd sect sect_rss style_rss "><div class="secthead" role="heading"><h2><a name="taz blogs | Lost in Europe" href="https://blogs.taz.de/lostineurope"><span>taz blogs | Lost in Europe</span></a></h2><ul class="toolbar" role="toolbar"><li><a href="https://blogs.taz.de/lostineurope/blogfeed/">RSS</a></li></ul></div><ul role="directory" class="sectbody   directory"><li class=" first odd trodd   "><a href="https://blogs.taz.de/lostineurope/2020/11/20/nicht-nur-orban-stoert-den-frieden/" target="_blank" class="objlink noavatar" role="link"><h4>EU-Krise</h4><h3>Nicht nur Orban stört den Frieden</h3></a></li><li class=" last even trodd   "><a href="https://blogs.taz.de/lostineurope/2020/11/14/bruessel-will-mehr-macht/" target="_blank" class="objlink noavatar" role="link"><h4>Coronakrise:</h4><h3>Brüssel will mehr Macht</h3></a></li></ul></div></span></div></div></div><div class="insert dep4536"><div role="region" id="xid466051" class="first last odd sect sect_single style_single  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first last odd trodd first_sectbody online  brief  pictured story"><a class="dept" href="/FUTURZWEI/!p5099/">FUTURZWEI</a><a href="/Die-Homeschooling-Revolution-/!172100/" ratiourl-ressource="172100" class="objlink brief pictured story noavatar" role="link"><h4>Die Homeschooling-Revolution </h4><h3>Neue Schule jetzt!</h3><img src="/uploads/images/624/taz-FUTURZWEI-Kommentar-Udo-Knapp-Corona-Schule-Unterricht-Homeschooling-Revolution.jpg" alt="" title="" /></a></li></ul></div></div><div class="full news page even n6"><div class="head" role="head"><ul role="navigation" class="news navbar subnavigation"><li class="first odd trodd"><a href="/Oeko/Oekonomie/!p4623/" id="menu_p4623"><span>Ökonomie</span></a></li><li class="even trodd"><a href="/Oeko/Oekologie/!p4624/" id="menu_p4624"><span>Ökologie</span></a></li><li class="odd treven"><a href="/Oeko/Arbeit/!p4629/" id="menu_p4629"><span>Arbeit</span></a></li><li class="even trodd"><a href="/Oeko/Konsum/!p4625/" id="menu_p4625"><span>Konsum</span></a></li><li class="odd trodd"><a href="/Oeko/Verkehr/!p4628/" id="menu_p4628"><span>Verkehr</span></a></li><li class="even treven"><a href="/Oeko/Wissenschaft/!p4636/" id="menu_p4636"><span>Wissenschaft</span></a></li><li class="last odd trodd"><a href="/Oeko/Netzoekonomie/!p4627/" id="menu_p4627"><span>Netzökonomie</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid498685" class="first odd sect sect_leads style_leads first_sect_leads oddpicts aded_big"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Grossbritannien-und-Niederlande/!5729028/" ratiourl-ressource="5729028" class="objlink report article leaded pictured noavatar" role="link"><h4>Großbritannien und Niederlande</h4><h3>AKW-Neubau mit deutscher Hilfe</h3><p>Die Atomfirma Urenco, an der RWE und Eon beteiligt sind, plant Reaktoren in Großbritannien und den Niederlanden. Die Bundesregierung bleibt untätig.  <span class="author">Malte Kreutzfeldt</span></p><img src="/picture/4541025/624/25912263-1.jpeg" alt="Atomkraftwerk Sizewell" title="Atomkraftwerk Sizewell" /></a></li><li class="sectbody even trodd online  brief  report article leaded"><a href="/taz-Community-ueber-Gruenen-Klimapolitik/!5731886/" ratiourl-ressource="5731886" class="objlink brief report article leaded noavatar" role="link"><h4>taz-Community über Grünen-Klimapolitik</h4><h3>„Die Grünen haben jetzt die Chance“</h3><p>Zögerlich haben sich die Grünen zur +1,5-Grad-Marke bei der Erderhitzung bekannt. taz-NutzerInnen in sozialen Netzwerken sind weiter skeptisch.  </p></a></li><li class="sectbody last odd treven online  brief  report article leaded"><a href="/Reise-zur-Familie-in-Coronakrise/!5729073/" ratiourl-ressource="5729073" class="objlink brief report article leaded noavatar" role="link"><h4>Reise zur Familie in Coronakrise</h4><h3>Weniger Verkehr an Weihnachten</h3><p>Reisen in Coronazeiten: Die Bahn stockt ihre Kapazitäten trotz weniger Fahrgäste auf. Mietwagen werden an den Feiertagen knapp.  <span class="author">Anja Krüger</span></p></a></li></ul></div><span id="ad_bin_uebersicht_medrec_2" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_uebersicht_medrec_2" name="uebersicht_medrec-2" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CJXHqaPRse0CFa0rfgodDuEJFQ"><div id="google_ads_iframe_/118803185/uebersicht_medrec-2_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/uebersicht_medrec-2_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="7" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_medrec_2';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg751588_hd" style="z-index: 0;"><h2><a name="Öko" href="/Oeko/!p4610/"><span>Öko</span></a></h2></div><span class="headed wing floating" role="complementary"><div role="region" id="" class="first odd sect sect_text "><div class="secthead" role="heading"><h2><a name="Was auf taz.de nicht steht ..."><span>Was auf taz.de nicht steht ...</span></a></h2></div><div class="sectbody"><img src="/uploads/images/70/Blog_Icon_neu_rund.png" alt="" title="" /><p>           ... steht auf den <b xmlns=""><a href="http://blogs.taz.de/" target="_blank">taz Blogs.</a></b>     
+</p><p>      Abseitiges, Tiefsinniges &amp; Schönes von Autor*innen und Freund*innen der taz.             </p></div></div><div role="region" id="" class="last even sect sect_rss style_rss "><div class="secthead" role="heading"><h2><a name="taz blogs | Drogerie" href="https://blogs.taz.de/drogerie"><span>taz blogs | Drogerie</span></a></h2><ul class="toolbar" role="toolbar"><li><a href="https://blogs.taz.de/drogerie/blogfeed/">RSS</a></li></ul></div><ul role="directory" class="sectbody   directory"><li class=" first odd trodd   "><a href="https://blogs.taz.de/drogerie/2020/11/26/gesetzesantrag-des-landes-hessen/" target="_blank" class="objlink noavatar" role="link"><h4>Drug-Checking in Deutschland</h4><h3>Gesetzesantrag des Landes Hessen</h3></a></li><li class=" last even trodd   "><a href="https://blogs.taz.de/drogerie/2020/11/13/zunehmende-befuerwortung-der-cannabislegalisierung/" target="_blank" class="objlink noavatar" role="link"><h4>Trend in den USA</h4><h3>Zunehmende Befürwortung der Cannabislegalisierung</h3></a></li></ul></div></span></div></div></div><div class="insert dep4777"><div role="region" id="xid516875" class="first last odd sect sect_triple style_triple  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first odd trodd first_sectbody online   leaded pictured pictured leaded story"><a class="dept" href="/Talk/!p5298/">Talk</a><a href="/Usama-Al-Shahmani/!172060/" ratiourl-ressource="172060" class="objlink leaded pictured pictured leaded story noavatar" role="link"><h4>Usama Al Shahmani</h4><h3>Von der Heimat im Exil</h3><p class="brief">           Usama Al Shahmani stellt sein neuesten Roman vor: „Im Fallen lernt die Feder fliegen“.            </p><img src="/uploads/images/192/taz-talk-Usama-Al-Shahmani-Jan-Feddersen-Im-Fallen-lernt-die-Feder-fliegen-1zu1.jpg" alt="" title="" /></a></li><li class="sectbody even trodd online   leaded pictured pictured leaded story"><a class="dept" href="/Talk/!p5298/">Talk</a><a href="/Deirdre-McCloskey-Macht-und-Freiheit/!172026/" ratiourl-ressource="172026" class="objlink leaded pictured pictured leaded story noavatar" role="link"><h4>Deirdre McCloskey: Macht und Freiheit</h4><h3>Vom Recht, Queer zu sein</h3><p class="brief">      Ein Gespräch mit der Sozialwissenschaftlerin Deirdre McCloskey: Wie entsteht queere Freiheit?       </p><img src="/uploads/images/192/taz-talk-Deirdre-McCloskey-queer-diversity-sozialwissenschaft-oekonomie-1zu1.jpg" alt="" title="" /></a></li><li class="sectbody last odd treven online   leaded pictured pictured leaded story"><a class="dept" href="/Talk/!p5298/">Talk</a><a href="/Buchvorstellung-mit-Kristof-Magnusson/!172014/" ratiourl-ressource="172014" class="objlink leaded pictured pictured leaded story noavatar" role="link"><h4>Buchvorstellung mit Kristof Magnusson</h4><h3>Ein Mann der Kunst</h3><p class="brief">       Kristof Magnusson, deutsch-isländischer Schriftsteller, liest aus seinem neuen Roman „Ein Mann der Kunst“.       </p><img src="/uploads/images/192/taz-talk-Kristof-Magnusson-Ein-Mann-der-Kunst-Buchvorstellung-1zu1.jpg" alt="" title="" /></a></li></ul></div><div role="region" id="xid516890" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first last odd trodd first_sectbody online   leaded pictured leaded remote product"><a class="dept" href="/FUTURZWEI/!p5099/">FUTURZWEI</a><a href="https://shop.taz.de/product_info.php?products_id=244077/#pk_campaign=F2_Geschenkabo&amp;pk_source=online&amp;pk_medium=taz.de&amp;pk_kwd=Kachel&amp;pk_content=Packshot" target="_blank" class="objlink leaded pictured leaded remote product noavatar" role="link"><p class="brief">          Das <b>Geschenkpaket </b>enthält einen Verschenkgutschein für ein einjähriges taz FUTURZWEI-Abo (4 Ausgaben) und die Solarlampe „Little Sun“.          </p><img src="/uploads/images/300/taz-FUTURZWEI-Geschenkabo-Kachel-2020_01.jpg" alt="" title="" /><div class="hint">Schenken</div></a></li></ul></div></div><div class="full thema clip_small no_rightbar news page odd n7"><div class="head" role="head"><h2><a name="taz folgt dem Wasser" href="/Schwerpunkt-taz-folgt-dem-Wasser/!t5713683"><span>taz folgt dem Wasser</span></a></h2><ul role="navigation" class="news navbar newsnavigation"></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid721894" class="first odd sect sect_leads style_leads  first_sect_leads oddpicts sect_thema clip_small"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   subjective commentary article leaded pictured"><div class="meta"><ul role="navigation" class="left toolbar"><li class="date">19. 11. 2020</li></ul><ul role="navigation" class="right rootline toolbar"></ul></div><div class="metadata" itemscope=""><meta itemprop="cms-article-ID" content="5725606" /><meta itemprop="cms-obj-ID" content="4510040" /></div><a href="/Warum-der-Welttoilettentag-wichtig-ist/!5725606/" ratiourl-ressource="5725606" class="objlink subjective commentary article leaded pictured noavatar" role="link"><h4>Warum der Welttoilettentag wichtig ist</h4><h3>Unmöglicher Alltag</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Eva Oer</b> </p></span></span><p>Der Mangel an sicheren Klos in etlichen Ländern ist ein Desaster – vor allem für Menschen mit Gebärmutter. Für sie ist er ein Entwicklungshindernis.  </p><img src="/picture/4510040/624/sichere_Klo_Frauen_Mangel_saubere_Toilette-1.jpeg" alt="eine schwarze Frau geht an einer Reihe von öffentlichen Toiletten mit grüner Tür, vorbei" title="eine schwarze Frau geht an einer Reihe von öffentlichen Toiletten mit grüner Tür, vorbei" /></a></li><li class="sectbody even trodd online   longread article leaded pictured"><div class="meta"><ul role="navigation" class="left toolbar"><li class="date">19. 11. 2020</li></ul><ul role="navigation" class="right rootline toolbar"></ul></div><div class="metadata" itemscope=""><meta itemprop="cms-article-ID" content="5725602" /><meta itemprop="cms-obj-ID" content="4509689" /></div><a href="/Zum-internationalen-Welttoilettentag/!5725602/" ratiourl-ressource="5725602" class="objlink longread article leaded pictured noavatar" role="link"><h4>Zum internationalen Welttoilettentag</h4><h3>Ein Recht auf Pinkeln</h3><p>Klohäuser in Slums sind für Frauen oft gefährliche Orte. In Indien setzt sich eine Frauenbewegung für mehr Toiletten ein und bricht Tabus.  <span class="author">Ilona Eveleens, Natalie Mayroth</span></p><img src="/picture/4509689/300/Toilette-Indien-1.jpeg" alt="Eine Keramikschüssel im Boden eingelassen." title="Eine Keramikschüssel im Boden eingelassen." /></a></li><li class="sectbody last odd treven online   report article leaded pictured"><div class="meta"><ul role="navigation" class="left toolbar"><li class="date">16. 11. 2020</li></ul><ul role="navigation" class="right rootline toolbar"></ul></div><div class="metadata" itemscope=""><meta itemprop="cms-article-ID" content="5728593" /><meta itemprop="cms-obj-ID" content="4502191" /></div><a href="/Entwicklungsprojekt-in-Kolumbien/!5728593/" ratiourl-ressource="5728593" class="objlink report article leaded pictured noavatar" role="link"><h4>Entwicklungsprojekt in Kolumbien</h4><h3>Leben tausender Familien verbessert</h3><p>In einst illegalen Siedlungen baut ein Programm mit deutscher Beteiligung Fußballplätze und eine Kanalisation. Das Geld kommt tatsächlich an.  <span class="author">Katharina Wojczenko</span></p><img src="/picture/4502191/300/Bogota-kolumbien-entwicklungshilfe-deutschland-stadtsanierung-1.jpeg" alt="Eine Frau auf einer abfallenden Straße" title="Eine Frau auf einer abfallenden Straße" /></a></li></ul></div><!-- DEBUG belly: 0 extras here, 0 from directory Schwerpunkt taz folgt dem Wasser, thats 0 merged--></span><a class="button cta" href="/Schwerpunkt-taz-folgt-dem-Wasser/!t5713683">Alle Artikel zum Thema</a><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"></div></div></div><div class="full news page even n8"><div class="head" role="head"><ul role="navigation" class="news navbar subnavigation"><li class="first odd trodd"><a href="/Gesellschaft/Alltag/!p4632/" id="menu_p4632"><span>Alltag</span></a></li><li class="even trodd"><a href="/Gesellschaft/Debatte/!p4633/" id="menu_p4633"><span>Debatte</span></a></li><li class="odd treven"><a href="https://gazete.taz.de/" target="_blank" id="menu_p5057"><span>taz.gazete</span></a></li><li class="even trodd"><a href="https://migration-control.taz.de/#de" target="_blank" id="menu_p5058"><span>migration control</span></a></li><li class="odd trodd"><a href="/Gesellschaft/Kolumnen/!p4634/" id="menu_p4634"><span>Kolumnen</span></a></li><li class="even treven"><a href="/Gesellschaft/Medien/!p4630/" id="menu_p4630"><span>Medien</span></a></li><li class="odd trodd"><a href="/Gesellschaft/Bildung/!p4635/" id="menu_p4635"><span>Bildung</span></a></li><li class="even trodd"><a href="/Gesellschaft/Gesundheit/!p4637/" id="menu_p4637"><span>Gesundheit</span></a></li><li class="last odd treven"><a href="/Gesellschaft/Reise/!p4638/" id="menu_p4638"><span>Reise</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid459818" class="first odd sect sect_leads style_leads first_sect_leads oddpicts aded_big"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   interview article leaded pictured"><a href="/Browser-Ballett-ueber-Satire/!5729068/" ratiourl-ressource="5729068" class="objlink interview article leaded pictured noavatar" role="link"><h4>Browser Ballett über Satire</h4><h3>„Nicht nach unten treten“</h3><p>Christina Schlag und Schlecky Silberstein wollen Perspektiven von Minderheiten einbeziehen. Ein Gespräch über Sensibilität, Humor und Lisa Eckhart.  </p><img src="/picture/4542618/624/26391221-1.jpeg" alt="Schlecky Silberstein und Christina Schlag sitzen an einem Tisch, er trägt Anzug, sie Pullover. Vor ihnen stehen zwei Tassen" title="Schlecky Silberstein und Christina Schlag sitzen an einem Tisch, er trägt Anzug, sie Pullover. Vor ihnen stehen zwei Tassen" /></a></li><li class="sectbody even trodd online  brief  subjective commentary article leaded"><a href="/Covid-Impfungen-in-Grossbritannien/!5735476/" ratiourl-ressource="5735476" class="objlink brief subjective commentary article leaded noavatar" role="link"><h4>Covid-Impfungen in Großbritannien</h4><h3>God save the vaccine</h3><span class="category_and_name"><span>Kommentar </span><span class="author"><p>von <b>Ingo Arzt</b> </p></span></span><p>Die Briten können bald mit den Covid-Impfungen beginnen – und die EU muss sich fragen lassen, warum ihre Zulassungsbehörde so langsam arbeitet.  </p></a></li><li class="sectbody last odd treven online  brief  report article leaded"><a href="/Elliot-Page-outet-sich-als-trans/!5729033/" ratiourl-ressource="5729033" class="objlink brief report article leaded noavatar" role="link"><h4>Elliot Page outet sich als trans</h4><h3>That’s not my name</h3><p>Schauspieler Elliot Page („Juno“) macht öffentlich, dass er trans ist. Die Reaktionen legen Wissenslücken und diskriminierende Strukturen offen.  <span class="author">Carolina Schwarz</span></p></a></li></ul></div><span id="ad_bin_uebersicht_medrec_3" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_uebersicht_medrec_3" name="uebersicht_medrec-3" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="COGVw6PRse0CFc6xfgodtJwN0Q"><div id="google_ads_iframe_/118803185/uebersicht_medrec-3_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/uebersicht_medrec-3_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="8" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_medrec_3';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg461278_hd" style="z-index: 0;"><h2><a name="Gesellschaft" href="/Gesellschaft/!p4611/"><span>Gesellschaft</span></a></h2></div><span class="headed wing floating" role="complementary"><div class="rack first_rack" id="xid837854">
+    
+
+	<div role="region" id="" class="first odd sect sect_text  no_body"><div class="secthead" role="heading"><h2><a name="taz talk im Stream – Zusehen &amp; Zuhören"><span>taz talk im Stream – Zusehen &amp; Zuhören</span></a></h2></div><div class="sectbody"></div></div>
+
+    
+<div role="region" id="" class="even sect sect_videos style_videos "><ul role="directory" class="sectbody   directory"><li class=" first odd trodd    video embed  pictured leaded" name="video_Monti Ott über Jüd:innen und Antisemitismus im intersektionellen Aktivismus heute"><a class="objlink pictured leaded noavatar" role="link"><h3>Monti Ott über Jüd:innen und Antisemitismus im intersektionellen Aktivismus heute</h3><p></p><img src="/uploads/images/300/taz-talk-queer-lecture-pride-queerjuedische-initiative-keshet-deutschland-monty-ott-YT-thumbnail.jpg" alt="" title="" /><style class="referenced" type="text/html">&lt;div role="region" id="" class="first odd sect sect_video style_video "&gt;&lt;div class="secthead" role="heading"&gt;&lt;h2&gt;&lt;a name="Monti Ott über Jüd:innen und Antisemitismus im intersektionellen Aktivismus heute"&gt;&lt;span&gt;Monti Ott über Jüd:innen und Antisemitismus im intersektionellen Aktivismus heute&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div class="sectbody"&gt;&lt;div class="webelement-content-container" webelementid="video-ontittberdinnenundntisemitismusimintersektionellenktivismusheute"&gt;&lt;div class="webelement-content-container-content sectbody isoverlay"&gt;&lt;h6&gt;Wir würden Ihnen hier gerne einen externen Inhalt zeigen. Sie entscheiden, ob sie dieses Element auch sehen wollen.&lt;/h6&gt;&lt;p&gt;Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden. &lt;a href="https://taz.de/!166598" target="_blank"&gt;Mehr dazu in unserer Datenschutzerklärung.&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-content-container-inner"&gt;&lt;label class="checkbox-switch"&gt;&lt;input type="checkbox"&gt;&lt;/input&gt;&lt;span class="checkbox-switch-slider-round"&gt;&lt;/span&gt;&lt;span class="webelement-checkbox-switch-text"&gt;Externen Inhalt erlauben&lt;span id="consentPreview"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;p class="webelemnt-checkbox-switch-disclaimer"&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-js-content"&gt;&lt;script type="text/javascript"&gt;steffiOtaz_de.WebelementSwitch().setWebelementSwitch('video-ontittberdinnenundntisemitismusimintersektionellenktivismusheute');&lt;/script&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="caption"&gt;      Intersektionalität ist ein zentraler Begriff in feministischer und queerer Theorie wie auch im entsprechenden Aktivismus. In Anbetracht seines sozialhistorischen Ursprungs und der Betonung seiner grundsätzlichen intellektuellen Offenheit, wie auch dem Appell an seine stete Weiterentwicklung muss hinterfragt werden, in welcher Weise dieser Begriff in den deutschen Kontext übernommen wurde.      &lt;/p&gt;&lt;p class="caption"&gt;      Kam es dabei eher zufällig zu ‚Übersetzungsfehlern‘ aus dem angelsächsischen Sprachraum oder kommen diskursive Mechanismen zum tragen, die sich u.a. auch aus der Erinnerungsabwehr ergeben – sind Juden und Jüdinnen nur noch „weiß“?      &lt;/p&gt;&lt;p class="caption"&gt;      Ein Gespräch mit Monty Ott, Gründungsvorsitzender der queer-jüdischen Initiative Keshet Deutschland e.V.      &lt;/p&gt;&lt;p class="caption"&gt;      Mehr Talks auf &lt;b xmlns=""&gt;&lt;a href="http://taz.de/!p5298/" target="_blank"&gt;taz.de/talk&lt;/a&gt;&lt;/b&gt;      &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</style><div class="webelement-html-content" webelementid="video-ontittberdinnenundntisemitismusimintersektionellenktivismusheute" data-initial-state="true"><noscript class="html-content webelement-html-content" type="text/plain">&lt;iframe width="948" height="533" src="https://www.youtube-nocookie.com/embed/Mi86vTdG5is" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</noscript></div></a></li><li class=" even trodd    video embed  pictured leaded" name="video_Aaron Lahl über Herbert Marcuse und die Sexualutopische Psychoanalyse"><a class="objlink pictured leaded noavatar" role="link"><h3>Aaron Lahl über Herbert Marcuse und die Sexualutopische Psychoanalyse</h3><p></p><img src="/uploads/images/300/taz-talk-queer-lecture-sexualutopische-psychoanalyse-herbert-marcuse-aaron-lahl-YT-thumbnail.jpg" alt="" title="" /><style class="referenced" type="text/html">&lt;div role="region" id="" class="even sect sect_video style_video "&gt;&lt;div class="secthead" role="heading"&gt;&lt;h2&gt;&lt;a name="Aaron Lahl über Herbert Marcuse und die Sexualutopische Psychoanalyse"&gt;&lt;span&gt;Aaron Lahl über Herbert Marcuse und die Sexualutopische Psychoanalyse&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div class="sectbody"&gt;&lt;div class="webelement-content-container" webelementid="video-aronahlbererbertarcuseunddieexualutopischesychoanalyse"&gt;&lt;div class="webelement-content-container-content sectbody isoverlay"&gt;&lt;h6&gt;Wir würden Ihnen hier gerne einen externen Inhalt zeigen. Sie entscheiden, ob sie dieses Element auch sehen wollen.&lt;/h6&gt;&lt;p&gt;Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden. &lt;a href="https://taz.de/!166598" target="_blank"&gt;Mehr dazu in unserer Datenschutzerklärung.&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-content-container-inner"&gt;&lt;label class="checkbox-switch"&gt;&lt;input type="checkbox"&gt;&lt;/input&gt;&lt;span class="checkbox-switch-slider-round"&gt;&lt;/span&gt;&lt;span class="webelement-checkbox-switch-text"&gt;Externen Inhalt erlauben&lt;span id="consentPreview"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;p class="webelemnt-checkbox-switch-disclaimer"&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-js-content"&gt;&lt;script type="text/javascript"&gt;steffiOtaz_de.WebelementSwitch().setWebelementSwitch('video-aronahlbererbertarcuseunddieexualutopischesychoanalyse');&lt;/script&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="caption"&gt;      Mit seinem Versuch, den „explosiven“ Kern der Psychoanalyse herauszuschälen, avancierte Herbert Marcuse zum Vordenker und Stichwortgeber der sexuellen Protestbewegung von 1968. Seine „Philosophie der Psychoanalyse“ entwarf ein mitreißendes Modell einer erotischen Utopie und bot den Protestierenden zugleich das Begriffswerkzeug, um auf die zunehmende Einbindung der Sexualität in die Konsumkultur der Nachkriegszeit zu reagieren.       &lt;/p&gt;&lt;p class="caption"&gt;      Aaron Lahr erörtert in seinem Talk Marcuses eigentümliche Aneignung psychoanalytischer Begriffe vor dem kulturellen Hintergrund seiner Zeit und geht der Fragen nach, warum seine sexualutopische Psychoanalyse heute veraltet wirkt – und ob sie das wirklich ist.       &lt;/p&gt;&lt;p class="caption"&gt;      Weitere Talks auf &lt;b xmlns=""&gt;&lt;a href="http://taz.de/!p5298/" target="_blank"&gt;taz.de/talk&lt;/a&gt;&lt;/b&gt;      &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</style><div class="webelement-html-content" webelementid="video-aronahlbererbertarcuseunddieexualutopischesychoanalyse" data-initial-state="true"><noscript class="html-content webelement-html-content" type="text/plain">&lt;iframe width="948" height="533" src="https://www.youtube-nocookie.com/embed/jj6xSfgcjVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</noscript></div></a></li><li class=" last odd treven    video embed  pictured leaded" name="video_Klaus Lederer, Monika Hermann und die linke Metropole Berlin"><a class="objlink pictured leaded noavatar" role="link"><h3>Klaus Lederer, Monika Hermann und die linke Metropole Berlin</h3><p></p><img src="/uploads/images/300/taz-talk-40-jahre-jubilaeum-retrospektive-links-radikal-unabhaengiger-journalismus-live-taz-kantine-YT-Thumbnail.png" alt="" title="" /><style class="referenced" type="text/html">&lt;div role="region" id="" class="last odd sect sect_video style_video "&gt;&lt;div class="secthead" role="heading"&gt;&lt;h2&gt;&lt;a name="Klaus Lederer, Monika Hermann und die linke Metropole Berlin"&gt;&lt;span&gt;Klaus Lederer, Monika Hermann und die linke Metropole Berlin&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div class="sectbody"&gt;&lt;div class="webelement-content-container" webelementid="video-lausedereronikaermannunddielinkeetropoleerlin"&gt;&lt;div class="webelement-content-container-content sectbody isoverlay"&gt;&lt;h6&gt;Wir würden Ihnen hier gerne einen externen Inhalt zeigen. Sie entscheiden, ob sie dieses Element auch sehen wollen.&lt;/h6&gt;&lt;p&gt;Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden. &lt;a href="https://taz.de/!166598" target="_blank"&gt;Mehr dazu in unserer Datenschutzerklärung.&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-content-container-inner"&gt;&lt;label class="checkbox-switch"&gt;&lt;input type="checkbox"&gt;&lt;/input&gt;&lt;span class="checkbox-switch-slider-round"&gt;&lt;/span&gt;&lt;span class="webelement-checkbox-switch-text"&gt;Externen Inhalt erlauben&lt;span id="consentPreview"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;p class="webelemnt-checkbox-switch-disclaimer"&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-js-content"&gt;&lt;script type="text/javascript"&gt;steffiOtaz_de.WebelementSwitch().setWebelementSwitch('video-lausedereronikaermannunddielinkeetropoleerlin');&lt;/script&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="caption"&gt;           Berlin gilt bundesweit als progressive Metropole, die Subkultur ist vielschichtig, die Mehrheit für die aktuelle rot-rot-grüne Landesregierung stabil. Hier setzen sich Zehntausende erfolgreich für bessere Radwege ein, andere mobilisieren für die Enteignung von großen Immobilienkonzernen. Zahllose Initiativen unterstützen Geflüchtete, andere kämpfen aktiv gegen alte und neue Nazis. &lt;br xmlns=""&gt;                     &lt;/p&gt;&lt;p class="caption"&gt;           Seit 40 Jahren verfolgt die Berliner Regionalausgabe der taz die Entwicklung der Bewegungen und Gegenbewegungen in dieser Stadt. Anlass, um Bilanz zu ziehen und in die Zukunft zu blicken: Was machen die politischen Besonderheiten Berlins aus? Und was ist das überhaupt: eine linke Stadt?           &lt;/p&gt;&lt;p class="caption"&gt;          Es diskutieren: &lt;b xmlns=""&gt;Monika Herrmann&lt;/b&gt;, grüne Bezirksbürgermeisterin von Friedrichshain-Kreuzberg und &lt;b xmlns=""&gt;Klaus Lederer&lt;/b&gt;, linker Kultursenator von Berlin. | Weitere Talks auf &lt;a xmlns="" href="http://taz.de/!p5298/" target="_blank"&gt;taz.de/talk&lt;/a&gt;          &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</style><div class="webelement-html-content" webelementid="video-lausedereronikaermannunddielinkeetropoleerlin" data-initial-state="true"><noscript class="html-content webelement-html-content" type="text/plain">&lt;iframe width="948" height="533" src="https://www.youtube.com/embed/7-Z23_PLSKU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</noscript></div></a></li></ul></div><script type="text/javascript">
+	$('.video,.embed').each( function( i, n ){
+		var style='videos';
+		if( style =='videos' ) style ='video';
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		// script.referenced also in vimeoVideo.js
+		var html = me.find('&gt;a.objlink &gt;style.referenced').text();	
+
+		var open = function(){
+			var name = me.attr('name');
+			if( name.indexOf('Vimeo-video_') ==0 )
+				window.location.hash = '!vimeo='+ name.replace(/^Vimeo-video_/, '');
+			else	{
+				new filOtaz_de.Embed( html, { 
+					id: me.attr('name'),
+					type: style
+					} );
+				}
+			return false;
+			} 
+		me.click( open );
+
+		var checkHash = function() {
+			var hashURL = window.location.hash.slice(1);
+			if( hashURL.indexOf('!embed=') ==0 ) if( hashURL.split('=')[1] == i+1 ) open();
+			};
+		checkHash(); $(window).hashchange( checkHash );
+
+		});
+	</script>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script></span></div></div></div><div class="insert dep5280"><div role="region" id="xid824960" class="first last odd sect sect_single style_single  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first last odd trodd first_sectbody online  brief  pictured pictured story"><a class="dept" href="/Info/!p4206/">Info</a><a href="/Freie-Stellen-bei-der-taz-/!126893/" ratiourl-ressource="126893" class="objlink brief pictured pictured story noavatar" role="link"><h4>Freie Stellen bei der taz </h4><h3>Wir sind anders. Sind Sie es auch?</h3><img src="/uploads/images/624/taz-tageszeitung-medienhaus-job-stelle-stellenausschreibung-berlin-kreuzberg-linkesmedienhaus-journalismus-redaktion-marketing-karriere-zukunft-buerohund-JulioBernal-Unsplash.jpg" alt="" title="" /></a></li></ul></div></div><div class="full news page odd n9"><div class="head" role="head"><ul role="navigation" class="news navbar subnavigation"><li class="first odd trodd"><a href="/Kultur/Musik/!p4640/" id="menu_p4640"><span>Musik</span></a></li><li class="even trodd"><a href="/Kultur/Film/!p4641/" id="menu_p4641"><span>Film</span></a></li><li class="odd treven"><a href="/Kultur/Kuenste/!p4642/" id="menu_p4642"><span>Künste</span></a></li><li class="even trodd"><a href="/Kultur/Buch/!p4643/" id="menu_p4643"><span>Buch</span></a></li><li class="last odd trodd"><a href="/Kultur/Netzkultur/!p4631/" id="menu_p4631"><span>Netzkultur</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid459818" class="first odd sect sect_leads style_leads first_sect_leads oddpicts aded_big"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Actionkomoedie-Fatman-als-VoD/!5729052/" ratiourl-ressource="5729052" class="objlink report article leaded pictured noavatar" role="link"><h4>Actionkomödie „Fatman“ als VoD</h4><h3>Der Weihnachtsmann ist aggro</h3><p>Der umstrittene Schauspieler Mel Gibson gibt in der satirischen Actionkomödie „Fatman“ einen zerknautschten, aber glücklich verheirateten Santa Claus.  <span class="author">Michael Meyns</span></p><img src="/picture/4543963/624/FATMAN_Mel_Gibson-1.jpeg" alt="Mel Gibson als Fatman mit zwei Pistolen bewaffnet im Schnee." title="Mel Gibson als Fatman mit zwei Pistolen bewaffnet im Schnee." /></a></li><li class="sectbody even trodd online  brief  report article leaded"><a href="/Neues-Album-von-Australiern-Luluc/!5734674/" ratiourl-ressource="5734674" class="objlink brief report article leaded noavatar" role="link"><h4>Neues Album von Australiern Luluc</h4><h3>Im Traumschiff durch Abgründe</h3><p>Stärke durch Stille: „Dreamboat“, das neue Album des australischen Elektronikfolkduos Luluc, erzeugt ein bisschen Fernweh im Lockdown.  <span class="author">Silvia Silko</span></p></a></li><li class="sectbody last odd treven online  brief  report article leaded"><a href="/Miniserie-The-Undoing/!5728953/" ratiourl-ressource="5728953" class="objlink brief report article leaded noavatar" role="link"><h4>Miniserie „The Undoing“</h4><h3>Wenn die Idylle zersplittert</h3><p>Die Miniserie „The Undoing“ mit Nicole Kidman und Hugh Grant kombiniert Krimikonvention mit einer Satire auf die New Yorker Oberschicht.  <span class="author">Thomas Abeltshauser</span></p></a></li></ul></div><span id="ad_bin_uebersicht_medrec_4" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_uebersicht_medrec_4" name="uebersicht_medrec-4" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CKKd5KPRse0CFVgVfwodOVgMJw"><div id="google_ads_iframe_/118803185/uebersicht_medrec-4_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/uebersicht_medrec-4_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="9" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_medrec_4';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg461377_hd" style="z-index: 0;"><h2><a name="Kultur" href="/Kultur/!p4639/"><span>Kultur</span></a></h2></div><span class="headed wing floating" role="complementary"><div role="region" id="" class="first odd sect sect_videos style_videos "><ul role="directory" class="sectbody   directory"><li class=" first last odd trodd    video embed  pictured leaded" name="video_taz Podcast: We care! – Ein Podcast zu emotionaler Arbeit"><a class="objlink pictured leaded noavatar" role="link"><h3>taz Podcast: We care! – Ein Podcast zu emotionaler Arbeit</h3><p>Wer tröstet? Wer kümmert sich? Wer sorgt sich?: Der feministische taz Podcast zu emotionaler Arbeit und Care.  </p><img src="/uploads/images/300/Podcast_WeCare_Cover6_beta3_16-9.png" alt="" title="" /><style class="referenced" type="text/html">&lt;div role="region" id="" class="first last odd sect sect_video style_video "&gt;&lt;div class="secthead" role="heading"&gt;&lt;h2&gt;&lt;a name="taz Podcast: We care! – Ein Podcast zu emotionaler Arbeit"&gt;&lt;span&gt;taz Podcast: We care! – Ein Podcast zu emotionaler Arbeit&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div class="sectbody"&gt;&lt;div class="webelement-content-container" webelementid="video-tazodcastecareinodcastzuemotionalerrbeit"&gt;&lt;div class="webelement-content-container-content sectbody isoverlay"&gt;&lt;h6&gt;Wir würden Ihnen hier gerne einen externen Inhalt zeigen. Sie entscheiden, ob sie dieses Element auch sehen wollen.&lt;/h6&gt;&lt;p&gt;Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden. &lt;a href="https://taz.de/!166598" target="_blank"&gt;Mehr dazu in unserer Datenschutzerklärung.&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-content-container-inner"&gt;&lt;label class="checkbox-switch"&gt;&lt;input type="checkbox"&gt;&lt;/input&gt;&lt;span class="checkbox-switch-slider-round"&gt;&lt;/span&gt;&lt;span class="webelement-checkbox-switch-text"&gt;Externen Inhalt erlauben&lt;span id="consentPreview"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/label&gt;&lt;p class="webelemnt-checkbox-switch-disclaimer"&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="webelement-js-content"&gt;&lt;script type="text/javascript"&gt;steffiOtaz_de.WebelementSwitch().setWebelementSwitch('video-tazodcastecareinodcastzuemotionalerrbeit');&lt;/script&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class="caption"&gt;      &lt;b xmlns=""&gt;Wer übernimmt Verantwortung&lt;/b&gt; dafür, dass unsere Beziehungen funktionieren? Nicht erst seit der Krise zeigt sich: Es sind vor allem Frauen und Queers, die diese emotionale Arbeit leisten. Der taz Podcast soll sich insbesondere diesem Teil von Care-Arbeit widmen, der oftmals unsichtbar bleibt. &lt;b xmlns=""&gt;Journalistin Sarah Ulrich&lt;/b&gt; diskutiert monatlich mit eingeladenen Personen unterschiedliche Perspektiven auf das Thema und geht dabei auch der Frage nach, wie wir unsere Fürsorge-Strategien (nicht nur in der Krise) stärken und gerechtere Verteilung von Care-Arbeit erreichen können. | Mehr taz für die Ohren gibts auf &lt;b xmlns=""&gt;&lt;a href="http://www.taz.de/!p5171/" target="_blank"&gt;taz.de/podcast&lt;/a&gt;&lt;/b&gt;           &lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</style><div class="webelement-html-content" webelementid="video-tazodcastecareinodcastzuemotionalerrbeit" data-initial-state="true"><noscript class="html-content webelement-html-content" type="text/plain">&lt;script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://we-care.podigee.io/embed?context=external"&gt;&lt;/script&gt;</noscript></div></a></li></ul></div><script type="text/javascript">
+	$('.video,.embed').each( function( i, n ){
+		var style='videos';
+		if( style =='videos' ) style ='video';
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		// script.referenced also in vimeoVideo.js
+		var html = me.find('&gt;a.objlink &gt;style.referenced').text();	
+
+		var open = function(){
+			var name = me.attr('name');
+			if( name.indexOf('Vimeo-video_') ==0 )
+				window.location.hash = '!vimeo='+ name.replace(/^Vimeo-video_/, '');
+			else	{
+				new filOtaz_de.Embed( html, { 
+					id: me.attr('name'),
+					type: style
+					} );
+				}
+			return false;
+			} 
+		me.click( open );
+
+		var checkHash = function() {
+			var hashURL = window.location.hash.slice(1);
+			if( hashURL.indexOf('!embed=') ==0 ) if( hashURL.split('=')[1] == i+1 ) open();
+			};
+		checkHash(); $(window).hashchange( checkHash );
+
+		});
+	</script><div role="region" id="" class="even sect sect_galleries style_galleries "><div class="secthead" role="heading"><h2><a name="Bildergalerie"><span>Bildergalerie</span></a></h2><ul class="toolbar" role="toolbar"></ul></div><ul role="directory" class="sectbody   directory"><li class=" first last odd trodd    gallery pictured"><a href="/Galerie/Werke-des-Fotografen-Karsten-Thielker/!g5719410/" ratiourl-ressource="g5719410" class="objlink pictured noavatar" role="link"><h3>Werke des Fotografen Karsten Thielker </h3><img src="/picture/4429174/140/22323853-1.jpeg" alt="" title="" /><div class="extent">17 Bilder</div></a></li></ul></div><script type="text/javascript"> 
+	$('.gallery').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		me.click( function(){
+			//window.location.hash = '!g='+ me.attr('name');
+			window.location.hash = '!g'+ me.find('&gt;a').attr('href').split('!g')[1];
+			return false;
+			});
+		});
+	</script><div role="region" id="" class="last odd sect sect_rss style_rss "><div class="secthead" role="heading"><h2><a name="taz blogs | Monarchie &amp; Alltag" href="https://blogs.taz.de/popblog"><span>taz blogs | Monarchie &amp; Alltag</span></a></h2><ul class="toolbar" role="toolbar"><li><a href="https://blogs.taz.de/popblog/blogfeed/">RSS</a></li></ul></div><ul role="directory" class="sectbody   directory"><li class=" first odd trodd   "><a href="https://blogs.taz.de/popblog/2020/12/02/nah-perfect-game-die-orange-juice-aus-muenster/" target="_blank" class="objlink noavatar" role="link"><h4>Neue Musik</h4><h3>Nah – „Perfect Game“: die Orange Juice aus Münster</h3></a></li><li class=" last even trodd   "><a href="https://blogs.taz.de/popblog/2020/12/01/all-diese-gewalt-andere-1-erfolgreiche-platte/" target="_blank" class="objlink noavatar" role="link"><h4>Neue Musik</h4><h3>All diese Gewalt – Andere: 1 erfolgreiche Platte</h3></a></li></ul></div></span></div></div></div><div class="mini news page even n10"><div class="nose" role="heading" id="pg479254_hd"><h2><a name="Sport" href="/Sport/!p4646/"><span>Sport</span></a></h2></div><span class="body" role="main"><div role="region" id="xid472889" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   oped article leaded pictured"><a href="/Diskussion-ueber-Jogi-Loew/!5729040/" ratiourl-ressource="5729040" class="objlink oped article leaded pictured noavatar" role="link"><h4>Diskussion über Jogi Löw</h4><h3>Wie wir kicken, wie wir leben</h3><span class="category_and_name"><span>Gastkommentar </span><span class="author"><p>von <b>Ilker Gündogan</b> </p></span></span><p>Für die Nationalelf werden „bösere“ Spieler gefordert, vom Trainer mehr „Aggressivität“. Aber wer will, dass wir so künftig miteinander verkehren?  </p><img src="/picture/4541056/300/imago0035230401h-1.jpeg" alt="Joachim Löw und einige Nationalspieler gehen traurig über den Platz" title="Joachim Löw und einige Nationalspieler gehen traurig über den Platz" /></a></li><li class="sectbody even trodd online  brief  subjective column article leaded"><a href="/Mehr-als-nur-die-Buechse-vom-Boekelberg/!5729038/" ratiourl-ressource="5729038" class="objlink brief subjective column article leaded avatar" role="link"><h4>Mehr als nur die Büchse vom Bökelberg</h4><h3>Fußball in Dosen</h3><span class="category_and_name avatar"><img itemprop="image" class="avatar_image" src="/kommune/files/images/profile/70x70/87.png" /><span>Kolumne<b> Kulturbeutel </b></span><span class="author"><p>von <b>Andreas Rüttenauer</b> </p></span><p>Die Dose und der Fußball schreiben zusammen Kulturgeschichte. Historische Highlights sind mittlerweile etliche zusammengekommen.  </p></span></a></li><li class="sectbody odd treven online  brief  subjective column article leaded"><a href="/Football-in-Coronakrise/!5728944/" ratiourl-ressource="5728944" class="objlink brief subjective column article leaded noavatar" role="link"><h4>Football in Coronakrise</h4><h3>Stadionverbot für Profis</h3><span class="category_and_name"><span>Kolumne<b> American Pie </b></span><span class="author"><p>von <b>Thomas Winkler</b> </p></span><p>Ob die Saison der National Football League zu Ende gespielt werden, ist unklar. Das coronabedingte Chaos könnte derzeit kaum größer sein.  </p></span></a></li><li class="sectbody last even trodd online  brief  report article leaded"><a href="/Israelisch-arabische-Fussballkooperation/!5728946/" ratiourl-ressource="5728946" class="objlink brief report article leaded noavatar" role="link"><h4>Israelisch-arabische Fußballkooperation</h4><h3>Den Hass wegkaufen</h3><p>Beitar Jerusalem ist für seine rassistischen Fans berüchtigt. Nun erhält der Klub einen neuen Finanzier: aus den Vereinigten Arabischen Emiraten.  <span class="author">Martin Krauss</span></p></a></li></ul></div></span><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"></div></div></div><div class="mini news page odd n11"><div class="nose" role="heading" id="pg476292_hd"><h2><a name="Berlin" href="/Berlin/!p4649/"><span>Berlin</span></a></h2></div><span class="body" role="main"><div role="region" id="xid479997" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Aerger-mit-AfD-Stadtrat/!5729023/" ratiourl-ressource="5729023" class="objlink report article leaded pictured noavatar" role="link"><h4>Ärger mit AfD-Stadtrat</h4><h3>Theater in Treptow</h3><p>Rassismus? Der epidemieerfahrene Arzt Denis Hedeler bewirbt sich als Amtsarzt im Gesundheitsamt Treptow-Köpenick und wird nicht genommen.  <span class="author">Marina Mai</span></p><img src="/picture/4545104/300/26281780-1.jpeg" alt="" title="" /></a></li><li class="sectbody even trodd online  brief  report article leaded"><a href="/Studie-zur-Klimabilanz-der-U-Bahn/!5729091/" ratiourl-ressource="5729091" class="objlink brief report article leaded noavatar" role="link"><h4>Studie zur Klimabilanz der U-Bahn</h4><h3>Mieses Klima im Untergrund</h3><p>Es wird wieder über die Verlängerung von U-Bahnen geredet. Ganz falsch, so die Autoren einer Studie: Das erzeuge einen fatalen Klima-Fußabdruck.  <span class="author">Claudius Prößer</span></p></a></li><li class="sectbody odd treven online  brief  report article leaded"><a href="/tazberlin-Adventskalender-3/!5729090/" ratiourl-ressource="5729090" class="objlink brief report article leaded noavatar" role="link"><h4>taz.berlin-Adventskalender 3</h4><h3>Der Blick nach innen</h3><p>Im taz.berlin-Adventskalender präsentieren wir in diesem Jahr passend zum Winter-Shutdown viele schöne Spiele. Heute: Tarotkarten legen.  <span class="author">Atessa Bucalovic</span></p></a></li><li class="sectbody last even trodd online  brief  report article leaded"><a href="/Streit-um-Statue-beigelegt/!5729024/" ratiourl-ressource="5729024" class="objlink brief report article leaded noavatar" role="link"><h4>Streit um Statue beigelegt</h4><h3>Japan gefällt das nicht</h3><p>Die sogenannte Trostfrauenstatue war am Dienstagabend Thema in der BVV Mitte. Nun kann sie dauerhaft bleiben.  <span class="author">Sven Hansen</span></p></a></li></ul></div></span><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"></div></div></div><div class="mini news page even n12"><div class="nose" role="heading" id="pg476244_hd"><h2><a name="Wahrheit" href="/Wahrheit/!p4644/"><span>Wahrheit</span></a></h2></div><span class="body" role="main"><div role="region" id="xid472893" class="first odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Die-Wahrheit/!5729042/" ratiourl-ressource="5729042" class="objlink report article leaded pictured noavatar" role="link"><h4>Die Wahrheit</h4><h3>Formkrise beim Horst</h3><p>Donnerstag ist Gedichtetag auf der Wahrheit: Heute darf sich die geneigte Leserschaft an einem Poem über einen schlingernden Innenminister erfreuen.  <span class="author">Klaus Pawlowski</span></p><img src="/picture/4540273/300/WahrSeehoferReuters03122020-1.jpeg" alt="" title="" /></a></li><li class="sectbody last even trodd online  brief  subjective column article leaded"><a href="/Die-Wahrheit/!5729043/" ratiourl-ressource="5729043" class="objlink brief subjective column article leaded noavatar" role="link"><h4>Die Wahrheit</h4><h3>Bon im Wind</h3><span class="category_and_name"><span>Kolumne<b> Die Wahrheit </b></span><span class="author"><p>von <b>Christian Bartel</b> </p></span><p>Der ewige Kampf zwischen Ordnung und Unordnung manifestiert sich im kleinen Kassenzettel, der weg ist und wieder da und …  </p></span></a></li></ul></div><div class="rack" id="xid472896">
+    
+
+	<div role="region" id="" class="first last odd sect sect_tomkari style_tomkari "><div class="secthead" role="heading"><h2><a name="Karikatur &amp; Toms Touché"><span>Karikatur &amp; Toms Touché</span></a></h2></div><div class="sectbody karikatur_icons_rechts"><a class="sect_tomkari_kari" href="/static/images/kari.jpg" target="_blank"><img src="/fileadmin/seite1/kari/kari_preview.jpg" /></a><a class="sect_tomkari_tom" target="_blank" href="/scripts/tom/tomdestages.php"><img src="/fileadmin/seite1/tom/tom_preview.jpg" /></a></div></div><script type="text/javascript"> $('.sect_tomkari').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+
+		var kari = {};
+		me.find('.sect_tomkari_kari').click( function(){
+
+			if( !kari.win )  kari.win = new filOtaz_de.Overlay()
+				.addClass('body')
+				.append('&lt;div class="sect sect_kari"&gt;&lt;div class="sectbody"&gt;&lt;img src="/static/images/kari.jpg" /&gt;&lt;/div&gt;&lt;/div&gt;')
+				;
+
+			kari.win.beforeOpen( function () {
+        patOtaz_de.ivw({ gig: 'web', agof: true, name: 'kari' });
+      });
+      
+      kari.win.pop();
+
+			return false;
+			
+    });
+
+		me.find('.sect_tomkari_tom').click( function(){
+			window.location.hash = '!tom=tomdestages';
+			return false;
+			});
+
+		}); //.each (tomkari)
+	</script>
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script><div role="region" id="" class="last odd sect sect_galleries style_galleries "><div class="secthead" role="heading"><h2><a name="Bildergalerie"><span>Bildergalerie</span></a></h2><ul class="toolbar" role="toolbar"></ul></div><ul role="directory" class="sectbody   directory"><li class=" first last odd trodd    gallery pictured"><a href="/Galerie/Wahrheit-Comic/!g5552420/" ratiourl-ressource="g5552420" class="objlink pictured noavatar" role="link"><h3>Wahrheit-Comic</h3><img src="/picture/3088070/140/WahrComicLandschulz28112020-1.jpeg" alt="" title="" /><div class="extent">25 Bilder</div></a></li></ul></div><script type="text/javascript"> 
+	$('.gallery').each( function( i, n ){
+		if( this.filOtaz_de_ajaxified ) return; this.filOtaz_de_ajaxified = true;
+		var me = $( this );
+		me.click( function(){
+			//window.location.hash = '!g='+ me.attr('name');
+			window.location.hash = '!g'+ me.find('&gt;a').attr('href').split('!g')[1];
+			return false;
+			});
+		});
+	</script></span><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"></div></div></div><div class="insert dep4219"><div role="region" id="xid446765" class="first last odd sect sect_leads style_leads  first_sect_leads oddpicts "><ul role="directory" debug="x1" class="corp directory"><li class="sectbody first odd trodd first_sectbody online   leaded pictured leaded story"><a class="dept" href="/Info/!p4206/">Info</a><a href="/Wie-geht-es-der-taz-in-diesen-Zeiten-/!172087/" ratiourl-ressource="172087" class="objlink leaded pictured leaded story noavatar" role="link"><h4>Wie geht es der taz in diesen Zeiten? </h4><h3>Es coronachtet sehr</h3><p class="brief">                Ein verrücktes Jahr geht zu Ende, auch für uns. Wir packen Essen und Geschenke ein und feiern digital.                 </p><img src="/uploads/images/300/taz-Advent-Tazventskalender-Kantine-Kalender-Pandemie-Corona-2020.png" alt="" title="" /></a></li><li class="sectbody even trodd online   leaded pictured leaded remote story"><a class="dept" href="/Abo/!p4209/">Abo</a><a href="https://taz.de/!116561/#matomo:pk_campaign=Knastabo_2020&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=Kachel" target="_blank" class="objlink leaded pictured leaded remote story noavatar" role="link"><h4>taz und Co. für Inhaftierte ermöglichen</h4><h3>Eine Zeitung gegen die Isolation</h3><p class="brief"> Ein Abo bedeutet Teilhabe. Der Verein „Freiabonnements für Gefangene“ bringt Zeitungen in den Knast.   </p><img src="/uploads/images/300/knastabo_zeichnung_02.jpeg" alt="" title="" /></a></li><li class="sectbody last odd treven online   leaded pictured leaded story"><a class="dept" href="/Kantine/!p4237/">Kantine</a><a href="/Ab-02112020-1200--1500-Uhr/!106584/" ratiourl-ressource="106584" class="objlink leaded pictured leaded story noavatar" role="link"><h4>Ab 02.11.2020, 12:00 – 15:00 Uhr</h4><h3>Tagesmenü to go</h3><p class="brief">                                                                Der kulinarische Notdienst – die to-go-Angebote unserer Kantine ab dem 2. November.                                                                                                                  </p><img src="/uploads/images/300/tzcafe_BrueheLoeffelKnoedel_bernjuer-photocase.jpg" alt="" title="" /></a></li></ul></div></div><div class="full news page last odd n13"><div class="head" role="head"><ul role="navigation" class="news navbar subnavigation"><li class="first odd trodd"><a href="/Nord/Hamburg/!p4651/" id="menu_p4651"><span>Hamburg</span></a></li><li class="even trodd"><a href="/Nord/Bremen/!p4652/" id="menu_p4652"><span>Bremen</span></a></li><li class="last odd treven"><a href="/Nord/Kultur/!p4653/" id="menu_p4653"><span>Kultur</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script></div><span class="body" role="main"><div role="region" id="xid459818" class="first odd sect sect_leads style_leads first_sect_leads oddpicts aded_big"><ul role="directory" debug="x1" class="news directory"><li class="sectbody first odd trodd first_sectbody online   report article leaded pictured"><a href="/Konsequenzen-der-Kraftwerks-Abschaltung/!5729012/" ratiourl-ressource="5729012" class="objlink report article leaded pictured noavatar" role="link"><h4>Konsequenzen der Kraftwerks-Abschaltung</h4><h3>Nach dem Blackout</h3><p>Mit dem Kohlekraftwerk Moorburg verabschiedet sich ein politischer Zankapfel im kommenden Jahr von der Bildfläche. Mit welchen Folgen?  <span class="author">Marco Carini</span></p><img src="/picture/4545438/624/moorburg-1.jpeg" alt="Protestboote vor dem Kraftwerk Moorburg" title="Protestboote vor dem Kraftwerk Moorburg" /></a></li><li class="sectbody even trodd online  brief  report article leaded"><a href="/Nach-Unfall-mit-E-Scootern-in-Bremen/!5729005/" ratiourl-ressource="5729005" class="objlink brief report article leaded noavatar" role="link"><h4>Nach Unfall mit E-Scootern in Bremen</h4><h3>Ein Hindernis zum Mieten</h3><p>Im Sommer stürzte Klaus Bopp über herumliegende E-Scooter und verletzte sich schwer. Der Bremer ist blind und fordert nun, die Roller zu verbannen.  <span class="author">Alina Götz</span></p></a></li><li class="sectbody last odd treven online  brief  report article leaded"><a href="/G20-Prozess-in-Hamburg/!5731316/" ratiourl-ressource="5731316" class="objlink brief report article leaded noavatar" role="link"><h4>G20-Prozess in Hamburg</h4><h3>Mit­gefangen, mitgehangen</h3><p>Mit dem „Rondenbarg-Verfahren“ beginnt der letzte große Gerichtskomplex um die Hamburger G20-Proteste. Einige der Angeklagten sind Minderjährige.  <span class="author">Marco Carini</span></p></a></li></ul></div><span id="ad_bin_uebersicht_medrec_5" class="ad_bin sold contentad shown" style=""><div class="ad_badge">Anzeige</div><div id="ad_zone_uebersicht_medrec_5" name="uebersicht_medrec-5" class="ad_zone ad_zone_contentad ad_zone_badged ad_zone_sold ad_zone_shown" data-google-query-id="CIaE9aPRse0CFUiIfgodEE8FGA"><div id="google_ads_iframe_/118803185/uebersicht_medrec-5_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="https://1626b594f2f98af7094a6bc802b64722.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/118803185/uebersicht_medrec-5_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;" data-google-container-id="a" data-load-complete="true"></iframe></div></div></span><script type="text/javascript"> (function(){
+		var domId = 'uebersicht_medrec_5';
+		var parent = $( '#ad_bin_'+ domId ).parent();
+		if ( parent.is('.wing') ) {
+			filOtaz_de_float.promise.promise().done(function(){		
+				filOtaz_de.ads.gpt.activateAdFrame( domId );
+			});
+		} else {
+			filOtaz_de.ads.gpt.activateAdFrame( domId );				
+		}
+	})(); 
+	</script></span><script> $(document.getLatestElement()).filter('.wing').on( 'TAZdomChange', function(){
+					$(this).find('.rack').removeClass('first first_rack').first().addClass('first first_rack');
+					}); //</script><a itemprop="mainEntityOfPage" href="//!p4608"></a><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="rightbar"><div class="nose" role="heading" id="pg476196_hd" style="z-index: 0;"><h2><a name="Nord" href="/Nord/!p4650/"><span>Nord</span></a></h2></div><span class="headed wing floating" role="complementary"><div class="rack first_rack" id="xid761797">
+    
+
+	<div role="region" id="" class="first last odd sect sect_text "><div class="secthead" role="heading"><h2><a name="So viel taz, wie sie möchten | unsere Abos"><span>So viel taz, wie sie möchten | unsere Abos</span></a></h2></div><div class="sectbody"><img src="/uploads/images/70/stift_500x500.png" alt="" title="" /><p>     Wie hätten Sie ihre taz denn gern? Wählen Sie aus unseren vielfältigen Abo-Angeboten, für jede Lesegewohnheit gibt es ein passendes Angebot:                       
+</p><p>     <a href="https://www.taz.de/!112034/#matomo:pk_campaign=Standard_Print-only&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=CLB_Startseite&amp;pk_content=Text%E2%80%9C%20target=" target="_blank"><b xmlns="">• Der Klassiker</b></a>: Lesen Sie Ihre <i xmlns="">taz</i> täglich sechs Tage die Woche und inklusive <i xmlns="">taz am Wochenende</i>.                       
+</p><p>     <a href="https://www.taz.de/tazam-wochenende/!112039//#matomo:pk_campaign=Standard_WE-only&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=CLB_Startseite&amp;pk_content=Text" target="_blank"><b xmlns="">• Für die Couch</b></a>: Lesen Sie wöchentlich die <i xmlns="">taz am Wochenende</i>, jeden Samstag neu.                    
+</p><p>     <a href="https://www.taz.de/Rundum-digital/!105243//#matomo:pk_campaign=Standard_Digi-only&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=CLB_Startseite&amp;pk_content=Text" target="_blank"><b xmlns="">• Für unterwegs</b></a>: Schützen Sie Bäume und haben Sie Ihre <i xmlns="">taz</i> trotzdem immer dabei – das ePaper machts möglich.                   
+</p><p>     <a href="https://www.taz.de/Print-am-Wochenende-plus-taegliches-ePaper/!117631//#matomo:pk_campaign=Standard_Kombi&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=CLB_Startseite&amp;pk_content=Text" target="_blank"><b xmlns="">• Die unschlagbare Kombi</b></a>: Das Beste beider Welten – werktags erhalten Sie Ihre <i xmlns="">taz</i> als ePaper auf ihr Tablet und jeden Samstag die gedruckte <i xmlns="">taz am Wochenende</i>.      </p></div></div>
+
+	</div><script> $(document.getLatestElement()).filter('.rack').trigger('TAZdomChange'); //
+			</script></span></div></div></div><div role="region" id="" class="last odd sect sect_end style_end "><ul role="directory" class="sectbody news  directory"><li class=" first last odd trodd online   leaded pictured leaded remote story"><a href="/!168835/#matomo:pk_campaign=Praemienabo434-StokoPatria&amp;pk_source=Online&amp;pk_medium=taz.de&amp;pk_kwd=Abbinder&amp;pk_content=Bild2_Frauenfaeuste/" target="_blank" class="objlink leaded pictured leaded remote story noavatar" role="link"><h4>Das Abo der Woche: 5 Wochen taz + „Die letzten Tage des Patriarchats”</h4><h3>Fürchtet Euch ruhig!</h3><p class="brief">                   Abonnieren Sie die <b>taz für 5 Wochen</b> und bekommen dazu <b>„Die letzten Tage des Patriarchats”</b> von <b>Margarete Stokowski</b>, zusammen für nur 22 Euro. Das Buch versammelt die besten und wichtigsten Essays, Kolumnen und Debattenbeiträge, leicht überarbeitet und kommentiert. 320 Seiten, Hardcover. Und: <i><b>Das Probeabo endet automatisch!        </b></i>            </p><img src="/uploads/images/948/abo_der_woche_margarete_abbinder_packshot_01.jpg" alt="" title="" /></a></li></ul></div><div id="footer"><ul role="navigation" class="sitemap"><li class="news"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="/"><span itemprop="title">taz</span></a></span><ul><li class="first odd trodd"><a href="/Politik/!p4615/" id="menu_p4615"><span>Politik</span></a><ul><li class="first odd trodd"><a href="/Politik/Deutschland/!p4616/" id="menu_p4616"><span>Deutschland</span></a></li><li class="even trodd"><a href="/Politik/Europa/!p4617/" id="menu_p4617"><span>Europa</span></a></li><li class="odd treven"><a href="/Politik/Amerika/!p4618/" id="menu_p4618"><span>Amerika</span></a></li><li class="even trodd"><a href="/Politik/Afrika/!p4621/" id="menu_p4621"><span>Afrika</span></a></li><li class="odd trodd"><a href="/Politik/Asien/!p4619/" id="menu_p4619"><span>Asien</span></a></li><li class="even treven"><a href="/Politik/Nahost/!p4620/" id="menu_p4620"><span>Nahost</span></a></li><li class="last odd trodd"><a href="/Politik/Netzpolitik/!p4622/" id="menu_p4622"><span>Netzpolitik</span></a></li></ul></li><li class="even trodd"><a href="/Oeko/!p4610/" id="menu_p4610"><span>Öko</span></a><ul><li class="first odd trodd"><a href="/Oeko/Oekonomie/!p4623/" id="menu_p4623"><span>Ökonomie</span></a></li><li class="even trodd"><a href="/Oeko/Oekologie/!p4624/" id="menu_p4624"><span>Ökologie</span></a></li><li class="odd treven"><a href="/Oeko/Arbeit/!p4629/" id="menu_p4629"><span>Arbeit</span></a></li><li class="even trodd"><a href="/Oeko/Konsum/!p4625/" id="menu_p4625"><span>Konsum</span></a></li><li class="odd trodd"><a href="/Oeko/Verkehr/!p4628/" id="menu_p4628"><span>Verkehr</span></a></li><li class="even treven"><a href="/Oeko/Wissenschaft/!p4636/" id="menu_p4636"><span>Wissenschaft</span></a></li><li class="last odd trodd"><a href="/Oeko/Netzoekonomie/!p4627/" id="menu_p4627"><span>Netzökonomie</span></a></li></ul></li><li class="odd treven"><a href="/Gesellschaft/!p4611/" id="menu_p4611"><span>Gesellschaft</span></a><ul><li class="first odd trodd"><a href="/Gesellschaft/Alltag/!p4632/" id="menu_p4632"><span>Alltag</span></a></li><li class="even trodd"><a href="/Gesellschaft/Debatte/!p4633/" id="menu_p4633"><span>Debatte</span></a></li><li class="odd treven"><a href="https://gazete.taz.de/" target="_blank" id="menu_p5057"><span>taz.gazete</span></a></li><li class="even trodd"><a href="https://migration-control.taz.de/#de" target="_blank" id="menu_p5058"><span>migration control</span></a></li><li class="odd trodd"><a href="/Gesellschaft/Kolumnen/!p4634/" id="menu_p4634"><span>Kolumnen</span></a></li><li class="even treven"><a href="/Gesellschaft/Medien/!p4630/" id="menu_p4630"><span>Medien</span></a></li><li class="odd trodd"><a href="/Gesellschaft/Bildung/!p4635/" id="menu_p4635"><span>Bildung</span></a></li><li class="even trodd"><a href="/Gesellschaft/Gesundheit/!p4637/" id="menu_p4637"><span>Gesundheit</span></a></li><li class="last odd treven"><a href="/Gesellschaft/Reise/!p4638/" id="menu_p4638"><span>Reise</span></a></li></ul></li><li class="even trodd"><a href="/Kultur/!p4639/" id="menu_p4639"><span>Kultur</span></a><ul><li class="first odd trodd"><a href="/Kultur/Musik/!p4640/" id="menu_p4640"><span>Musik</span></a></li><li class="even trodd"><a href="/Kultur/Film/!p4641/" id="menu_p4641"><span>Film</span></a></li><li class="odd treven"><a href="/Kultur/Kuenste/!p4642/" id="menu_p4642"><span>Künste</span></a></li><li class="even trodd"><a href="/Kultur/Buch/!p4643/" id="menu_p4643"><span>Buch</span></a></li><li class="last odd trodd"><a href="/Kultur/Netzkultur/!p4631/" id="menu_p4631"><span>Netzkultur</span></a></li></ul></li><li class="odd trodd"><a href="/Sport/!p4646/" id="menu_p4646"><span>Sport</span></a><ul><li class="first odd trodd"><a href="/Sport/Fussball/!p4647/" id="menu_p4647"><span>Fußball</span></a></li><li class="last even trodd"><a href="/Sport/Kolumnen/!p4648/" id="menu_p4648"><span>Kolumnen</span></a></li></ul></li><li class="even treven"><a href="/Berlin/!p4649/" id="menu_p4649"><span>Berlin</span></a><ul></ul></li><li class="odd trodd"><a href="/Nord/!p4650/" id="menu_p4650"><span>Nord</span></a><ul><li class="first odd trodd"><a href="/Nord/Hamburg/!p4651/" id="menu_p4651"><span>Hamburg</span></a></li><li class="even trodd"><a href="/Nord/Bremen/!p4652/" id="menu_p4652"><span>Bremen</span></a></li><li class="last odd treven"><a href="/Nord/Kultur/!p4653/" id="menu_p4653"><span>Kultur</span></a></li></ul></li><li class="last even trodd"><a href="/Wahrheit/!p4644/" id="menu_p4644"><span>Wahrheit</span></a><ul><li class="first odd trodd"><a href="/bei-Tom/!t5180734/" id="menu_p4685"><span>bei Tom</span></a></li><li class="last even trodd"><a href="/ueber-die-Wahrheit/!115080/" id="menu_p4684"><span>über die Wahrheit</span></a></li></ul></li></ul></li><li class="corp"><ul><li class="first odd trodd"><a href="/Abo/!p4209/" id="menu_p4209"><span>Abo</span></a></li><li class="even trodd"><a href="/Genossenschaft/!p4271/" id="menu_p4271"><span>Genossenschaft</span></a></li><li class="odd treven"><a href="https://taz.de/!p4697/#matomo:pk_campaign" id="menu_p5149"><span>taz zahl ich</span></a></li><li class="even trodd"><a href="/Info/!p4206/" id="menu_p4206"><span>Info</span></a></li><li class="odd trodd"><a href="/!p4233/" id="menu_p5311"><span>Veranstaltungen</span></a></li><li class="even treven"><a href="https://shop.taz.de/#pk_campaign" target="_blank" id="menu_p4378"><span>Shop</span></a></li><li class="odd trodd"><a href="/Anzeigen/!p4288/" id="menu_p4288"><span>Anzeigen</span></a></li><li class="even trodd"><a href="/!p5099/" id="menu_p5106"><span>taz FUTURZWEI</span></a></li><li class="odd treven"><a href="https://taz.de/!p4791/#matomo:pk_campaign" id="menu_p5133"><span>Neue App</span></a></li><li class="even trodd"><a href="/Podcast/!p5171/" id="menu_p5171"><span>Podcast</span></a></li><li class="odd trodd"><a href="/Bewegung/!p4715/" id="menu_p4715"><span>Bewegung</span></a></li><li class="even treven"><a href="/Kantine/!p4237/" id="menu_p4237"><span>Kantine</span></a></li><li class="odd trodd"><a href="//blogs.taz.de/" id="menu_p4366"><span>Blogs &amp; Hausblog</span></a></li><li class="even trodd"><a href="/!p5298/" id="menu_p5319"><span>taz Talk</span></a></li><li class="odd treven"><a href="/!p5297/" id="menu_p4955"><span>taz in der Kritik</span></a></li><li class="even trodd"><a href="/!p4662/" id="menu_p5148"><span>taz am Wochenende</span></a></li><li class="odd trodd"><a href="/Nord/!p4962/" id="menu_p4962"><span>Nord</span></a></li><li class="even treven"><a href="/Panter-Preis/!p4207/" id="menu_p4207"><span>Panter Preis</span></a></li><li class="odd trodd"><a href="/Panter-Stiftung/!p4258/" id="menu_p4258"><span>Panter Stiftung</span></a></li><li class="even trodd"><a href="/Reisen-in-die-Zivilgesellschaft/!p4310/" id="menu_p4310"><span>Reisen in die Zivilgesellschaft</span></a></li><li class="odd treven"><a href="//monde-diplomatique.de/" id="menu_p4387"><span>LE MONDE diplomatique</span></a></li><li class="even trodd"><a href="/Recherchefonds-Ausland/!p5062/" id="menu_p5062"><span>Recherchefonds Ausland</span></a></li><li class="odd trodd"><a href="/Archiv/!p4311/" id="menu_p4311"><span>Archiv</span></a></li><li class="even treven"><a href="https://taz.de/!p4905/" id="menu_p5284"><span>taz lab 2021</span></a></li><li class="odd trodd"><a href="/!p5044/" id="menu_p5123"><span>Christian Specht</span></a></li><li class="last even trodd"><a href="/Hilfe/!p4591/" id="menu_p4591"><span>Hilfe</span></a></li></ul></li><li class="help"><ul id="legal"><li class="first odd trodd"><a href="/Hilfe/!p4591/" id="menu_p4591"><span>Hilfe</span></a></li><li class="even trodd"><a href="https://taz.de/!112354/" id="menu_p4679"><span>Impressum</span></a></li><li class="odd treven"><a href="https://taz.de/!p5097/" id="menu_p5136"><span>Leichte Sprache</span></a></li><li class="even trodd"><a href="https://taz.de/!114802/" id="menu_p4965"><span>Redaktionsstatut</span></a></li><li class="odd trodd"><a href="https://taz.de/!114191/" id="menu_p4680"><span>RSS</span></a></li><li class="even treven"><a href="https://taz.de/!166598/" id="menu_p4681"><span>Datenschutz</span></a></li><li class="odd trodd"><a href="https://taz.de/!p4283/" id="menu_p4827"><span>Newsletter</span></a></li><li class="even trodd"><a href="https://taz.de/!p4858/" id="menu_p4859"><span>Informant</span></a></li><li class="last odd treven"><a href="https://taz.de/!112355/" id="menu_p4682"><span>Kontakt</span></a></li></ul></li><li class="search"><form class="search" role="search" action="/!s=/" method="POST"><div class="frame"><input type="text" class="text" name="s" value="suchen ..." /><script type="text/javascript" language="javascript">filOtaz_de.searchslot();</script><input type="image" class="send" title="suche senden" alt="suche senden" name="ignore" src="/lib/ch/web/pix/redArrowsRight_d50d2e.png" /></div></form></li></ul><div class="copyright">Alle Rechte vorbehalten. Für Fragen zu Rechten oder Genehmigungen wenden Sie sich bitte an lizenzen@taz.de<a id="mobileswitcher" href="#" onclick="&#10;&#9;&#9;&#9;&#9;&#9;event.preventDefault();&#10;&#9;&#9;&#9;&#9;&#9;var currentDate = new Date();&#10;&#9;&#9;&#9;&#9;&#9;var expDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()+1, 3, 59, 59);&#10;&#9;&#9;&#9;&#9;&#9;$.cookie.raw = true;&#10;&#9;&#9;&#9;&#9;&#9;$.cookie('ratioURL_channel', 'moby/force', { expires: expDate, domain:'taz.de', path:'/', secure: false } ); &#10;&#10;&#9;&#9;&#9;&#9;&#9;if( (/moby/).test($.cookie('ratioURL_channel') ) ) {&#10;&#10;&#9;&#9;&#9;&#9;&#9;&#9;location.search = ( location.search ? location.search +'&amp;' : '?' ) +'nocache='+ (new Date()).getTime();&#10;&#9;&#9;&#9;&#9;&#9;&#9;}&#10;&#9;&#9;&#9;&#9;&#9;else alert('Cookie konnte nicht gesetzt werden');&#10;&#9;&#9;&#9;&#9;&#9;&#10;&#9;&#9;&#9;&#9;"><span>zur mobilen Ansicht wechseln</span></a></div></div><div class="float" style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 0px;"><div class="head" role="head"><ul role="navigation" class="news navbar newsnavigation"><li class="first odd trodd home selected"><a href="/" id="menu_p4608"><span>taz</span><div class="tazze logo"></div></a></li><li class="even trodd"><a href="/Politik/!p4615/" id="menu_p4615"><span>Politik</span></a></li><li class="odd treven"><a href="/Oeko/!p4610/" id="menu_p4610"><span>Öko</span></a></li><li class="even trodd"><a href="/Gesellschaft/!p4611/" id="menu_p4611"><span>Gesellschaft</span></a></li><li class="odd trodd"><a href="/Kultur/!p4639/" id="menu_p4639"><span>Kultur</span></a></li><li class="even treven"><a href="/Sport/!p4646/" id="menu_p4646"><span>Sport</span></a></li><li class="odd trodd"><a href="/Berlin/!p4649/" id="menu_p4649"><span>Berlin</span></a></li><li class="even trodd"><a href="/Nord/!p4650/" id="menu_p4650"><span>Nord</span></a></li><li class="last odd treven"><a href="/Wahrheit/!p4644/" id="menu_p4644"><span>Wahrheit</span></a></li></ul><script>
+		var liSelected = $(document.getLatestElement()).find('li.selected');
+		if ( liSelected.length &gt; 1 ){ liSelected.first().removeClass('selected')};
+	</script><form class="search" role="search" action="/!s=/" method="POST"><div class="frame"><input type="text" class="text" name="s" value="suchen ..." /><script type="text/javascript" language="javascript">filOtaz_de.searchslot();</script><input type="image" class="send" title="suche senden" alt="suche senden" name="ignore" src="/lib/ch/web/pix/redArrowsRight_d50d2e.png" /></div></form><div class="pin"><div id="mainFlyout" class="flyout" style="display: none;"></div></div></div></div></div></div></div><iframe name="__tcfapiLocator" style="display: none;"></iframe>
+<iframe id="google_osd_static_frame_1589363368541" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><script type="text/javascript" src="https://tpc.googlesyndication.com/sodar/sodar2.js"></script></body><!-- DEBUG end 11:45:18+01:00--><iframe sandbox="allow-scripts allow-same-origin" id="11c5f706e3ed94e" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="126eecbf90557f2" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/dmp/async_usersync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="13dd085c6da1565" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://us-u.openx.net/w/1.0/pd?plm=6&amp;ph=2671f27c-3f24-410f-8105-4de0c801f2a9&amp;gdpr=0">
+    </iframe></html>

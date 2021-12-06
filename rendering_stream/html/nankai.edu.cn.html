@@ -1,0 +1,235 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>南开大学教工邮件系统 - 邮箱用户登录</title>
+<link href="/_upload/tpl/02/62/610/template610/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="/_upload/tpl/02/62/610/template610/css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/_upload/tpl/02/62/610/template610/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/_upload/tpl/02/62/610/template610/js/jquery-validate.js"></script>
+<script type="text/javascript" src="https://mailhz.qiye.163.com/js/loginjs.jsp"></script>
+<script type="text/javascript" src="/_upload/tpl/02/62/610/template610/js/jquery-cookie.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="loginheader">
+	  <div class="w">
+		<div class="logo"><a href="http://www.nankai.edu.cn"><img src="/_upload/tpl/02/62/610/template610/images/logo_purple.png" /></a></div>
+		<div class="header-link">
+			<a href="https://qiye.163.com/entry/help/hot-question.htm">热点问题</a> | 
+			<a href="https://qiye.163.com/entry/help/help-client.htm" target="_blank">使用帮助</a> | 
+			<a href="https://qiye163.qiyukf.com/client?k=abab5b9989e6f898240067f40874a096&amp;wp=1&amp;gid=815346&amp;robotShuntSwitch=1&amp;robotId=9091">在线客服</a> |  
+			<a href="mailto://xxbxxb@nankai.edu.cn">意见建议</a>
+		</div>
+	  </div>
+	</div>
+
+	<div class="loginbox">
+		<div class="w">
+			<div class="loginform">
+				<div class="title">
+					<ul><li class="cur">教工邮箱</li><li><a href="https://mail.nankai.edu.cn/">学生邮箱</a></li></ul>
+				</div>
+				<form action="https://entryhz.qiye.163.com/domain/domainEntLogin" id="loginForm" method="post">
+					<input type="hidden" name="domain" value="nankai.edu.cn" />
+					<input type="hidden" name="secure" value="1" />
+					<input type="hidden" name="ch" id="ch" value="" />
+					<input type="hidden" name="support_verify_code" id="support_verify_code" value="1" />
+					<div class="bd">
+						<span id="msgpid" class="msg" name="msgpid"></span>
+						<div class="loginrow"><input id="account_name" class="txt username" name="account_name" type="text" placeholder="请输入用户名" /></div>
+						<div class="loginrow"><input id="password" class="txt password" name="password" type="password" placeholder="请输入密码" /></div>
+						<div class="loginrow loginrow_code" id="verifyCodeWrap" style="display:none;">
+							<input id="verify_code" class="txt code" name="verify_code" type="text" placeholder="请输入验证码" />
+							<a class="codeimg" id="codeImgWrap" href="javascript:void(0);">
+                                <img src="" />
+                            </a>
+						</div>						
+					</div>	
+					<div class="loginchk">
+						<label class="lab_chk" for="remUsername"><input id="remUsername" type="checkbox" value="1" />记住用户名</label>  
+						<label class="lab_chk" for="secure"><input type="checkbox" id="secure" value="1" checked="" />SSL安全登录</label>  
+						<label class="lab_chk" for="allsecure"><input name="all_secure" id="all_secure" type="checkbox" value="1" />全程SSL</label>
+					</div>	
+					<div class="loginbtn">
+					<input id="btn_submit" class="btn" name="" type="submit" value="" />
+					</div>
+				</form>
+				<div class="links">
+					<a href="http://mailreg.nankai.edu.cn" target="_blank">教工邮箱注册</a>
+					<a href="http://mailreg.nankai.edu.cn" target="_blank">忘记密码？</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="loginfooter">南开大学 · 信息化建设与管理办公室</div>
+	</div>	
+
+<script type="text/javascript" src="https://mail.qiye.163.com/js/loginjs.jsp"></script>
+    <script>
+        //根据地区修改
+        //华东地区：http://entry.qiye.163.com/domain/getverifycode.jsp
+        //华北地区：http://entryhz.qiye.163.com/domain/getverifycode.jsp
+        var verifyCodeUrl = "http://entryhz.qiye.163.com/domain/getverifycode.jsp";
+        var verifyCode = getQueryString("code");
+        function getId(id) {
+            return document.getElementById(id);
+        };
+        function getQueryString(e) {
+            var t = new RegExp("(^|&amp;)" + e + "=([^&amp;]*)(&amp;|$)", "i");
+            var ps = window.location.search || window.location.hash;
+            var n = ps.substr(1).match(t);
+            if (n != null) {
+                return unescape(n[2]);
+            };
+            return "";
+        };
+        function changeVerifyCode() {
+            var url = verifyCodeUrl + "?_searchtime=" + new Date().getTime();
+            codeImgWrap.getElementsByTagName("img")[0].src = url;
+        };
+        var msgMap = {
+            "input.account_name": "请输入登录帐号",
+            "input.verifyCodeMsg": "请输入验证码",
+            "input.codeError": "验证码错误",
+            "input.email": "请输入完整的邮箱地址",
+            "input.password": "请你输入密码",
+            "input.noat": "请使用不包括@部分帐号登录",
+
+            "input.account_name.en_US": "please enter your account",
+            "input.verifyCodeMsg.en_US": "please input verification code",
+            "input.codeError.en_US": "Verification code error",
+            "input.email.en_US": "please enter your email address",
+            "input.password.en_US": "please enter your password",
+            "input.noat.en_US": "please enter your account without @",
+
+            "input.account_name.zh_TW": "請輸入登錄帳號",
+            "input.verifyCodeMsg.zh_TW": "请输入驗證碼",
+            "input.codeError.zh_TW": "驗證碼錯誤",
+            "input.email.zh_TW": "請輸入完整的郵箱地址",
+            "input.password.zh_TW": "請你輸入密碼",
+            "input.noat.zh_TW": "請使用不包括@部分的帐号登录"
+        };
+        function getMsg(code) {
+            var value = msgMap[code + ".zh_CN"];
+            if (!value) {
+                value = msgMap[code];
+            }
+            return value;
+        };
+        function execOnLoad() {
+            var verifyCodeWrap = getId("verifyCodeWrap");
+            var codeImgWrap = getId("codeImgWrap");
+            getId("codeImgWrap").onclick = function () {
+                changeVerifyCode();
+            };
+            if (verifyCode === "true") {
+                verifyCodeWrap.style.display = "block";
+                changeVerifyCode();
+            };
+            var verifyCodeInputEle = getId("verify_code");
+            verifyCodeInputEle.value = getMsg("input.verifyCodeMsg");
+            verifyCodeInputEle.onfocus = function () {
+                if (this.value == getMsg("input.verifyCodeMsg")) {
+                    this.value = "";
+                    this.className = "";
+                }
+            };
+            verifyCodeInputEle.onblur = function () {
+                if (this.value == "") {
+                    this.value = getMsg("input.verifyCodeMsg");
+                    this.className = "ipt-sample";
+                }
+            };
+
+
+           //var qrLogin = new QrLogin()
+            //qrLogin.scanCodeHandler()
+        };
+        if (window.attachEvent) {
+            window.attachEvent("onload", execOnLoad);
+        } else if (window.addEventListener) {
+            window.addEventListener("load", execOnLoad, false);
+        } else {
+            window.onload = execOnLoad;
+        };
+
+        function QrLogin() {
+
+        }
+/* cookie */
+var cookie = function (k, j, m) {
+  if (typeof j == "undefined") {
+    j = null;
+    if (document.cookie &amp;&amp; document.cookie != "") {
+      var g = document.cookie.split(";");
+      for (var f = 0; f &lt; g.length; f++) {
+        var h = g[f].trim();
+        if (h.substring(0, k.length + 1) == (k + "=")) {
+          j = decodeURIComponent(h.substring(k.length + 1));
+          break
+        }
+      }
+    }
+    return j
+  }
+  m = m || {};
+  if (j === null) {
+    j = "";
+    m.expires = -1
+  }
+  var b = "";
+  if (m.expires &amp;&amp; (typeof m.expires == "number" || m.expires.toUTCString)) {
+    var d;
+    if (typeof m.expires == "number") {
+      d = new Date();
+      d.setTime(d.getTime() + (m.expires * 24 * 60 * 60 * 1000))
+    } else {
+      d = m.expires
+    }
+    b = "; expires=" + d.toUTCString()
+  }
+  var l = m.path ? "; path=" + (m.path) : "";
+  var e = m.domain ? "; domain=" + (m.domain) : "";
+  var a = m.secure ? "; secure" : "";
+  document.cookie = [k, "=", encodeURIComponent(j), b, l, e, a].join("")
+};
+
+var a = cookie("qiye_account");
+if (a) {
+  $("#remUsername")[0].checked = "checked";
+  $('#account_name').val(a);
+}
+
+$('#btn_submit').click(function (e) {
+  //e.preventDefault();
+  if (getId("remUsername").checked) {
+    var i = location.hostname;
+    cookie("qiye_account", $('#account_name').val(), {domain: i, path: "/", expires: 4})
+  } else {
+    cookie("qiye_account", "", {domain: i, path: "/", expires: 0})
+  }
+});
+
+
+        QrLogin.prototype.refreshQrCode = (function () {
+            var appCodeImg = $("#appCode");
+            return function () {
+                var imgUrl = 'https://mail.qiye.163.com/mailapp/commonweb/qrcode/getqrcode.do?p=qiyemail&amp;w=130&amp;h=130&amp;r=' + new Date().getTime();
+                // var imgUrl = '/commonweb/qrcode/getqrcode.jpg?w=130&amp;h=130&amp;r=' + new Date().getTime() ;//测试用
+                appCodeImg.prop('src', imgUrl);
+            }
+        })()
+
+var p = /Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent);
+    
+　　if (p==false){
+     
+      var s = document.getElementById("all_secure");
+     
+      s.checked = "true";
+     }
+</script>
+
+
+
+ <img src="/_visitcount?siteId=121&amp;type=1&amp;columnId=6769" style="display:none" width="0" height="0" /></body></html>

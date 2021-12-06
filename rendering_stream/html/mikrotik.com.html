@@ -1,0 +1,575 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head><meta class="foundation-mq-small" /><meta class="foundation-mq-small-only" /><meta class="foundation-mq-medium" /><meta class="foundation-mq-medium-only" /><meta class="foundation-mq-large" /><meta class="foundation-mq-large-only" /><meta class="foundation-mq-xlarge" /><meta class="foundation-mq-xlarge-only" /><meta class="foundation-mq-xxlarge" /><meta class="foundation-data-attribute-namespace" />
+	<title>MikroTik Routers and Wireless</title>
+	<meta charset="utf-8" />
+	<meta property="og:url" content="https://mikrotik.com/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="MikroTik" />
+	<meta property="og:description" content="MikroTik is a Latvian company which was founded in 1996 to develop routers and wireless ISP systems. MikroTik now provides hardware and software for Internet connectivity in most of the countries around the world." />
+	<meta property="og:image" content="https://i.mt.lv/img/mt/v2/logo_fb.jpg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="MikroTik is a Latvian company which was founded in 1996 to develop routers and wireless ISP systems. MikroTik now provides hardware and software for Internet connectivity in most of the countries around the world." />
+	<meta name="keywords" content="download, mikrotik, routeros, switchos, winbox, netinstall, traffic sniffer for linux, bandwidth test for windows, neighbour viewer for windows, routerboard wireless drivers, routeros package, routeros torrent, routeros changelog" />
+	<link rel="icon" type="image/png" href="https://i.mt.lv/img/mt/v2/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="https://i.mt.lv/css/mt/app.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://i.mt.lv/css/mt/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://i.mt.lv/css/mt/global.css" />
+	<link rel="stylesheet" type="text/css" href="https://i.mt.lv/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://i.mt.lv/css/google-fonts-open-sans.css" />
+
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script type="text/javascript" src="https://i.mt.lv/js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="https://i.mt.lv/js/lazyload.2.0.0.b.min.js"></script>
+	<script type="text/javascript" src="https://i.mt.lv/js/jquery/jquery.cookie.min.js"></script>
+	<script defer="" type="text/javascript" src="https://i.mt.lv/js/modernizr.min.js"></script>
+	<script defer="" type="text/javascript" src="https://i.mt.lv/js/foundation5.min.js"></script>
+	<script defer="" type="text/javascript" src="https://i.mt.lv/js/mt/init.js"></script>
+	<script defer="" type="text/javascript">
+var resizefncs=[];//,scrollfncs=[];
+$(document).ready(function(){
+	loadAfterFoundation();
+	resizefncs.push("makeBorder();");resizefncs.push("adjustDrop();");/*scrollfncs.push("makeBorder();");*/
+	$(window).on('resize',performResize);
+	$(window).on('scroll',performScroll);
+	$(window).on('click',performClick);
+	performResize();
+    
+});
+function loadScript(isrc){
+	dd=new Date();
+	xsrc=isrc+'?'+dd.getDate().toString()+dd.getHours().toString();
+	if($('head script[src="'+isrc+'"]').length){return;}
+	if($('head script[src="'+xsrc+'"]').length){return;}
+	e="scr"+"ipt";scr=document.createElement(e);
+	scr.type="text/"+"ja"+"va"+e;
+	scr.src=xsrc;
+	/*scr.async=true;*/
+	scr.defer=true;
+	document.getElementsByTagName('head')[0].appendChild(scr);
+}
+function loadAfterFoundation(){
+	if(typeof $(document).foundation == "function"){
+		loadScript("https://i.mt.lv/js/foundation.orbit.min.js");
+		loadScript("https://i.mt.lv/js/foundation.tooltip.min.js");
+		waitOrb();
+	} else {
+		window.setTimeout(function(){loadAfterFoundation();},50);
+	}
+}
+function waitOrb(){if(typeof Foundation.libs == "object" &amp;&amp; typeof Foundation.libs.orbit == "object" &amp;&amp; typeof Foundation.libs.tooltip == "object"){
+	$(document).foundation({ accordion: { multi_expand: true } });
+}else{setTimeout("waitOrb()",50);}}
+function performResize(){for(d in resizefncs){window.setTimeout(resizefncs[d],0);}}
+function performScroll(){for(d in resizefncs){window.setTimeout(resizefncs[d],0);}}
+function performClick(){for(d in resizefncs){window.setTimeout(resizefncs[d],0);}}
+/*border to nav*/
+//function assignBorder(){makeBorder();/*resizefncs.push("makeBorder();");scrollfncs.push("makeBorder();");*/}
+function makeBorder(){
+	x=$("#sm-start, .sm-menu").position().top,
+	y=$(this).scrollTop(),
+	grid='.contain-to-grid',
+	cl='bar-border';
+
+	if ($('.smally').is(':visible') &amp;&amp; $('.top-bar.expanded').is(':visible')){
+		if (y&gt;x-388) { $(grid).addClass(cl);} else { $(grid).removeClass(cl); }
+	} else {
+		if ($('.page_top.show-for-medium-up').is(':visible') || y&lt;=x-80 ){ $(grid).removeClass(cl); }
+		else{ $(grid).addClass(cl); }
+	}
+}
+function adjustDrop(){em=".page_title_empty";if ($(em).length&gt;0){hh=Math.floor($(".page_top").height());if($(".sm-menu").is(':visible')){hh=hh+Math.floor($(".sm-menu").height());}$(em).css('height',hh+'px');}}
+	</script>
+<style type="text/css">
+.mt-head{background:url("//i.mt.lv/img/mt/v2/head/5.jpg") 0%;background-size:cover;opacity:0.45}
+
+.slide4 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/chateau_lte12_head.jpg") 13%;background-size:cover;opacity:0.65}
+.slide5 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/hap_ac3_head.jpg") 13%;background-size:cover;opacity:0.65}
+.slide7 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/16.jpg") 17%;background-size:cover;opacity:0.65}
+.slide8 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/audience.jpg") 17%;background-size:cover;opacity:0.65}
+.slide9 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/18.jpg") 17%;background-size:cover;opacity:0.65}
+.slide10 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/mum2020eu.jpg") 17%;background-size:cover;opacity:0.65}
+
+.wide .columns{text-align:center !important}
+.wide .columns h1,.wide .columns p{color:white}
+.headbtn{padding:10px 60px !important;}
+
+.slide4 .headbtn{padding:10px 60px !important;background:white;color:#37394e}
+.slide5 .headbtn{padding:10px 60px !important;background:white;color:#5e686f}
+.slide7 .headbtn{padding:10px 60px !important;background:white;color:#552b6d}
+.slide8 .headbtn{padding:10px 60px !important;background:white;color:#7c489d}
+.slide9 .headbtn{padding:10px 60px !important;background:white;color:#466776}
+
+
+.slide4 .headbtn:hover{background:#37394e;color:white;}
+.slide5 .headbtn:hover{background:#353535;color:white;}
+.slide7 .headbtn:hover{background:#552b6d;color:white;}
+.slide8 .headbtn:hover{background:#59325f;color:white;}
+.slide9 .headbtn:hover{background:#314b57;color:white;}
+
+
+
+@media only screen and (min-width:48.063em) {
+
+.mt-head{background:url("//i.mt.lv/img/mt/v2/head/5.jpg") 30%;background-size:cover;opacity:1}
+
+.slide4 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/chateau_lte12_head.jpg") 30%;background-size:cover;opacity:1}
+.slide5 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/hap_ac3_head.jpg") 30%;background-size:cover;opacity:1}
+.slide7 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/16.jpg") 30%;background-size:cover;opacity:1}
+.slide8 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/audience.jpg") 30%;background-size:cover;opacity:1}
+.slide9 .mt-head{background:url("//i.mt.lv/img/mt/v2/head/18.jpg") 30%;background-size:cover;opacity:1}
+
+
+
+.wide .columns{text-align:left !important}
+.wide .columns p,.wide .columns h1{color:white}
+
+.cl{background:url("//i.mt.lv/img/mt/v2/transparent10.png");padding:0px 30px 10px 30px;-webkit-border-radius:3px;border-radius:3px;}
+.wide p{font-size:13px}
+}
+</style>
+<script type="text/javascript">
+function openContinent(country){
+	if(!country) return;
+	$('.tab-title a').each(function(){
+		var o=$(this),t=o.text();
+		if (t.toLowerCase().indexOf(country.toLowerCase()) &gt; -1){
+			setTimeout(function(){ o.click(); },300);
+		}
+	});
+}
+function gasend(ur,tit){
+	ga('send','event','outbound','click',ur,{'transport':'beacon','eventLabel':tit,'hitCallback':function(){window.open(ur);} });
+}
+$(document).ready(function(){
+	$('.top_container').hide().delay(500).fadeIn('slow');
+	//MUM list
+	$('#show_events').click(function(){
+		$(this).fadeOut(function(){
+			$('#more_events').fadeIn();
+			$(window).trigger('resize');
+		});
+	});
+	$('.tab-title a').click(function () {
+		$(window).trigger('resize').trigger('scroll');
+	});
+});
+</script>
+<script type="text/javascript">$(document).ready(function(){openContinent("North America");})</script>
+	<script defer="" type="text/javascript" src="https://i.mt.lv/js/mt/listing.js"></script>
+	<noscript>&lt;style type="text/css"&gt;.top_container{display:block;}&lt;/style&gt;</noscript>
+<style></style><meta class="foundation-mq-topbar" /><script type="text/javascript" src="https://i.mt.lv/js/foundation.orbit.min.js?32" defer=""></script><script type="text/javascript" src="https://i.mt.lv/js/foundation.tooltip.min.js?32" defer=""></script></head>
+<body><div class="parallax-mirror" style="z-index: 0; position: fixed; overflow: hidden; transform: translate3d(0px, 0px, 0px); visibility: hidden; top: 2177.09px; left: 0px; height: 410px; width: 785px;"><img class="parallax-slider" src="//i.mt.lv/img/mt/v2/bg_training.jpg" style="transform: translate3d(0px, 0px, 0px); position: absolute; top: -870.838px; left: -39px; height: 486px; width: 864px; max-width: none;" /></div>
+	<span id="mt_load_scroll_to_top"></span>
+	<div class="wrapper">
+	<header class="holder">
+<div class="contain-to-grid">
+	<nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on:large">
+		<ul class="title-area">
+			<li class="name"><h1><a href="https://mikrotik.com"><img src="//i.mt.lv/img/mt/v2/logo.svg" alt="Mikrotik" /></a></h1></li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</li>
+		</ul>
+		
+	<section class="top-bar-section">
+<ul class="right triger">
+<li class="active"><a href="https://mikrotik.com/">Home</a></li><li><a href="https://mikrotik.com/aboutus">About</a></li><li><a href="https://mikrotik.com/buy">Buy</a></li><li><a href="https://darbs.mikrotik.com">Jobs</a></li><li><a href="https://mikrotik.com/products">Hardware</a></li><li><a href="https://mikrotik.com/download">Software</a></li><li><a href="https://mikrotik.com/support">Support</a></li><li><a href="https://mikrotik.com/training">Training</a></li><li><a href="https://mikrotik.com/client">Account</a></li>
+</ul>
+		</section></nav>
+</div>
+	</header>
+
+
+	<div id="sm-start" class=" spec-space">
+
+
+<div class="slideshow-wrapper">
+	<div class="preloader" style="display: none;"></div>
+	<div class="orbit-container"><ul data-orbit="" data-options="animation:fade;navigation_arrows:false; bullets:true;slide_number: false; pause_on_hover:false; timer_speed:10000;" class="orbit-slides-container" style="height: 364px;">
+
+		<li class="active">
+			<div class="wide slide5">
+				<div class="top_container" style="display: block;">
+					<div class="inner_top">
+
+						<div class="top_content">
+							<div class="row">
+								<div class="medium-6 medium-push-6 columns">
+									<h1>hAP ac³</h1>
+									<p>Our bestselling home router is back – and it is faster than ever! The hAP ac³ is the Swiss army knife of home networking with Gigabit Ethernet, handy iOS/Android app for easy configuration, PoE, 128 NAND and powerful external high-gain antennas.</p>
+									<a href="https://mikrotik.com/product/hap_ac3" id="slide5_btn" class="button tiny radius headbtn">More details</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="mt-head"></div>
+				<div class="border-on"></div>
+			</div>
+		</li>
+		<li>
+			<div class="wide slide4">
+				<div class="top_container" style="display: block;">
+					<div class="inner_top">
+
+						<div class="top_content">
+							<div class="row">
+								<div class="medium-6 medium-push-6 columns">
+									<h1>Chateau LTE12</h1>
+									<p>It is a high-speed, dual-band home access point with CAT12 LTE – for really fast Internet anywhere, anytime. But LTE is not the only option – Chateau also features 5 x Gigabit Ethernet ports and a full size USB port. Perfect for busy homes.</p>
+									<a href="https://mikrotik.com/product/chateau_lte12" id="slide4_btn" class="button tiny radius headbtn">More details</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="mt-head"></div>
+				<div class="border-on"></div>
+			</div>
+		</li>
+
+
+
+
+
+		<li>
+			<div class="wide slide8">
+				<div class="top_container" style="display: block;">
+					<div class="inner_top">
+
+						<div class="top_content">
+							<div class="row">
+								<div class="medium-6 medium-push-6 columns">
+									<h1>Audience</h1>
+									<p>
+										Who said you should hide your router in the closet? Bring it out in the open and enjoy faster and smoother signal. A tri-band router with meshing technology - for those who value both beauty and functionality.
+									</p>
+									<a href="https://mikrotik.com/product/audience" id="slide8_btn" class="button tiny radius headbtn">More details</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="mt-head"></div>
+				<div class="border-on"></div>
+			</div>
+		</li>
+		<li>
+		<div class="wide slide9">
+			<div class="top_container" style="display: block;">
+				<div class="inner_top">
+
+					<div class="top_content">
+						<div class="row">
+							<div class="medium-6 medium-push-6 columns">
+								<h1>MikroTik mobile app</h1>
+                                <p>Use the MikroTik smartphone app to configure your router in the field, or to apply the most basic initial settings for your MikroTik home access point. Available for <b>Android</b> and <b>iOS</b> operating systems.</p>
+								<a href="https://mikrotik.com/mobile_app" id="slide9_btn" class="button tiny radius headbtn">More details</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mt-head"></div>
+			<div class="border-on"></div>
+		</div>
+	</li>          
+        
+        
+ 	<li>
+		<div class="wide slide7">
+			<div class="top_container" style="display: block;">
+				<div class="inner_top">
+
+					<div class="top_content">
+						<div class="row">
+							<div class="medium-6 medium-push-6 columns">
+								<h1>RB4011 series</h1>
+								<p>RB4011 series - amazingly powerful routers with ten Gigabit ports, SFP+ 10Gbps interface and IPsec hardware acceleration for a great price!</p>
+								<a href="https://mikrotik.com/product/rb4011igs_5hacq2hnd_in" id="slide7_btn" class="button tiny radius headbtn">More details</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mt-head"></div>
+			<div class="border-on"></div>
+		</div>
+	</li>        
+
+
+
+
+	</ul><div class="orbit-timer"><span></span><div class="orbit-progress" style="overflow: hidden; width: 0.23%;"></div></div><div class="orbit-bullets-container"><ol class="orbit-bullets"><li data-orbit-slide="0" class="active"></li><li data-orbit-slide="1"></li><li data-orbit-slide="2"></li><li data-orbit-slide="3"></li><li data-orbit-slide="4"></li></ol></div></div>
+</div>
+
+<div class="row title border-on">
+	<div class="large-12 columns text-center">
+		<h1>WHAT'S NEW IN MIKROTIK?</h1>
+		<div class="h_line"></div>
+	</div>
+</div>
+
+
+<div class="row news">
+	<div class="medium-6 columns">
+		<a href="https://mikrotikdownload.s3.eu-west-1.amazonaws.com/news/news_98.pdf"><img src="https://i.mt.lv/cdn/mt/e4b63f76c5599bda45f1faf3c7d53905.jpg" alt="" /></a>
+		<h2>Newsletter November 2020 (#98)</h2><p>Read our latest newsletter and learn more about: MikroTik YouTube channel update, Wirless Wire Cube, Cube 60G ac, LHGG LTE6 kit, Upgraded wAP ac!, LtAP LR8 LTE kit, New direct attach cables, U-NII-2 support for products in US and Canada, MikroTik at the 5G TECHRITORY forum – free admission!</p>
+	</div>
+	<div class="medium-6 columns">
+		<a href="https://youtu.be/CfQqk_cRils"><img src="https://i.mt.lv/cdn/mt/192c46689d01909c82d127f9f710153c.jpg" alt="" /></a>
+		<h2>mANTBox 52 15s</h2><p>Our first product introduction videos have been published! Be sure to like the videos and subscribe to our <a href="https://youtube.com/mikrotik" target="_blank">channel</a>!</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns news_soc show-for-medium-up">
+		<hr />
+		<div class="row">
+			<div class="small-8 columns">
+				<p>
+You can also follow us and get the latest updates on <b><a href="https://twitter.com/mikrotik_com" target="_blank">Twitter</a></b> or <b><a href="https://www.facebook.com/mikrotik" target="_blank">Facebook!</a></b>
+				</p>
+			</div>
+			<div class="small-4 columns text-right">
+				<a href="https://twitter.com/mikrotik_com" target="_blank">
+					<img src="//i.mt.lv/img/mt/v2/twitter.png" alt="" width="32" height="32" />
+				</a>
+				<a href="https://www.facebook.com/mikrotik" target="_blank">
+					<img src="//i.mt.lv/img/mt/v2/facebook.png" alt="" width="32" height="32" />
+				</a>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<div class="large-12 columns show-for-small-only small-soc">
+		<hr />
+		<div class="row">
+			<div class="large-12 columns text-center">
+				<p>
+You can also follow us and get the latest updates on <b><a href="https://twitter.com/mikrotik_com" target="_blank">Twitter</a></b> or <b><a href="https://www.facebook.com/mikrotik" target="_blank">Facebook!</a></b>
+				</p>
+				<a href="https://twitter.com/mikrotik_com" target="_blank">
+					<img src="//i.mt.lv/img/mt/v2/twitter.png" alt="" width="32" height="32" />
+				</a>
+				<a href="https://www.facebook.com/mikrotik" target="_blank">
+					<img src="//i.mt.lv/img/mt/v2/facebook.png" alt="" width="32" height="32" />
+				</a>
+			</div>
+		</div>
+		<hr style="margin:8px 0 0 0;" />
+	</div>
+</div>
+
+
+
+<div class="row title border-on">
+	<div class="large-12 columns text-center">
+		<h1>MIKROTIK TRAINING</h1>
+		<div class="h_line"></div>
+	</div>
+</div>
+
+<div class="row text-center training_f" data-equalizer="">
+	<div class="medium-4 columns">
+		<div data-equalizer-watch="" style="height: 490px;">
+			<img src="//i.mt.lv/img/mt/v2/icon_training.png" alt="" width="180" height="180" />
+			<h2>Training</h2>
+			<p>
+				MikroTik training sessions are organized and provided by MikroTik Training Centers at various locations around the World. They are attended by network engineers, integrators and managers, who would like to learn about routing and managing wired and wireless networks using MikroTik RouterOS.
+			</p>
+		</div>
+		<a href="/training" class="button small radius expand">Find out more</a>
+	</div>
+	<div class="medium-4 columns">
+		<div data-equalizer-watch="" style="height: 490px;">
+			<img src="//i.mt.lv/img/mt/v2/icon_trainers.png" alt="" width="180" height="180" />
+			<h2>Trainers &amp; Academies</h2>
+			<p>
+				MikroTik Academies are educational institutions such as universities, technical schools, colleges, vocational schools, and other educational institutions offering semester time based Internet networking courses for their academic students using MikroTik RouterOS as a learning tool.
+			</p>
+		</div>
+		<a href="/training/centers" class="button small radius expand">Open the map</a>
+	</div>
+	<div class="medium-4 columns">
+		<div data-equalizer-watch="" style="height: 490px;">
+			<img src="//i.mt.lv/img/mt/v2/icon_graduation.png" alt="" width="180" height="180" />
+			<h2>Graduation</h2>
+			<p>
+				Every year there are around <b>2000 - 3000</b> graduates who have successfully completed a MikroTik courses. Our certificates are recognized world wide and stand for good knowledge about network administration, using RouterBOARD and RouterOS.
+			</p>
+		</div>
+		<a href="/training/history/" class="button small radius expand">Training history</a>
+	</div>
+</div>
+
+
+<div class="closest_training_wrap" data-parallax="scroll" data-speed="0.6" data-z-index="0" data-image-src="//i.mt.lv/img/mt/v2/bg_training.jpg">
+	<div class="row">
+		<div class="medium-9 columns">
+			<h2>UPCOMING TRAINING CLASSES</h2>
+			<ul class="tabs" data-tab="" role="tablist">
+				<li class="tab-title active-def active" role="presentational">
+					<a href="#panel-1" role="tab" controls="panel-1" aria-selected="true" tabindex="0">North America</a>
+				</li>
+				<li class="tab-title" role="presentational">
+					<a href="#panel-2" role="tab" controls="panel-2" aria-selected="false">Latin America</a>
+				</li>
+				<li class="tab-title" role="presentational">
+					<a href="#panel-3" role="tab" controls="panel-3" aria-selected="false">Africa</a>
+				</li>
+				<li class="tab-title" role="presentational">
+					<a href="#panel-4" role="tab" controls="panel-4" aria-selected="false">Asia</a>
+				</li>
+				<li class="tab-title" role="presentational">
+					<a href="#panel-5" role="tab" controls="panel-5" aria-selected="false">Oceania</a>
+				</li>
+				<li class="tab-title" role="presentational">
+					<a href="#panel-6" role="tab" controls="panel-6" aria-selected="false">Europe</a>
+				</li>
+			</ul>
+			<div class="tabs-content"><section role="tabpanel" class="content" id="panel-2" aria-hidden="true"><ul><li><a href="https://www.entelco.com.br/curso-mikrotik-mtcna-on-line" target="_blank">December 07 - 10, Brazil, Sao Paulo, ENTELCO (MTCNA), Portuguese</a></li><li><a href="http://www.winex.com.py/cursos-oficiales/mtcna/" target="_blank">December 10 - 12, Paraguay, Asuncion, Winex (On-line en Vivo y Presencial) (MTCNA), Spanish</a></li><li><a href="https://tikacademy.com/cursos-mikrotik/" target="_blank">December 10 - 12, Colombia, Cucuta, TikAcademy-presencial (MTCNA), Spanish</a></li><li><a href="https://www.mikrotiklabs.com/certificacion-mtcna" target="_blank">December 11 - 13, Dominican Republic, Santo Domingo, Cano Academy (MTCNA), Spanish</a></li><li><a href="https://contracttreinamentos.com.br/cursos/online/" target="_blank">December 12 - 13, Brazil, Belo Horizonte, CONTRACT TI - Online Ao VIVO (MTCTCE), Portuguese</a></li></ul></section><section role="tabpanel" class="content" id="panel-3" aria-hidden="true"><ul><li><a href="http://www.mikrotik.com" target="_blank">December 08 - 12, Cameroon, Yaounde, INFOGENIE (MTCNA), French</a></li><li><a href="http://WWW.OBMILNETWORKS.COM.NG" target="_blank">December 08 - 12, Nigeria, Lagos, Obmil Networks (MTCNA, MTCWE), English</a></li><li><a href="http://WWW.OBMILNETWORKS.COM.NG" target="_blank">December 08 - 12, Nigeria, Lagos, Obmil Networks (MTCNA, MTCWE), English</a></li><li><a href="https://skolakresourcesltd.net" target="_blank">December 08 - 11, Nigeria, kaduna, SKOLAK RESOURCES LTD (Introduction, MTCNA), English</a></li><li><a href="http://pdsng.com/mikrotik-training/" target="_blank">December 09 - 11, Nigeria, Lagos, PDS Nigeria (MTCNA), English</a></li></ul></section><section role="tabpanel" class="content" id="panel-4" aria-hidden="true"><ul><li><a href="http://wavefiber.in" target="_blank">December 04 - 06, India, Delhi, Wave Fiber (Introduction, MTCNA), English</a></li><li><a href="http://semarang.idn.id" target="_blank">December 04 - 06, Indonesia, Semarang, IDN Semarang (MTCNA), Bahasa indonesia</a></li><li><a href="http://indonetworkers.com/training" target="_blank">December 04 - 06, Indonesia, Padang, Indonetworkers.com (MTCNA), Bahasa indonesia</a></li><li><a href="http://tsoftit.com" target="_blank">December 04 - 05, Bangladesh, Dhaka, Titas Kumer Sarker (MTCRE), Bengali</a></li><li><a href="http://wavefiber.in" target="_blank">December 07 - 09, India, Delhi, Wave Fiber (Introduction, MTCWE), English</a></li></ul></section><section role="tabpanel" class="content" id="panel-6" aria-hidden="true"><ul><li><a href="https://cursos-mikrotik.com/" target="_blank">December 03 - 05, Spain, Castello de la Plana, AKIWIFI - Santiago Balaguer García (MTCUME), Spanish</a></li><li><a href="https://aulaf.com/mtcna" target="_blank">December 03 - 05, Austria, Vienna, AULAF (MTCNA), English</a></li><li><a href="https://sekuritim.com/trainings" target="_blank">December 03 - 04, Turkey, Istanbul, Sekuritim Bilişim - Osman Kazdal (MTCRE), Turkish</a></li><li><a href="https://www.mikrotiktrening.rs" target="_blank">December 04 - 06, Serbia, Beograd, NETIS D.O.O (MTCNA), Serbian</a></li><li><a href="http://nethightech.com" target="_blank">December 05 - 07, Portugal, Porto, NetHightech (MTCRE), English</a></li></ul></section><section role="tabpanel" class="content active-def active" id="panel-1" aria-hidden="false"><ul><li><a href="https://wifi-u.com/" target="_blank">December 07 - 11, USA, New York City, WiFi-U (MTCNA, MTCTCE), English</a></li><li><a href="https://mccharlesconsulting.net/?product_cat=na" target="_blank">December 14 - 18, USA, Alabama, McCharles Consulting (MTCNA, MTCRE), English</a></li></ul></section></div>
+		</div>
+		<div class="medium-3 columns text-right">
+			<a href="/training" class="button small radius orange expand">Full training list</a>
+		</div>
+	</div>
+</div>
+
+<div class="swhw_wrap">
+	<div class="row title border-on">
+		<div class="large-12 columns text-center">
+			<h1>HARDWARE &amp; SOFTWARE</h1><div class="h_line"></div>
+		</div>
+	</div>
+	<div class="row text-center swhw" data-equalizer="">
+		<div class="medium-4 columns"><div data-equalizer-watch="" style="height: 332px;">
+			<img src="//i.mt.lv/img/mt/v2/icon_ros.png" alt="" width="50" height="58" />
+			<h2>RouterOS</h2>
+			<p>
+RouterOS is the operating system of RouterBOARD hardware. It has all the necessary features for an ISP - routing, firewall, bandwidth management, wireless access point, backhaul link, hotspot gateway, VPN server and more. Quick and simple installation and an easy to use interface!
+			</p>
+		</div>
+		<a href="/software" class="button small radius expand">Find out more</a>
+		</div>
+		<div class="medium-4 columns"><div data-equalizer-watch="" style="height: 332px;">
+			<img src="//i.mt.lv/img/mt/v2/icon_catalog.png" alt="" width="58" height="58" />
+			<h2>Product catalog</h2>
+			<p>
+MikroTik manufactures routers, switches and wireless systems for every purpose, from small office or home, to carrier ISP networks, there is a device for every purpose. See our product catalog for a complete list of our products and their features.
+			</p>
+		</div>
+		<a href="https://download2.mikrotik.com/catalog_2020.pdf" class="button small radius expand" target="_blank">Open catalog</a>
+		</div>
+		<div class="medium-4 columns">
+			<div data-equalizer-watch="" style="height: 332px;">
+				<img src="//i.mt.lv/img/mt/v2/icon_world.png" alt="" width="55" height="58" />
+				<h2>Distribution</h2>
+				<p>
+To purchase our RouterBOARD, CCR, CRS and other products, and also to receive technical support and pre-sales consultation, please contact our wide network of distributors. See the map to find the nearest one.
+				</p>
+			</div>
+			<a href="/buy" class="button small radius expand">Find out more</a>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<footer>
+		<div class="row">
+			<div class="small-4 medium-2 columns">
+				<h2>MikroTik</h2>
+				<ul>
+					<li><a href="https://mikrotik.com">Home</a></li>
+					<li><a href="https://mikrotik.com/aboutus">About</a></li>
+					<li><a href="https://mikrotik.com/customers">Customers</a></li>
+					<li><a href="https://darbs.mikrotik.com" target="_blank">Jobs</a></li>
+				</ul>
+			</div>
+			<div class="small-4 medium-2 columns">
+				<h2>Support</h2>
+				<ul>
+					<li><a href="https://mikrotik.com/support">Get support</a></li>
+					<li><a href="//forum.mikrotik.com" target="_blank">Forum</a></li>
+					<li><a href="//wiki.mikrotik.com/wiki/Main_Page" target="_blank">Wiki</a></li>
+					<li><a href="mailto:support@mikrotik.com">Send an E-mail</a></li>
+				</ul>
+			</div>
+			<div class="small-4 medium-2 columns">
+				<h2>Other</h2>
+				<ul>
+					<li><a href="//wiki.mikrotik.com/wiki/MikroTik_News" target="_blank">Newsletters</a></li>
+					<li><a href="//mum.mikrotik.com" target="_blank">MUM</a></li>
+					<li><a href="//designs.mikrotik.com" target="_blank">Designs</a></li>
+					<li><a href="//www.youtube.com/channel/UCwFW0ZgZNcmZgAYN_zVxQ-Q" target="_blank">Youtube</a></li>
+					<li><a href="https://mikrotik.com/privacy">Privacy policy</a></li>
+					<li style="display:none"><a href="//english-145815446642.spampoison.com" style="display:none">Click Here</a></li>
+				</ul>
+			</div>
+			<div class="medium-5 columns fl">
+				<h2>Sign up for the newsletter</h2>
+				<p>Please sign up to get notified about new RouterOS version releases and other useful information!</p>
+				<form action="https://mikrotik.com/notifications" method="post">
+					<div class="row collapse">
+						<div class="large-12 columns">
+							<input type="submit" id="email_subscribe_footer" name="email_subscribe_footer" class="button postfix subscr" value="Subscribe!" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 column"><hr /></div>
+			<div class="small-4 medium-6  large-2 columns">
+				<a href="#"><img class="foot_logo" src="https://i.mt.lv/img/mt/v2/logo_white.png" alt="" /></a>
+			</div>
+			<div class="small-8 medium-6 large-2 columns text-right">
+				<ul class="footer_soc">
+					<li>
+						<a href="mailto:sales@mikrotik.com">
+						<img class="rotate_s" src="https://i.mt.lv/img/mt/v2/mail.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://facebook.com/mikrotik" target="_blank">
+						<img class="rotate_s" src="https://i.mt.lv/img/mt/v2/facebook.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/mikrotik_com" target="_blank">
+						<img class="rotate_s" src="https://i.mt.lv/img/mt/v2/twitter.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+            <div class="large-12 column show-for-medium-down"><hr /></div>
+            <div class="large-5 columns text-right">  
+                <span style="padding-right:15px">MikroTik app</span> 
+                <a href="https://itunes.apple.com/app/id1323064830" target="_blank"><img style="width:120px" src="https://i.mt.lv/img/mt/v2/apple_outline.svg" alt="ios" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.mikrotik.android.tikapp" target="_blank"><img style="width:120px" src="https://i.mt.lv/img/mt/v2/android_outline.svg" alt="anroid" /></a>
+            </div>
+		</div>
+	</footer>
+	</div>
+	<div class="smally"></div>
+	<!-- Google Analytics -->
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-51398566-1', 'auto' );
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<!-- End Google Analytics -->
+
+
+<div id="mt_scroll_to_top_button" class="big-screen" style="position: fixed; opacity: 0.5; bottom: 20px; right: 20px; width: 50px; height: 50px; background: rgb(158, 158, 158); cursor: pointer; text-decoration: none; border-radius: 35px; z-index: 9001; transition: all 0.3s ease 0s; display: none;"><div class="fa fa-arrow-up" style="cursor: pointer; color: rgb(255, 255, 255); margin: 0px; position: relative; left: 16px; top: 13px; font-size: 19px; transition: all 0.3s ease 0s;"></div></div></body></html>

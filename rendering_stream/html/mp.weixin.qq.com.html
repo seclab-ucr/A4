@@ -1,0 +1,648 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><link href="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/vue-weui52473f.css" rel="stylesheet" /><link href="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/login/loginpage/loginpage52473f.css" rel="stylesheet" />   <script type="text/javascript">
+if (!window.wx) {
+  window.wx = {};
+}
+
+
+(function() {
+  setTimeout(function() {
+    
+    var div = document.createElement('div');
+    div.id = 'js_ie_notsupport';
+    div.innerHTML='&lt;div class="js_ie_notsupport_inner"&gt;将浏览器更新为QQ浏览器或Chrome浏览器，以获得更好的体验&lt;/div&gt;'
+
+    if (window.attachEvent) {
+      window.attachEvent('onload', checkIEVersion);
+    } else if (window.addEventListener) {
+      window.addEventListener('load', checkIEVersion, false);
+    }
+
+    function checkIEVersion() {
+      var ua = navigator.userAgent;
+      if ((ua.indexOf('compatible') !== -1) &amp;&amp; (ua.indexOf('MSIE') !== -1)) {
+        if (ua.indexOf('rv') === -1) {
+          document.body.appendChild(div);
+        }
+      }
+    }
+  }, 0)
+})()
+
+
+window.wx.announcement = {
+  announcement_list: []
+};
+if (!window.wx.cgiData) {
+  window.wx.cgiData = {};
+}
+
+window.handlerNickname = function(str, escape) { 
+  
+  var ar = ['&amp;', '&amp;amp;', '&lt;', '&amp;lt;', '&gt;', '&amp;gt;', ' ', '&amp;nbsp;', '"', '&amp;quot;', '\'', '&amp;#39;'];
+  
+  var arReverse = ['&amp;#39;', '\'', '&amp;quot;', '"', '&amp;nbsp;', ' ', '&amp;gt;', '&gt;', '&amp;lt;', '&lt;', '&amp;amp;', '&amp;'];
+  var target;
+  if (escape === false) {
+    target = arReverse;
+  } else {
+    target = ar;
+  }
+  var r = str;
+  for (var i = 0; i &lt; target.length; i += 2) {
+    r = r.replace(new RegExp(target[i], 'g'), target[1 + i]);
+  }
+  return r;
+};
+
+window.wx.commonData = {
+  version: "5.0.0",
+  uin: "", 
+  data: {
+    t: "" || "",
+    ticket: "",
+    lang: 'zh_CN',
+    param: ["&amp;token=", '&amp;lang=zh_CN'].join(""),
+    uin: "",
+    uin_base64: "",
+    user_name: "",
+    nick_name: "",  
+    nick_name_decode: handlerNickname("", false),  
+    time: "" || new Date().getTime() / 1000,
+    disable_head_box: "" * 1,
+    open_app_type: '' * 1,
+    serviceType: '' * 1,
+    realnameType: '' * 1, 
+    isPersonVerify: '' * 1, 
+  },
+  path: {
+    video: '', 
+    audio: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/audiojs.swf",
+    uploadify: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/uploadify3a7b38.swf",
+    webuploader: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/webuploader3a7b38.swf",
+    zoom: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/zoom3a7b38.swf",
+    zeroClipboard_new: "https://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/biz_web/ZeroClipboard_new3a7b38.swf",
+    rimgcrop: "https://res.wx.qq.com/mpres/htmledition/images/cut-round49d02c.gif",
+    icon: {
+      account_user: 'https://res.wx.qq.com/mpres/zh_CN/htmledition/weui-desktopSkin-common/svg/default/account-user52472f.svg',
+      account_wxverify: 'https://res.wx.qq.com/mpres/zh_CN/htmledition/weui-desktopSkin-common/svg/default/account-wxverify52472f.svg',
+      account_setting: 'https://res.wx.qq.com/mpres/zh_CN/htmledition/weui-desktopSkin-common/svg/default/account-setting52472f.svg',
+      account_logout: 'https://res.wx.qq.com/mpres/zh_CN/htmledition/weui-desktopSkin-common/svg/default/account-logout52472f.svg'
+    }
+  },
+  mplog: {
+      },
+  acl: {
+
+        "ad_system": {
+      "can_use_sp":       "" * 1       ,
+      "can_use_new_ad": "" * 1     }
+  },
+  ban_func_list: [
+              ],
+  events: {}, 
+  canUseVuest: "",
+  load_done: "" 
+};
+
+window.wx.getSeq = function() { 
+  return new Date().getTime();
+};
+
+delete window.handlerNickname;
+</script><script onerror="wx_loaderror(this)" crossorigin="" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/modules/common/badjs51fdff.js"></script><script onerror="wx_loaderror(this)" crossorigin="" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/modules/base/jserr51fdff.js"></script><style>div#js_ie_notsupport {  position: fixed;  top: 0px;  left: 0px;  text-align: center;  width: 100%;  z-index: 10000;}div.js_ie_notsupport_inner {  background-color: #EAA000;  display: inline-block;  min-width: 280px;  padding: 5px 30px;  color: #FFF;}</style>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />  <meta name="renderer" content="webkit" />  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />  <!-- <meta name="referrer" content="origin-when-crossorigin"> -->  <meta charset="utf-8" />  <link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" />  <link rel="mask-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg" color="#4C4C4C" />  <link rel="apple-touch-icon-precomposed" href="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png" />  <meta name="baidu-site-verification" content="DLH0DxvBfi" />  <meta name="keywords" content="微信公众平台,微信公众平台官方网站,公众号注册,微信公众号注册,微信订阅号注册,微信公众号申请,微信服务号申请,微信订阅号申请,微信企业号申请,微信服务号注册,微信企业号注册,订阅号注册,公众号申请,服务号申请,订阅号申请,企业号申请,服务号注册,企业号注册,微信" />  <meta name="description" content="微信公众平台，给个人、企业和组织提供业务服务与用户管理能力的全新服务平台。" />  <script type="text/javascript">
+  //上报测速 --初始点
+  window._points = [+new Date()];
+
+  //上报测速 --js加载完成点,通过编译工具加在seajs.use回调中
+  function wx_main(mod) {
+    window._points &amp;&amp; (window._points[3] = +new Date());
+  };
+
+  window.wx.uin = "" || "0";
+
+  //如果cdn挂了资源拉不到 触发此上报
+  window.wx_loaderror = function(ele) {
+    var _img = new Image();
+    var key = 63;
+    if (ele &amp;&amp; ele.tagName &amp;&amp; ele.tagName.toLowerCase() == "script") {
+      key = 64;
+      //js资源挂了页面报到特殊地方
+      if (typeof BJ_REPORT != "undefined") {
+        BJ_REPORT.destory &amp;&amp; BJ_REPORT.destory();
+      }
+    }
+    if (typeof BJ_REPORT != "undefined") {
+      _img.src = "https://badjs.weixinbridge.com/badjs?id=" + BJ_REPORT.IDS.LINK + "&amp;uin=" + (wx &amp;&amp; wx.uin) + "&amp;msg=" + encodeURIComponent("link_error:" + (ele &amp;&amp; (ele.href || ele.src))) + "|link&amp;from=" + encodeURIComponent(location.href) + "&amp;level=4&amp;_t=" + (+new Date);
+    }
+    var key_img = new Image();
+    key_img.src = "/misc/jslog?id=" + key + "&amp;content=" + encodeURIComponent(ele &amp;&amp; (ele.href || ele.src)) + "&amp;level=error";
+
+    if (typeof WX_BJ_REPORT != "undefined" &amp;&amp; WX_BJ_REPORT.BadJs &amp;&amp; typeof WX_BJ_REPORT.BadJs.report == "function") {
+      if (ele &amp;&amp; ele.tagName &amp;&amp; ele.tagName.toLowerCase() == "script") {
+        WX_BJ_REPORT.BadJs.report("jsLoadedError", ele.href || ele.src, { mid: "mpResourceMonitor" })
+      } else {
+        WX_BJ_REPORT.BadJs.report("cssLoadedError", ele.href || ele.src, { mid: "mpResourceMonitor" })
+      }
+    }
+  };
+  </script>  <title>微信公众平台</title>  <link rel="stylesheet" href="https://res.wx.qq.com/mpres/zh_CN/htmledition/comm_htmledition/style/page/page_login4d6140.css" />  <link rel="stylesheet" href="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/login/loginpage/style/loginpage4daeaf.css" /></head><body class="zh_CN">  <div id="app" style="visibility: visible;"><div class="weui-toptips weui-toptips_success" style="display: none;"><div class="weui-toptips__inner">
+      
+    </div></div> <div id="header" class="mp-head"><div class="weui-desktop-head"><div class="weui-desktop-head__inner"><div class="weui-desktop-layout"><div class="weui-desktop-layout__side"><h1 class="weui-desktop-logo"><a href="/" title="微信公众平台">微信公众平台</a></h1></div> <div class="weui-desktop-layout__extra"><div class="weui-desktop-head-helper"><a href="/cgi-bin/registermidpage?action=index&amp;lang=zh_CN" class="weui-desktop-regist-access">立即注册</a> <div class="weui-desktop-lang"><div class="weui-desktop-lang__switch">                    简体中文                  </div> <ul class="weui-desktop-lang__list"><li class="weui-desktop-lang__item"><div><label class="weui-desktop-form__check-label" name="user-lang"><input type="radio" class="weui-desktop-form__radio" value="zh_CN" /> <i class="weui-desktop-icon-radio"></i> <span class="weui-desktop-form__check-content">简体中文</span></label><label class="weui-desktop-form__check-label" name="user-lang"><input type="radio" class="weui-desktop-form__radio" value="en_US" /> <i class="weui-desktop-icon-radio"></i> <span class="weui-desktop-form__check-content">English</span></label></div></li></ul></div></div></div></div></div></div> <div class="banner"><div class="inner wrp"><div class="login_frame input_login"><div class="login__type__container login__type__container__account" style="display: none;"><a href="javascript:;" class="login__type__container__select-type login__type__container__select-type__scan"></a> <div class="weui-desktop-global-mod"><div class="weui-desktop-global__info"><h4>登录</h4></div></div> <!----> <form autocomplete="on" class="login_form"><div class="login_input_panel"><div class="login_input"><div class="weui-desktop-form__input-area"><span class="weui-desktop-form__input-wrp"><!----> <!----> <!----> <!----> <!----> <input type="text" name="account" placeholder="邮箱/微信号/QQ号" autocomplete="on" class="weui-desktop-form__input" /> <!----></span> <!----> <!----></div></div> <div class="login_input"><div class="weui-desktop-form__input-area"><span class="weui-desktop-form__input-wrp"><!----> <!----> <!----> <!----> <!----> <input type="password" name="password" placeholder="密码" autocomplete="on" class="weui-desktop-form__input" /> <!----></span> <!----> <!----></div></div></div> <div class="verifycode" style="display: none;"><div class="weui-desktop-form__input-area"><span class="weui-desktop-form__input-wrp"><!----> <!----> <!----> <!----> <!----> <input type="text" name="" placeholder="" wrapper-class="" autocomplete="off" class="weui-desktop-form__input" /> <!----></span> <!----> <!----></div> <img src="" /> <a href="javascript:;">换一张</a></div> <div class="login_help_panel"><label class="frm_checkbox_label"><i class="icon_checkbox"></i> <input type="checkbox" class="frm_checkbox" value="false" />记住帐号                  </label> <a href="/cgi-bin/readtemplate?t=forgetpwd/index_tmpl" class="login_forget_pwd">找回帐号或密码</a></div> <div class="login_btn_panel"><a title="点击登录" href="javascript:" class="btn_login">登录</a></div></form></div> <div class="login__type__container login__type__container__scan"><a href="javascript:;" class="login__type__container__select-type">使用帐号登录</a> <div class="weui-desktop-global-mod"><div class="weui-desktop-global__info"><h4>登录</h4></div></div> <img src="/cgi-bin/scanloginqrcode?action=getqrcode&amp;random=1606992206231" class="login__type__container__scan__qrcode" style="visibility: visible;" /> <div class="login__type__container__scan__info"><div class="login__type__container__scan__info__inner"><p class="login__type__container__scan__info__desc">微信扫一扫，选择该微信下的</p> <p class="login__type__container__scan__info__desc">公众平台帐号登录</p></div></div></div></div> <!----></div></div></div> <div id="body" class="mp-body page_login"><div class="page_login_inner"><div class="qrcode_panel"><dl class="qrcode_panel_main" style="display: none;"><dt><img src="https://res.wx.qq.com/mpres/htmledition/images/mp_qrcode49d02c.gif" /></dt> <dd>扫描并关注<br />微信公众平台</dd></dl> <p class="qrcode_panel_extend_info">微信公众平台</p></div> <dl class="notices_box"><dt><i class="icon_login speaker"></i>系统公告          </dt> <dd><i>●</i> <a href="/cgi-bin/announce?action=getannouncement&amp;announce_id=11606615528668np&amp;version=&amp;lang=zh_CN" target="_blank" class="notices_title">              微信公众平台“瑞雪计划”软色情治理行动阶段情况公告            </a> <span class="label_new"></span></dd> <dd><i>●</i> <a href="/cgi-bin/announce?action=getannouncement&amp;announce_id=116055480914PF4S&amp;version=&amp;lang=zh_CN" target="_blank" class="notices_title">              微信公众平台进一步加强 “自媒体”专项治理的公告            </a> <span class="label_new"></span></dd> <dd class="extra"><a href="/cgi-bin/announce?action=getannouncementlist&amp;lang=zh_CN" target="_blank">              查看更多              <i class="icon_arrow"></i></a></dd></dl> <div class="mp_kind_mod"><div class="mp_kind_mod_hd"><h3>帐号分类</h3></div> <div class="mp_kind_mod_bd group"><div class="mp_kind_wrp"><div class="mp_kind_box"><dl class="mp_kind"><dt class="name"><span class="icon_mp_kind service"></span>服务号</dt> <dd>给企业和组织提供更强大的业务服务与用户管理能力，帮助企业快速实现全新的公众号服务平台。</dd></dl> <div class="mp_option_box"><a href="https://kf.qq.com/touch/scene_faq.html?scene_id=kf3386" target="_blank" class="btn btn_primary">查看详情</a> <div class="mp_option_links"><a href="https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html" target="_blank">开发文档</a> |                                        <a href="https://mp.weixin.qq.com/mp/opshowpage?action=newoplaw&amp;lang=zh_CN#t3-1" target="_blank">运营规范</a></div></div></div></div> <div class="mp_kind_wrp"><div class="mp_kind_box"><dl class="mp_kind"><dt class="name"><span class="icon_mp_kind subscribe"></span>订阅号</dt> <dd>为媒体和个人提供一种新的信息传播方式，构建与读者之间更好的沟通与管理模式。</dd></dl> <div class="mp_option_box"><a href="https://kf.qq.com/faq/120911VrYVrA15091832Qzqq.html?scene_id=kf3384" target="_blank" class="btn btn_primary">查看详情</a> <div class="mp_option_links"><a href="https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html" target="_blank">开发文档</a> |                                        <a href="https://mp.weixin.qq.com/mp/opshowpage?action=newoplaw&amp;lang=zh_CN#t3-1" target="_blank">运营规范</a></div></div></div></div> <div class="mp_kind_wrp"><div class="mp_kind_box"><dl class="mp_kind"><dt class="name"><span class="icon_mp_kind app"></span>小程序</dt> <dd>一种新的开放能力，可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</dd></dl> <div class="mp_option_box"><a href="/cgi-bin/wx" target="_blank" class="btn btn_primary">查看详情</a> <div class="mp_option_links"><a href="https://developers.weixin.qq.com/miniprogram/design/index.html" target="_blank">设计</a> |                    <a href="https://developers.weixin.qq.com/miniprogram/product/index.html" target="_blank">运营</a> |                                        <a href="http://developers.weixin.qq.com/" target="_blank">社区</a></div> <div class="mp_option_links" style="margin-top: 10px;"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework" target="_blank">小程序开发文档</a> |                    <a href="https://developers.weixin.qq.com/minigame/dev/guide/" target="_blank">小游戏开发文档</a></div></div></div></div></div></div> <div class="full_width_mod enterprise"><a href="https://work.weixin.qq.com/?from=mp_home" target="_blank" class="mp_kind_btn_block weui-desktop-layout"><span class="weui-desktop-vm_default"><span class="icon_mp_kind enterprise"></span></span> <span class="weui-desktop-vm_primary"><p class="name enterprise">                企业微信                <span class="weui-desktop-tips">原企业号</span></p> <p class="weui-desktop-tips">企业的专业办公管理工具。与微信一致的沟通体验，提供丰富免费的办公应用，并与微信消息、小程序、微信支付等互通，助力企业高效办公和管理。</p></span></a></div></div></div></div>  <div class="mp-foot" id="footer">    <div class="weui-desktop-foot">      <div class="weui-desktop-foot__info">        <p class="weui-desktop-links weui-desktop-link-group weui-desktop-link-group_split">                <a class="weui-desktop-link" href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>        <a class="weui-desktop-link" href="/cgi-bin/announce?action=getannouncement&amp;key=1503979103&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank">服务协议</a>        <a class="weui-desktop-link" href="/mp/opshowpage?action=main&amp;lang=zh_CN&amp;token=" target="_blank">运营中心</a>        <a class="weui-desktop-link" href="/cgi-bin/opshowpage?action=dispelinfo&amp;lang=zh_CN&amp;begin=1&amp;count=9" target="_blank">辟谣中心</a>        <a class="weui-desktop-link" href="http://kf.qq.com/product/weixinmp.html" target="_blank">腾讯客服</a>                                        <a class="weui-desktop-link" href="/acct/infringementlogin?action=getkey_brand&amp;lang=zh_CN" target="_blank">侵权投诉</a>                                </p>      </div>      <div class="weui-desktop-foot__extra">                <p class="weui-desktop-link">Copyright © 2012-2020 Tencent. All Rights Reserved.</p>              </div>    </div></div><script type="text/javascript">
+    
+    window._points&amp;&amp;(window._points[2]=+new Date());
+    
+    (function() {
+      
+      var eleHeadBoxAccountNum = document.getElementById('headBoxAccountNum')
+      if (eleHeadBoxAccountNum) {
+        var headBoxAccountNum = parseInt(document.getElementById('headBoxAccountNum').dataset.notify)
+        if (headBoxAccountNum) {
+          eleHeadBoxAccountNum.style.display = 'block'
+          eleHeadBoxAccountNum.innerHTML = headBoxAccountNum &gt; 99 ? '99+' : headBoxAccountNum
+        }
+      }
+    })();
+</script>  <!---->  <script type="text/javascript">
+    window.PAGE_MID = "mmbizweb2:login/loginpage/loginpage.html"; //首页比较特殊 手工维护mid
+  </script>  <script onerror="wx_loaderror(this)" crossorigin="" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition//3rd/vue/vue.2.6.10492dbc.js"></script><script type="text/javascript">
+(function() {
+  var isDev = false; 
+  Vue.config.devtools = isDev;
+  Vue.config.silent = !isDev;
+  Vue.config.performance = isDev;
+  Vue.config.productionTip = isDev;
+  Vue.config.errorHandler = function(err, vm, info) {
+    console.error(err);
+    if (typeof WX_BJ_REPORT != "undefined" &amp;&amp; WX_BJ_REPORT.BadJs &amp;&amp; typeof WX_BJ_REPORT.BadJs.onError === 'function') {
+      if (info) {
+        err._info = "[vue:" + JSON.stringify(info) + "]" + (err._info || "");
+      }
+      WX_BJ_REPORT.BadJs.onError(err);
+    }
+  };
+})();
+</script><script type="text/javascript">
+  (function () {
+    
+    var hostnameMap = {
+      'mp.weixin.qq.com': 1,
+      'open.weixin.qq.com': 2,
+      'developers.weixin.qq.com': 3,
+      'mp.weixinbridge.com': 4
+    };
+
+    
+    var ajaxWhiteList = {
+      
+      
+      
+      
+      5: {
+        reg: /^https?:\/\/mp\.weixin\.qq\.com\/cgi-bin\/safeqrcode((\?|&amp;)[^=]*?=[^&amp;]*?)*?(\?|&amp;)action=ask/, 
+        times: 0
+      }
+    };
+
+    
+    if (!performance || !performance.getEntries) return;
+
+    
+    var hasReported = false;
+
+    
+    var reportResLoadTime = function () {
+      
+      if (hasReported) return;
+
+      
+      var notSupport = false;
+
+      
+      var ajaxEntries = [];
+
+      
+      var entries = performance.getEntries().map(function (entry) {
+        if (typeof entry !== 'object') {
+          notSupport = true;
+        } else if (entry.entryType === undefined) {
+          notSupport = true;
+        } else if (
+          entry.entryType !== 'navigation' &amp;&amp;
+          entry.entryType !== 'resource'
+        ) {
+          
+          return null;
+        } else if (entry.initiatorType === undefined) {
+          notSupport = true;
+        } else if (entry.initiatorType === 'xmlhttprequest') {
+          
+          if (entry.name === undefined || entry.duration === undefined) {
+            notSupport = true;
+          } else {
+            for (var scene in ajaxWhiteList) {
+              if (Object.prototype.hasOwnProperty.call(ajaxWhiteList, scene)) {
+                var ajaxItem = ajaxWhiteList[scene];
+                if (ajaxItem.times &lt; 10 &amp;&amp; ajaxItem.reg.test(entry.name)) {
+                  ajaxEntries.push({
+                    scene: scene,
+                    protocol: entry.nextHopProtocol,
+                    is_https: isHttps(entry),
+                    time: entry.duration
+                  });
+                  ajaxItem.times++;
+                }
+              }
+            }
+          }
+          return null;
+        }
+        return entry;
+      });
+
+      
+      if (notSupport) return;
+
+      
+      var responseEnd = 0;
+      entries.forEach(function (entry) {
+        if (entry !== null) {
+          if (entry.responseEnd === undefined) {
+            notSupport = true;
+          } else if (entry.responseEnd &gt; responseEnd) {
+            responseEnd = entry.responseEnd;
+          }
+        }
+      });
+
+      
+      if (notSupport) return;
+
+      
+      var actionMatch = location.search.match(/((\?)|(\&amp;))action=([^&amp;]*)/);
+      var data = {
+        domain: hostnameMap[location.hostname] || '',
+        
+        cginame: location.pathname,
+        action: actionMatch ? actionMatch[4] : '',
+        protocol: entries[0].nextHopProtocol,
+        is_https: isHttps(entries[0]),
+        
+        first_print_time: responseEnd,
+        stat_list: ajaxEntries
+      };
+      var img = new Image();
+      img.src = 'https://mp.weixin.qq.com/mp/timereport?data=' + JSON.stringify(data);
+      hasReported = true;
+    };
+
+    
+    window.addEventListener('beforeunload', reportResLoadTime, false);
+    window.addEventListener('unload', reportResLoadTime, false);
+
+    function isHttps(entry) {
+      if (/^https/.test(entry.name)) return 1;
+      else return 0;
+    }
+  })();
+</script><script type="text/javascript">
+if (typeof WX_BJ_REPORT != "undefined" &amp;&amp; WX_BJ_REPORT.BadJs) {
+  if (typeof PAGE_MID == "undefined") {
+    window.PAGE_MID = "";
+  }
+  WX_BJ_REPORT.BadJs.init(wx.uin, PAGE_MID).hook(function(data) {
+    data.cmdb_module = 'mmbizweb'; 
+    var file = data.file || data.key;
+    if (/^https\:\/\/(mp\.weixin\.qq\.com|res\.wx\.qq\.com)/.test(file) == false) {
+      return false;
+    }
+    
+    if (/\.html$/i.test(data.mid) || !/monitor/i.test(data.mid)) {
+      BJ_REPORT.report(data); 
+    }
+  });
+  
+  
+  
+  
+  
+  WX_BJ_REPORT.TryJs.run();
+  WX_BJ_REPORT.BadJs.mark({ tryjs: 1 }); 
+  Vue.config.errorHandler = function(err, vm, info) {
+    console.error(err);
+    if (info) {
+      err._info = "[vue:" + JSON.stringify(info) + "]" + (err._info || "");
+    }
+    WX_BJ_REPORT.BadJs.onError(err);
+  };
+}
+
+function getico(i) {
+  var _img = new Image(1, 1);
+  _img.src = location.protocol + "//" + location.host + "/misc/getico" + "?location=" + (i || -1) + "&amp;rand=" + Math.random() + window.wx.commonData.data.param;
+};
+window._points &amp;&amp; (window._points[4] = +new Date()); 
+getico('');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function() {
+  
+  function getLinkInfo(target, params) {
+    var query = {};
+    var search = target.search;
+    var hash = target.hash;
+    var baseQuery = {
+      token: '',
+      lang: 'zh_CN'
+    };
+
+    if (search) {
+      search = search.slice(1);
+      search = search.split('&amp;');
+
+      if (search.length) {
+        for (var i = 0; i &lt; search.length; i++) {
+          var idx = search[i].indexOf('=');
+          query[search[i].slice(0, idx)] = search[i].slice(idx + 1);
+        }
+      }
+
+    }
+
+    
+    if (params) {
+      for (var key in params) {
+        if (!query[key] &amp;&amp; params.hasOwnProperty(key)) {
+          query[key] = params[key];
+        }
+      }
+    }
+
+    
+    for (var key in baseQuery) {
+      if (!query[key] &amp;&amp; baseQuery.hasOwnProperty(key)) {
+        query[key] = baseQuery[key];
+      }
+    }
+
+    var newSearch = [];
+    for (var queryKey in query) {
+      if (query.hasOwnProperty(queryKey)) {
+        newSearch.push(queryKey + '=' + query[queryKey]);
+      }
+    }
+    newSearch = '?' + newSearch.join('&amp;');
+    return {
+      hash: hash,
+      search: newSearch
+    };
+  }
+
+  
+  window.reloadPage = function(force) {
+    
+    window.postMessage({ type: "FROM_VUE_AUTO_EXTENSION", op: 'StopRecord' }, "*");
+
+    
+    if (!window.___VAT_isReplay) {
+      window.location.reload(force);
+    }
+  }
+
+  
+  window.openUrl = function(link, params, newTab) {
+    if (this.commit) {
+      this.commit('vat/__set_state', {
+        location: link
+      })
+    }
+
+    
+    window.postMessage({ type: "FROM_VUE_AUTO_EXTENSION", op: 'StopRecord' }, "*");
+
+    
+    if (!window.___VAT_isReplay) {
+      var target = document.createElement('a');
+      target.href = link;
+      var linkInfo = getLinkInfo(target, params);
+      var idx = link.indexOf('?') !== -1 ? link.indexOf('?') : (link.indexOf('#') !== -1 ? link.indexOf('#') : link.length);
+      var url = link.slice(0, idx);
+      url += linkInfo.search + linkInfo.hash;
+      if (!newTab) {
+        location.href = url;
+      } else {
+        window.open(url);
+      }
+    }
+  };
+
+  
+  document.body.addEventListener('click', function(e) {
+
+    var target = e.target;
+    
+    while (target &amp;&amp; target.tagName !== 'A' &amp;&amp; target.tagName !== 'BODY') {
+      target = target.parentNode;
+    }
+
+    
+    if (
+      !target ||
+      !target.href ||
+      target.href.indexOf('javascript') === 0 ||
+      (target.host !== location.host &amp;&amp; target.getAttribute('href').indexOf('/') !== 0)
+    ) {
+      return;
+    }
+
+    var linkInfo = getLinkInfo(target);
+    var idx = target.href.indexOf('?') !== -1 ? target.href.indexOf('?') : (target.href.indexOf('#') !== -1 ? target.href.indexOf('#') : target.href.length);
+    var url = target.href.slice(0, idx);
+
+    target.href = url + linkInfo.search + linkInfo.hash;
+  });
+  
+  document.body.addEventListener('contextmenu', function(e) {
+
+    var target = e.target;
+    
+    while (target &amp;&amp; target.tagName !== 'A' &amp;&amp; target.tagName !== 'BODY') {
+      target = target.parentNode;
+    }
+
+    
+    if (
+      !target ||
+      !target.href ||
+      target.href.indexOf('javascript') === 0 ||
+      (target.host !== location.host &amp;&amp; target.getAttribute('href').indexOf('/') !== 0)
+    ) {
+      return;
+    }
+
+    var linkInfo = getLinkInfo(target);
+    var idx = target.href.indexOf('?') !== -1 ? target.href.indexOf('?') : (target.href.indexOf('#') !== -1 ? target.href.indexOf('#') : target.href.length);
+    var url = target.href.slice(0, idx);
+
+    target.href = url + linkInfo.search + linkInfo.hash;
+  });
+
+})();
+
+
+if (document.querySelectorAll) {
+  var jsNavItems = document.querySelectorAll('.js_nav_item');
+
+  for (var i = 0; i &lt; jsNavItems.length; i++) {
+    jsNavItems[i].addEventListener('click', function(e) {
+      try {
+        var itemId = e.currentTarget.getAttribute('data-id');
+        var itemNew = e.currentTarget.getAttribute('data-new');
+        var itemHref = e.currentTarget.getAttribute('href');
+
+        if (!itemHref) { 
+          var tmpNode = e.currentTarget.parentNode;
+          while (tmpNode &amp;&amp; !/^BODY$/i.test(tmpNode.nodeName)) { 
+            if (/^A$/i.test(tmpNode.nodeName)) { 
+              itemHref = tmpNode.getAttribute('href');
+              break;
+            }
+            tmpNode = tmpNode.parentNode;
+          }
+          if (!itemHref) { 
+            return;
+          }
+        }
+
+        if (parseInt(itemNew) == 1) {
+          nativeAjax.post('/misc/navoperation', {
+            action: 'click',
+            id: itemId,
+            token: ''
+          }, function(resp) {
+            console.log(resp);
+
+            
+            window.location.href = itemHref;
+          })
+        }
+
+        
+        if (itemHref != null &amp;&amp; parseInt(itemNew) == 1) {
+          e.preventDefault();
+          return false;
+        }
+
+      } catch (e) {
+        
+        console.log('cannot remove red dot');
+      }
+
+    }, true);
+  }
+}
+
+var nativeAjax = {};
+nativeAjax.x = function() {
+  if (typeof XMLHttpRequest !== 'undefined') {
+    return new XMLHttpRequest();
+  }
+  var versions = [
+    "MSXML2.XmlHttp.6.0",
+    "MSXML2.XmlHttp.5.0",
+    "MSXML2.XmlHttp.4.0",
+    "MSXML2.XmlHttp.3.0",
+    "MSXML2.XmlHttp.2.0",
+    "Microsoft.XmlHttp"
+  ];
+
+  var xhr;
+  for (var i = 0; i &lt; versions.length; i++) {
+    try {
+      xhr = new ActiveXObject(versions[i]);
+      break;
+    } catch (e) {}
+  }
+  return xhr;
+};
+
+nativeAjax.send = function(url, callback, method, data, async) {
+  if (async ===undefined) {
+    async = true;
+  }
+  var x = nativeAjax.x();
+  x.open(method, url, async);
+  x.onreadystatechange = function() {
+    if (x.readyState == 4) {
+      callback(x.responseText)
+    }
+  };
+  if (method == 'POST') {
+    x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  }
+  x.send(data)
+};
+
+nativeAjax.get = function(url, data, callback, async) {
+  var query = [];
+  for (var key in data) {
+    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+  }
+  nativeAjax.send(url + (query.length ? '?' + query.join('&amp;') : ''), callback, 'GET', null, async)
+};
+
+nativeAjax.post = function(url, data, callback, async) {
+  var query = [];
+  for (var key in data) {
+    query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+  }
+  nativeAjax.send(url, callback, 'POST', query.join('&amp;'), async)
+};
+</script>  <script type="text/javascript">
+if (!window.CGI_DATA) {
+window.CGI_DATA = {};
+}
+
+window.CGI_DATA['pages/login/loginpage'] = {
+currentLang: 'zh_CN',
+aSource: '',
+toUrl: '',
+redirectUrl: '' || ''
+}
+</script>  <script main="" type="text/javascript">
+    var aSource = '',
+      toUrl = '';
+
+    // if (location.host.indexOf('dev') &lt; 0) {
+    //     if (location.protocol.indexOf('https') &lt; 0) {
+    //         location.href = location.href.replace(/http/i, 'https');
+    //     }
+    // }
+
+    window.wx.cgiData.currentLang = "zh_CN";
+    window.wx.cgiData.redirectUrl = '' || '';
+    // ; 
+  </script>  <script crossorigin="" type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/3rd/tajs/tajs492dbc.js"></script><script type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/vue-weui52473f.js"></script><script type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/threerd52473f.js"></script><script type="text/javascript" src="https://res.wx.qq.com/mpres/zh_CN/htmledition/pages/login/loginpage/loginpage52473f.js"></script><div class="weui-toptips weui-toptips_error" style="display: none;"><div class="weui-toptips__inner">
+      
+    </div></div></body></html>

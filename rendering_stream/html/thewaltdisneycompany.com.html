@@ -1,0 +1,412 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" prefix="og: http://ogp.me/ns#"><head>
+    <meta charset="UTF-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script src="//cdn.media.disneyatoz.com/analytics/corp-batch-2/utag.js" type="text/javascript" async=""></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"129fe16bc0",applicationID:"424007197"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="https://thewaltdisneycompany.com/wp/xmlrpc.php" />
+
+    <title>The Walt Disney Company</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.7 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The mission of The Walt Disney Company is to be one of the world's leading producers and providers of entertainment and information." />
+<link rel="canonical" href="https://thewaltdisneycompany.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Walt Disney Company" />
+<meta property="og:description" content="The mission of The Walt Disney Company is to be one of the world's leading producers and providers of entertainment and information." />
+<meta property="og:url" content="https://thewaltdisneycompany.com/" />
+<meta property="og:site_name" content="The Walt Disney Company" />
+<meta property="og:image" content="https://thewaltdisneycompany.com/app/uploads/2020/01/StudioLot_TeamDisney_7-web.jpg" />
+<meta property="og:image:secure_url" content="https://thewaltdisneycompany.com/app/uploads/2020/01/StudioLot_TeamDisney_7-web.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1278" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The mission of The Walt Disney Company is to be one of the world's leading producers and providers of entertainment and information." />
+<meta name="twitter:title" content="The Walt Disney Company" />
+<meta name="twitter:site" content="@WaltDisneyCo" />
+<meta name="twitter:image" content="https://thewaltdisneycompany.com/app/uploads/2020/01/StudioLot_TeamDisney_7-web.jpg" />
+<meta name="twitter:creator" content="@WaltDisneyCo" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://thewaltdisneycompany.com/#website","url":"https://thewaltdisneycompany.com/","name":"The Walt Disney Company","potentialAction":{"@type":"SearchAction","target":"https://thewaltdisneycompany.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thewaltdisneycompany.com/","sameAs":["https://www.youtube.com/user/TheDisneyPost","https://twitter.com/WaltDisneyCo"],"@id":"https://thewaltdisneycompany.com/#organization","name":"The Walt Disney Company","logo":""}</script>
+<meta name="msvalidate.01" content="8E102A636E3CD4571B8212130B2DE936" />
+<meta name="google-site-verification" content="dWSur2NwtMo-7yXh2fRZh2z6-jjO7fb92B8-xVazY-E" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="//fast.fonts.net" />
+<link rel="dns-prefetch" href="//s.w.org" />
+<link rel="dns-prefetch" href="//ddm-twdc-prod.s3.amazonaws.com" />
+<link rel="alternate" type="application/rss+xml" title="The Walt Disney Company » Feed" href="https://thewaltdisneycompany.com/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/thewaltdisneycompany.com\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=2e68f5e2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&amp;&amp;(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&amp;&amp;k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i&lt;j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&amp;&amp;c.supports[j[i]],"flag"!==j[i]&amp;&amp;(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&amp;&amp;c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&amp;&amp;g.twemoji&amp;&amp;(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="https://thewaltdisneycompany.com/wp/wp-includes/js/wp-emoji-release.min.js?ver=2e68f5e2" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="twdc-main-css" href="https://thewaltdisneycompany.com/app/themes/thewaltdisneycompany-theme/assets/dist/css/main-19b91b9b8d.min.css" type="text/css" media="all" />
+<link rel="stylesheet" id="twdc-fonts-css" href="//fast.fonts.net/t/1.css?apiType=css&amp;projectid=1fbe3431-6388-4561-9109-9ba61a25b360&amp;ver=1.1.3" type="text/css" media="all" />
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thewaltdisneycompany.com/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thewaltdisneycompany.com/wp/wp-includes/wlwmanifest.xml" /> 
+<link rel="shortlink" href="https://thewaltdisneycompany.com/" />
+<link rel="icon" href="https://thewaltdisneycompany.com/app/uploads/cropped-512x512-copy5-160x160.png" sizes="32x32" />
+<link rel="icon" href="https://thewaltdisneycompany.com/app/uploads/cropped-512x512-copy5-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://thewaltdisneycompany.com/app/uploads/cropped-512x512-copy5-300x300.png" />
+<meta name="msapplication-TileImage" content="https://thewaltdisneycompany.com/app/uploads/cropped-512x512-copy5-300x300.png" />
+		<style type="text/css" id="wp-custom-css">
+			body.js-show-mobile-nav #disney-tou &gt; div &gt; a { color: #2f2f2f !important; }		</style>
+	<script type="text/javascript" async="" charset="utf-8" id="utag_disney.corp-batch-2_9" src="//cdn.media.disneyatoz.com/analytics/corp-batch-2/utag.9.js?utv=ut4.45.202002120554"></script></head>
+
+<body class="home page-template-default page page-id-223 twdc-body group-blog">
+<div id="page" class="hfeed site">
+    <div class="wrapper">
+        <div class="overlay"></div>
+
+                    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+            <header id="masthead" class="site-header is-home-top slide" role="banner">
+                <div class="inner-container">
+                    <nav class="site-header-nav">
+                        <div class="row center-xs middle-xs">
+                            <div class="menu-button col-xs">
+                                <button type="button" class="button menu-toggle">
+                                    <span>Menu</span>
+                                    <i class="twdc-icon twdc-close"></i>
+                                </button>
+                            </div>
+
+                            <div class="site-branding col-xs col-md-2 col-sm-4">
+                                <a class="site-logo" href="https://thewaltdisneycompany.com/" rel="home">
+                                    <i class="twdc-icon twdc-logo"></i>
+                                </a>
+                            </div><!-- .site-branding -->
+
+                            <div class="col-xs col-md-1 search-button last-md">
+                                <form role="search" id="searchbox" action="">
+                                    <div class="inner-container">
+                                        <label>
+                                            <span class="screen-reader-text">Search for:</span>
+                                            <input type="search" id="searchbox-input" placeholder="What are you looking for?" value="" name="s" title="Search for:" />
+                                            <!-- <i class="twdc-icon twdc-close"  data-switch-off=".search-container"></i> -->
+                                        </label>
+                                        <input type="submit" class="searchbox-submit screen-reader-text" value="Search" />
+                                        <span class="searchbox-icon twdc-icon"></span>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="main-navigation col-xs-12 col-md-5 first-md" role="navigation">
+                                <ul id="menu-primary-left-replacement" class="menu-left nav-menu"><li id="menu-item-4188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4188"><a href="https://thewaltdisneycompany.com/about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-4189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4189"><a href="/about/#leadership">Leadership</a></li>
+	<li id="menu-item-4190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4190"><a href="/about/#our-businesses">Our Businesses</a></li>
+</ul>
+</li>
+<li id="menu-item-4199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4199"><a href="https://thewaltdisneycompany.com/investor-relations/">Investor Relations</a>
+<ul class="sub-menu">
+	<li id="menu-item-4201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4201"><a href="/investor-relations/#events">Events and Presentations</a></li>
+	<li id="menu-item-4203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4203"><a href="/investor-relations/#investor-relations-news">Investor Relations News</a></li>
+	<li id="menu-item-4204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4204"><a href="/investor-relations/#reports">Reports</a></li>
+	<li id="menu-item-4205" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4205"><a href="/investor-relations/#forms">Forms</a></li>
+	<li id="menu-item-4207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4207"><a href="/investor-relations/#corporate-governance">Corporate Governance</a></li>
+	<li id="menu-item-4209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4209"><a href="/investor-relations/#frequently-asked-questions">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li id="menu-item-4210" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4210"><a target="_blank" href="https://jobs.disneycareers.com/">Careers</a></li>
+</ul>                            </div>
+
+                            <div class="main-navigation col-xs-12 col-md-4" role="navigation">
+                                <ul id="menu-primary-right-replacement" class="menu-right nav-menu"><li id="menu-item-17330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17330"><a href="https://thewaltdisneycompany.com/social-responsibility/">Social Responsibility</a>
+<ul class="sub-menu">
+	<li id="menu-item-17320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17320"><a href="https://thewaltdisneycompany.com/childrens-hospitals-wish-granting/">Children’s Hospitals &amp; Wish Granting</a></li>
+	<li id="menu-item-17342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17342"><a href="https://thewaltdisneycompany.com/investments-in-youth/">Investments in Youth</a></li>
+	<li id="menu-item-17322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17322"><a href="https://thewaltdisneycompany.com/charitable-giving/">Charitable Giving</a></li>
+	<li id="menu-item-17323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17323"><a href="https://thewaltdisneycompany.com/volunteering/">Volunteering</a></li>
+	<li id="menu-item-17324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17324"><a href="https://thewaltdisneycompany.com/environmental-sustainability/">Environmental Sustainability</a></li>
+	<li id="menu-item-17325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17325"><a href="https://thewaltdisneycompany.com/disney-conservation/">Disney Conservation</a></li>
+	<li id="menu-item-17326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17326"><a href="https://thewaltdisneycompany.com/responsible-supply-chain/">Supply Chain</a></li>
+	<li id="menu-item-17327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17327"><a href="https://thewaltdisneycompany.com/diversity-inclusion/">Diversity &amp; Inclusion</a></li>
+	<li id="menu-item-17328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17328"><a href="https://thewaltdisneycompany.com/content-products/">Content &amp; Products</a></li>
+	<li id="menu-item-17329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17329"><a href="https://thewaltdisneycompany.com/esg-reporting/">Reporting</a></li>
+</ul>
+</li>
+<li id="menu-item-4223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4223"><a href="https://thewaltdisneycompany.com/news/">News</a></li>
+</ul>                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                
+            </header><!-- #masthead -->
+
+        
+        <div id="content" class="outer-container site-content">
+
+            
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+        
+            <header class="page-hero" style="background-image: url('https://thewaltdisneycompany.com/app/uploads/2020/01/StudioLot_TeamDisney_7-web-1440x959.jpg');">
+                <div class="v-centered">
+                    <div class="copy">
+                        <h1>The Walt Disney Company</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="price-ticker">
+    <iframe allowtransparency="true" marginheight="0" marginwidth="0" class="responsive" id="ExternalWebContentExternalIFrame" src="https://irs.tools.investis.com/Clients/us/the_walt_disney_company2/Ticker/Ticker.aspx?culture=en-US" width="100%" scrolling="no" style="overflow: hidden; height: 30px;"></iframe>
+</div>        <section class="section section__orange-white">
+
+            <h2 class="section-title has-gradient">Recent News</h2>
+            <div class="inner-container">
+
+                <div class="row center-xs news-grid__home">
+
+                                        <div class="col-md-6 col-xs-12 post-middle">
+
+                            
+<article id="post-18486" class="full-click post-18486 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+    
+        <div class="post-thumbnail">
+            <img width="700" height="464" src="https://thewaltdisneycompany.com/app/uploads/2020/11/0_MAIN_ROTR-hero-700x464.jpg" class="attachment-news-image-medium size-news-image-medium wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/11/0_MAIN_ROTR-hero-700x464.jpg 700w, https://thewaltdisneycompany.com/app/uploads/2020/11/0_MAIN_ROTR-hero-240x160.jpg 240w, https://thewaltdisneycompany.com/app/uploads/2020/11/0_MAIN_ROTR-hero-350x232.jpg 350w, https://thewaltdisneycompany.com/app/uploads/2020/11/0_MAIN_ROTR-hero-1050x696.jpg 1050w" sizes="(max-width: 700px) 100vw, 700px" />        </div><!-- .post-thumbnail -->
+
+    
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="posted-on"><a href="https://thewaltdisneycompany.com/disney-parks-receives-industry-honors/" rel="bookmark"><time class="entry-date published updated" datetime="2020-11-19T13:10:43+00:00">November 19, 2020</time></a></span>        </div><!-- .entry-meta -->
+
+        <h2 class="entry-title"><a href="https://thewaltdisneycompany.com/disney-parks-receives-industry-honors/" rel="bookmark">Disney Parks Receives Industry Honors</a></h2>    </header><!-- .entry-header -->
+</article><!-- #post-## -->
+
+                        
+                                        </div><!-- .post-middle -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 first-md">
+
+                            
+<article id="post-18439" class="full-click post-18439 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+    
+        <div class="post-thumbnail">
+            <img width="350" height="232" src="https://thewaltdisneycompany.com/app/uploads/2020/11/00_Tuskegee_Airmen_-_Circa_May_1942_to_Aug_1943-350x232.jpg" class="attachment-news-image-small size-news-image-small wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/11/00_Tuskegee_Airmen_-_Circa_May_1942_to_Aug_1943-350x232.jpg 350w, https://thewaltdisneycompany.com/app/uploads/2020/11/00_Tuskegee_Airmen_-_Circa_May_1942_to_Aug_1943-700x464.jpg 700w, https://thewaltdisneycompany.com/app/uploads/2020/11/00_Tuskegee_Airmen_-_Circa_May_1942_to_Aug_1943-1050x696.jpg 1050w" sizes="(max-width: 350px) 100vw, 350px" />        </div><!-- .post-thumbnail -->
+
+    
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="posted-on"><a href="https://thewaltdisneycompany.com/new-educational-initiative-from-lucasfilm-celebrates-the-tuskegee-airmen/" rel="bookmark"><time class="entry-date published updated" datetime="2020-11-10T08:58:28+00:00">November 10, 2020</time></a></span>        </div><!-- .entry-meta -->
+
+        <h2 class="entry-title"><a href="https://thewaltdisneycompany.com/new-educational-initiative-from-lucasfilm-celebrates-the-tuskegee-airmen/" rel="bookmark">New Educational Initiative from Lucasfilm Celebrates the Tuskegee Airmen</a></h2>    </header><!-- .entry-header -->
+</article><!-- #post-## -->
+
+                        
+                                                    
+<article id="post-18355" class="full-click post-18355 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+    
+        <div class="post-thumbnail">
+            <img width="350" height="232" src="https://thewaltdisneycompany.com/app/uploads/2020/10/1920_the-child-the-mandalorian-350x232.jpg" class="attachment-news-image-small size-news-image-small wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/10/1920_the-child-the-mandalorian-350x232.jpg 350w, https://thewaltdisneycompany.com/app/uploads/2020/10/1920_the-child-the-mandalorian-700x464.jpg 700w, https://thewaltdisneycompany.com/app/uploads/2020/10/1920_the-child-the-mandalorian-1050x696.jpg 1050w" sizes="(max-width: 350px) 100vw, 350px" />        </div><!-- .post-thumbnail -->
+
+    
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="posted-on"><a href="https://thewaltdisneycompany.com/defining-a-new-star-wars-sound-with-the-mandalorian/" rel="bookmark"><time class="entry-date published" datetime="2020-10-30T08:48:45+00:00">October 30, 2020</time><time class="updated" datetime="2020-10-30T08:49:40+00:00">October 30, 2020</time></a></span>        </div><!-- .entry-meta -->
+
+        <h2 class="entry-title"><a href="https://thewaltdisneycompany.com/defining-a-new-star-wars-sound-with-the-mandalorian/" rel="bookmark">Defining a New ‘Star Wars’ Sound with ‘The Mandalorian’</a></h2>    </header><!-- .entry-header -->
+</article><!-- #post-## -->
+
+                                
+                        
+                                        </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+
+                                
+<article id="post-18342" class="full-click post-18342 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+    
+        <div class="post-thumbnail">
+            <img width="350" height="232" src="https://thewaltdisneycompany.com/app/uploads/2020/10/RAYA-ONLINE-USE-First_Look_CG_Final_RGB-350x232.jpg" class="attachment-news-image-small size-news-image-small wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/10/RAYA-ONLINE-USE-First_Look_CG_Final_RGB-350x232.jpg 350w, https://thewaltdisneycompany.com/app/uploads/2020/10/RAYA-ONLINE-USE-First_Look_CG_Final_RGB-700x464.jpg 700w, https://thewaltdisneycompany.com/app/uploads/2020/10/RAYA-ONLINE-USE-First_Look_CG_Final_RGB-1050x696.jpg 1050w" sizes="(max-width: 350px) 100vw, 350px" />        </div><!-- .post-thumbnail -->
+
+    
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="posted-on"><a href="https://thewaltdisneycompany.com/disney-debuts-new-trailer-for-raya-and-the-last-dragon/" rel="bookmark"><time class="entry-date published updated" datetime="2020-10-21T09:35:23+00:00">October 21, 2020</time></a></span>        </div><!-- .entry-meta -->
+
+        <h2 class="entry-title"><a href="https://thewaltdisneycompany.com/disney-debuts-new-trailer-for-raya-and-the-last-dragon/" rel="bookmark">Disney Debuts New Trailer for ‘Raya and the Last Dragon’</a></h2>    </header><!-- .entry-header -->
+</article><!-- #post-## -->
+
+                        
+                                                    
+<article id="post-18330" class="full-click post-18330 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+    
+        <div class="post-thumbnail">
+            <img width="350" height="232" src="https://thewaltdisneycompany.com/app/uploads/2020/10/101420_soul-on-disney-plus_0-350x232.jpg" class="attachment-news-image-small size-news-image-small wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/10/101420_soul-on-disney-plus_0-350x232.jpg 350w, https://thewaltdisneycompany.com/app/uploads/2020/10/101420_soul-on-disney-plus_0-700x464.jpg 700w, https://thewaltdisneycompany.com/app/uploads/2020/10/101420_soul-on-disney-plus_0-1050x696.jpg 1050w" sizes="(max-width: 350px) 100vw, 350px" />        </div><!-- .post-thumbnail -->
+
+    
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="posted-on"><a href="https://thewaltdisneycompany.com/new-trailer-debuts-for-disney-and-pixars-soul-coming-to-disney-on-december-25/" rel="bookmark"><time class="entry-date published updated" datetime="2020-10-14T18:07:20+00:00">October 14, 2020</time></a></span>        </div><!-- .entry-meta -->
+
+        <h2 class="entry-title hide-for-small"><a href="https://thewaltdisneycompany.com/new-trailer-debuts-for-disney-and-pixars-soul-coming-to-disney-on-december-25/" rel="bookmark">New Trailer Debuts for Disney and Pixar’s ‘Soul,’ Coming t…</a></h2><h2 class="entry-title show-for-small"><a href="https://thewaltdisneycompany.com/new-trailer-debuts-for-disney-and-pixars-soul-coming-to-disney-on-december-25/" rel="bookmark">New Trailer Debuts for Disney and Pixar’s ‘Soul,’ Coming to Disney+ on December 25</a></h2>    </header><!-- .entry-header -->
+</article><!-- #post-## -->
+
+                                </div>
+                        
+                    
+                    </div><!-- .news-grid__home -->
+
+                </div><!-- .inner-container -->
+
+        </section><!-- .section__orange-white -->
+
+    
+                <section class="section section__orange-white section__pages">
+                    <div class="inner-container">
+                        <div class="paneled-image pull-right">
+                            <div class="panel-image">
+                                <img width="960" height="540" src="https://thewaltdisneycompany.com/app/uploads/About-Featured-960x540.jpg" class="attachment-panel-image size-panel-image wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/About-Featured-960x540.jpg 960w, https://thewaltdisneycompany.com/app/uploads/About-Featured-722x406.jpg 722w" sizes="(max-width: 960px) 100vw, 960px" />                            </div>
+
+                            <div class="panel">
+                                <h6>About</h6>                                <p>The mission of The Walt Disney Company is to entertain, inform and inspire people around the globe through the power of unparalleled storytelling, reflecting the iconic brands, creative minds and innovative technologies that make ours the world’s premier entertainment company.</p>
+                                <a class="button" href="https://thewaltdisneycompany.com/about/">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- .section -->
+
+            
+                <section class="section section__orange-white section__pages">
+                    <div class="inner-container">
+                        <div class="paneled-image pull-left">
+                            <div class="panel-image">
+                                <img width="960" height="540" src="https://thewaltdisneycompany.com/app/uploads/2020/09/091520_mandalorian-season-two_0-960x540.jpg" class="attachment-panel-image size-panel-image wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/09/091520_mandalorian-season-two_0-960x540.jpg 960w, https://thewaltdisneycompany.com/app/uploads/2020/09/091520_mandalorian-season-two_0-722x406.jpg 722w" sizes="(max-width: 960px) 100vw, 960px" />                            </div>
+
+                            <div class="panel">
+                                <h6>Investor Relations</h6>                                <p>Our commitment to creativity, technology and innovation generates unparalleled experiences that drive long-term value for our shareholders.</p>
+                                <a class="button" href="https://thewaltdisneycompany.com/investor-relations/">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- .section -->
+
+                    <section class="section section__orange-white section__locations">
+            <div class="inner-container">
+                <div class="paneled-image pull-right">
+                                            <div class="panel-image">
+                            <img src="https://thewaltdisneycompany.com/app/uploads/Careers-Featured.jpg" alt="Careers-Featured" />
+                                                    </div>
+                    
+                    <div class="panel">
+                        <h6>Careers</h6>                        <p>Explore a variety of opportunities to start a new chapter in your career at Disney.</p>
+
+                                                    <a href="https://jobs.disneycareers.com/" class="button" target="_blank">View More</a>
+                                            </div>
+                </div>
+            </div>
+        </section><!-- .section -->
+    
+                <section class="section section__pages">
+                    <div class="inner-container">
+                        <div class="paneled-image pull-left">
+                            <div class="panel-image">
+                                <img width="960" height="540" src="https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-960x540.jpg" class="attachment-panel-image size-panel-image wp-post-image" alt="" srcset="https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-960x540.jpg 960w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-614x345.jpg 614w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-768x432.jpg 768w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-1024x576.jpg 1024w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-1200x675.jpg 1200w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-1440x810.jpg 1440w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-250x141.jpg 250w, https://thewaltdisneycompany.com/app/uploads/2020/02/V_HeroBannerImage-722x406.jpg 722w" sizes="(max-width: 960px) 100vw, 960px" />                            </div>
+
+                            <div class="panel">
+                                <h6>Social Responsibility</h6>                                <p>Our approach to corporate social responsibility is built upon the Company’s long and enduring legacy of engagement in our workplaces and communities and our actions to protect the environment.</p>
+<style>.page-hero { background-image:url('/app/uploads/2020/01/StudioLot_TeamDisney_7-web.jpg') !important; }</style>
+                                <a class="button" href="https://thewaltdisneycompany.com/social-responsibility/">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section><!-- .section -->
+
+            
+    </main>
+    <!-- #main -->
+</div><!-- #primary -->
+
+
+
+        </div><!-- #content -->
+    </div><!-- .wrapper -->
+</div><!-- #page -->
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="site-info">
+                        <nav id="social-navigation" class="social-navigation" role="navigation">
+                    <span class="social-navigation-title">
+                        Follow Us On                    </span>
+                    <ul id="menu-social-navigation" class="menu"><li id="menu-item-239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-239"><a target="_blank" href="https://twitter.com/waltdisneyco"><span class="screen-reader-text">Twitter</span></a></li>
+</ul>                </nav><!-- .social-navigation -->
+                
+        <nav id="footer-navigation" class="footer-navigation" role="navigation">
+            <ul id="menu-footer" class="menu"><li id="menu-item-330" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-330"><a target="_blank" href="https://disneytermsofuse.com/">Terms of Use</a></li>
+<li id="menu-item-331" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-331"><a target="_blank" href="https://disneyprivacycenter.com/">Privacy Policy</a></li>
+<li id="menu-item-332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-332"><a target="_blank" href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-california-privacy-rights/">Your California Privacy Rights</a></li>
+<li id="menu-item-333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-333"><a target="_blank" href="https://privacy.thewaltdisneycompany.com/en/for-parents/childrens-online-privacy-policy/">Children’s Online Privacy Policy</a></li>
+<li id="menu-item-334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-334"><a target="_blank" href="http://help.disney.com/">Disney.com Guest Services</a></li>
+<li id="menu-item-11231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11231"><a href="http://ddn.disney.com">Advertise With Us</a></li>
+<li id="menu-item-17457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17457"><a href="http://preferences-mgr.truste.com/?affiliateId=115&amp;type=disneycolor">Interest-Based Ads</a></li>
+<li id="menu-item-16814" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16814"><a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/">Do Not Sell My Info</a></li>
+<li id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384"><a href="https://thewaltdisneycompany.com/contact-us/">Contact Us</a></li>
+</ul>        </nav>
+
+        ©Disney 2020 All Rights Reserved.    </div>
+    <!-- .site-info -->
+</footer><!-- #colophon -->
+
+
+<!-- BEGIN DTSS DDM Tealium Web Analytics -->						
+
+<script language="JavaScript">
+	(function(a,b,c,d){
+		a="//cdn.media.disneyatoz.com/analytics/corp-batch-2/utag.js";
+		b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+		a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+	})();
+</script> 
+<!-- END DTSS DDM Tealium Web Analytics -->						
+
+			<script type="text/javascript" src="https://global.go.com/stat/dolWebAnalytics.js?ver=x.x.x"></script>
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var disney_cto = {"params":{"region":"us","account":"matterhorn","categoryCode":"dcom","siteCode":"thewaltdisneycompany","brandSegment":"thewaltdisneycompany","buCode":"corp","program":"","breadcrumbs":"homepage","pageName":"main","postDate":"2015\/10\/24 7:44:23 AM","adPageName":"","adKeywords":"homepage","pageId":223,"author":"","contentTag":false,"articleid":"","coreid":"","isQuiz":""},"fireTrackEvent":""};
+/* ]]&gt; */
+</script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/plugins/disney-analytics-plugin/public/js/disney-analytics.min.js?ver=x.x.x"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/themes/thewaltdisneycompany-theme/assets/dist/vendor/toggles-switches.js"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/themes/thewaltdisneycompany-theme/assets/dist/vendor/slick.min.js"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/themes/thewaltdisneycompany-theme/assets/dist/vendor/iframeResizer.min.js"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/themes/thewaltdisneycompany-theme/assets/dist/js/app-3f9ad6975f.min.js"></script>
+<script type="text/javascript" src="https://cdn.media.disneyatoz.com/includes/js/dtssdma.js?ver=1.0"></script>
+<script type="text/javascript">
+var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.6-78496d1"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=2e68f5e2"></script>
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]&gt; */
+</script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=2e68f5e2"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/wp/wp-includes/js/underscore.min.js?ver=1.8.3"></script>
+<script type="text/javascript" src="https://thewaltdisneycompany.com/app/plugins/ddm-tealium/js/dmatealium.js?ver=2e68f5e2"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"129fe16bc0","applicationID":"424007197,101161962","transactionName":"ZQZbZ0sDWEZWUU0MCVxMbEFQTUFFGFtXAQNKTUlbSQ==","queueTime":0,"applicationTime":7,"atts":"SUFYEQMZS0g=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+<script type="text/javascript" async="" src="https://secure-us.imrworldwide.com/novms/js/2/ggcmb390.js"></script></body></html>

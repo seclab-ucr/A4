@@ -1,0 +1,42 @@
+#$ -N ClassifyAds
+#$ -j y
+#
+#
+#
+#Set the shell that should be used to run the job.
+#$ -S /bin/bash
+#
+#$ -t 1
+#
+#$ -o unique_features_data.output 
+#
+#Make sure that the .e and .o file arrive in the
+# working directory
+#$ -cwd
+#
+#Specify the queue to run in
+#$ -q INFORMATICS,UI
+####$ -q UI
+#$ -pe smp 12
+#
+#
+#
+#Print information from the job into the output file
+java -Xmx64G  -cp "/Users/uiqbal/privatemodules/weka-3-8-1/weka.jar" weka.Run weka.classifiers.meta.FilteredClassifier -x 10 -T "" -t "/Users/uiqbal/adgraph/unique_features_data.arff"  -classifications "weka.classifiers.evaluation.output.prediction.CSV -p first-last" -F "weka.filters.unsupervised.attribute.Remove -R 1,2" -W weka.classifiers.trees.RandomForest -- -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 > "/Users/uiqbal/adgraph/unique_features_data.result"
+#
+#
+/bin/echo Running on host: `hostname`.
+/bin/echo In directory: `pwd`
+/bin/echo Starting on: `date`
+#
+#Send e-mail at beginning/end/suspension of job
+#$ -m bes
+#
+#E-mail address to send to
+#$ -M umar-iqbal@uiowa.edu
+#
+#Sleep for 60 seconds
+###sleep 200
+#mpirun -np 24 a.out
+#Print the end date of the job before exiting
+echo Now it is: `date`

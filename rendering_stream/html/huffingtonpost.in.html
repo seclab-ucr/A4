@@ -1,0 +1,425 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>HuffPost India</title>
+        <meta name="description" content="HuffPost India" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- NORMALIZE -->
+        <style>
+            /* extracted from normalize.css v7.0.0 */
+
+            html {
+                line-height: 1.15; /* 1 */
+                -ms-text-size-adjust: 100%; /* 2 */
+                -webkit-text-size-adjust: 100%; /* 2 */
+            }
+
+            body {
+                margin: 0;
+            }
+
+            article, aside, footer, header, nav, section {
+                display: block;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin: 0.67em 0;
+            }
+
+            figcaption,
+            figure,
+            main { /* 1 */
+                display: block;
+            }
+
+            figure {
+                margin: 1em 40px;
+            }
+
+            hr {
+                box-sizing: content-box; /* 1 */
+                height: 0; /* 1 */
+                overflow: visible; /* 2 */
+            }
+
+            a {
+                background-color: transparent; /* 1 */
+                -webkit-text-decoration-skip: objects; /* 2 */
+            }
+
+            b, strong {
+                font-weight: inherit;
+            }
+
+            b, strong {
+                font-weight: bolder;
+            }
+
+            img {
+                border-style: none;
+            }
+
+            svg:not(:root) {
+                overflow: hidden;
+            }
+        </style>
+
+        <!-- MICROAJAX -->
+        <script>
+            function microAjax(options) {
+                "use strict";
+
+                // Default to GET
+                if (!options.method) {
+                    options.method = "GET";
+                }
+
+                // Default empty functions for the callbacks
+                function noop() {}
+                if (!options.success) {
+                    options.success = noop;
+                }
+                if (!options.warning) {
+                    options.warning = noop;
+                }
+                if (!options.error) {
+                    options.error = noop;
+                }
+
+                var request = new XMLHttpRequest();
+                request.open(options.method, options.url, true);
+                request.send(options.data);
+
+                request.onload = function() {
+                    // Success!
+                    if (request.readyState === 4 &amp;&amp; request.status === 200) {
+                        options.success(request.responseText);
+
+                        // We reached our target destination, but it returned an error
+                    } else {
+                        options.warning();
+                    }
+                };
+
+                // There was a connection error of some sort
+                request.onerror = options.error;
+            }
+        </script>
+
+        <!-- HP UTILS -->
+        <script type="text/javascript">
+            window.HP = {
+                functions: {},
+                modules: {}
+            };
+
+            HP.modules.storage = (function(){
+                var get, set, remove, clear, has, supported, noop, storage, serialize, deserialize;
+                supported = (function isLocalStorageSupported() {
+                    try {
+                        var testKey = 'test';
+                        storage = window.localStorage;
+                        storage.setItem(testKey, '1');
+                        storage.removeItem(testKey);
+                        return true;
+                    } catch (e) {
+                        return false;
+                    }
+                }());
+
+                deserialize = function(value) {
+                    if (typeof value != 'string') {
+                        return undefined;
+                    }
+                    try {
+                        return JSON.parse(value);
+                    } catch(e) {
+                        return value || undefined;
+                    }
+                };
+
+                serialize = function(value) {
+                    return JSON.stringify(value);
+                };
+
+                noop = function() {};
+
+                if(!supported) {
+                    get = set = remove = clear = noop;
+                    has = function() { return false; };
+                } else {
+                    get = function(key) {
+                        return deserialize(storage.getItem(key));
+                    };
+                    set = function(key, item) {
+                        try {
+                            storage.setItem(key, serialize(item));
+                        } catch (e) {
+                        }
+                    };
+                    remove = function(key) {
+                        storage.removeItem(key);
+                    };
+                    clear = function() {
+                        storage.clear();
+                    };
+                    has = function(key) {
+                        return storage.getItem(key) !== undefined;
+                    };
+                    if(!(get('lastPurge') &gt; 1430758101108)) { // jshint ignore:line
+                        clear();
+                        set('lastPurge', Date.now());
+                    }
+                }
+
+                return {
+                    enabled: supported,
+                    get: get,
+                    set: set,
+                    remove: remove,
+                    clear: clear,
+                    has: has
+                };
+            }());
+
+            HP.functions.loadFont = (function(){
+                var loader, storage;
+                storage = HP.modules.storage;
+
+                function appendStyleSheet(css) {
+                    var head = document.getElementsByTagName('head')[0];
+                    var style = document.createElement("style");
+                    style.appendChild(document.createTextNode(css));
+                    head.appendChild(style);
+                }
+
+                loader = function(name, url, styles, timeout) {
+                    var tooLong = false;
+                    var timer = setTimeout(function(){
+                        //timeout passed with no custom font: use fallback
+                        appendStyleSheet(styles.after);
+                        tooLong = true;
+                    }, (timeout || 500));
+                    appendStyleSheet(styles.before);
+                    if(storage.get('file-'+name) === url &amp;&amp; storage.get('font-'+name)) {
+                        //synchronously put font in page
+                        appendStyleSheet(storage.get('font-'+name));
+                        appendStyleSheet(styles.after);
+                        clearTimeout(timer);
+                    } else {
+                        storage.remove('file-'+name);
+                        storage.remove('font-'+name);
+                        //download the font
+                        microAjax({
+                            url: url,
+                            success: function(result){
+                                storage.set('file-'+name, url);
+                                storage.set('font-'+name, result);
+                                if(!tooLong) {
+                                    //first render put the font on the page within the threshold
+                                    appendStyleSheet(result);
+                                    appendStyleSheet(styles.after);
+                                    clearTimeout(timer);
+                                }
+                            }
+                        });
+                    }
+                };
+                return loader;
+            }());
+        </script>
+
+        <!-- LOAD FONTS -->
+        <script>
+            window.HP.functions.loadFont('ProximaNovaCond', 'https://s.m.huffpost.com/assets/fonts/proxima-nova-condensed-00413bf3c406df7a1c9b6218d92f311ced4bc12564bede72e457e7963bf16f44.css', {
+                before: "h1,h2,h3,h4,h5{visibility:hidden;}",
+                after: "h1,h2,h3,h4,h5{visibility:visible;}"
+            }, 1000);
+
+            window.HP.functions.loadFont('ProximaNova', 'https://s.m.huffpost.com/assets/fonts/proxima-nova-ecb8d1091c7381b106b2e5ef8cb8b1f39236ba05d1d26e5479c511a5d10abcd2.css', {
+                before: "h1,h2,h3,h4,h5{visibility:hidden;}",
+                after: "h1,h2,h3,h4,h5{visibility:visible;}"
+            }, 500);
+        </script><style>h1,h2,h3,h4,h5{visibility:hidden;}</style><style>h1,h2,h3,h4,h5{visibility:hidden;}</style>
+
+        <!-- MAIN -->
+        <style type="text/css">
+            html, body {
+                font-family: 'ProximaNova', sans-serif;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                letter-spacing: normal;
+                color: #1a1a1a;
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                display: table;
+            }
+
+            .wrapper {
+                display: table-cell;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .huffpost-logo {
+                width: 240px;
+                height: 30px;
+                margin: 46px auto 0;
+            }
+
+            .huffpost-logo svg {
+                display: block;
+                width: inherit;
+                height: inherit;
+            }
+
+            .message {
+                display: block;
+                margin: 0 auto;
+                max-width: 840px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .message--de_DE {
+                font-size: 22px;
+                line-height: 1.36;
+            }
+
+            .message--en {
+                font-size: 22px;
+                line-height: 1.36;
+            }
+
+            .message a {
+                color: #0dbe98;
+                text-decoration: none;
+                font-weight: inherit;
+            }
+
+            .message a:hover {
+                text-decoration: underline;
+            }
+
+            .huffpost-nav {
+                font-size: 0;
+                text-align: center;
+                margin: 36px auto 47px;
+            }
+
+            .huffpost-nav a {
+                margin: 0 13px;
+                display: inline-block;
+                text-transform: uppercase;
+                width: 280px;
+                height: 41px;
+                line-height: 45px;
+                border-radius: 20px;
+                background-color: #0dbe98;
+
+                font-family: 'ProximaNovaCond', sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-align: center;
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            .huffpost-nav a:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 680px) {
+                html, body {
+                    height: auto;
+                }
+
+                .wrapper {
+                    display: block;
+                    height: auto;
+                }
+
+                .content {
+                    max-width: 330px;
+                    margin: 24px auto;
+                }
+
+                .message--en {
+                    max-width: 320px;
+                }
+
+                .huffpost-logo {
+                    width: 192px;
+                    height: 24px;
+                    margin-bottom: 38px;
+                }
+
+                .huffpost-nav a {
+                    display: block;
+                    margin: 25px auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <section class="content">
+                <div class="huffpost-logo">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 133 17" width="121" height="17" style="enable-background:new 0 0 133 17;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:#000;}
+                        .st1{fill:#0DBD97;}
+                    </style>
+                    <g id="Layer_1_1_">
+                        <g>
+                            <g>
+                                <g>
+                                    <path class="st0" d="M17.2,15.9H22L24.6,1h-4.8l-0.9,5.3h-4.2L15.6,1h-4.8L8.1,15.9H13l1-5.6h4.2L17.2,15.9z"/>
+                                </g>
+                                <g>
+                                    <path class="st0" d="M27.4,1l-1.5,8.3c-0.1,0.7-0.2,1.3-0.2,1.9c0,4.4,3.9,5.1,6.2,5.1c4.8,0,6.9-1.6,7.7-5.9L41.2,1h-4.8&#10;                                        L35,8.8c-0.4,2.4-0.8,3.7-2.6,3.7c-1.2,0-1.8-0.6-1.8-1.9c0-0.5,0.1-1.1,0.2-1.9L32.2,1L27.4,1L27.4,1z"/>
+                                </g>
+                                <g>
+                                    <path class="st0" d="M66.9,15.9h4.8l0.7-3.8h2.3c4.2,0,6.6-2.3,6.6-6.5c0-2.9-2-4.6-5.6-4.6h-6.2L66.9,15.9z M74.4,8.4H73&#10;                                        l0.7-3.5H75c1.1,0,1.6,0.5,1.6,1.5C76.6,7.6,75.8,8.4,74.4,8.4z"/>
+                                </g>
+                                <g>
+                                    <path class="st0" d="M90.7,0.7c-5.3,0-8.4,3.4-8.4,9.2c0,4,2.5,6.4,6.7,6.4c5.3,0,8.4-3.4,8.4-9.2C97.4,3.1,94.9,0.7,90.7,0.7z&#10;                                         M89.3,12.3c-1.2,0-2-0.9-2-2.4c0-0.6,0-1.1,0.2-1.6c0.4-1.9,1-3.8,3-3.8c1.2,0,2,0.9,2,2.4c0,0.6,0,1.1-0.2,1.6&#10;                                        C91.9,10.5,91.2,12.3,89.3,12.3z"/>
+                                </g>
+                                <g>
+                                    <path class="st0" d="M114.3,15.9h4.8L121.1,5h3.7l0.7-4H113l-0.7,4h3.9L114.3,15.9z"/>
+                                </g>
+                                <path class="st0" d="M106.3,6.5c-1.5-0.5-2.2-0.7-2.2-1.4c0-0.5,0.3-1,1.2-1c0.7,0,1.2,0.4,1.5,0.9l4.3-1.1&#10;                                    c-0.5-2.1-2.3-3.2-5.4-3.2c-5.9,0-6.3,3.9-6.3,5.1c0,2.5,1.3,3.9,4.1,4.7c0.8,0.2,1.6,0.4,1.6,1.2c0,0.7-0.5,1-1.3,1&#10;                                    c-0.8,0-1.6-0.5-1.9-1.2l-4.2,1.1c0.5,2.2,2.6,3.5,5.8,3.5c2.5,0,6.7-0.7,6.7-5.2C110.1,8.8,108.9,7.3,106.3,6.5z"/>
+                                <polygon class="st0" points="44,1 41.4,15.9 46.2,15.9 47,11.5 51.1,11.5 51.7,7.7 47.7,7.7 48.1,5 53.8,5 54.5,1          "/>
+                                <polygon class="st0" points="56.7,1 54.1,15.9 59,15.9 59.7,11.5 63.8,11.5 64.5,7.7 60.4,7.7 60.9,5 66.5,5 67.3,1            "/>
+                            </g>
+                            <polygon class="st1" points="5.4,15.9 0,15.9 0,1 8.1,1      "/>
+                            <polygon class="st1" points="127.5,1 133,1 133,15.9 124.9,15.9      "/>
+                        </g>
+                    </g>
+                    </svg>
+                </div> <!-- /.huffpost-logo -->
+
+                <div class="message message--de_DE" dir="ltr" lang="de_DE">
+                    <p>
+						As of November 24 HuffPost India will no longer be publishing content. For more great global content, please visit <a href="https://www.huffpost.com">HuffPost.com</a>. We thank you for your support and readership.
+                    </p>
+                </div>
+
+                <nav class="huffpost-nav" dir="ltr" lang="en">
+                    <a href="https://www.huffpost.com/">huffpost.com</a>
+                </nav>
+            </section>
+        </div>
+    
+</body></html>

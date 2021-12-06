@@ -1,0 +1,533 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script async="" type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+        <script src="https://rules.quantcount.com/rules-p-sV5gZpXM_sdwB.js" async=""></script><script type="text/javascript" async="" src="https://www.google-analytics.com/gtm/js?id=GTM-5XV9L4G&amp;cid=1411640594.1606993128"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="https://tags-cdn.deployads.com/a/pubdfp.aintitcool.com.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw8FU19XGwEFV1BRAgk=",licenseKey:"1158427fed",applicationID:"2531358"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(20),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(c.console=!0,i.indexOf("dev")!==-1&amp;&amp;(c.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(c.nrDev=!0))}catch(s){}c.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),c.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(u){try{o("ierr",[u,s.now(),!0])}catch(d){}}return"function"==typeof f&amp;&amp;f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(21),c=t("ee"),s=t("loader"),u=t("gos"),f=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(6),t(5),"addEventListener"in window&amp;&amp;t(3),s.xhrWrappable&amp;&amp;t(7),d=!0)}c.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),c.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(u(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(f);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){c.inPlace(t,[f,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),u=XMLHttpRequest,f="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(u.prototype)):u.prototype.hasOwnProperty(f)&amp;&amp;(i(window),i(u.prototype)),a.on(f+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(21),a=t(20);e.exports=i;var c=window,s="fetch-",u=s+"body-",f=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(f,function(t,e){r(d[h],e,u),r(l[h],e,u)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],5:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],6:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",u="clearTimeout",f="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[u,"clearImmediate"],u+d),o.on(s+f,r),o.on(c+f,i)},{}],7:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=f.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,f.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function o(t){y.push(t),h&amp;&amp;(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t&lt;y.length;t++)r([],y[t]);y.length&amp;&amp;(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var u=t("ee"),f=u.get("xhr"),d=t("wrap-function")(f),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,g="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=f;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{f.emit("new-xhr",[e],e),e.addEventListener(g,i,!1)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),f.on("send-xhr-start",function(t,e){r(t,e),o(e)}),f.on("open-xhr-start",r),h){var b=m&amp;&amp;m.resolve();if(!v&amp;&amp;!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else u.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===g||a()})},{}],8:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,u=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),g={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&amp;&amp;l())&amp;&amp;(g.traceContextParentHeader=i(h,m),g.traceContextStateHeader=o(h,v,n,r,u)),(t.sameOrigin&amp;&amp;!f()||!t.sameOrigin&amp;&amp;s(t)&amp;&amp;d())&amp;&amp;(g.newrelicHeader=a(h,m,v,n,r,u)),g}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",u="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+u+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&amp;&amp;"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&amp;&amp;r!==o&amp;&amp;(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return u()&amp;&amp;s(t)}function s(t){var e=!1,n={};if("init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r&lt;n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&amp;&amp;t.protocol===i.protocol&amp;&amp;t.port===i.port){e=!0;break}}return e}function u(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.enabled}function f(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(17),h=t(10);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],9:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r&lt;l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&amp;&amp;(e.status=0):o(this,t),n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&amp;&amp;(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&amp;&amp;(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(10),u=t(8).generateTracePayload,f=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(14),m=t(13),v=t(11),g=window.XMLHttpRequest;a.features.xhr=!0,t(7),t(4),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&amp;&amp;(h&gt;34||h&lt;10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&amp;&amp;"xpid"in NREUM.loader_config&amp;&amp;this.sameOrigin&amp;&amp;e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=u(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&amp;&amp;(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&amp;&amp;(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&amp;&amp;e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&amp;&amp;(this.dt=n)}}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&amp;&amp;r){var o=m(r);o&amp;&amp;(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&amp;&amp;(i.onloadCalled||"function"!=typeof e.onload))&amp;&amp;i.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c&lt;l;c++)e.addEventListener(d[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&amp;&amp;"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;!this.xhrGuids[n]&amp;&amp;(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;this.xhrGuids[n]&amp;&amp;(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof g&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof g&amp;&amp;"load"===t[0]&amp;&amp;f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof g&amp;&amp;("onload"===n&amp;&amp;(this.onload=!0),("load"===(t[0]&amp;&amp;t[0].type)||this.onload)&amp;&amp;(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&amp;&amp;f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),f.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&amp;&amp;(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&amp;&amp;(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&amp;&amp;t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&amp;&amp;t[0].url&amp;&amp;(n=t[0].url),n&amp;&amp;(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=u(this.parsedOrigin);if(i&amp;&amp;(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&amp;&amp;(this.dt=i),t.length&gt;1?t[1]=o:t.push(o)}else t[0]&amp;&amp;t[0].headers&amp;&amp;e(t[0].headers,i)&amp;&amp;(this.dt=i)})}},{}],10:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&amp;&amp;o[1]&amp;&amp;(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&amp;&amp;"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&amp;&amp;(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&amp;&amp;e.port===n.port;return i.sameOrigin=a&amp;&amp;(!e.hostname||c),"/"===i.pathname&amp;&amp;(r[t]=i),i}},{}],11:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&amp;&amp;null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(13);e.exports=r},{}],12:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(20),c=t(21),s=t("ee").get("tracer"),u=t("loader"),f=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=f);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){f[e]=i(l+e,!0,"api")}),f.addPageAction=i(l+"addPageAction",!0),f.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[u.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&amp;&amp;(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&amp;&amp;t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&amp;&amp;t instanceof ArrayBuffer&amp;&amp;t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&amp;&amp;t instanceof Blob&amp;&amp;t.size)return t.size;if(!("undefined"!=typeof FormData&amp;&amp;t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&amp;&amp;(r=+i[1]),e.exports=r},{}],15:[function(t,e,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(22);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],16:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&amp;&amp;d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&amp;&amp;!v){var e=Math.round(t.timeStamp),n={type:t.type};e&lt;=l.now()?n.fid=l.now()-e:e&gt;l.offset&amp;&amp;e&lt;=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var s,u,f,d=t("handle"),l=t("loader"),p=t(19),h=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,g=["click","keydown","mousedown","pointerdown","touchstart"];g.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],17:[function(t,e,n){function r(){function t(){return e?15&amp;e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&amp;&amp;r.getRandomValues&amp;&amp;(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c&lt;o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&amp;t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&amp;n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&amp;&amp;i.getRandomValues&amp;&amp;Uint8Array&amp;&amp;(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a&lt;t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],18:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],19:[function(t,e,n){function r(t){function e(){t(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],20:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&amp;&amp;(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],21:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=t[e+r];return o}e.exports=r},{}],22:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&amp;&amp;t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&amp;&amp;t(n,r,i);for(var a=e(i),c=m(n),s=c.length,u=0;u&lt;s;u++)c[u].apply(a,r);var d=f[y[n]];return d&amp;&amp;d.push([x,n,r,a]),a}}function p(t,e){w[t]=m(t).concat(e)}function h(t,e){var n=w[t];if(n)for(var r=0;r&lt;n.length;r++)n[r]===e&amp;&amp;n.splice(r,1)}function m(t){return w[t]||[]}function v(t){return d[t]=d[t]||i(n)}function g(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in f||(f[e]=[])})}var w={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:g,abort:a,aborted:!1};return x}function o(){return new r}function a(){(f.api||f.feature)&amp;&amp;(l.aborted=!0,f=l.backlog={})}var c="nr@context",s=t("gos"),u=t(20),f={},d={},l=e.exports=i();l.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return u.abort();s(w,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(15),c=t("handle"),s=t(20),u=t("ee"),f=t(18),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&amp;&amp;m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var g=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},y=m&amp;&amp;v&amp;&amp;v[p]&amp;&amp;!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:y,userAgent:f};t(12),t(16),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&amp;&amp;t instanceof Function&amp;&amp;t.apply&amp;&amp;!t[a])}var i=t("ee"),o=t(21),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){l([u,"",[r,a,i],c])}f(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw f(e+"err",[r,a,d],c),d}finally{f(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function u(t,e,i,o){i||(i="");var a,c,s,u="-"===i.charAt(0);for(s=0;s&lt;e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,u?c+i:i,o,c))}function f(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&amp;&amp;(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader",2,9]);</script>
+    
+
+    <title>Ain't It Cool News: The best in movie, TV, DVD, and comic book news.</title>
+
+    
+    <meta property="og:url" content="http://www.aintitcool.com/" />
+    <link rel="canonical" href="http://www.aintitcool.com/" />
+    <meta property="og:image" content="https://media.aintitcool.com/static/social/facebook-wide-dannie.png" />
+    <meta name="twitter:image" content="https://media.aintitcool.com/static/social/defaultsquarelogo.png" />
+    <meta name="thumbnail" content="https://media.aintitcool.com/static/social/defaultsquarelogo.png" />
+    <link rel="image_src" href="https://media.aintitcool.com/static/social/defaultsquarelogo.png" />
+    
+
+    <!-- Site-Wide Tags -->
+    <meta name="msapplication-starturl" content="http://www.aintitcool.com/" />
+    <meta itemprop="inLanguage" content="en-US" />
+    <meta name="site" content="Ain't It Cool News" />
+    <meta property="og:site_name" content="Aint It Cool News" />
+    <meta name="twitter:site" content="@aintitcoolnews" />
+    <meta property="fb:app_id" content="190151051022622" />
+    <meta property="article:publisher" content="https://www.facebook.com/CoolNews" />
+
+    <link href="//fonts.googleapis.com/css?family=Bangers" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://media.aintitcool.com/static/2014/css/core.css?32db32f2da" />
+
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106022-2', 'aintitcool.com');
+    ga('require', 'GTM-5XV9L4G');
+    ga('require', 'displayfeatures');
+    </script>
+
+    
+
+
+
+
+<!-- Sortable Code -->
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script async="async" src=""></script>
+<script type="text/javascript">
+var AICNAds = AICNAds || {};
+AICNAds.adList = {"units": {"mleaderboard": {"div": "div-gpt-home-mobile-leaderboard", "unit": "/20928289/AICN_HOME_X_Mobile_Leaderboard_320x50", "size": [[320, 50]]}, "bottomright": {"div": "div-gpt-home-bottomright", "unit": "/20928289/AICN_HOME_X_BottomRight_300x250", "size": [[300, 250], [300, 600]]}, "topright": {"div": "div-gpt-home-topright", "unit": "/20928289/AICN_HOME_X_TopRight_300x250", "size": [[300, 250]]}, "leaderboard": {"div": "div-gpt-home-leaderboard", "unit": "/20928289/AICN_HOME_X_Leaderboard_728x90", "size": [[728, 90]]}, "minfeed": {"div": "div-gpt-ros-mobile-infeed", "unit": "/20928289/AICN_ROS_X_Mobile-Infeed_300x250", "size": [[300, 250]]}}, "targeting": [["type", "modern"], ["safe", "yes"]], "bidding": true, "types": {"mobile": ["mleaderboard", "minfeed"], "desktop": ["leaderboard", "topright", "bottomright"]}};
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+if (AICNAds.adList.bidding) {
+    (function() {
+        var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+        b.src = 'https://tags-cdn.deployads.com/a/pubdfp.aintitcool.com.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s);
+    })();
+}
+
+window.deployads = window.deployads || [];
+googletag.cmd.push(function () {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) &gt; 600) {
+        var viewport = 'desktop';
+    } else {
+        var viewport = 'mobile';
+    }
+    var service = googletag.pubads();
+    AICNAds.adList.targeting.forEach(function(targeting) {
+        service.setTargeting(targeting[0], targeting[1]);
+    });
+    AICNAds.adList.types[viewport].forEach(function(type) {
+        googletag.defineSlot(
+            AICNAds.adList.units[type].unit,
+            AICNAds.adList.units[type].size,
+            AICNAds.adList.units[type].div
+        ).addService(service);
+    });
+    service.enableSingleRequest();
+    if (AICNAds.adList.bidding) {
+        deployads.push(function () { deployads.gpt.enableServices(); });
+    } else {
+        googletag.enableServices();
+    }
+});
+</script>
+
+
+
+
+
+<!-- Small header script that includes jQuery, navigation code, and ad code -->
+<script type="text/javascript" src="https://media.aintitcool.com/static/2014/js/min/header-script-min.js?32db32f2da"></script>
+
+
+<script type="text/javascript">
+ga('send', 'pageview');
+</script>
+
+<script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020120101.js?21068856" async=""></script><link rel="dns-prefetch" href="//snapsort-d.openx.net" /><link rel="dns-prefetch" href="//apex.go.sonobi.com" /><link rel="dns-prefetch" href="//rtb.districtm.io" /><link rel="dns-prefetch" href="//ib.adnxs.com" /><iframe scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="width: 1px; height: 1px; border: 0px; vertical-align: bottom;" src="https://ads.pubmatic.com/AdServer/js/user_sync.html?p=156961&amp;userIdMacro=PM_UID&amp;gdpr=0&amp;gdpr_consent=&amp;predirect=https%3A%2F%2Fc.deployads.com%2Fcs%2Fpubm%3Fb%3DPM_UID"></iframe><iframe scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="width: 1px; height: 1px; border: 0px; vertical-align: bottom;" src="https://rtb.gumgum.com/getuid/szurmxm0?r=https%3A%2F%2Fc.deployads.com%2Fcs%2FGUMG%3Fb%3D"></iframe><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.aintitcool.com" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.aintitcool.com"></script><link rel="prefetch" href="https://2b371f8bfafc1b8acdfff3a7485b59b7.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" /></head>
+<body class="page-home">
+<div id="fb-root"></div>
+
+<div class="container">
+
+
+<header class="area-header">
+<!-- Header -->
+
+<div class="header-top">
+<div class="grid-container">
+<div class="headerleft">
+    <div class="headerleft-wrap">
+        <div class="header-masthead-wrap">
+  
+      <a href="/"><img src="https://media.aintitcool.com/media/mastheads/harryintherain.gif" alt="" class="animated-masthead" /></a>
+  
+</div>
+        <a href="/" class="aicn-logo">Ain't It Cool News</a>
+
+    </div>
+
+</div>
+<div class="headerright">
+    <div class="ad-leaderboard-desktop"><div class="adwrapper" id="div-gpt-home-leaderboard" data-google-query-id="COiD7_TTse0CFeAsrQYd9fIOlw" data-ad-imp="ki8q7ty523fb4w">
+    <div id="google_ads_iframe_/20928289/AICN_HOME_X_Leaderboard_728x90_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/20928289/AICN_HOME_X_Leaderboard_728x90_0" title="3rd party ad content" name="google_ads_iframe_/20928289/AICN_HOME_X_Leaderboard_728x90_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true"></iframe></div></div>
+    </div>
+</div>
+
+
+</div><!-- /.grid-container -->
+<span class="print-only">Ain't It Cool News (www.aintitcool.com)</span>
+
+</div>
+
+<div class="header-bottom">
+
+    <div class="grid-container">
+<div class="mobile-expand-contract headlinefont">
+    <a href="/" class="mobilenav-home"><i class="fa fa-home"></i></a>
+    <a href="#talkback" class="mobilenav-comments"><i class="fa fa-comments"></i></a>
+    <a href="#" class="mobilenav-bars"><i class="fa fa-bars fa-double-up "></i></a>
+    </div>
+<ul class="nav-options headlinefont mobile-hidden">
+    <li class="nav-home"><a href="/">Home</a></li>
+    <li class="nav-coolnews"><a href="/section/coolnews/">Cool News</a></li>
+    <li class="nav-coaxial"><a href="/section/coaxial/">Coaxial</a></li>
+    <li class="nav-reviews"><a href="/section/reviews/">Reviews</a></li>
+    <li class="nav-dvd"><a href="/section/comics/">Comics</a></li>
+    <li class="nav-contact"><a href="/contact/">Contact</a></li>
+    <li class="nav-search"><a href="/site-search/">Search <i class="fa fa-search"></i></a></li>
+</ul>
+
+</div>
+</div>
+
+</header><!-- /.area-header -->
+
+<div class="ad-leaderboard-mobile"><div id="div-gpt-home-mobile-leaderboard" class="adwrapper">
+</div></div>
+
+
+
+
+<div class="area-content">
+<div class="grid-container">
+
+<div class="pageleft homeleft">
+
+<div class="homeleft-wrapper homeleft-top">
+
+
+
+<div class="section-topstories box bg-yellowchecker" id="top-stories">
+    <div class="box-header headlinefont">
+        <div class="box-title">Top Stories</div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+<li class="">
+    <a href="/bradenduemmlerwhatliesbelowinterview2020-83072/">Braden R. Duemmler and Barbarella Discuss Sci-Fi Thriller WHAT LIES BELOW</a></li><li class="">
+    <a href="/cobraks-book-of-the-dead-devils-night-review-give-83071/">Cobrak's Books of the Dead Invites You to Get Wicked with DEVIL'S NIGHT! Plus: FREE BOOK GIVEAWAY!</a></li><li class="">
+    <a href="/luxor-itunes-giveaway-83069/">Win a Free iTunes Code for the Romance/Drama LUXOR!</a></li><li class=" mobile-hidden">
+    <a href="/alainmoussiinterviewjiujitsu2020-83065/">Alain Moussi Talks Martial Arts and the Movie JIU JITSU With Barbarella</a></li><li class=" mobile-hidden">
+    <a href="/dimitrilogothetisinterviewjiujitsu-83064/">Barbarella and Dimitri Logothetis Talk JIU JITSU</a></li><li class=" mobile-hidden">
+    <a href="/lego-star-wars-holiday-special-review-mceric-83063/">The LEGO Star Wars Holiday Special is Brightly-Colored Fan Service!</a></li><li class=" mobile-hidden">
+    <a href="/tom-and-jerry-chloe-moretz-trailer-83062/">TOM &amp; JERRY &amp; CHLOE GRACE MORETZ!?!</a></li><li class=" mobile-hidden">
+    <a href="/alexpettyferinterview2020-83061/">ECHO BOOMERS' Alex Pettyfer Talks with AICN</a></li><li class=" mobile-hidden">
+    <a href="/fionnosheainterview-83057/">Barbarella Chats with DATING AMBER'S Fionn O'Shea</a></li>
+</ul>
+
+
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+
+<div class="section-coolnews box bg-yellow-gradient" id="top-stories">
+    <div class="box-header headlinefont">
+        <div class="box-title">Cool News</div>
+        <div class="box-title-rss"><a href="/node/feed/coolnews/"><i class="fa fa-rss-square"></i></a></div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+
+    
+    <li class="">
+    <a href="/animator-on-animation-disneys-gargoyles-83070/">ANIMATOR ON ANIMATION: DISNEY'S GARGOYLES!</a>
+    </li>
+    
+    <li class="">
+    <a href="/benhickernellinterviewwhatwefound2020-83068/">Ben Hickernell Recounts Making WHAT WE FOUND</a>
+    </li>
+    
+    <li class="">
+    <a href="/the-other-side-of-madness-blurays-to-give-away-83067/">Freddy with three Blu-rays of THE OTHER SIDE OF MADNESS to give away and wishing all of you turkeys a happy Thanksgiving!</a>
+    </li>
+    
+    <li class="ad-mobile-wrap ad-mobile-item">
+    <div class="ad-mobile-box1">
+        <div id="div-gpt-ros-mobile-infeed" class="adwrapper"></div>
+    </div>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-reviews-the-body-will-follow-83066/">Freddy reviews the possession styled horror THE BODY WILL FOLLOW</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-with-3-dvds-of-monstrum-to-give-away-83060/">Freddy has three DVD's of the Korean monster/action film titled MONSTRUM to give away</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-reviews-the-novel-symmetry-83059/">Freddy reviews the sequel to Timberwolf by Tom Julian, titled SYMMETRY</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-interviews-alastair-orr-for-triggered-83058/">Alastair Orr sits with Freddy to discuss what makes him TRIGGERED</a>
+    </li>
+    
+    <li class="">
+    <a href="/fright-fight-friday-scorpio-demon-horace-pinker-83056/">FRIGHT FIGHT FRIDAY RANDOM BRACKET ROUND #4 - THE SCORPIO DEMON (Split Second) VS HORACE PINKER (Shocker)</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-with-3-blurays-of-2067-to-give-away-83055/">You won't have to wait until "2067" to win one of these three Blu-rays</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-reviews-horror-film-titled-triggered-83053/">Freddy ends up pleasantly TRIGGERED with an explosive new horror movie</a>
+    </li>
+    
+    <li class="">
+    <a href="/datingambercontest-83052/">Win an iTunes Download for Irish Coming-of-Age film DATING AMBER</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-interviews-xander-berkely-83051/">Freddy sits with Xander Berkely to discuss his role in the new horror film THE DARK AND THE WICKED</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-reviewing-the-dark-and-the-wicked-83050/">Freddy plays where THE DARK AND THE WICKED do, and lives to tell the tale</a>
+    </li>
+    
+    <li class="">
+    <a href="/echo-boomers-giveaway-83046/">Win a Code for Michael Shannon’s New Thriller ECHO BOOMERS!</a>
+    </li>
+    
+    <li class="">
+    <a href="/triggered-itunes-giveaway-83045/">Wanna win an iTunes code for TRIGGERED?</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-with-bootie-for-halloween-83049/">Freddy has goodies to give away for the Halloween holiday!</a>
+    </li>
+    
+    <li class="">
+    <a href="/blood-from-stone-review-83048/">BLOOD FROM STONE is a Vampire Flick with Teeth!</a>
+    </li>
+    
+    <li class="">
+    <a href="/freddy-silently-within-your-shadow-halloween-83047/">Freddy staggers into Halloween for SILENTLY WITHIN YOUR SHADOW</a>
+    </li>
+    
+    <li class="">
+    <a href="/christina-parrish-interview-83044/">CHRISTINA PARRISH Talks New Comedy CALL ME BROTHER</a>
+    </li>
+    
+    <li class="">
+    <a href="/duke-leto-atreides-cast-as-moon-knight-for-disney-83043/">Duke Leto Atreides cast as MOON KNIGHT for DISNEY+!!!</a>
+    </li>
+    <li>
+
+    </li>
+</ul>
+<p class="morearea"><a href="/section/coolnews/" class="headlinefont morelink">More</a></p>
+
+
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+
+</div> <!-- /.homeleft-top -->
+
+
+
+
+
+<div class="homeleft-wrapper homeleft-bottom">
+
+<div class="section-dvd box bg-yellow-gradient" id="comics">
+    <div class="box-header headlinefont">
+        <div class="box-title">Comics</div>
+        <div class="box-title-rss"><a href="/node/feed/comics/"><i class="fa fa-rss-square"></i></a></div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+<li class="">
+    <a href="/marvel-80s-top-ten-83035/">Masked Man Talks Marvel’s Top Ten from the 1980’s!</a></li><li class="">
+    <a href="/animator-on-animation-x-men-82997/">Animator on Animation: X-Men!</a></li><li class=" mobile-hidden">
+    <a href="/which-superhero-is-the-most-82955/">Masked Man asks, Which Superhero is the Most???</a></li><li class=" mobile-hidden">
+    <a href="/dc-80s-tip-ten-82921/">DC's Top Ten from the 1980's</a></li><li class=" mobile-hidden">
+    <a href="/denny-rip-comics-update-82904/">R.I.P. DENNY plus HALT AND CATCH IRON MAN!</a></li>
+</ul>
+
+<p class="morearea"><a href="/section/comics/" class="headlinefont morelink">More</a></p>
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+<div class="section-reviews box bg-yellow-gradient" id="reviews">
+    <div class="box-header headlinefont">
+        <div class="box-title">Reviews</div>
+        <div class="box-title-rss"><a href="/node/feed/reviews/"><i class="fa fa-rss-square"></i></a></div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+
+
+<li class="">
+    <a href="/cobraks-book-of-the-dead-devils-night-review-give-83071/">Cobrak's Books of the Dead Invites You to Get Wicked with DEVIL'S NIGHT! Plus: FREE BOOK GIVEAWAY!</a></li>
+
+<li class="">
+    <a href="/freddy-reviews-the-body-will-follow-83066/">Freddy reviews the possession styled horror THE BODY WILL FOLLOW</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/freddy-reviews-the-novel-symmetry-83059/">Freddy reviews the sequel to Timberwolf by Tom Julian, titled SYMMETRY</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/freddy-reviews-horror-film-titled-triggered-83053/">Freddy ends up pleasantly TRIGGERED with an explosive new horror movie</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/freddy-reviewing-the-dark-and-the-wicked-83050/">Freddy plays where THE DARK AND THE WICKED do, and lives to tell the tale</a></li>
+
+<li class="spoiler mobile-hidden"><small>SPOILER</small>
+    <a href="/freddy-reviews-spree-with-joe-keery-83039/">Freddy reviews the rideshare horror/comedy SPREE starring Joe Keery (STRANGER THINGS)</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/freddy-reviews-the-complex-lockdown-83034/">Freddy reviews a sci-fi/thriller titled THE COMPLEX: LOCKDOWN</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/the-scarecrow-of-romney-marsh-drink-up-83032/">Disney's booze smuggling Scarecrow! Unknown movie nights: THE SCARECROW OF ROMNEY MARSH (1963)</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/freddy-reviews-the-living-dead-83029/">Freddy reviews George A. Romero's last foray into zombies titled THE LIVING DEAD, coauthored by Daniel Kraus.</a></li>
+
+<li class=" mobile-hidden">
+    <a href="/2067-australian-scifi-film-review-mceric-83021/">Sci-Fi Mindbender 2067 Takes Us to the Future... And Beyond!</a></li>
+</ul>
+
+<p class="morearea"><a href="/section/reviews/" class="headlinefont morelink">More</a></p>
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+
+<div class="section-comics box bg-yellow-gradient" id="dvds">
+    <div class="box-header headlinefont">
+        <div class="box-title">Picks &amp; Peeks</div>
+        <div class="box-title-rss"><a href="/node/feed/dvds/"><i class="fa fa-rss-square"></i></a></div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+
+<li class="">
+    <a href="/cursedfilmsjaycheelmitchhorowitz-82971/">Barbarella Talks CURSED FILMS with Jay Cheel and Mitch Horowitz</a>
+</li>
+<li class="">
+    <a href="/a-clear-shot-starring-mario-van-peebles-on-dvd-82890/">A CLEAR SHOT on DVD, Blu-Ray, and Digital</a>
+</li>
+<li class="">
+    <a href="/onecutofthedeaddvdrelease-82886/">ONE CUT OF THE DEAD Comes to DVD and Blu-Ray June 2</a>
+</li>
+<li class="">
+    <a href="/final-kill-released-to-dvd-april-14-review-mceric-82818/">FINAL KILL coming to DVD/Blu-Ray April 14th from Cinedigm and Legion XIII</a>
+</li>
+<li class="spoiler"><small>SPOILER</small>
+    <a href="/groupers-interview-anderson-cowan-mceric-amazon-82624/">GROUPERS hits Amazon Prime! McEric chats with Writer/Director Anderson Cowan</a>
+</li>
+</ul>
+
+<p class="morearea"><a href="/section/dvds/" class="headlinefont morelink">More</a></p>
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+</div> <!-- /.homeleft-bottom -->
+</div><!-- /.pageleft -->
+<div class="pageright homeright">
+
+<!--
+<div class="ad-mobile-box2">
+    <div id="div-gpt-mobile-300x250-b" class="adwrapper"></div>
+</div>
+-->
+
+<div class="ad-split-box1">
+    <div class="adwrapper" id="div-gpt-home-topright" data-google-query-id="COmD7_TTse0CFeAsrQYd9fIOlw" data-ad-imp="ki8q7ty73kszfu">
+    <div id="google_ads_iframe_/20928289/AICN_HOME_X_TopRight_300x250_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/20928289/AICN_HOME_X_TopRight_300x250_0" title="3rd party ad content" name="google_ads_iframe_/20928289/AICN_HOME_X_TopRight_300x250_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true"></iframe></div></div>
+</div>
+
+<div class="box box-purple section-coaxialsec bg-blue-herc" id="coaxial">
+    <div class="box-header headlinefont">
+        <div class="box-title">Coaxial</div>
+        <div class="box-title-rss"><a href="/node/feed/coaxial/"><i class="fa fa-rss-square"></i></a></div>
+    </div>
+<div class="box-content">
+
+<ul class="article-list">
+<li class="">
+    <a href="/lego-star-wars-holiday-special-review-mceric-83063/">The LEGO Star Wars Holiday Special is Brightly-Colored Fan Service!</a></li><li class="">
+    <a href="/wandavision-trailer-is-whackadooodle-doo-83010/">Dedicated WANDAVISION trailer hits &amp; it looks wild!</a></li><li class="">
+    <a href="/she-hulk-thinks-shes-a-clone-now-83008/">SHE-HULK thinks she's a Clone Now!</a></li><li class="">
+    <a href="/the-mandalorian-s2-trailer-drops-like-speeder-bike-83005/">THE MANDALORIAN Season 2 Trailer drops like Speeder Bikes off a Cliff</a></li><li class="">
+    <a href="/the-stand-december-82982/">The Stand Will Deliver More Pandemic This December- UPDATED WITH TEASER!!</a></li><li class="">
+    <a href="/briscoe-county-jr-82938/">BRISCO COUNTY JR. SADDLES UP AGAIN!!</a></li><li class="">
+    <a href="/foundation-trailer-released-for-apple-tv-series-82917/">FOUNDATION, the Sprawling Epic from Isaac Asimov, Releases First Trailer Ahead of Apple TV+ Premiere</a></li><li class="">
+    <a href="/creepshow-season-1-dvd-blu-ray-82885/">CREEPSHOW Season 1 Comes to DVD and Blu-ray on June 2nd!</a></li><li class="">
+    <a href="/birdie-teaser-trailer-82863/">Check out this teaser trailer for the new Horror animated series BIRDIE from Paul B. Frieling</a></li><li class="">
+    <a href="/trailer-for-twilight-zone-season-two-hits-82862/">Trailer for TWILIGHT ZONE Season Two Hits...</a></li>
+</ul>
+<p class="morearea"><a href="/section/coaxial/" class="headlinefont morelink">More</a></p>
+
+
+</div> <!-- /.box-content -->
+</div> <!-- /.box -->
+
+<div class="ad-split-box2">
+    <div class="adwrapper" id="div-gpt-home-bottomright" data-google-query-id="COqD7_TTse0CFeAsrQYd9fIOlw" data-ad-imp="ki8q7ty9oef4gl">
+    <div id="google_ads_iframe_/20928289/AICN_HOME_X_BottomRight_300x250_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/20928289/AICN_HOME_X_BottomRight_300x250_0" title="3rd party ad content" name="google_ads_iframe_/20928289/AICN_HOME_X_BottomRight_300x250_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="3" data-load-complete="true"></iframe></div></div>
+</div>
+
+<a class="box box-webmail headlinefont" href="http://webmail.aintitcool.com/email/scripts/loginuser.pl">Login to Webmail <i class="fa fa-envelope"></i></a>
+
+</div><!-- /.pageright -->
+</div>
+
+</div> <!-- /.area-content -->
+
+
+
+
+<footer class="area-footer">
+    <div class="grid-container">
+<span class="section-map"><a href="/">Home</a> | <a href="/section/coolnews/">Cool News</a> | <a href="/section/coaxial/">Coaxial / TV</a> | <a href="/section/dvds/">Picks &amp; Peeks</a> | <a href="/section/reviews/">Movie Reviews</a> | <a href="/section/animation/">Animation</a> | <a href="/section/comics/">Comics</a> | <a href="/site-search/">Search</a> | <a href="/section/comics/">Comics</a> | <a href="http://zone.aintitcool.com/">The Zone Forums</a>
+    </span>
+<span class="rss-privacy-report"><a href="/node/feed/">RSS</a>  | <a href="/privacy/">Privacy Policy</a> | <a href="/contact/">Contact AICN</a>
+<span class="copyright">This site is © 1996-2020 Ain't It Cool News.</span>
+</span></div>
+</footer><!-- /.area-footer -->
+
+
+</div> <!-- /.container -->
+
+
+<!-- Load Ads -->
+<script type="text/javascript">
+googletag.cmd.push(function () {
+    googletag.pubads().getSlots().forEach(function(unit) {
+        if (AICNAds.adList.bidding) {
+            deployads.push(function() { deployads.gpt.display(unit.getSlotElementId()); });
+        } else {
+            googletag.display(unit.getSlotElementId());
+        }
+    })
+});
+</script>
+
+<!-- Footer script containing all other javascript (disqus, social, analytics, fitvid, etc) -->
+<script type="text/javascript" src="https://media.aintitcool.com/static/2014/js/min/delay-script-min.js?32db32f2da"></script>
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+_qevents.push({
+  qacct:"p-sV5gZpXM_sdwB"
+});
+</script>
+<noscript>
+&lt;div style="display:none;"&gt;
+&lt;img src="//pixel.quantserve.com/pixel/p-sV5gZpXM_sdwB.gif" border="0" height="1" width="1" alt="Quantcast"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","queueTime":0,"licenseKey":"1158427fed","agent":"","transactionName":"ZwNQZUNVW0cHVRdRXF5JdERfV0FdCVhMWUNAFRxSXlpBUQhCTU5aVRFBC3lbWFEwXwZPHVcDRg==","applicationID":"2531358","errorBeacon":"bam-cell.nr-data.net","applicationTime":52}</script>
+
+
+
+<iframe id="google_osd_static_frame_2364699504452" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe sandbox="allow-scripts allow-same-origin" id="51c3b9d2b25c64f" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://cdn.districtm.io/ids/index.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="5295e10efdad4b6" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://us-u.openx.net/w/1.0/pd?plm=10&amp;ph=1a73c9cb-5945-47eb-8b44-bacc7e8a59f1&amp;gdpr=0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="5370599ab0a813c" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="54deffe7f3ec8a6" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/ib/static/usersync/v3/async_usersync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="552f466d7ff65b4" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ap.lijit.com/beacon?informer=13388147">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="56972272a94a679" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/dmp/async_usersync.html">
+    </iframe></html>

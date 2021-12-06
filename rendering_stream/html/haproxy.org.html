@@ -1,0 +1,1344 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>HAProxy - The Reliable, High Performance TCP/HTTP Load Balancer</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <meta name="keywords" content="haproxy, reliable, secure, load balancer, content&#10;      switching, reverse proxy, fast, rapide, fiable, repartition de charge" />
+    <meta name="description" content="Reliable, High Performance TCP/HTTP Load Balancer" />
+    <style type="text/css">
+      &lt;!--
+      body {
+      	font-family: helvetica, arial;
+      	font-size: 12px;
+      	font-weight: normal;
+      	color: black;
+        xxx-background: url(/img/servers.jpg);
+      }
+
+      td {
+      	font-size: 12px;
+      	line-height: 16px;
+      }
+
+      h1 {
+        font-size: x-large;
+        margin-bottom: 0.5em;
+      }
+
+      h2 {
+      	font-family: helvetica, arial;
+      	font-size: large;
+      	font-weight: bold;
+        font-style: italic;
+      	xxx-color: #6020a0;
+      	color: #005996;
+        margin-top: 0em;
+        margin-bottom: 0em;
+      }
+
+      h3 {
+      	font-family: helvetica, arial;
+      	font-size: 16px;
+      	font-weight: bold;
+      	xxx-color: #B00040;
+	xxx-background: #e8e8d0;
+      	color: #ffffff;
+	background: #123e67;
+        margin-top: 0em;
+        margin-bottom: 0em;
+      }
+
+      li {
+        xxxmargin-top: 0.25em;
+        margin-top: 0.5em;
+        margin-right: 2em;
+      }
+
+      #mar { color: #a05020; }
+
+      .hr {
+        margin-top: 0.25em;
+        border-color: black;
+        border-bottom-style: solid;
+      }
+
+      --&gt;
+    </style>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_1" async=""></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_0" async=""></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W9N2N3S"></script><script type="text/javascript" src="/size.js"></script><link rel="stylesheet" type="text/css" href="/size.css?800x600" />
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9N2N3S');</script>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script></head>
+
+<!--script src="http://cdn.wibiya.com/Loaders/Loader_217126.js" type="text/javascript"></script -->
+
+<body>
+    <table cols="3" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td>
+    <h1><a href="http://www.haproxy.org/" style="text-decoration: none;color: black;">HAProxy</a></h1>
+    <h2>The Reliable, High Performance TCP/HTTP Load Balancer</h2>
+    </td><td align="right">
+    <!--img src="/img/logo-med.png"-->
+    <img src="/img/HAProxyCommunityEdition_60px.png" />
+    </td>
+	<td align="right">
+	  Mirror Sites: <a href="http://www.haproxy.org/">Master</a><br />
+	  Language: <a href="http://www.haproxy.org/">English</a><br />
+	</td>
+	</tr></tbody></table>
+    <hr width="100%" class="hr" />
+
+    <table cols="2" border="0">
+      <tbody><tr valign="top">
+	<td width="160">
+	  <!--div style="background: #E8E8E8;"-->
+	  <h3 style="margin-top: 0px;">Quick links</h3>
+	    <a href="#news"><b>Quick News</b></a><br />
+	    <a href="/news.html">Recent News</a><br />
+
+	    <a href="#desc">Description</a><br />
+	    <a href="#feat">Main features</a><br />
+	    <a href="#plat">Supported Platforms</a><br />
+	    <a href="#perf">Performance</a><br />
+	    <a href="#fiab">Reliability</a><br />
+	    <a href="#secu">Security</a><br />
+
+	    <a href="#down"><b>Download</b></a><br />
+	    <a href="#docs"><b>Documentation</b></a><br />
+	    <a href="http://demo.haproxy.org/"><b>Live demo</b></a><br />
+	    <a href="/they-use-it.html"><b>They use it!</b></a><br />
+	    <a href="https://www.haproxy.com/products/haproxy-enterprise-edition/">Enterprise Features</a><br />
+	    <a href="https://www.haproxy.com/haproxy-integrations/">Third party extensions</a><br />
+	    <a href="#supp"><b>Commercial Support</b></a><br />
+	    <a href="#cont">Add-on features</a><br />
+	    <a href="#othe">Other Solutions</a><br />
+	    <a href="#tact">Contacts</a><br />
+	    <a href="#link">External links</a><br />
+	    <a href="http://discourse.haproxy.org/">Discussions</a><br />
+	    <a href="https://slack.haproxy.org/">Slack channel</a><br />
+	    <a href="#tact"><b>Mailing list</b></a><br />
+	    <a href="/10g.html"><b>10GbE load-balancing</b> (updated)</a><br />
+	    <a href="/contrib.html"><b>Contributions</b></a><br />
+	    <a href="/coding-style.html"><b>Coding style</b></a><br />
+	    <a href="https://github.com/haproxy/haproxy/issues"><b>Open Issues</b></a><br />
+	    <a href="/bugs/index.html"><b>Known bugs</b></a><br />
+	    <br />
+	    <a href="http://feurix.org/projects/hatop/"><b>HATop: Ncurses Interface</b></a><br />
+	    <a href="https://github.com/helpshift/herald"><b>Herald: load feedback agent</b></a><br />
+	    <a href="https://github.com/unixsurfer/haproxystats"><b>haproxystats: stats collection</b></a><br />
+	    <a href="https://hub.docker.com/_/haproxy/"><b>Alpine-based Docker images</b></a><br />
+	    <a href="https://hub.docker.com/_/haproxy/"><b>Debian-based Docker images</b></a><br />
+	    <a href="https://gitlab.com/aleks001/haproxy"><b>RHEL-based Docker images</b></a><br />
+	    <a href="https://haproxy.debian.net/"><b>Debian/Ubuntu packages</b></a><br />
+
+	    <br />
+	  <div style="position: absolute; width: 450px; left: -10000px;" id="___plusone_0"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1606992759713" name="I0_1606992759713" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;origin=http%3A%2F%2Fwww.haproxy.org&amp;url=http%3A%2F%2Fwww.haproxy.org%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.sazTpAB7NWc.O%2Fam%3DwQE%2Fd%3D1%2Fct%3Dzgms%2Frs%3DAGLTcCMGRnMhese6OTxesnN0rDvhruAGIg%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1606992759713&amp;_gfid=I0_1606992759713&amp;parent=http%3A%2F%2Fwww.haproxy.org&amp;pfname=&amp;rpctoken=31516422" data-gapiattached="true"></iframe></div><g:plusone data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone><br />
+	  <hr class="hr" />
+	  <a href="//whos.amung.us/stats/62nl1k3va5id/"><img src="//whos.amung.us/cwidget/62nl1k3va5id/069ed8fff200.png" width="81" height="29" border="0" title="Click to see how many people are online" /></a> visitors online
+	  <hr class="hr" />
+	  <center>
+	    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=willy%40nerim%2enet&amp;item_name=Willy%20Tarreau&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="img/btn_donate_SM_usd.gif" border="0" title="Make a donation in USD to the project via PayPal" /></a> 
+	    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=willy%40nerim%2enet&amp;item_name=Willy%20Tarreau&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="img/btn_donate_SM_eur.gif" border="0" title="Make a donation in EUR to the project via PayPal" /></a><br />
+	    <i>Thanks for your support !</i><br />
+	  </center>
+	  <hr class="hr" />
+	  <center>
+	    <p><a href="/external?link=1"><img src="img/Ad_1.png" width="160" border="1" style="border-color: green" /></a>
+	    </p><p><a href="/external?link=2"><img src="img/Ad_2.png" width="160" border="1" style="border-color: green" /></a>
+	    </p><p><a href="/external?link=4"><img src="img/Ad_4.png" width="160" border="1" style="border-color: green" /></a>
+	    </p><p><a href="http://worldipv6launch.org/"><img src="img/World_IPv6_launch_banner_256.png" width="106" border="0" /></a><br /><br />
+	    <img src="//haproxy.ipv6.1wt.eu/img/ipv6ok.gif" width="200" height="15" border="0" style="background: #ffffff url('/img/ipv6nok.gif') no-repeat center;" /><br />
+	  </p></center>
+	  <!--/div-->
+	</td><td>
+	</td><td align="justify">
+
+	  <h3><a name="last">Latest versions</a></h3><a name="last">
+<!--center><p align=justify style="background: yellow; width: 64em; padding: 1em; border: solid 1px;"><img src="img/fr-off.png" border=0/> <b>OH LA, PAS SI VITE!</b> Tu trouves qu'haproxy est un projet intéressant mais qu'il pourrait être amélioré? Tu comptes en nanosecondes, en cycles de CPU, en gigabits/s et en taux de miss de cache? Tu fuis les chefaillons qui ne servent que leur carrière et les collègues à l'égo sur-développé qui écrasent les autres en croyant tout savoir? Tu aimes l'esprit open-source et n'as pas honte de faire des bugs (<i>bon pas trop quand même</i>)? Tu aimes apprendre des autres et leur apprendre des choses qui les aident? Le simple "<i>merci</i>" d'un utilisateur final te rend heureux et fier de ton travail pour toute la journée? Mais sais-tu que le plus gros du coeur d'haproxy est développé ici, en France, au sud de Paris? Pourquoi ne viendrais-tu pas faire les choses que tu aimes au sein de notre équipe puisque ça correspond visiblement à tes attentes et qu'on aimerait bien avoir plus de collègues un peu comme nous pour paralléliser un boulot qui ne cesse de croître plutôt que de reporter certaines fonctionalités à plus tard par manque de temps (<i>et accessoirement aussi pour faire des barbecues et se marrer</i>)? <b>Alors contacte-moi (willy at haproxy) pour plus d'infos!</b></p></center-->
+	  <p>
+	    <table cols="6" border="1" align="center" cellspacing="0" cellpadding="2">
+		<tbody><tr align="center" style="font-weight: bold; background-color: #d0d0d0;"><td>Branch</td><td>Release date</td><td>End of life</td><td>Latest version</td><td>Changelog</td><td>Links</td></tr>
+		<tr align="center" bgcolor="#fff070">
+		  <td><a href="http://git.haproxy.org/?p=haproxy.git">2.4-dev</a></td>
+		  <td>~2021-Q2</td>
+		  <td>2026-Q2 (dev » LTS)</td>
+		  <td><a href="/download/2.4/src/devel/haproxy-2.4-dev2.tar.gz">2.4-dev2</a></td>
+		  <td><a href="/download/2.4/src/CHANGELOG">2020/12/01</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy.git">web</a> / <a href="/download/2.4/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-2.4-dev2&amp;notwords=Re%3A">announce</a></td>
+		</tr>
+		<tr align="center">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-2.3.git">2.3</a></td>
+		  <td>2020-11-05</td>
+		  <td>2022-Q1 (stable)</td>
+		  <td><a href="/download/2.3/src/haproxy-2.3.2.tar.gz">2.3.2</a></td>
+		  <td><a href="/download/2.3/src/CHANGELOG">2020/11/28</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-2.3.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-2.3.git">web</a> / <a href="/download/2.3/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-2.3.2&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-2.3.html">bugs</a></td>
+		</tr>
+		<tr align="center">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-2.2.git">2.2</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg37852.html">2020-07-07</a></td>
+		  <td><b>2025-Q2 (LTS)</b></td>
+		  <td><a href="/download/2.2/src/haproxy-2.2.6.tar.gz">2.2.6</a></td>
+		  <td><a href="/download/2.2/src/CHANGELOG">2020/11/30</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-2.2.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-2.2.git">web</a> / <a href="/download/2.2/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-2.2.6&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-2.2.html">bugs</a></td>
+		</tr>
+		<tr align="center">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-2.1.git">2.1</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg35491.html">2019-11-25</a></td>
+		  <td>2021-Q1</td>
+		  <td><a href="/download/2.1/src/haproxy-2.1.10.tar.gz">2.1.10</a></td>
+		  <td><a href="/download/2.1/src/CHANGELOG">2020/11/05</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-2.1.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-2.1.git">web</a> / <a href="/download/2.1/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-2.1.10&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-2.1.html">bugs</a></td>
+		</tr>
+		<tr align="center">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-2.0.git">2.0</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg32143.html">2019-06-16</a></td>
+		  <td><b>2024-Q2 (LTS)</b></td>
+		  <td><a href="/download/2.0/src/haproxy-2.0.19.tar.gz">2.0.19</a></td>
+		  <td><a href="/download/2.0/src/CHANGELOG">2020/11/06</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-2.0.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-2.0.git">web</a> / <a href="/download/2.0/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-2.0.19&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-2.0.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.9.git">1.9</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg32143.html">2018-12-19</a></td>
+		  <td>2020-Q2 (unmaintained)</td>
+		  <td><a href="/download/1.9/src/haproxy-1.9.16.tar.gz">1.9.16</a></td>
+		  <td><a href="/download/1.9/src/CHANGELOG">2020/07/31</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.9.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.9.git">web</a> / <a href="/download/1.9/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.9.16&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.9.html">bugs</a></td>
+		</tr>
+		<tr align="center">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.8.git">1.8</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg28004.html">2017-11-26</a></td>
+		  <td><b>2022-Q4 (LTS)</b></td>
+		  <td><a href="/download/1.8/src/haproxy-1.8.27.tar.gz">1.8.27</a></td>
+		  <td><a href="/download/1.8/src/CHANGELOG">2020/11/06</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.8.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.8.git">web</a> / <a href="/download/1.8/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.8.27&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.8.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffd0a0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.7.git">1.7</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg24244.html">2016-11-25</a></td>
+		  <td>2021-Q4 (critical fixes only)</td>
+		  <td><a href="/download/1.7/src/haproxy-1.7.12.tar.gz">1.7.12</a></td>
+		  <td><a href="/download/1.7/src/CHANGELOG">2019/10/25</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.7.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.7.git">web</a> / <a href="/download/1.7/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.7.12&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.7.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffd0a0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.6.git">1.6</a></td>
+		  <td><a href="https://marc.info/?l=haproxy&amp;m=144489753805612&amp;w=2">2015-10-13</a></td>
+		  <td>2020-Q4 (critical fixes only)</td>
+		  <td><a href="/download/1.6/src/haproxy-1.6.15.tar.gz">1.6.15</a></td>
+		  <td><a href="/download/1.6/src/CHANGELOG">2019/10/25</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.6.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.6.git">web</a> / <a href="/download/1.6/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.6.15&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.6.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.5.git">1.5</a></td>
+		  <td><a href="https://www.mail-archive.com/haproxy@formilux.org/msg14273.html">2014-06-19</a></td>
+		  <td>2020-01-10 (unmaintained)</td>
+		  <td><a href="/download/1.5/src/haproxy-1.5.19.tar.gz">1.5.19</a></td>
+		  <td><a href="/download/1.5/src/CHANGELOG">2016/12/25</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.5.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.5.git">web</a> / <a href="/download/1.5/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.5.19&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.5.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.4.git">1.4</a></td>
+		  <td><a href="https://marc.info/?l=haproxy&amp;m=126719658302110&amp;w=2">2010-02-26</a></td>
+		  <td>2018-02-08 (unmaintained)</td>
+		  <td><a href="/download/1.4/src/haproxy-1.4.27.tar.gz">1.4.27</a></td>
+		  <td><a href="/download/1.4/src/CHANGELOG">2016/03/14</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.4.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.4.git">web</a> / <a href="/download/1.4/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.4.27&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.4.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.3.git">1.3</a></td>
+		  <td>2006-06-29</td>
+		  <td>2016-03-14 (unmaintained)</td>
+		  <td><a href="/download/1.3/src/haproxy-1.3.28.tar.gz">1.3.28</a></td>
+		  <td><a href="/download/1.3/src/CHANGELOG">2016/03/14</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.3.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.3.git">web</a> / <a href="/download/1.3/">dir</a> / <a href="https://www.mail-archive.com/search?a=1&amp;l=haproxy%40formilux.org&amp;haswords=announce&amp;subject=%5BANNOUNCE%5D+haproxy-1.3.28&amp;notwords=Re%3A">announce</a> / <a href="http://www.haproxy.org/bugs/bugs-1.3.html">bugs</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.2.git">1.2</a></td>
+		  <td>2003-11-09</td>
+		  <td>2011-08-06 (unmaintained)</td>
+		  <td><a href="/download/1.2/src/haproxy-1.2.18.tar.gz">1.2.18</a></td>
+		  <td><a href="/download/1.2/src/CHANGELOG">2008-05-25</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.2.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.2.git">web</a> / <a href="/download/1.2/">dir</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.1.git">1.1</a></td>
+		  <td>2002-03-10</td>
+		  <td>2006-01-29 (unmaintained)</td>
+		  <td><a href="/download/1.1/src/haproxy-1.1.34.tar.gz">1.1.34</a></td>
+		  <td><a href="/download/1.1/src/CHANGELOG">2006-01-29</a></td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.1.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.1.git">web</a> / <a href="/download/1.1/">dir</a></td>
+		</tr>
+		<tr align="center" bgcolor="#ffb0c0">
+		  <td><a href="http://git.haproxy.org/?p=haproxy-1.0.git">1.0</a></td>
+		  <td>2001-12-16</td>
+		  <td>2001-12-30 (unmaintained)</td>
+		  <td>1.0.2</td>
+		  <td>2001-12-30</td>
+		  <td><a href="http://git.haproxy.org/git/haproxy-1.0.git/">git</a> / <a href="http://git.haproxy.org/?p=haproxy-1.0.git">web</a> / <a href="/download/1.0/">dir</a></td>
+		</tr>
+	    </tbody></table>
+	  </p><p>
+	  </p></a><h3><a name="last"></a><a name="news">Quick News</a></h3><a name="news">
+	  <p>
+	  <b style="background: yellow;">August 13th, 2020</b> : <b>HAProxyConf 2020 postponed</b>
+         </p><p>
+	   </p></a><ul><a name="news">
+	     As most already expected it, the </a><a href="https://www.haproxyconf.com/">HAProxyConf 2020</a> which was initially planned around November will be postponed to a yet unknown date in 2021 depending on how the situation evolves regarding the pandemic. At this point it's useless to forecast anything, so we'll start to announce it upfront once we have a better visibility of what is possible.
+		<p>
+		In the mean time, if you're impatient, please be aware that all the 2019 talks are available on <a href="https://www.haproxyconf.com/2019/presentations/">https://www.haproxyconf.com/2019/presentations/</a>.
+           </p></ul>
+	  <p>
+	  <b>July 7th, 2020</b> : <b>HAProxy 2.2.0 is ready!</b>
+         </p><p>
+	   </p><ul>
+	     HAProxy 2.2 is tha latest LTS release, delivered few weeks late, but for good given that many early bugs were addressed during this time! New features include runtime certificate addition and crtlist management, dynamic error pages and return statements, logging over TCP, refined idle connection pools saving server resources, extensible health checks, improved I/O processing and scheduling for even lower latency processing, even more debugging information. Please check the <a href="https://www.mail-archive.com/haproxy@formilux.org/msg37852.html">announce here</a> for more details.
+           </ul>
+	  <p>
+	  <b>November 25th, 2019</b> : <b>HAProxy 2.1.0 is out!</b>
+         </p><p>
+	   </p><ul>
+	     Delivered on time, for once, proving that our new development process works better. In short this provides hot-update of certificates, FastCGI to backends, better performance, more debugging capabilities and some extra goodies. Please check the <a href="https://www.mail-archive.com/haproxy@formilux.org/msg35491.html">announce here</a> for more details.
+           </ul>
+         <p>
+	    <a href="/news.html"><b><i>Older news...</i></b></a>
+	  </p><p>
+	  </p><h3><a name="desc">Description</a></h3><a name="desc">
+	  </a><p><a name="desc">
+	    HAProxy is a free, <b><i>very</i></b> fast and reliable solution offering
+	    </a><a href="http://en.wikipedia.org/wiki/High_availability">high availability</a>,
+	    <a href="http://en.wikipedia.org/wiki/Load_balancer">load balancing</a>, and
+	    proxying for TCP and HTTP-based applications. It is particularly suited for very
+	    high traffic web sites and powers quite a number of the world's most visited ones.
+	    Over the years it has become the de-facto standard opensource load balancer, is
+	    now shipped with most mainstream Linux distributions, and is often deployed by
+	    default in cloud platforms. Since it does not advertise itself, we only know it's
+	    used when the <a href="/they-use-it.html">admins report it</a> :-)
+	  </p><p>
+	    Its mode of operation makes its integration into existing architectures very easy
+	    and riskless, while still offering the possibility not to expose fragile web servers
+	    to the net, such as below :<br />
+	    </p><center><img src="img/haproxy-pmode.png" /></center>
+
+	  <p>
+	    We always support at least two active versions in parallel and an extra old
+	    one in critical fixes mode only. The currently supported versions are :
+	  </p><ul>
+	    <li><b>version 2.3</b> : syslog forwarding, better idle conn management, improved balancing with large queues, simplified SSL managment, more stats metrics, stricter config checking by default, general performance improvements
+	    </li><li><b>version 2.2</b> : runtime certificate additions, improved idle connection management, logging over TCP, HTTP "return" directive, errorfile templates, TLSv1.2 by default, extensible health-checks
+	    </li><li><b>version 2.1</b> : improved I/Os and multi-threading, FastCGI, runtime certificate updates, HTX-only, improved debugging, removal of obsolete keywords
+	    </li><li><b>version 2.0</b> : gRPC, layer 7 retries, process manager, SSL peers, log load balancing/sampling, end-to-end TCP fast-open, automatic settings (maxconn, threads, HTTP reuse, pools), ...
+	    </li><li><b>version 1.9</b> : improved multi-threading, end-to-end HTTP/2, connection pools, queue priority control, stdout logging, ...
+	    </li><li><b>version 1.8</b> : multi-threading, HTTP/2, cache, on-the fly server addition/removal, seamless reloads, DNS SRV, hardware SSL engines, ...
+	    </li><li><b>version 1.7</b> : added server hot reconfiguration, content processing agents, multi-type certs, ...
+	    </li><li><b>version 1.6</b> : added DNS resolution support, HTTP connection multiplexing, full stick-table replication, stateless compression, ...
+	    </li><li><b>version 1.5</b> : added SSL, IPv6, keep-alive, DDoS protection, ...
+	  </li></ul>
+
+	  <p>
+	    </p><h3><a name="feat">Main features</a></h3><a name="feat">
+	  <p>
+
+	    Each version brought its set of features on top of the previous one.
+	    Upwards compatibility is a very important aspect of HAProxy, and even
+	    version 1.5 is able to run with configurations made for version 1.0 13
+	    years before. Version 1.6 dropped a few long-deprecated keywords and
+	    suggests alternatives. The most differenciating features of each version
+	    are listed below :
+	    </p><ul>
+	      <li><b>version 1.5</b>, released in 2014
+		This version further expands 1.4 with 4 years of hard work :
+		<b id="mar">native SSL</b> support on both sides with SNI/NPN/ALPN and OCSP stapling,
+		<b id="mar">IPv6</b> and UNIX sockets are supported everywhere,
+		<b id="mar">full HTTP keep-alive</b> for better support of NTLM and improved efficiency in static farms,
+		<b id="mar">HTTP/1.1 compression</b> (deflate, gzip) to save bandwidth,
+		<b id="mar">PROXY protocol</b> versions 1 and 2 on both sides,
+		<b id="mar">data sampling</b> on everything in request or response, including payload,
+		<b id="mar">ACLs</b> can use any matching method with any input sample
+		<b id="mar">maps</b> and dynamic ACLs <b>updatable</b> from the CLI
+		<b id="mar">stick-tables</b> support counters to track activity on any input sample
+		<b id="mar">custom format</b> for logs, unique-id, header rewriting, and redirects,
+		<b id="mar">improved health</b> checks (SSL, scripted TCP, check agent, ...),
+		<b id="mar">much more scalable</b> configuration supports hundreds of thousands of backends and certificates without sweating
+
+	      </li><li><b>version 1.4</b>, released in 2010
+		This version has brought its share of new features over 1.3, most of which were long awaited :
+		<b id="mar">client-side keep-alive</b> to reduce the time to load heavy pages for clients over the net,
+		<b id="mar">TCP speedups</b> to help the TCP stack save a few packets per connection,
+		<b id="mar">response buffering</b> for an even lower number of concurrent connections on the servers,
+		<b id="mar">RDP protocol</b> support with server stickiness and user filtering,
+		<b id="mar">source-based stickiness</b> to attach a source address to a server,
+		<b id="mar">a much better stats interface</b> reporting tons of useful information,
+		<b id="mar">more verbose health checks</b> reporting precise statuses and responses in stats and logs,
+		<b id="mar">traffic-based health</b> to fast-fail a server above a certain error threshold,
+		<b id="mar">support for HTTP authentication</b> for any request including stats, with support for password encryption,
+		<b id="mar">server management from the CLI</b> to enable/disable and change a server's weight without restarting haproxy,
+		<b id="mar">ACL-based persistence</b> to maintain or disable persistence based on ACLs, regardless of the server's state,
+		<b id="mar">log analyzer</b> to generate fast reports from logs parsed at 1 Gbyte/s,
+
+	      </li><li><b>version 1.3</b>, released in 2006
+		This version has brought a lot of new features and improvements over 1.2, among which
+		<b id="mar">content switching</b> to select a server pool based on any request criteria,
+		<b id="mar">ACL</b> to write content switching rules, wider choice of
+		<b id="mar">load-balancing algorithms</b> for better integration,
+		<b id="mar">content inspection</b> allowing to block unexpected protocols,
+		<b id="mar">transparent proxy</b> under Linux, which allows to directly connect to
+		the server using the client's IP address, <b id="mar">kernel TCP splicing</b> to forward
+		data between the two sides without copy in order to reach multi-gigabit data rates,
+		<b id="mar">layered design</b> separating sockets, TCP and HTTP processing for more
+		robust and faster processing and easier evolutions, <b id="mar">fast and fair scheduler</b>
+		allowing better QoS by assigning priorities to some tasks, <b id="mar">session rate limiting</b>
+		for colocated environments, etc...
+	    </li></ul>
+	  <p>
+	    Version 1.2 has been in production use since 2006 and provided an improved performance level
+	    on top of 1.1. It is not maintained anymore, as most of its users have switched to 1.3 a long
+	    time ago. Version 1.1, which has been maintaining critical sites online since 2002, is not
+	    maintained anymore either. Users should upgrade to 1.4 or 1.5.
+	  </p><p>
+	  </p></a><h3><a name="feat"></a><a name="plat">Supported platforms</a></h3><a name="plat">
+	  <p>
+	    HAProxy is known to reliably run on the following OS/Platforms :<br />
+	  </p></a><ul><a name="plat">
+	    </a><li><a name="plat"> </a><a href="http://www.kernel.org/">Linux 2.4</a> on x86, x86_64, Alpha, Sparc, MIPS, PARISC
+	    </li><li> <a href="http://www.kernel.org/">Linux 2.6-5.x</a> on x86, x86_64, ARM, AARCH64, MIPS, Sparc, PPC64
+	    </li><li> <a href="http://www.sun.com/software/solaris/">Solaris 8/9</a> on UltraSPARC 2 and 3
+	    </li><li> <a href="http://www.sun.com/software/solaris/">Solaris 10</a> on Opteron and UltraSPARC
+	    </li><li> <a href="http://www.freebsd.org/">FreeBSD 4.10 - current</a> on x86
+	    </li><li> <a href="http://www.openbsd.org/">OpenBSD 3.1 to -current</a> on i386, amd64, macppc, alpha, sparc64 and VAX (check the ports)
+	    </li><li> <a href="http://www-03.ibm.com/systems/power/software/aix/about.html">AIX 5.1 - 5.3</a> on Power™ architecture
+	  </li></ul>
+	  <p>
+	    Highest performance is achieved with modern operating systems supporting scalable polling mechanisms such as 
+	    <a href="http://www.xmailserver.org/linux-patches/nio-improve.html">epoll</a> on Linux 2.6/3.x or <b>kqueue</b>
+	    on FreeBSD and OpenBSD. This requires haproxy version newer than 1.2.5. Fast data transfers are made possible
+	    on Linux 3.x using TCP splicing and haproxy 1.4 or 1.5. Forwarding rates of up to 40 Gbps have already been
+	    achieved on such platforms after a very careful tuning. While Solaris and AIX are supported, they should not
+	    be used if extreme performance is required.
+	  </p><p>
+	    Current typical 1U servers equipped with a dual-core Opteron or Xeon generally
+	    achieve between 15000 and 40000 hits/s and have no trouble saturating 2 Gbps
+	    under Linux.
+	  </p><p>
+	  </p><h3><a name="perf">Performance</a></h3><a name="perf">
+	  </a><p><a name="perf">
+	    <i>[ warning: information in this section dates 2007, things have improved by an order of magnitude since then ]</i><br />
+	    Well, since a user's testimony is better than a long demonstration, please take a look at 
+	    </a><a href="http://www.ghostwheel.com/merlin/Personal/notes/2007/03/25/200-terabytes-served-in-81-days-247tb-per-day/"><b>Chris Knight's experience</b></a>
+	    with <b>haproxy saturating a gigabit fiber in 2007</b> on a video download site. Since then,
+	    the performance has significantly increased and the hardware has become much more capable, as
+	    <a href="/10g.html">my experiments</a> with
+	    <a href="http://myri.com/">Myricom's 10-Gig NICs</a> have shown two years later. Now as of
+	    2014, 10-Gig NICs are too limited and are hardly suited for 1U servers since they do rarely
+	    provide enough port density to reach speeds above 40-60 Gbps in a 1U server. 100-Gig NICs
+	    are coming and I expect to run new series of tests when they are available.
+	  </p><p>
+	    HAProxy involves several techniques commonly found in Operating Systems
+	    architectures to achieve the absolute maximal performance :
+	  </p><ul>
+	    <li>a single-process, <a href="http://en.wikipedia.org/wiki/Event_driven">
+		<b>event-driven</b></a> model considerably reduces the cost of
+	      <a href="http://en.wikipedia.org/wiki/Context_switch"><b>context switch</b></a>
+	      and the memory usage. Processing several hundreds of tasks in a millisecond is
+	      possible, and the memory usage is in the order of a few kilobytes per session
+	      while memory consumed in preforked or threaded servers is more in the order of
+	      megabytes per process.
+	    </li><li><b>O(1) event checker</b> on systems that allow it (Linux and FreeBSD)
+	      allowing instantaneous detection of any event on any connection among tens of
+	      thousands.
+	    </li><li><b>Delayed updates</b> to the event checker using a lazy event cache ensures
+	      that we never update an event unless absolutely required. This saves a lot of
+	      system calls.
+	    </li><li><b>Single-buffering</b> without any data copy between reads and writes whenever
+	      possible. This saves a lot of CPU cycles and useful memory bandwidth. Often,
+	      the bottleneck will be the I/O busses between the CPU and the network
+	      interfaces. At 10-100 Gbps, the memory bandwidth can become a bottleneck too.
+	    </li><li><b>Zero-copy forwarding</b> is possible using the <tt>splice()</tt> system
+	      call under Linux, and results in real zero-copy starting with Linux 3.5. This
+	      allows a small sub-3 Watt device such as a Seagate Dockstar to forward HTTP
+	      traffic at one gigabit/s.
+	    </li><li><a href="http://en.wikipedia.org/wiki/Page_replacement_algorithms">MRU</a>
+	      memory allocator using fixed size <b>memory pools</b> for immediate memory
+	      allocation favoring hot cache regions over cold cache ones. This dramatically
+	      reduces the time needed to create a new session.
+	    </li><li><b>Work factoring</b>, such as multiple <b><tt>accept()</tt></b> at once, and
+	      the ability to limit the number of <b><tt>accept()</tt></b> per iteration when
+	      running in multi-process mode, so that the load is evenly distributed among
+	      processes.
+	    </li><li><b>CPU-affinity</b> is supported when running in multi-process mode, or simply
+	      to adapt to the hardware and be the closest possible to the CPU core managing the
+	      NICs while not conflicting with it.
+	    </li><li><b>Tree-based storage</b>, making heavy use of the <a href="http://1wt.eu/articles/ebtree/">Elastic Binary tree</a> I have
+	      been developping for several years. This is used to keep timers ordered, to keep
+	      the runqueue ordered, to manage round-robin and least-conn queues, to look up ACLs
+	      or keys in tables, with only an O(log(N)) cost.
+	    </li><li><b>Optimized timer queue</b> : timers are not moved in the tree if they are
+	      postponed, because the likeliness that they are met is close to zero since they're
+	      mostly used for timeout handling. This further optimizes the ebtree usage.
+	    </li><li>optimized <b>HTTP header analysis</b> : headers are parsed an interpreted on
+	      the fly, and the parsing is optimized to avoid an re-reading of any previously
+	      read memory area. Checkpointing is used when an end of buffer is reached with
+	      an incomplete header, so that the parsing does not start again from the
+	      beginning when more data is read. Parsing an average HTTP request typically
+	      takes half a microsecond on a fast Xeon E5.
+	    </li><li>careful reduction of the <b>number of expensive system calls</b>. Most of the
+	      work is done in user-space by default, such as time reading, buffer aggregation,
+	      file-descriptor enabling/disabling.
+	    </li><li>Content analysis is optimized to carry only pointers to original data and
+	      never copy unless the data needs to be transformed. This ensures that very
+	      small structures are carried over and that contents are never replicated when
+	      not absolutely necessary.
+	  </li></ul>
+	  <p>
+	    All these micro-optimizations result in very low CPU usage even on moderate
+	    loads. And even at very high loads, when the CPU is saturated, it is quite common
+	    to note figures like <b>5% user</b> and <b>95% system</b>, which means that the
+	    HAProxy process consumes about 20 times less than its system counterpart. This
+	    explains <b>why the tuning of the Operating System is very important</b>. This
+	    is the reason why we ended up building
+	    <a href="https://www.haproxy.com/products/main-features-of-aloha-load-balancers/">our own appliances</a>,
+	    in order to save that complex and critical task from the end-user.
+	  </p><p>
+	    In production, HAProxy has been installed several times as an <b>emergency solution</b>
+	    when very expensive, high-end <b>hardware load balancers suddenly failed</b> on Layer 7
+	    processing. Some hardware load balancers still do not use proxies and process requests
+	    at the <b>packet level</b> and have a great difficulty at supporting
+	    <b>requests across multiple packets</b> and <b>high response
+	      times</b> because they do <b>no buffering at all</b>. On the
+	    other side, <b>software load balancers</b> use <b>TCP buffering</b>
+	    and are insensible to long requests and high response times. A
+	    <b>nice side effect</b> of <b>HTTP buffering</b> is that it
+	    <b>increases the server's connection acceptance</b> by reducing the
+	    session duration, which <b>leaves room for new requests</b>.
+	  </p><p>
+	    There are 3 important factors used to measure a load balancer's performance :
+	  </p><ul>
+	    <li><b>The session rate</b><br />
+	      This factor is very important, because it directly determines when the load
+	      balancer will not be able to distribute all the requests it receives. It is
+	      mostly dependant on the CPU.
+	      Sometimes, you will hear about requests/s or hits/s, and they are the same as
+	      sessions/s in <tt><b>HTTP/1.0</b></tt> or <tt><b>HTTP/1.1</b></tt> with
+	      <b>keep-alive</b> disabled. Requests/s with keep-alive enabled is generally much
+	      higher (since it significantly reduces system-side work) but is often meaningless
+	      for internet-facing deployments since clients often open a large amount of connections
+	      and do not send many requests per connection on avertage. This factor is
+	      measured with varying object sizes, the fastest results generally coming from
+	      empty objects (eg: <tt>HTTP 302, 304</tt> or <tt>404</tt> response codes).
+	      Session rates around <b>100,000 sessions/s</b> can be achieved on Xeon E5
+	      systems in 2014.
+	    </li><li><b>The session concurrency</b><br />
+	      This factor is tied to the previous one. Generally, the session rate
+	      will drop when the number of concurrent sessions increases (except with the
+	      <tt><b>epoll</b></tt> or <tt><b>kqueue</b></tt> polling mechanisms). The slower
+	      the servers, the higher the number of concurrent sessions for a same session rate.
+	      If a load balancer receives 10000 sessions per second and the servers respond in
+	      100 ms, then the load balancer will have 1000 concurrent sessions. This number is
+	      limited by the amount of memory and the amount of file-descriptors the system can
+	      handle. With 16 kB buffers, HAProxy will need about 34 kB per session, which
+	      results in around <b>30000 sessions per GB</b> of RAM. In practise, socket
+	      buffers in the system also need some memory and 20000 sessions per GB of RAM is
+	      more reasonable. Layer 4 load balancers generally announce <b>millions of
+	      simultaneous sessions</b> because they need to deal with the TIME_WAIT sockets
+	      that the system handles for free in a proxy. Also they don't process any data
+	      so they don't need any buffer. Moreover, they are sometimes designed to be used
+	      in <b>Direct Server Return</b> mode, in which the load balancer only sees forward
+	      traffic, and which forces it to keep the sessions for a long time after their end
+	      to avoid cutting sessions before they are closed.
+
+	    </li><li><b>The data forwarding rate</b><br />
+	      This factor generally is at the opposite of the session rate. It is measured
+	      in Megabytes/s (MB/s), or sometimes in Gigabits/s (Gbps). Highest data rates
+	      are achieved with large objects to minimise the overhead caused by session
+	      setup and teardown. Large objects generally increase session concurrency, and
+	      high session concurrency with high data rate requires large amounts of memory
+	      to support large windows. High data rates burn a lot of CPU and bus cycles on
+	      software load balancers because the data has to be copied from the input
+	      interface to memory and then back to the output device. Hardware load balancers
+	      tend to directly switch packets from input port to output port for higher data
+	      rate, but cannot process them and sometimes fail to touch a header or a cookie.
+	      Haproxy on a typical Xeon E5 of 2014 can forward data up to about <b>40 Gbps</b>.
+	      A fanless 1.6 GHz Atom CPU is slightly above 1 Gbps.
+	  </li></ul>
+	  <p>
+	    A load balancer's <b>performance</b> related to these factors is generally announced <b>for
+	    the best case</b> (eg: empty objects for session rate, large objects for data rate).
+	    This is not because of lack of honnesty from the vendors, but because it is not
+	    possible to tell exactly how it will behave in every combination. So when those 3
+	    limits are known, the customer should be aware that it will generally <b>perform below
+	    all</b> of them. A good rule of thumb on software load balancers is to consider an
+	    average practical performance of <b>half of maximal</b> session and data rates for
+	    average sized objects.
+	  </p><p>
+	    You might be interested in checking the <a href="/10g.html">10-Gigabit/s page</a>.
+	  </p><p>
+	  </p><h3><a name="fiab">Reliability - <i>keeping high-traffic sites online since 2002</i></a></h3><a name="fiab">
+	  <p>
+	    Being obsessed with reliability, I tried to do my best to ensure a <b>total
+	    continuity of service</b> by design. It's more difficult to design something
+	    reliable from the ground up in the short term, but in the long term it reveals
+	    easier to maintain than broken code which tries to hide its own bugs behind
+	    respawning processes and tricks like this.
+	  </p><p>
+	    In <b>single-process</b> programs, you have no right to fail : the smallest bug
+	    will either crash your program, make it spin like mad or freeze. There has not
+	    been any such bug found in stable versions for the <b>last 13 years</b>, though
+	    it happened a few times with development code running in production.
+	  </p><p>
+	    HAProxy has been installed on Linux 2.4 systems <b>serving millions of pages
+	      every day</b>,
+	    and which have only known <b>one reboot in 3 years</b> for a complete OS upgrade.
+	    Obviously, they were not directly exposed to the Internet because they did not receive
+	    any patch at all. The kernel was a heavily patched 2.4 with Robert Love's
+	    <tt>jiffies64</tt> patches to support time wrap-around at 497 days (which
+	    happened twice). On such systems, the software cannot fail without being
+	    immediately noticed !
+	  </p><p>
+	    Right now, it's being used in many Fortune 500 companies around the world to
+	    reliably serve billions of pages per day or relay huge amounts of money. Some
+	    people even trust it so much that they use it as the default solution to solve
+	    simple problems (and I often tell them that they do it the dirty way). Such
+	    people sometimes still use versions 1.1 or 1.2 which sees very limited evolutions
+	    and which targets mission-critical usages. HAProxy is really suited for such environments
+	    because the indicators it returns provide a lot of valuable information about the application's
+	    health, behaviour and defects, which are used to make it even more reliable.
+	    Version 1.3 has now received far more testing than 1.1 and 1.2 combined, so
+	    users are strongly encouraged to migrate to a stable 1.3 or 1.4 for mission-critical
+	    usages.
+	  </p><p>
+	    As previously explained, most of the work is executed by the Operating System.
+	    For this reason, a large part of the reliability involves the OS itself. Latest
+	    versions of Linux 2.4 have been known for offering the highest level of stability
+	    ever. However, it requires a bunch of patches to achieve a high level of performance,
+	    and this kernel is really outdated now so running it on recent hardware will often
+	    be difficult (though some people still do). Linux 2.6 and 3.x include the features
+	    needed to achieve this level of performance, but old LTS versions only should be
+	    considered for really stable operations without upgrading more than once a year.
+	    Some people prefer to run it on Solaris (or do not have the choice). Solaris 8 and
+	    9 are known to be really stable right now, offering a level of performance comparable
+	    to legacy Linux 2.4 (without the epoll patch). Solaris 10 might show performances
+	    closer to early Linux 2.6. FreeBSD shows good performance but <b>pf</b> (the firewall)
+	    eats half of it and needs to be disabled to come close to Linux. OpenBSD sometimes
+	    shows socket allocation failures due to sockets staying in <tt>FIN_WAIT2</tt> state
+	    when client suddenly disappears. Also, I've noticed that hot reconfiguration does
+	    not work under OpenBSD.
+	  </p><p>
+	    The reliability can significantly decrease when the system is pushed to its
+	    limits. This is why finely tuning the <tt>sysctls</tt> is important. There is no
+	    general rule, every system and every application will be specific. However, it is
+	    important to ensure that the system will <b>never run out of memory</b> and
+	    that it will <b>never swap</b>. A correctly tuned system must be able to run for
+	    years at full load without slowing down nor crashing.
+	  </p><p>
+	  </p></a><h3><a name="fiab"></a><a name="secu">Security - <i>Not even one intrusion in 13 years</i></a></h3><a name="secu">
+	  <p>
+	    Security is an important concern when deploying a software load balancer. It is
+	    possible to harden the OS, to limit the number of open ports and accessible
+	    services, but the load balancer itself stays exposed. For this reason, I have been
+	    very careful about programming style. Vulnerabilities are very rarely encountered
+	    on haproxy, and its architecture significantly limits their impact and often allows
+	    easy workarounds. Its remotely unpredictable even processing makes it very hard to
+	    reliably exploit any bug, and if the process ever crashes, the bug is discovered.
+	    All of them were discovered by reverse-analysis of an accidental crash BTW.
+	  </p><p>
+	    Anyway, much care is taken when writing code to manipulate headers. Impossible
+	    state combinations are checked and returned, and errors are processed from the
+	    creation to the death of a session. A few people around the world have reviewed
+	    the code and suggested cleanups for better clarity to ease auditing. By the way,
+	    I'm used to refuse patches that introduce suspect processing or in which not
+	    enough care is taken for abnormal conditions.
+	  </p><p>
+	    I generally suggest <b>starting</b> HAProxy as <b><tt>root</tt></b> because it
+	    can then jail itself in a <b>chroot</b> and <b>drop all of its privileges</b>
+	    before starting the instances. This is not possible if it is not started as
+	    <tt>root</tt> because only <tt>root</tt> can execute <b><tt>chroot()</tt></b>,
+	    contrary to what some admins believe.
+	  </p><p>
+	    Logs provide a lot of information to help maintain a satisfying security
+	    level. They are commonly sent over <tt>UDP</tt> because once chrooted, the
+	    <tt>/dev/log</tt> UNIX socket is unreachable, and it must not be possible to
+	    write to a file. The following information are particularly useful :
+	  </p><ul>
+	    <li><b>source IP and port</b> of requestor make it possible to find their origin
+	      in firewall logs ;
+	    </li><li>session <b>set up</b> date generally matches firewall logs, while <b>tear
+		down</b> date often matches proxies dates ;
+	    </li><li>proper <b>request encoding</b> ensures the requestor cannot hide
+	      non-printable characters, nor fool a terminal.
+	    </li><li>arbitrary request and response <b>header and cookie capture</b> help to
+	      detect scan attacks, proxies and infected hosts.
+	    </li><li><b>timers</b> help to differentiate hand-typed requests from browsers's.
+	  </li></ul>
+	  </a><p><a name="secu">
+	    HAProxy also provides <b>regex-based header control</b>. Parts of the request, as
+	    well as request and response headers can be <b>denied</b>, <b>allowed</b>, <b>removed</b>, <b>rewritten</b>, or
+	    <b>added</b>. This is commonly used to block dangerous requests or encodings (eg: the
+	    </a><a href="http://www.cert.org/advisories/CA-2002-17.html">Apache Chunk exploit</a>),
+	    and to <b>prevent accidental information leak</b> from the server to the client.
+	    Other features such as <b><tt>Cache-control</tt> checking</b> ensure that no sensible
+	    information gets accidentely cached by an upstream proxy consecutively to a bug in
+	    the application server for example.
+	  </p><p>
+	  </p><h3><a name="down">Download</a></h3><a name="down">
+	  <p>
+	    The source code is covered by GPL v2. Source code can be downloaded right here for some old versions :
+	  </p></a><ul><a name="down">
+	    </a><li><a name="down"> <b>Development version (2.4)</b> :
+	      </a><ul><a name="down">
+		</a><li><a name="down"> </a><a href="#doc2.4">Documentation</a>
+		</li><li> <a href="/download/2.4/">Browse directory</a> for docs, sources and binaries
+		</li><li> <a href="/download/2.4/src/snapshot/">Daily snapshots</a> are built once a day when the GIT repository changes
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Latest stable version (2.3)</b> :
+	      <ul>
+		<li> <a href="#doc2.3">Documentation</a>
+		</li><li> <a href="/download/2.3/src/CHANGELOG">Release Notes</a> for version 2.3.2
+		</li><li> <a href="/download/2.3/src/haproxy-2.3.2.tar.gz">haproxy-2.3.2.tar.gz</a>
+		    (<a href="/download/2.3/src/haproxy-2.3.2.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/2.3/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Latest LTS version (2.2)</b> :
+	      <ul>
+		<li> <a href="#doc2.2">Documentation</a>
+		</li><li> <a href="/download/2.2/src/CHANGELOG">Release Notes</a> for version 2.2.6
+		</li><li> <a href="/download/2.2/src/haproxy-2.2.6.tar.gz">haproxy-2.2.6.tar.gz</a>
+		    (<a href="/download/2.2/src/haproxy-2.2.6.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/2.2/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Previous version (2.1)</b> :
+	      <ul>
+		<li> <a href="#doc2.1">Documentation</a>
+		</li><li> <a href="/download/2.1/src/CHANGELOG">Release Notes</a> for version 2.1.10
+		</li><li> <a href="/download/2.1/src/haproxy-2.1.10.tar.gz">haproxy-2.1.10.tar.gz</a>
+		    (<a href="/download/2.1/src/haproxy-2.1.10.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/2.1/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Previous LTS version (2.0)</b> :
+	      <ul>
+		<li> <a href="#doc2.0">Documentation</a>
+		</li><li> <a href="/download/2.0/src/CHANGELOG">Release Notes</a> for version 2.0.19
+		</li><li> <a href="/download/2.0/src/haproxy-2.0.19.tar.gz">haproxy-2.0.19.tar.gz</a>
+		    (<a href="/download/2.0/src/haproxy-2.0.19.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/2.0/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Previous version (1.9)</b> :
+	      <ul>
+		<li> <a href="#doc1.9">Documentation</a>
+		</li><li> <a href="/download/1.9/src/CHANGELOG">Release Notes</a> for version 1.9.16
+		</li><li> <a href="/download/1.9/src/haproxy-1.9.16.tar.gz">haproxy-1.9.16.tar.gz</a>
+		    (<a href="/download/1.9/src/haproxy-1.9.16.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/1.9/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Previous version (1.8)</b> :
+	      <ul>
+		<li> <a href="#doc1.8">Documentation</a>
+		</li><li> <a href="/download/1.8/src/CHANGELOG">Release Notes</a> for version 1.8.27
+		</li><li> <a href="/download/1.8/src/haproxy-1.8.27.tar.gz">haproxy-1.8.27.tar.gz</a>
+		    (<a href="/download/1.8/src/haproxy-1.8.27.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/1.8/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Older version (1.7)</b> :
+	      <ul>
+		<li> <a href="#doc1.7">Documentation</a>
+		</li><li> <a href="/download/1.7/src/CHANGELOG">Release Notes</a> for version 1.7.12
+		</li><li> <a href="/download/1.7/src/haproxy-1.7.12.tar.gz">haproxy-1.7.12.tar.gz</a>
+		    (<a href="/download/1.7/src/haproxy-1.7.12.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/1.7/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Older version (1.6)</b> :
+	      <ul>
+		<li> <a href="#doc1.6">Documentation</a>
+		</li><li> <a href="/download/1.6/src/CHANGELOG">Release Notes</a> for version 1.6.15
+		</li><li> <a href="/download/1.6/src/haproxy-1.6.15.tar.gz">haproxy-1.6.15.tar.gz</a>
+		    (<a href="/download/1.6/src/haproxy-1.6.15.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/1.6/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Oldest version (1.5)</b> :
+	      <ul>
+		<li> <a href="#doc1.5">Documentation</a>
+		</li><li> <a href="/download/1.5/src/CHANGELOG">Release Notes</a> for version 1.5.19
+		</li><li> <a href="/download/1.5/src/haproxy-1.5.19.tar.gz">haproxy-1.5.19.tar.gz</a>
+		    (<a href="/download/1.5/src/haproxy-1.5.19.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li> <a href="/download/1.5/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Unmaintained version (1.4)</b> :
+	      <ul>
+		<li> <a href="#doc1.4">Documentation</a>
+		</li><li> <a href="/download/1.4/src/CHANGELOG">Release Notes</a> for version 1.4.27
+		</li><li> <a href="/download/1.4/src/haproxy-1.4.27.tar.gz">haproxy-1.4.27.tar.gz</a>
+		    (<a href="/download/1.4/src/haproxy-1.4.27.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li><a href="/download/1.4/bin/haproxy-1.4.26-pcre-40kses-linux-i586.stripped.gz">haproxy-1.4.26-linux-i586.gz</a> :
+		   (<a href="/download/1.4/bin/haproxy-1.4.26-pcre-40kses-linux-i586.stripped.gz.md5">MD5</a>) Linux/i586 executable linked with Glibc 2.2
+		</li><li><a href="/download/1.4/bin/haproxy-1.4.26-pcre-solaris-sparc.notstripped.gz">haproxy-1.4.26-pcre-solaris-sparc.notstripped.gz</a> :
+		   (<a href="/download/1.4/bin/haproxy-1.4.26-pcre-solaris-sparc.notstripped.gz.md5">MD5</a>) Solaris8/Sparc executable
+		</li><li> <a href="/download/1.4/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Unmaintained version (1.3)</b> :
+	      <ul>
+		<li> <a href="#doc1.3">Documentation</a>
+		</li><li> <a href="/download/1.3/src/CHANGELOG">Release Notes</a> for version 1.3.28
+		</li><li> <a href="/download/1.3/src/haproxy-1.3.28.tar.gz">haproxy-1.3.28.tar.gz</a>
+		    (<a href="/download/1.3/src/haproxy-1.3.28.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li><a href="/download/1.3/bin/haproxy-1.3.27-pcre-40kses-splice-linux-i586.stripped.gz">haproxy-1.3.27-linux-i586.gz</a> :
+		   (<a href="/download/1.3/bin/haproxy-1.3.27-pcre-40kses-splice-linux-i586.stripped.gz.md5">MD5</a>) Linux/i586 executable linked with Glibc 2.2
+		</li><li><a href="/download/1.3/bin/haproxy-1.3.27-pcre-solaris-sparc.notstripped.gz">haproxy-1.3.27-pcre-solaris-sparc.notstripped.gz</a> :
+		   (<a href="/download/1.3/bin/haproxy-1.3.27-pcre-solaris-sparc.notstripped.gz.md5">MD5</a>) Solaris8/Sparc executable
+		</li><li> <a href="/download/1.3/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Unmaintained branch (1.2)</b> :
+	      <ul>
+		<li> <a href="#doc1.2">Documentation</a>
+		</li><li> <a href="/download/1.2/src/CHANGELOG">Release Notes</a> for version 1.2.18
+		</li><li> <a href="/download/1.2/src/haproxy-1.2.18.tar.gz">haproxy-1.2.18.tar.gz</a>
+		    (<a href="/download/1.2/src/haproxy-1.2.18.tar.gz.md5">MD5</a>) : Source code under GPL
+		</li><li><a href="/download/1.2/bin/haproxy-1.2.18-linux-i586.gz"> haproxy-1.2.18-linux-i586.gz</a> :
+		   (<a href="/download/1.2/bin/haproxy-1.2.18-linux-i586.gz.md5">MD5</a>) Linux/i586 executable linked with Glibc 2.2
+		</li><li><a href="/download/1.2/bin/haproxy-1.2.18-sol8-ultrasparc-static-pcre.gz">haproxy-1.2.18-sol8-ultrasparc-static-pcre.gz</a> :
+		   (<a href="/download/1.2/bin/haproxy-1.2.18-sol8-ultrasparc-static-pcre.gz.md5">MD5</a>) Solaris8/Sparc executable
+		</li><li> <a href="/download/1.2/">Browse directory</a> for other files or versions
+	      </li></ul>
+	      <p>
+	    </p></li><li> <b>Various Patches</b> :
+	      <ul>
+	        <li><a href="http://www.haproxy.com/download/free/patches/stunnel/">Some patches for Stunnel</a> by HAProxy Technologies (formerly Exceliance), such X-Forwarded-For, send-proxy, unix-sockets, multi-process SSL session synchronization, transparent binding and performance improvements.
+		</li><li><a href="http://www.haproxy.com/download/free/patches/linux/epoll-2.4/">http://www.haproxy.com/download/free/patches/linux/epoll-2.4/</a> :
+		    kernel patches to enable <tt>epoll</tt> on standard Linux 2.4 kernels and on Red Hat Enterprise Linux 3.
+		</li><li> <a href="http://www.haproxy.com/download/free/">HAProxy Technologies' public patch repository</a> for other patches (stud, stunnel, linux, keepalived, ...)
+		</li><li> <a href="/download/patches/">Browse directory</a> for other (outdated) patches.
+	      </li></ul>
+	      <p>
+	    </p></li><li> <a href="/download/">Browsable directory</a> for other files (not only patches)
+	  </li></ul>
+	  <p>
+	  </p><h3><a name="docs">Documentation</a></h3><a name="docs">
+	  <p>
+	    There are three types of documentation now : the <b>Reference Manual</b> which explains
+	    how to configure HAProxy but which is outdated, the <b>Architecture Guide</b> which will
+	    guide you through various typical setups, and the new <b>Configuration Manual</b> which
+	    replaces the Reference Manual with more a explicit configuration language explanation. The
+	    official documentation is the pure-text one provided with the sources. However, Cyril
+	    Bonté's automated conversion to HTML is much easier to use and constantly up to date,
+	    so it is the preferred one when available.
+	  </p></a><ul><a name="docs">
+	    </a><a name="doc2.4"></a>
+	    <li>Reference Manual for version <b>2.4</b> (<i>development</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.4/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.4/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.4/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/2.0dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.4/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.4/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.4/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.4/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc2.3"></a>
+	    </li><li>Reference Manual for version <b>2.3</b> (<i>Stable</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.3/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.3/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.3/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/2.0dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.3/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.3/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.3/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.3/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc2.2"></a>
+	    </li><li>Reference Manual for version <b>2.2</b> (<i>Stable</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.2/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.2/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.2/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/2.0dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.2/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.2/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.2/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.2/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc2.1"></a>
+	    </li><li>Reference Manual for version <b>2.1</b> (<i>Stable</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.1/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.1/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.1/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/2.0dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.1/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.1/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.1/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.1/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc2.0"></a>
+	    </li><li>Reference Manual for version <b>2.0</b> (<i>Stable (LTS)</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.0/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.0/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/2.0/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/2.0dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.0/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.0/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.0/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/2.0/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.9"></a>
+	    </li><li>Reference Manual for version <b>1.9</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.9/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.9/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/1.9dev/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.9/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.9/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.9/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.9/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.8"></a>
+	    </li><li>Reference Manual for version <b>1.8</b> (<i>Stable (LTS)</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.8/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.8/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.8/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/1.8/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.8/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.8/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.8/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.8/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.7"></a>
+	    </li><li>Reference Manual for version <b>1.7</b> (<i>Critical fixes only</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.7/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.7/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.7/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/1.7/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.7/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.7/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.7/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.7/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.6"></a>
+	    </li><li>Reference Manual for version <b>1.6</b> (<i>Critical fixes only</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.6/intro.html">Starter guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.6/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.6/management.html">Management Guide in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/src/haproxy-lua-api/1.6/index.html">Lua reference manual in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="http://www.arpalert.org/haproxy-lua.html">Lua Architecture in HTML</a> (up to date, maintained by Thierry Fournier)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.6/doc/intro.txt"><tt>intro.txt</tt></a> : Starter guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.6/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.6/doc/management.txt"><tt>management.txt</tt></a> : Management guide in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.6/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.5"></a>
+	    </li><li>Reference Manual for version <b>1.5</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.5/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.5/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.5/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.4"></a>
+	    </li><li>Reference Manual for version <b>1.4</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://cbonte.github.io/haproxy-dconv/1.4/configuration.html">Configuration Manual in HTML</a> (up to date, maintained by Cyril Bonté)
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.4/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual in text format
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.4/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.3"></a>
+	    </li><li>Reference Manual for version <b>1.3</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="/download/1.3/doc/configuration.txt"><tt>configuration.txt</tt></a> : Configuration Manual
+	        </li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.3/doc/architecture.txt"><tt>architecture.txt</tt></a> : Architecture Guide
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.3/doc/haproxy-en.txt"><tt>haproxy-en.txt</tt></a> : <i>old English version, outdated</i>
+		</li><li><img src="img/fr-off.png" border="0/" /> <a href="/download/1.3/doc/haproxy-fr.txt"><tt>haproxy-fr.txt</tt></a> : <i>old French version, outdated</i>
+		</li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.3/doc/"><tt>Browsable directory</tt></a> : <i>Various other docs and diagrams</i>
+	      </li></ul>
+	    <a name="doc1.2"></a>
+	    </li><li>Reference Manual for version <b>1.2</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="/download/1.2/doc/haproxy-en.txt"><tt>haproxy-en.txt</tt></a> : <i>English version</i>
+		</li><li><img src="img/fr-off.png" border="0/" /> <a href="/download/1.2/doc/haproxy-fr.txt"><tt>haproxy-fr.txt</tt></a> : <i>French version</i>
+	      </li></ul>
+	    </li><li>Reference Manual for version <b>1.1</b> (<i>unmaintained</i>) :<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="/download/1.1/doc/haproxy-en.txt"><tt>haproxy-en.txt</tt></a> : <i>English version</i>
+		</li><li><img src="img/fr-off.png" border="0/" /> <a href="/download/1.1/doc/haproxy-fr.txt"><tt>haproxy-fr.txt</tt></a> : <i>French version</i>
+	      </li></ul>
+	    </li><li><img src="img/en-off.png" border="0/" /> <a href="/download/1.2/doc/architecture.txt"><tt>architecture.txt</tt></a> : Architecture Guide
+	    </li><li><img src="img/en-off.png" border="0/" /> <a href="http://1wt.eu/articles/2006_lb/">Article on Load Balancing</a> (<i>HTML version</i>) : worth reading for people who don't know what type of load balancer they need<ul>
+		<li><img src="img/en-off.png" border="0/" /> <a href="http://static.1wt.eu/img/articles/2006_lb/art-2006-wta-lb-en.pdf">PDF version (English)</a>
+		</li><li><img src="img/fr-off.png" border="0/" /> <a href="http://static.1wt.eu/img/articles/2006_lb/art-2006-wta-lb-fr.pdf">PDF version (French)</a>
+	     </li></ul>
+	  </li></ul>
+	  <p>
+	    In addition to Cyril's HTML converter above, an automated format converter is being developed by Pavel Lang. At the time of writing these lines, it is able to produce a PDF from the documentation, and some heavy work is ongoing to support other output formats. Please consult the
+	    <a href="https://github.com/langpavel/haproxy-doc">project's page</a> for more information.
+	    <a href="https://github.com/langpavel/haproxy-doc/blob/master/version-1-5/tex/configuration.pdf?raw=true">Here's an example</a>
+	    of what it is able to do on version 1.5 configuration manual.
+	  </p>
+	  <p>
+	  </p><h3><a name="supp">Commercial Support and availability</a></h3><a name="supp">
+	  <p>
+	    If you think you don't have the time and skills to setup and maintain a free load
+	    balancer, or if you're seeking for commercial support to satisfy your customers or
+	    your boss, you have the following options :
+	    </p></a><ol><a name="supp">
+	      </a><li><a name="supp">contact </a><a href="https://www.haproxy.com/services/haproxy-professional-services/">HAProxy Technologies</a>
+		to hire some professional services or subscribe a support contract ;
+	      </li><li>install <a href="https://www.haproxy.com/products/haproxy-enterprise-edition/">HAProxy Enterprise Edition (HAPEE)</a>,
+		which is a long-term maintained HAProxy package accompanied by a well-polished collection of software, scripts,
+		configuration files and documentation which significantly simplifies the setup and maintenance of a completely
+		operational solution ; it is particularly suited to <b>Cloud environments</b> where deployments must be fast.
+	      </li><li>try an <a href="https://www.haproxy.com/products/main-features-of-aloha-load-balancers/">ALOHA appliance</a>
+		(hardware or virtual), which will even save you from having to worry about the system, hardware and from managing a Unix-like
+		system.
+	    </li></ol>
+	    I also find it important to credit <a href="http://www.loadbalancer.org/"><b>Loadbalancer.org</b></a>. I am
+	    not affiliated with them at all but like us, they have contributed a fair amount of time and money to the
+	    project to add new features and they help users on the mailing list, so I have some respect for what they
+	    do. They're a UK-based company and their load balancer also employs HAProxy, though it is somewhat different
+	    from the ALOHA.
+	  <p>
+	  </p><h3><a name="cont">Add-on features and contributions</a></h3><a name="cont">
+	  <p>
+	    Some happy users have contributed code which may or may not be included. Others
+	    spent a long time analysing the code, and there are some who maintain ports up to
+	    date. The most difficult internal changes have been contributed in the form of
+	    paid time by some big customers who can afford to pay a developer for several
+	    months working on an opensource project. Unfortunately some of them do not want
+	    to be listed, which is the case for the largest of them.
+	  </p><p>
+	    Some contributions were developped and not merged, most often by lack of sign of
+	    interest from the users or simply because they overlap with some pending changes
+	    in a way that could make it harder to maintain future compatibility.
+	    </p></a><ul><a name="cont">
+	      <li><b>Geolocation support</b></li>
+	      <p>
+		Quite some time ago now, Cyril Bonté contacted me about a very interesting
+		feature he has developped, initially for 1.4, and which now supports both 1.4
+		and 1.5. This feature is Geolocation, which many users have been asking for
+		for a long time, and this one does not require to split the IP files by country
+		codes. In fact it's extremely easy and convenient to configure.
+	      </p><p>
+		The feature was not merged yet because it does for a specific purpose (GeoIP)
+		what we wanted to have for a more general use (map converters, session variables,
+		and use of variables in the redirect URLs), which will allow the same features to
+		be implemented with more flexibility (eg: extract the IP from a header, or pass
+		the country code and/or AS number to a backend server, etc...). Cyril was very
+		receptive to these arguments and accepted to maintain his patchset out of tree
+		waiting for the features to be implemented (<i><b>Update:</b> 1.5-dev20 with
+		maps now make this possible</i>). Cyril's code is well maintained and used in
+		production so there is no risk in using it on 1.4, except the fact that the
+		configuration statements will change a bit once you upgrade to 1.5.
+	      </p></a><p><a name="cont">
+		The code and documentation are available here : </a><a href="https://github.com/cbonte/haproxy-patches/wiki/Geolocation">https://github.com/cbonte/haproxy-patches/wiki/Geolocation</a>
+	      </p><p>
+		</p><li><b>sFlow support</b></li>
+	      <p>
+		Neil Mckee posted a patch to the list in early 2013, and unfortunately this patch
+		did not receive any sign of interest nor feedback, which is sad considering the
+		amount of work that was done. I personally am clueless about sFlow and expressed
+		my skepticism to Neil about the benefits of sampling some HTTP traffic when you
+		can get much more detailed informations for free with existing logs.
+	      </p><p>
+		Neil kindly responded with the following elements :
+		</p><ul><i>
+		  I agree that the logging you already have in haproxy is more flexible and detailed,
+		  and I acknowledge that the benefit of exporting sFlow-HTTP records is not immediately
+		  obvious.
+		  <p>
+		  The value that sFlow brings is that the measurements are standard,  and are designed to
+		  integrate seamlessly with sFlow feeds from switches, routers, servers and applications to
+		  provide a comprehensive end to end picture of the performance of large scale multi-tier
+		  systems.   So the purpose is not so much to troubleshoot haproxy in isolation, but to
+		  analyze the performance of the whole system that haproxy is part of.
+		  </p><p>
+		  Perhaps the best illustration of this is the 1-in-N sampling feature.
+		  If you configure sampling.http to be, say, 1-in-400 then you might
+		  only see a handful of sFlow records per second from an haproxy
+		  instance, but that is enough to tell you a great deal about what is
+		  going on -- in real time.  And the data will not bury you even if you
+		  have a bank of load-balancers, hundreds of web-servers, a huge
+		  memcache-cluster and a fast network interconnect all contributing
+		  their own sFlow feeds to the same analyzer.
+		  </p></i><p><i>
+		</i></p></ul>
+	      <p>
+		Even after that explanation, no discussion emerged on the subject on the list, so
+		I guess there is little interest among users for now. I suspect that sFlow is
+		probably more deployed among network equipments than application layer equipments,
+		which could explain this situation. The code is large (not huge though) and I am not
+		convinced about the benefits of merging it and maintaining it if nobody shows even
+		a little bit of interest. Thus for now I prefer to leave it out of tree. Neil has
+		posted it on GitHub here :
+		<a href="https://github.com/sflow/haproxy">https://github.com/sflow/haproxy</a>.
+	      </p><p>
+		Please, if you do use this patch, report your feedback to the mailing list, and invest
+		some time helping with the code review and testing.
+	      </p><p>
+	    </p></ul>
+	  <p>
+	    <a href="/contrib.html">This table</a> enumerates all known significant contributions that
+	    led to version 1.4, as well as proposed fundings and features yet to be developped but
+	    waiting for spare time. It is not more up to date though.
+	  </p><p>
+	    Some older code contributions which possibly do not appear in the table above are still listed here.
+	  </p><ul>
+	    <li><b>Application Cookies</b>
+	      <p>
+		Aleksandar Lazic and Klaus Wagner implemented this feature which
+		was merged in 1.2. It allows the proxy to learn cookies sent by the server
+		to the client, and to find it back in the URL to direct the client to the right
+		server. The learned cookies are automatically purged after some inactive time.
+	      </p><p>
+	    </p></li><li><b>Least Connections load balancing algorithm</b>
+	      <p>
+		This patch for haproxy-1.2.14 was submitted by Oleksandr Krailo. It implements
+		a basic least connection algorithm. I've not merged this version into 1.3 because
+		of scalability concerns, but I'm leaving it here for people who are tempted to
+		include it into version 1.2, and the patch is really clean.
+	      </p><ul>
+		<a href="/download/patches/haproxy-1.2.14-leastconn.diff">haproxy-1.2.14-leastconn.diff</a>
+	      </ul>
+	      <p>
+	    </p></li><li><b>Soft Server-Stop</b>
+	      <p>
+		Aleksandar Lazic sent me this patch against 1.1.28 which in fact does two things.
+		The first interesting part allows one to write a file enumerating servers which
+		will have to be stopped, and then sending a signal to the running proxy to tell
+		it to re-read the file and stop using these servers. This will not be merged into
+		mainline because it has indirect implications on security since the running
+		process will have to access a file on the file-system, while current version can
+		run in a chrooted, empty, read-only directory. What is really needed is a way to
+		send commands to the running process. However, I understand that some people
+		might need this feature, so it is provided here. The second part of the patch has
+		been merged. It allowed both an active and a backup server to share a same
+		cookie. This may sound obvious but it was not possible earlier.
+	      </p><ul>
+		<a href="/download/patches/haproxy_comafile+multi-cookie.diff">
+		  haproxy_comafile+multi-cookie.diff</a>
+	      </ul>
+	      <p>
+		<b>Usage:</b> Aleks says that you just have to write the server names that you
+		want to stop in the file, then <tt>kill -USR2</tt> the running process. I have
+		not tested it though.
+	      </p><p>
+	    </p></li><li><b>Server Weight</b>
+	      <p>
+		Sébastien Brize sent me this patch against 1.1.27 which adds the
+		'weight' option to a server to provide smoother balancing between fast and slow
+		servers. It is available here because there may be other people looking for this
+		feature in version 1.1.<br /><br />
+		I did not include this change because it has a side effect that with
+		high or unequal weights, some servers might receive lots of consecutive
+		requests. A different concept to provide a smooth and fair
+		balancing has been implemented in 1.2.12, which also supports
+		weighted hash load balancing.
+	      </p><ul>
+		  <a href="/download/patches/patch-haproxy-1.1.27-weight">
+		    patch-haproxy-1.1.27-weight</a>
+	      </ul>
+	      <p>
+		<b>Usage:</b> specify "<tt>weight X</tt>" on a server line.<br />
+		<b>Note:</b> configurations written with this patch applied will normally still
+		work with future 1.2 versions.
+	      </p><p>
+	    </p></li><li> <b>IPv6 support for 1.1.27</b>
+	      <p>
+		I implemented IPv6 support on client side for 1.1.27, and merged it into
+		haproxy-1.2. Anyway, the patch is still provided here for people who want to
+		experiment with IPv6 on HAProxy-1.1.
+	      </p><ul>
+	        <a href="/download/patches/haproxy-1.1.27-ipv6.diff">haproxy-1.1.27-ipv6.diff</a>
+	      </ul>
+	      <p>
+	    </p></li><li><b>Other patches</b>
+	      <p>
+		Please <a href="/download/patches/">browse the directory</a> for other useful
+		contributions.
+      	      </p><p>
+	  </p></li></ul>
+	  <p>
+	  </p><h3><a name="othe">Other Solutions</a></h3><a name="othe">
+	  <p>
+	    If you don't need all of HAProxy's features and are looking for a simpler solution,
+	    you may find what you need here :
+	  </p></a><ul><a name="othe">
+	    </a><li><a name="othe"></a><a href="http://www.linuxvirtualserver.org/">
+		<b>Linux Virtual Servers (LVS)</b></a><br />
+	      Very fast layer 3/4 load balancing merged in Linux 2.4 and 2.6 kernels. Should
+	      be coupled with <a href="http://www.keepalived.org/">Keepalived</a> to monitor
+	      servers. This generally is the solution embedded by default in most
+	      IP-based load balancers.
+	      
+	    </li><li><a href="http://nginx.org/">
+		<b>Nginx ("engine X")</b></a><br />
+	      Nginx is an excellent piece of software. Initially it's a very fast and reliable
+	      web server, but it has grown into a full-featured proxy which can also offer
+	      load-balancing capabilities. Nginx's load balancing features are less advanced
+	      than haproxy's but it can do extra things (eg: caching, running FCGI apps), which
+	      explains why they are very commonly found together. I strongly recommend it to
+	      whoever needs a fast, reliable and flexible web server !
+
+	    </li><li><a href="http://www.apsis.ch/pound">
+		<b>Pound</b></a><br />
+	      Pound is very small and reasonably good. It aims at remaining small and auditable
+	      prior to being fast. It used to support SSL and keep-alive before HAProxy. Its
+	      configuration file is small and simple. It's thread-based, but can be a simpler
+	      alternative to HAProxy for a small site when the flexibility and performance of
+	      HAProxy are not required.
+	    </li><li><a href="http://siag.nu/pen/">
+		<b>Pen</b></a><br />
+	      Pen is a very simple load balancer for TCP protocols. It supports source IP-based
+	      persistence for up to 2048 clients. Supports IP-based ACLs. Uses <tt>select()</tt>
+	      and supports higher loads than Pound but will not scale very well to thousands of
+	      simultaneous connections. It's more versatile however, and could be considered as
+	      the missing link between HAProxy and socat.
+	  </li></ul>
+	  <p>
+	  </p><h3><a name="tact">Contacts</a></h3><a name="tact">
+	  <p>
+	    Feel free to contact us for any questions or comments :<br />
+	  </p></a><ul><a name="tact">
+	    </a><li><a name="tact"> mailing-list :
+	      <script type="text/javascript">
+		&lt;!-- 
+		document.write('&lt;a href="mailto:hapro');
+		document.write('xy@formilux.org"&gt;hapro');
+		document.writeln('xy@formilux.org&lt;/a&gt;');
+		--&gt;
+	      </script></a><a href="mailto:haproxy@formilux.org">haproxy@formilux.org</a>
+
+	      <br />
+	      Read the list <a href="https://www.mail-archive.com/haproxy@formilux.org/">archives on mail-archive</a><br />
+	      Read the list <a href="http://marc.info/?l=haproxy">archives on Marc.info</a><i>(temporarily broken)</i><br />
+	      Read the list <a href="http://news.gmane.org/gmane.comp.web.haproxy">archives on gmane.org</a><i>(temporarily broken)</i><br />
+	      <br />
+	      Subscribe to the list :
+	      <script type="text/javascript">
+		&lt;!-- 
+		document.write('&lt;a href="mailto:hapro');
+		document.write('xy+subs');document.write('cribe@formilux.org"&gt;hapro');
+		document.write('xy+subs');document.writeln('cribe@formilux.org&lt;/a&gt;');
+		--&gt;
+	      </script><a href="mailto:haproxy+subscribe@formilux.org">haproxy+subscribe@formilux.org</a>
+
+	      <br />
+	      Unsubscribe from the list :
+	      <script type="text/javascript">
+		&lt;!-- 
+		document.write('&lt;a href="mailto:hapro');
+		document.write('xy+unsubs');document.write('cribe@formilux.org"&gt;hapro');
+		document.write('xy+unsubs');document.writeln('cribe@formilux.org&lt;/a&gt;');
+		--&gt;
+	      </script><a href="mailto:haproxy+unsubscribe@formilux.org">haproxy+unsubscribe@formilux.org</a>
+
+	    </li><li> Willy' main site : <a href="http://1wt.eu/">http://1wt.eu/</a>
+	      <a href="/"><img src="img/pwby.gif" border="0" align="center" alt="powered by HAPROXY" /></a>
+	    </li><li> This site in IPv6 only : <a href="//ipv6.haproxy.org/">http://ipv6.haproxy.org/</a>
+		(should be OK if you see a <font color="green">green</font> square here ⇒ 
+	      <img src="//ipv6.haproxy.org/img/ipv6ready.png" width="8" height="8" border="0" style="background: url(/img/ipv6back.png) no-repeat bottom;" />)
+	    </li><li> e-mail : 
+	      <script type="text/javascript">
+		&lt;!-- 
+		document.write('&lt;a href="mailto:w');
+		document.write('@1wt.eu"&gt;w@');
+		document.writeln('1wt.eu&lt;/a&gt;');
+		--&gt;
+	      </script><a href="mailto:w@1wt.eu">w@1wt.eu</a>
+
+	  </li></ul>
+	  <p>
+	  Some people regularly ask if it is possible to send donations, so I have set up a Paypal account for this.
+	  <b><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=willy%40nerim%2enet&amp;lc=FR&amp;item_name=Willy%20Tarreau&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">Click here</a></b> if you want to donate.
+	  </p><p>
+	  An IRC channel for haproxy has been opened on FreeNode (but don't seek me there, I'm not) :<br />
+	</p><ul>
+	  <a href="irc://irc.gnu.org/%23haproxy">irc://irc.gnu.org/%23haproxy</a>
+	</ul>
+	  A Slack channel for haproxy exists as well (but don't seek me there, I'm not either) :<br />
+	<ul>
+	  <a href="https://slack.haproxy.org/">https://slack.haproxy.org/</a>
+	</ul>
+	  <p>
+	  </p><h3><a name="link">External links</a></h3><a name="link">
+	  <p>
+	  Here are some links to possibly useful external contents I gathered on the net.
+	  I have found most of them due to their link to haproxy's site ;-)
+	</p></a><ul><a name="link">
+	</a><li><a name="link"></a><a href="https://medium.com/@copyconstruct/health-checks-in-distributed-systems-aa8a0e8c1672">Health Checks and Graceful Degradation in Distributed Systems</a>
+	</li><li><a href="https://bl.duesterhus.eu/20180119/">haproxy-auth-request: HTTP access control using subrequests</a>
+	</li><li><a href="https://blog.bandinelli.net/index.php?post/2018/03/12/Utiliser-HAProxy-pour-profiter-d-HTTP/2">Utiliser HAProxy pour profiter d'HTTP/2 (FR)</a>
+	</li><li><a href="https://certsimple.com/blog/haproxy-http2-dynamic-load-balancing-ssl">HAProxy in 2018 - A load balancer with HTTP/2 and dynamic reconfig</a>
+	</li><li><a href="http://microdevsys.com/wp/glusterfs-configuration-and-setup-w-nfs-ganesha-for-an-ha-nfs-cluster/">GlusterFS: Configuration and Setup w/ NFS-Ganesha for an HA NFS Cluster</a>
+	</li><li><a href="https://stripe.com/blog/service-discovery-at-stripe">Service discovery at Stripe</a>
+	</li><li><a href="https://www.peternijssen.nl/high-availability-with-haproxy-and-keepalived-in-aws">High Availability with HAProxy and Keepalived in AWS</a>
+	</li><li><a href="https://medium.freecodecamp.com/how-we-fine-tuned-haproxy-to-achieve-2-000-000-concurrent-ssl-connections-d017e61a4d27">How we fine-tuned HAProxy to achieve 2,000,000 concurrent SSL connections</a>
+	</li><li><a href="https://www.suse.com/communities/blog/speeding-ssl-need-know-haproxy/">Speeding up SSL - All you need to know about haproxy</a>
+	</li><li><a href="https://medium.com/vimeo-engineering-blog/improving-load-balancing-with-a-new-consistent-hashing-algorithm-9f1bd75709ed">Improving load balancing with a new consistent-hashing algorithm</a>
+	</li><li><a href="https://github.com/janeczku/haproxy-acme-validation-plugin">ACME validation plugin for HAProxy / Let's Encrypt</a>
+	</li><li><a href="https://www.linangran.com/?p=547">Use HAProxy to load balance 300k concurrent tcp socket connections</a>
+	</li><li><a href="https://software.intel.com/en-us/articles/accelerating-ssl-load-balancers-with-intel-xeon-v3-processors">Accelerating SSL Load Balancers with Intel® Xeon® v3 Processors</a>
+	</li><li><a href="https://www.privateinternetaccess.com/blog/2016/01/linux-networking-stack-from-the-ground-up-part-1/">Linux networking stack from the ground up (parts 1-5)</a> (useful to whoever wants to know what happens below haproxy)
+	</li><li><a href="https://z0z0.me/create-your-own-cdn-with-haproxy-and-varnish/">Loadbalance your website with haproxy and varnish</a>
+	</li><li><a href="http://www.slideshare.net/NicolasBrousse/usenix-lisa15-how-tubemogul-handles-over-one-trillion-http-requests-a-month">How TubeMogul Handles over One Trillon HTTP Requests a Month</a>
+	</li><li><a href="http://47ron.in/blog/2015/10/23/haproxy-in-the-era-of-microservices.html">HAProxy in the era of Microservices</a>
+	</li><li><a href="https://www.percona.com/blog/2014/12/18/making-haproxy-1-5-replication-lag-aware-in-mysql/">Making HAProxy 1.5 replication lag aware in MySQL</a>
+	</li><li><a href="https://www.maxcdn.com/blog/haproxy-load-balancing/">MaxCDN: How to Use HAProxy to Handle Traffic Spikes</a>
+	</li><li><a href="https://www.varnish-cache.org/docs/trunk/phk/ssl_again.html">Varnish, SSL and HAProxy</a>
+	</li><li><a href="http://engineeringblog.yelp.com/2015/04/true-zero-downtime-haproxy-reloads.html">True Zero Downtime HAProxy Reloads</a>
+	</li><li><a href="http://thenewstack.io/haproxy-still-an-arrow-in-the-quiver-for-those-scaling-apps/">HAProxy Is Still An Arrow in the Quiver for Those Scaling Apps</a>
+	</li><li><a href="http://www.severalnines.com/blog/webinar-replay-slides-how-set-sql-load-balancing-haproxy">How To Set Up SQL Load Balancing with HAProxy (Webinar)</a>
+	</li><li><a href="http://www.youtube.com/watch?v=iFj--qiJRPo&amp;feature=youtu.be&amp;t=40m35s">HAProxy running on Ubuntu Cloud on Power8, featured by Mark Shuttleworth at IBM Impact 2014 Keynote</a>
+	</li><li><a href="http://jve.linuxwall.info/ressources/taf/haproxy-aws/">Guidelines for HAProxy termination in AWS</a>
+	</li><li><a href="http://www.youtube.com/watch?v=i5KhNJIQBO0">Marcus Rueckert's talk at osc14</a>
+	</li><li><a href="http://brokenhaze.com/blog/2014/03/25/how-stack-exchange-gets-the-most-out-of-haproxy/">How Stack Exchange gets the most out of HAProxy</a>
+	</li><li><a href="http://blog.loadbalancer.org/open-source-windows-service-for-reporting-server-load-back-to-haproxy-load-balancer-feedback-agent/">Open Source Windows service for reporting server load back to HAProxy (load balancer feedback agent).</a>
+	</li><li><a href="http://harish11g.blogspot.fr/2013/08/Load-balancing-Amazon-RDS-MySQL-read-replica-slaves-using-HAProxy.html">Load Balancing Amazon RDS Read Replica's using HAProxy</a>
+	</li><li><a href="http://www.dscentral.in/2012/11/04/installing-haproxy-on-pfsense/">Installing HAProxy on pfSense</a>
+	</li><li><a href="http://www.severalnines.com/resources/clustercontrol-mysql-haproxy-load-balancing-tutorial">MySQL Load Balancing with HAProxy - Tutorial</a>
+	</li><li><a href="https://github.com/eucalyptus/architecture/blob/master/features/elb/3.3/elb-benchmark.wiki">HAProxy vs Nginx benchmark for the Eucalyptus Cloud computing Platform</a>
+	</li><li><a href="http://www.exratione.com/2012/12/websockets-over-ssl-haproxy-nodejs-nginx/">WebSocket Over SSL: HAProxy, Node.js, Nginx</a>
+	</li><li><a href="http://harish11g.blogspot.fr/2012/11/amazon-elb-vs-haproxy-ec2-analysis.html">Comparison Analysis:Amazon ELB vs HAProxy EC2</a>
+	</li><li><a href="http://www.igvita.com/2012/10/31/simple-spdy-and-npn-negotiation-with-haproxy/">Simple SPDY and NPN Negotiation with HAProxy</a>
+	</li><li><a href="http://tech.shareaholic.com/2012/10/26/haproxy-a-substitute-for-amazon-elb">Using HAProxy to Build a More Featureful Elastic Load Balancer</a>
+	</li><li><a href="http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets">3 ways to configure haproxy for websockets</a>
+	</li><li><a href="http://blog.bitbucket.org/2012/08/24/segregating-services/">Segregating services at bitbucket</a>
+	</li><li><a href="http://ben.timby.com/?page_id=210">Load balancing FTP, by Ben Timby</a>
+	</li><li><a href="http://robert.penz.name/386/howto-setup-a-haproxy-as-fault-tolerant-high-available-load-balancer-for-multiple-caching-web-proxies-on-rhelcentossl/comment-page-1/#comment-1064">Howto setup a haproxy as fault tolerant / high available load balancer for multiple caching web proxies on RHEL/Centos/SL</a>
+	</li><li><a href="http://www.slideshare.net/ricbartm/load-balancing-at-tuenti">Load balancing @Tuenti, by Ricardo Bartolomé</a>
+	</li><li><a href="http://blog.exceliance.fr/2011/09/16/benchmarking_ssl_performance/">Benchmarking SSL performance</a>
+	</li><li><a href="http://alohalb.wordpress.com/2011/06/17/smart_content_switching_for_news_website/">Smart Content Switching for News Website</a>
+	</li><li><a href="http://3-4-5-6.blogspot.com/2011/03/ha-proxy-for-exchange-2010-deployment.html">HA Proxy for Exchange 2010 Deployment &amp; SMTP Restriction</a>
+	</li><li><a href="http://flavio.tordini.org/a-more-stable-mysql-with-haproxy/comment-page-1">A more stable MySQL with HAProxy</a>
+	</li><li><a href="http://equima.pfpfree.net/2010/benchmarking-haproxy-ubuntu-vs-freebsd/">Benchmarking HAProxy under VMware : Ubuntu vs FreeBSD</a>
+	</li><li><a href="http://blog.serverfault.com/post/1016491873/">Stack Overflow: Better rate limiting for all with HAProxy</a>
+	</li><li><a href="http://blog.rightscale.com/2010/04/01/benchmarking-load-balancers-in-the-cloud/">Benchmarking Load Balancers in the Cloud</a>
+	</li><li><a href="http://www.alexwilliams.ca/blog/2009/08/10/using-haproxy-for-mysql-failover-and-redundancy/">Using HAProxy for MySQL failover and redundancy</a>
+	</li><li><a href="http://www.howtoforge.com/setting-up-a-high-availability-load-balancer-with-haproxy-keepalived-on-debian-lenny">Setting up a high availability load blancer with haproxy and keepalived on debian lenny</a>
+	</li><li><a href="http://blog.loadbalancer.org/configure-haproxy-with-tproxy-kernel-for-full-transparent-proxy/">Configure HAProxy with TPROXY kernel for full transparent proxy</a>
+	</li><li><a href="http://agiletesting.blogspot.com/2009/03/haproxy-x-forwarded-for-geoip-keepalive.html">HAProxy, X-Forwarded-For, GeoIP, KeepAlive</a>
+	</li><li><a href="http://agiletesting.blogspot.com/2009/02/load-balancing-in-amazon-ec2-with.html">Load Balancing in Amazon EC2 with HAProxy</a>
+	</li><li><a href="http://www.joeandmotorboat.com/2009/01/27/couchdb-load-balancing-and-replication-using-haproxy/">CouchDB Load Balancing and Replication using HAProxy</a>
+	</li><li><a href="http://www.igvita.com/2008/12/02/zero-downtime-restarts-with-haproxy/">Zero-Downtime restarts with HAProxy</a>
+	</li><li><a href="http://www.olivepeak.com/blog/posts/read/free-your-port-80-with-haproxy">Free your port 80 with HAProxy</a>
+	</li><li><a href="http://affectioncode.wordpress.com/2008/06/28/another-comparison-of-haproxy-and-nginx/">Another comparison of HAProxy and Nginx</a>
+	</li><li><a href="http://blog.webmynd.com/2008/06/23/scaling-on-ec2/">Scaling on EC2</a>
+	</li><li><a href="http://alword.wordpress.com/2008/06/14/haproxy-on-opensolaris-200805/">HAProxy on Opensolaris 2008.05</a>
+	</li><li><a href="http://www.igvita.com/2008/05/13/load-balancing-qos-with-haproxy/">Load-Balancing and QoS with HAProxy</a>
+	</li><li><a href="http://blog.hungrymachine.com/2008/03/27/analyzing-application-performance-with-haproxy-stats/">Reviewing Application Health with HAProxy Stats</a>
+	</li></ul>
+	  <hr width="100%" class="hr" />
+	</td><td width="1%">
+	</td></tr>
+    </tbody></table>
+<br />
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-62865082-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<iframe name="oauth2relay839615683" id="oauth2relay839615683" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fwww.haproxy.org&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.sazTpAB7NWc.O%2Fam%3DwQE%2Fd%3D1%2Fct%3Dzgms%2Frs%3DAGLTcCMGRnMhese6OTxesnN0rDvhruAGIg%2Fm%3D__features__#rpctoken=429857297&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

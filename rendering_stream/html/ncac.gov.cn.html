@@ -1,0 +1,1822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!--<!doctype html>
+<html> --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>国家版权局网</title>
+<meta name="keywords" content="中华人民共和国国家版权局,国家版权" />
+<meta name="description" content="中华人民共和国国家版权局,国家版权" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+<link rel="icon" type="image/png" href="images/copyright.png" />
+<link rel="stylesheet" type="text/css" href="_style/css.css" />
+<script src="https://hm.baidu.com/hm.js?5f2567c13b1faf438f8331404f2a6a66"></script><script src="_scripts/jquery.js" language="javascript" type="text/javascript"></script>
+
+<!--[if IE 6]>
+<script src="_scripts/ie6PNG.js" type="text/javascript"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*');</script>
+<![endif]-->
+
+</head>
+<body>
+<script src="/chinacopyright/SiteFiles/bairong/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+
+<!--<script type="text/javascript" src="js/gray.js"></script>-->
+<style type="text/css">
+
+.mmbanImg{z-index: 100; left: 2px; width: 365px; position: absolute; top: 100px; height: 200px; visibility: visible;}
+.mmbanImg .slideBox{ width:365px; height:200px; overflow:hidden; position:relative; }
+.mmbanImg .slideBox .hd{ height:15px; overflow:hidden; position:absolute; left:5px; bottom:5px; z-index:9; display:none;}
+.mmbanImg .slideBox .bd{ position:relative; height:100%; z-index:0;   }
+.mmbanImg .slideBox .bd img{ width:365px; height:200px; display:block;  }
+.mmClose { position: absolute; z-index: 10; right: -15px; bottom: -15px; cursor: pointer; }
+  #ad_13{z-index: 999999999999999;}
+</style>
+<script src="js/jquery.SuperSlide.js"></script> 
+<!--原生Javascript实现  id="codefans_net" 的元素窗口内漂浮，鼠标划过元素悬停-->
+<script type="text/javascript">
+$(function($){
+    var showtime = 0;
+    showImg(showtime);showtime++;
+    $("#img_small a:lt(4)").mouseover(function(){
+        var showtime = $("#img_small a:lt(4)").index(this);
+        showImg(showtime);
+    });
+    $("#img_scroll").hover(function(){
+        if(settime)clearInterval(settime);
+    },function(){
+        settime = setInterval(function(){
+            showImg(showtime)
+            showtime++;
+            if(showtime==4){showtime=0;}
+        } , 3000);
+    });
+    var settime = setInterval(function(){
+        showImg(showtime)
+        showtime++;
+        if(showtime==4){showtime=0;}
+    } , 3000);
+
+    var showtime2 = 0;
+    $("#img_small2 a:lt(4)").mouseover(function(){
+        var showtime2 = $("#img_small2 a:lt(4)").index(this);
+        showImg2(showtime2);
+    });
+    $("#img_scroll2").hover(function(){
+        if(settime2)clearInterval(settime2);
+    },function(){
+        settime2 = setInterval(function(){
+            showImg2(showtime2)
+            showtime2++;
+            if(showtime2==4){showtime2=0;}
+        } , 3000);
+    });
+    var settime2 = setInterval(function(){
+        showImg2(showtime2)
+        showtime2++;
+        if(showtime2==4){showtime2=0;}
+    } , 3000);
+
+    $("#imgNewsTitle .tpxwspan").hover(
+        function() {
+            $("#imgNewsTitle .spxw-btn-h").removeClass("spxw-btn-h").addClass("spxw-btn");
+            $("#imgNewsTitle .tpxw-btn").removeClass("tpxw-btn").addClass("tpxw-btn-h");
+            $("#imgNewsTitle .spxw-link").hide();
+            $("#imgNewsTitle .tpxw-link").show();
+            $("#spxw_block").hide();
+            $("#tpxw_block").show();
+        },
+        function() {}
+    );
+    $("#imgNewsTitle .spxwspan").hover(
+        function() {
+            $("#imgNewsTitle .tpxw-btn-h").removeClass("tpxw-btn-h").addClass("tpxw-btn");
+            $("#imgNewsTitle .spxw-btn").removeClass("spxw-btn").addClass("spxw-btn-h");
+            $("#imgNewsTitle .spxw-link").show();
+            $("#imgNewsTitle .tpxw-link").hide();
+            $("#tpxw_block").hide();
+            $("#spxw_block").show();
+        },
+        function() {}
+    );
+})
+function showImg(i){
+    var Link = $("#img_small").eq(i).find("a").attr("href");
+    $("#img_small .curr").attr("href",Link);
+    $("#img_big a").eq(i).fadeIn(800).siblings("a").fadeOut(600);
+    $("#img_small .curr").animate( { top: (i*68) } , 300);
+    $("#ifocus_tx ul li").hide();
+    $("#ifocus_tx ul li").eq(i).toggle();
+}
+function showImg2(i){
+    var Link2 = $("#img_small2").eq(i).find("a").attr("href");
+    $("#img_small2 .curr").attr("href",Link2);
+    $("#img_big2 a").eq(i).fadeIn(800).siblings("a").fadeOut(600);
+    $("#img_small2 .curr").animate( { top: (i*68) } , 300);
+    $("#ifocus_tx2 ul li").hide();
+    $("#ifocus_tx2 ul li").eq(i).toggle();
+}
+        //各新闻列表换页
+        //var boxs = document.getElementsByClassName("box");
+        var boxs = $(".box");//$('[name=box]');
+        for(var ii=0;ii&lt;boxs.length;ii++){
+            //if(boxs[ii].getElementsByClassName("box_item").length&gt;1){
+            if($("#"+boxs[ii].id+" .box_item").length&gt;1){
+                selectBlock(boxs[ii].id,0);
+            }
+        }
+        function selectBlock(blockName,id){
+            //var tables1=document.getElementById(blockName).getElementsByClassName("box_Table");
+            var tables=$("#"+blockName+" .box_Table");
+            var b = $("#"+blockName+" .content .check").removeClass("check");
+            for(var i=0;i&lt;tables.length;i++){
+                if(id==i){
+                    tables[i].style.display="block";
+                }else{
+                    tables[i].style.display="none";
+                }
+            }
+
+            if(blockName=='yw')
+            {
+
+                if(id==1)
+                {
+                    var o1 = document.getElementById('i_gj');
+                    var o2 = document.getElementById('i_gn');
+                    o1.src="_images/gj1.jpg";
+                    o2.src="_images/gn.jpg";
+                }else if(id==0)
+                {
+                    var o1 = document.getElementById('i_gj');
+                    var o2 = document.getElementById('i_gn');
+                    o1.src="_images/gj.jpg";
+                    o2.src="_images/gn1.jpg";
+                }
+            }
+        }
+</script>
+<!--漂浮广告代码 ———-->
+<!--<div class="mmbanImg" id="img1">
+<div class="mmClose">【关闭】</div>
+<div id="slideBox" class="slideBox">
+    <div class="hd">
+        <ul><li>1</li><li>2</li><li>3</li></ul>
+    </div>
+    <div class="bd">
+        <ul>
+           
+        </ul>
+    </div>
+</div>
+</div>-->
+
+<!--<script src="js/js.js">  jQuery控制飘浮窗口关闭效果 </script> -->
+<script language="javascript">
+//var x = 365,y = 200   //漂浮窗口大小
+//var xin = true, yin = true 
+//var step = 1 
+//var delay = 10   //漂浮速度
+//var obj=document.getElementById("img1")  //绑定元素
+//function float() { 
+//var L=T=0
+//var R= document.body.clientWidth-obj.offsetWidth 
+//var B = document.body.clientHeight-obj.offsetHeight 
+//obj.style.left = x + document.body.scrollLeft 
+//obj.style.top = y + document.body.scrollTop 
+//x = x + step*(xin?1:-1) 
+//if (x &lt; L) { xin = true; x = L} 
+//if (x &gt; R){ xin = false; x = R} 
+//y = y + step*(yin?1:-1) 
+//if (y &lt; T) { yin = true; y = T } 
+//if (y &gt; B) { yin = false; y = B } 
+//} 
+//var itl= setInterval("float()", delay) 
+//obj.onmouseover=function(){clearInterval(itl)} 
+//obj.onmouseout=function(){itl=setInterval("float()", delay)} 
+</script> 
+<script language="javascript">
+jQuery(".slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true});
+$(".mmClose").click(function(){$(".mmbanImg").hide()});
+</script>
+
+<!--漂浮广告代码 end———-->
+<script language="JavaScript">lastScrollY = 0;
+function heartBeat(){
+var diffY;
+if (document.documentElement &amp;&amp; document.documentElement.scrollTop)
+diffY = document.documentElement.scrollTop;
+else if (document.body)
+diffY = document.body.scrollTop
+else
+{/*Netscape stuff*/}
+//alert(diffY);
+percent=.1*(diffY-lastScrollY);
+if(percent&gt;0)percent=Math.ceil(percent);
+else percent=Math.floor(percent);
+document.getElementById("leftDiv").style.top = parseInt(document.getElementById("leftDiv").style.top)+percent+"px";
+document.getElementById("rightDiv").style.top = parseInt(document.getElementById("rightDiv").style.top)+percent+"px";
+lastScrollY=lastScrollY+percent;
+//alert(lastScrollY);
+}
+     $(function(){            
+            document.getElementById("leftDiv").style.left = (($(document).width()-1024)/2)-105+"px";
+            document.getElementById("rightDiv").style.right =(($(document).width()-1024)/2)-105+"px";
+        });
+    
+//下面这段删除后，对联将不跟随屏幕而移动。
+window.setInterval("heartBeat()",1);
+//--&gt;
+//关闭按钮
+function close_left1(){
+    left1.style.visibility='hidden';
+}
+function close_left2(){
+    left2.style.visibility='hidden';
+}
+function close_right1(){
+    right1.style.visibility='hidden';
+}
+function close_right2(){
+    right2.style.visibility='hidden';
+}
+//显示样式
+document.writeln("&lt;style type=\"text\/css\"&gt;");
+document.writeln("#leftDiv,#rightDiv{width:116px;height:250px;position:absolute;z-index:99999999}");
+document.writeln(".itemFloat{width:116px;height:auto;line-height:5px}");
+document.writeln("&lt;\/style&gt;");
+//以下为主要内容
+document.writeln("&lt;div id=\"leftDiv\" style=\"top:158px;left:15px\"&gt;");
+//------左侧各块开始
+//---L1
+//---L2
+document.writeln("&lt;div id=\"left2\" class=\"itemFloat\"&gt;");
+document.writeln("&lt;a target=_blank href=http://weibo.com/guojiabanquan&gt;&lt;img border=0 src=images/L116.jpg&gt;&lt;/a&gt;");
+document.writeln("&lt;br&gt;&lt;br&gt;&lt;a href=\"javascript:close_left2();\" title=\"关闭上面的广告\"&gt;×&lt;\/a&gt;");
+document.writeln("&lt;\/div&gt;");
+//------左侧各块结束
+document.writeln("&lt;\/div&gt;");
+document.writeln("&lt;div id=\"rightDiv\" style=\"top:158px;right:15px\"&gt;");
+//------右侧各块结束
+//---R2
+document.writeln("&lt;div id=\"right2\" class=\"itemFloat\"&gt;");
+document.writeln("&lt;!--&lt;a target=_blank href=/govinteract/1055.shtml&gt;--&gt;&lt;img border=0 src=images/R116.jpg&gt;");
+document.writeln("&lt;br&gt;&lt;br&gt;&lt;a href=\"javascript:close_right2();\" title=\"关闭上面的广告\"&gt;×&lt;\/a&gt;");
+document.writeln("&lt;\/div&gt;");
+//------右侧各块结束
+document.writeln("&lt;\/div&gt;");
+</script><style type="text/css">
+#leftDiv,#rightDiv{width:116px;height:250px;position:absolute;z-index:99999999}
+.itemFloat{width:116px;height:auto;line-height:5px}
+</style>
+<div id="leftDiv" style="left: -117px; top: 158px;">
+<div id="left2" class="itemFloat">
+<a target="_blank" href="http://weibo.com/guojiabanquan"><img border="0" src="images/L116.jpg" /></a>
+<br /><br /><a href="javascript:close_left2();" title="关闭上面的广告">×</a>
+</div>
+</div>
+<div id="rightDiv" style="right: -117px; top: 158px;">
+<div id="right2" class="itemFloat">
+<!--<a target=_blank href=/govinteract/1055.shtml>--><img border="0" src="images/R116.jpg" />
+<br /><br /><a href="javascript:close_right2();" title="关闭上面的广告">×</a>
+</div>
+</div>
+  
+<a href="/chinacopyright"><img id="top" src="_images/top.jpg" /></a>
+<!---大通栏--->
+
+  
+<!---end--->
+<div id="con">
+  <div id="con_l"></div>
+  <div id="con_middle">
+    <table>
+      <tbody><tr> <td colspan="3"><img id="ncac" src="/chinacopyright/_images/ncac.jpg" style=" float:left;margin:7px 0 0 17px;" />
+  <div id="gdbox">
+    <div id="gdcontent">
+      <div id="gdright">
+        <marquee style="float:left; height:18px; font-size:13px;color:#ff0000; line-height:18px;  margin:10px;PADDING-LEFT: 10px" scrollamount="3" scrolldelay="16" onmouseover="this.stop();" onmouseout="this.start();">
+       <!--  <a href="/chinacopyright/contents/518/210224.html" target="_blank" style="color:#ff0000">第三届海峡版权博览会在福州举行 阎晓宏到现场参观</a>&nbsp;&nbsp;2014-06-23&nbsp;&nbsp;  <a href="/chinacopyright/contents/518/210128.html" target="_blank" style="color:#ff0000">整治网络转载乱象 力挺传统媒体维权——第十次打击网络侵权盗版“剑网行动”启动，记者专访国家版权局新闻发言人</a>&nbsp;&nbsp;2014-06-23&nbsp;&nbsp;  <a href="/chinacopyright/contents/518/209567.html" target="_blank" style="color:#ff0000">四部门下发开展“剑网2014”专项行动通知 要求各地周密部署 创新方法 加强联动</a>&nbsp;&nbsp;2014-06-18&nbsp;&nbsp; -->
+        </marquee>
+      </div>
+      <div id="gdleft" style="margin:-25px;*margin:-16px;_margin:-25px; margin-left:0px;padding-left:-40px;">　</div>
+    </div>
+  </div>
+  <div id="search">
+    <form id="form_{StyleID}" method="get" action="/chinacopyright/utils/search.html" target="_blank">
+      <input type="image" src="/chinacopyright/_images/search.jpg" onclick="document.charset='gb2312';document.getElementById('form_{StyleID}').submit();return false;" />
+      <input name="Title" type="text" value="请输入关键词" onmouseover="this.focus()" onfocus="this.select()" />
+    </form>
+
+  </div>
+  <div style="float:right;    margin: 11px 30px 0 0;"><a href="http://en.ncac.gov.cn/" target="_blank" style="font-size: 16px;">English</a></div>
+  <div id="menu">
+    <table cellpadding="0" cellspacing="0">
+      
+      <tbody><tr>
+        <td class="menu_w"><a href="/chinacopyright/channels/518.html" target="_blank"><span class="STYLE1">新闻资讯</span></a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/518.html" target="_blank" class="c_text">新闻</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/520.html" target="_blank" class="c_text">图片新闻</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/2871.html" target="_blank" class="c_text">视频新闻</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/538.html" target="_blank" class="c_text">专题专栏</a></td>
+        
+      </tr>
+      
+      <tr>
+        <td class="menu_w"><a href="/chinacopyright/channels/473.html" target="_blank"><span class="STYLE1">信息公开</span></a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/473.html" target="_blank" class="c_text">机构设置</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/479.html" target="_blank" class="c_text">法律法规</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/483.html" target="_blank" class="c_text">通知公告</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/11449.html" target="_blank" class="c_text">版权统计</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/496.html" target="_blank" class="c_text">版权执法监管</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/514.html" target="_blank" class="c_text">软件正版化</a></td>
+        
+      </tr>
+      
+      <tr>
+        <td class="menu_w"><a href="/chinacopyright/channels/558.html" target="_blank"><span class="STYLE1">在线服务</span></a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/560.html" target="_blank" class="c_text">行政审批</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/563.html" target="_blank" class="c_text">版权服务</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/571.html" target="_blank" class="c_text">作品登记</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/4493.html" target="_blank" class="c_text">专业出版物</a></td>
+        
+      </tr>
+      
+      <tr>
+        <td class="menu_w"><a href="/chinacopyright/channels/576.html" target="_blank"><span class="STYLE1">交流互动</span></a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/577.html" target="_blank" class="c_text">在线举报</a></td>
+        
+        <td class="menu_b"><a href="/chinacopyright/channels/11410.html" target="_blank" class="c_text">历史信息</a></td>
+        
+      </tr>
+      
+    </tbody></table>
+  </div>
+  <div id="time"> <span style="clear:left;float:left;display:block; margin:18px 0 0 10px; color:#E70116;_display:inline;">欢迎访问！</span> <span style="clear:left;float:left;display:block; margin:6px 0 0 10px; color:#000;_display:inline;*width:240px;"><span style="height:20px;line-height:20px;display:block;float:left;">访问总计：</span><span id="ajaxElement_1_246">43312221</span>
+<script type="text/javascript" language="javascript">
+function getQueryString()
+{
+  var i, len, params = '', hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&amp;');
+  for(i = 0, len = hashes.length, len; i &lt; len; i+=1) {
+    hash = hashes[i].split('=');
+    if (hash &amp;&amp; hash.length == 2){
+      value = encodeURIComponent(decodeURIComponent(decodeURIComponent(hash[1])));
+      params += (hash[0] + '=' + value + '&amp;');
+    }
+  }
+  if (params &amp;&amp; params.length &gt; 0) params = params.substring(0, params.length - 1);
+  return params;
+}
+function stlDynamic_ajaxElement_1_246(pageNum)
+{
+    try
+    {
+        var url = "/sitefiles/services/wcm/dynamic/output.aspx?publishmentSystemID=470&amp;" + getQueryString();
+        var pars = "pageNodeID=470&amp;pageContentID=0&amp;pageTemplateID=136&amp;isPageRefresh=False&amp;pageUrl=7e2NgF3U02dai0cwLqW7hrTBEpzobmkX167SPF3R0slash070slash0uFWMI4Fckuw0equals00equals0&amp;ajaxDivID=ajaxElement_1_246&amp;templateContent=A20add0j7Cp8HAUAg6suhfrMr68J60RYOZo4UY4o0add00etAVMV68kNpnwvHcn4aaTwD0add05TqRnDiCSmWzSFJsUb1uJk6Gs0slash0Fsj9UthSyfJ6Qdu6H0add0c0equals0&amp;timeStamp="+new Date().getTime();
+        if (pageNum &amp;&amp; pageNum &gt; 0)
+        {
+            pars += "&amp;pageNum=" + pageNum;
+        }
+        jQuery.post(url, pars, function(data,textStatus){
+            jQuery("#ajaxElement_1_246").html(data);
+        });
+
+    }catch(e){}
+}
+stlDynamic_ajaxElement_1_246(0);
+</script>
+</span> <span style="clear:left;float:left;display:block; margin:6px 0 0 10px; _display:inline;*width:240px">今 天 是：<span id="todayDate">2020年12月3日</span></span>　　　　 <span style="clear:left;float:left;display:block; margin:6px 0 0 10px; color:#000;_display:inline;*width:240px;">　　　　　<span id="today">星期四</span></span> 
+    <script type="text/javascript">
+
+// 此处script必须放在此处
+
+var today=new Date();
+
+var weekDayArr =Array("日","一","二","三","四","五","六");
+
+timeString=(today.getYear()&lt;1900 ? today.getYear()+1900:today.getYear())+"年"+(today.getMonth()+1)+"月"+today.getDate()+"日";
+
+document.getElementById('todayDate').innerHTML = timeString;
+
+document.getElementById('today').innerHTML = "星期"+weekDayArr[today.getDay()];
+
+</script> 
+  </div></td> </tr>
+      <tr>
+        <td colspan="3"><!--时间日期结束--> 
+          
+          <!--图片新闻开始positon==7-->
+          
+          <div id="imgNews">
+            <div id="imgNewsTitle">
+              <div class="newsTitle">
+                <ul>
+                  <li class="tpxw-btn-h"><span class="tpxwspan"></span></li>
+                  <li class="point"></li>
+                  <li class="spxw-btn"><span class="spxwspan"></span></li>
+                </ul>
+              </div>
+              <div class="tpxw-link"> <a href="/chinacopyright/channels/520.html" target="_blank" class="moreButton"></a> </div>
+              <div class="spxw-link" style="display:none;"> <a href="/chinacopyright/channels/2871.html" target="_blank" class="moreButton"></a> </div>
+            </div>
+            <div id="tpxw_block" style="width:466px; height:277px;margin:5px auto 0px auto;">
+              <div id="img_scroll">
+                <div id="img_big">
+                  
+                      <a href="/chinacopyright/contents/520/422905.html" style="display: inline; opacity: 0.068775;"><img src="/chinacopyright/upload/images/2020/9/2912621983.jpg" /></a>
+                      
+                      <a href="/chinacopyright/contents/520/415666.html"><img src="/chinacopyright/upload/images/2020/4/2875742980.jpg" /></a>
+                      
+                      <a href="/chinacopyright/contents/520/415136.html"><img src="/chinacopyright/upload/images/2020/4/23134236289.jpg" /></a>
+                      
+                      <a href="/chinacopyright/contents/520/415667.html"><img src="/chinacopyright/upload/images/2020/5/11113835290.jpg" /></a>
+                      
+                  <div id="ifocus_opdiv"></div>
+                  <div id="ifocus_tx">
+                    <ul>
+                      
+                      <li class="current" style="display: block;">推进使用正版软件工作部际联席会议办公室举办...</li>
+                      
+                      <li class="normal" style="display: none;">《视听表演北京条约》今日生效</li>
+                      
+                      <li class="normal" style="display: none;">2019年中国知识产权发展状况新闻发布会在京举行</li>
+                      
+                      <li class="normal" style="display: none;">2020年国家版权局公益海报发布</li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <div id="img_small">
+                    
+            <a><img src="/chinacopyright/upload/images/2020/9/2912621983.jpg" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/4/2875742980.jpg" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/4/23134236289.jpg" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/5/11113835290.jpg" /></a>
+          
+                  <a class="curr" href="javascript:void(0);" style="top: 0px;"><img src="_images/curr.png" /></a> </div>
+              </div>
+            </div>
+            <div id="spxw_block" style="width:466px; height:277px;margin:5px auto 0px auto;display:none;">
+              <div id="img_scroll2">
+                <div id="img_big2">
+                   <a href="/chinacopyright/contents/2871/415424.html"><img src="/chinacopyright/upload/images/2020/4/279460357.jpg" /></a>  <a href="/chinacopyright/contents/2871/415414.html"><img src="/chinacopyright/upload/images/2020/4/26161635480.JPG" /></a>  <a href="/chinacopyright/contents/2871/415300.html"><img src="/chinacopyright/upload/images/2020/4/24195539929.jpg" /></a>  <a href="/chinacopyright/contents/2871/415668.html"><img src="/chinacopyright/upload/images/2020/5/11114226686.jpg" /></a> 
+                  <div id="ifocus_opdiv2"></div>
+                  <div id="ifocus_tx2">
+                    <ul>
+                      
+                      <li class="current">世界知识产权组织总干事高锐为《视听表演北京条...</li>
+                      
+                      <li class="normal">《视听表演北京条约》生效宣传片发布</li>
+                      
+                      <li class="normal">国家版权局、全国“扫黄打非”办联合发布2019...</li>
+                      
+                      <li class="normal">2020年国家版权局公益宣传片发布</li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <div id="img_small2">
+                  
+            <a><img src="/chinacopyright/upload/images/2020/4/279460357.jpg" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/4/26161635480.JPG" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/4/24195539929.jpg" /></a>
+          
+            <a><img src="/chinacopyright/upload/images/2020/5/11114226686.jpg" /></a>
+          
+                  <a class="curr" href="javascript:void(0);"><img src="_images/curr.png" /></a> 
+          </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <!--图片新闻结束--> 
+          
+          <!--要闻--positon==8><!-- 改动 -->
+          
+          <div id="yw"> <!--<img src="_images/xw.jpg" style="display:block; float:left; margin-left:16px; margin-top:5px;"/>-->
+<style type="text/css">
+.ul{ margin:0; padding:0;padding-left:130px;} 
+.ul li{float:left;list-style:none; width:80px; text-align: center; padding-top: 7px;background-image:url(images/qhbj.png) ; background-repeat:no-repeat;  height: 21px; border-bottom: 3px solid #fff;} 
+.ul li a{color:#094a8c; font-weight: bold;font-size: 14px;}  
+.ul li a:hover{color: #e88b21;  font-weight: bold;}
+</style>
+            <ul class="ul">
+              
+<script language="javascript">
+function stl_tab_2(tabName, no){
+	for ( i = 1; i &lt;= 9; i++){
+		var el = jQuery('#页签一_tabContent_' + i);
+		var li = $('#页签一_tabHeader_' + i);
+		if (i == no){
+            try{
+			    el.show();
+            }catch(e){}
+            li.removeClass('taboff');
+            li.addClass('tabon');
+		}else{
+            try{
+			    el.hide();
+            }catch(e){}
+            li.removeClass('tabon');
+            li.addClass('taboff');
+		}
+	}
+}
+</script>
+<li class="tabon" id="页签一_tabHeader_1" onmouseover="stl_tab_2('页签一', 1);return false;"> <a href="/chinacopyright/channels/518.html" target="_blank">版权要闻</a></li><li class="taboff" id="页签一_tabHeader_2" onmouseover="stl_tab_2('页签一', 2);return false;"> <a href="/chinacopyright/channels/4509.html" target="_blank">业界信息</a></li><li class="taboff" id="页签一_tabHeader_3" onmouseover="stl_tab_2('页签一', 3);return false;"> <a href="/chinacopyright/channels/519.html" target="_blank">境外动态</a></li><li class="taboff" id="页签一_tabHeader_4" onmouseover="stl_tab_2('页签一', 4);return false;"> <a href="/chinacopyright/channels/555.html" target="_blank">探讨研究</a></li>
+            </ul>
+            <div class="box" style="width:456px; height:274px; overflow:hidden; clear:both;" id="页签一_tabContent_1">
+              <div class="content" style="width:452px; height:270px"> <a href="/chinacopyright/channels/518.html" target="_blank" class="moreButton"></a>
+                <table cellpadding="0" cellspacing="0" style="clear:both;margin: 10px; _margin-top:0; width:430px;_width:412px; line-height:23px;">
+                  
+                  <tbody><tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410" style="letter-spacing: 0.4px;"><a href="/chinacopyright/contents/518/425409.html" target="_blank" title="习近平：全面加强知识产权保护工作 激发创新活力推动构建新发展格局">习近平：全面加强知识产权保护工作 激发创新活力推动构建新发展格局</a></td>
+                    <td style="text-align:right"> <!--2020-12-02--></td>
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/411362.html" target="_blank" title="全国宣传部长会议在京召开 王沪宁出席并讲话">全国宣传部长会议在京召开 王沪宁出席并讲话</a></td>
+                    <!--<td style="text-align:right"> 2020-01-10</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425419.html" target="_blank" title="中国国际著作权集体管理高峰论坛在京召开   聚焦新修《著作权法》视野下集体管理制度发展与完善">中国国际著作权集体管理高峰论坛在京召开 聚焦新修《著作权法...</a></td>
+                    <!--<td style="text-align:right"> 2020-12-03</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425399.html" target="_blank" title="把握时代发展脉搏，尽展巴蜀版权风采——  2020年成都数字版权交易博览会成功举办">把握时代发展脉搏，尽展巴蜀版权风采——2020年成都数字版权交...</a></td>
+                    <!--<td style="text-align:right"> 2020-12-01</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425368.html" target="_blank" title="第十二届全国大学生版权征文活动颁奖仪式在成都举行">第十二届全国大学生版权征文活动颁奖仪式在成都举行</a></td>
+                    <!--<td style="text-align:right"> 2020-11-28</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425254.html" target="_blank" title="浙江省第八届“知识产权杯”创意设计大赛落幕">浙江省第八届“知识产权杯”创意设计大赛落幕</a></td>
+                    <!--<td style="text-align:right"> 2020-11-23</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425251.html" target="_blank" title="甘肃省举办领导干部“富民兴陇”版权专题讲座">甘肃省举办领导干部“富民兴陇”版权专题讲座</a></td>
+                    <!--<td style="text-align:right"> 2020-11-23</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425259.html" target="_blank" title="中宣部版权管理局局长于慈珂一行调研北方国家版权交易中心工作">中宣部版权管理局局长于慈珂一行调研北方国家版权交易中心工作</a></td>
+                    <!--<td style="text-align:right"> 2020-11-23</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/425249.html" target="_blank" title="内蒙古自治区2020年版权工作培训班在呼和浩特市举办">内蒙古自治区2020年版权工作培训班在呼和浩特市举办</a></td>
+                    <!--<td style="text-align:right"> 2020-11-23</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/518/424966.html" target="_blank" title="广东召开推进使用正版软件工作联席会议全体会议">广东召开推进使用正版软件工作联席会议全体会议</a></td>
+                    <!--<td style="text-align:right"> 2020-11-16</td>-->
+                  </tr>
+                  
+                </tbody></table>
+              </div>
+              <div class="jiao_lt" style="top:0; left:0;"></div>
+              <div class="jiao_rt" style="top:0; left:446px;"></div>
+              <div class="jiao_lb" style="top:262px; left:0;"></div>
+              <div class="jiao_rb" style="top:262px; left:446px;"></div>
+            </div><div class="box" style="width:456px; height:274px; overflow:hidden; clear:both;display:none" id="页签一_tabContent_2">
+              <div class="content" style="width:452px; height:270px"> <a href="/chinacopyright/channels/4509.html" target="_blank" class="moreButton"></a>
+                <table cellpadding="0" cellspacing="0" style="clear:both;margin: 10px; _margin-top:0; width:430px;_width:412px; line-height:23px;">
+                  
+                  <tbody><tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/415672.html" target="_blank" title="内蒙古知识产权服务中心、版权服务工作站联合举办版权知识在线公益讲座  网上开讲著作权，防疫充电两不误">内蒙古知识产权服务中心、版权服务工作站联合举办版权知识在线公...</a></td>
+                    <!--<td style="text-align:right">2020-04-17</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413915.html" target="_blank" title="推动版权行业持续向好发展  ——访中国版权协会副理事长（驻会）兼秘书长孙悦">推动版权行业持续向好发展——访中国版权协会副理事长（驻会）...</a></td>
+                    <!--<td style="text-align:right">2020-04-01</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413907.html" target="_blank" title="影著协：加强交流服务,共谱精彩2020">影著协：加强交流服务,共谱精彩2020</a></td>
+                    <!--<td style="text-align:right">2020-03-31</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413905.html" target="_blank" title="版权服务、疫情防控“双线作战”两不误">版权服务、疫情防控“双线作战”两不误</a></td>
+                    <!--<td style="text-align:right">2020-03-31</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413771.html" target="_blank" title="国际童书联盟获赠《新冠肺炎防护手册》版权">国际童书联盟获赠《新冠肺炎防护手册》版权</a></td>
+                    <!--<td style="text-align:right">2020-03-25</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413775.html" target="_blank" title="制作视频 编译图书 捐赠版权——与世界分享抗疫经验">制作视频 编译图书 捐赠版权——与世界分享抗疫经验</a></td>
+                    <!--<td style="text-align:right">2020-03-24</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/414343.html" target="_blank" title="江西省抚州市文化综合执法支队：抗疫期间打盗巡查不停歇">江西省抚州市文化综合执法支队：抗疫期间打盗巡查不停歇</a></td>
+                    <!--<td style="text-align:right">2020-03-20</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/414341.html" target="_blank" title="人民出版社输出三种抗疫图书版权 助力全球抗疫">人民出版社输出三种抗疫图书版权 助力全球抗疫</a></td>
+                    <!--<td style="text-align:right">2020-03-19</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413533.html" target="_blank" title="积极参与抗疫，履行社会责任  ——安徽版权界战疫进行时">积极参与抗疫，履行社会责任——安徽版权界战疫进行时</a></td>
+                    <!--<td style="text-align:right">2020-03-18</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/4509/413594.html" target="_blank" title="广西抗疫图书版权输出越南">广西抗疫图书版权输出越南</a></td>
+                    <!--<td style="text-align:right">2020-03-18</td>-->
+                  </tr>
+                  
+                </tbody></table>
+              </div>
+              <div class="jiao_lt" style="top:0; left:0;"></div>
+              <div class="jiao_rt" style="top:0; left:446px;"></div>
+              <div class="jiao_lb" style="top:262px; left:0;"></div>
+              <div class="jiao_rb" style="top:262px; left:446px;"></div>
+            </div><div class="box" style="width:456px; height:274px; overflow:hidden; clear:both;display:none" id="页签一_tabContent_3">
+              <div class="content" style="width:452px; height:270px"> <a href="/chinacopyright/channels/519.html" target="_blank" class="moreButton"></a>
+                <table cellpadding="0" cellspacing="0" style="clear:both;margin: 10px; _margin-top:0; width:430px;_width:412px; line-height:23px;">
+                  
+                  <tbody><tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/408153.html" target="_blank" title="尽管建筑师声称侵犯版权迪拜框架仍接近完成">尽管建筑师声称侵犯版权迪拜框架仍接近完成</a></td>
+                    <!--<td style="text-align:right"> 2019-11-29</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/407558.html" target="_blank" title="欧盟版权指令为权利人提供新维权工具">欧盟版权指令为权利人提供新维权工具</a></td>
+                    <!--<td style="text-align:right"> 2019-11-14</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/407054.html" target="_blank" title="迪士尼公司是如何开展版权授权的">迪士尼公司是如何开展版权授权的</a></td>
+                    <!--<td style="text-align:right"> 2019-10-24</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/406798.html" target="_blank" title="土耳其版“通知—删除”制度用降网速、屏蔽网站打击侵权">土耳其版“通知—删除”制度用降网速、屏蔽网站打击侵权</a></td>
+                    <!--<td style="text-align:right"> 2019-10-17</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/406532.html" target="_blank" title="新加坡新规鼓励使用非诉讼纠纷解决方式">新加坡新规鼓励使用非诉讼纠纷解决方式</a></td>
+                    <!--<td style="text-align:right"> 2019-10-10</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/405203.html" target="_blank" title="北美流媒体之争，谁能最终制胜？">北美流媒体之争，谁能最终制胜？</a></td>
+                    <!--<td style="text-align:right"> 2019-09-18</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/403780.html" target="_blank" title="漫威《钢铁侠3》海报被判未侵权漫画书">漫威《钢铁侠3》海报被判未侵权漫画书</a></td>
+                    <!--<td style="text-align:right"> 2019-08-07</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/402081.html" target="_blank" title="欧盟专家：应注重对年青一代的版权教育">欧盟专家：应注重对年青一代的版权教育</a></td>
+                    <!--<td style="text-align:right"> 2019-07-18</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/401887.html" target="_blank" title="涉严重侵权 日本盗版漫画网站长在菲律宾落网">涉严重侵权 日本盗版漫画网站长在菲律宾落网</a></td>
+                    <!--<td style="text-align:right"> 2019-07-10</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/519/401240.html" target="_blank" title="土耳其版权数据库正式对外开放">土耳其版权数据库正式对外开放</a></td>
+                    <!--<td style="text-align:right"> 2019-06-27</td>-->
+                  </tr>
+                  
+                </tbody></table>
+              </div>
+              <div class="jiao_lt" style="top:0; left:0;"></div>
+              <div class="jiao_rt" style="top:0; left:446px;"></div>
+              <div class="jiao_lb" style="top:262px; left:0;"></div>
+              <div class="jiao_rb" style="top:262px; left:446px;"></div>
+            </div><div class="box" style="width:456px; height:274px; overflow:hidden; clear:both;display:none" id="页签一_tabContent_4">
+              <div class="content" style="width:452px; height:270px"> <a href="/chinacopyright/channels/555.html" target="_blank" class="moreButton"></a>
+                <table cellpadding="0" cellspacing="0" style="clear:both;margin: 10px; _margin-top:0; width:430px;_width:412px; line-height:23px;">
+                  
+                  <tbody><tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411530.html" target="_blank" title="陈雨农：尽快出台版权侵权裁量指导性意见">陈雨农：尽快出台版权侵权裁量指导性意见</a></td>
+                    <!--<td style="text-align:right"> 2020-01-15</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411527.html" target="_blank" title="游戏直播能否适用合理使用规则？">游戏直播能否适用合理使用规则？</a></td>
+                    <!--<td style="text-align:right"> 2020-01-15</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411477.html" target="_blank" title="版权登记冲突时权利归属的认定">版权登记冲突时权利归属的认定</a></td>
+                    <!--<td style="text-align:right"> 2020-01-14</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411360.html" target="_blank" title="体育赛事直播画面的版权应当如何定性？">体育赛事直播画面的版权应当如何定性？</a></td>
+                    <!--<td style="text-align:right"> 2020-01-10</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411322.html" target="_blank" title="《热血传奇》二十年著作权之争有望终结  共有著作权人未经授权不能独立行事">《热血传奇》二十年著作权之争有望终结共有著作权人未经授权不...</a></td>
+                    <!--<td style="text-align:right"> 2020-01-09</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/411320.html" target="_blank" title="KTV不能“想唱就唱”">KTV不能“想唱就唱”</a></td>
+                    <!--<td style="text-align:right"> 2020-01-09</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/410187.html" target="_blank" title="塑造适应新时代法治需求的版权保护规则">塑造适应新时代法治需求的版权保护规则</a></td>
+                    <!--<td style="text-align:right"> 2020-01-02</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/410184.html" target="_blank" title="短视频与直播交互给版权保护带来利好">短视频与直播交互给版权保护带来利好</a></td>
+                    <!--<td style="text-align:right"> 2020-01-02</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/410182.html" target="_blank" title="技术应用将成为版权保护体系的重要内容">技术应用将成为版权保护体系的重要内容</a></td>
+                    <!--<td style="text-align:right"> 2020-01-02</td>-->
+                  </tr>
+                  
+                  <tr>
+                    <td width="10" style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                    <td width="410"><a href="/chinacopyright/contents/555/410145.html" target="_blank" title="年度话题：2019，冲上“热搜”的版权话题">年度话题：2019，冲上“热搜”的版权话题</a></td>
+                    <!--<td style="text-align:right"> 2019-12-27</td>-->
+                  </tr>
+                  
+                </tbody></table>
+              </div>
+              <div class="jiao_lt" style="top:0; left:0;"></div>
+              <div class="jiao_rt" style="top:0; left:446px;"></div>
+              <div class="jiao_lb" style="top:262px; left:0;"></div>
+              <div class="jiao_rb" style="top:262px; left:446px;"></div>
+            </div> </div></td>
+      </tr>
+      <tr><td colspan="3">
+
+        
+<!---大通栏--->
+<!---
+<a href="http://www.ncac.gov.cn/channels/10331.html" style="float:left; margin:5px 0 0 14px;"><img src="/chinacopyright/upload/images/2017/4/2010557789.jpg" /></a>
+--->
+<!---end--->
+        
+<!---左右位--->
+
+
+<div style="float:left; margin:5px 0 0 15px;"><a href="http://www.ncac.gov.cn/chinacopyright/channels/11943.html" target="_blank"><img src="/chinacopyright/upload/images/2020/5/11113412383.jpg" width="310" height="97" /></a></div>
+
+
+
+<div style="float:left; margin:5px 0 0 10px;"><a href="http://www.ncac.gov.cn/chinacopyright/channels/11965.html" target="_blank"><img src="/chinacopyright/upload/images/2020/5/11112522981.jpg" width="310" height="97" /></a></div>
+
+
+
+<div style="float:left; margin:5px 0 0 10px;"><a href="http://www.ncac.gov.cn/chinacopyright/channels/11988.html" target="_blank"><img src="/chinacopyright/upload/images/2020/7/1416937895.jpg" width="310" height="97" /></a></div>
+
+
+
+<!---end--->
+      </td></tr>
+      <tr>
+        <td colspan="3"><!--通知公告positon==11--><!-- 改动 -->
+          
+          <div id="tzgg" class="box" style="clear:left; float:left;width:226px; height:242px; margin-top:6px; margin-left:14px;_margin-left:7px;">
+            <div class="content" style="width:220px; float:left; height:238px;overflow: hidden;"> <img src="_images/tzgg.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /> <a href="/chinacopyright/channels/483.html" target="_blank" class="moreButton"></a>
+              <table cellpadding="0" cellspacing="0" style=" clear:left; float:left;margin:4px;width:190px; background-image:url(_images/hgs.jpg); line-height:25px">
+                
+                
+                <tbody><tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/425412.html" target="_blank">国家版权局关于公布 2020年中国版权金奖获奖名单的通知</a></td>
+                </tr>
+                
+                
+                
+                <tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/423915.html" target="_blank">国家版权局关于进一步做好著作权行政执法证据审查和认定工作的通知</a></td>
+                </tr>
+                
+                
+                
+                <tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/424964.html" target="_blank">国家版权局关于第十二届全国大学生版权征文获奖名单的公示</a></td>
+                </tr>
+                
+                
+                
+                <tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/423523.html" target="_blank">国家版权局关于2020年中国版权金奖获奖名单的公示</a></td>
+                </tr>
+                
+                
+                
+                <tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/421839.html" target="_blank">2020年度第六批重点作品版权保护预警名单</a></td>
+                </tr>
+                
+                
+                
+                <tr>
+                  <td style="vertical-align:top"><img src="_images/bpoint.jpg" /></td>
+                  <td><a href="/chinacopyright/contents/483/421216.html" target="_blank">2020年度第五批重点作品版权保护预警名单</a></td>
+                </tr>
+                
+                
+              </tbody></table>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:214px;"></div>
+            <div class="jiao_lb" style="top:230px; left:0;"></div>
+            <div class="jiao_rb" style="top:230px; left:214px;"></div>
+          </div>
+          
+          <!--通知公告结束--> 
+          
+          <!--版权执法监督position=12-->
+          
+          <div id="bqzfjd" class="box" style="_diaplay:inline;float:left;width:360px; height:242px; margin-top:6px; margin-left:7px;_margin-left:3px;">
+            <div class="content" style="width:356px; float:left; height:238px"> <a href="/chinacopyright/channels/496.html" target="_blank"><img src="_images/bqzfjd.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /></a> <!--版权执法监督position=12--> 
+              
+              <a href="/chinacopyright/channels/496.html" target="_blank" class="moreButton"></a>
+              <div>
+                <div class="boxLeft" style="height:197px; margin-top:9px">
+                  <div class="boxLeftT"></div>
+                  <div class="boxLeftContent" style="height:188px;">
+                    <ul>
+                    
+                      <li class="box_item1"><a href="/chinacopyright/channels/577.html" target="_blank" onmousemove="selectBlock('bqzfjd',0)"><span class="check">在线举报</span></a></li>
+                      <li class="box_item1"><a href="/chinacopyright/contents/481/301174.html" target="_blank" onmousemove="selectBlock('bqzfjd',1)">投诉指南</a></li>
+                      <!--版权执法监督position=13-->
+                      <li class="box_item1"><a href="/chinacopyright/channels/497.html" target="_blank" onmousemove="selectBlock('bqzfjd',2)">预警名单</a></li>
+                      <!--版权执法监督position=14-->
+                      <li class="box_item1"><a href="/chinacopyright/channels/499.html" target="_blank" onmousemove="selectBlock('bqzfjd',3)">剑网行动</a></li>
+                      <!--版权执法监督position=15-->
+                      <li class="box_item1"><a href="/chinacopyright/channels/504.html" target="_blank" onmousemove="selectBlock('bqzfjd',4)">案件信息</a></li>
+                      <!--版权执法监督position=16-->
+                      <li class="box_item1"><a href="/chinacopyright/channels/506.html" target="_blank" onmousemove="selectBlock('bqzfjd',5)">执法统计</a></li>
+                      <!--版权执法监督position=17-->
+                      <li class="box_item1"><a href="/chinacopyright/channels/507.html" target="_blank" onmousemove="selectBlock('bqzfjd',6)">执法奖励</a></li>
+                      <!--版权执法监督position=18-->
+                     
+                      <!--版权执法监督position=19-->
+                    </ul>
+                  </div>
+                  <div class="boxLeftB"></div>
+                </div>
+                <div>
+                 <table class="box_Table" cellpadding="0" cellspacing="0" style="margin:10px;width:220px;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/channels/577.html" target="_blank">　　感谢您对版权保护工作的支持，欢迎您举报有关文字、影视、音乐、游戏、软件等作品以及互联网网站、网络销售平台、移动智能终端应用软件商店等领域涉及侵权盗版的违法行为。</a></td>
+                    </tr>
+                  
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style="margin:10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/481/159551.html" target="_blank">　　中华人民共和国国家版权局　中华人民共和国国家发展和改革委员会　令第10号　　《教科书法定许可使用作品支付报酬办法》已经2013年9月2日国家版权局局务会议通过，并经国家发展和改革委员会同意，现予公布，自2013年12月1日起施行。 ...</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 12px 10px 10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/497/411809.html" target="_blank">2020年度第二批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/411778.html" target="_blank">2020年度第一批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/409208.html" target="_blank">2019年度第六批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/411777.html" target="_blank">2019年度第七批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/409207.html" target="_blank">2019年度第五批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/409206.html" target="_blank">2019年度第四批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/497/409205.html" target="_blank">2019年度第三批重点作品版权保护预警</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style="margin: 12px 10px 10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/channels/10870.html" target="_blank">版权剑网2017</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/channels/9877.html" target="_blank">版权剑网2016</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/channels/6239.html" target="_blank">版权剑网2015</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/channels/4512.html" target="_blank">版权剑网2014</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style="margin: 12px 10px 10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/504/313059.html" target="_blank">国家版权局等四部门通报21起“剑网20</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313058.html" target="_blank">重庆市“剑网2016”专项行动见成效 </a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313057.html" target="_blank">国家版权局通报“剑网2016”专项行动</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313056.html" target="_blank">宁夏回族自治区版权局发布2015年度三</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313055.html" target="_blank">国家版权局公布打击侵权盗版年度十大</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313054.html" target="_blank">3年半来我国新收知识产权一审案件38</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/504/313053.html" target="_blank">安徽立案查处侵权案件704起 挽回经济</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style="margin: 12px 10px 10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/506/314694.html" target="_blank">2015年全国版权执法情况表</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/301597.html" target="_blank">2014年全国版权执法情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/313046.html" target="_blank">2012年全国版权执法情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/301596.html" target="_blank">2011年全国版权执法情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/17972.html" target="_blank">2010年版权执法情况统计报表</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/17971.html" target="_blank">2008年全国版权行政机关查处案件情况</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/506/17970.html" target="_blank">2008年全国版权行政机关收缴盗版品情</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style="margin: 12px 10px 10px;width:220px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/507/355280.html" target="_blank">国家版权局关于奖励2016年度查处侵权</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/313045.html" target="_blank">国家版权局关于奖励2015年度查处侵权</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/313044.html" target="_blank">国家版权局关于奖励2014年度查处侵权</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/313043.html" target="_blank">国家版权局关于奖励2013年度查处侵权</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/17975.html" target="_blank">关于评选“2011年度全国版权保护重大</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/17974.html" target="_blank">2010年度查处侵权盗版案件有功单位及</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/507/17973.html" target="_blank">关于推荐2010年度查处侵权盗版案件有</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+    
+                </div>
+              </div>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:350px;"></div>
+            <div class="jiao_lb_blue" style="top:230px; left:0;"></div>
+            <div class="jiao_rb" style="top:230px; left:350px;"></div>
+          </div>
+          
+          <!--软件正版化-->
+          
+          <div id="rjzbh" class="box" style="_diaplay:inline;float:left;width:350px; height:242px; margin-top:6px; margin-left:7px;_margin-left:3px;">
+            <div style="width:346px;">
+              <link rel="stylesheet" type="text/css" href="_style/stylerjzbh.css" />
+              <!--六标签切换模块 开始-->
+              <div class="zs0906mainBox">
+                <div class="zs0906con">
+                  <div class="zs0906Chg"> <img class="zs0906btnL" src="images/zs0906btnl.jpg" width="5" height="16" />
+                    <div class="zs0906chgBox">
+                      <ul style="width: 620px;">
+                        
+                        <li class="zs0906_cutItm"><a href="/chinacopyright/channels/514.html" style="display:block; color:#000000;">
+                          宣传报道
+                          </a></li>
+                        
+                        <li><a href="/chinacopyright/channels/510.html" style="display:block; color:#000000;">
+                          政策文件
+                          </a></li>
+                        
+                        <li style="margin-right: 14px;"><a href="/chinacopyright/channels/511.html" style="display:block; color:#000000;">
+                          中央和国家机关
+                          </a></li>
+                        
+                        <li style="padding: 0px 14px;"><a href="/chinacopyright/channels/512.html" style="display:block; color:#000000;">
+                          工作统计
+                          </a></li>
+                        
+                        <li style="padding: 0px 14px;"><a href="/chinacopyright/channels/513.html" style="display:block; color:#000000;">
+                          企业软件正版化
+                          </a></li>
+                        
+                        <li style="padding: 0px 14px;"><a href="/chinacopyright/channels/515.html" style="display:block; color:#000000;">
+                          地方国家机关
+                          </a></li>
+                        
+                      </ul>
+                    </div>
+                    <img class="zs0906btnR" src="images/zs0906btnr.jpg" width="5" height="16" /> </div>
+                  
+                  <div class="zs0906Bom">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/514/423489.html" target="_blank" class="fl">江苏省推进使用正版软件工作座谈会在无锡</a><span class="fr">
+                        2020-10-23
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/514/423220.html" target="_blank" class="fl">2020年甘肃省软件正版化工作培训班在兰州</a><span class="fr">
+                        2020-10-16
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/514/423488.html" target="_blank" class="fl">安庆市确保“五个到位”实现“五个推进”</a><span class="fr">
+                        2020-10-23
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  <div class="zs0906Bom hidden">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/510/229757.html" target="_blank" class="fl">推进正版化工作制度化规范化长效化 —</a><span class="fr">
+                        2014-08-07
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/510/17980.html" target="_blank" class="fl">关于印发推进使用正版软件工作2011年工作</a><span class="fr">
+                        2012-02-23
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/510/17979.html" target="_blank" class="fl">关于推进新闻出版行业企业使用正版软件工</a><span class="fr">
+                        2012-01-30
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  <div class="zs0906Bom hidden">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/511/316331.html" target="_blank" class="fl">推进使用正版软件工作部际联席会议第六次</a><span class="fr">
+                        2017-02-28
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/511/316330.html" target="_blank" class="fl">2016年我国政府机关采购软件金额达3.67亿</a><span class="fr">
+                        2017-03-01
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/511/293793.html" target="_blank" class="fl">我国软件正版化步入新常态</a><span class="fr">
+                        2016-03-18
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  <div class="zs0906Bom hidden">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/512/251063.html" target="_blank" class="fl">软件使用情况统计表</a><span class="fr">
+                        2015-05-04
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/512/251064.html" target="_blank" class="fl">省级机关软件正版化工作责任部门及责任人</a><span class="fr">
+                        2015-05-04
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/512/135399.html" target="_blank" class="fl">关于报送2012年软件正版化工作总结的函</a><span class="fr">
+                        2012-12-03
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  <div class="zs0906Bom hidden">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/513/316332.html" target="_blank" class="fl">广西壮族自治区推进国有企业软件正版化工</a><span class="fr">
+                        2017-03-01
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/513/309869.html" target="_blank" class="fl">威海对国有企业的软件正版化工作开展情况</a><span class="fr">
+                        2016-12-02
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/513/307140.html" target="_blank" class="fl">福建省举办2016年企业软件正版化工作培训</a><span class="fr">
+                        2016-10-31
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  <div class="zs0906Bom hidden">
+                    <ul>
+                      
+                      <li><a href="/chinacopyright/contents/515/404975.html" target="_blank" class="fl">马鞍山市召开软件正版化联席会议</a><span class="fr">
+                        2019-09-10
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/515/404908.html" target="_blank" class="fl">安徽宣城：四举措深入推进软件正版化工作</a><span class="fr">
+                        2019-09-06
+                        </span></li>
+                      
+                      <li><a href="/chinacopyright/contents/515/318142.html" target="_blank" class="fl">辽宁省2017年重点推进软件正版化</a><span class="fr">
+                        2017-03-15
+                        </span></li>
+                      
+                    </ul>
+                  </div>
+                  
+                  
+                  <div style="width:320px; margin:0 auto;">
+                    <!--<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><img src="images/zbh.jpg" width="39" height="31" /></td>
+                        <td style="font-weight:bold;font-family:'微软雅黑'; font-size:12px;"><a href="http://219.141.187.75/wlc/" target="_blank" style="color: #025494;">新闻出版行业<br />
+                          软件正版化工作平台</a></td>
+                        <td><img src="images/zhjg.jpg" width="38" height="32" /></td>
+                        <td style="font-weight:bold;font-family:'微软雅黑'; font-size:12px;"><a href="http://www.xinhuanet.com/tech/special/gov_sofware_license.htm" target="_blank" style="color: #025494;">《政府机关使用正版<br />
+                          软件管理办法》出台</a></td>
+                      </tr>
+                    </table>-->
+                     <a href="http://www.ncac.gov.cn/zbh/" target="_blank"><img src="/chinacopyright/upload/images/2018/11/2716196441.jpg" /></a>
+                  </div>
+                </div>
+              </div>
+<script language="javascript">
+$(".zs0906chgBox li").eq(2).css("margin-right",14);
+$(".zs0906chgBox li:gt(2)").css("padding","0 14px");
+var relWidth=0;
+for(m=0; m&lt;6; m++ ){
+  relWidth+=$(".zs0906chgBox li").eq(m).width()+39;
+}
+var relWidth2=0;
+for(k=0; k&lt;3; k++ ){
+  relWidth2+=$(".zs0906chgBox li").eq(k).width()+39;
+}
+
+$(".zs0906chgBox ul").width(relWidth+2)
+$(".zs0906btnR").click(function(){
+
+    $(".zs0906chgBox ul").animate({"left":-305},300);
+});
+$(".zs0906btnL").click(function(){
+    $(".zs0906chgBox ul").animate({"left":0},300);
+});
+</script> 
+              <!--六标签切换模块 结束--> 
+              
+            </div>
+          </div>
+          
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" nowrap="nowrap">
+<style type="text/css">
+.keAutoFbox3 {width:200px; height:78px;}
+.keAutoFbox3 .bd { height: 78px; width: 200px; overflow: hidden; }
+.keAutoFbox3 .bd ul li { float: left; height: 78px; width: 200px; position: relative; }
+.keAutoFbox3 .bd ul li img {display:block;}
+.keAutoFbox3{width:200px; overflow:hidden;}
+.keAutoFbox3{float:left;}
+.keAutoFbox2 {width:360px; height:78px;}
+.keAutoFbox2 .bd { height: 78px; width: 360px; overflow: hidden; }
+.keAutoFbox2 .bd ul li { float: left; height: 78px; width: 360px; position: relative; }
+.keAutoFbox2 .bd ul li img{display:block;}
+.keAutoFbox2{width:360px; overflow:hidden;}
+.keAutoFbox2{float:left;}
+.keAutoFbox {width:375px; height:78px; }
+.keAutoFbox .bd { height: 78px; width: 375px; overflow: hidden; }
+.keAutoFbox .bd ul li{ float: left; height: 78px; width: 375px; position: relative; }
+.keAutoFbox .bd ul li img{display:block;}
+.keAutoFbox{width:375px; overflow:hidden;}
+.keAutoFbox{float:left;}
+</style>
+<div style="float:left; margin-left:7px; margin-top:10px;">
+<div class="keAutoFbox">
+    <div class="bd">
+      <ul style="position: relative; width: 375px; height: 78px;">
+        
+        <li style="position: absolute; width: 375px; left: 0px; top: 0px;"><a href="http://www.ncac.gov.cn/chinacopyright/channels/11966.html" target="_blank"><img src="/chinacopyright/upload/images/2020/4/27105737463.jpg" width="375" height="78" /></a></li>
+        
+      </ul>
+    </div>
+  </div></div>
+<div style="float:left; margin-left:10px; margin-top:10px;">
+<div class="keAutoFbox2">
+    <div class="bd">
+      <ul>
+        
+        <li><a href="http://www.ncac.gov.cn/chinacopyright/channels/11990.html" target="_blank"><img src="/chinacopyright/upload/images/2020/9/2713223475.jpg" width="360" height="78" /></a></li>
+        
+      </ul>
+    </div>
+  </div></div>
+<div style="float:left; margin-left:10px; margin-top:10px;">
+<div class="keAutoFbox3">
+    <div class="bd">
+      <ul>
+        
+        <li><a href="http://www.ncac.gov.cn/chinacopyright/channels/11973.html" target="_blank"><img src="/chinacopyright/upload/images/2020/7/14161313675.jpg" width="200" height="78" /></a></li>
+        
+        <li><a href="http://www.ncac.gov.cn/chinacopyright/channels/11229.html" target="_blank"><img src="/chinacopyright/upload/images/2019/6/1815545307.jpg" width="200" height="78" /></a></li>
+        
+      </ul>
+    </div>
+  </div></div>
+
+ <!--   <div style="float:left; margin-left:10px; margin-top:10px;"><a href="http://www.ncac.gov.cn/chinacopyright/channels/11229.html"><img src="/chinacopyright/upload/images/2018/10/3018030622.jpg" width="201" height="78" /></a></div>-->
+<script language="javascript">
+jQuery(".keAutoFbox,.keAutoFbox2.keAutoFbox3").slide({mainCell:".bd ul",effect:"fold",autoPlay:true});
+</script>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <!--作品登记position=27-->
+          <div id="zpdj" class="box" style=" float:left;width:375px; height:165px; margin-top:6px; margin-left:7px;">
+            <div class="content" style="width:371px; float:left; height:161px"> <img src="_images/zpdj.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /> <a href="/chinacopyright/channels/571.html" target="_blank" class="moreButton"></a>
+              <div>
+                <div class="boxLeft" style="height:120px; margin-top:9px">
+                  <div class="boxLeftT"></div>
+                  <div class="boxLeftContent" style="height:111px;">
+                    <ul>
+                      <li class="box_item"><a href="/chinacopyright/channels/571.html" target="_blank" onmousemove="selectBlock('zpdj',0)"><span class="check">表证下载</span></a></li>
+                      
+                      <li class="box_item"><a href="/chinacopyright/channels/572.html" target="_blank" onmousemove="selectBlock('zpdj',1)">年度统计</a></li>
+                    </ul>
+                  </div>
+                  <div class="boxLeftB"></div>
+                </div>
+                <div>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 10px 10px;width:230px; _margin: 13px 5px 10px;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/571/227672.html" target="_blank">著作权专有许可合同备案证书</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/571/227671.html" target="_blank">著作权专有许可使用合同备案申请...</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/571/227670.html" target="_blank">著作权转让合同备案证书</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/571/227669.html" target="_blank">著作权转让合同备案申请表</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 10px 10px;width:230px;display:none; _margin: 13px 5px 10px;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/572/375771.html" target="_blank">2016年全国作品自愿登记情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/572/313451.html" target="_blank">2015年全国版权合同登记情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/572/313452.html" target="_blank">2015年全国作品自愿登记情况统计</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/572/313066.html" target="_blank">2014年全国作品自愿登记情况统计</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                </div>
+              </div>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:365px;"></div>
+            <div class="jiao_lb_blue" style="top:153px; left:0;"></div>
+            <div class="jiao_rb" style="top:153px; left:365px;"></div>
+          </div>   
+       </td>
+        <td><!--版权服务--><div id="bqfw" class="box" style=" float:left;width:360px; height:165px; margin-top:6px;">
+            <div class="content" style="width:356px; float:left; height:161px"> <img src="_images/bqfw.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /> <a href="/chinacopyright/channels/563.html" target="_blank" class="moreButton"></a>
+              <div>
+                <div class="boxLeft" style="height:120px; margin-top:9px">
+                  <div class="boxLeftT"></div>
+                  <div class="boxLeftContent" style="height:111px;">
+                    <ul>
+                      <li class="box_item"><a href="/chinacopyright/channels/563.html" target="_blank" onmousemove="selectBlock('bqfw',0)"><span class="check">著作权集体管理组织</span></a></li>
+                      <li class="box_item"><a href="/chinacopyright/channels/564.html" target="_blank" onmousemove="selectBlock('bqfw',1)">著作权涉外认证机构</a></li>
+                      <li class="box_item"><a href="/chinacopyright/channels/565.html" target="_blank" onmousemove="selectBlock('bqfw',2)">版权示范</a></li>
+                      <li class="box_item"><a href="/chinacopyright/channels/569.html" target="_blank" onmousemove="selectBlock('bqfw',3)">版权相关协会</a></li>
+                    </ul>
+                  </div>
+                  <div class="boxLeftB"></div>
+                </div>
+                <div style="">
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 5px 0 0px 10px;width:230px;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/563/20818.html" target="_blank">中国音乐著作权协会</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/563/20817.html" target="_blank">中国音像著作权集体管理协会</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/563/20816.html" target="_blank">中国文字著作权协会</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/563/20815.html" target="_blank">中国摄影著作权协会</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0 0px 10px;width:230px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/564/278413.html" target="_blank">国际作者和作曲者协会联合会...</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/564/20825.html" target="_blank">国际唱片业协会（IFPI）简介</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/564/20824.html" target="_blank">商业软件联盟（BSA）简介</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/564/20823.html" target="_blank">美国电影协会（MPA）简介</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0 0px 10px;width:230px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/channels/566.html" target="_blank">版权示范城市</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/channels/567.html" target="_blank">版权示范单位</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/channels/568.html" target="_blank">版权示范园区</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0 0px 10px;width:230px;display:none">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/569/20842.html" target="_blank">中国版权协会</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/569/20841.html" target="_blank">各地协会</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/569/20840.html" target="_blank">反盗版联盟</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                </div>
+              </div>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:350px;"></div>
+            <div class="jiao_lb_blue" style="top:153px; left:0;"></div>
+            <div class="jiao_rb" style="top:153px; left:350px;"></div>
+          </div></td>
+        <td rowspan="2">            
+            <!--版权统计-->
+            <div class="bqzs">
+              <div style="height:40px;"><a href="/chinacopyright/channels/11449.html" target="_blank" class="moreButton"></a></div>
+              <a href="/chinacopyright/channels/11449.html" style="margin:5px 15px; display:block;"><img src="_images/bqdj.png" width="172" height="117" /></a>
+              <a href="/chinacopyright/channels/11448.html" style="margin:7px 15px; display:block;"><img src="_images/bqzf.png" width="172" height="150" /></a>
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <td><!--国际交流-->
+          <div id="gjjl" class="box" style=" float:left;width:375px; height:165px; margin-top:6px; margin-left:7px;">
+            <div class="content" style="width:371px; float:left; height:161px"> <img src="_images/gjjl.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /> <a href="/chinacopyright/channels/522.html" target="_blank" class="moreButton"></a>
+              <div>
+                <div class="boxLeft" style="height:120px; margin-top:9px">
+                  <div class="boxLeftT"></div>
+                  <div class="boxLeftContent" style="height:111px;">
+                    <ul>
+                      <li class="box_item"><a href="/chinacopyright/channels/524.html" target="_blank" onmousemove="selectBlock('gjjl',0)"><span class="check">情况介绍</span></a></li>
+                      <li class="box_item"><a href="/chinacopyright/channels/523.html" target="_blank" onmousemove="selectBlock('gjjl',1)">国际公约</a></li>
+                    </ul>
+                  </div>
+                  <div class="boxLeftB"></div>
+                </div>
+                
+                <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0px 10px 10px;width:230px;display:inline">
+                  
+                  <tbody><tr>
+                    <td><a href="/chinacopyright/contents/524/20464.html" target="_blank">世界知识产权组织</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/524/20463.html" target="_blank">联合国教科文组织</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/524/20462.html" target="_blank">世界贸易组织</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/524/20461.html" target="_blank">亚太经合组织</a></td>
+                  </tr>
+                  
+                </tbody></table>
+                <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0px 10px 10px;width:230px;display:none">
+                  
+                  <tbody><tr>
+                    <td><a href="/chinacopyright/contents/523/20460.html" target="_blank">世界知识产权组织版权条约(1996)</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/523/20459.html" target="_blank">世界知识产权组织表演和录音制品...</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/523/20458.html" target="_blank">世界贸易组织协定中《与贸易有关...</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><a href="/chinacopyright/contents/523/20457.html" target="_blank">避免对版权使用费双重征税多边公...</a></td>
+                  </tr>
+                  
+                </tbody></table>
+              </div>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:365px;"></div>
+            <div class="jiao_lb_blue" style="top:153px; left:0;"></div>
+            <div class="jiao_rb" style="top:153px; left:365px;"></div>
+          </div>
+          </td>
+        <td>
+          <!--行政审批-->  
+          <div id="xzsp" class="box" style=" float:left;width:360px; height:165px; margin-top:6px;">
+            <div class="content" style="width:356px; float:left; height:161px"> <img src="_images/xzsp.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" /> <a href="/chinacopyright/channels/560.html" target="_blank" class="moreButton"></a>
+              <div>
+                <div class="boxLeft" style="height:120px; margin-top:9px">
+                  <div class="boxLeftT"></div>
+                  <div class="boxLeftContent" style="height:111px;">
+                    <ul>
+                      <li class="box_item"><a href="/chinacopyright/channels/561.html" target="_blank" onmousemove="selectBlock('xzsp',0)"><span class="check">集体管理组织审批</span></a></li>
+                      <li class="box_item"><a href="/chinacopyright/channels/560.html" target="_blank" onmousemove="selectBlock('xzsp',1)">版权认证机构审批</a></li>
+                    </ul>
+                  </div>
+                  <div class="boxLeftB"></div>
+                </div>
+                <div>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0px 10px 10px;width:230px;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/561/20813.html" target="_blank">著作权集体管理组织设立审批申办...</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/561/20812.html" target="_blank">著作权集体管理组织设立分支机构...</a></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/chinacopyright/contents/561/20811.html" target="_blank">著作权集体管理组织章程修改审批...</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                  <table class="box_Table" cellpadding="0" cellspacing="0" style=" margin: 13px 0px 10px 10px;width:230px;display:none;">
+                    
+                    <tbody><tr>
+                      <td><a href="/chinacopyright/contents/560/20810.html" target="_blank">著作权涉外机构、国（境）外著作...</a></td>
+                    </tr>
+                    
+                  </tbody></table>
+                </div>
+              </div>
+            </div>
+            <div class="jiao_lt" style="top:0; left:0;"></div>
+            <div class="jiao_rt" style="top:0; left:350px;"></div>
+            <div class="jiao_lb_blue" style="top:153px; left:0;"></div>
+            <div class="jiao_rb" style="top:153px; left:350px;"></div>
+          </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><!--相关链接--> 
+          
+          <img src="_images/xglj.jpg" style="display:block; float:left; margin:14px 0 0 15px; border:" />
+          <div id="links">
+            <div id="linksImg">
+              <div id="demo">
+                <ul>
+                  <li> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_4_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_4" id="Select_4" onchange="Select_4_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">国际组织</option>
+	<option value="http://www.wipo.int/">世界知识产权组织</option>
+	<option value="https://www.wto.org/">世界贸易组织</option>
+</select> </li>
+                  <li> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_5_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_5" id="Select_5" onchange="Select_5_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">相关部门</option>
+	<option value="http://www.wenming.cn/">中国文明网</option>
+	<option value="http://www.shdf.gov.cn/">中国扫黄打非网</option>
+	<option value="http://www.miit.gov.cn/">工业和信息化部</option>
+	<option value="http://www.mps.gov.cn/">公安部</option>
+	<option value="http://www.mofcom.gov.cn/">商务部</option>
+	<option value="http://www.mct.gov.cn/">文化和旅游部</option>
+	<option value="http://samr.saic.gov.cn/">国家市场监督管理总局</option>
+	<option value="http://www.nrta.gov.cn/index.html">国家广播电视总局</option>
+	<option value="http://www.cac.gov.cn/">国家互联网信息办公室</option>
+	<option value="http://www.sipo.gov.cn/">国家知识产权局</option>
+</select> </li>
+                  <li> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_6_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_6" id="Select_6" onchange="Select_6_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">地方版权管理执法机构</option>
+	<option value="/chinacopyright/contents/584/20953.html">广州市文化市场综合行政执法总队网</option>
+	<option value="http://hot.269.net/zfzd/index.asp">西安市文化市场行政执法总队</option>
+	<option value="http://www.hnwhzf.cn">海南文化市场行政执法总队</option>
+	<option value="http://whsc.cq.gov.cn">重庆文化市场行政执法总队</option>
+	<option value="http://whzf.sh.gov.cn/info/main">上海文化市场行政执法总队</option>
+	<option value="http://www.bjwhzf.gov.cn">北京文化市场行政执法总队</option>
+	<option value="http://www.gxpprft.gov.cn/">广西壮族自治区版权局</option>
+	<option value="http://www.xjgdj.gov.cn/">新疆维吾尔自治区版权局</option>
+	<option value="http://www.nxgdj.gov.cn/">宁夏回族自治区版权局</option>
+	<option value="http://xwcbgdj.nmg.gov.cn">内蒙古自治区版权局</option>
+	<option value="http://www.ynxgj.gov.cn/">云南省版权局</option>
+	<option value="http://www.gsgd.gov.cn/">甘肃省版权局</option>
+	<option value="http://www.fjxwgd.gov.cn/">福建省版权局</option>
+	<option value="http://www.zjxwcb.gov.cn">浙江省版权局</option>
+	<option value="http://www.gzpp.gov.cn">贵州省版权局</option>
+	<option value="http://www.xwcbj.gd.gov.cn">广东省版权局</option>
+	<option value="http://www.scppa.gov.cn">四川省版权局</option>
+	<option value="http://www.sxrt.gov.cn/">山西省版权局</option>
+	<option value="http://xwcbgd.hunan.gov.cn/">湖南省版权局</option>
+	<option value="http://www.hbnp.gov.cn/structure/index.htm">湖北省版权局</option>
+	<option value="http://hnxwcb.com/web/index.shtml">河南省版权局</option>
+	<option value="http://www.hbcbgd.gov.cn/">河北省版权局</option>
+	<option value="http://www.ahgd.gov.cn/">安徽省版权局</option>
+	<option value="http://www.sdxg.gov.cn/">山东省版权局</option>
+	<option value="http://jsxwcbgdj.jiangsu.gov.cn">江苏省版权局</option>
+	<option value="http://www.jxxgj.gov.cn/">江西省版权局</option>
+	<option value="http://www.lnxcgd.gov.cn/">辽宁省版权局</option>
+	<option value="http://gdj.jl.gov.cn/">吉林省版权局</option>
+	<option value="http://www.hljxwcbgd.gov.cn/">黑龙江省版权局</option>
+	<option value="http://www.tjsppb.gov.cn/">天津市版权局</option>
+	<option value="http://www.cqwhw.gov.cn/">重庆市版权局</option>
+	<option value="http://cbj.sh.gov.cn/index.jsp">上海市版权局</option>
+	<option value="http://xwgdj.beijing.gov.cn">北京市版权局</option>
+</select> </li>
+                  <li> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_7_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_7" id="Select_7" onchange="Select_7_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">版权服务机构</option>
+	<option value="http://www.ccopyright.com.cn">中国版权保护中心</option>
+</select> </li>
+                  <li> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_8_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_8" id="Select_8" onchange="Select_8_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">著作权集体管理组织</option>
+	<option value="http://www.prccopyright.org.cn">中国文字著作权协会</option>
+	<option value="http://www.mcsc.com.cn">中国音乐著作权协会</option>
+	<option value="http://www.cavca.org">中国音像著作权集体管理协会</option>
+	<option value="http://www.cfca-c.org/">中国电影著作权协会</option>
+	<option value="http://www.icsc1839.org/">中国摄影著作权协会</option>
+</select> </li>
+                  <li class="last"> 
+<script language="JavaScript" type="text/JavaScript">
+&lt;!--
+function Select_9_jumpMenu(targ,selObj)
+{ //v3.0
+window.open(selObj.options[selObj.selectedIndex].value);
+selObj.selectedIndex=0;
+}
+//--&gt;
+</script><select name="Select_9" id="Select_9" onchange="Select_9_jumpMenu('parent',this)">
+	<option selected="selected" value="javascript:undefined">其他</option>
+	<option value="http://www.gov.cn/">中国政府网</option>
+	<option value="http://www.ipraction.gov.cn/">中国打击侵权假冒工作网</option>
+	<option value="http://www.qstheory.cn/">求是</option>
+	<option value="http://www.news.cn/">新华网</option>
+	<option value="http://www.people.com.cn/">人民网</option>
+	<option value="http://www.chinaxwcb.com/">中国新闻出版网</option>
+</select> </li>
+                </ul>
+              </div>
+            </div>
+          </div></td>
+      </tr>
+    </tbody></table>
+  </div>
+  <div id="con_r"></div>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5f2567c13b1faf438f8331404f2a6a66";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<div id="bottomWord">
+<div style="width:80px; float:left; margin-left:200px;"><script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/33/000/0000/60556767/CA330000000605567670002.js' type='text/javascript'%3E%3C/script%3E"));</script><span id="_ideConac"></span><script src="http://dcs.conac.cn/js/33/000/0000/60556767/CA330000000605567670002.js" type="text/javascript"></script></div>
+<div class="STYLE21" style=" display:block; font-size:12px; padding:10px; line-height:20px; float:left; width:420px; text-align:center;">
+中华人民共和国国家版权局 主办<br />电子邮件：guojiabanquan@163.com<br />  
+地址：北京市西城区宣武门外大街40号      邮编：100052  <br />
+中华人民共和国国家版权局 版权所有 <br />
+京ICP备05071949号  
+</div></div>
+ 
+<!-- 右下角窗口开始 -->
+<div id="msg_content" class="ie6fixedBR">
+  
+</div>
+<script language="javascript">
+$(".zs0906Box").hover(function(){$(this).find(".zs0906Lay").slideDown(200)},function(){$(this).find(".zs0906Lay").slideUp(200)});
+$(".zs0906chgBox li").hover(function(){var zscutInx=$(".zs0906chgBox li").index(this);$(".zs0906chgBox li").removeClass("zs0906_cutItm"); $(this).addClass("zs0906_cutItm");$(".zs0906Bom").hide();$(".zs0906Bom").eq(zscutInx).show();});
+</script>
+
+
+<script src="/chinacopyright/SiteFiles/bairong/scripts/independent/tracker.js" type="text/javascript"></script>
+<script type="text/javascript">AddTrackerCount('/sitefiles/services/wcm/PageService.aspx?type=AddTrackerCount&amp;publishmentSystemID=470&amp;channelID=470&amp;contentID=0', 470);</script>
+
+
+<!-- T_系统首页模板.htm(首页模板) --></body></html>

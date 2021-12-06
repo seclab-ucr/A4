@@ -1,0 +1,168 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PURL Administration</title>
+
+<link rel="stylesheet" href="/services/purl/static/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="/services/purl/static/style.css" />
+<style>table#footer td { padding: 5px; }</style>
+</head>
+
+
+
+<body>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×<span class="sr-only">Close</span></button>
+        <h4 class="modal-title">User login is handled by the Internet Archive</h4>
+      </div>
+      <div class="modal-body">You will be returned to this page after login.</div>
+      <div class="modal-footer">
+        <a href="https://archive.org/account/login?referer=https%3A//archive.org/services/purl/" class="btn&#10;        btn-primary">Login to the Internet Archive</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×<span class="sr-only">Close</span></button>
+        <h4 class="modal-title">User registration is handled by the Internet Archive</h4>
+      </div>
+      <div class="modal-body">
+<ol>
+<li>Complete the Internet Archive user registration.</li>
+<li>Come back to <a href="/services/purl/?external=True">https://purl.archive.org/</a></li>
+</ol>
+</div>
+      <div class="modal-footer">
+        <a href="https://archive.org/account/signup" class="btn btn-primary">Sign up at the Internet Archive</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/services/purl/">PURL Administration</a>
+        </div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+		    <ul class="nav navbar-nav navbar-left">
+				<li><a href="/services/purl/help">help</a></li>
+            </ul>
+
+		    <ul class="nav navbar-nav navbar-right">
+                
+                <li><a href="#" role="button" data-toggle="modal" data-target="#loginModal">login</a>
+                </li><li><a href="#" role="button" data-toggle="modal" data-target="#signupModal">sign up</a>
+                
+			</li></ul>
+
+            
+            <form action="/services/purl/domain_search" class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" name="q" class="form-control" placeholder="PURL domain" />
+                </div>
+                <button type="submit" class="btn btn-default">search</button>
+            </form>
+            
+
+
+		</div>
+    </div>
+</nav>
+
+<div class="container">
+
+  
+
+<div class="row">
+<div class="col-md-12">
+
+<h1>PURL Administration</h1>
+
+<ol class="breadcrumb">
+  <li class="active">Home</li>
+</ol>
+
+<p>PURLs are persistent URLs, they provide permanent addresses for resources on the web.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+
+  <h4>Search</h4>
+  <form class="form-inline" action="/services/purl/domain_search">
+    <div class="form-group">
+      <input class="form-control" name="q" />
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+  </form>
+
+  <h4>Create a new domain</h4>
+  
+    <p>Login or sign up to create a new domain.</p>
+    <p>
+    <a href="#" role="button" data-toggle="modal" data-target="#loginModal" class="btn btn-default">Login</a>
+    <a href="#" role="button" data-toggle="modal" data-target="#signupModal" class="btn btn-default">Sign up</a>
+    </p>
+    
+</div>
+
+</div>
+
+
+
+
+<div class="row">
+<div class="col-md-12">
+<p> </p>
+<table id="footer">
+<tbody><tr>
+<td><img src="/services/purl/static/img/logo_IA-sm.png" /></td>
+<td>The PURL service is an initiative of the <a href="http://archive.org">Internet Archive</a>, a 501(c)(3) non-profit,<br />
+building a digital library of Internet sites and other cultural artifacts in
+digital form.<br />
+For help and assistance please email info@archive.org.</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+</div>
+
+<script src="/services/purl/static/jquery/jquery.js"></script>
+<script src="/services/purl/static/bootstrap/js/bootstrap.js"></script>
+<script src="/services/purl/static/app.js"></script>
+
+
+<script>
+$('#newdomain').submit(function() {
+    $('#savingModal').modal();
+});
+</script>
+
+
+
+</body></html>

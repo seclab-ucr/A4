@@ -1,0 +1,73 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>  
+	<meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://static.libsyn.com/p/assets/platform/libsyn-fav.png" type="image/png" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<meta property="og:type" content="music.song" />
+	<title>iFrame Test</title>
+	<link rel="stylesheet" type="text/css" href="//static.libsyn.com/p/assets/platform/fonts/libsyn-fonts.css?family=Open+Sans:300,400,600,700,800" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="//static.libsyn.com/p/assets/platform/customplayer/custom-player-bootstrap.min.css?u=2018-07-09" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />		
+	<link rel="stylesheet" type="text/css" href="//static.libsyn.com/p/assets/platform/customplayer/jcarousel.responsive.css" />
+</head>
+<body>
+	<iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/2378831/height/480/theme/standard/thumbnail/yes/direction/forward/" height="480" width="100%" scrolling="no" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+ 
+	<script type="text/javascript" src="//static.libsyn.com/p/assets/platform/customplayer/jquery.jcarousel.min.js"></script>
+	<script>
+		$(function() {
+			$('.jcarousel')
+	            .jcarousel({
+	                wrap: null
+	            })
+	            .on('jcarousel:reload jcarousel:create', function () {
+	                var carousel = $(this),
+	                    width = carousel.innerWidth();
+
+	                if(width == 100){ //initially hidden
+	                	windowWidth = $(window).width();
+	                	console.log(windowWidth);
+	                	width = Math.ceil(windowWidth * 0.843);
+	                }
+
+	                if (width &gt;= 800) {
+	                    width = width / 4;
+	                } else if (width &gt;= 600) {
+	                    width = width / 3;
+	                } else if (width &gt;= 250) {
+	                    width = width / 2;
+	                }
+
+	                carousel.jcarousel('items').css('width', (Math.ceil(width) - 1) + 'px');
+	            });
+	        $('.jcarousel-control-prev')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                // Options go here
+	                target: '-=1'
+	            });
+	        $('.jcarousel-control-next')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                // Options go here
+	                target: '+=1'
+	            });
+	    });
+
+	</script>
+
+
+</body></html>

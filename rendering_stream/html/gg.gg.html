@@ -1,0 +1,115 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="ZhFzymhj8aX02v8JVPilq9srCnPMgPfv71kwkUsYRtU" />
+    <title>URL Shortener - url shortening service gg.gg</title>
+    <link type="image/x-icon" rel="icon" href="/images/favicon.ico" />
+    <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/smoothness/jquery-ui-1.8.21.custom.css" />
+    <link rel="stylesheet" href="/css/jquery.tagit.css" />
+    <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_1" async=""></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.sazTpAB7NWc.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCMGRnMhese6OTxesnN0rDvhruAGIg/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="/js/jquery.corners.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/jquery.zclip.min.js"></script>
+    <script src="/js/jquery.tag-it.js"></script>
+    <script src="/js/logic.js?v2"></script>
+    <script type="text/javascript">
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="main" style="border-radius: 10px;">
+    <div id="header" style="border-radius: 10px;">
+                <a href="/" style="border-radius: 10px;">Shortener</a> |
+            <a href="/login" style="border-radius: 10px;">Login</a> |
+            <a href="/register" style="border-radius: 10px;">Register</a>
+            </div>
+    <div id="content" style="border-radius: 10px;"><h1>
+    <img src="/images/logo.png" alt="Logo" id="logo" />
+    URL Shortener - Get short link on GG.GG
+</h1>
+<div id="url-shortener" style="overflow: hidden; border-radius: 10px; height: 255.301px;">
+    <div id="work-box">
+        <input type="text" id="long-url" style="border-radius: 10px;" />
+        <input type="hidden" id="long-url-default-text" value="Put your long URL here..." />
+        <div id="specify-url-box">
+            <input type="checkbox" id="specify-url" />
+            <label id="specify-url-label">Customize link
+                <span id="custom-path-label">http://gg.gg/</span>
+                <input type="text" id="custom-path" maxlength="255" />
+                <span id="use-norefs-span"><input type="checkbox" id="use-norefs" /> remove referrers using <a href="http://norefs.com" target="_blank">norefs.com</a></span>
+            </label>
+        </div>
+        <input type="button" id="shorten-url-button" value="Shorten URL" />
+        <div id="error-box" class="ui-state-error ui-corner-all">
+            <span class="ui-icon ui-icon-alert"></span>
+            <label></label>
+        </div>
+    </div>
+    <div id="result-box" style="visibility: hidden; border-radius: 10px;">
+        <span id="result-message">Excellent! Copy Your Shortened URL.</span>
+        <input type="text" id="short-url" readonly="true" style="border-radius: 10px;" />
+        <div id="share-box">
+            <label>Share Shortened Link:</label>
+            <a href="#" target="_blank" id="share-twitter"><img src="/images/twitter.png" alt="Twitter" />Twitter</a>
+            <a href="#" target="_blank" id="share-facebook"><img src="/images/facebook.png" alt="Facebook" />Facebook</a>
+            <a href="#" target="_blank" id="share-friendfeed"><img src="/images/friendfeed.png" alt="FriendFeed" />FriendFeed</a>
+            <a href="#" target="_blank" id="share-tumblr"><img src="/images/tumblr.png" alt="Tumblr" />Tumblr</a>
+        </div>
+        <input type="button" id="copy-link-button" value="Copy Shortened Link" />
+        <input type="button" id="open-link-button" value="Open Link in New Tab" />
+<!--        <input type="button" id="share-link-button" value="Share Shortened Link" />-->
+        <input type="button" id="view-qr-code-button" value="QR Code For This Link" />
+    <div class="zclip" id="zclip-ZeroClipboardMovie_1" style="position: absolute; width: 173px; height: 32px; z-index: 99; left: 62px; top: 559px;"><embed id="ZeroClipboardMovie_1" src="/js/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="173" height="32" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=173&amp;height=32" wmode="transparent" /></div></div>
+    <form id="temp-form" method="get" target="_blank"></form>
+    <div id="qr-code-dialog"></div>
+    </div>    </div>
+    <div id="footer" style="border-radius: 10px;">
+        <div style="margin-left: 34px; margin-bottom: 14px;"><div style="position: absolute; width: 450px; left: -10000px;" id="___plusone_0"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1606992485704" name="I0_1606992485704" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;origin=http%3A%2F%2Fgg.gg&amp;url=http%3A%2F%2Fgg.gg%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.sazTpAB7NWc.O%2Fam%3DwQE%2Fd%3D1%2Fct%3Dzgms%2Frs%3DAGLTcCMGRnMhese6OTxesnN0rDvhruAGIg%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1606992485704&amp;_gfid=I0_1606992485704&amp;parent=http%3A%2F%2Fgg.gg&amp;pfname=&amp;rpctoken=35581019" data-gapiattached="true"></iframe></div><g:plusone data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone></div>
+
+        <p align="center">
+            <a href="http://gg.gg/tgg" target="_blank" style="border-radius: 10px;">Twitter</a> <!-- |
+            Extensions for:
+            <a href="http://gg.gg/chromeplugin" target="_blank"><img src="/images/chrome.png" alt="Google Chrome Extension" /> Chrome</a>
+            <a href="http://gg.gg/firefox-extension" target="_blank"><img src="/images/firefox.png" alt="Firefox Extension" /> Firefox </a>
+            <a href="http://gg.gg/opera-extension" target="_blank"><img src="/images/opera.png" alt="Opera Extension" /> Opera</a>
+            <a href="http://gg.gg/telegrambot" target="_blank"><img src="/images/telegram.png" alt="Telegram Bot" /> Telegram</a> -->
+        </p>
+        <a href="/abuse" style="border-radius: 10px;">Report Abuse</a><br /><br />
+        
+        
+        <br />
+        <br />
+    
+        <!-- Start of StatCounter Code for Default Guide -->
+        <script type="text/javascript">
+            var sc_project=7960190;
+            var sc_invisible=1;
+            var sc_security="308b9f68";
+        </script>
+        <script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+        <noscript>&lt;div class="statcounter"&gt;&lt;a title="tumblr hitcounter" href="http://statcounter.com/tumblr/" target="_blank"&gt;&lt;img class="statcounter" src="http://c.statcounter.com/7960190/0/308b9f68/1/" alt="tumblr hit counter"&gt;&lt;/a&gt;&lt;/div&gt;</noscript>
+        <!-- End of StatCounter Code for Default Guide -->
+
+        <div id="copyright">© 2012 - 2020 URL Shortener service
+            <a href="http://gg.gg" style="border-radius: 10px;">
+                gg.gg            </a> |
+            <a href="/about" style="border-radius: 10px;">About</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- For statistics
+<img src="http://gg.gg/gg-stat" style="display: none;" />
+-->
+
+
+<!-- Rendered in 0.0085 sec -->
+<iframe name="oauth2relay561793377" id="oauth2relay561793377" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fgg.gg&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.sazTpAB7NWc.O%2Fam%3DwQE%2Fd%3D1%2Fct%3Dzgms%2Frs%3DAGLTcCMGRnMhese6OTxesnN0rDvhruAGIg%2Fm%3D__features__#rpctoken=261771120&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

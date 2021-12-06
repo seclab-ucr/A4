@@ -1,0 +1,72 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="UTF-8" />
+<title>Amazon</title>
+<style>
+img.logo {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 90%;
+	z-index: 2;
+}
+
+.ovl {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	border: 1px solid #ccc;
+	z-index: 3;
+}
+</style>
+</head>
+
+<body>
+
+	<a class="ovl" id="amazon_href" href="http://www.amazon.com/?linkCode=w30&amp;tag=widgetsamazon-20" target="_blank"></a>
+	<img class="logo" src="http://g-images.amazon.com/images/G/01/associates/network/amzn.gif" alt="" />
+	<script type="text/javascript">
+        var retailUrl= {"US" : "//www.amazon.com/?",
+                    "GB" : "//www.amazon.co.uk/?",
+                    "IN" : "//www.amazon.co.in/?",
+                    "CA" : "//www.amazon.ca/?",
+                    "BR" : "//www.amazon.com.br?/",
+                    "CN" : "//www.amazon.cn/?",
+                    "DE" : "//www.amazon.de/?",
+                    "FR" : "//www.amazon.fr/?",
+                    "JP" : "//www.amazon.co.jp/?"}
+        var defaultTag = "widgetsamazon-20"
+        var linkCode = "w30";
+        var defaultMarketplace = "US";
+        var queryString = function () {
+              var query_string = {};
+              var query = window.location.search.substring(1);
+              if(query != ""){
+              var vars = query.split("&amp;");
+              for (var i=0;i&lt;vars.length;i++) {
+                var pair = vars[i].split("=");
+                if (typeof query_string[pair[0]] === "undefined") {
+                  query_string[pair[0]] = pair[1];
+                } 
+              } 
+                return query_string;
+              }
+              return null;
+            } ();
+            if(queryString){
+        if(queryString["region"] == null &amp;&amp; queryString["MarketPlace"] != null){
+            queryString["region"] = queryString["MarketPlace"];
+        }
+        
+            var Url = ((queryString["region"] &amp;&amp; retailUrl[queryString["region"]])?retailUrl[queryString["region"]]:retailUrl[defaultMarketplace]) +
+                "tag=" + (queryString["tracking_id"]?queryString["tracking_id"]:defaultTag )+ "&amp;linkCode=" +
+                (queryString["linkCode"]?queryString["linkCode"]:linkCode);
+            document.getElementById("amazon_href").href = Url;
+        }
+        </script>
+
+</body></html>

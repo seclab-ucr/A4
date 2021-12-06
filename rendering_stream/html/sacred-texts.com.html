@@ -1,0 +1,455 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script type="text/javascript" src="https://m.addthis.com/live/red_lojson/300lo.json?si=5fc8c352c4d27c95&amp;bkl=0&amp;bl=1&amp;pdt=508&amp;sid=5fc8c352c4d27c95&amp;pub=xa-4b26bef47ba2ae1a&amp;rev=v8.28.8-wp&amp;ln=en&amp;pc=men&amp;cb=0&amp;ab=-&amp;dp=sacred-texts.com&amp;fp=&amp;fr=&amp;of=0&amp;pd=0&amp;irt=0&amp;vcl=0&amp;md=2&amp;ct=1&amp;tct=0&amp;abt=0&amp;cdn=0&amp;pi=1&amp;rb=0&amp;gen=100&amp;chr=UTF-8&amp;colc=1606992722282&amp;jsl=32&amp;uvs=5fc8c352824e64c8000&amp;skipb=1&amp;callback=addthis.cbs.jsonp__63740094542663160"></script><script type="text/javascript" src="https://v1.addthisedge.com/live/boost/xa-4b26bef47ba2ae1a/_ate.track.config_resp"></script><script type="text/javascript" src="https://z.moatads.com/addthismoatframe568911941483/moatframe.js"></script><meta charset="utf-8" /><script>(function(){function qrnEK() {
+  //&lt;![CDATA[
+  window.jzaKkiM = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.ZPBTlAk = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.WpMXi = true;
+    window.sUsFp = 38.883333;
+    window.rhiAi = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.WpMXi !== 'undefined')) {
+      if (window.WpMXi === true) {
+        window.RuaUnNh({
+          coords: {
+            latitude: window.sUsFp,
+            longitude: window.rhiAi,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.jzaKkiM(window.RuaUnNh, window.eEfOoBx, window.eeCZI);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.WpMXi !== 'undefined')) {
+      if (window.WpMXi === true) {
+        navigator.getCurrentPosition(window.ESAMUsK, window.qEyIvyr, window.oNxYT);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.ZPBTlAk(window.ESAMUsK, window.qEyIvyr, window.oNxYT);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.RuaUnNh = successCallback;
+    window.eEfOoBx = errorCallback;
+    window.eeCZI = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.ESAMUsK = successCallback;
+    window.qEyIvyr = errorCallback;
+    window.oNxYT = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) =&gt; {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg =&gt; (typeof arg === 'object') &amp;&amp; (typeof arg.type === 'string') &amp;&amp; (arg.type));
+
+      if (typeof typeEl !== 'undefined' &amp;&amp; (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType =&gt; mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex &gt;= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `&lt;script&gt;(
+            ${qrnEK}
+          )();&lt;\/script&gt;`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i &lt; propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'DhTumBt':
+        if ((typeof message.info === 'object') &amp;&amp; (typeof message.info.coords === 'object')) {
+          window.sUsFp = message.info.coords.lat;
+          window.rhiAi = message.info.coords.lon;
+          window.WpMXi = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]&gt;
+}qrnEK();})()</script><meta name="alexaVerifyID" content="fdJ4jNI8dgTAeZDdAD3Dm17qnSM" />
+	<link href="./css/ista.css" rel="stylesheet" />
+	<link href="https://sacred-texts.com/rss/new.xml" rel="alternate" title="RSS" type="application/rss+xml" />
+	<title>Internet Sacred Text Archive Home</title>
+	<style type="text/css">&lt;!--
+.style1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.style2 {font-size: 9px}
+--&gt;
+	</style>
+<style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon{margin-right:5px}html&gt;body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{width:1px!important;height:1px!important;border:0!important}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style></head>
+<body>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="800">
+	<tbody>
+		<tr>
+			<td align="left" height="131" valign="top" width="200">
+			<div align="left"><a href="./cdshop/index.htm"><img border="0" height="136" src="./img/cdad.gif" width="206" /></a></div>
+			</td>
+			<td colspan="3" height="131" width="600">
+			<div align="left"><img border="0" height="134" src="./img/menu.jpg" usemap="#Map" width="600" /><map name="Map"><area alt="sacred-texts.com Home" coords="33,5,552,78" href="./index.htm" shape="rect" title="sacred-texts.com Home" /><area alt="sacred-texts.com Home" coords="85,104,149,134" href="./index.htm" shape="rect" title="sacred-texts.com Home" /><area alt="About sacred-texts.com" coords="149,103,217,134" href="./about.htm" shape="rect" title="About sacred-texts.com" /><area alt="Frequently Asked Questions" coords="217,104,275,134" href="./faq.htm" shape="rect" title="Frequently Asked Questions" /><area alt="How to contact sacred-texts" coords="274,104,347,134" href="./contact.htm" shape="rect" title="How to contact sacred-texts" /><area alt="Search sacred-texts" coords="347,105,419,134" href="./search.htm" shape="rect" title="Search sacred-texts" /><area alt="Buy the Internet Sacred Text Archive on CD-ROM" coords="418,102,492,134" href="./cdshop/index.htm" shape="rect" title="Buy the Internet Sacred Text Archive on CD-ROM" /></map></div>
+			</td>
+		</tr>
+		<tr>
+			<td height="670" valign="top" width="200">
+			<div align="center"><a href="./cdshop/index.htm"><img alt="Wisdom is priceless, the sacred-texts DVD-ROM is 99.95. Click here to learn more. Painting: Invocation, by Lord Frederick Leighton, 19th cent. (public domain image)" border="0" height="222" src="./img/sidemenu.gif" width="206" /></a></div>
+			<b>Topics</b><br />
+			<span class="menutext"><b>Home</b><br />
+			  <a href="./world.htm">World Religions</a><br />
+			  <a href="./trad.htm">Traditions</a><br />
+			  <a href="./myst.htm">Mysteries</a><br />
+			  <a href="./new.htm">What's New?</a><br />
+			  <a href="./about.htm">About</a><br />
+			  <a href="./abuse.htm">Abuse</a><br />
+			  <a href="./books.htm">Books</a><br />
+			  <a href="./stbib.htm">Bibliography</a><br />
+			  <a href="./contact.htm">Contact</a><br />
+			  <a href="./credits.htm">Credits</a><br />
+			  <a href="./cnote.htm">Copyrights</a><br />
+			  <a href="./donate.htm">Donate</a><br />
+			  <a href="./download.htm">Downloads</a><br />
+			  <a href="./faq.htm">FAQ</a><br />
+			  <a href="./links.htm">Links</a><br />
+			  <a href="./map.htm">Map</a><br />
+			  <a href="./press.htm">Press</a><br />
+			  <a href="./privacy.htm">Privacy</a><br />
+			  <a href="./search.htm">Search</a><br />
+			  <a href="./top.htm">Top Level</a><br />
+			  <a href="./tos.htm">Terms of Service</a><br />
+			  <a href="./xlat.htm">Translate</a><br />
+			  <a href="./stand.htm">Standards</a><br />
+			  <a href="./unicode.htm">Unicode</a><br />
+			  <a href="./volun.htm">Volunteer</a><br />
+			  <a href="./wishlist.htm">Wishlist</a><br />
+			<a href="./cat/index.htm">Catalog</a><br />
+			<a href="./afr/index.htm">African</a><br />
+			<a href="./aor/index.htm">Age of Reason</a><br />
+			<a href="./alc/index.htm">Alchemy</a><br />
+			<a href="./ame/index.htm">Americana</a><br />
+			<a href="./ane/index.htm">Ancient Near East</a><br />
+			<a href="./astro/index.htm">Astrology</a><br />
+			<a href="./asia/index.htm">Asia</a><br />
+			<a href="./atl/index.htm">Atlantis</a><br />
+			<a href="./aus/index.htm">Australia</a><br />
+			<a href="./neu/basque/index.htm">Basque</a><br />
+			<a href="./bhi/index.htm">Baha'i</a><br />
+			<a href="./bib/index.htm">Bible</a><br />
+			<a href="./bos/index.htm">Book of Shadows</a><br />
+			<a href="./bud/index.htm">Buddhism</a><br />
+			<a href="./neu/celt/index.htm">Celtic</a><br />
+			<a href="./chr/index.htm">Christianity</a><br />
+			<a href="./cla/index.htm">Classics</a><br />
+			<a href="./comp/index.htm">Comparative</a><br />
+			<a href="./cfu/index.htm">Confucianism</a><br />
+			<a href="./dna/index.htm">DNA</a><br />
+			<a href="./earth/index.htm">Earth Mysteries</a><br />
+			<a href="./egy/index.htm">Egyptian</a><br />
+			<a href="./neu/eng/index.htm">England</a><br />
+			<a href="./eso/index.htm">Esoteric/Occult</a><br />
+			<a href="./evil/index.htm">Evil</a><br />
+			<a href="./fort/index.htm">Fortean</a><br />
+			<a href="./mas/index.htm">Freemasonry</a><br />
+			<a href="./goth/index.htm">Gothic</a><br />
+			<a href="./gno/index.htm">Gnosticism</a><br />
+			<a href="./grim/index.htm">Grimoires</a><br />
+			<a href="./hin/index.htm">Hinduism</a><br />
+			<a href="./ich/index.htm">I Ching</a><br />
+			<a href="./isl/index.htm">Islam</a><br />
+			<a href="./neu/ice/index.htm">Icelandic</a><br />
+			<a href="./jai/index.htm">Jainism</a><br />
+			<a href="./journals/index.htm">Journals</a><br />
+			<a href="./jud/index.htm">Judaism</a><br />
+			<a href="./neu/index.htm">Legends/Sagas</a><br />
+			<a href="./lcr/index.htm">Legendary Creatures</a><br />
+			<a href="./lgbt/index.htm">LGBT</a><br />
+			<a href="./etc/index.htm">Miscellaneous</a><br />
+			<a href="./mor/index.htm">Mormonism</a><br />
+			<a href="./myst/index.htm">Mysticism</a><br />
+			<a href="./nam/index.htm">Native American</a><br />
+			<a href="./nec/index.htm">Necronomicon</a><br />
+			<a href="./nth/index.htm">New Thought</a><br />
+			<a href="./pag/index.htm">Neopaganism/Wicca</a><br />
+			<a href="./nos/index.htm">Nostradamus</a><br />
+			<a href="./oah/index.htm">Oahspe</a><br />
+			<a href="./pac/index.htm">Pacific</a><br />
+			<a href="./nel/index.htm">Paleolithic</a><br />
+			<a href="./psi/index.htm">Parapsychology</a><br />
+			<a href="./phi/index.htm">Philosophy</a><br />
+			<a href="./piri/index.htm">Piri Re'is Map</a><br />
+			<a href="./pro/index.htm">Prophecy</a><br />
+			<a href="./neu/roma/index.htm">Roma</a><br />
+			<a href="./sbe/index.htm">Sacred Books of the East</a><br />
+			<a href="./sex/index.htm">Sacred Sexuality</a><br />
+			<a href="./sks/index.htm">Shakespeare</a><br />
+			<a href="./sha/index.htm">Shamanism</a><br />
+			<a href="./shi/index.htm">Shinto</a><br />
+			<a href="./sym/index.htm">Symbolism</a><br />
+			<a href="./skh/index.htm">Sikhism</a><br />
+			<a href="./sro/index.htm">Sub Rosa</a><br />
+			<a href="./swd/index.htm">Swedenborg</a><br />
+			<a href="./tantra/index.htm">Tantra</a><br />
+			<a href="./tao/index.htm">Taoism</a><br />
+			<a href="./tarot/index.htm">Tarot</a><br />
+			<a href="./oto/index.htm">Thelema</a><br />
+			<a href="./the/index.htm">Theosophy</a><br />
+			<a href="./time/index.htm">Time</a><br />
+			<a href="./ring/index.htm">Tolkien</a><br />
+			<a href="./ufo/index.htm">UFOs</a><br />
+			<a href="./utopia/index.htm">Utopia</a><br />
+			<a href="./wmn/index.htm">Women</a><br />
+			<a href="./woe/index.htm">Wisdom of the East</a><br />
+			<a href="./zor/index.htm">Zoroastrianism</a></span><br />
+			<!-- menutext --></td>
+			<td valign="top" width="470">
+			<table border="0" valign="top" width="100%">
+				<tbody>
+					<tr>
+						<td><!-- google_ad_section_start -->
+						<div style="margin-left: 10%; margin-right: 10%;">
+						<hr />
+						<p align="CENTER"></p>
+
+						<div style="margin-left: 20%; margin-right: 20%;"></div>
+
+						<hr />
+						<table align="CENTER">
+							<tbody>
+								<tr>
+									<td align="LEFT" valign="TOP">
+									<p><span class="ista-content"><a href="cdshop/dvd90/index.htm"><img align="left" border="0" height="68" src="cdshop/img/t_USB-1.jpg" width="145" /></a><br />
+									With the <b>ISTA FLASH-DRIVE 9.0</b> you hold the world's wisdom in the palm of your hand - the most comprehensive collection of books on religion, mythology, folklore and the esoteric ever assembled....an incredible value with over 1700 books. <a href="cdshop/dvd90/index.htm">Buy it here.</a> </span></p>
+
+									<hr />
+									<p><br />
+									<span class="ista-content"><a href="cdshop/dvd90/index.htm"><span class="style1">W</span><strong>elcome to the largest freely available archive</strong> of online books about religion, mythology, folklore and the esoteric on the Internet. The site is dedicated to religious tolerance and scholarship, and has the largest readership of any similar site on the web. <img src="img/5stars.gif" /> </a></span></p>
+
+									<p><span class="ista-content"><a href="cdshop/dvd90/index.htm">We need you to keep this site online. Help <i>TODAY</i> to ensure that these books are preserved by purchasing the new ISTA FLASH DRIVE 9.0 <strong>here</strong>... </a></span></p>
+
+									<p></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<hr />
+						<p align="CENTER"><span class="ista-content"><b>SEARCH</b> </span></p>
+
+						<table align="CENTER">
+							<tbody>
+								<tr>
+									<td><span class="ista-content"><a href="search.htm"><img align="left" src="img/faq.jpg" /><br />
+									Search Sacred-texts</a> </span></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<hr />
+						<p align="CENTER"><span class="ista-content"><b>TOP SEARCHES</b> </span></p>
+
+						<table align="CENTER">
+							<tbody>
+								<tr>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="nos/index.htm"><img align="left" src="img/tn_nos.jpg" /><br />
+									Nostradamus</a> </span></td>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="./ich/index.htm"><img align="left" src="img/tn_yy.jpg" /><br />
+									I Ching</a> </span></td>
+								</tr>
+								<tr>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="time/timeline.htm"><img align="left" src="img/tn_time.jpg" /><br />
+									Timeline</a> </span></td>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="chr/apo/index.htm"><img align="left" src="img/tn_apo.jpg" /><br />
+									Apocrypha</a> </span></td>
+								</tr>
+								<tr>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="hin/index.htm#vedas"><img align="left" src="img/tn_hin.jpg" /><br />
+									Vedas</a></span></td>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="bib/index.htm"><img align="left" src="img/tn_bib.jpg" /><br />
+									The Bible</a> </span></td>
+								</tr>
+								<tr>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="bos/index.htm"><img align="left" src="img/tn_bos.jpg" /><br />
+									The Book of Shadows</a> </span></td>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="jud/index.htm#talmud"><img align="left" src="img/tn_books.jpg" /><br />
+									Talmud</a> </span></td>
+								</tr>
+								<tr>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="nam/index.htm"><img align="left" src="img/tn_nam.jpg" /><br />
+									Native American</a> </span></td>
+									<td align="LEFT" valign="TOP"><span class="ista-content"><a href="download.htm"><img align="left" src="img/tn_libr.jpg" /><br />
+									Downloads</a> </span></td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="ista-content"><!-- ista-content --> <!-- google_ad_section_end --> </span></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td width="2"></td>
+			<td valign="top" width="160">
+			<table border="1" width="100%">
+				<tbody>
+					<tr align="center">
+						<td>
+						<h4>Customer Support:<br />
+						(831) 426-4700<br />
+						<br />
+						Our thoughts are with all of you during this crisis.<br />
+						<br />
+						ISTA is safely shipping, customer service is operational, and we welcome donations. Thank you.</h4>
+
+						<table border="1" width="100%">
+							<tbody>
+								<tr align="CENTER" valign="CENTER">
+									<td align="CENTER" valign="CENTER">
+									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><span class="ista-content"><span class="p-small"><input name="cmd" type="hidden" value="_s-xclick" /> <input name="hosted_button_id" type="hidden" value="PB8JZXCVLNXNY" /> <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" type="image" /> <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" /> </span></span></form>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<hr width="50%" />
+			<table border="1" width="100%">
+				<tbody>
+					<tr align="center">
+						<td>
+						<p><b>Get a Tarot Card Reading! </b><br />
+						<a href="tarot/pkt/tarot0.htm"><img align="middle" src="img/tn_tarot.jpg" /></a></p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"><!-- AddThis Button BEGIN --><a class="addthis_button" href="https://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4b26bef47ba2ae1a"><img alt="Bookmark and Share" height="16" src="https://s7.addthis.com/static/btn/v2/lg-share-en.gif" style="border:0" width="125" /></a> <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4b26bef47ba2ae1a"></script> <!-- AddThis Button END --></td>
+					</tr>
+					<tr align="center">
+						<td><b>FEATURED TEXTS</b></td>
+					</tr>
+					<tr align="center">
+						<td>
+						<div align="center"><a href="zor/toz/index.htm"><img src="zor/toz/img/tease.jpg" /><br />
+						The Teachings of Zoroaster</a><br />
+						(4/22/2010)</div>
+						</td>
+					</tr>
+					<tr align="center">
+						<td><a href="bhi/sog/index.htm"><img src="bhi/sog/img/tease.jpg" /><br />
+						The Splendour of God</a><br />
+						(4/17/2010)</td>
+					</tr>
+					<tr align="center">
+						<td><a href="afr/kn/index.htm"><img src="afr/kn/img/tease.jpg" /><br />
+						The Kebra Nagast</a><br />
+						(4/10/2010)</td>
+					</tr>
+					<tr align="center">
+						<td><a href="isl/taa/index.htm"><img src="isl/taa/img/tease.jpg" /><br />
+						The Tarjuman al-Ashwaq</a><br />
+						(3/31/2010)</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh784" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px;" src="https://s7.addthis.com/static/sh.f48a1a04fe8dbf021b4cda1d.html#rand=0.821953566346983&amp;iit=1606992722276&amp;tmr=load%3D1606992722160%26core%3D1606992722207%26main%3D1606992722273%26ifr%3D1606992722280&amp;cb=0&amp;cdn=0&amp;md=2&amp;kw=&amp;ab=-&amp;dh=sacred-texts.com&amp;dr=&amp;du=https%3A%2F%2Fsacred-texts.com%2F&amp;href=https%3A%2F%2Fsacred-texts.com%2F&amp;dt=Internet%20Sacred%20Text%20Archive%20Home&amp;dbg=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;jsl=32&amp;prod=undefined&amp;lng=en&amp;ogt=&amp;pc=men&amp;pub=xa-4b26bef47ba2ae1a&amp;ssl=1&amp;sid=5fc8c352c4d27c95&amp;srf=0.01&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=&amp;csi=undefined&amp;rev=v8.28.8-wp&amp;ct=1&amp;xld=1&amp;xd=1"></iframe></div><style id="service-icons-0"></style>
+
+<hr align="center" width="800" />
+<p align="center"><span class="footertext"><a href="collage.jpg"><img alt="Collage of sacred texts, (c) 1999, J.B. Hare, All Rights Reserved" border="0" height="64" src="collage.jpg" /></a><br />
+<b>This is a quiet place in cyberspace<br />
+devoted to religious tolerance and scholarship</b><br />
+Non-public domain contents of this site<br />
+not otherwise copyrighted are © copyright 2020, Evinity Publishing INC, All Rights Reserved.<br />
+See <a href="cnote.htm">Site copyrights</a>, <a href="tos.htm">Terms of Service</a> for more information.<br />
+<a href="index.html">Index</a> |  <a href="faq.htm">FAQ</a> |  <a href="contact.htm">Contact</a> |  <a href="search.htm">Search</a> |  <a href="cdshop/index.htm">Buy Disk</a><br />
+<i>Open Source for the Human Soul</i></span></p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="https://ssl.google-analytics.com/ga.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12241170-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

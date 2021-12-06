@@ -1,0 +1,2930 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+<script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"NRJS-04e0f5db0886b3b33ff","applicationID":"424088299","transactionName":"cFkLTUMMXFRcSklRU0dfE1BFGm9eXF0CQx9aWAFcSQ==","queueTime":0,"applicationTime":824,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"VgEBVlJWCRAEVlVSDwkFX10=",licenseKey:"NRJS-04e0f5db0886b3b33ff",applicationID:"424088299"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(c.console=!0,i.indexOf("dev")!==-1&amp;&amp;(c.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(c.nrDev=!0))}catch(s){}c.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),c.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&amp;&amp;u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(9),t(8),"addEventListener"in window&amp;&amp;t(5),s.xhrWrappable&amp;&amp;t(10),d=!0)}c.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),c.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&amp;&amp;window.performance.timing&amp;&amp;window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&amp;&amp;t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&amp;&amp;(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&amp;&amp;o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&amp;&amp;(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&amp;&amp;(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&amp;&amp;window.history.constructor&amp;&amp;window.history.constructor.prototype,a=window.history;o&amp;&amp;o.pushState&amp;&amp;o.replaceState&amp;&amp;(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&amp;&amp;(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t&lt;y.length;t++)r([],y[t]);y.length&amp;&amp;(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&amp;&amp;m.resolve();if(!w&amp;&amp;!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&amp;&amp;l())&amp;&amp;(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&amp;&amp;!u()||!t.sameOrigin&amp;&amp;s(t)&amp;&amp;d())&amp;&amp;(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&amp;&amp;"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&amp;&amp;r!==o&amp;&amp;(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&amp;&amp;s(t)}function s(t){var e=!1,n={};if("init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r&lt;n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&amp;&amp;t.protocol===i.protocol&amp;&amp;t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&amp;&amp;"distributed_tracing"in NREUM.init&amp;&amp;!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r&lt;l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&amp;&amp;(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&amp;&amp;(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&amp;&amp;(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&amp;&amp;(h&gt;34||h&lt;10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&amp;&amp;"xpid"in NREUM.loader_config&amp;&amp;this.sameOrigin&amp;&amp;e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&amp;&amp;(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&amp;&amp;(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&amp;&amp;e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&amp;&amp;(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&amp;&amp;r){var o=m(r);o&amp;&amp;(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&amp;&amp;(i.onloadCalled||"function"!=typeof e.onload))&amp;&amp;i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c&lt;l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&amp;&amp;"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;!this.xhrGuids[n]&amp;&amp;(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&amp;&amp;this.xhrGuids[n]&amp;&amp;(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&amp;&amp;"load"===t[0]&amp;&amp;u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&amp;&amp;"load"===t[0]&amp;&amp;u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&amp;&amp;("onload"===n&amp;&amp;(this.onload=!0),("load"===(t[0]&amp;&amp;t[0].type)||this.onload)&amp;&amp;(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&amp;&amp;u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&amp;&amp;(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&amp;&amp;(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&amp;&amp;t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&amp;&amp;t[0].url&amp;&amp;(n=t[0].url),n&amp;&amp;(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&amp;&amp;(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&amp;&amp;(this.dt=i),t.length&gt;1?t[1]=o:t.push(o)}else t[0]&amp;&amp;t[0].headers&amp;&amp;e(t[0].headers,i)&amp;&amp;(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&amp;&amp;o[1]&amp;&amp;(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&amp;&amp;"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&amp;&amp;(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&amp;&amp;e.port===n.port;return i.sameOrigin=a&amp;&amp;(!e.hostname||c),"/"===i.pathname&amp;&amp;(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&amp;&amp;null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&amp;&amp;(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&amp;&amp;t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&amp;&amp;t instanceof ArrayBuffer&amp;&amp;t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&amp;&amp;t instanceof Blob&amp;&amp;t.size)return t.size;if(!("undefined"!=typeof FormData&amp;&amp;t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&amp;&amp;(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&amp;&amp;d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&amp;&amp;!w){var e=Math.round(t.timeStamp),n={type:t.type};e&lt;=l.now()?n.fid=l.now()-e:e&gt;l.offset&amp;&amp;e&lt;=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&amp;e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&amp;&amp;r.getRandomValues&amp;&amp;(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c&lt;o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&amp;t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&amp;n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&amp;&amp;i.getRandomValues&amp;&amp;Uint8Array&amp;&amp;(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a&lt;t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&amp;&amp;(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&amp;&amp;t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&amp;&amp;t(n,r,i);for(var a=e(i),c=m(n),s=c.length,f=0;f&lt;s;f++)c[f].apply(a,r);var d=u[y[n]];return d&amp;&amp;d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r&lt;n.length;r++)n[r]===e&amp;&amp;n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||i(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function o(){return new r}function a(){(u.api||u.feature)&amp;&amp;(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(23),u={},d={},l=e.exports=i();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&amp;&amp;m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},y=m&amp;&amp;w&amp;&amp;w[p]&amp;&amp;!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&amp;&amp;t instanceof Function&amp;&amp;t.apply&amp;&amp;!t[a])}var i=t("ee"),o=t(24),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,i],c])}u(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,i,o){i||(i="");var a,c,s,f="-"===i.charAt(0);for(s=0;s&lt;e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+i:i,o,c))}function u(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&amp;&amp;(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+  <title>Food and Drink Articles, Videos, Discussions, and More - Chowhound Food Community</title>
+  <meta name="description" content="Chowhound helps the food and drink-curious to become more knowledgeable enthusiasts, both at home and while traveling, by highlighting a deeper narrative that embraces discovering new destinations and learning lasting skills in the kitchen." />
+  <meta name="author" content="Chowhound" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="fb:app_id" content="177874162887" />
+      <meta property="og:site_name" content="Chowhound" />
+      <meta property="og:title" content="Food and Drink Articles, Videos, Discussions, and More - Chowhound Food Community" />
+      <meta property="og:description" content="Chowhound helps the food and drink-curious to become more knowledgeable enthusiasts, both at home and while traveling, by highlighting a deeper narrative that embraces discovering new destinations and learning lasting skills in the kitchen." />
+      <meta property="og:url" content="https://www.chowhound.com/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://chowhound3.cbsistatic.com/s/og_image_large-18cd496df3ec56d86cfc204cea6c198e.jpg" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+
+  
+
+  <link rel="shortcut icon" href="https://chowhound3.cbsistatic.com/s/favicon-f6af1788cd940502a9747d6ac537567f.ico?v=4" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://chowhound3.cbsistatic.com/s/apple-icon-76x76-4132c0d887e3c3c30650102c83154819.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://chowhound3.cbsistatic.com/s/apple-icon-120x120-8875b282367fb1d5f1d1a2f3a61a77c5.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://chowhound3.cbsistatic.com/s/apple-icon-152x152-382f9acd7236faabe8ce82d874db5a47.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://chowhound3.cbsistatic.com/s/apple-icon-180x180-d8a41522a12aab5d501606efdea6d872.png" />
+  <link href="https://chowhound3.cbsistatic.com/s/android-icon-72x72-300d345b046b25174319207081d17203.png" rel="icon" sizes="72x72" />
+  <link href="https://chowhound3.cbsistatic.com/s/android-icon-96x96-f57adc5d5f46f202db0ee4a6c6b72772.png" rel="icon" sizes="96x96" />
+  <link href="https://chowhound3.cbsistatic.com/s/android-icon-144x144-ba237666be548c5cad7b7da97f4ad442.png" rel="icon" sizes="144x144" />
+  <link href="https://chowhound3.cbsistatic.com/s/android-icon-192x192-a72dac81264f4c822ecfb1db59f871c5.png" rel="icon" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="https://chowhound3.cbsistatic.com/s/apple-icon-precomposed-153997384e3813de43691400752124c5.png" />
+  <link rel="canonical" href="https://www.chowhound.com/" />
+  
+  <link rel="stylesheet" as="style" onload="this.rel = 'stylesheet'" href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700,900,900i" />
+  <noscript>
+    &lt;link
+      rel="stylesheet"
+      href='https://fonts.googleapis.com/css?family=Playfair+Display:400i,700,900,900i'&gt;
+  </noscript>
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff" href="https://chowhound3.cbsistatic.com/s/ProximaNova/ProximaNova-Light.woff" />
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff" href="https://chowhound3.cbsistatic.com/s/ProximaNova/ProximaNova-Regular.woff" />
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff" href="https://chowhound3.cbsistatic.com/s/ProximaNova/ProximaNova-Semibold.woff" />
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff" href="https://chowhound3.cbsistatic.com/s/ProximaNova/ProximaNova-Bold.woff" />
+  
+  
+
+
+    <link rel="stylesheet" media="screen" href="https://chowhound3.cbsistatic.com/s/freyja/ch_home-9ded76c75db7a335a0b67ec968d7882b.css" />
+
+
+
+
+    <script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Organization",
+    "brand": "Chowhound",
+    "url": "https://www.chowhound.com",
+    "logo": "https://www.chowhound.com/s/touch-icon-180x180.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.chowhound.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+
+    </script>
+
+    <script>
+        var page = 'is_home';
+        var is_tg_page = 1;
+    </script>
+
+
+
+  <script type="text/plain" class="optanon-category-5">
+    /** CHARTBEAT CONFIGURATION START **/
+    var _sf_async_config = _sf_async_config || {};
+    _sf_async_config.uid = 65713;
+    _sf_async_config.domain = 'chowhound.com';
+    _sf_async_config.flickerControl = false;
+    _sf_async_config.useCanonical = true;
+    _sf_async_config.useCanonicalDomain = true;
+    _sf_async_config.autoDetect = false;
+    /** CHARTBEAT CONFIGURATION END **/
+  </script>
+
+<script type="text/javascript">
+  /*!
+    * $script.js JS loader &amp; dependency manager
+    * https://github.com/ded/script.js
+    * (c) Dustin Diaz 2014 | License MIT
+    */
+  (function(e,t){typeof module!="undefined"&amp;&amp;module.exports?module.exports=t():typeof define=="function"&amp;&amp;define.amd?define(t):this[e]=t()})("$script",function(){function p(e,t){for(var n=0,i=e.length;n&lt;i;++n)if(!t(e[n]))return r;return 1}function d(e,t){p(e,function(e){return t(e),1})}function v(e,t,n){function g(e){return e.call?e():u[e]}function y(){if(!--h){u[o]=1,s&amp;&amp;s();for(var e in f)p(e.split("|"),g)&amp;&amp;!d(f[e],g)&amp;&amp;(f[e]=[])}}e=e[i]?e:[e];var r=t&amp;&amp;t.call,s=r?t:n,o=r?e.join(""):t,h=e.length;return setTimeout(function(){d(e,function t(e,n){if(e===null)return y();!n&amp;&amp;!/^https?:\/\//.test(e)&amp;&amp;c&amp;&amp;(e=e.indexOf(".js")===-1?c+e+".js":c+e);if(l[e])return o&amp;&amp;(a[o]=1),l[e]==2?y():setTimeout(function(){t(e,!0)},0);l[e]=1,o&amp;&amp;(a[o]=1),m(e,y)})},0),v}function m(n,r){var i=e.createElement("script"),u;i.onload=i.onerror=i[o]=function(){if(i[s]&amp;&amp;!/^c|loade/.test(i[s])||u)return;i.onload=i[o]=null,u=1,l[n]=2,r()},i.async=1,i.src=h?n+(n.indexOf("?")===-1?"?":"&amp;")+h:n,t.insertBefore(i,t.lastChild)}var e=document,t=e.getElementsByTagName("head")[0],n="string",r=!1,i="push",s="readyState",o="onreadystatechange",u={},a={},f={},l={},c,h;return v.get=m,v.order=function(e,t,n){(function r(i){i=e.shift(),e.length?v(i,r):v(i,t,n)})()},v.path=function(e){c=e},v.urlArgs=function(e){h=e},v.ready=function(e,t,n){e=e[i]?e:[e];var r=[];return!d(e,function(e){u[e]||r[i](e)})&amp;&amp;p(e,function(e){return u[e]})?t():!function(e){f[e]=f[e]||[],f[e][i](t),n&amp;&amp;n(r)}(e.join("|")),v},v.done=function(e){v([null],e)},v})
+</script>
+
+<!-- OneTrust CMP -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="43fc569f-c57f-4495-bb51-2cf13403c574" async=""></script>
+
+<!-- optanon - standardized api for OneTrust -->
+<script src="https://cmg1.cbsistatic.com/privacy/optanon/optanon-v1.1.0.js" type="text/javascript" async=""></script>
+
+<!-- optanon api bootstrap -->
+<script type="text/javascript">
+  !function(n){var o=window,a="cbsoptanon",c="cmd",d="config";o[a]=o[a]?o[a]:{},o[a][c]=o[a][c]?o[a][c]:[],o[a][d]=o[a][d]?o[a][d]:[],["onIframesReady","onFormsReady","onScriptsReady","onAdsReady"].forEach(function(n){o[a][n]=o[a][n]||function(){var d=arguments;o[a][c].push(function(){o[a][n].apply(o[a],d)})}})}();
+  window.cbsoptanon.config.push({ enableServices: false });
+</script>
+
+
+<script>
+  $script('https://www.googletagservices.com/tag/js/gpt.js', 'gpt');
+
+  window.cbsoptanon.onScriptsReady(function (optanon){
+    optanon.ot.getState(function (targeting, performance, functional, social) {
+      if (targeting &amp;&amp; typeof om == 'object' &amp;&amp; typeof om.fireGdprTags != 'undefined') {
+        om.fireGdprTags();
+      }
+    })
+  });
+
+</script>
+
+<script type="text/plain" class="optanon-category-5">
+  window.addEventListener('load',function(){
+  },false);
+</script>
+
+<script type="text/plain" class="optanon-category-4">
+  window.addEventListener('load',function(){
+        $script('https://js-sec.indexww.com/ht/ls-chowhound.js', 'ix');
+        $script('//cdn.taboola.com/libtrc/cbsinteractive-chowhound/loader.js', 'taboola');
+  },false);
+</script>
+
+
+
+<script>
+
+// for testing instart:
+//    window.I11C = {};
+//    window.I11C.Morph = 1;
+</script>
+
+
+  
+<script type="text/javascript">
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
+</script><script async="" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script async="" src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><style type="text/css">content { display: none; }</style><script async="" src="https://chowhound3.cbsistatic.com/s/freyja/application-9b02155c892c94f4657e99ddf25c4a67.js"></script><script async="" src="https://chowhound3.cbsistatic.com/s/freyja/homepage-1b645e9033c85534d37fdad9a61fe01b.js"></script><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020111901.js" async=""></script></head>
+<!--branch -->
+<body id="chbd" class="fr_isclean tnav activity_feeds_index activity_feeds chowhound is_desktop no_touch current">
+
+<script type="text/plain" class="optanon-category-2">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-8105127-1', 'auto');
+  ga('require', 'GTM-T6985QS');
+  (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-T6985QS':true});
+</script>
+
+<div id="fb-root"></div>
+
+
+
+
+
+<script>
+  var search_txt = "entire site";
+</script>
+
+<div class="freyja_overlay close_freyja_login" style="display:none"></div>
+  <div id="skybox-nav" class="skybox-closeBtn"></div>
+
+
+
+
+
+      
+        
+
+        <div id="fr_eye_nav" class="on">
+          <div class="fr_ebrow">
+
+
+              <div class="fr_eb_eb fr_eb_elm">
+                <div class="fr_eb_hid">
+
+
+
+                      <div class="fr_nav_track fr_eb_story" data-track="promoted_links">
+                            <span><a href="https://www.chowhound.com/food-news/277501/aldi-november-food-finds-2020?adTargeting_campaign=catey_test&amp;adTargeting_feat=catey_test">The 20 Best ALDI Finds for November Are All About Cookies &amp; Thanksgiving</a></span>
+                      </div>
+                      <div class="fr_nav_track fr_eb_story" data-track="promoted_links">
+                            <span><a href="https://www.chowhound.com/food-news/277562/the-best-boxed-mac-and-cheese-easy-ways-to-make-it-taste-better?adTargeting_campaign=catey_test&amp;adTargeting_feat=catey_test">8 Easy Ways to Make Boxed Mac &amp; Cheese Taste Like You Made It from Scratch</a></span>
+                      </div>
+
+
+                </div>
+              </div>
+
+          <div class="freyja_mob_follow in_eb">
+            <ul>
+              <li><a rel="noopener" class="freyja_fb facebook_follow" href="https://www.facebook.com/chowhound" title="Facebook" target="_blank" data-social-location="nav"></a></li>
+              <li><a rel="noopener" class="freyja_tw twitter_follow" href="https://twitter.com/Chow" title="Twitter" target="_blank" data-social-location="nav"></a></li>
+              <li><a rel="noopener" class="freyja_in om_instagram_follow" data-social-location="nav" title="Instagram" href="https://instagram.com/chowhound/" target="_blank"></a></li>
+              <li><a rel="noopener" class="freyja_yt om_youtube_follow" data-social-location="nav" title="Youtube" href="https://www.youtube.com/user/CHOW" target="_blank"></a></li>
+              <li><a rel="noopener" class="freyja_pi share_pinterest" href="https://www.pinterest.com/chowhound/" title="Pinterest" target="_blank" data-social-location="nav"></a></li>
+            </ul>
+          </div>
+
+          <a href="" class="fr_eb_close"><span>+</span></a>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+  <!--CHOW desktop nav-->
+
+    <!--NEW NAV-->
+    <div class="sticky-wrapper is-st" id="fr_sticky_wrapper">
+
+      <nav id="freyja_top_nav" class="fr_navi freyja_desknav ch_dk_nav ch_tp_nav ">
+
+        <div class="ch_dk_nav_w">
+
+          <div class="chlogosw fr_nav_track" data-track="home">
+            <div class="act_submenu act_submenu_logo" style="height:auto;position:relative"><a href="https://www.chowhound.com/" class="ch_logo" title="Chowhound.com">
+
+              <svg width="48px" class="ch_svg_logo_round" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs/>
+                <g class="svg-nav-shorter-1-city" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-40.000000, -16.000000)">
+                  <g class="svg-Group-3" transform="translate(40.000000, 16.000000)">
+                    <rect class="svg-Rectangle-2" x="0" y="0" width="48" height="48"/>
+                    <circle class="svg-Oval" stroke="#212121" stroke-width="4" cx="24" cy="24" r="22"/>
+                    <g class="svg-Group-2" transform="translate(9.000000, 15.000000)" fill="#212121">
+                      <path d="M7.33158355,16.4516129 C2.81714786,16.4516129 0,14.0976872 0,9.80371272 C0,4.37157638 3.40332458,0 8.53893263,0 C11.0673666,0 12.4934383,1.06918239 13.0446194,2.20734429 L14.2519685,0.353519984 L16.8766404,0.353519984 L15.1881015,6.62203287 L11.312336,6.62203287 C11.7410324,4.68198418 11.1898513,3.27652668 9.28258968,3.27652668 C7.45406824,3.27652668 6.36920385,4.60438223 5.57305337,7.40667478 C5.25809274,8.50172449 5.01312336,9.7088659 5.01312336,10.6314668 C5.01312336,12.4163116 5.90551181,13.2958004 7.62029746,13.2958004 C9.33508311,13.2958004 10.1749781,12.3473321 10.9448819,10.2520795 L14.5406824,11.2781497 C13.6045494,14.8133496 10.9273841,16.4516129 7.33158355,16.4516129 Z M24.1207349,0.0517346318 L22.2834646,6.52718604 C23.4383202,4.96652465 24.9168854,4.1301481 26.7979003,4.1301481 C28.6264217,4.1301481 30,5.06137147 30,6.71687969 C30,8.59657131 28.1714786,12.2955975 28.1714786,13.2958004 C28.1714786,13.701055 28.3814523,13.839014 28.6964129,13.839014 C28.9151356,13.839014 29.1338583,13.7959018 29.3525809,13.7182999 L28.7226597,16.1153378 C27.8827647,16.3567661 26.9903762,16.4516129 26.1417323,16.4516129 C24.2607174,16.4516129 23.2020997,15.8307973 23.2020997,14.0804423 C23.2020997,12.5111584 24.9343832,8.9069791 24.9343832,7.88090891 C24.9343832,7.38080747 24.6019248,7.12213431 24.0944882,7.12213431 C22.4496938,7.12213431 21.2248469,10.398661 19.6587927,16.1153378 L15.0306212,16.1153378 L18.4514436,3.68178129 C18.6439195,2.9919862 18.5739283,2.80229255 18.2064742,2.80229255 L17.4103237,2.80229255 L18.0664917,0.353519984 L21.032371,0.353519984 C22.335958,0.353519984 23.4645669,0.215560966 24.1207349,0.0517346318 Z" class="svg-Combined-Shape-Copy-7"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+
+
+              <svg width="701px" class="ch_svg_logo_full" height="60px" viewBox="0 0 701 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g class="svg-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g class="svg-ch-logo" fill="#212121">
+                    <path d="M37.5,83.8 C55.5,83.8 68.9,75.5 73.6,57.5 L55.6,52.3 C51.7,63 47.5,67.8 39,67.8 C30.4,67.8 26,63.3 26,54.3 C26,49.6 27.2,43.5 28.8,37.9 C32.8,23.7 38.2,16.9 47.4,16.9 C56.9,16.9 59.7,24 57.5,33.9 L76.9,33.9 L85.3,2.1 L72.1,2.1 L66.1,11.5 C63.3,5.7 56.2,0.3 43.5,0.3 C17.8,0.3 0.8,22.5 0.8,50 C0.9,71.9 15,83.8 37.5,83.8 Z M121.5,0.6 C118.2,1.4 112.6,2.2 106.1,2.2 L91.2,2.2 L87.9,14.6 L91.9,14.6 C93.7,14.6 94.1,15.6 93.1,19.1 L76,82.1 L99.2,82.1 C107,53.1 113.2,36.5 121.4,36.5 C123.9,36.5 125.6,37.8 125.6,40.4 C125.6,45.6 116.9,63.9 116.9,71.8 C116.9,80.7 122.2,83.8 131.6,83.8 C135.8,83.8 140.3,83.3 144.5,82.1 L147.6,69.9 C146.5,70.3 145.4,70.5 144.3,70.5 C142.7,70.5 141.6,69.8 141.6,67.7 C141.6,62.6 150.8,43.9 150.8,34.3 C150.8,25.9 143.9,21.2 134.8,21.2 C125.4,21.2 118,25.4 112.3,33.4 L121.5,0.6 Z M182,70.3 C176.7,70.3 174.3,67.2 174.3,62.6 C174.3,55.5 179,34.9 188.3,34.9 C193.4,34.9 195.9,38 195.9,42.5 C195.9,49.5 191.3,70.3 182,70.3 Z M182.9,83.8 C203,83.8 217.9,68.5 217.9,48.5 C217.9,30.7 205,21.3 186.9,21.3 C166.6,21.3 152.4,36.1 152.4,56 C152.3,73.9 164.9,83.8 182.9,83.8 Z M287.8,68.7 C283.9,68.7 282.3,67.1 282.3,64.5 C282.3,61.5 283.7,56.7 285.3,51.6 L293.4,22.9 L270,22.9 L262.5,49.6 C260,58.5 255.1,68.6 248.8,68.6 C246.1,68.6 244.3,67.2 244.3,64.5 C244.3,62 245.5,57.8 246.6,53.8 L255.9,21.4 C252.6,22.2 245.2,22.8 238.7,22.8 L225.3,22.8 L222,35.2 L226.6,35.2 C228.4,35.2 228.5,37.8 227.9,39.7 L222.6,56.6 C220.9,61.9 219.3,66.5 219.3,70.7 C219.3,79 226.2,83.7 235.3,83.7 C245.8,83.7 255,79 261.6,69.6 L261.6,70.1 C261.6,77 266.2,83.7 279,83.7 C306.1,83.7 323.3,56 323.3,35.9 C323.3,26.9 318.1,21.2 309.8,21.2 C302.2,21.2 296.8,26.5 296.8,34.8 C296.8,41.7 300.7,45.4 306.3,46.6 C301.5,60.9 295.6,68.7 287.8,68.7 Z M365.1,0.6 C361.8,1.4 356.2,2.2 349.7,2.2 L334.9,2.2 L331.6,14.6 L335.6,14.6 C337.4,14.6 337.8,15.6 336.8,19.1 L319.7,82.2 L342.9,82.2 C350.7,53.2 356.9,36.6 365.1,36.6 C367.6,36.6 369.3,37.9 369.3,40.5 C369.3,45.7 360.6,64 360.6,71.9 C360.6,80.8 365.9,83.9 375.3,83.9 C379.5,83.9 384,83.4 388.2,82.2 L391.3,70 C390.2,70.4 389.1,70.6 388,70.6 C386.4,70.6 385.3,69.9 385.3,67.8 C385.3,62.7 394.5,44 394.5,34.4 C394.5,26 387.6,21.3 378.5,21.3 C369.1,21.3 361.7,25.5 355.9,33.5 L365.1,0.6 Z M428.1,70.3 C422.8,70.3 420.4,67.2 420.4,62.6 C420.4,55.5 425.1,34.9 434.4,34.9 C439.5,34.9 442,38 442,42.5 C441.9,49.5 437.3,70.3 428.1,70.3 Z M428.9,83.8 C449,83.8 463.9,68.5 463.9,48.5 C463.9,30.7 451,21.3 432.9,21.3 C412.6,21.3 398.4,36.1 398.4,56 C398.4,73.9 410.9,83.8 428.9,83.8 Z M506.7,71.7 C506.7,79.5 512,83.7 521.7,83.7 C526.2,83.7 529.9,83 534,82 L537,70 C536,70.2 534.8,70.5 533.9,70.5 C532.2,70.5 531,69.9 531,67.6 C531,66.2 531.7,63.9 532.7,61.1 L543.1,21.5 C540.1,22.3 535.3,22.9 529.5,22.9 L519.4,22.9 C511.4,52.8 505.5,68.7 497.3,68.7 C494.5,68.7 492.8,67.3 492.8,64.6 C492.8,62.1 494,57.9 495.1,53.9 L504.4,21.5 C501.1,22.3 493.7,22.9 487.2,22.9 L473.8,22.9 L470.5,35.3 L475.1,35.3 C476.9,35.3 477,37.9 476.4,39.8 L471.1,56.7 C469.4,62 467.8,66.6 467.8,70.8 C467.8,79.1 474.7,83.8 483.8,83.8 C493.4,83.8 500.9,79.5 506.8,71.2 C506.7,71.4 506.7,71.7 506.7,71.7 Z M581.8,21.5 C578.5,22.3 573,22.9 566.5,22.9 L551.7,22.9 L548.4,35.3 L553.1,35.3 C554.9,35.3 555.3,36.4 554.4,39.8 L542.8,82.1 L566,82.1 C573.7,53.1 579.9,36.5 588.1,36.5 C590.6,36.5 592.3,37.8 592.3,40.4 C592.3,45.6 583.6,63.9 583.6,71.8 C583.6,80.7 588.9,83.8 598.3,83.8 C602.5,83.8 607,83.3 611.1,82.1 L614.2,69.9 C613.1,70.3 612.2,70.5 611.1,70.5 C609.4,70.5 608.4,69.8 608.4,67.7 C608.4,62.6 617.7,43.9 617.7,34.3 C617.7,25.9 610.8,21.2 601.7,21.2 C591.7,21.2 584.1,25.8 578.2,34.4 L581.8,21.5 Z M640,83.8 C647.8,83.8 654.4,79.6 658.8,73.7 C659.6,80.3 664.6,83.8 673.6,83.8 C677.9,83.8 681.9,83.1 686,82.1 L689.1,69.9 C687.9,70.3 686.9,70.5 685.8,70.5 C684.2,70.5 682.9,69.8 682.9,67.5 C682.9,66.1 683.7,63.8 684.6,61 L700.8,0.5 C697.5,1.3 692,2.1 685.5,2.1 L671,2.1 L667.7,14.5 L671.1,14.5 C673.2,14.5 673.5,15.6 672.5,19.3 L668.9,31.9 C666.9,25.4 661.3,21.2 653.8,21.2 C633.2,21.2 620.3,42.8 620.3,62.5 C620.3,74.8 627.8,83.8 640,83.8 Z M650.1,69.5 C646.1,69.5 643.2,67.1 643.2,62.4 C643.2,49.9 650.3,35.5 658,35.5 C662.1,35.5 664.8,38.5 664.8,42.5 C664.8,54.3 658,69.5 650.1,69.5 Z" class="svg-Shape"/>
+                  </g>
+                </g>
+              </svg>
+
+
+            </a>
+              <div class="fr_fs_subm fr_cr_w fr_fs_newpdd_w hiden ftsh">
+                <div class="fr_fs_subm_w">
+
+                  <div class="fr_top_sh_pop" style="text-align:center">
+                    <a href="https://www.chowhound.com/newsletter" class="fr_top_sh_lk">Newsletter</a>
+                    <a href="https://www.chowhound.com/shop" class="fr_top_sh_lk">Shop</a>
+                    <a href="https://cbsi.secure.force.com/CBSi/sitefeedback2?template=template_chowhound&amp;referer=chowhound.com&amp;cfs=SFS_TECH" class="fr_top_sh_lk">Site Feedback</a>
+                    <a href="https://cbsi.secure.force.com/CBSi/knowledgehome2?referer=chowhound.com&amp;categories=CBS_Interactive:Chowhound" class="fr_top_sh_lk">FAQ / Help Center</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <!--FLIP NAV-->
+
+
+
+
+
+          <!--end FLIP-->
+
+
+
+
+
+
+          <div class="ch_search ch_flip_h">
+
+
+            <form class="freyja_search" action="/search" method="get">
+              <div class="freyja_search_bar">
+                <button type="submit" class="freyja_search_button" value="Search" aria-label="search">
+
+                  <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs/>
+                    <g class="svg-nav4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g class="svg-navsearch" transform="translate(-309.000000, -82.000000)" fill="#000000">
+                        <g id="Site-Nav" transform="translate(0.000000, 60.000000)">
+                          <g class="svg-search" transform="translate(309.000000, 20.000000)">
+                            <path d="M17.9999992,19.2894729 C18.0002767,19.0929371 17.9292241,18.9232003 17.7868413,18.7802624 L13.8197362,14.8131573 C14.6436568,13.8544403 15.1844463,12.7728614 15.4421046,11.5684206 L15.4421046,11.5565785 C15.567526,10.9998762 15.6306839,10.4196131 15.6315782,9.81578912 C15.631825,7.65346397 14.8660355,5.80609563 13.3342099,4.27368411 C11.8179579,2.75801806 9.97848434,2.00012336 7.81578912,2 C5.65361817,2.0004009 3.80624983,2.75829561 2.27368411,4.27368411 C0.758295607,5.80624983 0.000400904587,7.65361817 0,9.81578912 C0.000123355258,11.9784843 0.758018058,13.8179579 2.27368411,15.3342099 C3.80609563,16.8660355 5.65346397,17.631825 7.81578912,17.6315782 C9.73664635,17.6320408 11.4024358,17.0280935 12.8131573,15.8197362 L16.7802624,19.7868413 C16.9232003,19.9292241 17.0929371,20.0002767 17.2894729,19.9999992 C17.4859778,20.0002767 17.6517673,19.9292241 17.7868413,19.7868413 C17.9292241,19.6517673 18.0002767,19.4859778 17.9999992,19.2894729 L17.9999992,19.2894729 Z M14.2105257,9.81578912 C14.21142,10.3172282 14.1601042,10.7988072 14.0565783,11.2605259 C13.8019114,12.4183075 13.229543,13.4367285 12.3394731,14.3157889 C11.0784123,15.5863172 9.5784124,16.2100014 7.81578912,16.2105257 C6.04650466,16.2102481 4.53466262,15.5826166 3.28026301,14.327631 C2.04066603,13.08862 1.42092921,11.5846727 1.42105257,9.81578912 C1.42065166,8.04638131 2.04038848,6.53453927 3.28026301,5.28026301 C4.53453927,4.04038848 6.04638131,3.42065166 7.81578912,3.42105257 C9.58467268,3.42092921 11.08862,4.04066603 12.327631,5.28026301 C13.5826166,6.53466262 14.2102481,8.04650466 14.2105257,9.81578912 Z" id="Shape"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+
+                </button>
+                <input type="text" placeholder="Search" data-searchsection="Search entire site" class="s_input ch_search" id="primary_search" name="q" value="" autocomplete="off" aria-label="search" />
+                <input type="hidden" name="tq" value="1" />
+                <input type="hidden" name="c" value="allsite" />
+              </div>
+            </form>
+
+
+          </div>
+          <div class="ch_dk_subnav freyja_drmenu ch_flip_h">
+
+
+
+            <!--scheduled nav item-->
+                  <div class="act_menu exp_nav fr_nav_track" data-menu="cook" data-track="cook">
+                    <div class="act_submenu">
+                      <a href="https://www.chowhound.com/recipes" class="s_b lvl1 noipad">Cook</a>
+                      <div class="fr_fs_subm fr_fs_newpdd_w wthb hiden">
+                        <div class="fr_fs_subm_w">
+                          <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="fr_nav_track" data-track="cook">
+
+                            <!-- pinned item -->
+                              <li class="fr_nav_edito">
+                                <a href="https://www.chowhound.com/food-news/159139/holiday-baking-mistakes-to-avoid" class="fr_r_ftn">
+                                  <div style="position:relative">
+                                    <span class="fr_r_pic" style="background-image:url(&quot;https://chowhound3.cbsistatic.com/resize/a18881aee1acff9a181e5886db6553d1ba12d084/2019/12/holiday-baking-mistakes-chowhound.jpg?fit=bounds&amp;width=200&quot;)"></span>
+                                  </div>
+                                  <span class="fr_r_rt">9 Baking Mistakes That Ruin Your Cakes, Cookies, Brownies &amp; Bread</span>
+                                </a>
+                              </li>
+                            <!-- end pinned item -->
+
+                            <!-- scheduled sub menu -->
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/recipes" class="">Recipes</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/how-to" class="">How To</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/guides" class="">In-Depth Guides</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/whats-the-difference" class="">What's the Difference</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/recipe-round-ups" class="">Recipe Round-Ups</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/videos" class="">Watch Videos</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/pictures" class="">Photo Galleries</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/recipes" class="fr_lastlnk">See All ›</a></li>
+                            <!-- end scheduled sub menu -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="act_menu exp_nav fr_nav_track" data-menu="news" data-track="news">
+                    <div class="act_submenu">
+                      <a href="https://www.chowhound.com/food-news/" class="s_b lvl1 noipad">News</a>
+                      <div class="fr_fs_subm fr_fs_newpdd_w wthb hiden">
+                        <div class="fr_fs_subm_w">
+                          <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="fr_nav_track" data-track="news">
+
+                            <!-- pinned item -->
+                              <li class="fr_nav_edito">
+                                <a href="https://www.chowhound.com/food-news/275069/top-trending-fall-foods-recipes-according-to-google" class="fr_r_ftn">
+                                  <div style="position:relative">
+                                    <span class="fr_r_pic" style="background-image:url(&quot;https://chowhound3.cbsistatic.com/resize/6f984752883d16a45f2203c8a01e1e7f4b0e3493/2021/09/homemade-diy-pumpkin-spice-latte-starbucks-copycat-recipe-chowhound.jpeg?fit=bounds&amp;width=200&quot;)"></span>
+                                  </div>
+                                  <span class="fr_r_rt">The Top Trending Fall Foods &amp; Recipes, According to Google</span>
+                                </a>
+                              </li>
+                            <!-- end pinned item -->
+
+                            <!-- scheduled sub menu -->
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/explore" class="">Food Experiences</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/latest" class="">Food Trends</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/entertaining" class="">Entertaining</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/explainers" class="">Explainers</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/history-of" class="">History Of</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/table-talk-podcast" class="">Table Talk Podcast</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/" class="fr_lastlnk">See All ›</a></li>
+                            <!-- end scheduled sub menu -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="act_menu exp_nav fr_nav_track" data-menu="shop" data-track="shop">
+                    <div class="act_submenu">
+                      <a href="https://www.chowhound.com/shop" class="s_b lvl1 noipad">Shop</a>
+                      <div class="fr_fs_subm fr_fs_newpdd_w wthb hiden">
+                        <div class="fr_fs_subm_w">
+                          <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="fr_nav_track" data-track="shop">
+
+                            <!-- pinned item -->
+                              <li class="fr_nav_edito">
+                                <a href="https://www.chowhound.com/food-news/268677/where-to-buy-baking-ingredients-online" class="fr_r_ftn">
+                                  <div style="position:relative">
+                                    <span class="fr_r_pic" style="background-image:url(&quot;https://chowhound3.cbsistatic.com/resize/67da329424dab3d34789156327a04c6ac19c3ae0/2020/10/cookie-sheet-vs-sheet-pan-chowhound.jpg?fit=bounds&amp;width=200&quot;)"></span>
+                                  </div>
+                                  <span class="fr_r_rt">The Best Places to Buy Baking Ingredients Online</span>
+                                </a>
+                              </li>
+                            <!-- end pinned item -->
+
+                            <!-- scheduled sub menu -->
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/274052/fall-cookbooks-2020" class="">The Cookbooks We're Most Excited for This Fall</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/237103/best-pumpkin-spice-products-2020" class="">Ready or Not, Pumpkin Spice Products Are Back Again</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/259660/produce-subscriptions-to-order-online" class="">7 Helpful Produce Subscriptions You Should Know About</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/215467/best-meal-prep-containers" class="">Meal Prep Containers That Will Get You Excited to Make Lunch</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/shop" class="fr_lastlnk">Start Shopping ›</a></li>
+                            <!-- end scheduled sub menu -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="act_menu exp_nav fr_nav_track" data-menu="gift_guide" data-track="gift_guide">
+                    <div class="act_submenu">
+                      <a href="https://www.chowhound.com/food-news/213051/christmas-gift-guide-2020-best-gourmet-food-drink-gifts" class="s_b lvl1 noipad">Gift Guide</a>
+                      <div class="fr_fs_subm fr_fs_newpdd_w wthb hiden">
+                        <div class="fr_fs_subm_w">
+                          <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="fr_nav_track" data-track="gift_guide">
+
+                            <!-- pinned item -->
+                              <li class="fr_nav_edito">
+                                <a href="https://www.chowhound.com/food-news/213051/christmas-gift-guide-2020-best-gourmet-food-drink-gifts" class="fr_r_ftn">
+                                  <div style="position:relative">
+                                    <span class="fr_r_pic" style="background-image:url(&quot;https://chowhound3.cbsistatic.com/resize/54c26936380a14d30280cb1ba89d016a7a3a67bb/2018/11/best-gourmet-food-and-drink-gifts-chowhound.jpg?fit=bounds&amp;width=200&quot;)"></span>
+                                  </div>
+                                  <span class="fr_r_rt">Chowhound Christmas Gift Guide 2020: The Best Gourmet Food &amp; Drink Gifts</span>
+                                </a>
+                              </li>
+                            <!-- end pinned item -->
+
+                            <!-- scheduled sub menu -->
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/250177/christmas-gift-guide-2020-best-food-and-drink-subscription-services-for-last-minute-gift/" class="">The Best Food &amp; Drink Subscriptions</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/212816/christmas-gift-guide-2020-best-advent-calendars-food-drink/" class="">The Best Food &amp; Drink Advent Calendars for 2020</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/249115/christmas-gift-guide-2020-best-gifts-for-chocolate-lovers/" class="">Sweet Gifts for Chocolate Connoisseurs</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/248846/christmas-gift-guide-2020-best-gifts-for-families-that-love-food/" class="">Chowhound Christmas Gift Guide 2020: Best Gifts for Food-Loving Families and Parents</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/213051/christmas-gift-guide-2020-best-gourmet-food-drink-gifts/" class="fr_lastlnk">More Gift Guides ›</a></li>
+                            <!-- end scheduled sub menu -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="act_menu exp_nav fr_nav_track" data-menu="christmas" data-track="christmas">
+                    <div class="act_submenu">
+                      <a href="https://www.chowhound.com/tag/christmas" class="s_b lvl1 noipad">Christmas</a>
+                      <div class="fr_fs_subm fr_fs_newpdd_w wthb hiden">
+                        <div class="fr_fs_subm_w">
+                          <ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="fr_nav_track" data-track="christmas">
+
+                            <!-- pinned item -->
+                              <li class="fr_nav_edito">
+                                <a href="https://www.chowhound.com/food-news/174494/best-christmas-recipes-tips" class="fr_r_ftn">
+                                  <div style="position:relative">
+                                    <span class="fr_r_pic" style="background-image:url(&quot;https://chowhound3.cbsistatic.com/resize/9374df98cc294883ee2b78b39d3d8d927fc90895/2018/12/christmas-dinner-entertaining-chowhound.jpg?fit=bounds&amp;width=200&quot;)"></span>
+                                  </div>
+                                  <span class="fr_r_rt">The Best Recipes and Tips for Christmas</span>
+                                </a>
+                              </li>
+                            <!-- end pinned item -->
+
+                            <!-- scheduled sub menu -->
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/249191/christmas-cookie-guide-recipes-and-tips-for-your-best-holiday-baking" class="">Christmas Cookie HQ: The Ultimate Guide to Holiday Cookie Baking</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/251053/best-christmas-breakfast-ideas" class="">How to Make a Memorable Christmas Morning Breakfast</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/179722/how-to-cook-christmas-dinner-on-a-budget" class="">How to Cook Christmas Dinner for 6 on a $75 Budget</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/food-news/194248/last-minute-guide-to-hosting-christmas-dinner" class="">A Last-Minute Guide for Those Hosting Christmas Dinner</a></li>
+                                <li itemprop="name"><a itemprop="url" href="https://www.chowhound.com/tag/christmas" class="fr_lastlnk">See All Christmas Tips ›</a></li>
+                            <!-- end scheduled sub menu -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <!-- END scheduled nav item -->
+
+
+
+
+            <!--discuss -->
+            <div class="act_menu nfttip exp_nav fr_nav_track" data-menu="galleries" data-track="community">
+              <div class="act_submenu">
+                <a href="https://www.chowhound.com/community" class="s_b lvl1 noipad">Community</a>
+                <div class="fr_fs_subm commu wide fr_fs_newpdd_w hiden">
+                  <div class="fr_fs_subm_w">
+                    <ul class="fw">
+                      <li><a href="https://www.chowhound.com/community" class="frm_user str">Most Popular</a></li>
+                      <li><a href="https://www.chowhound.com/latest" class="frm_late str">Latest Discussions</a></li>
+                      <li><a href="https://www.chowhound.com/latest/activity" class="frm_late str">Latest Activity</a></li>
+                    </ul>
+                    <div class="wflx">
+                      <ul>
+                        <li><h3><a href="https://www.chowhound.com/browse/tags">Topics</a></h3></li>
+                        <li><ul class="frn_tt">
+
+
+                                <li><a href="https://www.chowhound.com/home-cooking" class="" data-tagname="Home Cooking">Home Cooking</a></li>
+                                <li><a href="https://www.chowhound.com/cookware" class="" data-tagname="Cookware">Cookware</a></li>
+                                <li><a href="https://www.chowhound.com/spirits" class="" data-tagname="Cocktails &amp; Spirits">Cocktails &amp; Spirits</a></li>
+                                <li><a href="https://www.chowhound.com/general-discussion" class="" data-tagname="General Discussion">General Discussion</a></li>
+                                <li><a href="https://www.chowhound.com/food-media" class="" data-tagname="Food Media">Food Media</a></li>
+                                <li><a data-tagname="Cookbook of the Month" href="https://www.chowhound.com/tag/cookbook-of-the-month">Cookbook of the Month</a></li>
+                                <li><a data-tagname="Dish of the Month" href="https://www.chowhound.com/tag/dish-of-the-month">Dish of the Month</a></li>
+                                <li><a data-tagname="Table Talk" href="https://www.chowhound.com/tag/table-talk">Table Talk</a></li>
+                                <li><a data-tagname="What's for Dinner" href="https://www.chowhound.com/tag/whats-for-dinner">What's for Dinner</a></li>
+                                <li><a data-tagname="Coupons and Deals" href="https://www.chowhound.com/tag/coupons-and-deals">Coupons and Deals</a></li>
+                        </ul></li>
+                        <li><a href="https://www.chowhound.com/browse/tags" class="fr_smr">Browse All Topics ›</a></li>
+                      </ul>
+                      <div class="ch_col bd"></div>
+                      <ul>
+                        <li><h3><a href="https://www.chowhound.com/browse/locations">Locations</a></h3></li>
+                        <li><ul class="frn_tt">
+
+                                <li><a href="https://www.chowhound.com/tag/san-francisco">San Francisco Bay Area</a></li>
+                                <li><a href="https://www.chowhound.com/tag/los-angeles">Los Angeles Area</a></li>
+                                <li><a href="https://www.chowhound.com/tag/california">California</a></li>
+                                <li><a href="https://www.chowhound.com/tag/pacific-northwest">Pacific Northwest</a></li>
+                                <li><a href="https://www.chowhound.com/tag/texas">Texas</a></li>
+                                <li><a href="https://www.chowhound.com/tag/southwest">Southwest</a></li>
+                                <li><a href="https://www.chowhound.com/tag/chicago">Chicago Area</a></li>
+                                <li><a href="https://www.chowhound.com/tag/new-orleans">New Orleans</a></li>
+                                <li><a href="https://www.chowhound.com/tag/florida">Florida</a></li>
+                                <li><a href="https://www.chowhound.com/tag/boston">Boston Area</a></li>
+                                <li><a href="https://www.chowhound.com/tag/washington-dc">Washington DC</a></li>
+                                <li><a href="https://www.chowhound.com/tag/pennsylvania">Pennsylvania</a></li>
+                                <li><a href="https://www.chowhound.com/tag/mid-atlantic">Mid-Atlantic</a></li>
+                                <li><a href="https://www.chowhound.com/tag/manhattan">Manhattan</a></li>
+                                <li><a href="https://www.chowhound.com/tag/outer-boroughs">Outer Boroughs</a></li>
+                                <li><a href="https://www.chowhound.com/tag/quebec">Quebec (inc. Montreal)</a></li>
+                                <li><a href="https://www.chowhound.com/tag/ontario">Ontario (inc. Toronto)</a></li>
+                                <li><a href="https://www.chowhound.com/tag/atlantic-canada">Atlantic Canada</a></li>
+                                <li><a href="https://www.chowhound.com/tag/australia">Australia</a></li>
+                                <li><a href="https://www.chowhound.com/tag/uk">U.K.</a></li>
+                        </ul></li>
+                        <li><a href="https://www.chowhound.com/browse/locations" class="fr_smr">Browse All Locations ›</a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--discuss end -->
+
+
+
+
+
+            <!--login/signup-->
+
+
+
+              <div class="freyja_nav_avatar act_menu fr_nav_track" data-menu="account" data-track="account">
+                <div class="act_submenu">
+                  <div><a href="https://www.chowhound.com/users/sign_in" class="fr_lo_usr"></a></div>
+                  <div class="fr_fs_subm fr_us_subm fr_us_lisu fr_fs_newpdd_w hiden">
+                    <div class="fr_fs_subm_w">
+                      <ul>
+                        <li><a class=" show_login_tab fr_nav_track" data-track="login" href="https://www.chowhound.com/users/sign_in"><span>Log In</span></a></li>
+                        <li><a class=" show_login_tab fr_event_tracking" data-action="sitenav" data-category="signup" href="https://www.chowhound.com/users/sign_up"><span>Sign Up</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            <!--login/signup end-->
+
+
+
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+
+    <!--NEW NAV END -->
+
+
+
+
+
+
+
+
+
+<script>
+  uli = 0;
+  uid = null;
+  ismob = 0;
+</script>
+
+
+<div class="fr_content_wrap">
+
+
+<script type="text/javascript">
+function parse(e,s,r){var n=s&amp;&amp;r||0,t=0;for(s=s||[],e.toLowerCase().replace(/[0-9a-f]{2}/g,function(e){16&gt;t&amp;&amp;(s[n+t++]=_hexToByte[e])});16&gt;t;)s[n+t++]=0;return s}function unparse(e,s){var r=s||0,n=_byteToHex;return n[e[r++]]+n[e[r++]]+n[e[r++]]+n[e[r++]]+"-"+n[e[r++]]+n[e[r++]]+"-"+n[e[r++]]+n[e[r++]]+"-"+n[e[r++]]+n[e[r++]]+"-"+n[e[r++]]+n[e[r++]]+n[e[r++]]+n[e[r++]]+n[e[r++]]+n[e[r++]]}function v1(e,s,r){var n=s&amp;&amp;r||0,t=s||[];e=e||{};var _=null!=e.clockseq?e.clockseq:_clockseq,a=null!=e.msecs?e.msecs:(new Date).getTime(),o=null!=e.nsecs?e.nsecs:_lastNSecs+1,c=a-_lastMSecs+(o-_lastNSecs)/1e4;if(0&gt;c&amp;&amp;null==e.clockseq&amp;&amp;(_=_+1&amp;16383),(0&gt;c||a&gt;_lastMSecs)&amp;&amp;null==e.nsecs&amp;&amp;(o=0),o&gt;=1e4)throw new Error("uuid.v1(): Can't create more than 10M uuids/sec");_lastMSecs=a,_lastNSecs=o,_clockseq=_,a+=122192928e5;var l=(1e4*(268435455&amp;a)+o)%4294967296;t[n++]=l&gt;&gt;&gt;24&amp;255,t[n++]=l&gt;&gt;&gt;16&amp;255,t[n++]=l&gt;&gt;&gt;8&amp;255,t[n++]=255&amp;l;var d=a/4294967296*1e4&amp;268435455;t[n++]=d&gt;&gt;&gt;8&amp;255,t[n++]=255&amp;d,t[n++]=d&gt;&gt;&gt;24&amp;15|16,t[n++]=d&gt;&gt;&gt;16&amp;255,t[n++]=_&gt;&gt;&gt;8|128,t[n++]=255&amp;_;for(var u=e.node||_nodeId,i=0;6&gt;i;i++)t[n+i]=u[i];return s?s:unparse(t)}var _rng;if(window.crypto&amp;&amp;crypto.getRandomValues){var _rnds8=new Uint8Array(16);_rng=function(){return crypto.getRandomValues(_rnds8),_rnds8}}if(!_rng){var _rnds=new Array(16);_rng=function(){for(var e,s=0;16&gt;s;s++)0===(3&amp;s)&amp;&amp;(e=4294967296*Math.random()),_rnds[s]=e&gt;&gt;&gt;((3&amp;s)&lt;&lt;3)&amp;255;return _rnds}}for(var _byteToHex=[],_hexToByte={},i=0;256&gt;i;i++)_byteToHex[i]=(i+256).toString(16).substr(1),_hexToByte[_byteToHex[i]]=i;var _seedBytes=_rng(),_nodeId=[1|_seedBytes[0],_seedBytes[1],_seedBytes[2],_seedBytes[3],_seedBytes[4],_seedBytes[5]],_clockseq=16383&amp;(_seedBytes[6]&lt;&lt;8|_seedBytes[7]),_lastMSecs=0,_lastNSecs=0;
+
+    generate_vguid = function(){
+        view_tracking_guid = v1();
+    }
+    
+    //utag settings https://docs.tealium.com/platforms/javascript/settings/
+	// window.utag_cfg_ovrd = window.utag_cfg_ovrd || {};
+	// window.utag_cfg_ovrd.dom_complete = true;
+
+    generate_vguid();
+    var utag_data = {"siteType":"responsive web","siteSection":"home","deviceType":"desktop","siteHier":"","pageType":"front_door","pageFindingMethod":"External","commerceContent":false,"pageViewGuid" : view_tracking_guid }
+
+</script>
+
+
+
+<div id="out"></div>
+<div id="alert_container"></div>
+
+
+    
+
+    
+
+
+        <div class="fr_thead fr_bcki_head">
+
+
+
+        
+
+
+
+        <a href="https://www.chowhound.com/food-news/174494/best-christmas-recipes-tips" class="fr_hp_hdlnk " aria-label="The Best Recipes and Tips for Christmas"></a>
+
+
+
+
+
+        <img class="fr_objfitimg lazy-loaded" src="https://chowhound3.cbsistatic.com/resize/290bdfcaddf8a29eac819fc210847c07512cbe99/2015/10/31604_Goat_cheese_stuffed_peppadews_2.jpg?fit=bounds&amp;height=800&amp;width=1280" alt="" data-src="https://chowhound3.cbsistatic.com/resize/290bdfcaddf8a29eac819fc210847c07512cbe99/2015/10/31604_Goat_cheese_stuffed_peppadews_2.jpg?fit=bounds&amp;height=800&amp;width=1280" />
+      <div class="freyja_container freyja_mainbody">
+        <section class="col gu12 ch_hhd">
+
+
+
+          <article class="fr_flx ch_hhd_article WpPost">
+            <div class="ch_hhd_lcol">
+            <h2>Deck The Halls</h2>
+              <h1><a href="https://www.chowhound.com/food-news/174494/best-christmas-recipes-tips">The Best Recipes and Tips for Christmas</a></h1>
+            </div>
+          </article>
+
+
+        </section>
+      </div>
+    </div>
+
+
+    <div class="fr_spacr" style="height:1px"></div>
+
+        
+            
+
+<div class="ch_h_latest_edito">
+  <div class="fr_flx top l3 bl3 mr15b hp_mod fr_header_bottom fr_flxtop" data-mtype="header_bottom">
+      <div class="fr_item b4 sqa noct Article" data-ctype="Article">
+        <figure class="img">
+
+            <img class="fr_objfitimg img_in lazy-loaded" src="https://chowhound3.cbsistatic.com/resize/92e3b1e43642230ca123d2953672aea8ef5b0822/2022/10/28dca59a-how-to-clean-enameled-cast-iron.jpg?fit=bounds&amp;height=640&amp;width=640" alt="How to Care for Enameled Cast Iron So It Lasts a Lifetime" data-src="https://chowhound3.cbsistatic.com/resize/92e3b1e43642230ca123d2953672aea8ef5b0822/2022/10/28dca59a-how-to-clean-enameled-cast-iron.jpg?fit=bounds&amp;height=640&amp;width=640" />
+          
+          <a target="" href="https://www.chowhound.com/food-news/277271/how-to-clean-a-dutch-oven-other-enameled-cast-iron-cookware" aria-label="How to Care for Enameled Cast Iron So It Lasts a Lifetime"></a>
+
+        </figure>
+        <div>
+
+
+
+        <h5>
+          <a href="https://www.chowhound.com/food-news/guides">
+            <span>Guides</span>
+          </a>
+        </h5>
+        
+          <h2><a target="" href="https://www.chowhound.com/food-news/277271/how-to-clean-a-dutch-oven-other-enameled-cast-iron-cookware">How to Care for Enameled Cast Iron So It Lasts a Lifetime</a></h2>
+
+          <p>by <strong>Kelly Magyarics</strong> | You’ve sprung for a gorgeous piece of enameled cast iron cookware; protect your investment by cleaning...</p>
+        </div>
+      </div>
+
+      <div class="fr_item b4 sqa noct Article" data-ctype="Article">
+        <figure class="img">
+
+          <img class="fr_objfitimg img_in lazy-loaded" src="https://chowhound3.cbsistatic.com/resize/fb58a7e3d3d9ffa86ba40bfb0048aebfed31d25a/2020/10/6ef66975-stovetop-macaroni-and-cheese.jpg?fit=bounds&amp;height=640&amp;width=640" alt="8 Easy Ways to Make Boxed Mac &amp; Cheese Taste Like You Made It from Scratch" data-src="https://chowhound3.cbsistatic.com/resize/fb58a7e3d3d9ffa86ba40bfb0048aebfed31d25a/2020/10/6ef66975-stovetop-macaroni-and-cheese.jpg?fit=bounds&amp;height=640&amp;width=640" />
+
+          <a target="" href="https://www.chowhound.com/food-news/277562/the-best-boxed-mac-and-cheese-easy-ways-to-make-it-taste-better" aria-label="8 Easy Ways to Make Boxed Mac &amp; Cheese Taste Like You Made It from Scratch"></a>
+        </figure>
+        <div>
+
+
+
+        <h5>
+          <a href="https://www.chowhound.com/food-news/how-to">
+            <span>How To</span>
+          </a>
+        </h5>
+
+
+          <h2><a target="" href="https://www.chowhound.com/food-news/277562/the-best-boxed-mac-and-cheese-easy-ways-to-make-it-taste-better">8 Easy Ways to Make Boxed Mac &amp; Cheese Taste Like You Made It from Scratch</a></h2>
+
+          <p>by <strong>Pamela Vachon</strong> | This is a safe space where a person may freely admit that they still have room in their hearts and...</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="fr_item b4 sqa" id="strnative_top">
+      </div>
+
+
+      <div class="fr_item b4 sqa noct Article" data-ctype="Article">
+        <figure class="img">
+          <img class="lazy fr_objfitimg img_in" src="" alt="The Ultimate Guide to Avocado" data-src="https://chowhound3.cbsistatic.com/resize/96e559bd378fbfecfabf50b7efbbe870b957b6e1/2019/01/avocado-guide-chowhound.jpg?fit=bounds&amp;height=640&amp;width=640" />
+          <a target="" href="https://www.chowhound.com/food-news/194999/avocado-guide-how-to-pick-store-cut-and-use-avocado" aria-label="The Ultimate Guide to Avocado"></a>
+              <span class="fr_hp_slide_dur fr_dur_ontop"> 01:33</span>
+        </figure>
+        <div>
+
+
+
+        <h5>
+          <a href="https://www.chowhound.com/food-news/guides">
+            <span>Guides</span>
+          </a>
+        </h5>
+        
+
+          <h2><a target="" href="https://www.chowhound.com/food-news/194999/avocado-guide-how-to-pick-store-cut-and-use-avocado">The Ultimate Guide to Avocado</a></h2>
+
+          <p>by <strong>Jen Wheeler</strong> | A lot of food holidays are silly, sure, but National Avocado Day on July 31 is one that makes perfect...</p>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+        <div id="pbr_leader_plus_top" class="ad_pbr_wrap"></div>
+
+
+
+
+
+      <div id="intromercial"></div>
+
+
+
+
+
+
+<div class="freyja_container freyja_mainbody bt_body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="col gu12">
+    
+    
+    
+        
+
+<div class="freyja_box fr_hptitle">
+  <h3><span>More Chowhound</span></h3>
+</div>
+
+<div class="fr_flx top l3 bl3 mr15b fr_header_bottom ch_hp_custom_promo hp_mod fr_flxtop" data-mtype="custom_promo">
+
+    <div class="fr_item b4 sqa Article" data-ctype="Promo">
+      <figure class="img">
+        <img class="lazy img_in" src="" alt="" data-src="https://chowhound1.cbsistatic.com/assets/2018/09/asset-newsletter.jpg" />
+      </figure>
+      <div>
+        <h5>
+          <a href="https://www.chowhound.com/newsletter" target="_blank"><span>Get the Newsletter</span></a>
+        </h5>
+        <h2><a href="https://www.chowhound.com/newsletter">You're hungry, we're delivering</a></h2>
+      </div>
+    </div>
+
+
+    <div class="fr_item b4 sqa Article" data-ctype="Promo">
+      <figure class="img">
+        <img class="lazy img_in" src="" alt="" data-src="https://chowhound3.cbsistatic.com/resize/1d8c0c23d926ab7c73806208e059c1ed338e1c0e/2018/12/how-to-decorate-christmas-cookies-chowhound.jpg?fit=bounds&amp;width=800" />
+      </figure>
+      <div>
+        <h5>
+          <a href="https://www.chowhound.com/food-news/249191/christmas-cookie-guide-recipes-and-tips-for-your-best-holiday-baking" target="_blank"><span>Start Planning</span></a>
+        </h5>
+
+        <h2><a href="https://www.chowhound.com/food-news/249191/christmas-cookie-guide-recipes-and-tips-for-your-best-holiday-baking">Christmas Cookie HQ</a></h2>
+      </div>
+    </div>
+
+
+    <div class="fr_item b4 sqa Article" data-ctype="Promo">
+      <figure class="img">
+        <img class="lazy img_in" src="" alt="" data-src="https://chowhound3.cbsistatic.com/2018/09/asset-social.jpg" />
+      </figure>
+      <div>
+        <h5>
+          <span class="social_promo_h5">Follow us on Social</span>
+        </h5>
+
+        <div class="freyja_mob_follow in_promo">
+          <ul>
+            <li><a rel="noopener" class="freyja_fb facebook_follow" href="https://www.facebook.com/chowhound" title="Facebook" target="_blank" data-social-location="promo"></a></li>
+            <li><a rel="noopener" class="freyja_tw twitter_follow" href="https://twitter.com/Chow" title="Twitter" target="_blank" data-social-location="promo"></a></li>
+            <li><a rel="noopener" class="freyja_in om_instagram_follow" data-social-location="promo" title="Instagram" href="https://instagram.com/chowhound/" target="_blank"></a></li>
+            <li><a rel="noopener" class="freyja_yt om_youtube_follow" data-social-location="promo" title="Youtube" href="https://www.youtube.com/user/CHOW" target="_blank"></a></li>
+            <li><a rel="noopener" class="freyja_pi share_pinterest" href="https://www.pinterest.com/chowhound/" title="Pinterest" target="_blank" data-social-location="promo"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+ 
+</div>
+
+
+
+
+    
+    <div class="fr_spacr"></div>
+
+        
+          
+<div class="fr_flx top l1 colb2 mr15b fr_hp_disc hp_mod fr_flxtop" data-mtype="community">
+
+    <div class="frca">
+
+    <div class="freyja_box fr_hptitle">
+      <h3><span>Holiday Gift Guide</span></h3>
+    </div>
+
+          <div class="fr_item b5" data-ctype="Article">
+            <span class="nc">1</span>
+            <h2><a href="https://www.chowhound.com/food-news/250177/christmas-gift-guide-2020-best-food-and-drink-subscription-services-for-last-minute-gift">The Best Food &amp; Drink Subscriptions</a></h2>
+          </div>
+          <div class="fr_item b5" data-ctype="Article">
+            <span class="nc">2</span>
+            <h2><a href="https://www.chowhound.com/food-news/248846/christmas-gift-guide-2020-best-gifts-for-families-that-love-food">Best Gifts for Food-Loving Families and Parents</a></h2>
+          </div>
+          <div class="fr_item b5" data-ctype="Article">
+            <span class="nc">3</span>
+            <h2><a href="https://www.chowhound.com/food-news/274052/fall-cookbooks-2020">The Best New Cookbooks We're Most Excited About</a></h2>
+          </div>
+          <div class="fr_item b5" data-ctype="Article">
+            <span class="nc">4</span>
+            <h2><a href="https://www.chowhound.com/food-news/218788/best-coffee-subscriptions-2020">The Best Coffee Subscriptions for Every Type of Coffee Drinker</a></h2>
+          </div>
+          <div class="fr_item b5" data-ctype="Article">
+            <span class="nc">5</span>
+            <h2><a href="https://www.chowhound.com/food-news/213336/great-british-baking-show-christmas-gifts-2020">Best Gifts For Fans of 'The Great British Baking Show'</a></h2>
+          </div>
+    </div>
+
+
+  <div class="frcb">
+          <div class="fr_item sqa b4 Article" data-ctype="post">
+            <figure class="img fr_event_mod">
+              <img class="lazy fr_objfitimg img_in" src="" alt="" data-src="https://chowhound3.cbsistatic.com/resize/2f864711f5de69b10bca615919fef3eae14cb853/2018/11/best-gourmet-food-and-drink-gifts-chowhound.jpg?fit=bounds&amp;height=340&amp;width=450" />
+              <a href="https://www.chowhound.com/food-news/213051/christmas-gift-guide-2020-best-gourmet-food-drink-gifts" aria-label="Chowhound Christmas Gift Guide 2020: The Best Gourmet Food &amp; Drink Gifts"></a></figure>
+            <div>
+              <h2><a href="https://www.chowhound.com/food-news/213051/christmas-gift-guide-2020-best-gourmet-food-drink-gifts">Chowhound Christmas Gift Guide 2020: The Best Gourmet Food &amp; Drink Gifts</a></h2>
+            </div>
+          </div>
+  </div>
+</div>
+
+
+
+
+        
+  <div class="freyja_box fr_hptitle fr_hptitle_flx">
+    <h3><span>Winter Meal Planning</span></h3>
+
+    <div class="sponsored_by no_mg">
+      <a href="">
+         
+
+      </a>
+    </div>
+  </div>
+
+
+    <div class="fr_fw_car_tabs fr_hptitle_flx">
+      <div>
+        <a href="#" class="select" data-list="tab0">Slow Cooker Specials</a>
+        <a href="#" class="" data-list="tab1">Soups &amp; Stews</a>
+        <a href="#" class="" data-list="tab2">Cheese, Please</a>
+        <a href="#" class="" data-list="tab3">Chicken Favorites</a>
+      </div>
+
+  <div class="fr_tag_carousel_nav fr_tag_carousel_nav_home" style="">
+    <a href="#" class="fr_rdbt prev prev_home" aria-label="previous carousel items"></a>
+    <a href="#" class="fr_rdbt next next_home" aria-label="next carousel items"></a>
+  </div>
+
+    </div>
+
+<div class="hp_car_w">
+  <div class="fr_fw_car_w hp_mod" data-mtype="topical_scrolling">
+    <div class="fr_flx mr15b top fr_fw_car owl-loaded owl-drag">
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+    <div class="owl-stage-outer"><div class="owl-stage" style="width: 3960px; transform: translate3d(-990px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-root-vegetable-stew-29347" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/789f6a1b36a4668fe74f536e89842f19be14eda8/recipe_photos/29347_slow_cooker_vegetable_stew_2.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Root Vegetable Stew</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-chicken-soup-30868" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/745fb70ac4649dc54b975dc0c6070f3a220a816a/2014/09/30868_slow_cooker_chicken_soup.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Chicken Soup</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-chicken-adobo-30473" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/ce07195ff7a1d1f7cd541f6d904a6023b7110142/recipe_photos/30473_slow_cooker_chicken_adobo.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Chicken Adobo</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-shrimp-gumbo-31282" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/00ec7df18abbd889c5789cc22b2b0fe5d12b3c2b/2015/02/31282_RecipeImage_shrimp_sausage_gumbo.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Shrimp Gumbo</h2>
+          </div>
+        </a></div><div class="owl-item active" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/easy-slow-cooker-pulled-pork-30356" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/fa6597b53446baa1d62fc2d22a89ed51c9be197f/2014/09/30356_slow_cooker_pork_3000x2000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Easy Slow Cooker Pulled Pork</h2>
+          </div>
+        </a></div><div class="owl-item active" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/mediterranean-rotisserie-leg-of-lamb-with-potatoes-fennel-and-olives-30369" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/9d95e5abf3c57dbc8454a9b198ccf213150b602c/recipe_photos/30369_rotisserie_lamb2.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Mediterranean Rotisserie Leg of Lamb with Potatoes, Fennel, and Olives</h2>
+          </div>
+        </a></div><div class="owl-item active" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-pork-ramen-31178" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/455a1c882ffd870074166b9cad2379bd53453a86/2014/11/31178_slow_cooker_pork_ramen_3000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Pork Ramen</h2>
+          </div>
+        </a></div><div class="owl-item active" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/easy-slow-cooker-bbq-beef-brisket-30796" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/4ac7b85f12dc0cddcf7bb3a605641acf3f498bdb/2014/09/30796_slow_cooker_brisket-3000x2000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Easy Slow Cooker BBQ Beef Brisket</h2>
+          </div>
+        </a></div><div class="owl-item" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-root-vegetable-stew-29347" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/789f6a1b36a4668fe74f536e89842f19be14eda8/recipe_photos/29347_slow_cooker_vegetable_stew_2.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Root Vegetable Stew</h2>
+          </div>
+        </a></div><div class="owl-item" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-chicken-soup-30868" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/745fb70ac4649dc54b975dc0c6070f3a220a816a/2014/09/30868_slow_cooker_chicken_soup.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Chicken Soup</h2>
+          </div>
+        </a></div><div class="owl-item" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-chicken-adobo-30473" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/ce07195ff7a1d1f7cd541f6d904a6023b7110142/recipe_photos/30473_slow_cooker_chicken_adobo.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Chicken Adobo</h2>
+          </div>
+        </a></div><div class="owl-item" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-shrimp-gumbo-31282" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/00ec7df18abbd889c5789cc22b2b0fe5d12b3c2b/2015/02/31282_RecipeImage_shrimp_sausage_gumbo.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Shrimp Gumbo</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/easy-slow-cooker-pulled-pork-30356" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/fa6597b53446baa1d62fc2d22a89ed51c9be197f/2014/09/30356_slow_cooker_pork_3000x2000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Easy Slow Cooker Pulled Pork</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/mediterranean-rotisserie-leg-of-lamb-with-potatoes-fennel-and-olives-30369" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/9d95e5abf3c57dbc8454a9b198ccf213150b602c/recipe_photos/30369_rotisserie_lamb2.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Mediterranean Rotisserie Leg of Lamb with Potatoes, Fennel, and Olives</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/slow-cooker-pork-ramen-31178" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/455a1c882ffd870074166b9cad2379bd53453a86/2014/11/31178_slow_cooker_pork_ramen_3000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Slow Cooker Pork Ramen</h2>
+          </div>
+        </a></div><div class="owl-item cloned" style="width: 247.5px;"><a href="https://www.chowhound.com/recipes/easy-slow-cooker-bbq-beef-brisket-30796" class="fr_item b1 Recipe " data-ctype="Recipe">
+          <figure class="img">
+            <img class="lazy fr_objfitimg img_in" src="" data-src="https://chowhound3.cbsistatic.com/resize/4ac7b85f12dc0cddcf7bb3a605641acf3f498bdb/2014/09/30796_slow_cooker_brisket-3000x2000.jpg?fit=bounds&amp;width=350" />
+          </figure>
+          <div class="txt_in m">
+            <h2>Easy Slow Cooker BBQ Beef Brisket</h2>
+          </div>
+        </a></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots disabled"></div></div>
+  </div>
+</div>
+
+  <script>
+    topHpCarData = {
+
+      tab0: '&lt;a  href="https://www.chowhound.com/recipes/easy-slow-cooker-pulled-pork-30356" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/fa6597b53446baa1d62fc2d22a89ed51c9be197f/2014/09/30356_slow_cooker_pork_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Slow Cooker Pulled Pork&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/mediterranean-rotisserie-leg-of-lamb-with-potatoes-fennel-and-olives-30369" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/9d95e5abf3c57dbc8454a9b198ccf213150b602c/recipe_photos/30369_rotisserie_lamb2.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Mediterranean Rotisserie Leg of Lamb with Potatoes, Fennel, and Olives&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/slow-cooker-pork-ramen-31178" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/455a1c882ffd870074166b9cad2379bd53453a86/2014/11/31178_slow_cooker_pork_ramen_3000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Slow Cooker Pork Ramen&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/easy-slow-cooker-bbq-beef-brisket-30796" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/4ac7b85f12dc0cddcf7bb3a605641acf3f498bdb/2014/09/30796_slow_cooker_brisket-3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Slow Cooker BBQ Beef Brisket&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/slow-cooker-root-vegetable-stew-29347" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/789f6a1b36a4668fe74f536e89842f19be14eda8/recipe_photos/29347_slow_cooker_vegetable_stew_2.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Slow Cooker Root Vegetable Stew&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/slow-cooker-chicken-soup-30868" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/745fb70ac4649dc54b975dc0c6070f3a220a816a/2014/09/30868_slow_cooker_chicken_soup.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Slow Cooker Chicken Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/slow-cooker-chicken-adobo-30473" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/ce07195ff7a1d1f7cd541f6d904a6023b7110142/recipe_photos/30473_slow_cooker_chicken_adobo.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Slow Cooker Chicken Adobo&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/slow-cooker-shrimp-gumbo-31282" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/00ec7df18abbd889c5789cc22b2b0fe5d12b3c2b/2015/02/31282_RecipeImage_shrimp_sausage_gumbo.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Slow Cooker Shrimp Gumbo&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;',
+      tab1: '&lt;a  href="https://www.chowhound.com/recipes/easy-beef-stew-30301" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/313999022e35e6adf04ea647da967815525a6d62/2014/09/30301_easy_beef_stew_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Beef Stew&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/easy-chicken-noodle-soup-30675" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/c02cff45457336241fc3c27e49c57750f2e3daa9/recipe_photos/30675_easy_chicken_noodle_soup5.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Chicken Noodle Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/creamy-tomato-soup-10836" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/5eb6a732c5d9570352b46207745f4ff09c5cbbf0/2014/12/10836_creamy_tomato_soup_original_3000_2.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Classic Tomato Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/white-bean-and-ham-soup-30322" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/16bdd6ec612cb0defc03cb0e0b09ac1ee87edfbb/recipe_photos/30322_white_bean_ham_soup2.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;White Bean and Ham Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/basic-lentil-soup-29342" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/b5b7e217325eddaca798bde7bd9be9e30f78fe3f/2014/09/29342_basic_lentil_soup_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Lentil Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/roasted-butternut-squash-soup-30466" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/d91e03e09f3b66483a527db1f8cf6fda0af2b0bf/2014/09/30466_butternut_squash_soup_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Roasted Butternut Squash Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/celery-root-soup-28907" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/3011f1be7eea381f10ca64a883ea4b27132c25ff/recipe_photos/28907_celery_root_soup.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Celery Root Soup&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/salmon-miso-sinigang-filipino-sour-soup-30380" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/f06697fc4cd2d53fa1c93e34c1a65c0a0b5471d4/recipe_photos/30380_filipino_sour_soup.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Salmon-Miso Sinigang (Filipino Sour Soup)&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;',
+      tab2: '&lt;a  href="https://www.chowhound.com/recipes/homerooms-classic-macaroni-and-cheese-30436" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/4442b02d9775822970324576da38261cd367242e/2014/09/30436_homeroom_mac_cheese_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Classic Macaroni and Cheese&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/cheesy-enchiladas-11370" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/c269554c6ddf765449021d0132b9d0f0f36fbe67/recipe_photos/11370_cheesy_enchiladas.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Cheese Enchiladas&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/easy-philly-cheesesteaks-30361" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/5931a39306fb1f49103433c0c2b3e8b19af10804/recipe_photos/30361_philly_cheesesteak2.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Philly Cheesesteaks&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/cheese-grits-18739" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/1940a579eae74820829cb44bc2d65349ed653c97/2015/02/18739_RecipeImage_cheese_grits.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Baked Cheese Grits &lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/cheese-spaghetti-squash-gratin-31621" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/9b000a2ebad82c39566542f6d08680ef1d402622/2015/10/31621_three_cheese_spaghetti_squash_gratin.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Three-Cheese Spaghetti Squash Gratin&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/cheese-spaetzle-31595" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/2510246bfe7277d27a90baf352bcb0122605e8bc/2015/09/31595_cheese_spaetzle.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Cheese Spaetzle&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/chili-cheese-nachos-28063" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/71270938fd829337ddccbdb9900460096af1300a/recipe_photos/28063_chile_cheese_nachos.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Chili-Cheese Nachos&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/pollo-alla-valdostana-chicken-with-proscuitto-and-fontina-cheese-10753" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/d9f24be4121e72fd8eaa858fc17e86a7318b2d44/recipe_photos/10753_pollo_alla_valdostana.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Pollo alla Valdostana (Chicken with Prosciutto and Fontina Cheese)&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;',
+      tab3: '&lt;a  href="https://www.chowhound.com/recipes/basic-chicken-fajitas-29564" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/325e91640a5b99554d4e87b1d255b81064d62a67/recipe_photos/29564_chicken_fajitas.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Basic Chicken Fajitas&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/basic-chicken-quesadillas-29560" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/24b9aa6928879a0b24b3d9ff16e7951e21ce075b/2014/09/29560_chicken_quesadillas_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Best Chicken Quesadilla&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/ginger-chicken-jook-rice-porridge-29184" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/4fa3c5e7e0f87b0192dbda8cdd836e5c2d721ba0/2011/01/21984_ginger_chicken_jook_620.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Ginger Chicken Jook (Rice Porridge)&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/asian-marinated-baked-chicken-30350" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/4f4dd77ba970f189a08d8d13b7ff7ca91ec6bfee/2014/09/30350_asian_marinated_chicken_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Asian-Marinated Baked Chicken&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/chicken-and-smoked-andouille-jambalaya-30282" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/fb51a020d40d3bb68fabd116a35daf114f79396c/recipe_photos/30282_chicken_andouille_jambalaya.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Chicken and Andouille Jambalaya&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/easy-teriyaki-chicken-30551" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/f626ab78d7455a9c3bae32e44bf57728ced33402/2014/09/30551_easy_teriyaki_chicken_3000x2000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Teriyaki Chicken &lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;&lt;a  href="https://www.chowhound.com/recipes/easy-chicken-noodle-soup-from-a-leftover-roasted-chicken-30332" class="fr_item b1 Recipe " data-ctype="Recipe" &gt;\
+          &lt;figure class="img"&gt;\
+            &lt;div class="img_in lazy-loaded rdy" style="background-image:url(https://chowhound3.cbsistatic.com/resize/cfff75b9892fdcb6c51a946b49c4f479083c7c81/2014/11/30332_chicken_noodle_soup_3000.jpg?fit=bounds&amp;amp;width=350)"&gt;&lt;/div&gt;\
+          &lt;/figure&gt;\
+          &lt;div class="txt_in m"&gt;\
+            &lt;h2&gt;Easy Chicken Noodle Soup from a Leftover Roasted Chicken&lt;/h2&gt;\
+          &lt;/div&gt;\
+        &lt;/a&gt;',
+
+    }
+  </script>
+
+
+  <div class="fr_fw_car_more_w fr_more_w_sm" style="margin-top:15px!important">
+    <a href="https://www.chowhound.com/recipes/winter" class="fr_fw_car_more">More on Winter</a>
+  </div>
+
+
+        <div class="fr_spacr"></div>
+
+
+    
+            
+
+<div class="freyja_box fr_hptitle">
+  <h3><span>Holiday How Tos</span></h3>
+</div>
+
+<div class="fr_flx top l3 bl3 mr15b fr_top_cont hp_mod fr_flxtop" data-mtype="topical_top">
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Cook Christmas Dinner on a Budget" data-src="https://chowhound3.cbsistatic.com/resize/c48026c861df96731ebfee3f6ebcc2dd14389e65/2018/12/christmas-dinner-on-budget-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/179722/how-to-cook-christmas-dinner-on-a-budget" aria-label="How to Cook Christmas Dinner on a Budget"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 02:47</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/entertaining">
+            <span>Entertaining</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/179722/how-to-cook-christmas-dinner-on-a-budget">How to Cook Christmas Dinner on a Budget</a></h2>
+        <p>by <strong>Amy Sowder</strong> | Want to make Christmas dinner but don't have a lot of money to spend? That's okay; just because you...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Cook a Cuban Christmas Feast" data-src="https://chowhound3.cbsistatic.com/resize/e25935de25dadac4de9141f4ccbeb35978a29d2f/2008/10/cuban-christmas-lechon-recipe-chowhound-1-670x413.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/54780/cuban-christmas-food" aria-label="How to Cook a Cuban Christmas Feast"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 02:54</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/entertaining">
+            <span>Entertaining</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/54780/cuban-christmas-food">How to Cook a Cuban Christmas Feast</a></h2>
+        <p>by <strong>Chowhound Editors</strong> |  Of all the global Christmas food traditions...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Slice a Holiday Ham" data-src="https://chowhound3.cbsistatic.com/resize/36ebfb85073497a75990546c865c2a2fafe1917b/2017/11/sliced-ham-chowhound.jpeg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/191068/how-to-slice-a-ham" aria-label="How to Slice a Holiday Ham"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/how-to">
+            <span>How To</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/191068/how-to-slice-a-ham">How to Slice a Holiday Ham</a></h2>
+        <p>by <strong>Kelsey Butler</strong> | Even though turkey shows up twice on some holiday tables (once at Thanksgiving and again at Christmas...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Make Original Food Gifts Your Friends and Family Will Love" data-src="https://chowhound3.cbsistatic.com/resize/a4560dc54e068c862a963f932f3758db1c9257c8/2017/11/homemade-gift-ideas-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/191144/best-diy-homemade-food-gift-ideas" aria-label="How to Make Original Food Gifts Your Friends and Family Will Love"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/guides">
+            <span>Guides</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/191144/best-diy-homemade-food-gift-ideas">How to Make Original Food Gifts Your Friends and Family Will Love</a></h2>
+        <p>by <strong>Jordana Cohen</strong> | Food gifts are great, but homemade food gifts are even better—they're extra special for the recipient...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Become a Christmas Cookie Professional with These Easy Tips" data-src="https://chowhound3.cbsistatic.com/resize/77bfe36940b16ae05e9f1bc1be91deca56fe000b/2018/12/cookie-decorating-tips-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/193182/how-to-decorate-christmas-cookies-like-a-pro" aria-label="Become a Christmas Cookie Professional with These Easy Tips"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 02:20</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/guides">
+            <span>Guides</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/193182/how-to-decorate-christmas-cookies-like-a-pro">Become a Christmas Cookie Professional with These Easy Tips</a></h2>
+        <p>by <strong>Danielle Valente</strong> | Santa baby, if you hurry down the chimney, chances are you’re going to be here a while munching on...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="An Instant Pot Christmas Dinner Is Your Gift to Yourself" data-src="https://chowhound3.cbsistatic.com/resize/cc09cd88465f04d759b27f4b7d1fce72a32e14c1/2020/11/instant-pot-christmas-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/246273/easy-instant-pot-christmas-recipes-for-the-holidays" aria-label="An Instant Pot Christmas Dinner Is Your Gift to Yourself"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/246273/easy-instant-pot-christmas-recipes-for-the-holidays">An Instant Pot Christmas Dinner Is Your Gift to Yourself</a></h2>
+        <p>by <strong>Jen Wheeler</strong> | More often than not, the holiday season is a whirlwind of tasks, from finding the perfect gift to...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="6 Tips for a Killer Plant-Based Holiday Menu" data-src="https://chowhound3.cbsistatic.com/resize/7fcd124669652f53170c3a112a66d871b3550e77/2019/12/p.262-Cauliflower_WHOLE-FOOD-COOKING-1.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/250762/tips-for-a-plant-based-holiday-menu" aria-label="6 Tips for a Killer Plant-Based Holiday Menu"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/250762/tips-for-a-plant-based-holiday-menu">6 Tips for a Killer Plant-Based Holiday Menu</a></h2>
+        <p>by <strong>Amy Schulman</strong> | These days, it’s inevitable that everyone’s trying a different diet or cutting out specific products...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="12 French Toast Ideas for Your Christmas Morning Breakfast" data-src="https://chowhound3.cbsistatic.com/resize/d556aeba698341697ec60874f767558fa2d0c4f6/2018/12/christmas-morning-french-toast-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/215367/christmas-breakfast-french-toast-recipes" aria-label="12 French Toast Ideas for Your Christmas Morning Breakfast"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/215367/christmas-breakfast-french-toast-recipes">12 French Toast Ideas for Your Christmas Morning Breakfast</a></h2>
+        <p>by <strong>Dan Koday</strong> | The countdown to Christmas is on, and whether you’re hosting a formal holiday brunch or just doing...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Make a Memorable Christmas Morning Breakfast" data-src="https://chowhound3.cbsistatic.com/resize/d668531552a30dfd0748e81c502ee595f9cca165/2018/11/salted-caramel-banana-breakfast-strata-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/251053/best-christmas-breakfast-ideas" aria-label="How to Make a Memorable Christmas Morning Breakfast"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/251053/best-christmas-breakfast-ideas">How to Make a Memorable Christmas Morning Breakfast</a></h2>
+        <p>by <strong>Chowhound Editors</strong> | Christmas breakfast should be special, but that doesn't mean it has to be difficult. We gathered our...</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <div id="leader_middle" class="ad_lbm"></div>
+
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+            <div class="fr_flx top l1 colb2 mr15b fr_hp_disc hp_mod fr_flxtop" data-mtype="community">
+
+
+              <div class="frca">
+
+            <div class="freyja_box fr_hptitle">
+              <h3><span>Trending in the Chowhound Community</span>
+            </h3></div>
+
+
+
+
+
+                    <div class="fr_item b5" data-ctype="post">
+                      <span class="nc">1</span>
+                      <h2><a href="https://www.chowhound.com/post/top-recipe-1095329">Your Top Recipe</a></h2>
+
+                      <div class="fr_flx fr_hline">
+
+                          
+                          <span class="fr_comt dis">10 comments</span>
+
+                        <div class="fr_dline"></div>
+
+                        <div class="freyja_tagslist_nojs fr_ntags">
+                              <a class="freyja_tag" data-tagname="Breakfast" href="https://www.chowhound.com/tag/breakfast">Breakfast</a>
+                              <a class="freyja_tag" data-tagname="Lunch" href="https://www.chowhound.com/tag/lunch">Lunch</a>
+                              <a class="freyja_tag" data-tagname="Dinner" href="https://www.chowhound.com/tag/dinner">Dinner</a>
+                              <a class="freyja_tag" data-tagname="Family Recipes" href="https://www.chowhound.com/tag/family-recipes">Family Recipes</a>
+                              <a class="freyja_tag" data-tagname="Neighborhood Favorite" href="https://www.chowhound.com/tag/neighborhood-favorite">Neighborhood Favorite</a>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="fr_item b5" data-ctype="post">
+                      <span class="nc">2</span>
+                      <h2><a href="https://www.chowhound.com/post/baking-days-december-2020-edition-1095335">What are you baking these days? December 2020 edition!</a></h2>
+
+                      <div class="fr_flx fr_hline">
+
+                          
+                          <span class="fr_comt dis">21 comments</span>
+
+                        <div class="fr_dline"></div>
+
+                        <div class="freyja_tagslist_nojs fr_ntags">
+                              <a class="freyja_tag" data-tagname="Christmas" href="https://www.chowhound.com/tag/christmas">Christmas</a>
+                              <a class="freyja_tag" data-tagname="Hanukkah" href="https://www.chowhound.com/tag/hanukkah">Hanukkah</a>
+                              <a class="freyja_tag" data-tagname="Kwanzaa" href="https://www.chowhound.com/tag/kwanzaa">Kwanzaa</a>
+                              <a class="freyja_tag" data-tagname="Baking" href="https://www.chowhound.com/tag/baking">Baking</a>
+                              <a class="freyja_tag" data-tagname="What Are You Baking?" href="https://www.chowhound.com/tag/what-are-you-baking">What Are You Baking?</a>
+                              <a class="freyja_tag" data-tagname="Holidays" href="https://www.chowhound.com/tag/holidays">Holidays</a>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="fr_item b5" data-ctype="post">
+                      <span class="nc">3</span>
+                      <h2><a href="https://www.chowhound.com/post/weekly-menu-planning-december-2020-1095296">Weekly Menu Planning - December 2020</a></h2>
+
+                      <div class="fr_flx fr_hline">
+
+                          
+                          <span class="fr_comt dis">80 comments</span>
+
+                        <div class="fr_dline"></div>
+
+                        <div class="freyja_tagslist_nojs fr_ntags">
+                              <a class="freyja_tag" data-tagname="Meal Planning" href="https://www.chowhound.com/tag/meal-planning">Meal Planning</a>
+                              <a class="freyja_tag" data-tagname="Weekly Menu Planning" href="https://www.chowhound.com/tag/menu-planning">Weekly Menu Planning</a>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="fr_item b5" data-ctype="post">
+                      <span class="nc">4</span>
+                      <h2><a href="https://www.chowhound.com/post/dinner-446-december-2020-jack-frost-nipping-noses-1095339">What's For Dinner #446 (December 2020) - Jack Frost Nipping At Our Noses</a></h2>
+
+                      <div class="fr_flx fr_hline">
+
+                          
+                          <span class="fr_comt dis">12 comments</span>
+
+                        <div class="fr_dline"></div>
+
+                        <div class="freyja_tagslist_nojs fr_ntags">
+                              <a class="freyja_tag" data-tagname="What's for Dinner" href="https://www.chowhound.com/tag/whats-for-dinner">What's for Dinner</a>
+                              <a class="freyja_tag" data-tagname="Meal Planning" href="https://www.chowhound.com/tag/meal-planning">Meal Planning</a>
+                              <a class="freyja_tag" data-tagname="Winter" href="https://www.chowhound.com/tag/winter">Winter</a>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="fr_item b5" data-ctype="post">
+                      <span class="nc">5</span>
+                      <h2><a href="https://www.chowhound.com/post/december-2020-cookbook-month-food52-website-1095263">December 2020 Cookbook of the Month: FOOD52 WEBSITE</a></h2>
+
+                      <div class="fr_flx fr_hline">
+
+                          
+                          <span class="fr_comt dis">9 comments</span>
+
+                        <div class="fr_dline"></div>
+
+                        <div class="freyja_tagslist_nojs fr_ntags">
+                              <a class="freyja_tag" data-tagname="Cookbook of the Month" href="https://www.chowhound.com/tag/cookbook-of-the-month">Cookbook of the Month</a>
+                              <a class="freyja_tag" data-tagname="Websites" href="https://www.chowhound.com/tag/websites">Websites</a>
+                              <a class="freyja_tag" data-tagname="Recipe Sites" href="https://www.chowhound.com/tag/recipe-sites">Recipe Sites</a>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+        <div class="fr_fw_car_more_w fr_more_w_sm" style="margin-top:0px !important;margin-left:0px !important">
+          <a href="https://www.chowhound.com/latest" class="fr_fw_car_more">View All Discussions</a>
+        </div>
+
+
+              </div>
+
+        <div class="mobonly">
+          <div class="fr_spacr"></div>
+        </div>
+
+
+              <div class="frcb">
+                    <div class="fr_item sqa b4 Discussion" data-ctype="post">
+                      <figure class="img">
+                        <img class="lazy fr_objfitimg img_in" src="" alt="What are you baking these days? December 2020 edition!" data-src="https://chowhound3.cbsistatic.com/resize/b52a64a605a3fb25f4c6c80e54227e65c88713a7/models/image_uploads/images/71317/original/5AAD83AB-1273-4861-BA6C-1BA8EC2CB3ED.jpeg?fit=bounds&amp;width=400" />
+                        <a href="https://www.chowhound.com/post/baking-days-december-2020-edition-1095335" aria-label="What are you baking these days? December 2020 edition!"></a>
+                      </figure>
+                      <div>
+                        <h5>
+                          <a href="https://www.chowhound.com/tag/christmas">
+                            <span>Christmas</span>
+                          </a>
+                        </h5>
+                        <h2><a href="https://www.chowhound.com/post/baking-days-december-2020-edition-1095335">What are you baking these days? December 2020 edition!</a></h2>
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+
+            <div id="leader_middle2" class="ad_lbm"></div>
+    
+
+
+
+
+
+    
+            
+
+<div class="freyja_box fr_hptitle">
+  <h3><span>Holiday Desserts</span></h3>
+</div>
+
+<div class="fr_flx top l3 bl3 mr15b fr_top_cont hp_mod fr_flxtop" data-mtype="topical_middle">
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Swap Basic for Baller with These Pistachio &amp; Raspberry Cookies" data-src="https://chowhound3.cbsistatic.com/resize/7c9b43724fb675e2d2bb0478508813434fc2fd55/2019/12/Let-it-Snow-Pistachio-Raspberry-Rings-photocredit-Frauke-Antholz.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/248314/pistachio-and-raspberry-cookies-recipe-let-it-snow-cookbook" aria-label="Swap Basic for Baller with These Pistachio &amp; Raspberry Cookies"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/248314/pistachio-and-raspberry-cookies-recipe-let-it-snow-cookbook">Swap Basic for Baller with These Pistachio &amp; Raspberry Cookies</a></h2>
+        <p>by <strong>Amy Schulman</strong> | Terribly tired by the holiday cookies you’ve been making year after year after year? Well, dust off...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Christmas Cheesecake: The Most Wonderful Dessert of the Year" data-src="https://chowhound3.cbsistatic.com/resize/db199c6bcb73772ebb4ab0bd13851677891635cc/2017/12/festive-holiday-cheesecake-recipes-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/193301/holiday-cheesecake-how-to-decorate-a-festive-christmas-dessert" aria-label="Christmas Cheesecake: The Most Wonderful Dessert of the Year"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/explainers">
+            <span>Explainers</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/193301/holiday-cheesecake-how-to-decorate-a-festive-christmas-dessert">Christmas Cheesecake: The Most Wonderful Dessert of the Year</a></h2>
+        <p>by <strong>Jen Wheeler</strong> | At Christmas time, there are cookies galore, but true dessert lovers still crave something more substantial...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Try This Secret Ingredient for Flawless Rice Krispie Treats Every Time" data-src="https://chowhound3.cbsistatic.com/resize/76689204e550a52930396bfb9c4c6777126c8cde/2019/12/IMG_1002-1.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/250205/rice-krispie-treats-recipe-secret-ingredient" aria-label="Try This Secret Ingredient for Flawless Rice Krispie Treats Every Time"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/250205/rice-krispie-treats-recipe-secret-ingredient">Try This Secret Ingredient for Flawless Rice Krispie Treats Every Time</a></h2>
+        <p>by <strong>Jessie Sheehan</strong> | If you want to know how to make Rice Krispie treats even better, there's an easy answer, and it's...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="9 Unique Ingredients to Add to Your Holiday Cookies" data-src="https://chowhound3.cbsistatic.com/resize/2feeb0161b9196118f2ea20262bb23bd30366f56/2017/11/pumpkin-spice-whoopie-pies-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/192059/unique-ingredients-to-add-to-your-holiday-cookies" aria-label="9 Unique Ingredients to Add to Your Holiday Cookies"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/latest">
+            <span>Food Trends</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/192059/unique-ingredients-to-add-to-your-holiday-cookies">9 Unique Ingredients to Add to Your Holiday Cookies</a></h2>
+        <p>by <strong>Kelsey Butler</strong> | Whether you want a reprieve from your go-to chocolate chip cookies, or just want something different...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="10 Gluten-Free Cookie Recipes for the Holidays" data-src="https://chowhound3.cbsistatic.com/resize/8d7bfc1202e52a6c025004c0b11022ce028a26a0/2018/12/gluten-free-holiay-cookie-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/158242/gluten-free-holiday-cookie-recipes" aria-label="10 Gluten-Free Cookie Recipes for the Holidays"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/158242/gluten-free-holiday-cookie-recipes">10 Gluten-Free Cookie Recipes for the Holidays</a></h2>
+        <p>by <strong>Vanessa Simmons</strong> | Christmas cookies, holiday cookies, winter treats—whatever you want to call them, they used to be...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Christmas Crack: The Easiest and Most Addictive Holiday Gift" data-src="https://chowhound3.cbsistatic.com/resize/1b9b636ec4d1b97cb84747a345a04ac2d137bc9c/2018/12/christmas-crack-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/192916/easy-christmas-crack-recipe" aria-label="Christmas Crack: The Easiest and Most Addictive Holiday Gift"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 00:22</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/how-to">
+            <span>How To</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/192916/easy-christmas-crack-recipe">Christmas Crack: The Easiest and Most Addictive Holiday Gift</a></h2>
+        <p>by <strong>Mijon Zulu</strong> | Want some crack? I mean, crackle? People who have had it love it and it takes less than an hour to...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="13 Perfect Christmas Desserts That Aren't Cookies" data-src="https://chowhound3.cbsistatic.com/resize/faa5541a6f260c6dc02732bb7895c20a3cc5b36f/2017/07/nutella-cheesecake-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/249755/best-christmas-desserts-besides-cookies" aria-label="13 Perfect Christmas Desserts That Aren't Cookies"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/249755/best-christmas-desserts-besides-cookies">13 Perfect Christmas Desserts That Aren't Cookies</a></h2>
+        <p>by <strong>Jen Wheeler</strong> | Christmas cookies are one of the reasons to love the season, but holiday desserts do not stop at the...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Christmas Candy Recipes with 6 Ingredients or Less" data-src="https://chowhound3.cbsistatic.com/resize/d71b24cda55c06c544e32ae2681966000e64e6ea/2018/12/homemade-christmas-candy-peppermint-marshmallows-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/193728/easy-christmas-candy-recipes" aria-label="Christmas Candy Recipes with 6 Ingredients or Less"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/193728/easy-christmas-candy-recipes">Christmas Candy Recipes with 6 Ingredients or Less</a></h2>
+        <p>by <strong>Rachel Johnson</strong> | The weeks leading up to the Christmas holiday are filled with plenty of parties and get-togethers...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="15 Best Chocolate Chip Cookie Recipes: You Be the Judge" data-src="https://chowhound3.cbsistatic.com/resize/180b38b5eab41eb22dd393714695d21ed830eefb/2014/12/best-chocolate-chip-cookie-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/159044/best-chocolate-chip-cookie-recipe-roundup" aria-label="15 Best Chocolate Chip Cookie Recipes: You Be the Judge"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/159044/best-chocolate-chip-cookie-recipe-roundup">15 Best Chocolate Chip Cookie Recipes: You Be the Judge</a></h2>
+        <p>by <strong>Caitlin M. O'Shaughnessy</strong> | Since August 4 is National Chocolate Chip Cookie Day, we rounded up the very best chocolate chip cookie...</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+            <div class="fr_spacr"></div>
+
+
+
+
+    
+            
+
+<div class="freyja_box fr_hptitle">
+  <h3><span>Holiday Entertaining</span></h3>
+</div>
+
+<div class="fr_flx top l3 bl3 mr15b fr_top_cont hp_mod fr_flxtop" data-mtype="topical_bottom">
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="12 Easy Holiday Starters to Impress Your Friends" data-src="https://chowhound3.cbsistatic.com/resize/a76fd20fd000378d7b0d241a0a83ad9f94ab1296/2019/09/goat-cheese-stuffed-peppadew-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/158969/easy-holiday-starters-to-impress-your-friends" aria-label="12 Easy Holiday Starters to Impress Your Friends"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 01:17</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/158969/easy-holiday-starters-to-impress-your-friends">12 Easy Holiday Starters to Impress Your Friends</a></h2>
+        <p>by <strong>Vanessa Simmons</strong> | Entertaining is not easy, and entertaining on a weeknight is even harder. Racing out of work to get...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="13 Tips to Build the Cheese Board of Your Dreams, According to a Cheese Connoisseur" data-src="https://chowhound3.cbsistatic.com/resize/54ecba6d4f4c02aa2d27ec497da78fd10304269e/2019/11/pp-57-58-They-Go-Together-board.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/244308/how-to-build-a-cheese-board" aria-label="13 Tips to Build the Cheese Board of Your Dreams, According to a Cheese Connoisseur"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/explainers">
+            <span>Explainers</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/244308/how-to-build-a-cheese-board">13 Tips to Build the Cheese Board of Your Dreams, According to a Cheese Connoisseur</a></h2>
+        <p>by <strong>Amy Schulman</strong> | If you’ve been scrolling through Instagram lately, you’re bound to have come across a soaring cheese...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Chill a Bottle of Wine in 20 Minutes Flat" data-src="https://chowhound3.cbsistatic.com/resize/169100ed02fea8bcdefb8861c4c0e989e074c147/2019/11/White-Wine-Bottle-Glasses-1.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/247668/fastest-way-to-chill-a-bottle-of-wine" aria-label="How to Chill a Bottle of Wine in 20 Minutes Flat"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/how-to">
+            <span>How To</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/247668/fastest-way-to-chill-a-bottle-of-wine">How to Chill a Bottle of Wine in 20 Minutes Flat</a></h2>
+        <p>by <strong>David Watsky</strong> | If you’re wondering about the fastest way to chill a bottle of white wine, try this handy foolproof...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Decorate Your Dining Table with Wreaths You Can Eat" data-src="https://chowhound3.cbsistatic.com/resize/b452f13a80d2e3ec58dad737c928c3f53b0ebdb9/2017/12/edible-christmas-wreath-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/194322/how-to-make-edible-wreaths-for-christmas" aria-label="Decorate Your Dining Table with Wreaths You Can Eat"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/how-to">
+            <span>How To</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/194322/how-to-make-edible-wreaths-for-christmas">Decorate Your Dining Table with Wreaths You Can Eat</a></h2>
+        <p>by <strong>Danielle Valente</strong> | Instead of putting your annual Christmas wreath on the front door, why not try relocating it to the...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Easy Holiday Food Hacks to Impress Your Guests" data-src="https://chowhound3.cbsistatic.com/resize/781ce970a5a8a6ca6b867f49b8d894430304123b/2012/01/pickled-quail-egg-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/179859/easy-holiday-food-hacks-to-impress-your-guests" aria-label="Easy Holiday Food Hacks to Impress Your Guests"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 02:42</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/food-and-kitchen-hacks">
+            <span>Food and Kitchen Hacks</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/179859/easy-holiday-food-hacks-to-impress-your-guests">Easy Holiday Food Hacks to Impress Your Guests</a></h2>
+        <p>by <strong>Amy Sowder and Jen Wheeler</strong> | Comforting, traditional holiday food is nice and all, but when you have guests during the holidays...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Homemade Digestifs Are Impressive &amp; Delicious" data-src="https://chowhound3.cbsistatic.com/resize/f8d1aecbd0fd3ade9c8eb9061a6069ddafae6b36/2017/01/homemade-disgestif-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/54784/how-to-make-limoncello-and-other-digestif-liqueurs" aria-label="Homemade Digestifs Are Impressive &amp; Delicious"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 03:42</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/drink">
+            <span>Drink</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/54784/how-to-make-limoncello-and-other-digestif-liqueurs">Homemade Digestifs Are Impressive &amp; Delicious</a></h2>
+        <p>by <strong>Chowhound Editors</strong> | During the winter, you could use another kind of medicinal vitamin D: a digestif. Bright and sometimes...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Celebration-Worthy Dishes &amp; Linens for a Festive Table" data-src="https://chowhound3.cbsistatic.com/resize/0be5d41fba96c322a9e966116be3e3f95cd69127/2016/12/gold-accent-serving-bowl-food52-670x670.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/179473/best-dishes-and-linens-for-holidays-and-special-occasions" aria-label="Celebration-Worthy Dishes &amp; Linens for a Festive Table"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/entertaining">
+            <span>Entertaining</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/179473/best-dishes-and-linens-for-holidays-and-special-occasions">Celebration-Worthy Dishes &amp; Linens for a Festive Table</a></h2>
+        <p>by <strong>Amy Sowder and Jen Wheeler</strong> | We've curated some of our favorite fine dishes and table linens—from classic and elegant to modern...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="The 11 Best Flower Delivery Services to Use This Holiday Season" data-src="https://chowhound3.cbsistatic.com/resize/dd9904d8cb61a35f7069bafb1da68277383d105e/2019/11/best-christmas-flower-delivery-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/246693/best-flower-delivery-services-for-christmas-holidays" aria-label="The 11 Best Flower Delivery Services to Use This Holiday Season"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/shop">
+            <span>Shop</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/246693/best-flower-delivery-services-for-christmas-holidays">The 11 Best Flower Delivery Services to Use This Holiday Season</a></h2>
+        <p>by <strong>Camryn Rabideau</strong> | Beautiful, vibrant flower arrangements can help make any holiday that much more special. Whether you...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="How to Pull Off a Perfect Holiday Brunch Potluck" data-src="https://chowhound3.cbsistatic.com/resize/5b718a2ab18eb0bed7b7d166e835be0cee0e0376/2019/12/holiday-brunch-potluck-recipes-tips-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/179796/holiday-brunch-potluck-tips-and-recipes" aria-label="How to Pull Off a Perfect Holiday Brunch Potluck"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 00:30</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/entertaining">
+            <span>Entertaining</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/179796/holiday-brunch-potluck-tips-and-recipes">How to Pull Off a Perfect Holiday Brunch Potluck</a></h2>
+        <p>by <strong>Amy Sowder</strong> | There are lots of festive ways to pull off a holiday party, but a brunch can be especially nice since...</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+                <div id="leader_middle3" class="ad_lbm"></div>
+
+
+    
+            
+
+<div class="freyja_box fr_hptitle">
+  <h3><span>Cold Weather Favorites</span></h3>
+</div>
+
+<div class="fr_flx top l3 bl3 mr15b fr_top_cont hp_mod fr_flxtop" data-mtype="topical_extra">
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="This Slow Cooker Bacon, Potato &amp; Lentil Soup Is FODMAP-Approved" data-src="https://chowhound3.cbsistatic.com/resize/782b592c900bc6c94931fdcceeecbbd60b02e92b/2020/10/fd893da9-sloww.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/276134/bacon-potato-lentil-soup-recipe-low-fodmap-ibs-solution-plan-cookbook" aria-label="This Slow Cooker Bacon, Potato &amp; Lentil Soup Is FODMAP-Approved"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/276134/bacon-potato-lentil-soup-recipe-low-fodmap-ibs-solution-plan-cookbook">This Slow Cooker Bacon, Potato &amp; Lentil Soup Is FODMAP-Approved</a></h2>
+        <p>by <strong>Amy Schulman</strong> | Going on a low-FODMAP diet certainly isn’t the most glamorous thing, but the regimen has demonstrated...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Chefs Share Their Favorite Cold Weather Comfort Foods" data-src="https://chowhound3.cbsistatic.com/resize/c4339216d1b809763e5d17a8bd4fc4153fa048ba/2018/03/ginger-chicken-jook-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/251230/chefs-share-their-favorite-cold-weather-comfort-foods" aria-label="Chefs Share Their Favorite Cold Weather Comfort Foods"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/251230/chefs-share-their-favorite-cold-weather-comfort-foods">Chefs Share Their Favorite Cold Weather Comfort Foods</a></h2>
+        <p>by <strong>Caroline Choe</strong> | We asked chefs to share their favorite comfort foods for keeping warm and cozy; their answers will...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="9 Short Rib Recipes to Feast on All Fall &amp; Winter" data-src="https://chowhound3.cbsistatic.com/resize/a608e91472459ff78fe36c4a613ac08ac32ec9fc/2020/10/d4690478-cola-short-rib-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/276957/best-short-rib-recipe-ideas" aria-label="9 Short Rib Recipes to Feast on All Fall &amp; Winter"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/276957/best-short-rib-recipe-ideas">9 Short Rib Recipes to Feast on All Fall &amp; Winter</a></h2>
+        <p>by <strong>David Klein</strong> | Any way you cut it, short ribs satisfy with a juicy layer of fat that adds gobs of delicious beefy...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Try These Secret Ingredients for Award-Winning Chili" data-src="https://chowhound3.cbsistatic.com/resize/45a4ff6b8b9edc15350a8d582b54c513c90563aa/2017/10/bacon-black-bean-chili-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/207444/best-secret-ingredient-for-award-winning-chili" aria-label="Try These Secret Ingredients for Award-Winning Chili"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 01:25</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/guides">
+            <span>Guides</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/207444/best-secret-ingredient-for-award-winning-chili">Try These Secret Ingredients for Award-Winning Chili</a></h2>
+        <p>by <strong>Jen Wheeler</strong> | What are the best secret ingredients for chili? Depends on who you ask, but there's a whole world...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="17 Soup Recipes to Keep You Warm and Cozy" data-src="https://chowhound3.cbsistatic.com/resize/544df4cf7eb5f436acefc96f080efe32798e6c17/2015/09/Mexican-Turkey-Meatball-Soup.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/160041/best-soup-recipes-for-cold-weather" aria-label="17 Soup Recipes to Keep You Warm and Cozy"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/160041/best-soup-recipes-for-cold-weather">17 Soup Recipes to Keep You Warm and Cozy</a></h2>
+        <p>by <strong>Dan McKay</strong> | Winter can be a depressing time for some, especially if we aren’t spending it at the ski resort. Bitter...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Add This Easy Pantry Pasta Into Your Rolodex of Quarantine Dinners" data-src="https://chowhound3.cbsistatic.com/resize/755315bbb6f189e15412c872e33bd4ab9197a6f5/2020/09/Posh-Pasta-SIMPLE-BUT-ELEGANT-STORECUPBOARD-PASTA-photocredit-Faith-Mason.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/274489/pasta-puttanesca-recipe-posh-pasta-cookbook" aria-label="Add This Easy Pantry Pasta Into Your Rolodex of Quarantine Dinners"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/274489/pasta-puttanesca-recipe-posh-pasta-cookbook">Add This Easy Pantry Pasta Into Your Rolodex of Quarantine Dinners</a></h2>
+        <p>by <strong>Amy Schulman</strong> | A bowl of pasta is what we often reach for when the fridge is empty. At least one box of dried pasta...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="Spaghetti Carbonara Is the Weeknight Pasta You'll Make On Repeat" data-src="https://chowhound3.cbsistatic.com/resize/83f7f5172bc6aefb0b1564581ba0b550505ca943/2019/11/carb.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/245422/spaghetti-carbonara-recipe-weeknight-dinner" aria-label="Spaghetti Carbonara Is the Weeknight Pasta You'll Make On Repeat"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/245422/spaghetti-carbonara-recipe-weeknight-dinner">Spaghetti Carbonara Is the Weeknight Pasta You'll Make On Repeat</a></h2>
+        <p>by <strong>Anna Gass</strong> | This recipe for spaghetti carbonara is basically breakfast for dinner and comes together in under...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="15 Pasta Recipes to Warm You Up in Any Weather" data-src="https://chowhound3.cbsistatic.com/resize/62d3243deeec4d6d18f3f1e24f5976aceffe2247/2017/10/tomato-soup-pasta-sauce-recipe-chowhound.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/160359/winter-pasta-recipes" aria-label="15 Pasta Recipes to Warm You Up in Any Weather"></a>
+            <span class="fr_hp_slide_dur fr_dur_ontop"> 01:04</span>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/recipe-round-ups">
+            <span>Recipe Round-Ups</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/160359/winter-pasta-recipes">15 Pasta Recipes to Warm You Up in Any Weather</a></h2>
+        <p>by <strong>Miki Kawasaki and Pamela Vachon</strong> | There are few foods that can adapt and change with the seasons quite like pasta. It opens its embrace...</p>
+      </div>
+    </div>
+
+    <div class="fr_item b4 sqa Article" data-ctype="Article">
+      <figure class="img">
+
+            <img class="lazy fr_objfitimg img_in" src="" alt="This Bucatini with Bacon Cream Sauce Is Sure to Impress Weeknight Pasta Fans" data-src="https://chowhound3.cbsistatic.com/resize/13542b0d0a0be6425f6a47f725cf76661ac96630/2019/12/IMG_3851.jpg?fit=bounds&amp;height=400&amp;width=400" />
+        
+        <a href="https://www.chowhound.com/food-news/248855/weeknight-pasta-bacon-cream-sauce-recipe" aria-label="This Bucatini with Bacon Cream Sauce Is Sure to Impress Weeknight Pasta Fans"></a>
+      </figure>
+      <div>
+
+        <!--TEMP-->
+        <h5>
+          <a href="https://www.chowhound.com/food-news/">
+            <span>Food News</span>
+          </a>
+        </h5>
+        <!--TEMP-->
+
+        <h2><a href="https://www.chowhound.com/food-news/248855/weeknight-pasta-bacon-cream-sauce-recipe">This Bucatini with Bacon Cream Sauce Is Sure to Impress Weeknight Pasta Fans</a></h2>
+        <p>by <strong>Alexis deBoschnek</strong> | Creamy, savory, and full of umami—thanks to lots of Parmigiano-Reggiano, bacon, and garlic—this simple...</p>
+      </div>
+    </div>
+</div>
+
+
+
+
+            <div class="fr_spacr"></div>
+
+
+  </section>
+
+
+
+
+</div>
+
+
+
+
+
+
+<section id="freyja_footer">
+  <div class="freyja_container rela">
+    <div class="freyja_footwrap gu12">
+      <div class="fr_foot_h">
+        <a href="https://www.chowhound.com/" class="freyja_logo" title="chowhound.com"></a>
+        <div class="freyja_mob_follow in_foot">
+
+          <ul>
+
+            <li><a rel="noopener" class="freyja_fb facebook_follow" href="https://www.facebook.com/chowhound" title="Facebook" target="_blank" data-social-location="footer"></a></li>
+            <li><a rel="noopener" class="freyja_tw twitter_follow" href="https://twitter.com/Chow" title="Twitter" target="_blank" data-social-location="footer"></a></li>
+            <li><a rel="noopener" class="freyja_in om_instagram_follow" data-social-location="footer" title="Instagram" href="https://instagram.com/chowhound/" target="_blank"></a></li>
+            <li><a rel="noopener" class="freyja_yt om_youtube_follow" data-social-location="footer" title="Youtube" href="https://www.youtube.com/user/CHOW" target="_blank"></a></li>
+            <li><a rel="noopener" class="freyja_pi share_pinterest" href="https://www.pinterest.com/chowhound/" title="Pinterest" target="_blank" data-social-location="footer"></a></li>
+            <li><a class="freyja_nl" href="https://www.chowhound.com/newsletter" title="Chowhound Newsletter" target="_blank" data-social-location="footer">Weekly Newsletter</a></li>
+
+          </ul>
+        </div>
+      </div>
+        <div class="fr_foot_f freyja_notmobile">
+          <ul class="fr_fcol">
+            <li><h4>Chowhound</h4></li>
+            <li><a href="https://www.chowhound.com/about">About Chowhound</a></li>
+            <li><a href="https://cbsi.secure.force.com/CBSi/knowledgehome2?referer=chowhound.com&amp;categories=CBS_Interactive:Chowhound">FAQ / Help Center</a></li>
+            <li><a href="https://www.chowhound.com/guidelines">Posting Guidelines</a></li>
+            <li><a href="https://cbsi.secure.force.com/CBSi/sitefeedback2?template=template_chowhound&amp;referer=chowhound.com&amp;cfs=SFS_TECH">Feedback</a></li>
+            <li><a href="https://www.chowhound.com/editorial-sitemap">Editorial Sitemap</a></li>
+          </ul>
+          <ul class="fr_fcol">
+            <li><h4>Policies</h4></li>
+            <li><a rel="noopener" href="https://redventures.com/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+            <li><a rel="noopener" href="https://redventures.com/CMG-terms-of-use.html" target="_blank">Terms of Use</a></li>
+            <li><a rel="noopener" href="https://privacyportal.onetrust.com/webform/79ba7c84-ebc2-4740-8d11-bf1cc4501e59/ae88e03f-2b16-4276-9980-27124ba4b2c1" target="_blank">Do Not Sell My Information</a></li>
+            <li><a class="ot-sdk-show-settings"> Cookie Settings</a></li>
+            <li><a rel="noopener" href="https://careers.redventures.com/"> Careers</a></li>
+          </ul>
+          <ul class="fr_fcol">
+            <li><h4><a href="https://www.chowhound.com/community">Community</a></h4></li>
+            <li><a href="https://www.chowhound.com/home-cooking">Home Cooking</a></li>
+            <li><a href="https://www.chowhound.com/restaurants">Restaurants &amp; Bars</a></li>
+            <li><a href="https://www.chowhound.com/cookware">Cookware</a></li>
+            <li><a href="https://www.chowhound.com/tag/whats-for-dinner">What's for Dinner</a></li>
+            <li><a href="https://www.chowhound.com/tag/cookbook-of-the-month">Cookbook of the Month</a></li>
+          </ul>
+          <ul class="fr_fcol">
+            <li><h4><a href="https://www.chowhound.com/food-news">Editorial</a></h4></li>
+            <li><a href="https://www.chowhound.com/food-news/how-to">How To</a></li>
+            <li><a href="https://www.chowhound.com/food-news/guides">Guides</a></li>
+            <li><a href="https://www.chowhound.com/food-news/explainers">Explainers</a></li>
+            <li><a href="https://www.chowhound.com/food-news/entertaining">Entertaining</a></li>
+            <li><a href="https://www.chowhound.com/food-news/latest">Food Trends</a></li>
+          </ul>
+          <ul class="fr_fcol">
+            <li><h4>Content</h4></li>
+            <li><a href="https://www.chowhound.com/food-news">Articles</a></li>
+            <li><a href="https://www.chowhound.com/videos">Videos</a></li>
+            <li><a href="https://www.chowhound.com/recipes">Recipes</a></li>
+            <li><a href="https://www.chowhound.com/features">Features</a></li>
+            <li><a href="https://www.chowhound.com/pictures">Photo Galleries</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="freyja_ff">
+    <div class="freyja_container rela">
+      <div class="freyja_footwrap fr_copy_info gu12">
+        © 2020 CHOWHOUND, A RED VENTURES COMPANY. ALL RIGHTS RESERVED. | <a rel="noopener" href="http://www.tvguide.com/" target="_blank">A TV Guide site</a> | <a href="https://www.chowhound.com">CHOW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    is_prod = true;
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+
+    //pageview counter code
+    googletag.CBSigetCookieValue = function(ckNm) {
+        var value = null;
+        var allCookies = document.cookie;
+        var pos = allCookies.indexOf(ckNm);
+        if (pos != -1) {
+            var start = pos + ckNm.length + 1;
+            var end = allCookies.indexOf(";", start);
+            if (end == -1) end = allCookies.length;
+            value = allCookies.substring(start, end);
+         }
+         return value;
+    };
+
+    // determine if it's DST in the Eastern Timezone on the given date
+    googletag.CBSiisEDT = function(dt) {
+        // EDT starts second Sunday of March
+        var edtStart = new Date(dt.getFullYear(), 2, 1);
+        edtStart = Date.UTC(edtStart.getUTCFullYear(), 2, 14-(edtStart.getUTCDay()+13)%7, 5);
+        // EDT ends first Sunday of November
+        var edtEnd = new Date(dt.getFullYear(), 10, 1);
+        edtEnd = Date.UTC(edtEnd.getUTCFullYear(), 10, 7-(edtEnd.getUTCDay()+6)%7, 4);
+        // see if current date is within the EDT range
+        return dt.getTime() &gt;= edtStart &amp;&amp; dt.getTime() &lt; edtEnd;
+    };
+
+    googletag.CBSiaddPageView = function () {
+        var pv=1;
+        var cookiename="pv";
+        //If there's a cookie, get the current value and add one to it.
+        if (document.cookie.indexOf(cookiename)!=-1) {
+            pv=parseInt(googletag.CBSigetCookieValue(cookiename));
+            if(isNaN(pv))
+            {  pv=1;
+            } else {
+                pv+=1;
+            }
+        }
+        // set expiration to midnight using EDT or EST offset (4|5)
+        var dt = new Date();
+        var exp = Date.UTC(dt.getUTCFullYear(), dt.getUTCMonth(), dt.getUTCDate(), googletag.CBSiisEDT(dt) ? 4 : 5);
+        // adjust 1 day if set to midnight of previous day
+        exp += exp &gt; dt.getTime() ? 0 : 24*60*60*1000;
+        exp = new Date(exp).toUTCString();
+        // get L2 domain
+        var domainArr = document.domain.split('.').reverse();
+        var l2domain=document.domain;
+        if(domainArr[1]!=null)
+        {   l2domain = domainArr[1] + "." + domainArr[0];
+        }
+
+        // save the value in the cookie
+        document.cookie = cookiename + "=" + pv + ";path=/;domain=" + l2domain + ";expires=" + exp;
+        //update the value for the next ad call
+        googletag.pubads().setTargeting("pv",""+pv);
+    };
+    //end pageview counter
+
+</script>
+
+
+
+<script>
+
+var mpu_top, 
+    mpu_plus_top, 
+    mpu_bottom, 
+    leader_plus_top, 
+    leader_plus_top_b, 
+    leader_top, 
+    leader_bottom, 
+    mantle_skin, 
+    power_bar_incontent, 
+    omni_intromercial, 
+    intromercial, 
+    mobile_banner_top, 
+    mobile_banner_middle, 
+    mobile_flex_0, 
+    mobile_flex_1, 
+    mobile_mpu_top, 
+    mobile_mpu_bottom, 
+    mobile_flex_top, 
+    mobile_flex_bottom, 
+    leader_middle, 
+    leader_middle2, 
+    leader_middle3, 
+    pbr_leader_plus_top, 
+    pbr_leader_plus_middle, 
+    pbr_native_top, 
+    flex_nav, 
+    mobile_pbr_native_top, 
+    pbr_flex_top, 
+    skybox_nav_plus;
+
+
+xfp_id = '8264/aw-chowhound/home';
+
+function initAds(){
+
+
+            googletag.cmd.push(function() {
+
+                var env = is_prod ? "production" : "staging"
+
+                  intromercial = googletag.defineOutOfPageSlot("8264/aw-chowhound/home", "intromercial").addService(googletag.pubads()).setCollapseEmptyDiv(true,true);
+
+
+
+                   skybox_nav = googletag.defineSlot("8264/aw-chowhound/home", [
+                       [5,5],
+                       [7,7]
+                   ], "skybox-nav").addService(googletag.pubads()).setTargeting("pos", "nav").setCollapseEmptyDiv(true,true);
+
+
+
+
+
+
+
+                    sharethrough_key = "f54b3c55";
+                    sharethrough=googletag.defineSlot("8264/aw-chowhound/home", [[11,11],["fluid"]], "strnative_top").addService(googletag.pubads()).setTargeting("pos", "top").setTargeting("strnativekey", "f54b3c55").setCollapseEmptyDiv(true);
+
+
+                    pbr_leader_plus_top=googletag.defineSlot("8264/aw-chowhound/home", [[321,31],[728,90],[970,66],[728,91],[970,250],[7,7]], "pbr_leader_plus_top").addService(googletag.pubads()).setTargeting("pos", "top");
+
+
+
+
+
+
+
+                  leader_middle=googletag.defineSlot("8264/aw-chowhound/home", [[728,90],[970,66],[728,92],[7,7]], "leader_middle").addService(googletag.pubads()).setTargeting("pos", "middle");
+
+                  leader_middle2=googletag.defineSlot("8264/aw-chowhound/home", [[728,90],[970,66],[728,92],[7,7]], "leader_middle2").addService(googletag.pubads()).setTargeting("pos", "middle2");
+
+                  leader_middle3=googletag.defineSlot("8264/aw-chowhound/home", [[728,90],[970,66],[728,92]], "leader_middle3").addService(googletag.pubads()).setTargeting("pos", "bottom");
+
+
+
+                googletag.pubads().setTargeting("ptype", "front_door");
+
+
+                googletag.pubads().setTargeting("loggedin", "0");
+                googletag.pubads().setTargeting("env", env);
+                googletag.pubads().setTargeting("vguid", view_tracking_guid); 
+
+                googletag.CBSiaddPageView(); //pv counter
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().disableInitialLoad();
+
+
+                googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+
+                  //Articles Skybox/LB Test
+                  if (event.slot == skybox_nav_plus) { //skybox slot
+
+                    if ( event.size[0] == (728 || 970))  {
+                        console.log(event.size[0]);
+                        $('.fr_locked_lb').addClass('sticky');
+                        $('.fr_eb_close_locked_lb').show();
+                    }
+                    
+                  }
+                  //End Articles Skybox/LB Test
+
+                }); //end SlotRenderEnded
+
+
+
+
+            });
+
+            window.cbsoptanon.onAdsReady(function(_cbsoptanon, adOpts) {
+                console.log('Enabling services and refreshing ads');
+                console.log('Ads loaded: npa flag: ', adOpts['npaFlag']);
+                googletag.enableServices();
+                googletag.cmd.push(function() {
+                  googletag.pubads().refresh();
+                });
+            });
+
+
+
+
+var adsevent = new Event('adinits');
+// Dispatch the event.
+document.dispatchEvent(adsevent);
+
+
+}
+
+
+if (window.addEventListener) {
+    window.addEventListener("load", initAds, false);
+} else if (window.attachEvent) { 
+    window.attachEvent("onload", initAds); }
+else { window.onload = initAds; }
+
+</script>
+
+<script type="text/plain" class="optanon-category-3">
+  $script.ready('freyja_main', function() {
+    $script('//tags.tiqcdn.com/utag/cbsi/chowsite/prod/utag.js', 'utag');
+  });
+</script>
+
+<script>
+  var has_video = 0;
+  var scripts_loading_seq = 0;
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  $script('//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'jquery', function() {
+
+      $script('https://chowhound3.cbsistatic.com/s/freyja/application-9b02155c892c94f4657e99ddf25c4a67.js', 'freyja_main', function() {
+
+          $script('https://chowhound3.cbsistatic.com/s/freyja/homepage-1b645e9033c85534d37fdad9a61fe01b.js', 'homepage');
+    if(typeof uli !== 'undefined' &amp;&amp; uli == 1 &amp;&amp; typeof u_followed_series === 'undefined'){
+    }
+
+
+            $script.ready('utag', function(){
+              //check for video
+              var iframes = document.getElementsByTagName('iframe');
+              var key = 'chowhound.com/videos/';
+
+              for (var i = 0; i != iframes.length; ++i) {
+                 var match = iframes[i].src.search(key);
+                 if(match != -1) {
+                    has_video = 1;
+                 }
+              }
+
+              // if ad blocker detected, we don't autoplay the video so we don't want to delay the scripts
+              var autoplayStopped = !is_tablet &amp;&amp; typeof uli !== 'undefined' &amp;&amp; uli == 0 &amp;&amp; typeof window.I11C !== 'undefined' &amp;&amp; typeof window.I11C.Morph !== 'undefined' &amp;&amp; window.I11C.Morph == 1;
+              if($('#uvpjsContainer').length &gt; 0 &amp;&amp; !autoplayStopped){
+                has_video = 1;
+              }
+
+              if( has_video === 1 &amp;&amp; ismobile === 0 ) {
+                //event listener delay scripts loading sequence if a video is there
+                var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+                // Listen to message from video iframe
+                eventer(messageEvent,function(e) {
+                    var key = e.message ? "message" : "data";
+                    var data = e[key];
+                    if (data === "CANvideoStart") {
+                      if( scripts_loading_seq === 0 ) {
+                        $(document).trigger("ScriptsAfterVideo");
+                      }
+                    }
+                },false);
+
+                setTimeout(function(){
+                  if( scripts_loading_seq === 0 ) {
+                    $(document).trigger("ScriptsAfterVideo");
+                  }
+                }, 12000)
+
+              } else {
+                setTimeout(function(){
+                  $(document).trigger("ScriptsAfterVideo");
+                }, 15)
+              }
+
+          $(document).on("ScriptsAfterVideo", function(){
+            scripts_loading_seq = 1;
+          });
+        });
+
+
+
+      });
+
+  });
+
+      
+
+</script>
+
+<script>
+var topHpCar;
+$script.ready('freyja_main', function(){
+var chowHome = {
+  initTopCarousel: function(){
+    nbi = ismobile === 1 ? 3 : 4;
+    nbib = ismobile === 1 ? 1 : 4;
+    var owl = $(".fr_fw_car");
+
+
+    owl.on('drag.owl.carousel', function( event ){
+      event.stopImmediatePropagation();
+    })
+
+    owl.on('changed.owl.carousel', function( event ){
+      $(window).trigger('scroll')
+    })
+
+
+    $('.fr_tag_carousel_nav_home').hide();
+    owl.on('initialized.owl.carousel', function( event ){
+      //console.log(event.item.count)
+      if( event.item.count &gt; 4 ) {
+        $('.fr_tag_carousel_nav_home').show();
+      }
+    })
+
+    topHpCar = owl.owlCarousel({
+      loop: true,
+      nav: false,
+      items: nbi,
+      autoplay: false,
+      slideBy: 1,
+      dots: false,
+      autoplayHoverPause: false,
+      lazyLoad: false,
+      margin: 0,
+      navText: ['',''],
+      callbacks: true,
+      touchDrag: true,
+      dragBeforeAnimFinish: false
+    });
+
+    topHpCar.trigger('refresh.owl.carousel');
+
+  },
+  moveNav: function(){
+    // nav = $(".fr_fw_car .owl-nav").detach();
+    // $('.fr_fw_car_w').append(nav);
+  },
+  init: function(){
+    if(!is_mobile){
+      chowHome.initTopCarousel();
+    }
+    chowHome.pagEvents();
+  },
+  pagEvents: function(){
+
+    // Custom Navigation Events
+    $(document).on('click',".next_home", function(e){
+      e.preventDefault();
+      event.stopImmediatePropagation();
+      topHpCar.trigger('prev.owl.carousel');
+    })
+    $(document).on('click',".prev_home", function(e){
+      e.preventDefault();
+      event.stopImmediatePropagation();
+      topHpCar.trigger('next.owl.carousel');
+    })
+    
+    $(document).on('click', '.fr_fw_car_tabs a:not(.fr_rdbt)', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.fr_fw_car_tabs a').removeClass('select');
+      $(this).addClass('select');
+      //get what
+      gettab = $(this).data('list');
+      //kill current carousel
+      
+      $(".fr_fw_car_w").removeClass('transit').addClass('transit');
+
+      //fill container
+      setTimeout(function(){ 
+        if(!is_mobile){
+          topHpCar.owlCarousel('destroy');
+        }
+        $(".fr_fw_car").html(topHpCarData[gettab]); 
+        $(".fr_fw_car_w").removeClass('transit');
+        if(!is_mobile){
+          chowHome.initTopCarousel();
+        }
+      }, 500);
+      
+      //init carousel
+      
+    })
+  }
+}
+
+  chowHome.init();
+
+});
+
+</script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                //if (event.size[0] === 11 &amp;&amp; event.size[1] === 11) {
+
+                    //console.log(event)
+                    //collapsible divs not working on native.. resorting to content size
+                    setTimeout(function () {
+                        //if ($.trim($('#strnative_top &gt; div').html()).length &lt; 500) {
+                            //remove hidden native ad... fallback time
+                            //$("#strnative_top:hidden").remove();
+                            $(document).trigger('resize');
+                        //}
+                    }, 3000);
+
+               // }
+            });
+        });
+    </script>
+
+
+
+<script>
+  $script.ready('freyja_main', function(){
+    window.cbsoptanon.onIframesReady(function(_cbsoptanon) {    
+      console.log('Loading iframes');
+      _cbsoptanon.tags.load('IFRAME');
+    });
+  });
+</script>
+
+<script type="text/plain" class="optanon-category-2">
+    window.addEventListener('load',function(){
+      $script('https://static.chartbeat.com/js/chartbeat_mab.js', 'chartbeat_mab',  function(){
+        /** CHARTBEAT CONFIGURATION START **/
+        var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+        _sf_async_config.sections = 'front_door';
+        _sf_async_config.authors = 'Chowhound Staff';
+        var _cbq = window._cbq = (window._cbq || []);
+        var _cbv = window._cbv || (window._cbv = []);
+        _cbq.push(['_acct', 'anon']);
+        /** CHARTBEAT CONFIGURATION END **/
+        $script('https://static.chartbeat.com/js/chartbeat_video.js', 'chartbeat');
+      });
+    },false)
+</script>
+
+
+<script type="text/javascript">
+    document.domain = 'chowhound.com';
+    is_mobile = false;
+    is_ipad = false;
+    is_tablet = false;
+    is_prod = true;
+    var chow_js_files = chow_js_files || [];
+    chowSecureURL = 'https://www.chowhound.com';
+    chowThumbnailerUrl = 'https://chowhound3.cbsistatic.com/resize'
+    fr_email_share_form = "&lt;h4 class=\"fr_email_title\"&gt;Share with Your Friends&lt;\/h4&gt;\n&lt;div id=\"chow_email_modal_form_msg\" style=\"display:none;width:450px;padding:50px 0;font-size:18px\"&gt;&lt;\/div&gt;\n&lt;form class=\"mt15 reset_on_close fr_email_sharer\" data-submit-btn-id=\"chow_email_modal_submit\" id=\"chow_email_modal_form\" style=\"width:450px\" action=\"/share_tools/email\" accept-charset=\"UTF-8\" method=\"post\"&gt;&lt;input name=\"utf8\" type=\"hidden\" value=\"&amp;#x2713;\" /&gt;&lt;input type=\"hidden\" name=\"authenticity_token\" value=\"JFq4pdmZTguPCNsB2cnJvUkUQEvELSgK3oDbotIMT/94GX1C+s4+kXcCGxiHLsty4Jf5bX5lWJFRr8DNET3T1g==\" /&gt;\n  &lt;input type=\"hidden\" name=\"email_image\" value=\"SHARE_IMG\"&gt;&lt;input type=\"hidden\" name=\"email_title\" value=\"SHARE_TITLE\"&gt;&lt;input type=\"hidden\" name=\"email_link\" value=\"SHARE_URL\"&gt;&lt;input type=\"hidden\" name=\"email_description\" value=\"SHARE_DESCRIPTION\"&gt;&lt;input type=\"hidden\" name=\"content_type\" value=\"Recipe\"&gt;\n\n  &lt;p&gt;To: Separate multiple addresses with commas (limit 5)&lt;\/p&gt;\n  &lt;input id=\"email_recipients\" name=\"email_recipients\" class=\"text_input required validate_email validate_recipient_limit has_default_text default_text\" placeholder=\"Recipient(s) email address(es)\" style=\"outline:none\" data-parsley-myvalidator type=\"text\" &gt;\n\n  &lt;p&gt;From:&lt;\/p&gt;\n  &lt;input id=\"email_sender_name\" name=\"email_sender_name\" class=\"text_input required validate_email has_default_text default_text\" placeholder=\"Your email address\" type=\"text\" data-parsley-type=\"email\" style=\"outline:none\"&gt;\n\n  &lt;p&gt;Message:&lt;\/p&gt;\n  &lt;textarea id=\"email_message\" name=\"email_message\" class=\"text_input\" rows=\"4\" style=\"outline:none\" placeholder=\"Your message\" data-parsley-required data-parsley-minlength=\"2\" data-parsley-maxlength=\"500\" data-parsley-minlength-message=\"Add a message between 2 and 500 characters.\" data-parsley-validation-threshold=\"10\"&gt;&lt;\/textarea&gt;\n\n  &lt;div class=\"fr_sharepreview\"&gt;&lt;span class=\"pr_img\" style=\"background-image:url(SHARE_IMG)\"&gt;&lt;\/span&gt;\n    &lt;h5&gt;&lt;span class=\"tit\"&gt;Share:&lt;\/span&gt;SHARE_TITLE&lt;\/h5&gt;&lt;span class=\"freyja_logo fr_smver\"&gt;&lt;\/span&gt;&lt;\/div&gt;\n\n  &lt;div style=\"text-align:center\"&gt;\n    &lt;div style=\"display:inline-block\"&gt;\n      &lt;div id=\"g-recaptcha\"&gt;&lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n  &lt;a type=\"submit\" href=\"#\" onclick=\"return false\" class=\"clear freyja_bigbt act_emailshare\" style=\"display:block;margin:18px auto 0 auto\"&gt;Send&lt;\/a&gt;\n&lt;\/form&gt;"
+    var fbApiKey = '0278fc1adf6dc1daf1156f306ce2c5cc';
+    var unconfirmed_user = false;
+    var unconfirmed_user_has_already_replied = false;
+          var log_in_url = "https://www.chowhound.com/users/sign_in";
+      var sign_up_url = "https://www.chowhound.com/users/sign_up";
+    lightweight_action_target = '';
+
+    
+
+    
+
+    
+                    var css = 'content { display: none; }',
+            head = document.head || document.getElementsByTagName('head')[0],
+            style = document.createElement('style');
+            style.type = 'text/css';
+        if (style.styleSheet){
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        head.appendChild(style);
+</script>
+
+
+
+
+
+
+<button id="ot-sdk-btn" class="ot-sdk-show-settings" style="display: none;">Manage Cookies</button></body></html>

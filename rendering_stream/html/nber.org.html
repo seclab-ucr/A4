@@ -1,0 +1,2208 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head>
+    <script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.googletagmanager.com/gtm.js?id=GTM-MVRPF7C" async=""></script><script src="/modules/custom/nber_user_auth/js/cookies.js?qkpvqw"></script>
+<meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6a0e8f4d021e4f91ed2",applicationID:"693377535"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<link rel="shortlink" href="https://www.nber.org/" />
+<meta property="og:site_name" content="NBER" />
+<link rel="canonical" href="https://www.nber.org/" />
+<meta name="description" content="Founded in 1920, the NBER is a private, non-profit, non-partisan organization dedicated to conducting economic research and to disseminating research findings among academics, public policy makers, and business professionals." />
+<meta property="og:url" content="https://www.nber.org/home" />
+<meta property="og:title" content="National Bureau of Economic Research" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/custom/nber/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.nber.org/home" />
+<script src="/sites/default/files/google_tag/primary/google_tag.script.js?qkpvqw" defer=""></script>
+
+    <title>National Bureau of Economic Research | NBER</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_Z59Dsjh7tRAc16FVulZ7Lu-hW_kV0m-t6vKmfSiETqE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_N8H4_DBgPiJVgG4NiDT0IHOf6JF9WVcIT0l38noLQsw.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_8UvPQnN_tC6eI7ISZrs4EO55boT5-gGFEgAc9eIAFAA.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  <style data-emotion=""></style></head>
+  <body class="has-vertical-gradient has-vertical-gradient--blue-periwinkle has-light-text">
+        <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    <noscript aria-hidden="true">&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVRPF7C" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript><div id="sitewide-alert"><div></div></div>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    
+<header class="header" role="banner">
+    <div class="content-wrap">
+      <div class="header__grid header__branding-utility-user">
+        <div class="header__branding">
+  <a href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.75 31.24"><title>NBER: National Bureau of Economic Research</title><path d="M149.44,8.91a8.1,8.1,0,0,1,.77,1.23h.06s-.05-.77-.05-1.94V4.49h2.11v9.15h-1.92l-3.23-4.35a9.3,9.3,0,0,1-.87-1.35h-.07a17.08,17.08,0,0,1,.1,2.06v3.64h-2.11V4.49h2Z"/><path d="M160,11.73h-3.46l-.65,1.91h-2.21L157,4.49h2.61l3.34,9.15h-2.27ZM157.13,10h2.25L159,9a18,18,0,0,1-.72-2.61h-.06a23.42,23.42,0,0,1-.74,2.59Z"/><path d="M165,13.64V6.32h-2.5V4.49h7.13V6.32h-2.55v7.32Z"/><path d="M173.06,4.49v9.15H171V4.49Z"/><path d="M174.89,9.07c0-3.08,1.63-4.77,4.34-4.77s4.35,1.69,4.35,4.77-1.65,4.75-4.35,4.75S174.89,12.13,174.89,9.07Zm2.19,0c0,1.8.7,2.91,2.15,2.91s2.15-1.11,2.15-2.91-.71-2.92-2.15-2.92S177.08,7.28,177.08,9.1Z"/><path d="M190.62,8.91a8.47,8.47,0,0,1,.76,1.23h.07s0-.77,0-1.94V4.49h2.11v9.15h-1.93l-3.23-4.35a9.3,9.3,0,0,1-.87-1.35h-.06a17.08,17.08,0,0,1,.1,2.06v3.64H185.4V4.49h2Z"/><path d="M201.18,11.73h-3.46l-.65,1.91h-2.21l3.31-9.15h2.61l3.34,9.15h-2.27ZM198.31,10h2.25l-.37-1a18,18,0,0,1-.72-2.61h-.06a22.38,22.38,0,0,1-.75,2.59Z"/><path d="M207.58,4.49V11.8h3.57v1.84h-5.69V4.49Z"/><path d="M221.16,9a2.08,2.08,0,0,1,2,2.16c0,1.5-1,2.5-3.23,2.5h-3.74V4.49H220c1.85,0,2.84.85,2.84,2.3a2,2,0,0,1-1.65,2.12Zm-1.63-.67c.72,0,1.18-.28,1.18-1s-.45-1-1.22-1h-1.17v2Zm-1.21,3.54h1.49c.8,0,1.25-.25,1.25-1s-.42-1-1.25-1h-1.49Z"/><path d="M232.38,4.49v6.09c0,2.47-1.74,3.24-3.78,3.24s-3.77-.77-3.77-3.24V4.49h2.11V10c0,1.3.34,2.08,1.66,2.08s1.68-.78,1.68-2.1V4.49Z"/><path d="M239.6,13.64a1.64,1.64,0,0,1-.49-1l-.34-1.37c-.18-.77-.54-.91-1.24-.91h-.9v3.23h-2.11V4.49h3.6c2,0,3.32.74,3.32,2.79a2.1,2.1,0,0,1-2,2.3v0A1.65,1.65,0,0,1,241,11l.47,1.71a2.06,2.06,0,0,0,.51,1Zm-3-5H238c.84,0,1.31-.33,1.31-1.2s-.44-1.2-1.31-1.2h-1.35Z"/><path d="M249.69,13.64h-6.14V4.49h6.14V6.32h-4V8.14h3.55V9.89h-3.55V11.8h4Z"/><path d="M256.94,11.73h-3.46l-.66,1.91h-2.2l3.31-9.15h2.61l3.33,9.15h-2.26ZM254.07,10h2.25L256,9a18,18,0,0,1-.72-2.61h-.06a22.38,22.38,0,0,1-.75,2.59Z"/><path d="M268.37,4.49v6.09c0,2.47-1.74,3.24-3.78,3.24s-3.77-.77-3.77-3.24V4.49h2.11V10c0,1.3.34,2.08,1.66,2.08s1.68-.78,1.68-2.1V4.49Z"/><path d="M277.87,5.39a3,3,0,0,1,3.29,3.12,4.76,4.76,0,0,1-4.68,4.83,3,3,0,0,1-3.29-3.11A4.79,4.79,0,0,1,277.87,5.39Zm0,.29c-.91,0-1.67,1.31-2.16,3a10.89,10.89,0,0,0-.42,2.54c0,1,.25,1.86,1.12,1.86s1.68-1.32,2.15-3A9.8,9.8,0,0,0,279,7.53C279,6.52,278.78,5.68,277.91,5.68Z"/><path d="M285.69,5.54h1.85l-.17.41h-1.76l-1.69,6.91c-.68,2.76-2,3.79-4.09,3.85v0c1-.44,1.53-2,2.16-4.8L283.36,6h-1l.05-.16,1-.33.17-.6c.72-2.3,2-3.4,3.95-3.4,1.25,0,2.11.51,2.11,1.38a1.32,1.32,0,0,1-1.46,1.24,1.17,1.17,0,0,1-.95-.36,1.16,1.16,0,0,0,1-1.22c0-.5-.23-.8-.7-.8-.79,0-1.21.74-1.64,2.85Z"/><path d="M150.36,28.89h-6.13V19.74h6.13v1.84h-4V23.4h3.54v1.75h-3.54v1.91h4Z"/><path d="M159.9,27a4,4,0,0,1-3.93,2.1c-2.49,0-4.2-1.72-4.2-4.77s1.68-4.75,4.47-4.75A3.75,3.75,0,0,1,160,21.87l-2,1a1.74,1.74,0,0,0-1.77-1.45c-1.38,0-2.22,1.1-2.22,2.94s.74,2.86,2.25,2.86a2,2,0,0,0,1.91-1.31Z"/><path d="M160.87,24.33c0-3.08,1.63-4.77,4.33-4.77s4.35,1.69,4.35,4.77-1.64,4.75-4.35,4.75S160.87,27.39,160.87,24.33Zm2.19,0c0,1.8.7,2.9,2.14,2.9s2.16-1.1,2.16-2.9-.71-2.92-2.16-2.92S163.06,22.54,163.06,24.36Z"/><path d="M176.6,24.17a8.47,8.47,0,0,1,.76,1.23h.06s0-.78,0-1.94V19.74h2.11v9.15h-1.93l-3.23-4.35a8.71,8.71,0,0,1-.87-1.35h-.06a19.29,19.29,0,0,1,.09,2.07v3.63h-2.11V19.74h2Z"/><path d="M181.32,24.33c0-3.08,1.63-4.77,4.33-4.77S190,21.25,190,24.33s-1.64,4.75-4.35,4.75S181.32,27.39,181.32,24.33Zm2.19,0c0,1.8.7,2.9,2.14,2.9s2.16-1.1,2.16-2.9-.71-2.92-2.16-2.92S183.51,22.54,183.51,24.36Z"/><path d="M195.87,26.78l-1.26-2.1a7.59,7.59,0,0,1-.7-1.39h-.06a10,10,0,0,1,.09,1.55v4.05h-2.11V19.74H194l1.72,3.1a6.54,6.54,0,0,1,.65,1.33h.06a8.13,8.13,0,0,1,.66-1.33l1.74-3.1h2.11v9.15h-2.1V24.84a11.22,11.22,0,0,1,.08-1.55h-.06a7.9,7.9,0,0,1-.69,1.39l-1.27,2.1Z"/><path d="M205.42,19.74v9.15h-2.11V19.74Z"/><path d="M215.37,27a4,4,0,0,1-3.93,2.1c-2.48,0-4.19-1.72-4.19-4.77s1.68-4.75,4.47-4.75a3.76,3.76,0,0,1,3.73,2.31l-2,1a1.74,1.74,0,0,0-1.77-1.45c-1.39,0-2.23,1.1-2.23,2.94s.75,2.86,2.26,2.86a2,2,0,0,0,1.91-1.31Z"/><path d="M225.42,28.89a1.55,1.55,0,0,1-.48-.94l-.34-1.37c-.19-.78-.55-.92-1.25-.92h-.9v3.23h-2.11V19.74h3.6c2.05,0,3.33.75,3.33,2.8a2.11,2.11,0,0,1-2,2.3v0a1.67,1.67,0,0,1,1.53,1.34l.46,1.7a2.16,2.16,0,0,0,.51,1Zm-3-5h1.35c.84,0,1.31-.32,1.31-1.19s-.44-1.2-1.31-1.2h-1.35Z"/><path d="M235.51,28.89h-6.13V19.74h6.13v1.84h-4V23.4H235v1.75h-3.54v1.91h4Z"/><path d="M238.55,26a1.71,1.71,0,0,0,1.71,1.48c.7,0,1.21-.29,1.21-.91s-.32-.87-1.52-1.24c-2.1-.67-3-1.46-3-3,0-2.06,1.62-2.75,3.22-2.75,1.88,0,3.28.64,3.46,2.38l-2.09.53a1.25,1.25,0,0,0-1.32-1.17c-.59,0-1.06.27-1.06.86s.5.88,1.57,1.21c1.92.6,2.9,1.26,2.9,3,0,2-1.61,2.72-3.55,2.72s-3-.59-3.48-2.24Z"/><path d="M251.61,28.89h-6.13V19.74h6.13v1.84h-4V23.4h3.54v1.75h-3.54v1.91h4Z"/><path d="M258.86,27H255.4l-.65,1.91h-2.21l3.31-9.15h2.61l3.34,9.15h-2.27ZM256,25.23h2.25l-.37-1a16.75,16.75,0,0,1-.71-2.61h-.07a23.19,23.19,0,0,1-.74,2.6Z"/><path d="M268.23,28.89a1.55,1.55,0,0,1-.48-.94l-.35-1.37c-.18-.78-.54-.92-1.24-.92h-.9v3.23h-2.11V19.74h3.6c2.05,0,3.33.75,3.33,2.8a2.11,2.11,0,0,1-2,2.3v0a1.65,1.65,0,0,1,1.52,1.34l.47,1.7a2.06,2.06,0,0,0,.51,1Zm-3-5h1.35c.84,0,1.31-.32,1.31-1.19s-.44-1.2-1.31-1.2h-1.35Z"/><path d="M279.59,27a4,4,0,0,1-3.93,2.1c-2.48,0-4.19-1.72-4.19-4.77s1.68-4.75,4.47-4.75a3.76,3.76,0,0,1,3.73,2.31l-2,1a1.74,1.74,0,0,0-1.77-1.45c-1.39,0-2.23,1.1-2.23,2.94s.75,2.86,2.26,2.86a2,2,0,0,0,1.91-1.31Z"/><path d="M281.13,28.89V19.74h2.11v3.59h3.51V19.74h2.11v9.15h-2.11V25.17h-3.51v3.72Z"/><path d="M49.51,15.57V15.5C56.93,15.57,60,12.67,60,9.88c0-3.11-2.63-5.53-9.74-5.53h-28c-.83,0-1.59.76,0,1.07,2.34.63,4.48,4.49,4.48,12.94v3.28h-.07L20.2,8.91c-2-4-.45-3.07-.45-4.07,0-.49-.59-.49-.79-.49H5.25c-.41,0-1.44,0-1.44.52s.65.49,1.07.49A3.49,3.49,0,0,1,7.33,7V18.57c0,3.52-.66,8.84-4.11,9.49-.24.07-.52.1-.52.48s.38.49.73.49h10.8c1,0,1.07-.87-.14-1-3-.42-5.76-3.66-5.76-13.53v-6l.1-.07L18.89,27.92c.51.93.89,2.42,1.2,2.42a2.77,2.77,0,0,0,1.25-.69A16,16,0,0,1,29.14,26c.34,0,1.41-.07,1.41-.56,0-.93-1.9-.07-2.8-1.79v-5.9c0-9.91,2.73-12,4.35-12.36l.15,0c1.58.22,1.66,1.53,1.66,8.94v4.72c0,8.49-.1,9-2.45,9-.34,0-1,0-1,.55s.59.45.9.45H50.72c6.83,0,9.93-3.18,9.93-7.22C60.65,18.33,58.31,15.09,49.51,15.57Zm-5.42-5.52c0-4.49.31-4.69,2.62-4.69s2.73.58,2.73,3.52v3.38c0,1.93-.59,2.86-3.66,2.86H44.09Zm5.35,9v5.18c0,3.38-.65,3.8-2.69,3.8-2.55,0-2.66-.18-2.66-4.8V16.12h1.62C49.06,16.12,49.47,16.81,49.44,19.05Z"/><path d="M87.38,19.64l-.76,1.11C84.86,23.47,81.27,28,77.72,28c-1.76,0-2.49-.49-2.49-4V16h1c2.42,0,4.35,1.14,4.42,4.66,0,1.76,1,1.52,1,.41V10.36c0-.9-.83-1.24-1,.24-.41,3.49-2,4.42-4.42,4.42h-1V9.32c.14-3.41.62-4,2.52-4,3.69,0,7.08,4.52,8.39,7.59.1.27.45,1.24.86,1.24s.45-.42.28-1.59L85.45,3.08c-.14-1.14-.56-1.14-1.07-.52-.83.93-1.93,1.66-6.25,1.79H62.5c-.31,0-.9,0-.9.45s.66.56,1,.56c2.35,0,2.45.48,2.45,9v4.72c0,8.49-.1,9-2.45,9-.34,0-1,0-1,.55s.59.45.9.45H78.13c5.94,0,6.35,1,7.08,1.93.31.41.79.48,1-.59l2.24-11.11C88.45,18.88,87.9,18.43,87.38,19.64Z"/><path d="M120.69,28c-2.24,0-5.69-6.66-5.79-9.63,0-.86-.11-.79-1.35-.59a11,11,0,0,1-8.66-1.14v-.06c4.73-.32,12.59.31,12.59-6.42,0-6.15-6.72-5.84-11.11-5.84H88.81c-.28,0-.86,0-.86.52s.48.49.82.49c2.18,0,2.35.62,2.35,9v4.72c0,8.36-.17,9-2.35,9-.34,0-.82.07-.82.48s.58.52.86.52h14.8c.28,0,.87,0,.87-.52S104,28,103.65,28c-2.18,0-2.35-.62-2.35-9V16.92h2.38L107.86,28c.2.72.31,1,1.1,1h11.66c.32,0,.76,0,.76-.45S121,28,120.69,28ZM101.3,15.91v-5c0-5.46.59-5.52,2.8-5.52S107,5.53,107,9.91c0,5.35-.76,6-3,6Z"/><rect x="130.19" y="4.35" width="2.2" height="24.6"/></svg>
+  </a>
+</div>
+        <div class="header__utility header__utility--desktop">
+          
+    
+<nav class="utility-nav js-utility-nav" aria-label="Utility Navigation" role="navigation">
+          
+
+
+<ul class="utility-nav__list">
+        <li class="utility-nav__item"><a href="/subscribe">Subscribe</a></li>
+        <li class="utility-nav__item"><a href="/media">Media</a></li>
+        <li class="utility-nav__item"><a href="/call-papers-proposals-and-applications">Open Calls</a></li>
+    </ul>
+    </nav>
+
+
+        </div>
+        <div class="header__user header__user--desktop">
+          <div class="user-block">
+  <div class="user_greeting" data-block-id="e1f99bfa-225e-4efb-b241-9383a5570ce7" id="block-usergreeting">
+  
+    
+        <a href="https://my.nber.org/" class="user-block__login"><span>Login</span> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="20" viewBox="0 0 21 20">
+  <g>
+    <g transform="translate(-1296 -100)">
+      <path d="M1307.938 113.561v-1.237c1.583-.931 2.874-3.252 2.874-5.574 0-3.728 0-6.75-4.312-6.75-4.313 0-4.313 3.022-4.313 6.75 0 2.322 1.292 4.643 2.876 5.574v1.237c-4.877.416-8.626 2.916-8.626 5.939h20.126c0-3.023-3.75-5.523-8.626-5.939z"/>
+    </g>
+  </g>
+</svg>
+</a>
+
+
+  </div>
+</div>
+
+        </div>
+        <div class="header__mobile js-header__mobile">
+          <button type="button" class="btn btn--icon js-hamburger" aria-haspopup="true" aria-controls="nav-search-pane" aria-label="Search" data-target="nav-search-pane" data-focus="search-bar__field--mobile">
+            <span class="icon-search">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26" viewBox="0 0 23 23">
+                <path d="M9.516 14.016q1.875 0 3.188-1.313t1.313-3.188-1.313-3.188-3.188-1.313-3.188 1.313-1.313 3.188 1.313 3.188 3.188 1.313zM15.516 14.016l4.969 4.969-1.5 1.5-4.969-4.969v-0.797l-0.281-0.281q-1.781 1.547-4.219 1.547-2.719 0-4.617-1.875t-1.898-4.594 1.898-4.617 4.617-1.898 4.594 1.898 1.875 4.617q0 2.438-1.547 4.219l0.281 0.281h0.797z"/>
+              </svg>
+            </span>
+          </button>
+          <button type="button" class="btn btn--icon trigger-hamburger js-hamburger" aria-haspopup="true" aria-controls="nav-search-pane" aria-label="Menu" data-target="nav-search-pane"><span class="icon-hamburger"></span></button>
+      </div>
+      </div>
+
+      <div class="header__grid header__nav-search" id="nav-search-pane" aria-hidden="true" style="">
+        <div class="header__user-close">
+          <div class="header__user header__user--mobile">
+            <div class="user-block">
+  <div class="user_greeting" data-block-id="e1f99bfa-225e-4efb-b241-9383a5570ce7" id="block-usergreeting">
+  
+    
+        <a href="https://my.nber.org/" class="user-block__login"><span>Login</span> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="20" viewBox="0 0 21 20">
+  <g>
+    <g transform="translate(-1296 -100)">
+      <path d="M1307.938 113.561v-1.237c1.583-.931 2.874-3.252 2.874-5.574 0-3.728 0-6.75-4.312-6.75-4.313 0-4.313 3.022-4.313 6.75 0 2.322 1.292 4.643 2.876 5.574v1.237c-4.877.416-8.626 2.916-8.626 5.939h20.126c0-3.023-3.75-5.523-8.626-5.939z"/>
+    </g>
+  </g>
+</svg>
+</a>
+
+
+  </div>
+</div>
+
+          </div>
+          <button type="button" class="btn btn--link trigger-hamburger-close js-hamburger-close">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+              <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"/>
+            </svg>
+            <span>Close</span>
+          </button>
+        </div>
+
+        <div class="header__search header__search--mobile">
+          <form action="/search" class="form search-bar">
+            <div class="form__field form__field--search js-label form__field--placeholder">
+              <label for="search-bar__field--mobile">Search</label>
+              <input name="q" type="text" id="search-bar__field--mobile" />
+              <button class="btn btn--no-style" aria-label="Search">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M9.516 14.016q1.875 0 3.188-1.313t1.313-3.188-1.313-3.188-3.188-1.313-3.188 1.313-1.313 3.188 1.313 3.188 3.188 1.313zM15.516 14.016l4.969 4.969-1.5 1.5-4.969-4.969v-0.797l-0.281-0.281q-1.781 1.547-4.219 1.547-2.719 0-4.617-1.875t-1.898-4.594 1.898-4.617 4.617-1.898 4.594 1.898 1.875 4.617q0 2.438-1.547 4.219l0.281 0.281h0.797z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="header__nav js-header__nav">
+              <nav class="primary-nav js-primary-nav" aria-label="Main Navigation" role="navigation">
+          
+    
+    
+        <ul class="primary-nav__list ">
+                
+        <li class="primary-nav__item primary-nav__item--has-children primary-nav__item--has-megadropdown">
+                          <button type="button" class="primary-nav__action js-primary-nav__action" aria-haspopup="true" aria-expanded="false">Research</button>
+              <div class="primary-nav__dropdown">
+                <div class="primary-nav__dropdown-heading"></div>
+                <div class="primary-nav__dropdown-body">
+                                    <a href="/research" data-is-megamenu="1" title="This is a link to the research page" class="primary-nav__dropdown-link link link--arrow" data-drupal-link-system-path="node/7206">EXPLORE Research</a>
+                                      
+  
+      <ul class="primary-nav__sublist ">
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <span data-is-column="1" class="link primary-nav__sublist-heading primary-nav__sublist-heading--has-link">Findings</span>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/papers" class="link" data-drupal-link-system-path="node/43401">Working Papers</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/books-and-chapters" class="link" data-drupal-link-system-path="node/43406">Books &amp; Chapters</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/research/lectures" class="link" data-drupal-link-system-path="node/43426">Lectures</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/interviews" class="link" data-drupal-link-system-path="node/101342">Interviews</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <span data-is-column="1" class="link primary-nav__sublist-heading primary-nav__sublist-heading--has-link">Periodicals</span>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/digest/2020-12" class="link" data-drupal-link-system-path="node/168725">The Digest</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/reporter-2020-03" class="link" data-drupal-link-system-path="node/129442">The Reporter</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/bulletin-retirement-and-disability-20203" class="link" data-drupal-link-system-path="node/105590">The Bulletin on Retirement and Disability</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/bulletin-health" class="link" data-drupal-link-system-path="node/150854">The Bulletin on Health</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/nber-news/periodicals-archive" class="link" data-drupal-link-system-path="node/94727">Periodicals Archive</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <span data-is-megamenu="1" data-is-column="1" class="link primary-nav__sublist-heading primary-nav__sublist-heading--has-link">Data &amp; Business Cycles</span>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/research/boston-research-data-center" class="link" data-drupal-link-system-path="node/155940">Boston Research Data Center</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/research/business-cycle-dating" class="link" data-drupal-link-system-path="node/98388">Business Cycle Dating</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/research/data" class="link" data-drupal-link-system-path="node/93388">Public Use Data Archive</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+              
+        <li class="primary-nav__sublist-column">
+          
+          
+          <a href="/topics" data-is-column="1" class="link primary-nav__sublist-heading primary-nav__sublist-heading--has-link">Topics</a>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/topics/covid-19" class="link" data-drupal-link-system-path="taxonomy/term/4720">COVID-19</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/topics/us-china-trade" class="link" data-drupal-link-system-path="taxonomy/term/4700">US-China Trade</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/taxonomy/term/681" class="link" data-drupal-link-system-path="taxonomy/term/681">Energy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/topics/entrepreneurship" class="link" data-drupal-link-system-path="taxonomy/term/4701">Entrepreneurship</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/topics/growth-and-productivity?page=1&amp;perPage=10" class="link" data-drupal-link-query="{&quot;page&quot;:&quot;1&quot;,&quot;perPage&quot;:&quot;10&quot;}" data-drupal-link-system-path="taxonomy/term/661">Growth and Productivity</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+      
+    </ul>
+  
+                </div>
+              </div>
+                    </li>
+                
+        <li class="primary-nav__item primary-nav__item--has-children primary-nav__item--has-megadropdown">
+                          <button type="button" class="primary-nav__action js-primary-nav__action" aria-haspopup="true" aria-expanded="false">Programs &amp; Projects</button>
+              <div class="primary-nav__dropdown">
+                <div class="primary-nav__dropdown-heading"></div>
+                <div class="primary-nav__dropdown-body">
+                                    <a href="/programs-projects" data-is-megamenu="1" class="primary-nav__dropdown-link link link--arrow" data-drupal-link-system-path="node/7211">EXPLORE Programs &amp; Projects</a>
+                                      
+  
+      <ul class="primary-nav__sublist ">
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <a href="/programs-projects/programs-working-groups" data-is-column="1" class="link link--arrow primary-nav__sublist-heading primary-nav__sublist-heading--has-link" data-drupal-link-system-path="node/43416">Programs</a>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/economics-aging" class="link" data-drupal-link-system-path="node/11541">Economics of Aging</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/asset-pricing" class="link" data-drupal-link-system-path="node/11546">Asset Pricing</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/children" class="link" data-drupal-link-system-path="node/11551">Children</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/corporate-finance" class="link" data-drupal-link-system-path="node/11556">Corporate Finance</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/development-economics" class="link" data-drupal-link-system-path="node/11641">Development Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/development-american-economy" class="link" data-drupal-link-system-path="node/11561">Development of the American Economy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/economic-fluctuations-and-growth" class="link" data-drupal-link-system-path="node/11571">Economic Fluctuations and Growth</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/economics-education" class="link" data-drupal-link-system-path="node/11566">Economics of Education</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/environment-and-energy-economics" class="link" data-drupal-link-system-path="node/11636">Environment and Energy Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/health-care" class="link" data-drupal-link-system-path="node/11576">Health Care</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/health-economics" class="link" data-drupal-link-system-path="node/11581">Health Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/industrial-organization" class="link" data-drupal-link-system-path="node/11586">Industrial Organization</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/international-finance-and-macroeconomics" class="link" data-drupal-link-system-path="node/11591">International Finance and Macroeconomics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/international-trade-and-investment" class="link" data-drupal-link-system-path="node/11596">International Trade and Investment</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/labor-studies" class="link" data-drupal-link-system-path="node/11601">Labor Studies</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/law-and-economics" class="link" data-drupal-link-system-path="node/11606">Law and Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/monetary-economics" class="link" data-drupal-link-system-path="node/11611">Monetary Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/political-economy" class="link" data-drupal-link-system-path="node/11631">Political Economy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/productivity-innovation-and-entrepreneurship" class="link" data-drupal-link-system-path="node/11616">Productivity, Innovation, and Entrepreneurship</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups/public-economics" class="link" data-drupal-link-system-path="node/11621">Public Economics</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <a href="/programs-projects/programs-working-groups#Groups" data-is-column="1" class="link link--arrow primary-nav__sublist-heading primary-nav__sublist-heading--has-link" data-drupal-link-system-path="node/43416">Working Groups</a>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/behavioral-finance" class="link" data-drupal-link-system-path="node/11686">Behavioral Finance</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/chinese-economy" class="link" data-drupal-link-system-path="node/11676">Chinese Economy </a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/cohort-studies" class="link" data-drupal-link-system-path="node/11646">Cohort Studies </a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/economics-crime" class="link" data-drupal-link-system-path="node/11681">Economics of Crime</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/entrepreneurship" class="link" data-drupal-link-system-path="node/11651">Entrepreneurship</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/household-finance" class="link" data-drupal-link-system-path="node/11706">Household Finance</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/innovation-policy" class="link" data-drupal-link-system-path="node/11691">Innovation Policy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/insurance" class="link" data-drupal-link-system-path="node/11656">Insurance</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/market-design" class="link" data-drupal-link-system-path="node/11696">Market Design</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/organizational-economics" class="link" data-drupal-link-system-path="node/11671">Organizational Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/personnel-economics" class="link" data-drupal-link-system-path="node/11661">Personnel Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/race-and-stratification-economy" class="link" data-drupal-link-system-path="node/161434">Race and Stratification in the Economy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/risks-financial-institutions" class="link" data-drupal-link-system-path="node/11701">Risks of Financial Institutions </a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/programs-working-groups%23Groups/urban-economics" class="link" data-drupal-link-system-path="node/11666">Urban Economics</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+              
+        <li class="primary-nav__sublist-column">
+          
+                                
+          <a href="/programs-projects/projects-and-centers" data-is-column="1" class="link link--arrow primary-nav__sublist-heading primary-nav__sublist-heading--has-link" data-drupal-link-system-path="node/43421">Projects &amp; Centers</a>
+
+                        
+  
+      <ul class=" primary-nav__tertiary">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/center-aging-and-health-research" class="link" data-drupal-link-system-path="node/93444">Center for Aging and Health Research</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/econometrics-and-mathematical-economics" class="link" data-drupal-link-system-path="node/93454">Conference on Econometrics and Mathematical Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/conference-research-income-and-wealth" class="link" data-drupal-link-system-path="node/44210">Conference on Research in Income and Wealth</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/economics-digitization" class="link" data-drupal-link-system-path="node/137721">Economics of Digitization</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/gender-economy" class="link" data-drupal-link-system-path="node/98445">Gender in the Economy Study Group</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/workplace-wellness" class="link" data-drupal-link-system-path="node/93450">Illinois Workplace Wellness</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/improving-health-outcomes-aging-population" class="link" data-drupal-link-system-path="node/99656">Improving Health Outcomes for an Aging Population</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/annual-conference-macroeconomics" class="link" data-drupal-link-system-path="node/98834">Macroeconomics Annual</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/measuring-clinical-and-economic-outcomes-associated-delivery-systems" class="link" data-drupal-link-system-path="node/99655">Measuring the Clinical and Economic Outcomes Associated with Delivery Systems</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/oregon-health-insurance-experiment" class="link" data-drupal-link-system-path="node/93448">Oregon Health Insurance Experiment</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/retirement-and-disability-research-center" class="link" data-drupal-link-system-path="node/93438">Retirement and Disability Research Center</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/nber-roybal-center-behavior-change-health" class="link" data-drupal-link-system-path="node/93452">The Roybal Center for Behavior Change in Health</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/satellite-national-health-accounts" class="link" data-drupal-link-system-path="node/93453">Satellite National Health Accounts</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/science-science-funding" class="link" data-drupal-link-system-path="node/93447">Science of Science Funding</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/training-program-aging-and-health-economics" class="link" data-drupal-link-system-path="node/94634">Training Program in Aging and Health Economics</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/transportation-economics-21st-century" class="link" data-drupal-link-system-path="node/105595">Transportation Economics in the 21st Century</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/union-army-data" class="link" data-drupal-link-system-path="node/93451">Union Army Data &amp; Early Indicators</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/value-medical-research" class="link" data-drupal-link-system-path="node/90255">Value of Medical Research</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/programs-projects/projects-and-centers/women-working-longer" class="link" data-drupal-link-system-path="node/93449">Women Working Longer</a>
+
+                  </li>
+      
+    </ul>
+  
+                  </li>
+      
+    </ul>
+  
+                </div>
+              </div>
+                    </li>
+                
+        <li class="primary-nav__item">
+                          <a href="/conferences" class="primary-nav__action" data-drupal-link-system-path="node/43386">Conferences</a>
+                    </li>
+                
+        <li class="primary-nav__item">
+                          <a href="/affiliated-scholars" class="primary-nav__action" data-drupal-link-system-path="node/7221">Affiliated Scholars</a>
+                    </li>
+                
+        <li class="primary-nav__item primary-nav__item--has-children">
+                          <button type="button" class="primary-nav__action js-primary-nav__action" aria-haspopup="true" aria-expanded="false">NBER News</button>
+              <div class="primary-nav__dropdown">
+                <div class="primary-nav__dropdown-heading"></div>
+                <div class="primary-nav__dropdown-body">
+                                    <a href="/nber-news" class="primary-nav__dropdown-link link link--arrow" data-drupal-link-system-path="node/94726">EXPLORE NBER News</a>
+                                      
+  
+      <ul class="primary-nav__sublist ">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/nber-news/nber-research-news" class="link" data-drupal-link-system-path="node/93183">Research in the News</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/nber-news/nobel-laureates" class="link" data-drupal-link-system-path="node/94670">Nobel Laureates</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/nber-news/featured-working-papers-archive" class="link" data-drupal-link-system-path="node/98916">Featured Working Papers Archive</a>
+
+                  </li>
+      
+    </ul>
+  
+                </div>
+              </div>
+                    </li>
+                
+        <li class="primary-nav__item primary-nav__item--has-children">
+                          <button type="button" class="primary-nav__action js-primary-nav__action" aria-haspopup="true" aria-expanded="false">Career Resources</button>
+              <div class="primary-nav__dropdown">
+                <div class="primary-nav__dropdown-heading"></div>
+                <div class="primary-nav__dropdown-body">
+                                    <a href="/career-resources" class="primary-nav__dropdown-link link link--arrow" data-drupal-link-system-path="node/120606">EXPLORE Career Resources</a>
+                                      
+  
+      <ul class="primary-nav__sublist ">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/career-resources/research-assistant-positions-not-nber" class="link" data-drupal-link-system-path="node/120216">RA Positions – not at the NBER</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/career-resources/calls-fellowship-applications" class="link" data-drupal-link-system-path="node/120607">Calls for Fellowship Applications</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/career-resources/phd-candidates-economics" class="link" data-drupal-link-system-path="node/94317">PhD Candidates in Economics</a>
+
+                  </li>
+      
+    </ul>
+  
+                </div>
+              </div>
+                    </li>
+                
+        <li class="primary-nav__item primary-nav__item--has-children">
+                          <button type="button" class="primary-nav__action js-primary-nav__action" aria-haspopup="true" aria-expanded="false">About</button>
+              <div class="primary-nav__dropdown">
+                <div class="primary-nav__dropdown-heading"></div>
+                <div class="primary-nav__dropdown-body">
+                                    <a href="/about-nber" class="primary-nav__dropdown-link link link--arrow" data-drupal-link-system-path="node/93182">EXPLORE About</a>
+                                      
+  
+      <ul class="primary-nav__sublist ">
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/leadership-governance" class="link" data-drupal-link-system-path="node/44127">Leadership &amp; Governance</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/support-funding" class="link" data-drupal-link-system-path="node/98501">Support &amp; Funding</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/history" class="link" data-drupal-link-system-path="node/44128">History</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/standards-conduct" class="link" data-drupal-link-system-path="node/93846">Standards of Conduct</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/nber-website-privacy-policy" class="link" data-drupal-link-system-path="node/93847">Privacy Policy</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/nber-staff" class="link" data-drupal-link-system-path="node/93848">Staff</a>
+
+                  </li>
+              
+        <li class="primary-nav__subitem">
+          
+                                
+          <a href="/about-nber/employment-opportunities-nber" class="link" data-drupal-link-system-path="node/94315">Employment Opportunities at NBER</a>
+
+                  </li>
+      
+    </ul>
+  
+                </div>
+              </div>
+                    </li>
+             </ul>
+    
+
+
+
+
+
+    </nav>
+
+          <div class="header__utility header__utility--mobile">
+            
+    
+<nav class="utility-nav js-utility-nav" aria-label="Utility Navigation" role="navigation">
+          
+
+
+<ul class="utility-nav__list">
+        <li class="utility-nav__item"><a href="/subscribe">Subscribe</a></li>
+        <li class="utility-nav__item"><a href="/media">Media</a></li>
+        <li class="utility-nav__item"><a href="/call-papers-proposals-and-applications">Open Calls</a></li>
+    </ul>
+    </nav>
+
+
+          </div>
+        </div>
+
+        <div class="header__search header__search--desktop">
+          <form action="/search" class="form search-bar">
+            <div class="form__field form__field--search js-label form__field--placeholder">
+              <label for="search-bar__field--desktop">Search</label>
+              <input name="q" type="text" id="search-bar__field--desktop" />
+              <button class="btn btn--no-style" aria-label="Search">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M9.516 14.016q1.875 0 3.188-1.313t1.313-3.188-1.313-3.188-3.188-1.313-3.188 1.313-1.313 3.188 1.313 3.188 3.188 1.313zM15.516 14.016l4.969 4.969-1.5 1.5-4.969-4.969v-0.797l-0.281-0.281q-1.781 1.547-4.219 1.547-2.719 0-4.617-1.875t-1.898-4.594 1.898-4.617 4.617-1.898 4.594 1.898 1.875 4.617q0 2.438-1.547 4.219l0.281 0.281h0.797z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<main role="main">
+  <a id="main-content" tabindex="-1"></a>
+  
+      <div class="animated-header">
+  <div class="animated-header__inner js-animated-header">
+    <div class="animated-header__graph">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="100 215 905 395">
+    <path class="squiggle" style="stroke-dasharray: -5866.8681640625; stroke-dashoffset: -5866.8681640625; stroke-dasharray: -4336.25927734375; stroke-dashoffset: -4336.25927734375" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M1005,438l-0.50,-30.25l-0.75,-12l-1.049-50.142l-1.047-25.071l-1.049-61.29l-1.036-38.993l-1.048,286.917l-1.049,25.072&#10;    l-1.048-2.785l-1.035,2.785h-1.049l-1.049-2.785l-1.035,2.785l-1.048-5.57h-1.048h-1.049l-1.036,2.785h-1.048l-1.048-5.568h-1.049&#10;    l-1.035-5.57l-1.049,2.786l-1.047,5.567l-1.048-2.783l-1.037,2.783l-1.048-2.783h-1.047l-1.048-5.57l-1.036,5.57l-1.05-5.57h-1.049&#10;    l-1.046-2.784h-1.035h-1.05l-1.049-2.785l-1.036,2.785l-1.046-2.785l-1.049-5.579l-1.048,2.785h-1.037l-1.049-2.785h-1.046h-1.049&#10;    l-1.035-5.568l-1.05-2.784h-1.047h-1.048l-1.036-5.569l-1.049-2.784l-1.047,2.784l-1.049,2.784l-1.035-2.784l-1.049,2.784&#10;    l-1.049-5.568h-1.035l-1.048,2.784h-1.049l-1.049-2.784l-1.035-2.785l-1.047,2.785h-1.049l-1.049-2.785l-1.035-2.795l-1.049-2.784&#10;    l-1.048-8.353l-1.048,5.567h-1.036l-1.049-2.783l-1.047-5.57l-1.049,2.786l-1.035-5.57l-1.049,2.784l-1.048-5.567l-1.036-5.58&#10;    l-1.048-2.784l-1.049,2.784l-1.049-5.569l-1.035,2.785l-1.047-13.923h-1.049l-1.049,2.784l-1.035-2.784l-1.048-5.58l-1.049-8.353&#10;    h-1.048h-1.036l-1.049-2.784l-1.047-5.57h-1.049l-1.035-2.784l-1.049,2.784l-1.048-5.568l-1.035-8.363l-1.049,2.784l-1.049,5.579&#10;    l-1.049-2.795h-1.035l-1.047-8.354l-1.049-2.785h-1.049h-1.035h-1.048h-1.049l-1.049-2.784h-1.035l-1.048-5.569l-1.047-2.784&#10;    l-1.05-5.579l-1.036-5.569h-1.048h-1.047l-1.05-2.784l-1.035,2.784l-1.049-2.784l-1.046,2.784h-1.036l-1.049-2.784l-1.048-5.569&#10;    l-1.05-13.933l-1.035,11.148l-1.047-2.784h-1.049l-1.05,2.784h-1.035l-1.046-5.579l-1.049-8.354h-1.049l-1.037,2.784h-1.047&#10;    l-1.048-2.784h-1.048l-1.036-2.785l-1.049,5.569l-1.047,5.569l-1.036,2.795h-1.048l-1.049,2.784l-1.048,11.138l-1.035,8.353&#10;    l-1.049,11.148l-1.049,13.923l-1.048,13.934l-1.036,13.932l-1.047,8.355l-1.049,11.137h-1.049l-1.035,8.363l-1.048,5.57&#10;    l-1.049,5.567l-1.048,11.149l-1.036-2.785l-1.049,5.569l-1.047-2.784h-1.036l-1.048,8.354h-1.049h-1.048l-1.035,2.784l-1.049-2.784&#10;    l-1.049,2.784l-1.048,5.568l-1.035-2.783l-1.048,2.783l-1.049-2.783l-1.049-2.785l-1.035,5.568l-1.048-2.783l-1.049,2.783&#10;    l-1.048-2.783l-1.036-5.569h-1.047l-1.049,2.784h-1.049l-1.035-2.784h-1.049l-1.048-2.785l-1.035,2.785l-1.049-5.569l-1.049-2.784&#10;    h-1.047h-1.036l-1.048,2.784l-1.049-2.784h-1.049l-1.035-2.785l-1.048-2.795H810.7l-1.048-5.569l-1.036,2.785l-1.046-2.785h-1.05&#10;    l-1.049-2.783l-1.035,2.783h-1.047l-1.048-2.783l-1.037-2.784h-1.049h-1.049l-1.046-5.57l-1.035,5.57l-1.049-2.786h-1.05&#10;    l-1.047-2.784l-1.035-5.579l-1.049-2.784h-1.048l-1.049-2.784l-1.037-2.785l-1.046,5.569l-1.049,2.784l-1.049,2.796h-1.035&#10;    l-1.048,2.783l-1.048-5.579l-1.036,2.796l-1.049,5.567h-1.048h-1.048l-1.035-2.784h-1.049h-1.049l-1.048-2.783l-1.035,5.567h-1.049&#10;    h-1.048h-1.048l-1.035,5.57l-1.049,5.568l-1.049,8.364l-1.049,2.784l-1.035,8.354l-1.048,2.785l-1.048,5.568l-1.049-2.785&#10;    l-1.036,2.785l-1.047,2.794h-1.049l-1.035,8.355h-1.049h-1.049h-1.048l-1.035-5.57l-1.049,2.784h-1.049h-1.047l-1.035,5.57&#10;    l-1.049-5.57l-1.049-2.784l-1.048,2.784h-1.035l-1.049-2.784h-1.048l-1.049-2.785h-1.036l-1.047-2.794h-1.049l-1.035,2.794&#10;    l-1.049-2.794l-1.048,2.794l-1.049-5.579l-1.035,2.785l-1.049-2.785l-2.095-2.783l-1.036-2.785l-1.049,2.785h-1.049h-1.046&#10;    l-1.036,2.783l-1.05,2.785l-1.048-11.138l-1.047,2.784h-1.038l-1.046-2.784l-1.049,2.784l-1.036-2.784l-1.049-5.569l-1.047,2.784&#10;    l-1.048-2.784l-1.036-2.784l-1.05,2.784l-1.046-5.569l-1.049-2.795h-1.035l-1.049-2.784l-1.049-2.785h-1.047l-1.036,5.569h-1.049&#10;    l-1.048,2.795l-1.048-11.147l-1.035,5.568l-1.049-8.353h-1.049l-1.049,2.784h-1.035l-1.048-2.784h-1.048h-1.036l-1.049,2.784&#10;    l-1.047-2.784l-1.049-2.786h-1.035l-1.049,2.786h-1.048l-1.048-5.57l-1.036,11.138h-1.049l-1.048-5.567l-1.048,2.784l-1.035-2.784&#10;    l-1.049-5.57l-1.049-2.783l-1.047-2.796l-1.036-2.784h-1.049h-1.048l-1.036-8.354l-1.049-2.783l-1.047-2.786h-1.049l-1.035,2.786&#10;    l-1.049-2.786l-1.048-5.569l-1.048,2.785l-1.036-2.785l-1.049-2.795l-1.047-2.784l-1.049-2.783h-1.035l-1.049,2.783l-1.049-2.783&#10;    l-1.047-5.569l-1.036-2.786h-1.049l-1.048,2.786l-1.036-8.354h-1.047l-1.049-2.784l-1.049-2.795l-1.035,5.579l-1.049,5.568h-1.046&#10;    h-1.05l-1.036,2.786h-1.049l-1.046,8.353h-1.049l-1.036,2.784h-1.049l-1.047,2.795l-1.048-2.795h-1.036l-1.048,5.58l-1.05-2.785&#10;    l-1.036,5.569l-1.046,5.569l-1.049,2.784l-1.049,2.785l-1.036,8.364h-1.047l-1.048,5.567l-1.049,5.57l-1.036,8.353l-1.048-5.569&#10;    h-1.048l-1.049,5.569l-1.035-2.784l-1.049-2.785h-1.048h-1.048l-1.036,2.785h-1.048l-1.049,2.784h-1.048l-1.035-2.784l-1.049,2.784&#10;    h-1.049l-1.035,5.58l-1.048-5.58l-1.048-5.569l-1.049,2.785h-1.036l-1.047-2.785h-1.049l-1.049-5.567l-1.035,5.567h-1.049&#10;    l-1.048-5.567l-1.048,5.567l-1.036-8.354h-1.048h-1.048H594.4l-1.035-2.784l-1.049-5.579l-1.049,2.796l-1.035-2.796l-1.048-2.784&#10;    l-1.048-2.784l-1.049-2.785h-1.036l-1.047-8.354h-1.049h-1.049h-1.035l-1.049-8.364l-1.048-2.784h-1.048l-1.036,2.784l-1.049-2.784&#10;    l-1.047-5.568h-1.049l-1.035,2.785l-1.049-2.785h-1.048l-1.035,13.933l-1.049-8.364h-1.048l-1.049-2.783h-1.036h-1.047l-1.049-8.355&#10;    h-1.049l-1.035,5.57l-1.047-2.784l-1.05,2.784h-1.048l-1.036-2.784h-1.049l-1.046,2.784l-1.049-5.57l-1.036,2.786l-1.049-5.57&#10;    h-1.046l-1.049,8.354l-1.036-5.57l-1.049-8.353l-1.049-2.795h-1.033l-1.049-5.568l-1.049-8.354l-1.047-5.569l-1.038-8.363&#10;    l-1.047-11.138l-1.048-8.353l-1.049,2.784l-1.034-19.501h-1.052l-1.046-2.785l-1.049-2.785l-1.035-2.784h-1.048l-1.048-11.149&#10;    h-1.049l-1.036,11.149l-1.048,8.354l-1.048,8.353h-1.037l-1.047,5.569l-1.049,5.579l-1.049,2.785l-1.034,8.354l-1.049,2.784&#10;    l-1.048,8.364l-1.048,2.784l-1.037,5.569l-1.047,11.139l-1.049,8.363l-1.049,5.568l-1.035,5.57l-1.049-8.354h-1.047l-1.049,8.354&#10;    l-1.036-5.57h-1.047l-1.05-2.784l-1.034,8.354l-1.049-8.354h-1.049h-1.047l-1.037-5.568l-1.048-2.795l-1.048,5.579l-1.049,2.784&#10;    l-1.034,16.707l-1.049,16.718h-1.049h-1.046l-1.038,8.354l-1.048,2.796l-1.048-2.796l-1.049,2.796l-1.036-2.796l-1.048,8.363h-1.048&#10;    l-1.035,2.786l-1.049-5.57h-1.046l-1.052-2.783h-1.034l-1.049-2.796l-1.048,2.796l-1.047,2.783l-1.038-5.579l-1.047,2.796&#10;    l-1.049-8.364l-1.049,8.364l-1.033-2.796l-1.051-2.784l-1.046-5.569h-1.048l-1.038-2.784h-1.046l-1.049-11.139h-1.048h-1.037&#10;    l-1.049-5.579l-1.046,2.784l-1.036-8.353l-1.048,5.568l-1.048-5.568l-1.051-5.57l-1.033-5.568l-1.049,2.784l-1.049-8.363h-1.047&#10;    l-1.038,2.795l-1.046,2.784l-1.049-5.579h-1.049l-1.034,5.579l-1.05,5.568l-1.048-8.353l-1.047,2.784l-1.037-2.784l-1.047-5.579&#10;    l-1.049-8.354l-1.036-2.784l-1.048-2.784h-1.049h-1.048l-1.035-5.569l-1.049-5.579l-1.047-5.569l-1.051,5.569l-1.034,5.579&#10;    l-1.048,13.923h-1.049l-1.048,25.071l-1.036,16.717l-1.048,16.707l-1.049,2.796l-1.049,11.138h-1.034l-1.05,2.783l-1.047,8.364&#10;    h-1.036h-1.048l-1.048-2.795l-1.049,2.795l-1.035,5.569l-1.049,2.784l-1.049,5.569l-1.047-5.569h-1.037h-1.047l-1.047-2.784h-1.051&#10;    l-1.034-2.784l-1.049,2.784l-1.049-2.784l-1.046,2.784l-1.038-8.364l-1.048-2.784l-1.048-8.353l-1.049,2.784l-1.033-2.784h-1.051&#10;    l-1.048-2.786h-1.035h-1.049l-1.046-2.784l-1.049,2.784l-1.037-2.784l-1.048-5.579h-1.049l-1.047,5.579l-1.037-5.579l-1.047-2.784&#10;    l-1.047,2.784l-1.052,2.796h-1.033h-1.048l-1.049-2.796l-1.048,2.796h-1.038l-1.046-5.58l-1.049,5.58l-1.035,11.138l-1.048,2.783&#10;    l-1.051,8.364l-1.046,2.785l-1.036,2.784l-1.048,2.784l-1.048,5.569l-1.049,5.568l-1.035,5.579l-1.049,8.355l-1.049,11.138h-1.047&#10;    l-1.037-5.57h-1.047l-1.048,5.57h-1.05h-1.034l-1.049,2.784h-1.049h-1.035h-1.049h-1.047h-1.049h-1.036h-1.047h-1.05l-1.048-2.784&#10;    l-1.035-5.57h-1.049l-1.047,5.57h-1.049l-1.036-5.57l-1.048-2.783l-1.049,2.783l-1.048-2.783l-1.036-2.784l-1.048-2.786l-1.049,5.57&#10;    h-1.048h-1.035l-1.048-2.784l-1.049,2.784h-1.036h-1.048h-1.047l-1.05-2.784l-1.035,2.784l-1.047,5.568l-1.051-2.785h-1.047&#10;    l-1.036-2.783h-1.048h-1.047l-1.049-2.784l-1.035,2.784h-1.049h-1.05l-1.047-5.57h-1.037l-1.047-2.784l-1.049-2.785l-1.036-2.794&#10;    l-1.047-2.785h-1.048l-1.049-5.568h-1.036l-1.048-5.569l-1.048,2.785l-1.049-11.139l-1.035,5.569l-1.047-2.784l-1.05,5.568&#10;    l-1.047-8.354h-1.036l-1.049,2.785l-1.046,2.784l-1.049-8.364l-1.036,2.795l-1.049-5.579l-1.048-2.785h-1.034l-1.051-5.567&#10;    l-1.047,2.784l-1.048-5.57l-1.036,5.57h-1.047l-1.048,2.783l-1.049-5.567h-1.036l-1.049-8.354l-1.047,5.567h-1.048l-1.036-5.567&#10;    l-1.049,5.567l-1.048,5.57l-1.047-5.57l-1.036,8.354l-1.048-5.567l-1.048-2.786l-1.05,8.354l-1.034-2.783h-1.048l-1.049-2.784&#10;    h-1.034l-1.051,2.784l-1.046-8.354l-1.049-5.579l-1.036-2.784l-1.047-11.137l-1.049-5.57l-1.048,2.784l-1.036-11.148l-1.048,2.784&#10;    l-1.048-5.567l-1.048,2.783l-1.036,2.784h-1.048l-1.049,8.364h-1.047l-1.036,13.923h-1.049l-1.046,16.718l-1.038-2.784l-1.047,2.784&#10;    l-1.048,2.783l-1.049,8.364l-1.034-2.795l-1.05-5.569l-1.047,16.718l-1.049-11.148l-1.036-2.784l-1.047-13.923l-1.05,2.784&#10;    l-1.047,5.57l-1.036,8.353l-1.048,2.795l-1.047,2.785l-1.049-2.785l-1.036-2.795l-1.048-11.137l-1.049-8.354l-1.034-2.796&#10;    l-1.049-5.568h-1.048l-1.047-13.923l-1.038-11.147l-1.047-8.355l-1.048-2.784l-1.049,5.57l-1.034-2.786h-1.05l-1.047,19.503&#10;    l-1.049,8.354l-1.036,16.717l-1.047,16.707l-1.05,2.795l-1.047,16.708l-1.036,2.783l-1.048,8.364l-1.047-2.785l-1.038-2.794&#10;    l-1.047,5.579l-1.048,5.57l-1.049,5.567l-1.034-5.567l-1.049-8.355h-1.049l-1.047-2.794l-1.038,11.149h-1.047l-1.048-5.57&#10;    l-1.049-8.364l-1.036,2.785h-1.048l-1.047,8.363l-1.049-5.569l-1.036,8.355l-1.047-2.786l-1.05-5.569h-1.047l-1.036-2.794&#10;    l-1.048,5.579l-1.047-2.785l-1.038,5.569l-1.047-5.569l-1.048-2.794l-1.049-11.138l-1.034,2.784l-1.05-2.784l-1.047-5.569&#10;    l-1.047-2.784l-1.038-8.364l-1.047-11.139l-1.048-11.147l-1.049,2.784l-1.036,5.579l-1.048,5.57l-1.047-8.354h-1.049l-1.036,5.567&#10;    l-1.047,13.923l-1.05,8.364l-1.034,11.139l-1.049,27.855l-1.048,11.147l-1.047,5.569l-1.038,5.569l-1.047,2.784l-1.049,2.785h-1.049&#10;    l-1.034-5.569l-1.05,2.784h-1.047l-1.047-8.354l-1.038,5.569l-1.047-2.786l-1.048-5.567l-1.049-2.785l-1.036-8.363l-1.049,5.578&#10;    l-1.047,5.57h-1.036l-1.048,2.784h-1.048l-1.05-5.569l-1.034-2.785l-1.049,2.785l-1.048-11.147h-1.047l-1.038,5.579l-1.047,5.568&#10;    h-1.048l-1.049-2.785l-1.034,5.57l-1.05-2.785l-1.047-8.363h-1.047l-1.038-8.354l-1.046-16.717l-1.049,2.794h-1.049l-1.036-5.579&#10;    l-1.048-2.783l-1.047-13.923l-1.037-11.149l-1.048-2.783l-1.046-8.354l-1.051-13.933l-1.034-2.784l-1.048-2.783l-1.049-2.786&#10;    l-1.047,5.569l-1.038-41.788l-1.046,36.219l-1.049-5.569l-1.049,2.785l-1.035,13.923l-1.049,2.784l-1.048,22.286l-1.048,8.364&#10;    l-1.036,8.354l-1.049,11.138l-1.048,8.363l-1.036,5.57l-1.048,2.783l-1.048-2.783l-1.048-2.784l-1.036,8.353h-1.048l-1.048,2.785&#10;    l-1.048-11.138l-1.036-2.786l-1.048,5.57l-1.049,11.138"/>
+    <path class="bar" d="M110.276,597.708V215.24" style="stroke-width: 12; animation-duration: 5s"/>
+    <path class="bar" d="M159.263,597.708V215.24" style="stroke-width: 24; animation-duration: 3s"/>
+    <path class="bar" d="M218.276,597.708V215.24" style="stroke-width: 10; animation-duration: 5s"/>
+    <path class="bar" d="M251.276,597.708V215.24" style="stroke-width: 11; animation-duration: 5s"/>
+    <path class="bar" d="M374.335,597.708V215.24" style="stroke-width: 12; animation-duration: 8s"/>
+    <path class="bar" d="M426.007,597.708V215.24" style="stroke-width: 18; animation-duration: 4s"/>
+    <path class="bar" d="M498.276,597.708V215.24" style="stroke-width: 8; animation-duration: 5s"/>
+    <path class="bar" d="M521.786,597.708V215.24" style="stroke-width: 18; animation-duration: 4s"/>
+    <path class="bar" d="M630.142,597.708V215.24" style="stroke-width: 10; animation-duration: 5s"/>
+    <path class="bar" d="M759.654,597.708V215.24" style="stroke-width: 19; animation-duration: 3.5s"/>
+    <path class="bar" d="M853.516,597.708V215.24" style="stroke-width: 20; animation-duration: 5.5s"/>
+    <path class="bar" d="M1000.654,597.708V215.24" style="stroke-width: 10; animation-duration: 3.5s"/>
+    <path class="bar" d="M94.739,257.029h925.876" style="stroke-width: 1.5; animation-duration: 2s"/>
+    <path class="bar" d="M94.739,306.712h925.876" style="stroke-width: 1.5; animation-duration: 7s"/>
+    <path class="bar" d="M94.739,356.396h925.876" style="stroke-width: 1.5; animation-duration: 6s"/>
+    <path class="bar" d="M94.739,406.079h925.876" style="stroke-width: 1.5; animation-duration: 3s"/>
+    <path class="bar" d="M94.739,455.763h925.876" style="stroke-width: 1.5; animation-duration: 8s"/>
+    <path class="bar" d="M94.739,505.446h925.876" style="stroke-width: 1.5; animation-duration: 5s"/>
+    <path class="bar" d="M94.739,555.13h925.876" style="stroke-width: 1.5; animation-duration: 6.5s"/>
+    </svg>
+    </div>
+    <div class="animated-header__body">
+      <h1 class="animated-header__title">
+        National Bureau of Economic Research
+      </h1>
+              <div class="animated-header__subtitle">
+          Conducting and disseminating non-partisan economic research
+        </div>
+                    <div class="animated-header__cta">
+          <a href="/research/business-cycle-dating" class="btn btn--primary">Business Cycle Dating Information</a><a href="/working-papers#working-papers-listing" class="btn btn--primary">New This Week / Working Papers</a>
+        </div>
+          </div>
+  </div>
+  </div>
+
+  
+        <section class="promo-grid promo-grid--big-and-small">
+  <div class="promo-grid__promos">
+    <div class="promo-grid__multi-promo">
+      <div class="page-subtitle">
+  <h2 class="page-subtitle__title">Coronavirus Pandemic Research</h2>
+
+  </div>
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">PPP Loans Provided Credit Access, But Some Firms Passed </h3>
+
+      <div class="tertiary-header__summary">
+      <p>More than 5 million firms participated in the Payroll Protection Program (PPP), which extended potentially forgivable loans to small- and medium-sized businesses affected by the COVID-19 pandemic.  Some eligble firms, however, did not access the program, and others returned the funds shortly after receiving them.  NBER Research Associate Manju Puri of Duke University and her collaborators study the impact of receiving, and when relevant returning, PPP loans on the market capitalizations of small, publicly-traded firms.  They find that firm values rose, on average, when loans were announced. Firms that received loans, and announced that they were returning them, also experienced a rise in share prices when that news broke.  The researchers attribute decisions to return PPP funds to concerns about the costs or reputational risks of future investigations or tobureaucratic burdens, and conclude that market participants regarded such decisions favorably. Puri describes these and other findings in the video below.   An archive of NBER videos on pandemic-related topics may be found <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="35b064e0-31cc-4818-864a-a52de6e49642" href="/covid-19-related-interviews" title="COVID-19 Related Interviews">here</a>.<br />
+<style type="text/css">
+&lt;!--/*--&gt;&lt;![CDATA[/* &gt;&lt;!--*/
+
+&lt;!--/*--&gt;&lt;![CDATA[/* &gt;&lt;!--*/
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*--&gt;&lt;!]]]]&gt;&lt;![CDATA[&gt;*/
+
+/*--&gt;&lt;!]]&gt;*/
+</style>
+</p>
+
+<div class="embed-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed//xcmcZy_lANQ?rel=0"></iframe></div>
+
+<p><br />
+Three NBER working papers distributed this week investigate the economic and health impacts of the COVID-19 pandemic and policy responses to it.  One reviews the evidence to date on the effects of both mandated and voluntary social distancing (<a href="/papers/w28139">28139</a>).  Another describes the impact of the pandemic on the revenue and consumption spending of small business owners (<a href="/papers/w28151">28151</a>).  A third explores how the 1918 flu pandemic affected innovative activity by US businesses (<a href="/papers/w28152">21852</a>).<br />
+<br />
+More than 300 NBER working papers have presented pandemic-related research. These papers are open access and have been collected for easy reference. Like all NBER papers, they are circulated for discussion and comment, and have not been peer-reviewed<i>. </i>They may be viewed in <a href="/topics/covid-19">reverse chronological order</a> or by <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e9d23a08-93f9-437c-b9f4-48de335e5278" href="/nber-studies-related-covid-19-pandemic-topic-area" title="NBER Studies Related to COVID-19 Pandemic By Topic Area">topic area</a>.</p>
+
+<hr />
+    </div>
+  </div>
+
+
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">Board Member Cecilia Rouse Nominated to Chair CEA </h3>
+
+      <div class="tertiary-header__summary">
+      <div data-embed-button="media" data-entity-embed-display="view_mode:media.link_to_file" data-entity-type="media" data-entity-uuid="d28c6143-ecb6-48cb-a6cc-15baca526e9f" data-langcode="en" class="align-right embedded-entity">  <img src="/sites/default/files/2020-12/ceciliarouse_withcaption.jpg" width="260" height="328" alt="ceciliarouse_withcaption.jpg" typeof="foaf:Image" />
+
+
+</div>
+
+
+<p>President-elect Biden has nominated Cecilia Rouse, a member of the NBER Board of Directors and an NBER research associate from 1992 until 2014, to chair the Council of Economic Advisers (CEA). Rouse is the dean of Princeton University’s School of Public and International Affairs and the Lawrence and Shirley Katzman and Lewis and Anna Ernst Professor in the Economics of Education. An expert on labor economics and education, Rouse was affiliated with three NBER programs – Children, Economics of Education, and Labor Studies – prior to becoming Princeton’s representative on the Board of Directors. </p>
+
+<p>Rouse has served in Washington twice before, as a member of the CEA between 2009 and 2011, and as a staff member at the National Economic Council between 1998 and 1999. She received both her AB and her PhD in economics from Harvard University. She has spent her entire academic career at Princeton.</p>
+
+<p>If confirmed, Rouse will be the 15th current or former NBER research associate to serve as CEA chair since Arthur Burns was tapped for this role by President Eisenhower in 1953.</p>
+
+<hr />
+    </div>
+  </div>
+
+
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">From the NBER Digest</h3>
+
+      <div class="tertiary-header__summary">
+      <p>...a free monthly publication of non-technical summaries of research on topics of broad public interest</p>
+
+    </div>
+  </div>
+
+
+
+
+    
+<div class="digest-card js-clickable-card is-clickable digest-card--top-image" data-href="/digest-202012/corporate-reporting-era-artificial-intelligence">
+        <img src="/sites/default/files/styles/listing_large_image/public/2020-11/w27950.jpg?itok=mUzC2VDy" width="1470" height="1015" alt="digetst-202012-w27950.jpg" typeof="foaf:Image" class="digest-card__image" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/digest-202012/corporate-reporting-era-artificial-intelligence"><span property="schema:name">Corporate Reporting in the Era of Artificial Intelligence</span>
+</a>  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">Mechanical downloads of corporate 10-K and 10-Q filings increased from 360,861 in 2003 to around 165 million in 2016.
+
+
+Companies have long seen annual reports and other corporate disclosures as opportunities to portray their business health in a positive light. Increasingly, the audience for these disclosures is not just humans, but also machine readers that process the information as an input to investment recommendations.
+
+In How to Talk When a Machine Is...</div>
+  </div>
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">NBER Offers Graduate and Post-Doctoral Fellowships</h3>
+
+      <div class="tertiary-header__summary">
+      <p>The NBER is now accepting applications for 15 fellowships to support dissertation writers and nine post-doctoral fellowships on various topics for the 2021-22 academic year. Here are the <a href="https://www.nber.org/career-resources/calls-fellowship-applications">details</a>. The deadline for most applications is December 10.</p>
+
+<p>Graduate fellowships support PhD students working on specific topic areas, such as behavioral macroeconomics, energy economics, and work at older ages. These fellowships are funded by federal agencies and private foundations.</p>
+
+<p>Post-doctoral fellowships permit early-career scholars working on a wide variety of topics, including health and aging, long-term fiscal policy, and tax competition, to spend a year at the NBER’s Cambridge office focusing on their research projects. The NBER also sponsors a fellowship for a researcher in any field of economics who is a member of a group that has historically been under-represented in the economics profession.</p>
+<hr />
+    </div>
+  </div>
+
+
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">New Working Group on Race and Stratification in the Economy Launched</h3>
+
+      <div class="tertiary-header__summary">
+      <div data-embed-button="media" data-entity-embed-display="view_mode:media.link_to_file" data-entity-type="media" data-entity-uuid="44193a4a-27c9-4173-9cbf-8f1ae567db3a" data-langcode="en" class="align-right embedded-entity">  <img src="/sites/default/files/2020-11/TrevonLogancroppedwithborder_caption%20%282%29.jpg" width="260" height="360" alt="TrevonLogancroppedwithborder_caption (2).jpg" typeof="foaf:Image" />
+
+
+</div>
+
+
+<p>The NBER has launched a Working Group on Race and Stratification in the Economy to explore, document, and disseminate research on the causes and consequences of racial disparities in economic outcomes, and to stimulate research on race in all aspects of economic analysis. Research Associate Trevon Logan, the Hazel C.Youngberg Distinguished Professor of Economics at The Ohio State University, will serve as the inaugural director. The group will meet twice each year, beginning with a virtual meeting in April 2021.<br />
+<br />
+The working group will take a broad approach to the economics of race, considering the factors that contribute to racial differences in income, wealth, housing, educational attainment, labor market outcomes, economic mobility, and a range of other measures. It will explore economic models of discrimination and social stratification, as well as insights on these issues from other social sciences, and will consider the role of public policies and political institutions in contributing to, and ameliorating, racial differences. More broadly, it will encourage new approaches to economic analysis of race in a variety of settings.<br />
+<br />
+The NBER also has created a new post-doctoral fellowship that will support a year of research by an early-career scholar who is a member of a historically under-represented group in the economics profession, or who is studying issues of diversity in the profession. Further Information may be found at:<br />
+<br />
+<a href="https://www.nber.org/call-applications-post-doctoral-fellowship-promote-diversity-economics-profession">https://www.nber.org/call-applications-post-doctoral-fellowship-promote-diversity-economics-profession</a></p>
+
+<hr />
+    </div>
+  </div>
+
+
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">From the NBER Reporter</h3>
+
+      <div class="tertiary-header__summary">
+      <p>...a free quarterly featuring affiliates writing about their research, program updates, and NBER news</p>
+
+    </div>
+  </div>
+
+
+
+
+    
+<div class="digest-card js-clickable-card is-clickable digest-card--top-image" data-href="/reporter/2020number3/capital-market-risks-emerging-markets">
+        <img src="/sites/default/files/styles/listing_large_image/public/2020-10/charifigure1.jpg?itok=A274n1GM" width="1470" height="1015" alt="charifigure1" typeof="foaf:Image" class="digest-card__image" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/reporter/2020number3/capital-market-risks-emerging-markets"><span property="schema:name">Capital Market Risks in Emerging Markets</span>
+</a>  </div>
+
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/anusha_chari">Anusha Chari</a>
+
+    </div>
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">International financial integration has increasingly exposed capital markets in emerging nations to shocks that originate outside their domestic economies. Theoretical open-economy macro models propose a variety of mechanisms by which global financial conditions are transmitted from developed to emerging markets. Candidate mechanisms include advanced-economy monetary policy spillovers, the risk-bearing capacity of international financial intermediaries, liquidity in...</div>
+  </div>
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">From the Bulletin on Retirement and Disability</h3>
+
+      <div class="tertiary-header__summary">
+      <p>...a free quarterly summarizing research in the NBER's Retirement and Disability Research Center</p>
+
+    </div>
+  </div>
+
+
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/brd/22nd-annual-meeting-retirement-and-disability-research-consortium">
+  
+  
+  <div class="digest-card__title">
+    <a href="/brd/22nd-annual-meeting-retirement-and-disability-research-consortium"><span property="schema:name">The 22nd Annual Meeting of the Retirement and Disability Research Consortium</span>
+</a>  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">The Social Security Administration (SSA) virtually convened its 2020 Retirement and Disability Research Consortium (RDRC) Meeting on August 6th. This year's meeting was organized by the Center for Retirement Research at Boston College, with participants attending digitally via a platform supported by the National Press Club in Washington, DC.
+
+The meeting was organized around thematic panels and featured research funded through the NBER RDRC as well as through the other...</div>
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/brd/new-rdrc-projects-examine-covid-19-effects-retirement-and-social-security">
+  
+  
+  <div class="digest-card__title">
+    <a href="/brd/new-rdrc-projects-examine-covid-19-effects-retirement-and-social-security"><span property="schema:name">New RDRC Projects to Examine COVID-19 Effects on Retirement and Social Security</span>
+</a>  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">The NBER RDRC is pleased to announce two new projects, funded through the Social Security Administration's Retirement and Disability Research Consortium, that will explore some of the effects of the COVID-19 pandemic.
+
+In Economic Disruption and Social Security Spillovers: Evidence from the COVID-19 Pandemic, researchers Gopi Shah Goda and Emilie Jackson will examine how SSDI applications and Social Security retirement claiming are likely to be affected by the COVID-19...</div>
+  </div>
+
+<div class="tertiary-header">
+  <h3 class="tertiary-header__title">From the Bulletin on Health</h3>
+
+      <div class="tertiary-header__summary">
+      <p>...a free summary of recent NBER Working Papers on health topics, distributed three times a year</p>
+
+    </div>
+  </div>
+
+
+
+
+    
+<div class="digest-card js-clickable-card is-clickable digest-card--top-image" data-href="/bh20203/role-economics-research-alzheimers-disease">
+        <img src="/sites/default/files/styles/listing_large_image/public/2020-10/w27760.jpg?itok=eFYtVASi" width="1470" height="1015" alt="w27760" typeof="foaf:Image" class="digest-card__image" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/bh20203/role-economics-research-alzheimers-disease"><span property="schema:name">The Role of Economics in Research on Alzheimer’s Disease</span>
+</a>  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">Alzheimer’s disease is a progressive disease of the brain that is the leading cause of dementia in the United States, afflicting an estimated five million Americans. As shown in the figure, the prevalence, costs, and human toll of this disease are vast, and expected to increase over time. Given these sobering statistics, Alzheimer’s disease is a critical priority for research and public policy in the United States.
+
+In order to encourage new economic research on this...</div>
+  </div>
+
+
+    </div>
+
+    <div class="promo-grid__multi-promo">
+      <div class="page-subtitle">
+  <h2 class="page-subtitle__title">Featured Working Papers</h2>
+  <div class="views-element-container"><div class="js-view-dom-id-819cc86dd2bfd602aac06e6bc8c82495585d75a888d157bc9da44686586da58e">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row"><div class="digest-card">
+  <div class="digest-card__title">
+    <a href="/papers/w27900"><span>Antifraud Enforcement in Health Care</span>
+</a>
+  </div>
+  <div class="digest-card__date">
+    <span class="digest-card__label">
+     <time datetime="2020-12-03T12:00:00Z">December 3, 2020</time>
+
+    </span>
+  </div>
+  <div class="digest-card__summary">
+    <p><span><span><span><span><span>A Department of Justice investigation of hospitals accused of billing Medicare for unnecessary implantable cardiac defibrillator procedures was followed by a 22 percent decline in unnecessary implantations, resulting in savings with a present value of $2.7 billion nationally over a 10-year period, </span></span><a href="/people/david_howard"><span><span><span>David H. Howard</span></span></span></a> <span><span>and </span></span><a href="/people/ian_mccarthy"><span><span><span>Ian McCarthy</span></span></span></a> <span><span>find.</span></span></span></span></span></p>
+
+  </div>
+</div>
+</div>
+    <div class="views-row"><div class="digest-card">
+  <div class="digest-card__title">
+    <a href="/papers/w27877"><span>COVID-19 and SME Failures</span>
+</a>
+  </div>
+  <div class="digest-card__date">
+    <span class="digest-card__label">
+     <time datetime="2020-12-02T12:00:00Z">December 2, 2020</time>
+
+    </span>
+  </div>
+  <div class="digest-card__summary">
+    <p><span>Studying 17 countries, </span><span><a href="/people/pierre-olivier_gourinchas"><span>Pierre-Olivier Gourinchas</span></a></span><span>, </span><span><a href="/people/sebnem_kalemli-ozcan"><span>Ṣebnem Kalemli-Özcan</span></a></span><span>, </span><span><a href="/people/veronika_penciakova"><span>Veronika Penciakova</span></a></span><span>, and </span><span><a href="/people/nick_sander"><span>Nick Sander</span></a></span><span> </span><span>estimate that the failure rate of small and medium-size enterprises during the COVID crisis increased by nearly nine percentage points in the absence of government support, affecting 3.1 percent of private sector employees. </span></p>
+
+  </div>
+</div>
+</div>
+    <div class="views-row"><div class="digest-card">
+  <div class="digest-card__title">
+    <a href="/papers/w27875"><span>Nudging Timely Wage Reporting   </span>
+</a>
+  </div>
+  <div class="digest-card__date">
+    <span class="digest-card__label">
+     <time datetime="2020-12-01T12:00:00Z">December 1, 2020</time>
+
+    </span>
+  </div>
+  <div class="digest-card__summary">
+    <p><span><span><span>Sending a letter reminding Supplemental Security Income recipients of their wage reporting responsibilities significantly increased both the likelihood of their reporting earnings and the total amount of earnings reported, </span></span></span><span><span><span><a href="/people/yiwei_zhang"><span><span><span><span>C. Yiwei Zhang</span></span></span></span></a></span></span></span><span><span><span>, </span></span></span><span><span><span><a href="/people/hemmeter"><span><span><span><span>Jeffrey Hemmeter</span></span></span></span></a></span></span></span><span><span><span>, </span></span></span><span><span><span><a href="/people/judd_kessler"><span><span><span><span>Judd B. Kessler</span></span></span></span></a></span></span></span><span><span><span>, </span></span></span><span><span><span><a href="/people/robert_metcalfe"><span><span><span><span>Robert D. Metcalfe</span></span></span></span></a></span></span></span><span><span><span>, and </span></span></span><span><span><span><a href="/people/robert_weathers"><span><span><span><span>Robert Weathers</span></span></span></span></a></span></span></span><span><span><span> find.</span></span></span></p>
+
+  </div>
+</div>
+</div>
+    <div class="views-row"><div class="digest-card">
+  <div class="digest-card__title">
+    <a href="/papers/w27856"><span>The Fed Funds Rate and the Markets</span>
+</a>
+  </div>
+  <div class="digest-card__date">
+    <span class="digest-card__label">
+     <time datetime="2020-11-30T12:00:00Z">November 30, 2020</time>
+
+    </span>
+  </div>
+  <div class="digest-card__summary">
+    <p><span><span><span>A surprise increase in the federal funds rate lowers output and consumption relative to habit, thereby raising risk aversion and contributing to a decline in stock market values, according to a study by </span></span></span><span><span><span><a href="/people/carolin_pflueger"><span><span><span><span>Carolin Pflueger</span></span></span></span></a></span></span></span><span><span><span> and </span></span></span><span><span><span><a href="/people/grinaldi"><span><span><span><span>Gianluca Rinaldi</span></span></span></span></a></span></span></span><span><span><span>. </span></span></span></p>
+
+  </div>
+</div>
+</div>
+    <div class="views-row"><div class="digest-card">
+  <div class="digest-card__title">
+    <a href="/papers/w27863"><span>The Social Returns to Innovation</span>
+</a>
+  </div>
+  <div class="digest-card__date">
+    <span class="digest-card__label">
+     <time datetime="2020-11-25T12:00:00Z">November 25, 2020</time>
+
+    </span>
+  </div>
+  <div class="digest-card__summary">
+    <p><span><span><span><span><span>Comparing estimates of the increase in national income that is attributed to knowledge advance and technical change with spending on research and innovation, </span></span><a href="/people/benjamin_jones"><span><span><span>Benjamin F. Jones</span></span></span></a><span><span> and </span></span><a href="/people/lawrence_summers"><span><span><span>Lawrence H. Summers</span></span></span></a> <span><span>conclude that innovation efforts produce social benefits much greater than their investment costs.</span></span></span></span></span></p>
+
+  </div>
+</div>
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+</div>
+
+      <div class="page-subtitle">
+  <h2 class="page-subtitle__title">In the News</h2>
+
+      <div class="page-subtitle__summary">
+      <p><em>Recent citations of NBER research in the media<br />
+_______________________________________</em></p>
+
+    </div>
+  
+  <div class="views-element-container"><div class="js-view-dom-id-63affa11d12d3885b6a83cfa2d874ad471a1d2ba8efef6487fddfeb31933941f">
+  
+  
+  
+
+  
+  
+  
+
+      <div>
+<div class="digest-card js-clickable-card is-clickable" data-href="https://www.acsh.org/news/2020/11/30/covid-19-if-it-bleeds-it-leads-15183">
+  <div class="digest-card__title">
+    <a href="https://www.acsh.org/news/2020/11/30/covid-19-if-it-bleeds-it-leads-15183"><span>For COVID-19, If It Bleeds, It Leads</span>
+</a>
+  </div>
+
+      <div class="digest-card__date">
+      <span class="digest-card__label">
+        <time datetime="2020-11-30T12:00:00Z">November 30, 2020</time>
+
+      </span>
+    </div>
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Source:
+      </span>
+      <a href="https://www.acsh.org/news/2020/11/30/covid-19-if-it-bleeds-it-leads-15183">American Council on Science and Health</a>
+    </div>
+  
+  
+  </div>
+</div>
+    <div>
+<div class="digest-card js-clickable-card is-clickable" data-href="https://www.nytimes.com/2020/11/30/business/smallbusiness/small-business-startups-fail-fast.html">
+  <div class="digest-card__title">
+    <a href="https://www.nytimes.com/2020/11/30/business/smallbusiness/small-business-startups-fail-fast.html"><span>Can a Start-Up Mentality Save Small Businesses?</span>
+</a>
+  </div>
+
+      <div class="digest-card__date">
+      <span class="digest-card__label">
+        <time datetime="2020-11-30T12:00:00Z">November 30, 2020</time>
+
+      </span>
+    </div>
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Source:
+      </span>
+      <a href="https://www.nytimes.com/2020/11/30/business/smallbusiness/small-business-startups-fail-fast.html">The New York Times</a>
+    </div>
+  
+      <div class="digest-card__summary">
+      Read the research
+              <a href="/papers/w27309">here</a>.                </div>
+  
+  </div>
+</div>
+    <div>
+<div class="digest-card js-clickable-card is-clickable" data-href="https://www.standardmedia.co.ke/business-news/article/2001395563/study-people-put-in-more-effort-hours-working-from-home">
+  <div class="digest-card__title">
+    <a href="https://www.standardmedia.co.ke/business-news/article/2001395563/study-people-put-in-more-effort-hours-working-from-home"><span>Study: People put in more effort, hours working from home</span>
+</a>
+  </div>
+
+      <div class="digest-card__date">
+      <span class="digest-card__label">
+        <time datetime="2020-11-29T12:00:00Z">November 29, 2020</time>
+
+      </span>
+    </div>
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Source:
+      </span>
+      <a href="https://www.standardmedia.co.ke/business-news/article/2001395563/study-people-put-in-more-effort-hours-working-from-home">The Standard (Kenya)</a>
+    </div>
+  
+      <div class="digest-card__summary">
+      Read the research
+              <a href="/papers/w27612">here</a>.                </div>
+  
+  </div>
+</div>
+    <div>
+<div class="digest-card js-clickable-card is-clickable" data-href="https://www.deseret.com/indepth/2020/11/27/21719136/child-care-paid-leave-gender-inequality-study-austria-american-enterprise-institute-unc-greensboro">
+  <div class="digest-card__title">
+    <a href="https://www.deseret.com/indepth/2020/11/27/21719136/child-care-paid-leave-gender-inequality-study-austria-american-enterprise-institute-unc-greensboro"><span>Do child care, paid leave reduce gender inequality? Study of Austria raises doubts</span>
+</a>
+  </div>
+
+      <div class="digest-card__date">
+      <span class="digest-card__label">
+        <time datetime="2020-11-28T12:00:00Z">November 28, 2020</time>
+
+      </span>
+    </div>
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Source:
+      </span>
+      <a href="https://www.deseret.com/indepth/2020/11/27/21719136/child-care-paid-leave-gender-inequality-study-austria-american-enterprise-institute-unc-greensboro">Deseret News</a>
+    </div>
+  
+      <div class="digest-card__summary">
+      Read the research
+              <a href="/papers/w28082">here</a>.                </div>
+  
+  </div>
+</div>
+    <div>
+<div class="digest-card js-clickable-card is-clickable" data-href="https://www.wealthprofessional.ca/investments/alternative-investments/could-pe-managers-be-pulling-a-fast-one-on-performance-persistence/335679">
+  <div class="digest-card__title">
+    <a href="https://www.wealthprofessional.ca/investments/alternative-investments/could-pe-managers-be-pulling-a-fast-one-on-performance-persistence/335679"><span>Could PE managers be pulling a fast one on performance persistence?</span>
+</a>
+  </div>
+
+      <div class="digest-card__date">
+      <span class="digest-card__label">
+        <time datetime="2020-11-27T12:00:00Z">November 27, 2020</time>
+
+      </span>
+    </div>
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Source:
+      </span>
+      <a href="https://www.wealthprofessional.ca/investments/alternative-investments/could-pe-managers-be-pulling-a-fast-one-on-performance-persistence/335679">Wealth Professional Canada</a>
+    </div>
+  
+      <div class="digest-card__summary">
+      Read the research
+              <a href="/papers/w28109">here</a>.                </div>
+  
+  </div>
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+
+  <p><a class="link link--arrow" href="/nber-news/nber-research-news">View more</a></p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+    
+<section class="promo-grid promo-grid--2-up">
+            <div class="promo-grid__promos">
+    <div class="book-list">
+        <h2 class="book-list__title">Research Projects</h2>
+
+  
+<div class="digest-card js-clickable-card is-clickable" data-href="/programs-projects/projects-and-centers/conference-research-income-and-wealth">
+  
+  
+  <div class="digest-card__title">
+    <a href="/programs-projects/projects-and-centers/conference-research-income-and-wealth"><span>Conference on Research in Income and Wealth</span>
+</a>  </div>
+
+      <div class="digest-card__items">Project</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+
+  
+<div class="digest-card js-clickable-card is-clickable" data-href="/programs-projects/projects-and-centers/value-medical-research">
+  
+  
+  <div class="digest-card__title">
+    <a href="/programs-projects/projects-and-centers/value-medical-research"><span>The Value of Medical Research</span>
+</a>  </div>
+
+      <div class="digest-card__items">Project</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+
+  
+<div class="digest-card js-clickable-card is-clickable" data-href="/programs-projects/projects-and-centers/retirement-and-disability-research-center">
+        <img src="/sites/default/files/styles/listing/public/2020-02/RRC-Fig01.jpg?itok=g5xuix0e" width="800" height="550" alt="RRC-Fig01.jpg" typeof="foaf:Image" class="digest-card__image" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/programs-projects/projects-and-centers/retirement-and-disability-research-center"><span>Retirement and Disability Research Center</span>
+</a>  </div>
+
+      <div class="digest-card__items">Project</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+
+  
+<div class="digest-card js-clickable-card is-clickable" data-href="/programs-projects/projects-and-centers/moving-opportunity">
+  
+  
+  <div class="digest-card__title">
+    <a href="/programs-projects/projects-and-centers/moving-opportunity"><span>Moving To Opportunity</span>
+</a>  </div>
+
+      <div class="digest-card__items">Project</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+
+  
+<div class="digest-card js-clickable-card is-clickable" data-href="/programs-projects/projects-and-centers/center-aging-and-health-research">
+        <img src="/sites/default/files/styles/listing/public/2019-10/w26095.jpg?itok=4scRps9t" width="800" height="550" alt="w26095.jpg" typeof="foaf:Image" class="digest-card__image" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/programs-projects/projects-and-centers/center-aging-and-health-research"><span>Center for Aging and Health Research</span>
+</a>  </div>
+
+      <div class="digest-card__items">Project</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+<div class="book-list__link">
+                <a href="/projects" class="link link--arrow">More NBER Research Projects</a>
+            </div></div>
+
+    <div class="book-list">
+        <h2 class="book-list__title">Conferences</h2>
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/conferences/health-care-program-meeting-fall-2020">
+  
+  
+  <div class="digest-card__title">
+    <a href="/conferences/health-care-program-meeting-fall-2020"><span>Health Care Program Meeting Fall 2020</span>
+</a>  </div>
+
+      <div class="digest-card__items">Conference</div>
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Organizer(s):
+      </span>
+             <a href="/people/amy_finkelstein" hreflang="en">Amy Finkelstein</a>,     <a href="/people/michael_geruso" hreflang="en">Michael Geruso</a>,     <a href="/people/kate_ho" hreflang="en">Kate Ho</a>     &amp;  <a href="/people/heidi_williams" hreflang="en">Heidi L. Williams</a>    </div>
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/conferences/big-data-and-securities-markets-fall-2020">
+  
+  
+  <div class="digest-card__title">
+    <a href="/conferences/big-data-and-securities-markets-fall-2020"><span>Big Data and Securities Markets Fall 2020</span>
+</a>  </div>
+
+      <div class="digest-card__items">Conference</div>
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Organizer(s):
+      </span>
+             <a href="/people/itay_goldstein" hreflang="en">Itay Goldstein</a>,     <a href="/people/chester_spatt" hreflang="en">Chester S. Spatt</a>     &amp;  <a href="/people/mao_ye" hreflang="en">Mao Ye</a>    </div>
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/conferences/education-program-meeting-fall-2020">
+  
+  
+  <div class="digest-card__title">
+    <a href="/conferences/education-program-meeting-fall-2020"><span>Education Program Meeting Fall 2020</span>
+</a>  </div>
+
+      <div class="digest-card__items">Conference</div>
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Organizer(s):
+      </span>
+             <a href="/people/caroline_hoxby" hreflang="en">Caroline M. Hoxby</a>    </div>
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/conferences/organizational-economics-fall-2020">
+  
+  
+  <div class="digest-card__title">
+    <a href="/conferences/organizational-economics-fall-2020"><span>Organizational Economics Fall 2020</span>
+</a>  </div>
+
+      <div class="digest-card__items">Conference</div>
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Organizer(s):
+      </span>
+             <a href="/people/robert_gibbons" hreflang="en">Robert S. Gibbons</a>    </div>
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/conferences/development-economics-program-meeting-fall-2020">
+  
+  
+  <div class="digest-card__title">
+    <a href="/conferences/development-economics-program-meeting-fall-2020"><span>Development Economics Program Meeting Fall 2020</span>
+</a>  </div>
+
+      <div class="digest-card__items">Conference</div>
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Organizer(s):
+      </span>
+             <a href="/people/katherine_casey" hreflang="en">Katherine Casey</a>,     <a href="/people/thomas_fujiwara" hreflang="en">Thomas Fujiwara</a>,     <a href="/people/karthik_muralidharan" hreflang="en">Karthik Muralidharan</a>,     <a href="/people/benjamin_olken" hreflang="en">Benjamin A. Olken</a>,     <a href="/people/christopher_udry" hreflang="en">Christopher R. Udry</a>,     <a href="/people/eric_verhoogen" hreflang="en">Eric Verhoogen</a>     &amp;  <a href="/people/maisy_wong" hreflang="en">Maisy Wong</a>    </div>
+  
+  
+  
+  </div>
+<div class="book-list__link">
+                <a href="/conferences" class="link link--arrow">Explore Conferences</a>
+            </div></div>
+</div>
+    
+    </section>
+
+    
+<section class="promo-grid promo-grid--2-up">
+            <div class="promo-grid__promos">
+    <div class="book-list">
+        <h2 class="book-list__title">Books &amp; Chapters</h2><div class="book-list__desc"><p>Through a partnership with the University of Chicago Press, the NBER publishes the proceedings of four annual conferences as well as other research studies associated with NBER-based research projects.</p>
+</div>
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/books-and-chapters/trans-atlantic-public-economics-seminar-2018">
+  
+  
+  <div class="digest-card__title">
+    <a href="/books-and-chapters/trans-atlantic-public-economics-seminar-2018"><span>Trans-Atlantic Public Economics Seminar 2018</span>
+</a>  </div>
+
+      <div class="digest-card__items">Book</div>
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/hilary_hoynes">Hilary W. Hoynes</a>,     <a href="/people/camille_landais">Camille Landais</a>     &amp;  <a href="/people/johannes_spinnewijn">Johannes Spinnewijn</a>
+
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/books-and-chapters/tax-policy-and-economy-volume-34">
+        <img src="/sites/default/files/styles/book_cover/public/2020-07/9780226708119.jpg?itok=ymNJkrN2" width="294" height="440" alt="Tax_Policy_and_the_Economy34.jpg" typeof="foaf:Image" class="page-header__cover" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/books-and-chapters/tax-policy-and-economy-volume-34"><span>Tax Policy and the Economy, Volume 34</span>
+</a>  </div>
+
+      <div class="digest-card__items">Book</div>
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/robert_moffitt">Robert A. Moffitt</a>
+
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/books-and-chapters/nber-international-seminar-macroeconomics-2019">
+  
+  
+  <div class="digest-card__title">
+    <a href="/books-and-chapters/nber-international-seminar-macroeconomics-2019"><span>NBER International Seminar on Macroeconomics 2019</span>
+</a>  </div>
+
+      <div class="digest-card__items">Book</div>
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/kristin_forbes">Kristin Forbes</a>     &amp;  <a href="/people/pierre-olivier_gourinchas">Pierre-Olivier Gourinchas</a>
+
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/books-and-chapters/nber-macroeconomics-annual-2019-volume-34">
+        <img src="/sites/default/files/styles/book_cover/public/2020-10/MAv34n1_cover.jpg?itok=ZabQbfFa" width="294" height="440" alt="NBER Macroeconomics Annual 2019" typeof="foaf:Image" class="page-header__cover" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/books-and-chapters/nber-macroeconomics-annual-2019-volume-34"><span>NBER Macroeconomics Annual 2019, volume 34</span>
+</a>  </div>
+
+      <div class="digest-card__items">Book</div>
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/martin_eichenbaum">Martin S. Eichenbaum</a>,     <a href="/people/erik_hurst">Erik Hurst</a>     &amp;  <a href="/people/jonathan_parker">Jonathan A. Parker</a>
+
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+    
+<div class="digest-card js-clickable-card is-clickable" data-href="/books-and-chapters/capital-nineteenth-century">
+        <img src="/sites/default/files/styles/book_cover/public/2020-02/Capital%20in%20the%20Nineteenth%20Century_0.jpg?itok=6912Qi9T" width="294" height="440" alt="Capital in the Nineteenth Century" typeof="foaf:Image" class="page-header__cover" />
+
+
+
+  
+  
+  <div class="digest-card__title">
+    <a href="/books-and-chapters/capital-nineteenth-century"><span>Capital in the Nineteenth Century</span>
+</a>  </div>
+
+      <div class="digest-card__items">Book</div>
+  
+  
+  
+  
+      <div class="digest-card__items">
+      <span class="digest-card__label">
+        Author(s):
+      </span>
+      
+       <a href="/people/robert_gallman">Robert E. Gallman</a>     &amp;  <a href="/people/paul_rhode">Paul W. Rhode</a>
+
+    </div>
+  
+  
+  
+  
+  
+  </div>
+<div class="book-list__link">
+                <a href="/books-and-chapters" class="link link--arrow">Explore Books &amp; Chapters</a>
+            </div></div>
+
+    <div class="book-list">
+        <h2 class="book-list__title">Interviews</h2><div class="book-list__desc">NBER researchers discuss their work on subjects of wide interest to economists, policymakers, and the general public. Recordings of more-detailed presentations, keynote addresses, and panel discussions at NBER conferences are available on the <a href="https://prod.nber.org/node/43426">Lectures</a> page.</div>
+
+
+<div class="digest-card js-clickable-card is-clickable" data-href="/affiliated-scholars/interview/manju-puri-reports-ppp-loans-and-credit-access-small-firms">
+  
+  
+  <div class="digest-card__title">
+    <a href="/affiliated-scholars/interview/manju-puri-reports-ppp-loans-and-credit-access-small-firms"><span>Manju Puri Reports on PPP Loans and Credit Access for Small Firms</span>
+</a>  </div>
+
+      <div class="digest-card__items">Interview</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">More than 5 million firms participated in the Payroll Protection Program (PPP), which extended potentially...</div>
+  </div>
+
+
+
+<div class="digest-card js-clickable-card is-clickable" data-href="/affiliated-scholars/interview/manju-puri-reports-ppp-loans-and-credit-access-small-firms-0">
+  
+  
+  <div class="digest-card__title">
+    <a href="/affiliated-scholars/interview/manju-puri-reports-ppp-loans-and-credit-access-small-firms-0"><span>Manju Puri Reports on PPP Loans and Credit Access for Small Firms</span>
+</a>  </div>
+
+      <div class="digest-card__items">Interview</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">More than 5 million firms participated in the Payroll Protection Program (PPP), which extended potentially...</div>
+  </div>
+
+
+
+<div class="digest-card js-clickable-card is-clickable" data-href="/affiliated-scholars/interview/david-cutler-discusses-economic-cost-covid-19">
+  
+  
+  <div class="digest-card__title">
+    <a href="/affiliated-scholars/interview/david-cutler-discusses-economic-cost-covid-19"><span>David Cutler Discusses the Economic Cost of COVID-19</span>
+</a>  </div>
+
+      <div class="digest-card__items">Interview</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">The COVID-19 pandemic has caused more than 240,000 deaths in the United States, a sharp decline in economic activity,...</div>
+  </div>
+
+
+
+<div class="digest-card js-clickable-card is-clickable" data-href="/affiliated-scholars/interview/william-evans-reports-covid-19-mortality-lower-higher-ranked-nursing-homes">
+  
+  
+  <div class="digest-card__title">
+    <a href="/affiliated-scholars/interview/william-evans-reports-covid-19-mortality-lower-higher-ranked-nursing-homes"><span>William Evans Reports COVID-19 Mortality Lower in Higher-Ranked Nursing Homes</span>
+</a>  </div>
+
+      <div class="digest-card__items">Interview</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">Nursing home residents account for more than 35 percent of deaths from COVID-19 in the United States. NBER Research...</div>
+  </div>
+
+
+
+<div class="digest-card js-clickable-card is-clickable" data-href="/affiliated-scholars/interview/gita-gopinath-summarizes-fiscal-impact-covid-19-both-developed-and-developing-nations">
+  
+  
+  <div class="digest-card__title">
+    <a href="/affiliated-scholars/interview/gita-gopinath-summarizes-fiscal-impact-covid-19-both-developed-and-developing-nations"><span>Gita Gopinath summarizes the fiscal impact of COVID-19 on both developed and developing nations</span>
+</a>  </div>
+
+      <div class="digest-card__items">Interview</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="digest-card__summary">The COVID-19 pandemic has led to unprecedented fiscal actions in many nations, as governments have increased spending...</div>
+  </div>
+<div class="book-list__link">
+                <a href="/interviews" class="link link--arrow">Explore Interviews</a>
+            </div></div>
+</div>
+    
+    </section>
+
+
+  
+  
+        <div class="subfooter">
+    <section id="block-homepagectabottom" class="promo-grid promo-grid--2-up">
+  
+  
+  <div class="promo-grid__promos">
+          
+<div class="card-promo has-gradient--red-blue">
+    
+    
+    <div class="card-promo__title">Sign up for New This Week: The Weekly Announcement of New NBER Working Papers</div>
+
+            <div class="card-promo__link">
+            <a href="http://mydev.nber.org/edit_new_this_week_email_preferences" class="link link--arrow">Manage your email preferences</a>
+        </div>
+    </div>
+
+<div class="card-promo has-gradient--blue-periwinkle">
+    
+    
+    <div class="card-promo__title">Learn More about NBER Research Activities</div>
+
+            <div class="card-promo__link">
+            <a href="/research" class="link link--arrow">Explore research programs</a>
+        </div>
+    </div>
+
+      </div>
+</section>
+  </div>
+
+  </main>
+
+<nav class="back-to-top">
+  <a href="#" aria-label="Return to top of page" class="back-to-top__link"></a>
+</nav>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__contact">
+    <div class="footer__contact-name">National Bureau of Economic Research</div>
+    <div class="footer__contact-address">
+      <a href="//www.nber.org/contact-nber">Contact Us</a><br />
+      1050 Massachusetts Ave.<br />
+      Cambridge, MA 02138<br />
+      <a href="tel:617-868-3900">617-868-3900</a><br />
+      <a href="mailto:info@nber.org">info@nber.org</a>
+    </div>
+  </div>
+
+  <div class="footer__follow">
+    <div class="footer__follow-label">Follow</div>
+    <ul class="footer__follow-links">
+      <li class="footer__follow-link">
+        <a href="https://twitter.com/nberpubs" aria-label="Follow us on Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="19" viewBox="0 0 24 19">
+            <g transform="translate(-879 -3506)">
+              <path d="M900.15 3508.9a4.13 4.13 0 0 0 2.1-2.61c-.9.58-1.95.87-3.15 1.16a5.33 5.33 0 0 0-3.6-1.45 4.88 4.88 0 0 0-4.8 4.79c0 .43 0 .72.15 1.01a13.97 13.97 0 0 1-10.2-4.93c-.45.73-.6 1.45-.6 2.47 0 1.6.9 3.04 2.25 3.91-.75 0-1.5-.29-2.25-.58 0 2.32 1.65 4.2 3.9 4.64-.45.15-.9.15-1.35.15-.3 0-.6 0-.9-.15a4.84 4.84 0 0 0 4.65 3.34 9.75 9.75 0 0 1-6.15 2.03H879a15 15 0 0 0 7.5 2.18c9 0 13.95-7.26 13.95-13.5v-.57a8.56 8.56 0 0 0 2.55-2.61c-.9.43-1.8.58-2.85.72z"/>
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__follow-link">
+        <a href="https://www.linkedin.com/company/national-bureau-of-economic-research" aria-label="Connect with us on LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="23" viewBox="0 0 24 23">
+            <g transform="translate(-1101 -3501)">
+              <path d="M1113.97 3510.57c2.1-3.76 11.03-4.04 11.03 3.6v9.83h-5v-8.15c0-4.9-6.03-4.53-6.03 0v8.15H1109v-15.52h4.97zM1106 3524h-5v-16h5zm0-20.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__follow-link">
+        <a href="https://www.facebook.com/pages/National-Bureau-of-Economic-Research/115165771829285" aria-label="Like us on Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="24" viewBox="0 0 12 24">
+            <g transform="translate(-817 -3503)">
+              <path d="M820 3511h-3v4h3v12h5v-12h3.64l.36-4h-4v-1.67c0-.95.2-1.33 1.11-1.33H829v-5h-3.8c-3.6 0-5.2 1.58-5.2 4.62z"/>
+            </g>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer__legal">
+                <nav class="footer-quick-links" aria-label="Footer Quick Links" role="navigation">
+    
+<ul class="footer__legal-links">
+    <li class="footer__legal-link"><a href="/">Homepage</a></li>
+    <li class="footer__legal-link"><a href="/about-nber/nber-website-privacy-policy">Privacy Policy</a></li>
+  </ul>
+  </nav>
+
+
+        <div class="footer__legal-copy">
+      © 2020 National Bureau of Economic Research. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/43391","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"core\/html5shiv,entity_embed\/caption,nber\/global-scripts,nber\/global-styling,nber_user_auth\/refresh_block,paragraphs\/drupal.paragraphs.unpublished,sitewide_alert\/init,system\/base,views\/views.module","theme":"nber","theme_token":null},"ajaxTrustedUrl":[],"ajaxBlocks":{"e1f99bfa-225e-4efb-b241-9383a5570ce7":{"plugin_id":"user_greeting","config":{"ajaxId":"e1f99bfa-225e-4efb-b241-9383a5570ce7"},"library":["nber_user_auth\/refresh_block"]}},"sitewideAlert":{"refreshInterval":15000},"user":{"uid":0,"permissionsHash":"f13f69dffe9d6cf8ecec00714e00f66eaf3f48f6d2e9b12733b60f66889512b4"}}</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/sites/default/files/js/js_5c3n5cSg15Xhma65jnGuI_Z_qG0A9uezfkXhqPtHJVQ.js"></script>
+<script src="/sites/default/files/js/js_KIMAFLCy36oezNjIH4LSDHMUWm5bIjIfYyZbecpAo4s.js"></script>
+<script src="//polyfill.io/v3/polyfill.min.js?features=fetch"></script>
+<script src="//unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
+<script src="//unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
+<script src="/sites/default/files/js/js_lgzNGXSrR-tCaNDji38c3Lz4gjz38t1RxKumcunUgKc.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6a0e8f4d021e4f91ed2","applicationID":"693377535","transactionName":"NF0HYxcFWREFAUEIXQ0XJFQRDVgMSyZHFEICVDlZCgBSPicNWxVADFQJUhc4eQ0AB2MIVxR7ClkRFlgOCAdHTAwVUQBA","queueTime":0,"applicationTime":4056,"atts":"GBoEFV8fSh8=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<script type="text/javascript" id="">var attributes=google_tag_manager["GTM-MVRPF7C"].macro(4);try{if(attributes){var attributes_split=attributes.split("|"),logged_in=attributes_split[1],is_family=attributes_split[2],is_author=attributes_split[3],new_this_week_any=attributes_split[4];dataLayer.push({event:"set user attributes",logged_in:logged_in,is_family:is_family,is_author:is_author,new_this_week_any:new_this_week_any})}}catch(a){console.error(a)};</script></body></html>

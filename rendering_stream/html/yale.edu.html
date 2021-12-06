@@ -1,0 +1,973 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class=" js js no-touch history boxshadow opacity csstransforms csstransforms3d video svg" xml:lang="en" lang="en" dir="ltr" style=""><head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta charset="utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="//siteimproveanalytics.com/js/siteanalyze_66356571.js"></script><script async="" src="https://www.yale.edu/sites/default/files/googleanalytics/analytics.js?qkoep4"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"edc4967dfd",applicationID:"70828766"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>Yale University</title>
+
+
+    <!-- Favions / Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-57x57.png" />
+
+    <!-- Favions / Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/sites/all/themes/yale_blue/images/favicons/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="/sites/all/themes/yale_blue/images/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/sites/all/themes/yale_blue/images/favicons/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/sites/all/themes/yale_blue/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/sites/all/themes/yale_blue/images/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/sites/all/themes/yale_blue/images/favicons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#00356b" />
+    <meta name="msapplication-TileImage" content="/sites/all/themes/yale_blue/images/favicons/mstile-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="shortcut icon" href="/sites/all/themes/yale_blue/images/favicons/favicon.ico" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.yale.edu/sites/all/themes/yale_blue/images/favicons/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta name="_globalsign-domain-verification" content="wkpgXqnxKdVz7GZbXbNUpAeBFDRTeve6uffKnIz_aA" />
+<meta name="description" content="Since its founding in 1701, Yale University has been dedicated to expanding and sharing knowledge, inspiring innovation, and preserving cultural and scientific information for future generations." />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://www.yale.edu/" />
+<link rel="shortlink" href="https://www.yale.edu/" />
+<meta property="og:site_name" content="Yale University" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.yale.edu/" />
+<meta property="og:title" content="Yale University" />
+<meta property="og:description" content="Since its founding in 1701, Yale University has been dedicated to expanding and sharing knowledge, inspiring innovation, and preserving cultural and scientific information for future generations." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.yale.edu/" />
+<meta name="twitter:title" content="Yale University" />
+    <link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css/css_3GQOoSBsRbQrndD-EuizrBPrMixd3GI22w_erjjVbnE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css/css_U9ITCaB6Q5qBNAAVA4a-2AbDIV_3d_EQMg8Cx7e40SI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css/css_bW21uq73DsUuXApUzfWtSyRLInK7JZxAwG_WYNt2yR4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css/css_8R_0pUYRsUgcn_DqYThF9sN84SOtqZb5hkODYP6qLV8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css_injector/css_injector_25.css?qkoep4" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.yale.edu/sites/default/files/css_injector/css_injector_26.css?qkoep4" media="all" />
+
+    <!-- Compiled CSS -->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="/sites/all/themes/yale_blue/css/site.css?t=202012030232" />
+    <!--<![endif]-->
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="/sites/all/themes/yale_blue/css/site-ie8.css?t=202012030232">
+    <![endif]-->
+      <!--[if IE 9]>
+      <link rel="stylesheet" href="/sites/all/themes/yale_blue/css/site-ie9.css?t=202012030232">
+    <![endif]-->
+
+    <!-- Compiled JS -->
+    <!--[if IE 8]>
+      <script>var IE8 = true;</script>
+      <script src="/sites/all/themes/yale_blue/js/site-ie8.js?t=202012030232"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+      <script>var IE9 = true;</script>
+      <script src="/sites/all/themes/yale_blue/js/site-ie9.js?t=202012030232"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="https://www.yale.edu/sites/all/libraries/respondjs/respond.min.js?qkoep4"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+document.cookie = 'adaptive_image=' + Math.max(screen.width, screen.height) + '; path=/';
+//--&gt;&lt;!]]&gt;
+</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+window.jQuery || document.write("&lt;script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'&gt;\x3C/script&gt;")
+//--&gt;&lt;!]]&gt;
+</script>
+<script type="text/javascript" src="https://www.yale.edu/sites/default/files/js/js_uJR3Qfgc-bGacxkh36HU9Xm2Q98e_V5UWlFISwie5ro.js"></script>
+<script type="text/javascript" src="https://www.yale.edu/sites/default/files/js/js_UCTAtI58eBBTSKQU26zcPBgOA2T-iWeAyRyX2s1o9ds.js"></script>
+<script type="text/javascript" src="https://www.yale.edu/sites/default/files/js/js_f_6-OzlFXjayKlsU5sJKLwjz7LFQvdIZDm-Mt6jKwyM.js"></script>
+<script type="text/javascript" src="https://www.yale.edu/sites/default/files/js/js_qn35Dj8QwxYSsuIyL4yXWdISTN90GlUvBP7IguAaYD0.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.yale.edu/sites/default/files/googleanalytics/analytics.js?qkoep4","ga");ga("create", "UA-991898-23", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--&gt;&lt;!]]&gt;
+</script>
+<script type="text/javascript" src="https://www.yale.edu/sites/default/files/js/js_Xp42x4IeuhdbL6uORzJ6WS2Q7LigXFqtOWo49t50sgc.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"yale_blue","theme_token":"ikIMv1BGlC-txwd9xv1E-AWXGkYXYUQDAFC8Vk--Gdc","jquery_version":"1.10","js":{"0":1,"sites\/all\/libraries\/respondjs\/respond.min.js":1,"1":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"2":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery.form\/4\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/contrib\/google_cse\/google_cse.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/jscrollpane\/js\/jquery.jscrollpane.min.js":1,"sites\/all\/modules\/contrib\/jscrollpane\/js\/jquery.mousewheel.js":1,"sites\/all\/modules\/contrib\/jscrollpane\/js\/script.js":1,"sites\/all\/modules\/contrib\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"3":1,"sites\/all\/themes\/yale_blue\/js\/modernizr.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/adaptive_image\/css\/adaptive-image.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/google_cse\/google_cse.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/libraries\/colorbox\/example4\/colorbox.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/jscrollpane\/css\/jquery.jscrollpane.css":1,"sites\/all\/modules\/contrib\/typogrify\/typogrify.css":1,"\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.7.0\/css\/font-awesome.min.css":1,"sites\/all\/themes\/yale_blue\/css\/a11y.css":1,"sites\/default\/files\/fontyourface\/font.css":1,"\/sites\/all\/libraries\/fontyourface\/YaleDesign-italic-bold\/stylesheet.css":1,"\/sites\/all\/libraries\/fontyourface\/YaleDesign-italic-normal\/stylesheet.css":1,"\/sites\/all\/libraries\/fontyourface\/YaleDesign-normal-bold\/stylesheet.css":1,"\/sites\/all\/libraries\/fontyourface\/YaleDesign-normal-normal\/stylesheet.css":1,"public:\/\/css_injector\/css_injector_25.css":1,"public:\/\/css_injector\/css_injector_26.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"googleCSE":{"cx":"018347764319155434748:jsn72bd6xkq","language":"","resultsWidth":0,"domain":"www.google.com","showWaterMark":true},"jScrollPane":{"class":".scroll-pane"},"custom_search":{"form_target":"_self","solr":0},"urlIsAjaxTrusted":{"\/":true,"\/views\/ajax":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:a9150bcb8a8316634c4f6d8ffb55b468":{"view_name":"explore_yale","view_display_id":"block","view_args":"","view_path":"node\/52","view_base_path":null,"view_dom_id":"a9150bcb8a8316634c4f6d8ffb55b468","pager_element":0}}},"googleanalytics":{"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1}});
+//--&gt;&lt;!]]&gt;
+</script>
+
+  </head>
+  <body id="top" class="fs-grid html front not-logged-in no-sidebars page-node page-node- page-node-52 node-type-home-page home-page" tabindex="-1" style="">
+    <span role="navigation" aria-labelledby="skip_to_content"><a href="#page" id="skip_to_content">Skip to Main Content</a></span>
+
+        <!-- Body Wrapper -->
+<div class="body_wrapper ">
+  <section class="site_message bg_dusty color_black" aria-hidden="true">
+	<div class="site_message_row">
+		<div class="site_message_cell">
+			<div class="site_message_description heading_4">
+				<p>It looks like you're trying to zoom in on this page. For best results: use the most recent version of your browser, disable your browser's 'zoom text only' setting, and use your browser's default font size settings.</p>
+				<p>To zoom in, use [Ctrl] + [+] in Windows, and [Cmd] + [+] on a Mac. To zoom out, use the keyboard shortcut [Ctrl] + [-] in Windows and [Cmd] + [-] on a Mac.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+  <!-- Header -->
+  <header id="header" class="header js-toggle js-bound">
+
+    <!-- Header Row -->
+    <div class="header_row">
+
+      <!-- Header Cell -->
+      <div class="header_cell">
+
+        <!-- Site Logo -->
+        <a href="/" class="logo_main icon_only" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+          <h1 class="offscreen" itemprop="name">Yale University</h1>
+          <img src="/sites/all/themes/yale_blue/images/logo-print.png" class="print" alt="" />
+        </a>
+        <!-- END: Site Logo -->
+
+        <!-- Search, Gateway, Secondary Nav -->
+          <div class="region region-header">
+	<div class="deskHeader">
+		<nav class="secondary_nav" aria-labelledby="secondary_nav_label">
+  <h2 class="visually_hidden" id="secondary_nav_label">Secondary Navigation</h2>
+  <div class="secondary_nav_list menu-block-wrapper menu-block-2 menu-name-menu-secondary-navigation parent-mlid-0 menu-level-1">
+    <a class="secondary_nav_link" href="/calendars"><span class="secondary_nav_text">Calendars</span></a><a class="secondary_nav_link" href="https://giving.yale.edu/"><span class="secondary_nav_text">Giving</span></a><a class="secondary_nav_link" href="https://news.yale.edu/"><span class="secondary_nav_text">News</span></a><a class="secondary_nav_link" href="https://directory.yale.edu/"><span class="secondary_nav_text">Directories</span></a>  </div>
+</nav>
+<!-- Site Search --><a class="btn_site_seach js-toggle_handle" href="/search" role="button" aria-expanded="false"><span class="btn_site_seach_text">Search</span> </a> <!-- END: Site Search --><button class="mobile_nav_handle fs-navigation-handle fs-navigation-reveal-handle fs-navigation-reveal-left-handle fs-navigation-handle__0 fs-navigation__0 fs-swap-element fs-navigation-enabled" data-swap-target=".fs-navigation__0" data-swap-linked="fs-navigation-handle__0" data-swap-group="fs-navigation">Navigation</button><form class="gateway_form" action="" method="post">
+  <label class="visually_hidden" for="gateway_select" tabindex="-1">Info for...</label>
+  <div class="fs-dropdown dropdown_base dropdown_midnight gateway_select" tabindex="0" aria-labelledby="gateway_select-selected" aria-live="polite" aria-haspopup="true" role="listbox" aria-expanded="false"><select class="js-dropdown fs-dropdown-element" id="gateway_select" data-dropdown-options="{&quot;label&quot;:&quot;Info for...&quot;,&quot;customClass&quot;:&quot;dropdown_base dropdown_midnight gateway_select&quot;}" tabindex="-1"><option value="" class="fs-dropdown-item_placeholder" selected="">Info for...</option>
+    <option value="https://secretary.yale.edu/student-life">Students</option><option value="/faculty">Faculty</option><option value="https://your.yale.edu/">Staff</option><option value="https://alumni.yale.edu">Alumni</option>  </select><button type="button" class="fs-dropdown-selected" tabindex="-1" aria-hidden="false" id="gateway_select-selected">Info for...</button><div class="fs-dropdown-options" aria-hidden="false"><span class="fs-dropdown-item fs-dropdown-item_placeholder fs-dropdown-item_selected" data-value="" tabindex="-1" role="option" aria-selected="true">Info for...</span><button type="button" class="fs-dropdown-item" data-value="https://secretary.yale.edu/student-life" tabindex="-1" role="option" aria-selected="false">Students</button><button type="button" class="fs-dropdown-item" data-value="/faculty" tabindex="-1" role="option" aria-selected="false">Faculty</button><button type="button" class="fs-dropdown-item" data-value="https://your.yale.edu/" tabindex="-1" role="option" aria-selected="false">Staff</button><button type="button" class="fs-dropdown-item" data-value="https://alumni.yale.edu" tabindex="-1" role="option" aria-selected="false">Alumni</button></div></div>
+  <button class="info_for_submit button_solid_charcoal color_white" type="submit">Go</button>
+</form>
+	</div>
+  </div>
+        <!-- END: Search, Gateway, Secondary Nav -->
+
+        <!-- Main Nav -->
+          <div class="region region-navbar">
+    <nav class="main_nav" aria-labelledby="main_nav_label">
+  <h2 class="visually_hidden" id="main_nav_label">Main Navigation</h2>
+  <div class="main_nav_list  menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
+    <div class="main_nav_item"><a class="main_nav_link" href="/about-yale">About Yale</a><div class="main_nav_child"><a class="main_nav_child_link" href="/about-yale/leadership-organization">Leadership &amp; Organization</a><a class="main_nav_child_link" href="/about-yale/yale-facts">Yale Facts</a><a class="main_nav_child_link" href="/about-yale/traditions-history">Traditions &amp; History</a><a class="main_nav_child_link" href="http://world.yale.edu">Yale &amp; the World</a><a class="main_nav_child_link" href="/about-yale/visiting">Visiting</a></div></div><div class="main_nav_item"><a class="main_nav_link" href="/academics">Academics</a><div class="main_nav_child"><a class="main_nav_child_link" href="/academics/undergraduate-study">Undergraduate Study</a><a class="main_nav_child_link" href="/academics/graduate-professional-study">Graduate &amp; Professional Study</a><a class="main_nav_child_link" href="/academics/departments-programs">Departments &amp; Programs</a><a class="main_nav_child_link" href="https://world.yale.edu/academics-research">Global Education</a><a class="main_nav_child_link" href="https://summer.yale.edu/">Summer Session</a><a class="main_nav_child_link" href="/academics/non-degree-offerings">Non-Degree Offerings</a><a class="main_nav_child_link" href="https://poorvucenter.yale.edu/online-courses">Online Learning</a></div></div><div class="main_nav_item"><a class="main_nav_link" href="/admissions">Admissions</a><div class="main_nav_child"><a class="main_nav_child_link" href="https://admissions.yale.edu/">Undergraduate</a><a class="main_nav_child_link" href="/admissions/graduate-professional-schools">Graduate &amp; Professional Schools</a><a class="main_nav_child_link" href="/admissions/financial-aid">Financial Aid</a><a class="main_nav_child_link" href="https://world.yale.edu/admissions">International Students</a><a class="main_nav_child_link" href="https://summer.yale.edu/apply">Summer Session</a><a class="main_nav_child_link" href="/admissions/non-degree-seeking-students">Non-Degree Seeking Students</a><a class="main_nav_child_link" href="https://worldfellows.yale.edu/the-program/application/">World Fellows Program</a></div></div><div class="main_nav_item"><a class="main_nav_link" href="/research-collections">Research &amp; Collections</a><div class="main_nav_child"><a class="main_nav_child_link" href="https://research.yale.edu/">Research at Yale</a><a class="main_nav_child_link" href="https://web.library.yale.edu/">Libraries</a><a class="main_nav_child_link" href="/research-collections/museums-galleries">Museums &amp; Galleries</a><a class="main_nav_child_link" href="/research-collections/centers-institutes">Centers &amp; Institutes</a><a class="main_nav_child_link" href="http://discover.odai.yale.edu/ydc/">Digital Collections &amp; Open Resources</a></div></div><div class="main_nav_item"><a class="main_nav_link" href="/life-yale">Life at Yale</a><div class="main_nav_child"><a class="main_nav_child_link" href="/life-yale/arts-culture">Arts &amp; Culture</a><a class="main_nav_child_link" href="/life-yale/athletics-recreation">Athletics &amp; Recreation</a><a class="main_nav_child_link" href="https://belong.yale.edu">Belonging at Yale</a><a class="main_nav_child_link" href="/life-yale/health-wellness">Health &amp; Wellness</a><a class="main_nav_child_link" href="/life-yale/new-haven">New Haven</a><a class="main_nav_child_link" href="https://housing.yale.edu/">Residential Life</a><a class="main_nav_child_link" href="/life-yale/service">Service</a><a class="main_nav_child_link" href="https://secretary.yale.edu/student-life/student-groups-and-activities">Student Groups &amp; Activities</a><a class="main_nav_child_link" href="/life-yale/virtual-yale">Virtual Yale</a></div></div>  </div>
+</nav>
+  </div>
+        <!-- END: Main Nav -->
+
+      </div>
+      <!-- END: Header Cell -->
+
+
+    </div>
+    <!-- END: Header Row -->
+
+    <!-- Site Search -->
+    <form action="#" method="GET" class="site_search" role="search" aria-label="Search Site">
+      <div class="site_search_row">
+        <div class="site_search_cell">
+          <div class="site_search_fieldset border_dusty">
+            <input aria-label="search" class="site_search_input" type="text" name="query" placeholder="Search..." value="" />
+            <button class="site_search_button" type="submit">
+              <span class="visually_hidden">Search</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- END: Site Search -->
+
+  </header>
+  <!-- END: Header -->
+
+  <!-- Main Content -->
+  <main id="page" class="page" tabindex="-1">
+
+
+    <!-- Page Feature -->
+    <div class="page_feature">
+
+      <div class="page_divider visually_hidden">
+        <div class="page_divider_cell"></div>
+      </div><section class="site_alert bg_orange color_white">
+
+  <!-- Site Alert Row -->
+  <div class="site_alert_row">
+
+    <!-- Site Alert Cell -->
+    <div class="site_alert_cell">
+
+      <header class="site_alert_header">
+        <h2 class="site_alert_title heading_5">COVID-19 Information</h2>
+      </header>
+
+      <div class="site_alert_description heading_4">
+        <p><a href="https://covid19.yale.edu">Visit our COVID-19 website for campus updates.</a></p>
+      </div>
+
+    </div>
+    <!-- END: Site Alert Cell -->
+
+  </div>
+  <!-- END: Site Alert Row -->
+
+</section>
+
+              <div class="region region-alert">
+    <!-- Site Alert -->
+
+<!-- END: Site Alert -->
+  </div>
+      
+            </div>
+    <!-- END: Page Feature -->
+
+
+            <!-- Page Row -->
+        <div class="page_row">
+
+
+          <!-- Page Header -->
+          <div class="page_header">
+          
+                                          <div class="tabs"></div>
+                    
+          </div>
+          <!-- END: Page Header -->
+
+          <!-- Page Container -->
+          <div class="page_container">
+
+          <!-- Sidebar -->
+                    <!-- END: Sidebar -->
+
+
+          </div>
+          <!-- END: Page Container -->
+
+
+
+
+        </div>
+        <!-- END: Page Row -->
+
+                  <aside class="page_callouts">
+            <!-- Main Content -->
+              <div class="region region-content">
+    <div class="ds-1col node node-home-page node-promoted node-even view-mode-full clearfix">
+
+  
+    <!-- Single Image Flexible Feature -->
+<section class="single_flex_callout single_flex_feature">
+
+  <!-- Single Image Flexible Callout Row -->
+  <div class="single_flex_callout_row single_flex_feature_row">
+
+    <!-- Single Image Flexible Callout Cell -->
+    <div class="single_flex_callout_cell single_flex_feature_cell">
+
+      <!-- Single Image Flexible Callout Media -->
+      <div class="single_flex_callout_media single_flex_feature_media single_flex_large_media ">
+
+        <figure class="single_flex_callout_figure single_flex_feature_figure single_flex_large_figure responsive_image bg_black">
+          <picture class="single_flex_callout_picture single_flex_large_picture  single_flex_feature_picture">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/homepage_feature_1105x776/public/christina-harden-lab.jpg?itok=Bv81AwLM" />
+            <source media="(min-width: 980px)" srcset="https://www.yale.edu/sites/default/files/styles/homepage_feature_900x632/public/christina-harden-lab.jpg?itok=mG08Yahb" />
+                        <source media="(min-width: 740px)" srcset="https://www.yale.edu/sites/default/files/styles/homepage_feature_980x688/public/christina-harden-lab.jpg?itok=R_Yhpm-x" />
+            <source media="(min-width: 500px)" srcset="https://www.yale.edu/sites/default/files/styles/homepage_feature_740x417/public/christina-harden-lab.jpg?itok=BpLqm_Ib" />
+            <source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/homepage_feature_500x282/public/christina-harden-lab.jpg?itok=5qiWm-Xc" />
+            <!--[if IE 9]></video><![endif]-->
+            <img class="single_flex_callout_image single_flex_feature_image single_flex_large_image" src="https://www.yale.edu/sites/default/files/styles/homepage_feature_500x282/public/christina-harden-lab.jpg?itok=5qiWm-Xc" alt="" />
+          </picture>
+        </figure>
+
+        <a class="button_solid_greige button_icon_right_arrow color_white single_flex_archive single_flex_archive_xl" href="/feature-archive">The Feature Archive</a>
+
+      </div>
+      <!-- END: Single Image Flexible Callout Media -->
+
+      <!-- Single Image Flexible Callout Content -->
+      <article class="single_flex_callout_content single_flex_feature_content single_flex_large_content  bg_gray_light">  <!--  remove single_flex_large_type_content if description -->
+
+        <div class="single_flex_callout_content_inner single_flex_feature_content_inner">
+          <div class="single_flex_callout_content_header single_flex_feature_content_header">
+            <h2 class="single_flex_callout_title single_flex_feature_title  color_midnight" id="single_flex_feature_title13761">School of Public Health</h2>
+            <h3 class="single_flex_callout_category single_flex_feature_category heading_5 text_divide context">Fighting COVID-19</h3>
+          </div>
+                    <div class="single_flex_callout_description single_flex_feature_description body_text">
+            <p>Experts from the Yale School of Public Health have been at the forefront of the world response to the pandemic.</p>
+<p><sub>Image: Christina Harden, post-graduate researcher in the Grubaugh Lab, works on SalivaDirect™ tests.</sub></p>
+          </div>
+                    <footer class="single_flex_callout_footer single_flex_feature_footer">
+            <a class="single_flex_callout_button single_flex_feature_button button_bordered_dusty button_icon_right_arrow color_black" aria-label="learn more School of Public Health" href="https://publichealth.yale.edu/coronavirus">learn more</a>
+            <a class="button_solid_greige button_icon_right_arrow color_white single_flex_archive single_flex_archive_sm" href="/feature-archive">The Feature Archive</a>
+          </footer>
+
+        </div>
+
+      </article>
+      <!-- END: Single Image Flexible Callout Content -->
+
+    </div>
+    <!-- END: Single Image Flexible Callout Cell -->
+
+  </div>
+  <!-- END: Single Image Flexible Callout Row -->
+
+  <a class="button_solid_greige button_icon_right_arrow color_white single_flex_archive single_flex_archive_lg" href="/feature-archive">The Feature Archive</a>
+
+
+</section>
+<!-- END: Single Image Flexible Feature -->
+  <!-- News Explore -->
+<section class="news_explore margined_lg">
+
+  <div class="news_explore_row">
+
+    <header class="news_explore_header">
+      <h2 class="news_explore_title color_midnight">The latest from YaleNews</h2>
+    </header>
+
+
+    <div class="news_explore_feature">
+
+      <article class="news_explore_article news_explore_article_full">
+        <figure class="news_explore_figure_full responsive_image bg_black">
+          <picture class="news_explore_picture_full">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_news_575x384/public/tini-2_30_-0039.jpg?itok=84txB4LR" />
+            <source media="(min-width: 980px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_news_460x308/public/tini-2_30_-0039.jpg?itok=4XoJQ4MZ" />
+            <source media="(min-width: 740px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_news_345x230/public/tini-2_30_-0039.jpg?itok=Mq_pOrnq" />
+            <source media="(min-width: 500px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_news_470x314/public/tini-2_30_-0039.jpg?itok=gp02z50M" />
+            <source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_news_295x198/public/tini-2_30_-0039.jpg?itok=K8mKsjSI" />
+            <!--[if IE 9]></video><![endif]-->
+            <img class="news_explore_image_full" src="https://www.yale.edu/sites/default/files/styles/explore_news_295x198/public/tini-2_30_-0039.jpg?itok=K8mKsjSI" alt="Students writing postcards in Sterling Memorial Library." />
+          </picture>
+        </figure>
+        <h3 class="news_explore_article_title news_explore_article_title_full color_black">
+          <a class="news_explore_article_link news_explore_article_link_full" href="https://news.yale.edu/2020/11/30/podcast-documents-yale-time-covid-19"> Podcast documents Yale in the time of COVID-19 </a>
+        </h3>
+        <time class="news_explore_article_date news_explore_article_date_full label color_charcoal text_divide" datetime="2020-10-05">October 5, 2020</time>
+      </article>
+
+    </div>
+
+
+    <div class="news_explore_supporting">
+
+      
+
+
+      <div class="news_explore_article_list">
+                                                                                      <article class="news_explore_article news_explore_article_compact">
+              <h3 class="news_explore_article_title news_explore_article_title_compact">
+                <a class="news_explore_article_link news_explore_article_link_compact" href="https://www.yalemedicine.org/news/hiv-treatable">How HIV Became the Virus We Can Treat</a>
+              </h3>
+              <time class="news_explore_article_date news_explore_article_date_compact label color_charcoal text_divide" datetime="2020-11-30">November 30, 2020</time>
+            </article>
+                                                                                                <article class="news_explore_article news_explore_article_compact">
+              <h3 class="news_explore_article_title news_explore_article_title_compact">
+                <a class="news_explore_article_link news_explore_article_link_compact" href="https://news.yale.edu/2020/10/05/neurobiology-conversation-brain-activity-depends-who-you-talk"> Neurobiology of conversation: Brain activity depends on who you’re talking to</a>
+              </h3>
+              <time class="news_explore_article_date news_explore_article_date_compact label color_charcoal text_divide" datetime="2020-10-05">October 5, 2020</time>
+            </article>
+                                                                                                <article class="news_explore_article news_explore_article_compact">
+              <h3 class="news_explore_article_title news_explore_article_title_compact">
+                <a class="news_explore_article_link news_explore_article_link_compact" href="https://news.yale.edu/2020/11/20/yale-led-project-continues-probe-biological-markers-autism">Yale-led project continues probe into biological markers of autism</a>
+              </h3>
+              <time class="news_explore_article_date news_explore_article_date_compact label color_charcoal text_divide" datetime="2020-11-20">November 20, 2020</time>
+            </article>
+                                                                                                <article class="news_explore_article news_explore_article_compact">
+              <h3 class="news_explore_article_title news_explore_article_title_compact">
+                <a class="news_explore_article_link news_explore_article_link_compact" href="https://web.library.yale.edu/sterling-library-will-house-yale-film-archive-new-space">Sterling Library will house Yale Film Archive in new research space</a>
+              </h3>
+              <time class="news_explore_article_date news_explore_article_date_compact label color_charcoal text_divide" datetime="2020-11-16">November 16, 2020</time>
+            </article>
+                        </div>
+
+    <form class="news_explore_form" action="https://news.yale.edu" method="post">
+        <label class="news_explore_dropdown_label heading_5 color_greige" for="news_explore_dropdown" tabindex="-1">Explore More News</label>
+        <div class="fs-dropdown dropdown_base dropdown_dusty news_explore_dropdown" tabindex="0" aria-labelledby="news_explore_dropdown-selected" aria-live="polite" aria-haspopup="true" role="listbox" aria-expanded="false"><select class="news_explore_select js-dropdown fs-dropdown-element" id="news_explore_dropdown" data-dropdown-options="{&quot;label&quot;:&quot;All News&quot;, &quot;customClass&quot;:&quot;dropdown_base dropdown_dusty news_explore_dropdown&quot;}" tabindex="-1"><option value="" class="fs-dropdown-item_placeholder" selected="">All News</option>
+          <option value="topics/alumni">Alumni</option>
+          <option value="topics/arts-humanities">Arts &amp; Humanities</option>
+          <option value="topics/business">Business</option>
+          <option value="topics/campus-community">Campus &amp; Community</option>
+          <option value="topics/environment">Environment</option>
+          <option value="topics/health-medicine">Health &amp; Medicine</option>
+          <option value="topics/international">International</option>
+          <option value="topics/law">Law</option>
+          <option value="topics/science-technology">Science &amp; Technology</option>
+          <option value="topics/social-sciences">Social Sciences</option>
+          <option value="in-focus">In Focus</option>
+        </select><button type="button" class="fs-dropdown-selected" tabindex="-1" aria-hidden="false" id="news_explore_dropdown-selected">All News</button><div class="fs-dropdown-options" aria-hidden="false"><span class="fs-dropdown-item fs-dropdown-item_placeholder fs-dropdown-item_selected" data-value="" tabindex="-1" role="option" aria-selected="true">All News</span><button type="button" class="fs-dropdown-item" data-value="topics/alumni" tabindex="-1" role="option" aria-selected="false">Alumni</button><button type="button" class="fs-dropdown-item" data-value="topics/arts-humanities" tabindex="-1" role="option" aria-selected="false">Arts &amp; Humanities</button><button type="button" class="fs-dropdown-item" data-value="topics/business" tabindex="-1" role="option" aria-selected="false">Business</button><button type="button" class="fs-dropdown-item" data-value="topics/campus-community" tabindex="-1" role="option" aria-selected="false">Campus &amp; Community</button><button type="button" class="fs-dropdown-item" data-value="topics/environment" tabindex="-1" role="option" aria-selected="false">Environment</button><button type="button" class="fs-dropdown-item" data-value="topics/health-medicine" tabindex="-1" role="option" aria-selected="false">Health &amp; Medicine</button><button type="button" class="fs-dropdown-item" data-value="topics/international" tabindex="-1" role="option" aria-selected="false">International</button><button type="button" class="fs-dropdown-item" data-value="topics/law" tabindex="-1" role="option" aria-selected="false">Law</button><button type="button" class="fs-dropdown-item" data-value="topics/science-technology" tabindex="-1" role="option" aria-selected="false">Science &amp; Technology</button><button type="button" class="fs-dropdown-item" data-value="topics/social-sciences" tabindex="-1" role="option" aria-selected="false">Social Sciences</button><button type="button" class="fs-dropdown-item" data-value="in-focus" tabindex="-1" role="option" aria-selected="false">In Focus</button></div></div>
+        <button class="news_explore_submit button_solid_midnight color_white" type="submit">Go</button>
+      </form></div>
+
+
+  </div>
+
+
+</section>
+<!-- END: News Explore -->
+</div>
+
+  </div>
+            <!-- END: Main Content -->
+              <div class="region region-content-bottom">
+    	<!-- Explore Grid -->
+	<section class="explore_section explore_grided">
+
+		<!-- Explore Header -->
+		<div class="explore_header">
+
+			<div class="explore_header_row">
+
+				<div class="explore_header_cell">
+
+					<h2 class="explore_context heading_5 color_marine">The Parts That Make Yale Whole</h2>
+
+					<h3 class="explore_title heading_2 color_midnight">A closer look for the curious</h3>
+
+				</div>
+
+			</div>
+
+		</div>
+		<!-- END: Explore Header -->
+
+  	<!-- Explore Controls -->
+  	<div class="explore_controls_wrapper">
+
+  		<div class="explore_controls bg_marine explore_lg_pos_1_1">
+
+  			<div class="explore_controls_row">
+
+  				<div class="explore_controls_cell">
+
+  					<form class="explore_topics" action="/" id="views-exposed-form-explore-yale-block-1">
+  						<div class="explore_topics_label visually_hidden">Explore by topic</div>
+  						<div class="fs-dropdown dropdown_base dropdown_white explore_topics_dropdown" tabindex="0" aria-labelledby="edit-field-topic-tid1-selected" aria-live="polite" aria-haspopup="true" role="listbox" aria-expanded="false" aria-describedby="carouselPagerMsg"><select class="explore_topics_select js-dropdown fs-dropdown-element" id="edit-field-topic-tid1" aria-label="Explore by Topic" name="field_topic_tid" data-dropdown-options="{&quot;label&quot;:&quot;Explore by Topic&quot;, &quot;customClass&quot;:&quot;dropdown_base dropdown_white explore_topics_dropdown&quot;}" tabindex="-1"><option value="" class="fs-dropdown-item_placeholder" selected="">Explore by Topic</option>
+  							<option value="All">Everything</option><option value="2">Academics</option><option value="3">Collections</option><option value="4">Discoveries</option><option value="5">Experiences</option><option value="6">Places</option>  						</select><button type="button" class="fs-dropdown-selected" tabindex="-1" aria-hidden="false" id="edit-field-topic-tid1-selected">Explore by Topic</button><div class="fs-dropdown-options" aria-hidden="false"><span class="fs-dropdown-item fs-dropdown-item_placeholder fs-dropdown-item_selected" data-value="" tabindex="-1" role="option" aria-selected="true">Explore by Topic</span><button type="button" class="fs-dropdown-item" data-value="All" tabindex="-1" role="option" aria-selected="false">Everything</button><button type="button" class="fs-dropdown-item" data-value="2" tabindex="-1" role="option" aria-selected="false">Academics</button><button type="button" class="fs-dropdown-item" data-value="3" tabindex="-1" role="option" aria-selected="false">Collections</button><button type="button" class="fs-dropdown-item" data-value="4" tabindex="-1" role="option" aria-selected="false">Discoveries</button><button type="button" class="fs-dropdown-item" data-value="5" tabindex="-1" role="option" aria-selected="false">Experiences</button><button type="button" class="fs-dropdown-item" data-value="6" tabindex="-1" role="option" aria-selected="false">Places</button></div></div>
+						<span class="sr-only" id="carouselPagerMsg">Select a value to change the carousel content.</span>
+              <input type="submit" class="visually_hidden" />
+  					</form>
+
+  					<div class="explore_topics_divider color_white">or</div>
+
+  				</div>
+
+  				<div class="explore_controls_cell">
+  					<button class="button button_bordered_white_trans button_full color_white icon_before shuffle explore_shuffle_button explore_shuffle_button1" aria-describedby="carouselRandomMsg">Shuffle</button>
+					<span class="sr-only" id="carouselRandomMsg">Activate to randomize the carousel content.</span>
+  				</div>
+
+  			</div>
+
+  		</div>
+
+  	</div>
+  	<!-- END: Explore Controls -->
+
+  
+  		<!-- Explore Grid -->
+  		<div class="explore_grid bg_midnight">
+
+  			<div class="explore_grid_row">
+
+  				<div class="explore_grid_cell">
+
+  					<div class="explore_grid_wrapper explore_grid_active explore_grid_visible">
+
+  						<div class="explore_controls bg_marine explore_lg_pos_1_1">
+
+  							<div class="explore_controls_row">
+
+  								<div class="explore_controls_cell">
+
+  									<form class="explore_topics" action="/" id="views-exposed-form-explore-yale-block-2">
+  										<div class="explore_topics_label visually_hidden">Explore by topic</div>
+  										<div class="fs-dropdown dropdown_base dropdown_white explore_topics_dropdown" tabindex="0" aria-labelledby="edit-field-topic-tid2-selected" aria-live="polite" aria-haspopup="true" role="listbox" aria-expanded="false" aria-describedby="carouselPagerMsg"><select class="explore_topics_select js-dropdown fs-dropdown-element" id="edit-field-topic-tid2" aria-label="Explore by Topic" name="field_topic_tid" data-dropdown-options="{&quot;label&quot;:&quot;Explore by Topic&quot;, &quot;customClass&quot;:&quot;dropdown_base dropdown_white explore_topics_dropdown&quot;}" tabindex="-1"><option value="" class="fs-dropdown-item_placeholder" selected="">Explore by Topic</option>
+  											<option value="All">Everything</option><option value="2">Academics</option><option value="3">Collections</option><option value="4">Discoveries</option><option value="5">Experiences</option><option value="6">Places</option>  										</select><button type="button" class="fs-dropdown-selected" tabindex="-1" aria-hidden="false" id="edit-field-topic-tid2-selected">Explore by Topic</button><div class="fs-dropdown-options" aria-hidden="false"><span class="fs-dropdown-item fs-dropdown-item_placeholder fs-dropdown-item_selected" data-value="" tabindex="-1" role="option" aria-selected="true">Explore by Topic</span><button type="button" class="fs-dropdown-item" data-value="All" tabindex="-1" role="option" aria-selected="false">Everything</button><button type="button" class="fs-dropdown-item" data-value="2" tabindex="-1" role="option" aria-selected="false">Academics</button><button type="button" class="fs-dropdown-item" data-value="3" tabindex="-1" role="option" aria-selected="false">Collections</button><button type="button" class="fs-dropdown-item" data-value="4" tabindex="-1" role="option" aria-selected="false">Discoveries</button><button type="button" class="fs-dropdown-item" data-value="5" tabindex="-1" role="option" aria-selected="false">Experiences</button><button type="button" class="fs-dropdown-item" data-value="6" tabindex="-1" role="option" aria-selected="false">Places</button></div></div>
+  									</form>
+
+  									<div class="explore_topics_divider color_white">or</div>
+
+  								</div>
+
+  								<div class="explore_controls_cell">
+  									<button class="button button_bordered_white_trans button_full color_white icon_before shuffle explore_shuffle_button explore_shuffle_button2">Shuffle</button>
+  								</div>
+
+  							</div>
+
+  						</div>
+
+  						<!-- Explore Carousel -->
+  						<div class="explore_carousel js-carousel js-carousel-overflow fs-carousel-element fs-carousel fs-carousel-ltr fs-carousel-contained" data-carousel-options="{&quot;maxWidth&quot;: &quot;739px&quot;, &quot;controls&quot;: false, &quot;show&quot;:{&quot;500px&quot;:2}}" id="fs-carousel__0"><div class="fs-carousel-viewport"><div class="fs-carousel-wrapper" aria-live="polite"><div class="fs-carousel-container"><div class="fs-carousel-canister">
+
+
+  							<div class="explore_carousel_item fs-carousel-item">
+
+  								<article class="explore_story explore_md_pos_1_1 explore_lg_pos_2_1 bg_black">
+	<a data-title="Native American Cultural Center" aria-label="Native American Cultural Center" class="explore_story_link" href="https://nacc.yalecollege.yale.edu/">
+		<div class="explore_overlay explore_overlay_black_light">
+			<figure class="explore_story_figure responsive_image">
+				<picture class="explore_story_picture">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_294/public/nacc-group.jpg?itok=bJGLYNpD" />
+					<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/nacc-group.jpg?itok=TeHw5jYH" />
+					<!--[if IE 9]></video><![endif]-->
+					<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/nacc-group.jpg?itok=TeHw5jYH" alt="" />
+				</picture>
+			</figure>
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Native American Cultural Center</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Explore the Center</p>
+			</div>
+			<span class="overlay_bg"></span>
+		</div>
+	</a>
+</article>
+<article class="explore_story explore_md_pos_3_3 explore_lg_pos_2_2 bg_black">
+	<a data-title="Yaledancers" aria-label="Yaledancers" class="explore_story_link" href="http://yaledancers.com">
+		<div class="explore_overlay explore_overlay_green">
+			<figure class="explore_story_figure responsive_image">
+				<picture class="explore_story_picture">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_294/public/yaledancers.jpg?itok=FGfV0uYN" />
+					<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/yaledancers.jpg?itok=jy8CnqcM" />
+					<!--[if IE 9]></video><![endif]-->
+					<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/yaledancers.jpg?itok=jy8CnqcM" alt="" />
+				</picture>
+			</figure>
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Yaledancers</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Explore the group</p>
+			</div>
+			<span class="overlay_bg"></span>
+		</div>
+	</a>
+</article>
+
+
+  							</div>
+
+  							<div class="explore_carousel_item fs-carousel-item">
+	  							<article class="explore_story explore_md_pos_2_1 explore_lg_pos_1_3 explore_md_size_lg explore_lg_size_lg bg_black">
+	<div class="explore_overlay explore_overlay_orange">
+		<figure class="explore_story_figure responsive_image">
+			<picture class="explore_story_picture">
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_588/public/yale_peabody_museum_of_natural_history.jpg?itok=PjwEYzyL" />
+				<source media="(min-width: 980px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_470/public/yale_peabody_museum_of_natural_history.jpg?itok=25LFPxeU" />
+				<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/yale_peabody_museum_of_natural_history.jpg?itok=HNqGfg9F" />
+				<!--[if IE 9]></video><![endif]-->
+				<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/yale_peabody_museum_of_natural_history.jpg?itok=HNqGfg9F" alt="" />
+			</picture>
+		</figure>
+		<div class="explore_story_content explore_story_content_lg">
+			<div class="heading_5 context text_divide explore_story_context">Places</div>
+			<h4 class="explore_story_title explore_story_title_lg">Yale Peabody Museum of Natural History</h4>
+			<p class="body_text explore_story_description">The Peabody advances our understanding of the Earth’s history through geological, biological, and anthropological research.</p>
+			<div class="explore_story_buttons">
+				<a data-title="Yale Peabody Museum of Natural History - Explore the museum" aria-label="Yale Peabody Museum of Natural History - Explore the museum" class="button color_white button_icon_right_arrow explore_story_button_explore explore_story_button_explore_white" href="http://peabody.yale.edu">Explore the museum</a>
+				<!-- Optional Button - defaults to arrow icon but can be photo or video -->
+								<a data-title="Yale Peabody Museum of Natural History - Watch the video" aria-label="Yale Peabody Museum of Natural History - Watch the video" class="button bg_white button_icon_left_video  js-lightbox explore_story_button_more explore_story_button_more_white fs-lightbox-element" href="https://www.youtube.com/watch?v=nSwJs53QYrw&amp;autoplay=1">Watch the video</a>
+								<!-- Optional Button -->
+			</div>
+		</div>
+		<a data-title="Yale Peabody Museum of Natural History" aria-label="Yale Peabody Museum of Natural History" class="explore_story_link explore_story_link_lg" href="http://peabody.yale.edu">
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Yale Peabody Museum of Natural History</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Explore the museum</p>
+			</div>
+		</a>
+		<span class="overlay_bg"></span>
+	</div>
+</article>
+<article class="bg_midnight explore_story explore_md_pos_1_2 explore_lg_pos_1_2">
+	<a data-title="Yale School of Music" aria-label="Yale School of Music" class="explore_story_link" href="https://music.yale.edu/">
+		<div class="explore_overlay ">
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Yale School of Music</h4>
+				<p class="color_malibu heading_5 explore_story_explore explore_story_explore_sm">Explore the school</p>
+			</div>
+		</div>
+	</a>
+</article>
+
+
+  							</div>
+
+  							<div class="explore_carousel_item fs-carousel-item">
+
+  							<article class="explore_story explore_md_pos_1_3 explore_lg_pos_4_4 bg_black">
+	<a data-title="Did Henry VIII suffer same brain injury as some NFL players?" aria-label="Did Henry VIII suffer same brain injury as some NFL players?" class="explore_story_link" href="https://news.yale.edu/2016/02/02/did-henry-viii-suffer-same-brain-injury-some-nfl-players">
+		<div class="explore_overlay explore_overlay_greige">
+			<figure class="explore_story_figure responsive_image">
+				<picture class="explore_story_picture">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_294/public/portrait_henry_viii_1x1.jpg?itok=1ftIDiSj" />
+					<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/portrait_henry_viii_1x1.jpg?itok=9dwfpatQ" />
+					<!--[if IE 9]></video><![endif]-->
+					<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/portrait_henry_viii_1x1.jpg?itok=9dwfpatQ" alt="" />
+				</picture>
+			</figure>
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Did Henry VIII suffer same brain injury as some NFL players?</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Learn more</p>
+			</div>
+			<span class="overlay_bg"></span>
+		</div>
+	</a>
+</article>
+<article class="explore_story explore_md_pos_2_3 explore_lg_pos_4_3 bg_black">
+	<a data-title="Saybrook College" aria-label="Saybrook College" class="explore_story_link" href="https://saybrook.yalecollege.yale.edu/">
+		<div class="explore_overlay explore_overlay_black_light">
+			<figure class="explore_story_figure responsive_image">
+				<picture class="explore_story_picture">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_294/public/saybrook_college_0.jpg?itok=p8R6oOZz" />
+					<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/saybrook_college_0.jpg?itok=ThMSS1si" />
+					<!--[if IE 9]></video><![endif]-->
+					<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/saybrook_college_0.jpg?itok=ThMSS1si" alt="" />
+				</picture>
+			</figure>
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Saybrook College</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Explore the college</p>
+			</div>
+			<span class="overlay_bg"></span>
+		</div>
+	</a>
+</article>
+
+  							</div>
+
+  						</div></div></div></div><div class="fs-carousel-pagination" aria-label="carousel pagination" aria-controls="fs-carousel__0" role="navigation"></div></div>
+  						<!-- END: Explore Carousel -->
+
+  						<div class="explore_grid_large_content">
+
+  						<article class="explore_story explore_lg_pos_3_4 bg_black">
+	<a data-title="La Casa: Latino Cultural Center" aria-label="La Casa: Latino Cultural Center" class="explore_story_link" href="https://lacasa.yalecollege.yale.edu/">
+		<div class="explore_overlay explore_overlay_black_light">
+			<figure class="explore_story_figure responsive_image">
+				<picture class="explore_story_picture">
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_294/public/1x1_la_casa-latino_cultural_center.jpg?itok=8dr81OxN" />
+					<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/1x1_la_casa-latino_cultural_center.jpg?itok=mvRAV0g_" />
+					<!--[if IE 9]></video><![endif]-->
+					<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/1x1_la_casa-latino_cultural_center.jpg?itok=mvRAV0g_" alt="" />
+				</picture>
+			</figure>
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">La Casa: Latino Cultural Center</h4>
+				<p class="heading_5 explore_story_explore explore_story_explore_sm">Explore the Center</p>
+			</div>
+			<span class="overlay_bg"></span>
+		</div>
+	</a>
+</article>
+<article class="bg_midnight explore_story explore_lg_pos_3_3">
+	<a data-title="Edward P. Evans Hall" aria-label="Edward P. Evans Hall" class="explore_story_link" href="https://som.yale.edu/about/campus">
+		<div class="explore_overlay ">
+			<div class="explore_story_content explore_story_content_sm">
+				<h4 class="explore_story_title explore_story_title_sm">Edward P. Evans Hall</h4>
+				<p class="color_malibu heading_5 explore_story_explore explore_story_explore_sm">Explore the hall</p>
+			</div>
+		</div>
+	</a>
+</article>
+<article class="explore_story  explore_lg_pos_3_1 explore_lg_size_xl explore_lg_pull bg_black">
+	<div class="explore_overlay explore_overlay_black_dark">
+		<figure class="explore_story_figure responsive_image">
+			<picture class="explore_story_picture">
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source media="(min-width: 1220px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_882/public/asian_american_cultural_center_1x1.jpg?itok=3qebFe7R" />
+				<source media="(min-width: 980px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_705/public/asian_american_cultural_center_1x1.jpg?itok=JPFTfHna" />
+				<source media="(min-width: 740px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_470/public/asian_american_cultural_center_1x1.jpg?itok=XnqgEdsE" />
+				<source media="(min-width: 0px)" srcset="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/asian_american_cultural_center_1x1.jpg?itok=cDnW1vr5" />
+				<!--[if IE 9]></video><![endif]-->
+				<img class="explore_story_image" src="https://www.yale.edu/sites/default/files/styles/explore_yale_235/public/asian_american_cultural_center_1x1.jpg?itok=cDnW1vr5" alt="" />
+			</picture>
+		</figure>
+		<div class="explore_story_content explore_story_content_xl">
+			<div class="heading_5 context text_divide explore_story_context">Experiences</div>
+			<h4 class="explore_story_title explore_story_title_lg">Asian American Cultural Center</h4>
+			<p class="body_text explore_story_description">Established in 1981, the center promotes Asian-American culture and explores the social and political experience of Asians in the United States. </p>
+			<div class="explore_story_buttons">
+				<a data-title="Asian American Cultural Center - Explore the Center" aria-label="Asian American Cultural Center - Explore the Center" class="button color_white button_icon_right_arrow explore_story_button_explore explore_story_button_explore_trans" href="https://aacc.yalecollege.yale.edu/">Explore the Center</a>
+							</div>
+		</div>
+		<span class="overlay_bg"></span>
+	</div>
+</article>
+
+  						</div>
+
+
+  					</div>
+
+  				</div>
+
+  			</div>
+
+  		</div>
+  		<!-- END: Explore Grid -->
+
+  	</section>
+  	<!-- END: Explore Grid -->
+    </div>
+          </aside>
+        
+
+      </main>
+      <!-- END: Main Content -->
+
+
+
+      <!-- Footer -->
+      <footer id="footer" class="footer">
+
+        <!-- Footer Row -->
+        <div class="footer_row">
+
+          <!-- Footer Cell -->
+          <div class="footer_cell">
+
+
+            <!-- Footer Nav Section -->
+            <div class="footer_nav_section">
+
+                                  <div class="region region-footer">
+    <form class="visitor_form">
+  <label class="visually_hidden" for="visitor_select" tabindex="-1">Info for Visiting Yale</label>
+  <div class="fs-dropdown dropdown_base dropdown_charcoal_trans visitor_select" tabindex="0" aria-labelledby="visitor_select-selected" aria-live="polite" aria-haspopup="true" role="listbox" aria-expanded="false"><select class="js-dropdown fs-dropdown-element" id="visitor_select" data-dropdown-options="{&quot;label&quot;:&quot;Info for Visiting Yale&quot;,&quot;links&quot;:true,&quot;customClass&quot;:&quot;dropdown_base dropdown_charcoal_trans visitor_select&quot;}" tabindex="-1" aria-hidden="true"><option value="" class="fs-dropdown-item_placeholder" selected="">Info for Visiting Yale</option>
+    <option value="https://visitorcenter.yale.edu/tours">Campus Tours</option><option value="/about-yale/visiting">Maps &amp; Directions</option><option value="https://visitorcenter.yale.edu/">Yale Visitor Center</option><option value="/research-collections/museums-galleries">Museums &amp; Galleries</option><option value="/life-yale/new-haven">New Haven</option><option value="/about-yale/visiting">More Visit Resources</option>  </select><button type="button" class="fs-dropdown-selected" tabindex="-1" id="visitor_select-selected" aria-hidden="false">Info for Visiting Yale</button><div class="fs-dropdown-options" aria-hidden="false"><span class="fs-dropdown-item fs-dropdown-item_placeholder fs-dropdown-item_selected" aria-hidden="true" tabindex="-1" role="option" aria-selected="true">Info for Visiting Yale</span><a class="fs-dropdown-item" href="https://visitorcenter.yale.edu/tours" tabindex="-1" role="option" aria-selected="false">Campus Tours</a><a class="fs-dropdown-item" href="/about-yale/visiting" tabindex="-1" role="option" aria-selected="false">Maps &amp; Directions</a><a class="fs-dropdown-item" href="https://visitorcenter.yale.edu/" tabindex="-1" role="option" aria-selected="false">Yale Visitor Center</a><a class="fs-dropdown-item" href="/research-collections/museums-galleries" tabindex="-1" role="option" aria-selected="false">Museums &amp; Galleries</a><a class="fs-dropdown-item" href="/life-yale/new-haven" tabindex="-1" role="option" aria-selected="false">New Haven</a><a class="fs-dropdown-item" href="/about-yale/visiting" tabindex="-1" role="option" aria-selected="false">More Visit Resources</a></div></div>
+</form>
+<nav class="footer_nav help_nav" aria-labelledby="help_nav_label">
+  <h2 class="footer_nav_label help_nav_label" id="help_nav_label">Helpful Links</h2>
+  <div class="footer_nav_list help_nav_list  menu-block-wrapper menu-block-3 menu-name-menu-helpful-links parent-mlid-0 menu-level-1">
+    <a class="footer_nav_link help_nav_link" href="/contact-us">Contact Us</a><a class="footer_nav_link help_nav_link" href="https://westcampus.yale.edu/">Yale West Campus</a><a class="footer_nav_link help_nav_link" href="https://your.yale.edu/work-yale/careers">Employment Opportunities</a><a class="footer_nav_link help_nav_link" href="/privacy-policy">Privacy Policy</a><a class="footer_nav_link help_nav_link" href="https://emergency.yale.edu/">Emergency Info</a><a class="footer_nav_link help_nav_link" href="https://your.yale.edu/community/public-safety">Public Safety</a><a class="footer_nav_link help_nav_link" href="/nondiscrimination">Nondiscrimination &amp; Title IX</a><a class="footer_nav_link help_nav_link" href="https://usability.yale.edu/web-accessibility/accessibility-yale">Accessibility at Yale</a><a class="footer_nav_link help_nav_link" href="https://communications.yale.edu/mobile">Yale Mobile</a>  </div>
+</nav>
+<nav class="footer_nav visitor_nav" aria-labelledby="visitor_nav_label">
+  <h2 class="footer_nav_label visitor_nav_label" id="visitor_nav_label">Visiting Yale</h2>
+  <div class="footer_nav_list visitor_nav_list">
+    <a class="footer_nav_link visitor_nav_link" href="https://visitorcenter.yale.edu/tours">Campus Tours</a><a class="footer_nav_link visitor_nav_link" href="/about-yale/visiting">Maps &amp; Directions</a><a class="footer_nav_link visitor_nav_link" href="https://visitorcenter.yale.edu/">Yale Visitor Center</a><a class="footer_nav_link visitor_nav_link" href="/research-collections/museums-galleries">Museums &amp; Galleries</a><a class="footer_nav_link visitor_nav_link" href="/life-yale/new-haven">New Haven</a><a class="footer_nav_link visitor_nav_link" href="/about-yale/visiting">More Visit Resources</a>  </div>
+</nav>
+  </div>
+              
+            </div>
+            <!-- END: Footer Nav Section -->
+
+
+            <hr class="footer_divider footer_divider_md" />
+
+
+            <!-- Instagram Teaser -->
+                              <div class="region region-footer-ig">
+    <!-- Instagram Teaser -->
+<a class="instagram_teaser" href="//instagram.com/yale/" target="_blank">
+
+  <figure class="instagram_teaser_figure responsive_image">
+
+    <span class="instagram_teaser_image"><img alt="Close-up of Handsome Dan outside on a spring day." src="/sites/default/files/images/instagram-apr6.jpg" />
+</span>
+
+    <figcaption class="instagram_teaser_caption button_text">Yale on Instagram</figcaption>
+
+  </figure>
+
+  <span class="overlay_bg"></span>
+
+</a>
+<!-- END: Instagram Teaser -->
+  </div>
+                        <!-- END: Instagram Teaser -->
+
+
+            <hr class="footer_divider footer_divider_lg" />
+
+
+            <!-- Social Properties -->
+                          <div class="social_properties">
+                  <div class="region region-footer-social">
+    <!-- Social Nav -->
+<nav class="social_nav" aria-labelledby="social_nav_label">
+  <h2 class="visually_hidden" id="social_nav_label">Social Links</h2>
+  <div class="social_nav_list">
+    <a class="social_nav_link facebook" href="https://www.facebook.com/YaleUniversity" target="_blank"><span class="social_nav_link_icon"></span><span class="social_nav_link_text">Facebook</span></a><a class="social_nav_link twitter" href="http://www.twitter.com/yale" target="_blank"><span class="social_nav_link_icon"></span><span class="social_nav_link_text">Twitter</span></a><a class="social_nav_link youtube" href="http://www.youtube.com/yale" target="_blank"><span class="social_nav_link_icon"></span><span class="social_nav_link_text">YouTube</span></a><a class="social_nav_link weibo" href="http://weibo.com/yaleuniversity" target="_blank"><span class="social_nav_link_icon"></span><span class="social_nav_link_text">Sina Weibo</span></a>  </div>
+</nav>
+<!-- END: Social Nav -->
+
+
+<a class="social_all_link button_text button_icon_right_arrow" href="/social-media">All Social Media</a>
+  </div>
+              </div>
+                        <!-- END: Social Properties -->
+
+
+            <!-- Legal -->
+            <small class="footer_legal block">
+              <span class="footer_legal_copy">Copyright © 2020 Yale University</span>
+              <span class="footer_legal_rights">All Rights Reserved</span>
+              <a class="footer_legal_contact" href="/contact-us/contact-web-editor">Contact Web Editor</a>
+            </small>
+            <!-- END: Legal -->
+
+
+            <!-- Back to Top -->
+            <div class="footer_to_top">
+              <a class="js-scroll_to button_full button_bordered_charcoal button_icon_up_arrow js-bound" href="#top">Back to top</a>
+            </div>
+            <!-- END: Back to Top -->
+
+
+          </div>
+          <!-- END: Footer Cell -->
+
+        </div>
+        <!-- END: Footer Row -->
+
+      </footer>
+      <!-- END: Footer -->
+
+
+
+      <!-- Mobile Sidebar -->
+      <aside role="dialog" aria-label="Mobile Menu" class="mobile_sidebar js-navigation fs-navigation-element fs-navigation-reveal-nav fs-navigation-reveal-left-nav fs-navigation__0 fs-navigation-enabled fs-navigation-animated" data-navigation-handle=".mobile_nav_handle" data-navigation-content=".page_wrapper" data-navigation-options="{&quot;type&quot;:&quot;reveal&quot;,&quot;labels&quot;:{&quot;closed&quot;:&quot;Navigation&quot;,&quot;open&quot;:&quot;Close&quot;}}">
+
+
+        <div class="mobile_sidebar_header">
+
+          <div class="header_row">
+
+            <div class="header_cell">
+
+              <!-- Site Logo -->
+              <a href="index.html" class="logo_main icon_only" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+                <h1 class="offscreen" itemprop="name">Yale University</h1>
+                <img src="/sites/all/themes/yale_blue/images/logo-print.png" class="print" alt="" />
+              </a>
+              <!-- END: Site Logo -->
+
+			  <div class="deskHeader">
+				<!-- Site Search -->
+				<a class="btn_site_seach" href="/search" role="button" aria-expanded="false">
+					<span class="btn_site_seach_text">Search</span>
+				</a>
+				<!-- END: Site Search -->
+				<button class="mobile_nav_handle fs-navigation-handle fs-navigation-reveal-handle fs-navigation-reveal-left-handle fs-navigation-handle__0 fs-navigation__0 fs-swap-element fs-navigation-enabled" data-swap-target=".fs-navigation__0" data-swap-linked="fs-navigation-handle__0" data-swap-group="fs-navigation">Navigation</button>
+			  </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Mobile Sidebar Body -->
+        <div class="mobile_sidebar_body">
+
+
+          <!-- Main Nav -->
+                          <div class="region region-mobile-main">
+    <nav class="main_nav" aria-labelledby="main_nav_mobile_label">
+  <h2 class="visually_hidden" id="main_nav_mobile_label">Main Navigation</h2>
+  <div class="main_nav_list">
+    <div class="main_nav_item"><a class="main_nav_link" href="/about-yale"><span class="main_nav_text">About Yale</span></a></div><div class="main_nav_item"><a class="main_nav_link" href="/academics"><span class="main_nav_text">Academics</span></a></div><div class="main_nav_item"><a class="main_nav_link" href="/admissions"><span class="main_nav_text">Admissions</span></a></div><div class="main_nav_item"><a class="main_nav_link" href="/research-collections"><span class="main_nav_text">Research &amp; Collections</span></a></div><div class="main_nav_item"><a class="main_nav_link" href="/life-yale"><span class="main_nav_text">Life at Yale</span></a></div>  </div>
+</nav>
+  </div>
+                    <!-- END: Main Nav -->
+
+
+          <!-- Mobile Sidebar Row -->
+          <div class="mobile_sidebar_row">
+
+
+            <!-- Mobile Sidebar Nav Container -->
+            <div class="mobile_sidebar_nav_container">
+
+
+              <!-- Secondary Nav -->
+                                  <div class="region region-mobile-secondary">
+    <nav class="secondary_nav" aria-labelledby="mobile_secondary_nav_label">
+  <h2 class="visually_hidden" id="mobile_secondary_nav_label">Secondary Navigation</h2>
+  <div class="secondary_nav_list menu-block-wrapper menu-block-9 menu-name-menu-secondary-navigation parent-mlid-0 menu-level-1">
+    <a class="secondary_nav_link" href="/calendars"><span class="secondary_nav_text">Calendars</span></a><a class="secondary_nav_link" href="https://giving.yale.edu/"><span class="secondary_nav_text">Giving</span></a><a class="secondary_nav_link" href="https://news.yale.edu/"><span class="secondary_nav_text">News</span></a><a class="secondary_nav_link" href="https://directory.yale.edu/"><span class="secondary_nav_text">Directories</span></a>  </div>
+</nav>
+  </div>
+                            <!-- END: Secondary Nav -->
+
+
+            </div>
+            <!-- END: Mobile Sidebar Nav Container -->
+
+
+            <!-- Mobile Sidebar Nav Container -->
+            <div class="mobile_sidebar_nav_container">
+
+
+              <!-- Gateway Nav -->
+                                  <div class="region region-mobile-gateway">
+    <nav class="gateway_nav" aria-labelledby="gateway_nav_label">
+  <h2 class="visually_hidden" id="gateway_nav_label">Gateway Navigation</h2>
+  <div class="gateway_nav_list">
+    <a class="gateway_nav_link" href="https://secretary.yale.edu/student-life">Students</a><a class="gateway_nav_link" href="/faculty">Faculty</a><a class="gateway_nav_link" href="https://your.yale.edu/">Staff</a><a class="gateway_nav_link" href="https://alumni.yale.edu">Alumni</a>  </div>
+</nav>
+  </div>
+                            <!-- END: Gateway Nav -->
+
+
+            </div>
+            <!-- END: Mobile Sidebar Nav Container -->
+
+
+          </div>
+          <!-- END: Mobile Sidebar Row -->
+
+
+        </div>
+        <!-- END: Mobile Sidebar Body -->
+
+
+      </aside>
+      <!-- END: Mobile Sidebar -->
+
+
+
+    </div>
+    <!-- END: Body Wrapper -->
+    <script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+
+      (function() {
+      var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+      sz.src = '//siteimproveanalytics.com/js/siteanalyze_66356571.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+      })();
+      
+//--&gt;&lt;!]]&gt;
+</script>
+
+    <!-- Compiled JS -->
+    <script src="/sites/all/themes/yale_blue/js/site.js?t=202012030232"></script>
+	<!-- A11Y JS -->
+    <script src="/sites/all/themes/yale_blue/js/a11y.js?t=202012030232"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"edc4967dfd","applicationID":"70828766","transactionName":"ZVRWNxEACBZUAEFcW1weYREKTkkMWwdQTRpCWUQ=","queueTime":0,"applicationTime":49,"atts":"SRNVQVkaGxg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

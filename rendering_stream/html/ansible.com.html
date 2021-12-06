@@ -1,0 +1,2089 @@
+<!DOCTYPE html><!-- start coded_template: id:36049721638 path:generated_layouts/36049721637.html --><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-us" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-us" >        <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-us" >               <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en-us"><!--<![endif]--><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="Ansible, Red Hat" />
+    <meta name="description" content="Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery." />
+    <meta name="generator" content="HubSpot" />
+    <title>Ansible is Simple IT Automation</title>
+    <link rel="shortcut icon" href="https://www.ansible.com/hs-fs/hub/330046/file-448313641.png" />
+    
+
+    <script src="https://js.hs-analytics.net/analytics/1606992600000/330046.js" type="text/javascript" id="hs-analytics"></script><script src="https://js.hs-banner.com/330046.js" type="text/javascript" id="cookieBanner-330046" data-cookieconsent="ignore" data-loader="hs-scriptloader" data-hsjs-portal="330046" data-hsjs-env="prod"></script><script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+    <meta property="og:description" content="Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery." />
+    <meta property="og:title" content="Ansible is Simple IT Automation" />
+    <meta name="twitter:description" content="Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery." />
+    <meta name="twitter:title" content="Ansible is Simple IT Automation" />
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://www.ansible.com/hs-fs/hub/330046/hub_generated/module_assets/9803917176/1601407079368/module_9803917176_Raw_HTML.min.css" />
+<link rel="stylesheet" href="/hs/hsstatic/AsyncSupport/static-1.89/sass/rss_post_listing.css" />
+    
+
+    
+    <link rel="canonical" href="https://www.ansible.com" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:image" content="https://www.ansible.com/hubfs/Images/Red-Hat-Ansible_OG_1200x630.png" />
+
+<link rel="stylesheet" href="//www.redhat.com/sites/all/libraries/webrh/dist/css/webrh.webcomponents.min.css" />
+<link rel="stylesheet" href="//static.redhat.com/libs/redhat/redhat-theme/latest/advanced-theme.css" />
+<link href="https://static.redhat.com/libs/redhat/redhat-font/2.0.0/webfonts/red-hat-font.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,700,800" rel="stylesheet" />
+<meta name="google-site-verification" content="QlPj-u1lcS_ywAhI9jOLaG81ZOVq1ou6uD8AXZDgGeQ" />
+
+<script>
+  console.log("iframe: " + (window.self !== window.top));
+</script>
+
+<!-- TrustArc -->
+<!-- content: 4617718409 -->
+<script src="//static.redhat.com/libs/redhat/marketing/latest/trustarc/trustarc.js"></script><script type="text/javascript" src="https://consent.trustarc.com/notice?domain=redhat.com&amp;c=teconsent&amp;js=nj&amp;noticeType=bb&amp;gtm=1&amp;text=true&amp;privacypolicylink=https://www.redhat.com/en/about/privacy-policy" id="truste_0.8766253413145744"></script>
+<!--<script async="async" src="//consent.trustarc.com/notice?domain=redhat.com&c=teconsent&js=nj&noticeType=bb&gtm=1&text=true"></script> -->
+
+<!-- Adobe DTM tracking -->
+<script type="text/javascript" src="//www.redhat.com/dtm.js"></script><script src="https://assets.adobedtm.com/extensions/EP7b1fa4581fb94dd0961a981af9997765/AppMeasurement.min.js" async=""></script><script src="https://assets.adobedtm.com/extensions/EP7b1fa4581fb94dd0961a981af9997765/AppMeasurement_Module_ActivityMap.min.js" async=""></script>
+
+<!-- GET WINDOW SIZE GLOBAL VARIABLES FOR VARIOUS SCRIPTS -->
+<script>
+$(function() {
+  windowSizeCheck = function() {
+    mainWindowHeight = $(window).outerHeight();
+    mainWindowWidth = $(window).outerWidth();
+  }
+});
+</script>
+
+<script src="//fast.wistia.com/assets/external/E-v1.js" async=""></script>
+<script src="https://www.ansible.com/hubfs/Scripts/js.cookie.js"></script>
+<meta property="og:url" content="https://www.ansible.com" />
+<meta name="twitter:card" content="summary" />
+<meta http-equiv="content-language" content="en-us" />
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://www.ansible.com/hubfs/css/styles.min.css?t=20190923" type="text/css" media="all" />
+<script src="https://www.ansible.com/hubfs/js/scripts.min.js"></script>
+<script src="https://www.ansible.com/hubfs/js/vendors/matchHeight.min.js"></script>
+
+
+
+<style>
+    #hero {
+    background: url('https://www.ansible.com/hubfs/Images/backgrounds/AnsibleFest-2020-hero.png') right; background-size:cover;
+  }
+/*   .events-list .event-listing:nth-child(n+3),
+  .events-list .event-listing-thumb {
+    display:none;
+  } */
+  .event-listing {
+    border-top: 1px solid #bdbdbd;
+    padding-top:20px;
+  }
+  .event-listing:first-child {
+      border:none !important;
+      padding-top:0;
+
+  }
+  
+  /**** BLOG FEED ****/
+  .press-feed .hs-rss-item,
+  .blog-feed .hs-rss-item  {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 3px;
+    background-color: #fff!important;
+    border-color: #e7e7e7!important;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .press-feed  .hs-rss-item-text,
+  .blog-feed  .hs-rss-item-text {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      padding: 1.875rem;
+  }
+  .press-feed a.hs-rss-title,
+  .blog-feed a.hs-rss-title {
+      margin-bottom: .78125rem;
+      font-family: RedHatDisplay,Overpass,Overpass,"Helvetica Neue",Arial,sans-serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      display: block;
+  }
+  .press-feed h3,
+  .press-feed .hs-rss-byline,
+  .blog-feed h3,
+  .blog-feed .hs-rss-byline {
+      display:none;
+  }
+  .press-feed .hs-rss-description p a,
+  .blog-feed .hs-rss-description p a {
+      display:block;
+      margin-top:25px;
+  }
+  
+  @media(min-width: 768px) {
+    #hero {
+      background: url('https://www.ansible.com/hubfs/Images/backgrounds/AnsibleFest-2020-hero.png') left center; background-size:cover;
+    }
+  }
+  
+
+</style>
+
+<script>
+   $(document).ready(function () {
+    // remove default HubSpot layout css
+    $('link[href*="layout.min.css"]').attr('disabled', 'disabled');
+    $('link[href*="layout.min.css"]').remove();
+     
+     
+     // show default webinars if there are no dynamic webinars shown
+     if ( $.trim( $('.webinars-dynamic .webinar-list').text() ).length == 0 ) {
+      $('.webinars-dynamic').hide();
+      $('.webinars-static').show();
+
+    } else {
+      $('.webinars-dynamic').show();
+      $('.webinars-static').hide();
+    }
+  });
+</script>
+
+
+
+    <script>
+    $(document).ready(function () {
+      $('.dropdown').on('show.bs.dropdown', function() {
+          var h = $("nav#main").outerHeight();
+          var navTop = $("nav#main").offset();
+
+          var top = -$(window).scrollTop() + h + navTop.top;
+          var $dropdown = $(this).find('.dropdown-menu').first();
+
+          $dropdown.css("top",top);
+          $dropdown.stop(true, true).fadeIn();
+      });
+    });
+</script>
+
+<script type="text/javascript" async="" src="https://app.hubspot.com/content-tools-menu/api/v1/tools-menu/has-permission?portalId=330046&amp;callback=jsonpHandler"></script><script src="https://assets.adobedtm.com/c5eace8ae526/e9826b4b25e6/23bb13a4e0b7/RC25451e58f9074e3a8bafa027043e6681-source.min.js" async=""></script></head>
+<body class="ansible-home bs4   hs-content-id-4617718409 hs-site-page page hs-content-path- hs-content-name-2018-home-page-fy18q1  " style="">
+    <div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group px-0" style="" data-widget-type="global_group" data-x="0" data-w="12">
+<!-- start coded_template: id:6195572947 path:generated_global_groups/6195572946.html -->
+<div class="" data-global-widget-path="generated_global_groups/6195572946.html"><div class="row-fluid-wrapper row-depth-1 row-number-1">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_html p-0 m-0" style="" data-widget-type="raw_html" data-x="0" data-w="12">
+<div class="cell-wrapper layout-widget-wrapper">
+<span id="hs_cos_wrapper_module_152270485910932" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><!-- start coded_template: id:6195900567 path:Custom/Templates/Partials/global-header.html -->
+<!--
+templateType: "page"
+isAvailableForNewContent: false
+-->
+<nav id="main" class="header-container">
+<div class="container">
+<div class="navbar navbar-dark navbar-expand-md" role="navigation">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://www.ansible.com/?hsLang=en-us" title="Red Hat Ansible"><img class="img-fluid" src="https://www.ansible.com/hubfs/Logo-Red_Hat-Ansible-A-Reverse-SVG.svg" title="Red Hat Ansible" alt="Red Hat Ansible" /></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!--span class="navbar-toggler-icon"></span-->
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div id="nav-main" class="navbar-collapse collapse">
+<ul class="nav navbar-nav flex-nowrap justify-content-between w-100">
+<!-- OVERVIEW MENU -->
+<li id="overview" class="nav-item dropdown">
+<a href="https://www.ansible.com/overview/it-automation?hsLang=en-us" class="nav-link dropdown-toggle" data-toggle="dropdown">Overview <span class="fa fa-angle-down"></span></a>
+<div class="dropdown-menu">
+<div class="container">
+<div class="row">
+<div id="quickstart" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/overview/it-automation?hsLang=en-us">Why Ansible?</a>
+<p>Ansible delivers simple IT automation that ends repetitive tasks and frees up DevOps teams for more strategic work.</p>
+<ul>
+<li><a href="https://www.ansible.com/overview/how-ansible-works?hsLang=en-us">How Ansible Works</a></li>
+<li><a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Ansible Automation Platform</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="use-cases" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/use-cases?hsLang=en-us">Use Cases</a>
+<ul>
+<li><a href="https://www.ansible.com/use-cases/provisioning?hsLang=en-us">Provisioning</a></li>
+<li><a href="https://www.ansible.com/use-cases/configuration-management?hsLang=en-us">Configuration Management</a></li>
+<li><a href="https://www.ansible.com/use-cases/application-deployment?hsLang=en-us">App Deployment</a></li>
+<li><a href="https://www.ansible.com/use-cases/continuous-delivery?hsLang=en-us">Continuous Delivery</a></li>
+<li><a href="https://www.ansible.com/use-cases/network-automation?hsLang=en-us">Network Automation</a></li>  
+<li><a href="https://www.ansible.com/use-cases/security-automation?hsLang=en-us">Security Automation</a></li>
+<li><a href="https://www.ansible.com/use-cases/orchestration?hsLang=en-us">Orchestration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="integration-toggles" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/integrations?hsLang=en-us">Integrations</a>
+<ul>
+<li class="active"><a href="#" data-toggle="collapse" data-target="#infrastructure">Infrastructure</a></li>
+<li><a href="#" data-toggle="collapse" data-target="#networks">Networks</a></li>
+<li><a href="#" data-toggle="collapse" data-target="#containers">Containers</a></li>
+<li><a href="#" data-toggle="collapse" data-target="#cloud">Cloud</a></li>
+<li><a href="#" data-toggle="collapse" data-target="#devops">DevOps Tools</a></li>
+  <li><a href="#" data-toggle="collapse" data-target="#security">Security</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="integrations" class="col-md-3" style="background: #f2f2f2;">
+<ul>
+<li>
+<ul id="infrastructure" class="collapse show">
+
+  <li><a href="https://www.ansible.com/integrations/infrastructure?hsLang=en-us"><strong>All Infrastructure Integrations</strong></a></li> 
+
+<li><a href="https://www.ansible.com/integrations/infrastructure/dell-emc-storage?hsLang=en-us">Dell EMC Storage</a></li>
+  <li><a href="https://www.ansible.com/integrations/infrastructure/ibm-storage?hsLang=en-us">IBM Storage</a></li>
+<li><a href="https://www.ansible.com/integrations/infrastructure/ibm-zos?hsLang=en-us">IBM z/OS</a></li>
+
+
+
+<li><a href="https://www.ansible.com/integrations/infrastructure/red-hat?hsLang=en-us">Red Hat</a></li>
+<li><a href="https://www.ansible.com/integrations/infrastructure/vmware?hsLang=en-us">VMware</a></li>
+<li><a href="https://www.ansible.com/integrations/infrastructure/windows?hsLang=en-us">Windows</a></li>
+</ul>
+<ul id="networks" class="collapse">
+<li><a href="https://www.ansible.com/integrations/networks?hsLang=en-us"><strong>All Network Integrations</strong></a></li>
+<li><a href="https://www.ansible.com/integrations/networks/arista?hsLang=en-us">Arista</a></li>
+<li><a href="https://www.ansible.com/integrations/networks/cisco?hsLang=en-us">Cisco</a></li>
+  
+  <li><a href="https://www.ansible.com/integrations/networks/dell?hsLang=en-us">Dell Technologies</a></li>
+  
+  
+  
+<li><a href="https://www.ansible.com/integrations/networks/f5?hsLang=en-us">F5 Networks</a></li>
+<li><a href="https://www.ansible.com/integrations/networks/infoblox?hsLang=en-us">Infoblox</a></li>
+<li><a href="https://www.ansible.com/integrations/networks/juniper?hsLang=en-us">Juniper</a></li>
+</ul>
+<ul id="containers" class="collapse">
+<li>
+  <a href="https://www.ansible.com/integrations/containers?hsLang=en-us"><strong>All Container Integrations</strong></a></li>
+
+<li><a href="https://www.ansible.com/integrations/containers/operators?hsLang=en-us">Operators</a></li>
+</ul>
+<ul id="cloud" class="collapse">
+<li><a href="https://www.ansible.com/integrations/cloud?hsLang=en-us"><strong>All Cloud Integrations</strong></a></li>
+<li><a href="https://www.ansible.com/integrations/cloud/amazon-web-services?hsLang=en-us">Amazon Web Services</a></li>
+<li><a href="https://www.ansible.com/integrations/cloud/microsoft-azure?hsLang=en-us">Azure</a></li>
+<li><a href="https://www.ansible.com/integrations/cloud/google-cloud-platform?hsLang=en-us">Google Cloud Platform</a></li>
+<li><a href="https://www.ansible.com/integrations/cloud/openstack?hsLang=en-us">OpenStack</a></li>
+</ul>
+<ul id="devops" class="collapse">
+<li><a href="https://www.ansible.com/integrations/devops-tools?hsLang=en-us"><strong>All DevOps Tools Integrations</strong></a></li>
+<li><a href="https://www.ansible.com/integrations/devops-tools/atlassian?hsLang=en-us">Atlassian</a></li>
+
+<li><a href="https://www.ansible.com/integrations/devops-tools/datadog?hsLang=en-us">Datadog</a></li>
+<li><a href="https://www.ansible.com/integrations/devops-tools/chocolatey?hsLang=en-us">Chocolatey</a></li>
+<li><a href="https://www.ansible.com/integrations/devops-tools/splunk?hsLang=en-us">Splunk</a></li>
+</ul>
+  
+  
+  <ul id="security" class="collapse">
+<li><a href="https://www.ansible.com/integrations/security?hsLang=en-us"><strong>All Security Integrations</strong></a></li>
+<li><a href="https://www.ansible.com/integrations/security/checkpoint?hsLang=en-us">Check Point</a></li>
+<li><a href="https://www.ansible.com/integrations/devops-tools/cyberark?hsLang=en-us">CyberArk</a></li>
+<li><a href="https://www.ansible.com/integrations/security/fortinet?hsLang=en-us">Fortinet</a></li>
+  
+  <li><a href="https://www.ansible.com/integrations/security/ibm-qradar?hsLang=en-us">IBM Security</a></li>
+  
+<li><a href="https://www.ansible.com/integrations/networks/palo-alto?hsLang=en-us">Palo Alto</a></li>  
+  
+<li><a href="https://www.ansible.com/integrations/security/splunk?hsLang=en-us">Splunk</a></li>
+
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<!-- PRODUCTS MENU -->
+<li class="nav-item dropdown">
+<a href="https://www.ansible.com/products/automation-platform?hsLang=en-us" class="nav-link dropdown-toggle" data-toggle="dropdown">Products <span class="fa fa-angle-down"></span></a>
+<div class="dropdown-menu">
+<div class="container">
+<div class="row">
+<div id="platform" class="col-md-4">
+<ul>
+<li>
+<a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Red Hat Ansible Automation Platform</a>
+<p>Leverage powerful automation across entire IT teams no matter where you are in your automation journey.</p>
+<ul>
+<li><a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Overview</a></li>
+<li><a href="https://www.ansible.com/products/pricing?hsLang=en-us">Pricing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="features" class="col-md-3 border-0">
+<ul>
+<li>
+<a href="https://www.ansible.com/products/automation-platform?hsLang=en-us">Features</a>
+<ul>
+<li><a href="https://www.ansible.com/products/engine?hsLang=en-us">Ansible Engine</a></li>
+<li><a href="https://www.ansible.com/products/tower?hsLang=en-us">Ansible Tower</a></li>
+<li><a href="https://www.ansible.com/products/automation-hub?hsLang=en-us">Automation Hub</a></li>
+<li><a href="https://www.ansible.com/products/automation-analytics?hsLang=en-us">Automation Analytics</a></li>
+<li><a href="https://www.ansible.com/products/content-collections?hsLang=en-us">Ansible Content Collections</a></li>
+
+  <li><a href="https://www.ansible.com/products/automation-services-catalog?hsLang=en-us">Automation Services Catalog</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="training-consulting" class="col-md-4">
+<ul>
+<li>
+<a href="https://www.ansible.com/products/training-certification?hsLang=en-us">Training &amp; Certification</a>
+<p>Master Ansible in lab-intensive, real-world training with any of our Ansible focused courses.</p>
+<p> </p>
+</li>
+<li>
+<p><a href="https://www.ansible.com/products/consulting?hsLang=en-us">Consulting for Ansible</a></p>
+<p>Adopt and integrate Ansible to create and standardize centralized automation practices.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<!-- LEARN MENU -->
+<li class="nav-item dropdown">
+<a href="https://www.ansible.com/resources?hsLang=en-us" class="nav-link dropdown-toggle" data-toggle="dropdown">Learn <span class="fa fa-angle-down"></span></a>
+<div class="dropdown-menu">
+<div class="container">
+<div class="row">
+<div id="get-started" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/resources/get-started?hsLang=en-us">Get Started</a>
+<p>Ansible is powerful IT automation that you can learn quickly.</p>
+<ul>
+<li><a href="https://www.ansible.com/resources/videos/quick-start-video?hsLang=en-us">Quick Start Video</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="resource-library" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/resources?hsLang=en-us">Resource Library</a>
+<ul>
+<li><a href="https://www.ansible.com/resources/videos?hsLang=en-us">Videos</a></li>
+<li><a href="https://www.ansible.com/resources/ebooks?hsLang=en-us">E-books</a></li>
+<li><a href="https://www.ansible.com/resources/whitepapers?hsLang=en-us">Whitepapers</a></li>
+<li><a href="https://www.ansible.com/resources/case-studies?hsLang=en-us">Case Studies</a></li>
+  <li><a href="https://www.ansible.com/resources/analyst-reports?hsLang=en-us">Analyst Reports</a></li>
+</ul>
+</li>
+</ul>
+<ul class="mt-2">
+<li>
+<a href="https://www.ansible.com/resources/webinars-training?hsLang=en-us">Webinars &amp; Training</a>
+<ul>
+
+<li><a href="https://www.ansible.com/resources/webinars-training/introduction-to-ansible?hsLang=en-us">Intro to Ansible Webinar</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="events" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/community/events?hsLang=en-us">Ansible Events</a>
+<ul>
+<li><a href="https://www.ansible.com/ansiblefest?hsLang=en-us">AnsibleFest</a></li>
+<li><a href="https://www.ansible.com/community/events/automates?hsLang=en-us">Ansible Automates</a></li>
+<li><a href="https://www.ansible.com/community/events/workshops?hsLang=en-us">Workshops</a></li>
+<li><a href="https://www.ansible.com/community/events?hsLang=en-us">All upcoming events</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li><a href="https://www.ansible.com/blog?hsLang=en-us">Ansible Blog</a></li>
+<li><a href="http://docs.ansible.com/">Ansible Docs</a></li>
+<li><a href="https://www.ansible.com/partners?hsLang=en-us">Partners</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<!-- COMMUNITY MENU -->
+<li class="nav-item dropdown">
+<a href="https://www.ansible.com/community?hsLang=en-us" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <span class="fa fa-angle-down"></span></a>
+<div class="dropdown-menu">
+<div class="container">
+<div class="row">
+<div id="community" class="col-md-3">
+<ul>
+<li>
+<a href="https://www.ansible.com/community?hsLang=en-us">Join the Community</a>
+<p>Ansible is open source and created by contributions from an active open source community.</p>
+</li>
+</ul>
+</div>
+<div id="meetups" class="col-md-3">
+<ul>
+<li>
+<a class="external-link" href="http://ansible.meetup.com/" target="_blank">Ansible Meetups</a>
+<p>Find out what's happening in global Ansible Meetups and find one near you.</p>
+</li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li><a class="external-link" href="https://github.com/ansible/ansible" target="_blank">Ansible on GitHub</a></li>
+<li><a class="external-link" href="https://github.com/ansible/awx" target="_blank">AWX on GitHub</a></li>
+</ul>
+</div>
+<div class="col-md-3">
+<ul>
+<li>
+<a class="external-link" href="https://www.ansible.com/community/galaxy?hsLang=en-us" target="_blank">Ansible Galaxy</a>
+<p>The Ansible community hub for sharing automation with everyone.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item"><a class="nav-link nav-sign-up" href="https://www.redhat.com/en/technologies/management/ansible/try-it" style="" title="Try Tower Free">Free Trial</a></li>
+<!-- mobile-only nav -->
+<li class="nav-item d-md-none"><a class="nav-link" href="https://www.ansible.com/blog?hsLang=en-us">Ansible Blog</a></li>
+<li class="nav-item d-md-none"><a class="nav-link" href="https://www.ansible.com/ansiblefest?hsLang=en-us">AnsibleFest</a></li>
+<li class="nav-item d-md-none"><a class="nav-link" href="https://www.ansible.com/contact-us?hsLang=en-us">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav><!-- end coded_template: id:6195900567 path:Custom/Templates/Partials/global-header.html --></span>
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!-- end coded_template: id:6195572947 path:generated_global_groups/6195572946.html -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end header -->
+</div><!--end header wrapper -->
+
+<div class="body-container-wrapper">
+    <div class="body-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div id="hero" class="span12 widget-span widget-type-cell section bg-pos-ct" style="background-image:url('https://www.ansible.com/hubfs/images/Ansible-hero-acm-integration-demo.png');" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container my-8 mb-md-11" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-custom_widget text-white mb-6 mb-md-0" style="" data-widget-type="custom_widget" data-x="0" data-w="6">
+<div id="hs_cos_wrapper_module_1555436473670643" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1555436473670643_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h1 class="text-white">Drive automation across open hybrid cloud deployments</h1>
+<p class="text-white">Red Hat is bringing together the power of OpenShift Container Platform and Ansible Automation Platform</p>
+<p class="cta-group"><a href="https://www.redhat.com/en/about/press-releases/red-hat-expands-automation-hybrid-clouds-red-hat-ansible-automation-platform-integration-red-hat-openshift-environments?extIdCarryOver=true&amp;intcmp=7013a000002gv02AAA&amp;percmp=7013a000002gyVvAAI&amp;sc_cid=701f2000001Css5AAC" class="btn btn-primary mb-2 mr-1" rel="noopener">Learn more</a> <a href="#" data-toggle="modal" data-target="#hero-video" class="d-inline-block d-md-none btn btn-outline-white mb-2 mr-1">Play demo</a></p></span></div>
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-custom_widget align-self-center text-center" style="" data-widget-type="custom_widget" data-x="6" data-w="6">
+<div id="hs_cos_wrapper_module_1602664076437435" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><a class="d-none d-md-block video-poster play-icon-dark my-auto w-100 h-100" href="#" data-toggle="modal" data-target="#hero-video"> </a></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_16026659169791413" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div id="hero-video" class="modal modal-video" tabindex="-1" role="dialog" aria-hidden="true">&gt;
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <button type="button" class="close text-right text-white" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-close text-white"></i>
+            </button>
+            <div class="embed-responsive embed-responsive-16by9">
+	              <iframe class="embed-responsive-item" data-src="https://www.youtube.com/embed/P3BFWP_QXe4?rel=0&amp;info=0&amp;enablejsapi=1" allow="autoplay; fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget mt-4 mt-md-n8 p-0" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1586955382716159" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><section class="latest-news-cards py-0">
+    <div class="container">
+        <div class="row">
+            
+                
+                    
+                        <div class="col-md-4 d-flex">
+                            <a href="https://www.ansible.com/ansiblefest?hsLang=en-us" class="card border border-gray-300 bg-white">
+                                <div class="card-body pb-0">
+                                    <p class="text-black">See all the latest news and announcements from AnsibleFest 2020 Virtual Experience</p>
+                                </div>
+                                <div class="card-footer pt-0">
+                                    <p class="btn btn-link">Learn more</p>
+                                </div>
+                            </a>
+                        </div>
+                
+                    
+                        <div class="col-md-4 d-flex">
+                            <a href="https://www.redhat.com/en/resources/forrester-wave-infrastructure-automation-analyst-asset?intcmp=7013a0000025vbMAAQ" class="card border border-gray-300 bg-white">
+                                <div class="card-body pb-0">
+                                    <p class="text-black">Forrester names Red Hat Ansible Automation Platform among solutions that lead the pack for infrastructure automation platform providers.</p>
+                                </div>
+                                <div class="card-footer pt-0">
+                                    <p class="btn btn-link">Read more</p>
+                                </div>
+                            </a>
+                        </div>
+                
+                    
+                        <div class="col-md-4 d-flex">
+                            <a href="https://www.ansible.com/integrations/infrastructure/netapp?hsLang=en-us" class="card border border-gray-300 bg-white">
+                                <div class="card-body pb-0">
+                                    <p class="text-black">See the latest with Ansible Certified Partners. Learn how to get started with automating your dev workflows with NetApp and Ansible.</p>
+                                </div>
+                                <div class="card-footer pt-0">
+                                    <p class="btn btn-link">Learn more</p>
+                                </div>
+                            </a>
+                        </div>
+                
+            
+        </div>
+    </div>
+</section>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 ">
+<div class="row-fluid ">
+<div class="span5 widget-span widget-type-custom_widget m-auto" style="" data-widget-type="custom_widget" data-x="0" data-w="5">
+<div id="hs_cos_wrapper_module_1568034308674165" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034308674165_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2>Simple, agentless IT automation that anyone can use</h2>
+<p>Ansible is a universal language, unraveling the mystery of how work gets done. Turn tough tasks into repeatable playbooks. Roll out enterprise-wide protocols with the push of a button.</p>
+<p><a class="btn btn-link" href="https://www.ansible.com/overview/how-ansible-works?hsLang=en-us">How Ansible works</a></p></span></div>
+
+</div><!--end widget-span -->
+<div class="span1 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="5" data-w="1">
+<div id="hs_cos_wrapper_module_1568034425634203" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_spacer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="space"></span></div>
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-custom_widget text-center text-md-left" style="" data-widget-type="custom_widget" data-x="6" data-w="6">
+<div id="hs_cos_wrapper_module_1568034302713162" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034302713162_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p><img class="img-fluid" src="https://www.ansible.com/hubfs/Images/backgrounds/laptop-woman.jpg" alt="Simple agentless IT automation that anyone can use" /></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section pt-0" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 ">
+<div class="row-fluid ">
+<div class="span3 widget-span widget-type-custom_widget pb-3 col-md-6 col-lg-3" style="" data-widget-type="custom_widget" data-x="0" data-w="3">
+<div id="hs_cos_wrapper_module_1568034749393327" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034749393327_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h4>Automate</h4>
+<hr />
+<p>Deploy apps. Manage systems. Crush complexity.</p></span></div>
+
+</div><!--end widget-span -->
+<div class="span3 widget-span widget-type-custom_widget pb-3 col-md-6 col-lg-3" style="" data-widget-type="custom_widget" data-x="3" data-w="3">
+<div id="hs_cos_wrapper_module_1568034803945347" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034803945347_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h4>Accelerate</h4>
+<hr />
+<p>Solve problems once and share the results with everyone.</p></span></div>
+
+</div><!--end widget-span -->
+<div class="span3 widget-span widget-type-custom_widget pb-3 col-md-6 col-lg-3" style="" data-widget-type="custom_widget" data-x="6" data-w="3">
+<div id="hs_cos_wrapper_module_1568034799402345" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034799402345_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h4>Collaborate</h4>
+<hr />
+<p>Break down silos, create a culture of automation.</p></span></div>
+
+</div><!--end widget-span -->
+<div class="span3 widget-span widget-type-custom_widget pb-3 col-md-6 col-lg-3" style="" data-widget-type="custom_widget" data-x="9" data-w="3">
+<div id="hs_cos_wrapper_module_1568034802045346" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568034802045346_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h4>Integrate</h4>
+<hr />
+<p>Automate the technologies you already use.</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section tech-topics py-0" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget pb-3" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1567564544018267" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+<span id="hs_cos_wrapper_module_1567564544018267_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"><h4>
+
+
+
+
+
+
+
+What do you want to automate today?</h4></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 ">
+<div class="row-fluid ">
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="4">
+<div id="hs_cos_wrapper_module_15668685108491157" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/integrations/infrastructure?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_15668685108491157_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Infrastructure</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="4" data-w="4">
+<div id="hs_cos_wrapper_module_15668684872951135" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/use-cases/application-deployment?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_15668684872951135_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Applications</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="8" data-w="4">
+<div id="hs_cos_wrapper_module_15668684743181112" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/integrations/networks?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_15668684743181112_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Networks</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 ">
+<div class="row-fluid ">
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="4">
+<div id="hs_cos_wrapper_module_15668684146261056" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/integrations/containers?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_15668684146261056_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Containers</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="4" data-w="4">
+<div id="hs_cos_wrapper_module_15668683906341032" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/use-cases/security-automation?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_15668683906341032_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Security</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+<div class="span4 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="8" data-w="4">
+<div id="hs_cos_wrapper_module_1566868295534965" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+  <a href="https://www.ansible.com/integrations/cloud?hsLang=en-us" class="card border border-gray-400 text-center">
+
+    
+  
+  
+  <div class="card-body ">
+  	<div id="hs_cos_wrapper_module_1566868295534965_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="card_body_content">Cloud</div>
+  </div>
+  
+  
+    
+
+  </a>
+
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section bg-gray-800-half" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-18 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-19 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget " style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568035126670490" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568035126670490_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><img class="img-fluid" src="https://www.ansible.com/hubfs/Images/Resources/ansible-product-interface_1.png" alt="Ansible Product Interface" title="Ansible Product Interface" /></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-20 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section bg-gray-800 pt-0" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-21 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-22 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget text-center text-white col-xl-6 col-lg-8 col-12 mx-auto" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568044381367622" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568044381367622_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2>Extend the power of Ansible with Red Hat Ansible Automation Platform</h2>
+<p>Scale automation, manage complex deployments and speed productivity with enterprise automation platform that can be used across entire IT teams.</p>
+<p><a href="/products/automation-platform?hsLang=en-us" class="btn btn-primary" rel=" noopener">Explore features</a></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-23 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section bg-gray-light" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-24 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-25 ">
+<div class="row-fluid ">
+<div class="span7 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="7">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-26 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget pb-2" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1567564855185414" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+<span id="hs_cos_wrapper_module_1567564855185414_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"><h4>
+
+
+
+
+
+
+
+From our blog</h4></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-27 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget blog-feed" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1569296924618287" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rss_listing widget-type-rss_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+    
+    
+
+
+
+
+<span id="hs_cos_wrapper_module_1569296924618287_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rss_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rss_listing">
+<h3></h3>
+
+
+    <div class="hs-rss-module feedreader_box hs-hash-68296655">
+          <div class="hs-rss-item ">
+          <div class="hs-rss-item-text">
+          <a class="hs-rss-title" href="https://www.ansible.com/blog/new-libssh-connection-plugin-for-ansible-network"><span>New LibSSH Connection Plugin for Ansible Network Replaces Paramiko, Adds FIPS Mode Enablement</span></a>
+          <div class="hs-rss-byline">
+          
+          </div>
+          
+      <div class="hs-rss-description">
+      <p>As Red Hat Ansible Automation Platform expands its footprint with a growing customer base, security continues to be an important aspect of organizations’ overall strategy. Red Hat regularly reviews...<a href="https://www.ansible.com/blog/new-libssh-connection-plugin-for-ansible-network">Read more</a></p>
+      </div>
+      
+          </div>
+          
+          </div>
+          
+          <div class="hs-rss-item ">
+          <div class="hs-rss-item-text">
+          <a class="hs-rss-title" href="https://www.ansible.com/blog/now-available-red-hat-ansible-automation-platform-1.2"><span>Now Available: Red Hat Ansible Automation Platform 1.2</span></a>
+          <div class="hs-rss-byline">
+          
+          </div>
+          
+      <div class="hs-rss-description">
+      <p>Red Hat Ansible Automation Platform 1.2 is now generally available with increased focus on improving efficiency, increasing productivity and controlling risk and expenses.  While many IT...<a href="https://www.ansible.com/blog/now-available-red-hat-ansible-automation-platform-1.2">Read more</a></p>
+      </div>
+      
+          </div>
+          
+          </div>
+          </div>
+
+</span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-28 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget text-right" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1528841185366251" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1528841185366251_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p><a href="/blog?hsLang=en-us" class="btn btn-link" rel=" noopener">Visit our blog</a></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span5 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="7" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-29 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget pb-2" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1567564948512445" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-header widget-type-header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+<span id="hs_cos_wrapper_module_1567564948512445_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"><h4>
+
+
+
+
+
+
+
+In the press</h4></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-30 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget press-feed" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1569297704602386" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rss_listing widget-type-rss_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+    
+    
+
+
+
+
+<span id="hs_cos_wrapper_module_1569297704602386_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rss_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rss_listing">
+<h3></h3>
+
+
+    <div class="hs-rss-module feedreader_box hs-hash-1194480374">
+          <div class="hs-rss-item ">
+          <div class="hs-rss-item-text">
+          <a class="hs-rss-title" href="https://www.ansible.com/press-center/press-releases/employers-modernizes-digital-transformation-with-red-hat"><span>EMPLOYERS Modernizes Digital Transformation with Red Hat</span></a>
+          <div class="hs-rss-byline">
+          
+          </div>
+          
+          </div>
+          
+          </div>
+          
+          <div class="hs-rss-item ">
+          <div class="hs-rss-item-text">
+          <a class="hs-rss-title" href="https://www.ansible.com/press-center/press-releases/red-hat-expands-automation-for-hybrid-clouds-with-red-hat-ansible-automation-platform-integration-for-red-hat-openshift-environments"><span>Red Hat Expands Automation for Hybrid Clouds with Red Hat Ansible Automation Platform Integration for Red Hat OpenShift Environments</span></a>
+          <div class="hs-rss-byline">
+          
+          </div>
+          
+          </div>
+          
+          </div>
+          </div>
+
+</span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-31 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget text-right" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1528841188673253" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1528841188673253_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p><a href="/press-center?hsLang=en-us" class="btn btn-link" rel=" noopener">View all press releases</a></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-32 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell section bg-gray-light pt-0 pt-md-5" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-33 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-34 ">
+<div class="row-fluid ">
+<div class="span7 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="7">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-35 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget pb-2" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568051518925975" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+<span id="hs_cos_wrapper_module_1568051518925975_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"><h4>
+
+
+
+
+
+
+
+Webinars and training</h4></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-36 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell bg-white border-gray-300 mb-3 p-3 card" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-2 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget webinars-dynamic" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568142783616273" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+<div class="webinar-list">
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+            
+            <div class="item " style="display: block;">
+                <div class="calendar-headline">
+                    <a class="calendar-headline-link" href="https://www.ansible.com/resources/webinars-training/automating-events-across-multiple-environments-with-ansible-and-acm?hsLang=en-us">Automating events across multiple environments with Ansible and ACM</a>
+                    <div class="calendar-date"><span>November 17th 1pm EDT</span></div>
+                </div>
+            </div>
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+        
+    
+        <!-- webinar -->
+        
+        
+        
+        
+        
+            
+            <div class="item " style="display: block;">
+                <div class="calendar-headline">
+                    <a class="calendar-headline-link" href="https://www.ansible.com/resources/webinars-training/migrating-to-ansible-collections?hsLang=en-us">Migrating to Ansible Collections</a>
+                    <div class="calendar-date"><span>December 8th 1pm EST</span></div>
+                </div>
+            </div>
+        
+        
+    
+</div>
+
+<style type="text/css">
+    /* hide items till js does its job */
+    .webinar-list .item{
+        display: none;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // only display the first "intro" item
+        $(".webinar-list .item.intro").slice(1).remove();
+        
+        // then only display the max number of items (which includes the 1 intro item)
+        var i = 0;
+        $(".webinar-list .item").each(function(){
+            if(i &lt; 3){
+                $(this).show();
+            } else {
+                // remove, don't hide
+                $(this).remove();
+            }
+            i++;
+        });
+    });
+</script></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-2 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget webinars-static" style="display: none;" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568142670361227" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568142670361227_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p class="text-gray-500 text-uppercase mb-0">Featured webinar</p>
+<p class="mb-3"><a href="https://www.ansible.com/resources/webinars-training/introduction-to-ansible?hsLang=en-us">Ansible Essentials </a></p>
+<hr />
+<p class="text-gray-500 text-uppercase mb-0">Featured webinar</p>
+<p><a href="https://www.ansible.com/resources/webinars-training/ansible-best-practices-roles-modules?hsLang=en-us">Ansible best practices: Roles &amp; Modules</a></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget text-right" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568051518925978" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568051518925978_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><a class="btn btn-link" href="/resources/webinars-training?hsLang=en-us" rel=" noopener">All webinars</a></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span5 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="7" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget pb-2" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568051522991990" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+<span id="hs_cos_wrapper_module_1568051522991990_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"><h4>
+
+
+
+
+
+
+
+Upcoming events</h4></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget bg-white border-gray-300 mb-3 events-list pt-3 px-3 pb-1 card" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568826073228118" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+  <div class="event-listing">
+    <p>Currently no events.</p>
+  </div>
+
+
+
+
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget text-right" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1568051522991993" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_1568051522991993_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p><a href="https://www.ansible.com/community/events?hsLang=en-us" class="btn btn-link">All events</a></p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end body -->
+</div><!--end body wrapper -->
+
+<div class="footer-container-wrapper">
+    <div class="footer-container container-fluid">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group p-0" style="" data-widget-type="global_group" data-x="0" data-w="12">
+<!-- start coded_template: id:6195572945 path:generated_global_groups/6195572944.html -->
+<div class="" data-global-widget-path="generated_global_groups/6195572944.html"><div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_html m-0 p-0" style="" data-widget-type="raw_html" data-x="0" data-w="12">
+<div class="cell-wrapper layout-widget-wrapper">
+<span id="hs_cos_wrapper_module_152270485910932" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><!-- start coded_template: id:6195900440 path:Custom/Templates/Partials/ans-footer.html -->
+<footer id="ans-footer">
+<div class="container">
+<div class="row">
+<div class="nav-extended col-md-6 col-lg-8 py-5 order-2 order-md-1">
+<div class="row">
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#quick-nav">Quick links</h6>
+<div id="quick-nav" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://www.ansible.com/it-automation?hsLang=en-us" class="nav-link">Why Ansible?</a>
+<a href="https://www.ansible.com/how-ansible-works?hsLang=en-us" class="nav-link">How Ansible Works</a>
+<a href="https://www.ansible.com/devops?hsLang=en-us" class="nav-link">Ansible for DevOps</a>
+<a href="https://www.ansible.com/networking?hsLang=en-us" class="nav-link">Network Automation</a>
+<a href="https://access.redhat.com/products/ansible-tower-red-hat/" class="nav-link">Ansible Support</a>
+<a href="https://www.ansible.com/contact-us?hsLang=en-us" class="nav-link">Contact Us</a>
+</nav>
+</div>
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#product-nav">Products</h6>
+<div id="product-nav" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://www.ansible.com/tower-trial?hsLang=en-us" class="nav-link">Free product trial</a>
+  <a href="https://www.ansible.com/tower?hsLang=en-us" class="nav-link">Ansible Tower</a>
+
+<a href="https://www.ansible.com/products/network-automation?hsLang=en-us" class="nav-link">Network Automation</a>
+<a href="https://www.ansible.com/training-certification?hsLang=en-us" class="nav-link">Training &amp; Certification</a>
+<a href="https://www.ansible.com/consulting?hsLang=en-us" class="nav-link">Consulting for Ansible</a>
+</nav>
+</div>
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#use-case-nav">Use Cases</h6>
+<div id="use-case-nav" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://www.ansible.com/provisioning?hsLang=en-us" class="nav-link">Provisioning</a>
+<a href="https://www.ansible.com/configuration-management?hsLang=en-us" class="nav-link">Config Management</a>
+<a href="https://www.ansible.com/application-deployment?hsLang=en-us" class="nav-link">App Deployment</a>
+<a href="https://www.ansible.com/continuous-delivery?hsLang=en-us" class="nav-link">Continuous Delivery</a>
+<a href="https://www.ansible.com/security-and-compliance?hsLang=en-us" class="nav-link">Security &amp; Compliance</a>
+<a href="https://www.ansible.com/orchestration?hsLang=en-us" class="nav-link">Orchestration</a>
+</nav>
+</div>
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#integrations-nav">Integrations</h6>
+<div id="integrations-nav" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="//www.ansible.com/infrastructure" class="nav-link">Infrastructure</a>
+<a href="//www.ansible.com/network-automation" class="nav-link">Networks</a>
+<a href="//www.ansible.com/containers" class="nav-link">Containers</a>
+<a href="//www.ansible.com/cloud" class="nav-link">Cloud</a>
+<a href="//www.ansible.com/devops-tools" class="nav-link">DevOps Tools</a>
+</nav>
+</div>
+</div>
+<div class="d-none d-lg-block col-lg-3">
+ 
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#resources">Resources</h6>
+<div id="resources" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://www.ansible.com/get-started?hsLang=en-us" class="nav-link">Quick Start Guide</a>
+<a href="https://www.ansible.com/resources/videos?hsLang=en-us" class="nav-link">Videos</a>
+<a href="https://www.ansible.com/resources/webinars-training?hsLang=en-us" class="nav-link">Webinars &amp; Training</a>
+<a href="https://www.ansible.com/resources/ebooks?hsLang=en-us" class="nav-link">E-books</a>
+<a href="https://www.ansible.com/resources/whitepapers?hsLang=en-us" class="nav-link">Whitepapers</a>
+<a href="https://www.ansible.com/resources/case-studies?hsLang=en-us" class="nav-link">Case Studies</a>
+<a href="https://www.ansible.com/partners?hsLang=en-us" class="nav-link">Partners</a>
+</nav>
+</div>
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#community-nav">Community</h6>
+<div id="community-nav" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://www.ansible.com/events?hsLang=en-us" class="nav-link">Upcoming Events</a>
+<a href="https://www.ansible.com/ansiblefest?hsLang=en-us" class="nav-link">AnsibleFest</a>
+<a href="http://ansible.meetup.com" class="nav-link" target="_blank">Ansible on Meetup</a>
+<a href="https://github.com/ansible/ansible" class="nav-link" target="_blank">Ansible on GitHub</a>
+<a href="https://github.com/ansible/awx" class="nav-link" target="_blank">AWX on GitHub</a>
+</nav>
+</div>
+</div>
+<div class="col-12 col-lg-3">
+<h6 data-toggle="collapse" data-target="#related">Related Sites</h6>
+<div id="related" class="collapse d-lg-block">
+<nav class="nav flex-column">
+<a href="https://docs.ansible.com/" class="nav-link">Ansible Docs</a>
+<a href="https://galaxy.ansible.com/" class="nav-link">Ansible Galaxy</a>
+<a href="https://www.ansible.com/blog?hsLang=en-us" class="nav-link">Ansible Blog</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4 pt-5 px-4 bg-gray-dark order-1 order-md-2">
+<h5>Red Hat Ansible</h5>
+<p class="mb-4">Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT. Ansible is the only automation language that can be used across entire IT teams from systems and network administrators to developers and managers.</p>
+<nav class="nav about flex-column">
+<a href="https://www.ansible.com/about?hsLang=en-us" class="nav-link">About Us</a>
+<a href="https://www.ansible.com/about?hsLang=en-us" class="nav-link">Our Story</a>
+<a href="https://www.ansible.com/press-center?hsLang=en-us" class="nav-link">Press Center</a>
+<a href="https://www.redhat.com/en/jobs" class="nav-link">Careers</a>
+</nav>
+<nav class="nav social">
+<a href="https://twitter.com/ansible" class="nav-link" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="https://www.facebook.com/ansibleautomation" class="nav-link" target="_blank"><i class="fa fa-facebook"></i></a>
+<a href="https://www.linkedin.com/company/3545/" class="nav-link" target="_blank"><i class="fa fa-linkedin"></i></a>
+<a href="https://github.com/ansible/ansible" class="nav-link" target="_blank"><i class="fa fa-github"></i></a>
+<a href="https://www.youtube.com/channel/UCPJo5UY1KsP7J1BuHmiWNzQ" class="nav-link" target="_blank"><i class="fa fa-youtube"></i></a>
+</nav>
+</div>
+</div>
+</div>
+</footer><!-- end coded_template: id:6195900440 path:Custom/Templates/Partials/ans-footer.html --></span>
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!-- end coded_template: id:6195572945 path:generated_global_groups/6195572944.html -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-global_group p-0" style="" data-widget-type="global_group" data-x="0" data-w="12">
+<!-- start coded_template: id:5991552854 path:generated_global_groups/5991552849.html -->
+<div class="" data-global-widget-path="generated_global_groups/5991552849.html"><div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_html p-0" style="" data-widget-type="raw_html" data-x="0" data-w="12">
+<div class="cell-wrapper layout-widget-wrapper">
+<span id="hs_cos_wrapper_module_152270485910932" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><!-- start coded_template: id:5993415685 path:Custom/Templates/Partials/universal-footer.html -->
+<footer id="rh">
+<div class="container">
+<div class="row justify-content-between align-items-center">
+<div class="col-md-3 col-xl-2">
+<img src="https://cdn2.hubspot.net/hubfs/4305976/images/logos/redhat_logo.svg" class="img-fluid" alt="Red Hat" width="140" />
+</div>
+<div class="col-md-7 col-xl-9 pb-1">
+<div class="row">
+<div class="col-12 col-xl-auto">
+<p class="mb-0">Copyright © 2020 <span class="text-nowrap">Red Hat, Inc.</span></p>
+</div>
+<div class="col-12 col-xl-auto">
+<nav class="nav">
+<a href="https://www.redhat.com/en/about/privacy-policy" class="nav-link">Privacy statement</a>
+<a href="https://www.ansible.com/security?hsLang=en-us" class="nav-link">Security disclosure</a>
+<a href="https://www.redhat.com/en/about/all-policies-guidelines" class="nav-link">All policies and guidelines</a>
+<span id="teconsent" style="line-height: 1.1; display: block;" consent="undefined" aria-label="Open Cookie Preferences Modal" role="complementary"><script async="async" type="text/javascript" crossorigin="" src="https://consent.trustarc.com/asset/notice.js/v/v1.7-138"></script><a role="link" id="icon-id06736641595301547" tabindex="0" lang="en" style="cursor: pointer;">Cookie Preferences and Do Not Sell My Info</a></span>
+</nav>
+</div>
+</div>
+</div>
+<div class="col-md-2 col-xl-1 pr-0 text-md-right">
+<a href="https://www.redhat.com/summit"><img src="https://www.ansible.com/hubfs/images/Logo-Red_Hat-Summit-A-Standard-RGB-02.svg" alt="Red Hat Summit" width="72" /></a>
+</div>
+</div>
+</div>
+</footer><!-- end coded_template: id:5993415685 path:Custom/Templates/Partials/universal-footer.html --></span>
+</div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div><!-- end coded_template: id:5991552854 path:generated_global_groups/5991552849.html -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end footer -->
+</div><!--end footer wrapper -->
+
+    
+<iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_redhat_0" name="destination_publishing_iframe_redhat_0_name" src="https://redhat.demdex.net/dest5.html?d_nsid=0#https%3A%2F%2Fwww.ansible.com" style="display: none; width: 0px; height: 0px;" class="aamIframeLoaded"></iframe><script>
+(function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/_hcms/perf', true /*async*/);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.onreadystatechange = function () {
+                // do nothing.
+            };
+            var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            function populateNetworkInfo(name, connection, info) {
+                if (name in connection) {
+                    info[name] = connection[name];
+                }
+            }
+            var networkInfo = {};
+            if (connection) {
+                ['type', 'effectiveType', 'downlink', 'rtt'].forEach(function(name) {
+                    populateNetworkInfo(name, connection, networkInfo);
+                });
+            }
+            var perfData = {
+                url: location.href,
+                portal: 330046,
+                content: 4617718409,
+                group: -1,
+                connection: networkInfo,
+                timing: performance.timing
+            };
+            xhr.send(JSON.stringify(perfData));
+        }, 3000);  // Execute this 3 seconds after onload.
+    });
+})();
+</script>
+
+<script>
+if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en-us'; }
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.27/bundles/project.js"></script>
+<script src="https://www.ansible.com/hs-fs/hub/330046/hub_generated/module_assets/1601407079305/module_9803917176_Raw_HTML.js"></script>
+<script src="/hs/hsstatic/AsyncSupport/static-1.89/js/rss_listing_asset.js"></script>
+<script>
+  function hsOnReadyPopulateRssFeed_68296655() {
+    var options = {
+      'id': "68296655",
+      'rss_hcms_url': "/_hcms/rss/feed?feedId=MzMwMDQ2OjM2OTQxNTgyMDow&amp;limit=2&amp;dateLanguage=ZW5fVVM%3D&amp;dateFormat=c2hvcnQ%3D&amp;zone=QW1lcmljYS9OZXdfWW9yaw%3D%3D&amp;clickThrough=UmVhZCBtb3Jl&amp;maxChars=200&amp;property=link&amp;property=title&amp;property=summary&amp;hs-expires=1638523046&amp;hs-version=2&amp;hs-signature=AJ2IBuFUm1eNA0CgBSyGIrT3wM6TIbf86w",
+      'show_author': false,
+      'show_date': false,
+      'include_featured_image': false,
+      'show_detail' : true,
+      'attribution_text': "by ",
+      'publish_date_text': "posted at",
+      'item_title_tag' : "span",
+      'click_through_text': "Read more",
+      'limit_to_chars': 200,
+    };
+    window.hsPopulateRssFeed(options);
+  }
+
+  if (document.readyState === "complete" ||
+      (document.readyState !== "loading" &amp;&amp; !document.documentElement.doScroll)
+  ) {
+    hsOnReadyPopulateRssFeed_68296655();
+  } else {
+    document.addEventListener("DOMContentLoaded", hsOnReadyPopulateRssFeed_68296655);
+  }
+
+</script>
+
+<script>
+  function hsOnReadyPopulateRssFeed_1194480374() {
+    var options = {
+      'id': "1194480374",
+      'rss_hcms_url': "/_hcms/rss/feed?feedId=MzMwMDQ2OjM5MDQwNzQ0NDow&amp;limit=2&amp;dateLanguage=ZW5fVVM%3D&amp;dateFormat=c2hvcnQ%3D&amp;zone=QW1lcmljYS9OZXdfWW9yaw%3D%3D&amp;clickThrough=UmVhZCBtb3Jl&amp;maxChars=200&amp;property=link&amp;property=title&amp;hs-expires=1638523046&amp;hs-version=2&amp;hs-signature=AJ2IBuGntesDr6YVM2sO5tF9gNfceHyhcw",
+      'show_author': false,
+      'show_date': false,
+      'include_featured_image': false,
+      'show_detail' : false,
+      'attribution_text': "by ",
+      'publish_date_text': "posted at",
+      'item_title_tag' : "span",
+      'click_through_text': "Read more",
+      'limit_to_chars': 200,
+    };
+    window.hsPopulateRssFeed(options);
+  }
+
+  if (document.readyState === "complete" ||
+      (document.readyState !== "loading" &amp;&amp; !document.documentElement.doScroll)
+  ) {
+    hsOnReadyPopulateRssFeed_1194480374();
+  } else {
+    document.addEventListener("DOMContentLoaded", hsOnReadyPopulateRssFeed_1194480374);
+  }
+
+</script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.ansible.com"]);
+_hsq.push(["setPageId", "4617718409"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 4617718409,
+    "legacyPageId": "4617718409",
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": 4617718409,
+    "languageCode": "en-us",
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="/hs/scriptloader/330046.js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    ticks: 1606987046287,
+    page_id: 4617718409,
+
+    content_group_id: 0,
+    portal_id: 330046,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "standard-page",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer="" src="/hs/hsstatic/HubspotToolsMenu/static-1.79/js/index.js"></script>
+
+<div id="consent_blackbar" style="position: fixed;bottom: 0;width: 100%;z-index: 5;padding: 10px;"></div>
+<script src="//www.redhat.com/sites/all/libraries/webrh/dist/js/webrh.webcomponents.js"></script>
+
+<!-- Adobe DTM Tracking -->
+<script type="text/javascript">
+if (("undefined" !== typeof _satellite) &amp;&amp; ("function" === typeof _satellite.pageBottom)) {
+_satellite.pageBottom();
+}
+</script>
+
+
+
+
+
+
+    
+    <!-- Generated by the HubSpot Template Builder - template version 1.03 -->
+
+<!-- end coded_template: id:36049721638 path:generated_layouts/36049721637.html -->
+<style id="wistia_18_style" type="text/css" class="wistia_injected_style">
+@font-face {
+font-family: 'WistiaPlayerOverpassNumbers';
+src: url(data:application/x-font-ttf;charset=utf-8;base64,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);
+}
+</style><style id="wistia_24_style" type="text/css" class="wistia_injected_style">
+@font-face {
+font-family: 'WistiaPlayerInterNumbersSemiBold';
+font-feature-settings: 'tnum' 1;
+src: url(data:application/x-font-woff;charset=utf-8;base64,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);
+}
+</style><div id="pop-div07251496242088964" class="truste_overlay" style="background-color: rgb(0, 0, 0); opacity: 0.4; position: fixed; z-index: 1002100; width: 100%; height: 100%; top: 0px; left: 0px; overflow: hidden;"></div><div id="pop-div2021334556960061724" class="truste_box_overlay" style="position: absolute; z-index: 2002100; top: 0px; left: 0px; bottom: 0px; right: 0px; background: url(&quot;https://consent.trustarc.com/asset/trans.png&quot;); width: 80%; max-width: 829px; min-width: 220px; margin: 20px auto; box-sizing: content-box; height: 460px; padding: 0px; border-radius: 3px;"><div id="pop-div309809945221164209" class="truste_box_overlay_inner" tabindex="1" role="dialog" aria-label="Your choices regarding the use of cookies on this site" style="position: relative; width: 100%; height: 100%; outline: none;"><style>false</style><img src="https://consent.trustarc.com/asset/transparent.png" alt="transparent background" style="display: block; width: 100%; height: 100%;" /><iframe src="https://consent-pref.trustarc.com/?type=redhatsliderccpa&amp;site=redhat.com&amp;action=notice&amp;country=us&amp;state=ca&amp;locale=en&amp;behavior=expressed&amp;gtm=1&amp;privacypolicylink=https://www.redhat.com/en/about/privacy-policy&amp;irm=undefined&amp;from=https://consent.trustarc.com/" id="pop-frame00020698025635699224" title="TrustArc Cookie Consent Manager" tabindex="1" scrolling="no" style="border: 0px; overflow: hidden; background: rgb(255, 255, 255); display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-radius: 3px;"></iframe><div id="closebtn-id0.5276288119432921" style="position: absolute; top: 16px; right: 14px;"><a aria-label="close" role="button" tabindex="1" style="cursor: pointer;"><img id="pop-close02302140013243923" alt="close button" src="https://consent.trustarc.com/get?name=redhat_close.svg" style="border: 0px;" /></a></div></div></div><script>_satellite["_runScript1"](function(event, target, Promise) {
+if("yes"==_satellite.getVar("tagsAllowedFunc")&amp;&amp;"yes"==_satellite.getVar("rhMarketingLoaded")){var scCid=_satellite.cookie.get("rh_omni_tc");if(""!==scCid&amp;&amp;void 0!==scCid)for(var updatedLink="",anchors=window.document.getElementsByTagName("a"),i=0;i&lt;anchors.length;i++)(-1&lt;anchors[i].href.indexOf("vts.inxpo.com")||-1&lt;anchors[i].href.indexOf("onlinexperiences.com"))&amp;&amp;-1==anchors[i].href.toLowerCase().indexOf("affiliatedata=")&amp;&amp;""!==(updatedLink=window._sdi.util.appendQuery(anchors[i].href,"AffiliateData",scCid))&amp;&amp;(anchors[i].href=updatedLink)}
+});</script></body></html>

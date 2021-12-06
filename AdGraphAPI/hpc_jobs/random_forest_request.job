@@ -1,0 +1,42 @@
+#$ -N ads_request
+#$ -j y
+#
+#
+#
+#Set the shell that should be used to run the job.
+#$ -S /bin/bash
+#
+#$ -t 1
+#
+#$ -o request.output 
+#
+#Make sure that the .e and .o file arrive in the
+# working directory
+#$ -cwd
+#
+#Specify the queue to run in
+#$ -q INFORMATICS,UI
+####$ -q UI
+#$ -pe smp 12
+#
+#
+#
+#Print information from the job into the output file
+java -Xmx64G -cp "/Users/uiqbal/privatemodules/weka-3-8-1/weka.jar" weka.Run weka.classifiers.meta.FilteredClassifier -x 10 -T "" -t "/Users/uiqbal/adgraph/unique_features_data.arff" -F "weka.filters.unsupervised.attribute.Remove -R 1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,68" -W weka.classifiers.trees.RandomForest -- -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1 > "/Users/uiqbal/adgraph/request.result"
+#
+#
+/bin/echo Running on host: `hostname`.
+/bin/echo In directory: `pwd`
+/bin/echo Starting on: `date`
+#
+#Send e-mail at beginning/end/suspension of job
+#$ -m bes
+#
+#E-mail address to send to
+#$ -M umar-iqbal@uiowa.edu
+#
+#Sleep for 60 seconds
+###sleep 200
+#mpirun -np 24 a.out
+#Print the end date of the job before exiting
+echo Now it is: `date`

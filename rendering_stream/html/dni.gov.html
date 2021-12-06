@@ -1,0 +1,613 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr"><head></head><body id="itemid-101"><a href="#content" class="skip">Skip to content</a>
+
+<!-- added 3/27/19 a. chickinsky SR-5360780 -->
+<!-- Google Tag Manager -->
+<iframe src="javascript:void(0)" title="" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PCWTN36"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCWTN36');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<base href="https://www.dni.gov/" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>Home</title>
+	<link href="/index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+	<link href="/index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+	<link href="/templates/odni-main-landing-page-template/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/media/k2/assets/css/k2.fonts.css?v2.7.1" rel="stylesheet" type="text/css" />
+	<link href="/components/com_k2/css/k2.css?v2.7.1" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/bootstrap.min.css?9f24807ae78bf9e561b27a1826aab0a4" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/bootstrap-responsive.min.css?9f24807ae78bf9e561b27a1826aab0a4" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/bootstrap-extended.css?9f24807ae78bf9e561b27a1826aab0a4" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/chosen.css?9f24807ae78bf9e561b27a1826aab0a4" rel="stylesheet" type="text/css" />
+	<link href="/media/com_finder/css/finder.css?9f24807ae78bf9e561b27a1826aab0a4" rel="stylesheet" type="text/css" />
+	<script src="/media/jui/js/jquery.min.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/media/k2/assets/js/k2.frontend.js?v2.7.1&amp;sitepath=/" type="text/javascript"></script>
+	<script src="/media/system/js/caption.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/media/jui/js/bootstrap.min.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/templates/odni-content-page-template/js/template.js" type="text/javascript"></script>
+	<script src="/templates/odni-content-page-template/js/jquery-cookie.js" type="text/javascript"></script>
+	<script src="/media/jui/js/chosen.jquery.min.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.autocomplete.min.js?9f24807ae78bf9e561b27a1826aab0a4" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	jQuery(function ($) {
+		initChosen();
+		$("body").on("subform-row-add", initChosen);
+
+		function initChosen(event, container)
+		{
+			container = container || document;
+			$(container).find(".advancedSelect").chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
+		}
+	});
+	
+jQuery(function($){ initTooltips(); $("body").on("subform-row-add", initTooltips); function initTooltips (event, container) { container = container || document;$(container).find(".hasTooltip").tooltip({"html": true,"container": "body"});} });
+jQuery(document).ready(function() {
+	var value, searchword = jQuery('#mod-finder-searchword164');
+
+		// Get the current value.
+		value = searchword.val();
+
+		// If the current value equals the default value, clear it.
+		searchword.on('focus', function ()
+		{
+			var el = jQuery(this);
+
+			if (el.val() === 'Search ...')
+			{
+				el.val('');
+			}
+		});
+
+		// If the current value is empty, set the previous value.
+		searchword.on('blur', function ()
+		{
+			var el = jQuery(this);
+
+			if (!el.val())
+			{
+				el.val(value);
+			}
+		});
+
+		jQuery('#mod-finder-searchform164').on('submit', function (e)
+		{
+			e.stopPropagation();
+			var advanced = jQuery('#mod-finder-advanced164');
+
+			// Disable select boxes with no value selected.
+			if (advanced.length)
+			{
+				advanced.find('select').each(function (index, el)
+				{
+					var el = jQuery(el);
+
+					if (!el.val())
+					{
+						el.attr('disabled', 'disabled');
+					}
+				});
+			}
+		});
+	var suggest = jQuery('#mod-finder-searchword164').autocomplete({
+		serviceUrl: '/index.php/component/finder/?task=suggestions.suggest&amp;amp;format=json&amp;amp;tmpl=component',
+		paramName: 'q',
+		minChars: 1,
+		maxHeight: 400,
+		width: 300,
+		zIndex: 9999,
+		deferRequestBy: 500
+	});});
+	</script>
+
+<link href="/templates/odni-content-page-template/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/templates/odni-content-page-template/css/template.css" rel="stylesheet" type="text/css" />
+
+
+<!--[if lt IE 9]>
+<script src="/media/jui/js/html5.js"></script>
+<![endif]-->
+<!--[if lte IE 7]>
+<link href="/templates/odni-main-landing-page-template/css/template_IEold.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 8]>
+<link href="/templates/odni-main-landing-page-template/css/template_IE8.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 9]>
+<link href="/templates/odni-main-landing-page-template/css/template_IE9.css" rel="stylesheet" type="text/css" />
+<![endif]--> 
+  
+<script id="_fed_an_ua_tag" language="javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DNI&amp;pua=ua-33523145-2"></script>  
+  
+
+  <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="Q4EGJ-2D9AT-3BJFL-A5BV3-CZBUZ",function(){function n(e){a.BOOMR_onload=e&amp;&amp;e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&amp;&amp;!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"Q4EGJ-2D9AT-3BJFL-A5BV3-CZBUZ",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("&lt;bo"+'dy onload="document._l();"&gt;'),_.close()}}(),"".length&gt;0)if(a&amp;&amp;"performance"in a&amp;&amp;a.performance&amp;&amp;"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="vhvruzyxgiubqx6iypia-f-4bea1275d-clientnsv4-s.akamaihd.net",i={"ak.v":"29","ak.cp":"196955","ak.ai":parseInt("490539",10),"ak.ol":"0","ak.cr":13,"ak.ipv":4,"ak.proto":"h2","ak.rid":"fc1b6f5","ak.r":34122,"ak.a2":e,"ak.m":"dscna","ak.n":"essl","ak.bpcip":"169.235.26.0","ak.cport":35146,"ak.gh":"23.223.150.54","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1606992848","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==IUr3sjLhqyuKBkFe6+3ybZQXfePj4FtKIeM6FzwYOIRrkoRefxh8YaJOt05Uo+d08i0ARWIlErjnA0HcblmA0F+t0JZYvoBoiBwPJHdlJWfG9OEjTRDhV9esR9bYJc1xzI2zNOS9WW37rWF3U1u42R/9J2Ce1EO+83S0vaIrsfd8tOsTxLt9DYZfpA7oySX0YlcL3VxCijmU8VjLMLWgUFkAdc9hlOVkhu0eybeS4NraRkEEkUaEsJW6aYC813eDYxDAKbJc4z1dgflYeUIuFF/4SHF34nGa18eWtqCyqn3GvMBMYiMjKIkscIsLdVVmip6Pp8hHRjuph5ffrYK7YZCfLzA5pVz4E15U0Qg13Hz7q+sBL2b6HOqGZaq/8gM0Rnp913F0FaRVer1kZqpPNnbRfE/12uau6AtQHf+Lpco=","ak.pv":"13","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&amp;&amp;(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script>
+
+<!-- added 3/27/19 a. chickinsky SR-5360780 -->
+<!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCWTN36"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<!-- Alert Modal -->
+
+
+			<div class=" alertBox" id="alertBox" style="display: block;">
+							</div>
+
+
+
+	<!-- End Alert Modal -->
+  
+  <!-- Link Redirect Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h2 id="myModalLabel">You are leaving our Website</h2>
+      </div>
+      <div class="modal-body">
+        <p> You have selected to open <span id="selected-link"></span> </p>
+        <p>If you would like to not see this alert again, please click the "Do not show me this again" check box below</p>      </div>
+      <div class="modal-footer">
+        <input type="checkbox" id="hideModalCheckbox" name="hideModalCheckbox" class="pull-left" /> 
+        <label for="hideModalCheckbox" class="pull-left"> Do not show me this again
+        </label>  
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="myModal-continue">Continue</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  
+  <!-- End Link Redirect Modal -->
+
+		<!-- Begin Header -->
+	
+
+		<!-- Top Bar -->
+		<section class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-6">
+											<button class="pull-right showBttn" id="showBttn" name="showSearchButton" value="OK" type="button"></button>
+
+
+									<div class="pull-right">
+										<div class="hiddenSearch " id="showSearch">
+											
+<form id="mod-finder-searchform164" action="/index.php/search" method="get" class="form-search">
+	<div class="finder moduleHide" data-original-title="" title="">
+		<label for="mod-finder-searchword164" class="element-invisible finder moduleHide" data-original-title="" title="">Search DNI.gov:    </label><input type="text" name="q" id="mod-finder-searchword164" class="search-query input-medium" size="20" value="" placeholder="Search ..." autocomplete="off" /><button class="btn btn-primary hasTooltip  moduleHide finder moduleHide" type="submit" title="" data-original-title="Go"><span class="icon-search icon-white"></span>Search</button>
+							</div>
+</form>
+
+										</div>
+									</div>
+
+					
+														<button id="connectBttn" class="pull-right connectBttn">connect with ODNI</button>
+									<!-- Add Social Menu Items Here -->
+									<div class=" pull-right blurbContainer">
+										
+
+<div class="custom">
+	</div>
+<ul class="nav menu socialBlurbShow socialBlurb pull-right mod-list" id="socialBlurb">
+<li class="item-347"><a href="https://service.govdelivery.com/accounts/USODNI/subscriber/new" title="" class="tooltipLink" onclick="window.open(this.href, 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,'); return false;" data-original-title="Subscribe"><img src="/files/ODNI/images/White-Icon-Mail-Icon.png" alt="Subscribe" /></a></li><li class="item-348"><a href="/index.php/newsroom?format=feed&amp;type=rss" title="" class=" tooltipLink" data-original-title="RSS"><img src="/files/ODNI/images/White-Icon-rss-l.png" alt="RSS" /></a></li><li class="item-350"><a href="https://www.twitter.com/odnigov" title="" class="tooltipLink" data-original-title="ODNI Twitter"><img src="/files/ODNI/images/White-Icon-SM1.png" alt="ODNI Twitter" /></a></li><li class="item-351"><a href="http://www.facebook.com/dni.gov" title="" class="tooltipLink" data-original-title="ODNI Facebook"><img src="/files/ODNI/images/White-Icon-SMFB.png" alt="ODNI Facebook" /></a></li><li class="item-1143"><a href="https://www.linkedin.com/company/odni" title="" class="tooltipLink" data-original-title="ODNI LinkedIn"><img src="/files/ODNI/images/linkedin-5-24.png" alt="ODNI LinkedIn" /></a></li><li class="item-353"><a href="http://www.youtube.com/odnigov" title="" class="tooltipLink" data-original-title="ODNI YouTube"><img src="/files/ODNI/images/White-Icon-YT.png" alt="ODNI YouTube" /></a></li><li class="item-524"><a href="/index.php/more" title="View other Social Media Links" class=" ">contact us</a></li></ul>
+
+							  	</div>
+									</div>
+			</div>
+		</section>
+
+<!-- Hidden DropMenu -->
+<div id="dropNavigation" class="navInvisible">
+<div class="container">
+
+
+
+</div>
+</div>
+
+		<!-- Logo -->
+
+
+					<div class="container">
+						<nav class="navbar navbar-default" role="navigation">
+													
+
+<div class="custom">
+	<p><a href="/index.php" class="navbar-brand odniPageLogo odniTopLogoStyle pull-left">Office<span> of the</span> <br />Director<span> of  </span>National Intelligence</a></p></div>
+
+						
+		<!-- Navigation -->
+
+												<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<img class="hamBgr" alt="Mobile Dropdown Menu" src="/templates/odni-content-page-template/images/hamburgerIcon.png" /> 
+		                  	</button>
+						</div>
+					<div class="navigation collapse navbar-collapse pull-right-custom  centerNav " id="bs-example">
+
+								<ul class="nav menu pull-right-custom centerNav mod-list">
+<li class="item-101 default current active"><a href="/index.php">Home</a></li><li class="item-107 deeper parent"><a href="/index.php/who-we-are">Who We Are</a><ul class="nav-child unstyled small"><li class="item-528 parent"><a href="/index.php/who-we-are/organizations">Organization</a></li><li class="item-174"><a href="/index.php/who-we-are/mission-vision">Mission, Vision &amp; Values</a></li><li class="item-175"><a href="/index.php/who-we-are/history">History</a></li><li class="item-461"><a href="/index.php/ncpc-home" class="center-links-topnav">NCPC</a></li><li class="item-462"><a href="/index.php/ncsc-home" class="center-links-topnav">NCSC</a></li><li class="item-460"><a href="/index.php/nctc-home" class="center-links-topnav">NCTC</a></li><li class="item-531"><span class="nav-header  hidden">Related Links</span>
+</li><li class="item-532"><span class="nav-header  hidden">Related Content</span>
+</li><li class="item-177 parent"><a href="/index.php/who-we-are/leadership" class="bottom-border">Leadership</a></li><li class="item-838"><a href="/index.php/odni-operating-status">Operating Status</a></li><li class="item-1140"><a href="/index.php/coronavirus">Coronavirus Disease Guidance</a></li></ul></li><li class="item-190 deeper parent"><a href="/index.php/what-we-do">What We Do</a><ul class="nav-child unstyled small"><li class="item-191"><a href="/index.php/what-we-do/what-is-intelligence">What is Intelligence?</a></li><li class="item-194"><a href="/index.php/what-we-do/members-of-the-ic">Members of the IC</a></li><li class="item-189"><a href="/index.php/what-we-do/ic-budget">IC Budget</a></li><li class="item-196"><a href="/index.php/what-we-do/ic-policies-reports">IC Policies &amp; Reports</a></li><li class="item-840"><a href="/index.php/foia">FOIA Reading Room</a></li></ul></li><li class="item-108 deeper parent"><a href="/index.php/how-we-work">How We Work</a><ul class="nav-child unstyled small"><li class="item-192"><a href="/index.php/how-we-work/ethics">Ethics</a></li><li class="item-193"><a href="/index.php/how-we-work/transparency">Transparency</a></li><li class="item-841"><a href="/index.php/how-we-work/diversity">Diversity</a></li><li class="item-842"><a href="/index.php/how-we-work/objectivity">Objectivity</a></li><li class="item-843"><a href="/index.php/how-we-work/accountability">Accountability</a></li><li class="item-844"><a href="/index.php/how-we-work/collaboration">Collaboration</a></li></ul></li><li class="item-205 deeper parent"><a href="/index.php/careers">Careers</a><ul class="nav-child unstyled small"><li class="item-355 parent"><a href="/index.php/careers/joint-duty">Joint Duty</a></li><li class="item-206 parent"><a href="/index.php/careers/career-opportunities">Career Opportunities</a></li><li class="item-367 parent"><a href="/index.php/careers/special-programs">Special Programs</a></li><li class="item-495"><a href="/index.php/careers/student-opportunities">Student Opportunities</a></li><li class="item-520"><a href="/index.php/careers/careers-features">Careers Features</a></li><li class="item-642"><span class="nav-header  hidden">Related Links</span>
+</li><li class="item-643"><span class="nav-header  hidden">Related Content</span>
+</li></ul></li><li class="item-395 deeper parent"><a href="/index.php/newsroom">Newsroom</a><ul class="nav-child unstyled small"><li class="item-396"><a href="/index.php/newsroom/recent-news">Recent News</a></li><li class="item-374 parent"><a href="/index.php/newsroom/reports-publications">Reports &amp; Publications</a></li><li class="item-397 parent"><a href="/index.php/newsroom/press-releases">Press Releases</a></li><li class="item-398 parent"><a href="/index.php/newsroom/speeches-interviews">Speeches &amp; Interviews</a></li><li class="item-399 parent"><a href="/index.php/newsroom/congressional-testimonies">Congressional Testimonies</a></li><li class="item-401 parent"><a href="/index.php/newsroom/news-articles" class="bottom-border">News Articles</a></li><li class="item-402"><a href="/index.php/ctiic-newsroom">CTIIC Newsroom</a></li><li class="item-404"><a href="/index.php/ncsc-newsroom">NCSC Newsroom</a></li><li class="item-403"><a href="/index.php/ncpc-newsroom">NCPC Newsroom</a></li><li class="item-405"><a href="/index.php/nctc-newsroom" class="bottom-border">NCTC Newsroom</a></li><li class="item-677"><a href="/index.php/newsroom/photos">Photos</a></li><li class="item-839"><a href="/index.php/newsroom/seals-graphics">Seals &amp; Graphics</a></li></ul></li><li class="item-763 deeper parent"><a href="/index.php/features">Features</a><ul class="nav-child unstyled small"><li class="item-1148"><a href="/index.php/features/2763-principles-of-artificial-intelligence-ethics-for-the-intelligence-community"> Principles of Artificial Intelligence Ethics for the IC</a></li><li class="item-1144"><a href="/index.php/features/2753-53-hpsci-transcripts">53 HPSCI Transcripts</a></li><li class="item-1137"><a href="/index.php/who-we-are/organizations/national-security-partnerships/ps-engagement">Private Sector Engagement</a></li><li class="item-1047"><a href="/index.php/features/national-strategy-for-counterterrorism">National Strategy for Counterterrorism</a></li><li class="item-1090"><a href="/index.php/newsroom/reports-publications/item/1940-the-aim-initiative-a-strategy-for-augmenting-intelligence-using-machines">The AIM Initiative</a></li><li class="item-1051"><a href="https://www.intelligence.gov/tet-declassified">Declassified Tet Offensive Documents</a></li><li class="item-1091"><a href="/files/documents/FOIA/APR-SEP_2018_SAR_FINAL.pdf?utm_source=Feature%20Navigation%20Menu&amp;utm_medium=DNI.gov%20Website">ICIG Semiannual Report Apr-Sept 2018</a></li><li class="item-1050"><a href="/index.php/cyber-threat-framework">Cyber Threat Framework</a></li><li class="item-1052"><a href="https://www.dni.gov/ICIG-Whistleblower/?utm_source=Feature%20Link&amp;utm_medium=Home%20Page">Introducing IC Whistleblowing</a></li><li class="item-779"><a href="/index.php/features">See More Features</a></li></ul></li></ul>
+
+
+						</div>
+						
+					</nav>
+
+				</div>
+
+
+
+
+<!-- Hero -->
+		<div id="content">
+			
+
+<div class="custom">
+	<section class="hero">
+<div class="container-fluid ODNI"> </div>
+<div class="container text-center">
+<h1 class="text-uppercase ODNIheroText-1"><span>We unify our intelligence community toward a stronger, safer nation</span></h1>
+</div>
+<div class="ODNIHeaderSeal"><img src="/files/ODNI/images/homepage_images/ODNIseal.png" alt="ODNIseal" /></div>
+<div class="ODNI-2">
+<div class="container text-center">
+<h2 class=" odniMainLogoStyle heroText-2  ">OFFICE<span> of the</span> DIRECTOR<span> of</span> NATIONAL INTELLIGENCE</h2>
+<div class="heroBlurb">
+<h6>Our mission is to <span>lead intelligence integration</span> and forge an <span>intelligence community</span> that delivers the most insightful intelligence possible</h6>
+</div>
+<a href="/index.php/who-we-are" class="text-uppercase ODNILink blurbBttn">Who We Are</a></div>
+</div>
+</section></div>
+
+	</div>
+	
+
+
+<!-- Row 1 -->
+
+
+			
+				<section class="container-fluid block">
+					
+<div id="k2ModuleBox387" class="k2ItemsBlock">
+
+	
+
+	
+
+
+		<section class="container block">
+
+			<h2 class="blockTitle text-uppercase sectionTitleColor">Newsroom</h2>
+
+			<div class="row">
+				<div class="col-md-8 leadingNews">
+					<a href="/index.php/newsroom/news-articles/item/2166-wounded-warrior-preaches-the-importance-of-intelligence"><div class="newsFeature" style="background-image:url('/media/k2/items/cache/a199a6337ec746064a3cf56a9850e475_XL.jpg');">
+						<div class="newsFeatureTextPositioning">
+							<p>
+							Wounded Warrior Preaches the Importance of Intelligence					</p>
+				</div>
+				</div></a>
+
+				</div>
+				<div class="col-md-4">
+					<a href="/index.php/newsroom/press-releases/item/2157-matthew-a-kozma-appointed-ic-cio"><div class="newsSub" style="background-image:url('/media/k2/items/cache/180d9a4c279d10df8c7ef5fca74426c3_XL.jpg');">
+						<div class="newsTextPositioning">
+						<p>
+							Matthew A. Kozma Appointed IC CIO					</p>
+				</div>
+				</div></a>
+
+					<a href="/index.php/newsroom/press-releases/item/2165-dni-ratcliffe-names-acting-director-of-nctc"><div class="newsSub2" style="background-image:url('/media/k2/items/cache/fbdf9c35f0e130e40ac81bf5b9b6223f_XL.jpg');">
+						<div class="newsTextPositioning">
+						<p>
+							DNI Ratcliffe Names Acting Director of NCTC					</p>
+				</div>
+				</div></a>
+				</div>
+
+			</div>
+
+						<a class="moduleCustomLink text-uppercase ODNILink pull-right-custom centerODNILink blockEnd newsColFix" href="/index.php/newsroom" title="More News">More News</a>
+					</section>
+
+
+
+  
+
+
+	
+</div>
+
+				</section>
+
+			
+
+	<!-- Row 2 -->
+
+			
+					
+
+<div class="custom">
+	<p> </p>
+<section class="block container-fluid howWeWork">
+  <div class="container">
+    <h2 class="blockTitle text-uppercase text-center blockEnd">How We Work</h2>
+    <div class="row text-center">
+      <p>The core mission of the ODNI is to lead the IC in intelligence integration, forging a community that delivers the most insightful intelligence possible.
+        ODNI’s National Centers integrate and coordinate the activities of the entire IC, or in some cases,
+        broader U.S. Government in the IC’s major mission areas: counterterrorism, cybersecurity, counterproliferation and counterintelligence. <a href="/index.php/how-we-work" class="callOutLink text-uppercase">Learn More</a></p><br /><br />
+    </div>
+    <div class="row text-center">
+      <div class="col-sm-6 col-md-4">
+        <div class="contentBlock"><a href="/index.php/nctc-home"><img src="/files/ODNI/images/homepage_images/N-C-T-C.png" alt="NCTC" class="img-circle image-responsive nctcMultiHover nctcSealResting" /></a>
+          <div class="calloutTitle">
+            <h3><a href="/index.php/nctc-home" class="bigNoodle nctcMultiHover nctcTitleResting">COUNTERTERRORISM</a></h3>
+          </div>
+          <div>
+            <p>NCTC leads U.S. counterterrorism efforts, fusing foreign and domestic CT information, providing terrorism analysis and sharing information with partners across the CT enterprise.</p>
+          </div>
+          <a href="/index.php/nctc-home" class="text-uppercase ODNILink nctcMultiHover nctcLinkResting ">Learn More</a></div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="contentBlock"><a href="/index.php/ncpc-home"><img src="/files/ODNI/images/homepage_images/NCPC.png" alt="NCPC" class="img-circle image-responsive ncpcMultiHover ncpcSealResting" /></a>
+          <div class="calloutTitle">
+            <h3><a href="/index.php/ncpc-home" class="bigNoodle  ncpcMultiHover ncpcTitleResting ">COUNTERPROLIFERATION</a></h3>
+          </div>
+          <div>
+            <p>NCPC leads the Intelligence Community and interagency to prevent the proliferation of weapons of mass destruction, their delivery systems, related technologies and expertise.</p>
+          </div>
+          <a href="/index.php/ncpc-home" class="text-uppercase ODNILink  ncpcMultiHover ncpcLinkResting">Learn More</a></div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="contentBlock"><a href="/index.php/ncsc-home"><img src="/files/ODNI/images/homepage_images/NCSC.png" alt="NCSC" class="img-circle image-responsive ncscMultiHover ncscSealResting " /></a>
+          <div class="calloutTitle">
+            <h3><a href="/index.php/ncsc-home" class="bigNoodle ncscMultiHover ncscTitleResting ">CI &amp; SECURITY</a></h3>
+          </div>
+          <div>
+            <p>NCSC leads the integration of the U.S. government’s counterintelligence and security activities focused on countering threats to information and assets critical to the nation’s security.</p>
+          </div>
+          <a href="/index.php/ncsc-home" class="text-uppercase ODNILink ncscMultiHover ncscLinkResting">Learn More</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="blockEnd titleBlock"> </div>
+</section></div>
+
+
+			
+
+	<!-- Row 3 -->
+
+							<section class="container-fluid block">
+					
+<section class="container row-3 ">
+	<h2 class="blockTitle text-uppercase text-center blockEnd">FEATURES</h2>
+	<div class="row">
+				<div class="col-sm-6 col-md-4">
+			<div class="featureBlock"><a href="/index.php/newsroom/reports-publications/item/1943-2019-national-intelligence-strategy"><img src="/files/ODNI/images/features_images/nis.png" alt="2019 National Intelligence Strategy" /></a>
+				<div class="calloutTitle">
+					<a href="/index.php/newsroom/reports-publications/item/1943-2019-national-intelligence-strategy"><h5>2019 National Intelligence Strategy</h5></a>
+				</div>
+				<p>The National Intelligence Strategy is the guiding strategy for the U.S. Intelligence Community (IC) and will drive the strategic direction for the Nation’s 17 IC elements for the next four years.</p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="featureBlock"><a href="https://www.dni.gov/index.php/who-we-are/organizations/mission-integration/es/election-security-who-we-are"><img src="/files/ODNI/images/features_images/election_security.jpg" alt="Election Security" /></a>
+				<div class="calloutTitle">
+					<a href="https://www.dni.gov/index.php/who-we-are/organizations/mission-integration/es/election-security-who-we-are"><h5>Election Security</h5></a>
+				</div>
+				<p>The (IC) is committed to protecting our democratic processes and institutions from foreign influence and interference.  </p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="featureBlock">
+				<a href="/index.php/who-we-are/organizations/national-security-partnerships/ps-engagement">
+					<img src="/files/NSP/Private_Sector/Feature/images/035190_Private_Sector_Landing_Page_Button_1_18.png" alt="Engaging with the Private Sector" />
+				</a>
+				<div class="calloutTitle">
+					<a href="/index.php/who-we-are/organizations/national-security-partnerships/ps-engagement"><h5>Engaging with the Private Sector</h5></a>
+				</div>
+				<p>Intelligence Community engagement with the private sector is a priority focus area for the ODNI.  This feature is organized to help private sector partners navigate the ODNI.</p>
+			</div>
+		</div>
+
+
+				<div class="col-sm-6 col-md-4">
+			<div class="featureBlock"><a href="https://www.dni.gov/files/ICIG/Documents/Publications/Semiannual%20Report/2019/ICIG%20Semiannual%20Report%20-%20April%202019%20to%20September%202019.pdf"><img src="/files/ICIG/Images/SAR/2019/Apr 2019 - Sep 2019 SAR Cover - Square.jpg" alt="ICIG Semiannual Report Apr 2019 - Sep 2019" /></a>
+				<div class="calloutTitle">
+					<a href="https://www.dni.gov/files/ICIG/Documents/Publications/Semiannual%20Report/2019/ICIG%20Semiannual%20Report%20-%20April%202019%20to%20September%202019.pdf"><h5>ICIG Semiannual Report Apr 2019 - Sep 2019</h5></a>
+				</div>
+				<p>This Report summarizes the work of the Office of the Inspector General (OIG) of the Office of the Director of National Intelligence (ODNI). </p>
+			</div>
+		</div>
+		
+				<div class="col-sm-6 col-md-4">
+			<div class="featureBlock"><a href="/index.php/newsroom/reports-publications/item/1940-the-aim-initiative-a-strategy-for-augmenting-intelligence-using-machines?utm_source=Homepage%20Feature&amp;utm_medium=DNI.gov%20Website"><img src="/files/ODNI/images/features_images/aiminitiative250x250.png" alt="The AIM Initiative: Augmenting Intelligence Using Machines" /></a>
+				<div class="calloutTitle">
+					<a href="/index.php/newsroom/reports-publications/item/1940-the-aim-initiative-a-strategy-for-augmenting-intelligence-using-machines?utm_source=Homepage%20Feature&amp;utm_medium=DNI.gov%20Website"><h5>The AIM Initiative: Augmenting Intelligence Using Machines</h5></a>
+				</div>
+				<p>This document outlines how the IC will incorporate AIM capabilities in a manner that resolves key IC legal, policy, cultural, technical, and structural challenges.</p>
+			</div>
+		</div>
+		
+				<div class="col-sm-6 col-md-4">
+			<div class="featureBlock">
+				<a href="https://www.intelligence.gov/tet-declassified">
+					<img src="/files/ODNI/images/features_images/tet_declassified_featured.png" alt="Declassified Tet Offensive Documents" />
+				</a>
+				<div class="calloutTitle">
+					<a href="https://www.intelligence.gov/tet-declassified"><h5>Declassified Tet Offensive Documents</h5></a>
+				</div>
+				<p>The Tet Offensive was a series of surprise attacks launched by the North Vietnamese Army and the Viet Cong on January 30, 1968. Fifty years later, related documents have become declassified. </p>
+			</div>
+		</div>
+			</div>
+
+	<div class="blockEnd blockTitle text-center">
+		<a href="/index.php/features" class="text-uppercase ODNILink">See All Features</a>
+	</div>
+</section>
+
+				</section>
+			
+	<!-- Row 4 -->
+
+			
+					
+
+<div class="custom">
+	<section class="container-fluid odni-row-4">
+	<div class="container">
+		<h2 class="blockTitle blockEnd text-uppercase text-center">WHAT WE DO</h2>
+		<div class="row ">
+			<div class="col-sm-4 col-md-2 col-md-offset-3 "><img src="/files/ODNI/images/homepage_images/ODNIWhatWEDoSeal.png" alt="ODNIWhatWEDoSeal" class="img-responsive" /></div>
+			<div class="col-sm-8 col-md-6">
+				<h5 class="text-uppercase"><strong>The Intelligence Community</strong></h5>
+				<p class="highlightFix">The DNI serves as the head of the Intelligence Community. The U.S. Intelligence Community is a coalition of 17 agencies and organizations, including the ODNI, within the Executive Branch that work both independently and collaboratively to gather and analyze the intelligence necessary to conduct foreign relations and national security activities.</p>
+				<div class=" blockEnd" style="margin-top: 25px;"><a href="/index.php/what-we-do" class="text-uppercase ODNILink blockEnd blockTitle">Learn More About What We Do</a></div>
+			</div>
+		</div>
+	</div>
+</section></div>
+
+
+			
+		<!-- Row 5 -->
+
+				
+						
+
+<div class="custom">
+	<section class="container-fluid row-5 careers">
+<h2 class="blockTitle blockEnd text-center text-uppercase">Careers</h2>
+<div class="container">
+<div class="row">
+<div class="col-md-offset-1 col-md-7 ">
+<h5 class="text-uppercase"><strong>Why Work Here?</strong></h5>
+<p>The Intelligence Community provides dynamic careers to talented professionals in almost <a href="https://www.intelligencecareers.gov/iccareers.html" target="_blank">every career category</a>. The ODNI is a senior-level agency that provides oversight to the Intelligence Community. ODNI is primarily a staff organization that employs subject-matter experts in the areas of collection, analysis, acquisition, policy, human resources, and management.</p>
+</div>
+<div class="col-md-4">
+<ul class="blockTitle">
+<li><a href="/index.php/careers/career-opportunities" class="text-uppercase ODNILink blockEnd ">Career Opportunities</a></li>
+<li><a href="/index.php/careers/joint-duty" class="text-uppercase ODNILink blockEnd ">Joint Duty</a></li>
+<li><a href="/index.php/careers/student-opportunities" class="text-uppercase ODNILink blockEnd ">Student Opportunities</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blockEnd"> </div>
+</section></div>
+
+
+				
+		<!-- Row 6 -->
+
+				
+				<!-- Pre-Footer Bar -->
+				<!-- Footer -->
+
+		<footer class="container-fluid odni-footer">
+      <div class="container">
+        <div class="blockTitle"> </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-12 col-xs-12">
+						            
+
+<div class="custom">
+	<p class="titleBlock"><a href="/index.php" class="navbar-brand odniPageLogo odniTopLogoStyle pull-left">Office<span> of the</span> <br />Director<span> of  </span>National Intelligence</a></p>
+<p> </p></div>
+
+						          </div>
+
+          <div class="col-md-2 col-sm-12">
+            							
+
+<div class="custom">
+	<h3>ODNI Centers</h3></div>
+<ul class="nav menu mod-list">
+<li class="item-130"><a href="/index.php/ncpc-home">National Counterproliferation Center</a></li><li class="item-131"><a href="/index.php/ncsc-home">National Counterintelligence and Security Center</a></li><li class="item-132"><a href="/index.php/nctc-home">National Counterterrorism Center</a></li></ul>
+
+						          </div>
+
+           <div class="col-md-2 col-sm-12">
+            							
+
+<div class="custom">
+	<h3>ODNI Offices</h3></div>
+<ul class="nav menu mod-list">
+<li class="item-357"><a href="/index.php/who-we-are/organizations/eeod/eeod-who-we-are">Equal Employment Opportunity &amp; Diversity</a></li><li class="item-359"><a href="/index.php/who-we-are/organizations/icig/icig-who-we-are">IC Inspector General</a></li><li class="item-360"><a href="/index.php/who-we-are/organizations/clpt/clpt-who-we-are">Office of Civil Liberties, Privacy, and Transparency</a></li><li class="item-1103"><a href="/index.php/who-we-are/organizations/ogc/ogc-who-we-are">Office of General Counsel</a></li><li class="item-459"><a href="/index.php/who-we-are/organizations">More Offices</a></li></ul>
+
+						          </div>
+
+          <div class="col-md-2 col-sm-12">
+													
+
+<div class="custom">
+	<h3>Information</h3></div>
+<ul class="nav menu mod-list">
+<li class="item-1024"><a href="/index.php/contact-the-odni">Contact the ODNI</a></li><li class="item-134"><a href="/index.php/who-we-are/organizations/icig/icig-hotline">ICIG Hotline</a></li><li class="item-135"><a href="/index.php/no-fear-act">No FEAR Act</a></li><li class="item-136"><a href="/index.php/privacy-policy">Privacy Policy</a></li><li class="item-137"><a href="/index.php/customer-service">Customer Service</a></li><li class="item-138"><a href="/index.php/foia">FOIA</a></li><li class="item-1145"><a href="/index.php/system-of-record-notices">System of Record Notices</a></li><li class="item-1159"><a href="/index.php/operating-status">Operating Status</a></li></ul>
+
+						          </div>
+
+          <div class="col-md-2 col-sm-12">
+													
+
+<div class="custom">
+	<h3>Useful Links</h3></div>
+<ul class="nav menu mod-list">
+<li class="item-139"><a href="/index.php/for-kids">For Kids</a></li><li class="item-140"><a href="http://www.ready.gov">Ready.gov</a></li><li class="item-141"><a href="http://www.whitehouse.gov/open">Open.gov</a></li><li class="item-142"><a href="https://www.cdc.gov/flu/" target="_blank" rel="noopener noreferrer">Flu.gov</a></li><li class="item-143"><a href="/index.php/plain-language-act">Plain Language Act</a></li><li class="item-145"><a href="/index.php/odni-operating-status">ODNI Operating Status</a></li><li class="item-1141"><a href="/index.php/coronavirus">Coronavirus Disease Guidance</a></li><li class="item-853"><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat Reader</a></li></ul>
+
+						          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-offset-6 col-md-6 col-sm-10">
+													<ul class="nav menu smFooter pull-right mod-list">
+<li class="item-347"><a href="https://service.govdelivery.com/accounts/USODNI/subscriber/new" title="" class="tooltipLink" onclick="window.open(this.href, 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,'); return false;" data-original-title="Subscribe"><img src="/files/ODNI/images/White-Icon-Mail-Icon.png" alt="Subscribe" /></a></li><li class="item-348"><a href="/index.php/newsroom?format=feed&amp;type=rss" title="" class=" tooltipLink" data-original-title="RSS"><img src="/files/ODNI/images/White-Icon-rss-l.png" alt="RSS" /></a></li><li class="item-350"><a href="https://www.twitter.com/odnigov" title="" class="tooltipLink" data-original-title="ODNI Twitter"><img src="/files/ODNI/images/White-Icon-SM1.png" alt="ODNI Twitter" /></a></li><li class="item-351"><a href="http://www.facebook.com/dni.gov" title="" class="tooltipLink" data-original-title="ODNI Facebook"><img src="/files/ODNI/images/White-Icon-SMFB.png" alt="ODNI Facebook" /></a></li><li class="item-1143"><a href="https://www.linkedin.com/company/odni" title="" class="tooltipLink" data-original-title="ODNI LinkedIn"><img src="/files/ODNI/images/linkedin-5-24.png" alt="ODNI LinkedIn" /></a></li><li class="item-353"><a href="http://www.youtube.com/odnigov" title="" class="tooltipLink" data-original-title="ODNI YouTube"><img src="/files/ODNI/images/White-Icon-YT.png" alt="ODNI YouTube" /></a></li><li class="item-524"><a href="/index.php/more" title="View other Social Media Links" class=" ">contact us</a></li></ul>
+
+						          </div>
+        </div>
+      </div>
+    </footer>
+  <!--End Footer-->
+
+		
+		<script src="/templates/odni-content-page-template/js/bootstrap.min.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+		<script src="/templates/odni-content-page-template/js/script.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+  		<script src="/templates/odni-content-page-template/js/jquery-cookie.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+  		<script src="/templates/odni-content-page-template/js/page-redirect.js"></script>
+  <noscript>Your browser does not support JavaScript!</noscript>
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24149679-1', 'auto');
+  ga('send', 'pageview'); 
+
+</script>
+
+
+<div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 400px; width: 300px; z-index: 9999;"></div></body></html>

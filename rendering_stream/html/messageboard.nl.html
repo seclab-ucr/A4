@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Gratis forum maken - Je eigen forum maken</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<script lanaguage="javascript" src="/sites/default/js/jquery.js"> </script>
+<script lanaguage="javascript" src="/sites/default/js/pbajax.js"> </script>
+<script lanaguage="javascript" src="/sites/default/js/jquery-plugins/jquery-validate/jquery.validate.js"> </script>
+<script lanaguage="javascript" src="/sites/default/js/jquery-plugins/jquery.selectbox-0.5.js"> </script>
+<script lanaguage="javascript" src="/sites/default/js/autoload.js"> </script>
+
+<link href="/templates/messageboard/css/admin-menu.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/messageboard/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/messageboard/css/style-us.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/messageboard/css/selectbox.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/messageboard/css/admin-style-structure.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/messageboard/css/admin-style-color.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+<script language="JavaScript">
+$(document).ready(function() { 
+	 $("#inputForm").validate()
+});
+</script>
+<script lanaguage="javascript">
+function submitLanguage(event)
+{
+	$('#frm_language').submit();
+}
+</script>
+</head>
+<body>
+<div class="wraps-site">
+  
+<!--<link href="/templates/messageboard/css/style-nl_NL.css" rel="stylesheet" type="text/css" /> -->
+<link href="/templates/messageboard/nl_NL/css/style.css" rel="stylesheet" type="text/css" />
+
+<div class="wraps-header">
+<h1 class="logo"><a href="http://messageboard.nl" title="Messageboard.nl">Messageboard</a></h1>
+<div class="wraps-intromsg">
+  <p><b>Een gratis forum en voor €25,00 een jaar reclame vrij! Online in 5 minuten. Optioneel met eigen domeinnaam.</b></p>
+</div>
+<div class="wraps-login">
+			  				<form name="frm_login" id="frm_login" method="post" action="http://messageboard.nl/customer/login">
+					<input type="text" name="username" value="Username" class="username default-value" />
+					<input type="password" name="password" value="Password" class="password default-value" />
+					<input type="submit" value="Login" class="login-btn" />
+				</form>
+		 </div>
+<div class="wraps-search-box">
+	<form method="post" action="http://messageboard.nl/domain/available" name="frm_domain_ext" id="frm_domain_ext">
+	  <h1 class="search-title">Is uw naam beschikbaar?</h1>
+	  <ul class="search-domain">
+		<li class="domain">
+		  <input type="text" name="name" class="default-value" value="Zoek domeinnaam..." />
+		</li>
+		<li class="dot">
+		  <input id="domain_exts_input" type="text" class="selectbox" autocomplete="off" readonly="" tabindex="0" /><div id="domain_exts_container" class="selectbox-wrapper" style="display: none; width: 50px;"><ul><li id="domain_exts_input~nl" class="selected">nl</li><li id="domain_exts_input~be">be</li><li id="domain_exts_input~com">com</li><li id="domain_exts_input~net">net</li><li id="domain_exts_input~org">org</li></ul></div><select class="dot-options" name="ext" id="domain_exts" style="display: none;">
+			               <option value="nl">nl</option>
+                           <option value="be">be</option>
+                           <option value="com">com</option>
+                           <option value="net">net</option>
+                           <option value="org">org</option>
+             			 		 </select>
+		</li><li>
+		</li><li><a href="javascript:void(0)" id="h_go" class="go">OK</a> </li>
+	  </ul>
+	</form>
+</div>
+<ul class="nav">
+  <li class="index-on"><a href="http://messageboard.nl" title="Index">Index</a></li>
+  <li class="sep"> </li>
+  <li class="hulp"><a href="http://messageboard.nl/site/help/" title="Hulp">Hulp</a></li>
+  <li class="sep"> </li>
+  <li class="demo"><a target="_blank" href="https://demo.messageboard.nl/" title="Demo">Demo</a></li>
+  <li class="sep"> </li>
+  <li class="contact"><a href="http://messageboard.nl/site/contact/" title="Contact">Contact</a></li>
+  <li class="sep"> </li>
+  <li class="prijzen"><a href="http://messageboard.nl/price" title="Prijs">Prijs</a></li>
+</ul>
+<div class="search-country">
+   <form method="post" action="" name="frm_language" id="frm_language">
+		<input id="language_input" type="text" class="selectbox" autocomplete="off" readonly="" tabindex="0" /><div id="language_container" class="selectbox-wrapper" style="display: none; width: 160px;"><ul><li id="language_input~nl_NL" class="selected">Nederlands</li><li id="language_input~en_US">English</li><li id="language_input~fr_FR">Français</li></ul></div><select class="country-option" name="language" id="language" style="display: none;">
+			<option selected="" value="nl_NL">Nederlands</option>
+			<option value="en_US">English</option>
+			<option value="fr_FR">Français</option>
+		</select>
+		
+		
+   </form>
+</div>
+</div>
+
+  <div class="wraps-content">
+	    <script language="javascript">
+$(document).ready(function() {
+
+	$("#username").keypress(function(e){
+		if(e.which==13) $("#pass").focus();
+	});
+
+	$("#pass").keypress(function(e){
+		if(e.which==13) $("#home_login").submit();
+	});
+});
+</script>
+
+
+<div class="wraps-cvbox">
+  <div class="cv-top"> </div>
+  <div class="cv-bg">
+    <div class="packet-left"> <img src="/templates/messageboard/nl_NL/images/price-free-pkt.png" title="Kant-en-Klaar forum" alt="Kant-en-Klaar forum" class="price-free-pkt" />
+      <h1 class="free-packet">Kant-en-Klaar forum</h1>
+      <ul class="packet-info">
+        <li>Kant-en-klaar forum<img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Gratis subdomein <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Gratis updates <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Gratis helpdesk <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Geen technische kennis nodig <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+      </ul>
+      <ul class="packet-info fleft">
+        <li>Onbeperkt bezoekers <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Onbeperkt berichten<img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Fotos/video plaatsen <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Backups downloaden <img src="/templates/messageboard/images/icon-no.png" alt="yes" /></li>
+        <li>Reclame vrij <img src="/templates/messageboard/images/icon-no.png" alt="no" /></li>
+      </ul>
+      <p class="btn-left-pkt"> <a href="http://messageboard.nl/package/info/1" class="more-info" title="Meer informatie">Meer informatie</a> <a href="http://messageboard.nl/package/register/1" class="order-free" title="Bestel nu">Bestel nu</a> </p>
+    </div>
+    <div class="packet-sep"> </div>
+    <div class="packet-right"> <img src="/templates/messageboard/nl_NL/images/price-plus-pkt.png" title="Reclame vrij" alt="Reclame vrij" class="price-plus-pkt" />
+      <h1 class="plus-packet">Reclame vrij</h1>
+      <ul class="packet-info">
+        <li>Reclame vrij <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Backups downloaden <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+      </ul>
+      <p class="btn-right-pkt"> <a href="http://messageboard.nl/package/info/2" class="more-info" title="Meer informatie">Meer informatie</a> <a href="http://messageboard.nl/package/register/2" class="order-now" title="Bestel nu">Bestel nu</a> </p>
+    </div>
+  </div>
+  <div class="cv-btm"> </div>
+</div>
+<div class="hr-gap10"> </div>
+<div class="wraps-cvbox">
+  <div class="cv-top"> </div>
+  <div class="cv-bg">
+    <div class="packet-left"> <img src="/templates/messageboard/nl_NL/images/price-premium-pkt.png" title="Forum met website" alt="Forum met website" width="85" height="85" class="price-premium-pkt" />
+      <h1 class="free-packet">Forum met website</h1>
+      <ul class="packet-info">
+        <li>Kant-en-klaar forum<img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Gratis subdomein <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Gratis helpdesk <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Eigen website hosten <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>FTP toegang <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+      </ul>
+      <ul class="packet-info fleft">
+        <li>Data limiet (GB p/m) <span>10</span></li>
+        <li>Opslag limiet (GB) <span>5</span></li>
+        <li>POP3/IMAP Mailbox <span>1</span></li>
+        <li>Mailforwarding <img src="/templates/messageboard/images/icon-yes.png" alt="yes" /></li>
+        <li>Geen technische kennis nodig <img src="/templates/messageboard/images/icon-no.png" alt="no" /></li>
+      </ul>
+      <p class="btn-left-pkt"> <a href="http://messageboard.nl/package/info/3" class="more-info" title="Meer informatie">Meer informatie</a> <a href="http://messageboard.nl/package/register/3" class="order-now" title="Bestel nu">Bestel nu</a> </p>
+    </div>
+    <div class="packet-sep"> </div>
+    <div class="packet-right"> <img src="/templates/messageboard/images/price-gold-pkt.png" title="PLUS" alt="PLUS" width="85" height="85" class="price-gold-pkt" />
+      <h1 class="plus-packet">PLUS</h1>
+      <ul class="packet-info">
+        <li>Data limiet (GB p/m) <span>30</span></li>
+        <li>Opslag limiet (GB) <span>10</span></li>
+        <li>POP3/IMAP Mailbox <span>5</span></li>
+      </ul>
+      <p class="btn-right-pkt"> <a href="http://messageboard.nl/package/info/4" class="more-info" title="Meer informatie">Meer informatie</a> <a href="http://messageboard.nl/package/register/4" class="order-now" title="Bestel nu">Bestel nu</a> </p>
+    </div>
+  </div>
+  <div class="cv-btm"> </div>
+</div>
+<div class="hr-gap10"> </div>
+<div class="wraps-col-3">
+  <div class="col-1">
+    <h1 class="demo">Demo Forum</h1>
+    <p>Klik op de knop om onze demo Forum te beijken en/of te testen</p>
+    <a href="https://demo.messageboard.nl/" target="_blank" class="demo" title="Demo Forum">Demo</a> </div>
+  <div class="col-2">
+    <h1 class="login">Login</h1>
+        <form name="home_login" id="home_login" method="post" action="http://messageboard.nl/customer/login">
+      <p class="login-form">
+        <label for="">Gebruikersnaam</label>
+        <span>
+		<input type="text" name="username" id="username" value="Gebruikersnaam" class="default-value" />
+        </span>
+        <label for="">Wachtwoord</label>
+        <span>
+		<input type="password" name="password" id="pass" value="Wachtwoord" class="default-value" />
+        </span> </p>
+      <a id="login_button" href="javascript:void(0)" class="login" title="Inloggen">Login</a>
+    </form>
+      </div>
+  <div class="col-3 col-last">
+    <h1 class="support">Support</h1>
+    <p>Klik op de knop hieronder als u hulp nodig</p>
+    <a href="http://messageboard.nl/site/support/" class="support" title="Ondersteuning">Support</a> </div>
+</div>
+  </div>
+ <script lanaguage="javascript">
+	function submitLanguage(event)
+	{
+		$('#frm_language').submit();
+	}
+</script>
+<div class="wraps-footer">
+	<div class="f-cv-t"> </div>
+	<div class="f-cv-bg">
+		Copyright 2020 | Messageboard.nl | All Rights Reserved |  
+			<a href="/site/contact/" style="color: #6C6C6C;">Contact</a> | 
+			<a href="/site/sites/termsAndConditions" style="color: #6C6C6C;">Algemene voorwaarden</a> | 
+			<a href="https://abuse.baie.nl/ntd/ntd.php?p=MB" style="color: #6C6C6C;">Meld misbruik</a>
+	</div>
+	<div class="f-cv-b"> </div>
+</div>
+</div>
+		<script type="text/javascript">  
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");  
+		document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));  
+		</script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>  
+		<script type="text/javascript">  
+		var pageTracker = _gat._getTracker("UA-1139998-1");  
+		pageTracker._trackPageview();  
+		</script>
+
+
+
+</body></html>

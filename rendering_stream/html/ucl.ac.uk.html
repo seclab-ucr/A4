@@ -1,0 +1,1146 @@
+<!DOCTYPE html><!--[if IE 7]> <html lang="en" class="lt-ie9 lt-ie8 no-js"> <![endif]--><!--[if IE 8]> <html lang="en" class="lt-ie9 no-js"> <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths fontawesome-i2svg-active fontawesome-i2svg-complete" style=""><!--<![endif]--><head>
+        <meta charset="utf-8" /><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script async="" src="https://sc-static.net/js-sha256-v1.min.js" integrity="sha384-W4RqaNUbvBdTRc41QQAWDcd2aX9wGruak2WnlXwyjVAlhi56zatCk4e/RSqwrAg6" crossorigin="anonymous"></script><script async="" src="https://snap.licdn.com/li.lms-analytics/insight.beta.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script type="text/javascript" async="" src="//siteimproveanalytics.com/js/siteanalyze_51623617.js"></script><script async="" src="https://sc-static.net/scevent.min.js"></script><script src="https://connect.facebook.net/signals/config/571252266361666?v=2.9.29&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/en_GB/sdk.js?hash=825cb80d8306875b44866b3c83f70f33&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v2.5"></script><script type="text/javascript" src="//www.googletagmanager.com/gtm.js?id=GTM-WZV7SQ9" async=""></script><script type="text/javascript" src="//www.googletagmanager.com/gtm.js?id=GTM-T26ZW8" async=""></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"320633c495",applicationID:"427937119"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&amp;&amp;(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&amp;&amp;performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&amp;&amp;d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length&gt;0&amp;&amp;d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&amp;&amp;!g){var t=Math.round(e.timeStamp),n={type:e.type};t&lt;=p.now()?n.fid=p.now()-t:t&gt;p.offset&amp;&amp;t&lt;=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&amp;&amp;"page_view_timing"in NREUM.init&amp;&amp;"enabled"in NREUM.init.page_view_timing&amp;&amp;NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a&lt;r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&amp;&amp;c.indexOf("Chrome")===-1&amp;&amp;c.indexOf("Chromium")===-1&amp;&amp;(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&amp;&amp;document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&amp;&amp;o&amp;&amp;document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&amp;&amp;(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&amp;&amp;(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i&lt;0?0:i);++r&lt;i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&amp;&amp;e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&amp;&amp;e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u&lt;f;u++)c[u].apply(a,r);var d=s[w[n]];return d&amp;&amp;d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r&lt;n.length;r++)n[r]===t&amp;&amp;n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&amp;&amp;(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&amp;&amp;o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&amp;&amp;v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&amp;&amp;e instanceof Function&amp;&amp;e.apply&amp;&amp;!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f&lt;t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&amp;&amp;Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&amp;&amp;(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+        <meta name="author" content="UCL" />
+        <meta name="description" content="UCL is the number one London university for Research Strength (REF2014), recognised for its academic excellence and global impact." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- social meta -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@uclnews" />
+        <meta name="twitter:title" content="UCL – University College London" />
+        <meta name="twitter:description" content="UCL is the number one London university for Research Strength (REF2014), recognised for its academic excellence and global impact." />
+        <meta name="twitter:creator" content="@UCLWAMS" />
+        <meta name="twitter:image" content="https://cdn.ucl.ac.uk/indigo/images/twitter-card-ucl-logo.png" />
+        <meta property="og:image" content="https://cdn.ucl.ac.uk/indigo/images/twitter-card-ucl-logo.png" />
+        <meta property="og:title" content="UCL – University College London" />
+        <meta property="og:url" content="http://www.ucl.ac.uk" />
+        <meta property="og:site_name" content="UCL" />
+        <meta property="og:description" content="UCL is the number one London university for Research Strength (REF2014), recognised for its academic excellence and global impact." />
+        <meta property="og:type" content="website" />
+        <meta property="og:profile_id" content="uclofficial" />
+        <!-- end social meta -->
+        <title>UCL - London's Global University</title>
+
+        <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-12.5%;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul&gt;li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style><style type="text/css" media="all">
+@import url("https://www.ucl.ac.uk/home/modules/system/system.base.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/modules/system/system.messages.css?qkm28o");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/date/date_api/date.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/modules/field/theme/field.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/modules/node/node.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_feed_panes/css/ucl-culture-feed-panes.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/views/css/views.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/patched/entity_embed/css/entity_embed.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/media/modules/media_wysiwyg/css/media_wysiwyg.base.css?qkm28o");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/ctools/css/ctools.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/contrib/panels/css/panels.css?qkm28o");
+@import url("https://www.ucl.ac.uk/home/sites/all/modules/features/ucl_admin_theme_config/admin_theme.css?qkm28o");
+</style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+
+        <script src="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/modernizr-custom.js?qkm28o"></script>
+
+        <script>
+            var cuttingTheMustard = document.querySelector &amp;&amp; window.localStorage &amp;&amp; window.addEventListener;
+
+            Modernizr.load({
+                //cutting the mustard as used by the BBC
+                test : cuttingTheMustard
+                //if old browser load the shiv
+                ,nope : [
+                    'https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/html5shiv-printshiv.min.js?qkm28o'
+                    ,'https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/respond.min.js?qkm28o'
+                    ]
+            });
+
+            //set conditional assets for main.js
+            var globalSiteSpecificVars = {
+                pathToJquery: 'https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/jquery-1.9.1.min?qkm28o'
+                ,googleAnalyticsIdsArray: []//specify array of site specific id's NOT UCL generic UA-943297-1
+            }
+
+            globalSiteSpecificVars.course = '';
+            globalSiteSpecificVars.qual = '';
+            FontAwesomeConfig = { searchPseudoElements: true };
+
+        </script>
+
+        <script src="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/layout.js?qkm28o"></script>
+
+        <link href="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/css/screen.min.css?qkm28o" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/css/homepage.min.css?qkm28o" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css?qkm28o" />
+        <style>
+            .easy-autocomplete-container ul {
+                margin: 0;
+            }
+        </style>
+
+        <!--[if IE]><link href="//static.ucl.ac.uk/indigo/css/ie.min.css" rel="stylesheet" /><![endif]-->
+        <!--[if lt IE 8]><link href="//static.ucl.ac.uk/indigo/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
+
+        <link rel="shortcut icon" href="//static.ucl.ac.uk/indigo/images/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="favicon-152.png" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-TileImage" content="favicon-144.png" />
+
+        <script type="text/javascript" src="https://www.ucl.ac.uk/home/sites/home/files/google_tag/google_tag.script.js?qkm28o"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+window.jQuery || document.write("&lt;script src='/home/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'&gt;\x3C/script&gt;")
+//--&gt;&lt;!]]&gt;
+</script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/misc/jquery-extend-3.4.0.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/misc/drupal.js?qkm28o"></script>
+<script type="text/javascript" src="//cdn.ucl.ac.uk/indigo/js/lib/modernizr-custom.js"></script>
+<script type="text/javascript" src="//cdn.ucl.ac.uk/indigo/js/lib/require.min.js"></script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_funnelback/js/embed.js?qkm28o"></script>
+<script type="text/javascript" defer="defer" src="//apis.google.com/js/platform.js?qkm28o" gapi_processed="true"></script>
+<script type="text/javascript" src="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_wysiwyg/js/media_wysiwyg.filter.js?qkm28o"></script>
+<script type="text/javascript">
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery.extend(Drupal.settings, {"basePath":"\/home\/","pathPrefix":"","ajaxPageState":{"theme":"indigo","theme_token":"bG89T4hqpYuWeJimxzYK0yyASvcBR5b-5CfdHcmbqgE","js":{"public:\/\/google_tag\/google_tag.script.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/cdn.ucl.ac.uk\/indigo\/js\/lib\/modernizr-custom.js":1,"\/\/cdn.ucl.ac.uk\/indigo\/js\/lib\/require.min.js":1,"sites\/all\/modules\/custom\/ucl_funnelback\/js\/embed.js":1,"\/\/apis.google.com\/js\/platform.js":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/js\/media_wysiwyg.filter.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/custom\/ucl_feed_panes\/css\/ucl-culture-feed-panes.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/patched\/entity_embed\/css\/entity_embed.css":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/features\/ucl_admin_theme_config\/admin_theme.css":1}},"ucl":{"environment":"live","cdnPath":"cdn.ucl.ac.uk"}});
+//--&gt;&lt;!]]&gt;
+</script>
+        <script src="https://www.ucl.ac.uk/home/sites/all/modules/custom/ucl_homepage/templates/js/main.js?qkm28o"></script>
+        <script>require(["ugSearch", "fontAwesome", "easyAuto", "homeCourseFinder", "general"])</script>
+
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fontAwesome" src="//use.fontawesome.com/releases/v5.0.2/js/all.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="homeCourseFinder" src="/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/home-course-finder.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="general" src="//cdn.ucl.ac.uk/indigo/js/app/general.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="//cdn.ucl.ac.uk/indigo/js/lib/jquery-2.1.1.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="allsite" src="/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/all-site.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="easyAuto" src="//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.js"></script><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/821378219/?random=1606992307749&amp;cv=9&amp;fst=1606992307749&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=376635470&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_his=2&amp;u_tz=-480&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;gtm=2wgb41&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.ucl.ac.uk%2F&amp;tiba=UCL%20-%20London's%20Global%20University&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ugSearch" src="/home/sites/all/modules/custom/ucl_homepage/templates/js/lib/ug-search.js"></script><script charset="utf-8" src="https://platform.twitter.com/js/moment~timeline~tweet.ae149926685a43cb146e35371430188e.js"></script><script charset="utf-8" src="https://platform.twitter.com/js/timeline.687eed636a16648c9f0b1f72d7fa68bd.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="googleAnalyticsLib" src="//cdn.ucl.ac.uk/indigo/js/lib/googleAnalytics.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryUi" src="//cdn.ucl.ac.uk/skins/indigo-theme-js/lib/jquery-ui-1.8.18.custom.min.js"></script><style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset&gt;div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title&gt;span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+
+    <body id="index" class="layout-vertical layout-vertical--nav-2col" onunload="" style="">
+        <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-T26ZW8" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript><noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-WZV7SQ9" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>        <header class="header">
+            <div class="masthead">
+                <div class="wrapper clearfix">
+                    <nav class="masthead__nav m-clear">
+                        <ul class="masthead__list">
+                            <li class="masthead__item"><a href="/" class="masthead__link">UCL Home</a>
+                            </li>
+                            <li class="masthead__item"><a href="/prospective-students" class="masthead__link">Prospective students</a>
+                            </li>
+                            <li class="masthead__item"><a href="/students" class="masthead__link">Current students</a>
+                            </li>
+                            <li class="masthead__item"><a href="/staff" class="masthead__link">Staff</a>
+                            </li>
+                            <li class="masthead__item"><a href="//www.ucl.ac.uk/enterprise/businesses" class="masthead__link">Businesses</a>
+                            </li>
+                            <li class="masthead__item"><a href="/alumni" class="masthead__link">Alumni</a>
+                            </li>
+                            <!-- <li class="masthead__item"><a href="//www.ucl.ac.uk/campaign" class="give-link masthead__link">Donors <i class="fas fa-angle-right"></i></a> -->
+                            <li class="masthead__item"><a href="//www.ucl.ac.uk/campaign" class="masthead__link">Donors</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="masthead__search">
+                        <form role="search" action="//search2.ucl.ac.uk/s/search.html" method="get">
+                            <div class="search-form">
+                                <label for="global-search" class="visually-hidden">Search</label>
+                                <input type="search" id="global-search" placeholder="Search UCL websites, people and more" aria-label="Search UCL websites, degrees, short courses" class="search-form__input search-form__input--search search-box__search" name="query" />
+                            </div>
+                            <input type="hidden" name="collection" value="website-meta" />
+                            <input type="hidden" name="profile" value="_website" />
+                            <input type="hidden" name="tab" value="websites" />
+                            <input type="submit" name="global-search-submit" id="global-search-submit" value="Go" class="btn btn--primary search-form__input search-form__input--submit" />
+                        </form>
+                    </div>
+                </div>
+
+            </div><!-- end .masthead -->
+
+            <div class="wrapper">
+                <a class="header header__open" href="#" onclick="event.preventDefault();"><img src="//static.ucl.ac.uk/skins/UCLProspectiveStudentsUGSkin/ug-theme/images/ucl-menu.svg" class="lazy" data-src="//static.ucl.ac.uk/skins/UCLProspectiveStudentsUGSkin/ug-theme/images/ucl-menu.svg" alt="Menu" /></a>
+                <div class="photograph">
+                    <div class="brand">
+                        <p class="brand__heading">LONDON'S GLOBAL UNIVERSITY</p>
+                        <a href="/" class="brand__link">
+                            <span class="visually-hidden">Home</span>
+                        </a>
+                        <img src="//cdn.ucl.ac.uk/indigo/images/ucl-logo.svg" alt="UCL logo" id="logo" class="brand__logo" />
+                    </div>
+
+                </div><!-- end .photograph -->
+            </div><!-- end .wrapper -->
+
+        </header><!-- end .header -->
+
+        <!-- Hero Video -->
+        <div class="hero hero--video">
+            <div class="hero__content">
+                <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/madeatucl-disruptivethinking-alzheimer.gif" alt="" />
+                <video class="bg-video" poster="https://www.ucl.ac.uk/home/sites/home/files/homepage/madeatucl-disruptivethinking-alzheimer.gif" playsinline="" autoplay="" muted="" loop="">
+                    <source src="https://www.ucl.ac.uk/home/sites/home/files/homepage/ucl_websitefilm_newstories_2020-03-31.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <!-- Hero Title/Announcement -->
+        <div class="row row--white">
+            <div class="site-content wrapper clearfix">
+                <div class="hero__title">
+                    <h1>Disruptive thinking since 1826</h1>
+                </div>
+                                    <div class="announcement">
+                        <a href="https://www.ucl.ac.uk/prospective-students/open-days/graduate-open-days">
+                            <h2 class="as-h3">Register now for the UCL Graduate Open Series</h2>
+                            <i class="arrow-white-right"></i>
+                        </a>
+                    </div>
+                            </div> <!-- end .site-content -->
+        </div> <!-- end .row.row--white -->
+
+        <!-- Home page sections -->
+        <!-- UCL News -->
+<div class="row row--grey">
+    <div class="site-content wrapper clearfix">
+        <div class="ucl__news">
+            
+            <div class="news__title">
+                <h2>UCL News</h2>
+                <a class="more--desktop" href="https://www.ucl.ac.uk/news/home/latest-news?collection=drupal-push-news-news&amp;meta_UclAudience_not=staff&amp;meta_UclAudience_not=students&amp;&amp;le_DateFilter=20181204">See all UCL News <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+            </div>
+
+            
+                            <div class="ucl__news__main">
+                  <div class="ucl__news__item">
+                      <a href="https://www.ucl.ac.uk/news/2020/nov/rare-grass-poly-rediscovered-norfolk-ghost-pond">
+                          <div class="ucl__news__image">
+                              <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/grass-poly_hk.jpg?itok=ivDKqhwY" alt="" />
+                          </div>
+                          <div class="ucl__news__content">
+                              <h3>Rare Grass-Poly rediscovered in Norfolk 'ghost pond'</h3>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+                        
+            <div class="ucl__news__sub">
+
+                                  <div class="ucl__news__item">
+                        <a href="https://www.ucl.ac.uk/news/2020/nov/duchess-cambridge-spearheads-early-years-study-involving-ucl">
+                                                            <div class="ucl__news__image">
+                                    <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/duchess_of_cambridge_roundtable_800x500.jpg?itok=ozt23SGf" alt="" />
+                                </div>
+                                                        <div class="ucl__news__content">
+                                <h3>Duchess of Cambridge spearheads early years study involving UCL</h3>
+                            </div>
+                        </a>
+                    </div>
+                                  <div class="ucl__news__item">
+                        <a href="https://www.ucl.ac.uk/news/2020/nov/covid-19-fall-cancer-treatment-rose-following-rapid-nhs-guidance">
+                                                            <div class="ucl__news__image">
+                                    <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/medicine-2520464_1280hk.jpg?itok=HnWELkmK" alt="" />
+                                </div>
+                                                        <div class="ucl__news__content">
+                                <h3>COVID-19: Fall in cancer treatment rose following ‘rapid’ NHS guidance</h3>
+                            </div>
+                        </a>
+                    </div>
+                                  <div class="ucl__news__item">
+                        <a href="https://www.ucl.ac.uk/news/2020/nov/ancient-bird-sickle-shaped-beak-offers-insights-evolution">
+                                                            <div class="ucl__news__image">
+                                    <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/falcatakelyillustrationcreditwitton8x5.jpg?itok=PM5QuS6v" alt="" />
+                                </div>
+                                                        <div class="ucl__news__content">
+                                <h3>Ancient bird with sickle-shaped beak offers insights into evolution</h3>
+                            </div>
+                        </a>
+                    </div>
+                                  <div class="ucl__news__item">
+                        <a href="https://www.ucl.ac.uk/news/2020/nov/quantum-nanodiamonds-may-help-detect-disease-earlier">
+                                                            <div class="ucl__news__image">
+                                    <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/nanodiamonds_002.jpg?itok=mNAZ31F4" alt="" />
+                                </div>
+                                                        <div class="ucl__news__content">
+                                <h3>Quantum nanodiamonds may help detect disease earlier</h3>
+                            </div>
+                        </a>
+                    </div>
+                          
+            </div>
+            <a class="more--mobile" href="https://www.ucl.ac.uk/news/home/latest-news?collection=drupal-push-news-news&amp;meta_UclAudience_not=staff&amp;meta_UclAudience_not=students&amp;&amp;le_DateFilter=20181204">See all UCL News <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+        </div>
+    </div>
+</div> <!-- end .row.row--grey -->
+<!-- Promotion -->
+<div class="row row--grey--mobile">
+    <div class="site-content wrapper clearfix">
+        <div class="promotion">
+            <h2>Students at UCL</h2>
+            <div class="promotion__block">
+                <div class="promotion__carousel">
+                    <div class="owl-carousel2 owl-off">
+                                                    <div class="promotion__item">
+                              <a href="https://www.ucl.ac.uk/news/2020/nov/important-message-about-your-ucl-education-terms-two-and-three-2020-21">
+                                                                                                  <div class="promotion__image">
+                                    <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/ucl_quad_800x500_7.jpg" alt="" />
+                                  </div>
+                                                                <div class="promotion__content">
+                                  <h3>Your UCL Education in Terms Two and Three 2020-21</h3>
+                                  <p class="promotion__teaser">Message to UCL students from Professor Anthony Smith, Vice-Provost, Ayman Benyati and Jim Onyemenam, Students’ Union UCL.</p>
+                                </div>
+                              </a>
+                            </div>
+                                                    <div class="promotion__item">
+                              <a href="https://www.ucl.ac.uk/library/libraries-and-study-spaces/bookable-study-spaces-help">
+                                                                                                  <div class="promotion__image">
+                                    <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/k_holst800x500.jpg" alt="" />
+                                  </div>
+                                                                <div class="promotion__content">
+                                  <h3>New study spaces now open</h3>
+                                  <p class="promotion__teaser">Additional study space has opened in Bidborough House and 1-19 Torrington Place. All study spaces need to be booked in advance.</p>
+                                </div>
+                              </a>
+                            </div>
+                                                    <div class="promotion__item">
+                              <a href="https://www.ucl.ac.uk/coronavirus/">
+                                                                                                  <div class="promotion__image">
+                                    <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/mediacoverage_0.jpg" alt="" />
+                                  </div>
+                                                                <div class="promotion__content">
+                                  <h3>Updates for staff and students</h3>
+                                  <p class="promotion__teaser">Find the answers to frequently asked questions for students and staff, and links to further information, resources and support.</p>
+                                </div>
+                              </a>
+                            </div>
+                                            </div> <!-- end .owl-carousel2 -->
+                    <div class="promotion__mobile__controls owl-nav">
+                            <!-- Populated with Owl Carousel 2 JS -->
+                        <div class="controls__paging"></div>
+                    </div>
+                </div> <!-- end .promotion__carousel -->
+            </div>
+        </div>
+    </div>
+</div> <!-- end .row.row-grey--mobile -->
+<!-- Course Finder -->
+<div class="row row--white" id="course__finder">
+    <div class="site-content wrapper clearfix">
+        <div class="course__finder">
+            <div class="course__finder__title">
+                <h2 class="default-title">Find degrees, short courses and more</h2>
+            </div>
+            <div class="course__finder__form">
+
+                    <fieldset class="form__group">
+
+                        <div class="search__links">
+                          <legend>What are you looking for?</legend>
+                          <div class="search__links--pgt" style="display: block">
+                              <ul class="search__links--top">
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="undergraduate" value="undergraduate" checked="" />
+                                      <label class="form-check-label" for="undergraduate">
+                                        Undergraduate
+                                      </label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="pgt-taught" value="pgt-taught" />
+                                      <label class="form-check-label" for="pgt-taught">
+                                        Graduate taught
+                                      </label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="pgt-research" value="pgt-research" />
+                                      <label class="form-check-label" for="pgt-research">
+                                        Graduate research
+                                      </label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="teacher-training" value="teacher-training" />
+                                      <label class="form-check-label" for="teacher-training">
+                                        Teacher training
+                                      </label>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="study-abroad" value="study-abroad" />
+                                      <label class="form-check-label" for="study-abroad">
+                                        Study abroad
+                                      </label>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="summer-school" value="summer-school" />
+                                      <label class="form-check-label" for="summer-school">
+                                        Summer School
+                                      </label>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="search-type" id="cpd" value="cpd" />
+                                      <label class="form-check-label" for="cpd">
+                                        Short courses and CPD
+                                      </label>
+                                    </div>
+                                  </li>
+                              </ul>
+                          </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__group zero-bottom">
+                        <div id="undergraduate-form" class="course-finder-form" style="display: block;">
+                          <form action="//www.ucl.ac.uk/prospective-students/undergraduate/degrees" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+                            <div>
+                              <label class="visually-hidden" for="ugQuery">Search</label>
+                              <div class="easy-autocomplete"><input type="search" name="query" id="ugQuery" class="text search-box__search form__control ui-autocomplete-input" placeholder="Search for degrees" data-collection="ug-degrees-current" autocomplete="off" /><div class="easy-autocomplete-container" id="eac-container-ugQuery"><ul></ul></div></div>
+                              <input type="hidden" name="p0" id="p0" value="" />
+                            </div>
+                            <div class="search-box__submit-wrapper">
+                              <input type="submit" id="ugSubmit" class="search-box__submit" value="Search" />
+                            </div>
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/undergraduate" target="_blank" rel="noreferrer">Undergraduate prospectus</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/undergraduate/subject-areas" target="_blank" rel="noreferrer">Browse undergraduate programmes by subject area</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/undergraduate/degrees" target="_blank" rel="noreferrer">Browse undergraduate programmes A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="postgraduate-taught-form" class="course-finder-form" style="display: none;">
+                          <form action="//www.ucl.ac.uk/prospective-students/graduate/taught-degrees" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+                            <div>
+                              <label class="visually-hidden" for="gpQuery">Search</label>
+                              <div class="easy-autocomplete"><input name="query" id="gpQuery" type="search" class="text search-box__search ui-autocomplete-input form__control" placeholder="Search for degrees" value="" accesskey="q" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-collection="pgt-degrees" /><div class="easy-autocomplete-container" id="eac-container-gpQuery"><ul></ul></div></div>
+                              <input type="hidden" name="collection" value="pgt-degrees" />
+                            </div>
+                            <div class="search-box__submit-wrapper">
+                              <input type="submit" id="gpSubmit" class="search-box__submit" value="Search" />
+                            </div>
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/" target="_blank" rel="noreferrer">Graduate Prospectus</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/taught-degrees/subject-areas" target="_blank" rel="noreferrer">Browse graduate taught programmes by subject area</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/taught-degrees" target="_blank" rel="noreferrer">Browse graduate taught programmes A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div id="postgraduate-research-form" class="course-finder-form" style="display: none;">
+                          <form action="//www.ucl.ac.uk/prospective-students/graduate/research-degrees" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+                            <div>
+                              <label class="visually-hidden" for="prQuery">Search</label>
+                              <div class="easy-autocomplete"><input name="query" id="pgrQuery" type="search" class="text search-box__search ui-autocomplete-input form__control" placeholder="Search for degrees" value="" accesskey="q" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-collection="pgr-degrees" /><div class="easy-autocomplete-container" id="eac-container-pgrQuery"><ul></ul></div></div>
+                              <input type="hidden" name="collection" value="pgr-degrees" />
+                              <input type="hidden" name="profile" value="_default_preview" />
+                            </div>
+                            <div class="search-box__submit-wrapper">
+                              <input type="submit" id="pgrSubmit" class="search-box__submit" value="Search" />
+                            </div>
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/" target="_blank" rel="noreferrer">Graduate Prospectus</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/research-degrees/subject-areas" target="_blank" rel="noreferrer">Browse graduate research programmes by subject area</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/graduate/research-degrees" target="_blank" rel="noreferrer">Browse graduate research programmes A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div id="teacher-training-form" class="course-finder-form" style="display: none;">
+                          <p>Access teacher training information and courses</p>
+                          <form action="//www.ucl.ac.uk/prospective-students/graduate/teacher-training-programmes" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+                            <input type="submit" id="trSubmit" class="search-box__submit" value="Go" style="position: relative; margin-bottom: 1.5em;" />
+                          </form>
+                        </div>
+
+                        <div id="study-abroad-form" class="course-finder-form" style="display: none;">
+                          <form action="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/study-abroad-guide/subjects" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+                            <div>
+                              <label class="visually-hidden" for="saQuery">Search</label>
+                              <div class="easy-autocomplete"><input required="" name="query" id="saQuery" title="Search query" type="search" value="" accesskey="q" placeholder="Search Study Abroad Guide" class="text search-box__search form__control ui-autocomplete-input" data-ng-disabled="isDisplayed('cart') || isDisplayed('history')" data-collection="sag-courses-2018" autocomplete="off" /><div class="easy-autocomplete-container" id="eac-container-saQuery"><ul></ul></div></div>
+                              <input type="hidden" name="collection" value="sag-courses-2018" />
+                            </div>
+                            <div class="search-box__submit-wrapper">
+                              <input type="submit" id="saSubmit" class="search-box__submit" value="Search" />
+                            </div>
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/study-abroad-guide" target="_blank" rel="noreferrer">About Study Abroad (for students looking to complete part of their degree at UCL)</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/study-abroad-guide/subjects" target="_blank" rel="noreferrer">Browse UCL Study Abroad subjects A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="summer-school-form" class="course-finder-form" style="display: none;">
+                          <form action="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/summer-school/modules" class="form" method="get" style="overflow: visible;" target="_blank" rel="noreferrer">
+
+                            <fieldset class="search-box__fieldset">
+                              <div class="form-group">
+                                <label class="visually-hidden" for="ssQuery">Search</label>
+                                <div class="easy-autocomplete"><input name="query" id="ssQuery" type="search" class="text search-box__search form__control ui-autocomplete-input" placeholder="Search for modules" value="" data-collection="summer-schools" autocomplete="off" /><div class="easy-autocomplete-container" id="eac-container-ssQuery"><ul></ul></div></div>
+                                <div class="search-box__submit-wrapper">
+                                  <input type="submit" id="submit" class="search-box__submit" value="Search" />
+                                </div>
+                              </div>
+                            </fieldset>
+
+                            <input type="hidden" name="collection" value="summer-schools" />
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/summer-school" target="_blank" rel="noreferrer">About UCL Summer School (an international summer school in central London)</a></li>
+                                    <li><a href="//www.ucl.ac.uk/prospective-students/study-abroad-ucl/summer-school/modules" target="_blank" rel="noreferrer">Browse UCL Summer School modules A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="cpd-form" class="course-finder-form" style="display: none;">
+                          <form id="facetsearch" class="search" name="facetsearch" method="get" action="//www.ucl.ac.uk/short-courses/search-courses" target="_blank" rel="noreferrer">
+                              <label class="visually-hidden" for="facet-input">Search</label>
+                              <input id="facet-input" class="course-filter__search-field form__control" name="query" placeholder="Search for courses" value="" type="search" />
+                              <input type="hidden" name="homepage" value="true" />
+                              <input class="course-filter__search-btn" value="Go" type="submit" />
+                          </form>
+
+                          <div class="search__links">
+                            <div class="search__links--pgt" style="display: block">
+                                <ul class="search__links--bottom">
+                                    <li><a href="//www.ucl.ac.uk/lifelearning" target="_blank" rel="noreferrer">About CPD and short courses</a></li>
+                                    <li><a href="//www.ucl.ac.uk/lifelearning/courses" target="_blank" rel="noreferrer">Short courses and CPD programmes A-Z</a></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                    </fieldset>
+
+            </div>
+        </div>
+    </div> <!-- end .site-content -->
+</div> <!-- end .row.row--white -->
+
+<style>
+  .course__finder__form .form__group .search__links--bottom li {
+    display: block !important;
+  }
+</style>
+<!-- Research News -->
+<div class="row row--white">
+  <div class="site-content wrapper clearfix">
+        <div class="news__block">
+            <div class="news__introduction">
+                <h2>Discover how our research changes the world</h2>
+                <p>Read about the groundbreaking discoveries of our academics and students.</p>
+                <div class="news__desktop__controls owl-nav">
+                    <!-- Populated with Owl Carousel 2 JS -->
+                    <div class="controls__paging"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div>
+                    <div class="controls__nav"><div class="owl-prev disabled"><svg class="svg-inline--fa fa-angle-left fa-w-8" data-fa-pseudo-element=":before" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg><!-- <i class="fas" data-fa-pseudo-element=":before"></i> --></div><div class="owl-next"><svg class="svg-inline--fa fa-angle-right fa-w-8" data-fa-pseudo-element=":before" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas" data-fa-pseudo-element=":before"></i> --></div></div>
+                </div>
+            </div><!-- end .news__introduction -->
+            <div class="news__carousel__wrapper">
+                <div class="news__carousel">
+                    <div class="owl-carousel2 owl-loaded owl-drag">
+                        
+                                                    
+                                                    
+                                                    
+                        
+                        
+                    <div class="owl-stage-outer"><div class="owl-stage" style="width: 815px; padding-left: 50px; padding-right: 50px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item active" style="width: 168.726px; margin-right: 10px;"><div class="news__item">
+                                <a href="https://www.ucl.ac.uk/news/2020/apr/ucl-uclh-and-formula-one-develop-life-saving-breathing-aids">
+                                    <div class="news__image">
+                                        <img src="https://www.ucl.ac.uk/news/sites/news/files/styles/medium_image/public/1_cpap_cropped_0.jpg?itok=0Yt1IVSY" alt="" />
+                                    </div>
+                                    <div class="news__content">
+                                        <h3>UCL, UCLH and Formula One develop life-saving breathing aids</h3>
+                                        <p>A breathing aid developed by engineers at UCL and clinicians at UCLH working with Mercedes-AMG High Performance Powertrains is being deployed in NHS hospitals to help Covid-19 patients breathe more easily.</p>
+                                    </div>
+                                </a>
+                            </div></div><div class="owl-item active" style="width: 168.726px; margin-right: 10px;"><div class="news__item">
+                                <a href="https://www.ucl.ac.uk/news/2019/sep/first-water-detected-potentially-habitable-planet">
+                                    <div class="news__image">
+                                        <img src="https://www.ucl.ac.uk/news/sites/news/files/planet_1.jpg" alt="" />
+                                    </div>
+                                    <div class="news__content">
+                                        <h3>First water detected on potentially ‘habitable’ planet</h3>
+                                        <p>Water vapour has been detected in the atmosphere of a super-Earth with habitable temperatures by UCL researchers in a world first.</p>
+                                    </div>
+                                </a>
+                            </div></div><div class="owl-item" style="width: 168.726px; margin-right: 10px;"><div class="news__item">
+                                <a href="https://www.ucl.ac.uk/news/2019/mar/hiv-remission-achieved-second-patient">
+                                    <div class="news__image">
+                                        <img src="https://www.ucl.ac.uk/news/sites/news/files/800px-hiv-budding-color.jpg" alt="" />
+                                    </div>
+                                    <div class="news__content">
+                                        <h3>HIV remission achieved in second patient</h3>
+                                        <p>A second person has experienced sustained remission from HIV-1 after ceasing treatment, reports a paper led by researchers at UCL and Imperial College London.</p>
+                                    </div>
+                                </a>
+                            </div></div><div class="owl-item" style="width: 168.726px; margin-right: 10px;"><div class="news__item news__item--most-read">
+                            <div class="news__content">
+                                <h4>Most read</h4>
+                                <ul>
+                                                                      <li><a href="https://www.ucl.ac.uk/news/2019/apr/black-hole-images-captured-world-first-0">Black hole images captured in world first</a></li>
+                                                                      <li><a href="https://www.ucl.ac.uk/news/2019/mar/woman-novel-gene-mutation-lives-almost-pain-free">Woman with novel gene mutation lives almost pain-free</a></li>
+                                                                      <li><a href="https://www.ucl.ac.uk/news/2019/mar/princess-royal-visits-uk-dementia-research-institute-ucl">The Princess Royal visits UK Dementia Research Institute at UCL</a></li>
+                                                                  </ul>
+                                <a href="//www.ucl.ac.uk/news/home/latest-news?collection=drupal-push-news-news&amp;meta_UclAudience_not=staff&amp;meta_UclAudience_not=students&amp;f.Subject%7CUclSubject=research&amp;le_DateFilter=20181204">
+                                    See all UCL News <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> -->
+                                </a>
+                            </div>
+                        </div></div></div></div></div> <!-- end .owl-carousel2 -->
+                
+                    <div class="news__mobile__controls owl-nav">
+                            <!-- Populated with Owl Carousel 2 JS -->
+                        <div class="controls__paging"></div>
+                    </div>
+                </div> <!-- end .news__carousel -->
+            </div> <!-- end .news__carousel__wrapper -->
+        </div><!-- end .news__block -->
+    </div> <!-- end .site-content -->
+</div> <!-- end .row.row--white --><!-- Study -->
+<div class="row row--white">
+    <div class="site-content wrapper clearfix">
+        <div class="study__carousel">
+            <h2>Study at UCL</h2>
+            <div class="owl-carousel2 owl-loaded owl-drag" tabindex="0">
+                
+                                              
+                                              
+                                              
+                                              
+              
+            <div class="owl-stage-outer"><div class="owl-stage" style="width: 2566px; padding-left: 50px; padding-right: 50px; transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item active" data-video="https://youtu.be/Tql60L5iUGg" style="width: 606.5px; margin-right: 10px;"><div class="study__item">
+                    <div class="study__image">
+                        <div class="owl-video-wrapper"><a class="owl-video" href="https://youtu.be/Tql60L5iUGg" tabindex="1" style="display: none;">
+                            <span class="visually-hidden">Discover UCL</span>
+                        </a><div class="owl-video-play-icon"></div><div class="owl-video-tn owl-lazy" data-src="//img.youtube.com/vi/Tql60L5iUGg/hqdefault.jpg" style="background-image: url(&quot;//img.youtube.com/vi/Tql60L5iUGg/hqdefault.jpg&quot;); opacity: 1;"></div></div>
+                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/bravethinkers-still-1060x597.jpg" alt="" />
+                        <div class="study__background" style="width: 50%; height: 100%; position: absolute; top: 0; background: #8F993E;"></div>
+                    </div>
+                    <div class="study__content">
+                        <figure>
+                            <blockquote>
+                                <a href="#">Discover UCL</a>
+                            </blockquote>
+                            <figcaption>
+                                <p class="name">What makes UCL a unique and special place to study?</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div></div><div class="owl-item" data-video="https://www.youtube.com/watch?v=Vc3Na8ACV3k" style="width: 606.5px; margin-right: 10px;"><div class="study__item">
+                    <div class="study__image">
+                        <div class="owl-video-wrapper"><a class="owl-video" href="https://www.youtube.com/watch?v=Vc3Na8ACV3k" tabindex="2" style="display: none;">
+                            <span class="visually-hidden">UCL Minds</span>
+                        </a><div class="owl-video-play-icon"></div><div class="owl-video-tn owl-lazy" data-src="//img.youtube.com/vi/Vc3Na8ACV3k/hqdefault.jpg"></div></div>
+                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/ucl_minds_1060_5971.jpg" alt="" />
+                        <div class="study__background" style="width: 50%; height: 100%; position: absolute; top: 0; background: #AC145A;"></div>
+                    </div>
+                    <div class="study__content">
+                        <figure>
+                            <blockquote>
+                                <a href="#">UCL Minds</a>
+                            </blockquote>
+                            <figcaption>
+                                <p class="name">All our public lectures, podcasts, videos, workshops, festivals, exhibitions and conferences, open to all</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div></div><div class="owl-item" data-video="https://www.youtube.com/watch?v=sWgRfuFwpRo" style="width: 606.5px; margin-right: 10px;"><div class="study__item">
+                    <div class="study__image">
+                        <div class="owl-video-wrapper"><a class="owl-video" href="https://www.youtube.com/watch?v=sWgRfuFwpRo" tabindex="3" style="display: none;">
+                            <span class="visually-hidden">Graduate Open Day</span>
+                        </a><div class="owl-video-play-icon"></div><div class="owl-video-tn owl-lazy" data-src="//img.youtube.com/vi/sWgRfuFwpRo/hqdefault.jpg"></div></div>
+                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/graduateopenday-3.jpg" alt="" />
+                        <div class="study__background" style="width: 50%; height: 100%; position: absolute; top: 0; background: #0097A9;"></div>
+                    </div>
+                    <div class="study__content">
+                        <figure>
+                            <blockquote>
+                                <a href="#">Graduate Open Day</a>
+                            </blockquote>
+                            <figcaption>
+                                <p class="name">Over 700 programmes to explore - meet the departments and discover what exciting opportunities are available.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div></div><div class="owl-item" data-video="https://www.youtube.com/watch?v=qliT8sWy0ds" style="width: 606.5px; margin-right: 10px;"><div class="study__item">
+                    <div class="study__image">
+                        <div class="owl-video-wrapper"><a class="owl-video" href="https://www.youtube.com/watch?v=qliT8sWy0ds" tabindex="4" style="display: none;">
+                            <span class="visually-hidden">How to fund your master's at UCL</span>
+                        </a><div class="owl-video-play-icon"></div><div class="owl-video-tn owl-lazy" data-src="//img.youtube.com/vi/qliT8sWy0ds/hqdefault.jpg"></div></div>
+                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/mastersfunding-still-1060x597_0.jpg" alt="" />
+                        <div class="study__background" style="width: 50%; height: 100%; position: absolute; top: 0; background: #EA7600;"></div>
+                    </div>
+                    <div class="study__content">
+                        <figure>
+                            <blockquote>
+                                <a href="#">How to fund your master's at UCL</a>
+                            </blockquote>
+                            <figcaption>
+                                <p class="name">Thinking about coming to study a Master’s at UCL? Hear from current Master’s students about funding options.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div></div></div></div></div> <!-- end .owl-carousel2 -->
+
+            <div class="study__desktop__controls owl-nav">
+                <div class="controls__paging"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div>
+                <div class="controls__nav"><div class="owl-prev disabled"><svg class="svg-inline--fa fa-angle-left fa-w-8" data-fa-pseudo-element=":before" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg><!-- <i class="fas" data-fa-pseudo-element=":before"></i> --></div><div class="owl-next"><svg class="svg-inline--fa fa-angle-right fa-w-8" data-fa-pseudo-element=":before" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas" data-fa-pseudo-element=":before"></i> --></div></div>
+                <!-- Populated with Owl Carousel2 JS -->
+            </div>
+        </div> <!-- end .study__carousel -->
+    </div> <!-- end .site-content -->
+</div> <!-- end .row.row--white --><!-- People -->
+<div class="row row--grey--mobile">
+    <div class="site-content wrapper clearfix">
+        <div class="people">
+            <h2>Meet some of our people</h2>
+            <div class="people-block">
+                <div class="people__carousel">
+                    <div class="owl-carousel2 owl-off">
+                        
+                                                    <div class="people__item">
+                                <a href="/campaign/news/2019/apr/ucl-students-launch-social-enterprise-aiming-solve-global-food-insecurity">
+                                    <div class="people__image">
+                                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/lincolnlee-kisumchan-376x282.png" alt="" />
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>Innovating to solve global food insecurity</h3>
+                                        <p class="person__name">Kisum Chan and Lincoln Lee</p>
+                                        <p class="person__occ">UCL Biomedical Science Alumni and Founders of Rice Inc</p>
+                                    </div>
+                                </a>
+                            </div>
+                                                    <div class="people__item">
+                                <a href="/news/2020/oct/ucl-alumnus-professor-sir-roger-penrose-awarded-nobel-prize">
+                                    <div class="people__image">
+                                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/rogerpenrose-376x282.jpg" alt="" />
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>UCL's 30th Nobel laureate</h3>
+                                        <p class="person__name">Professor Sir Roger Penrose</p>
+                                        <p class="person__occ">Awarded the Nobel Prize in Physics for work relating to black holes</p>
+                                    </div>
+                                </a>
+                            </div>
+                                                    <div class="people__item">
+                                <a href="https://www.ucl.ac.uk/campaign/case-studies/2020/aug/alumni-stories-going-distance-shauna-bent">
+                                    <div class="people__image">
+                                        <img src="https://www.ucl.ac.uk/home/sites/home/files/homepage/shaunabent-376x282.jpg" alt="" />
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>Going the Distance</h3>
+                                        <p class="person__name">Shauna Bent</p>
+                                        <p class="person__occ">UCL Crime Science, PG Cert alumna</p>
+                                    </div>
+                                </a>
+                            </div>
+                                                
+                    </div> <!-- end .owl-carousel2 -->
+                
+                    <div class="people__mobile__controls owl-nav">
+                            <!-- Populated with Owl Carousel 2 JS -->
+                        <div class="controls__paging"></div>
+                    </div>
+                </div> <!-- end .people__carousel -->
+            </div>
+        </div>
+    </div>
+</div> <!-- end .row.row-grey--mobile -->
+<!-- Events -->
+<div class="row row--grey">
+    <div class="site-content site-content--block wrapper clearfix">
+        <div class="social__events">
+            <h2>Discover what’s on at UCL</h2>
+            <p>powered by UCL Minds</p>
+
+            <div class="social__events__featured">
+                                    <div class="event__item">
+                        <div class="event__image">
+                            <img src="https://www.ucl.ac.uk/events/sites/events/files/styles/large_image/public/events/03_december2_0.jpg?itok=slWhOp_R" alt="VIRTUAL EVENT: Assistive Technology as an Innovation Leader - a vision for the future" />
+                        </div>
+                        <div class="event__content">
+                            <div class="event__header">
+                                <p class="event-date">
+                                    <time datetime="2020-12-03">03 Dec                                    </time>
+                                    <time datetime="2020-12-03">                                    </time>
+                                </p>
+                              <p class="event-type">Virtual event</p>
+                            </div>
+                            <h3>VIRTUAL EVENT: Assistive Technology as an Innovation Leader - a vision for the future</h3>
+                            <p class="event-time">
+                                <time class="text-lowercase" datetime="13:00+00:00">1:00 pm</time><!--?
+                                ?--><time class="text-lowercase" datetime="14:00+00:00">–2:00 pm                                </time>
+                            </p>
+                            <p class="event-location">Virtual event</p>
+                            <p class="event-fee"></p>
+                            <p class="event-desc">In this UCL East Lunch Hour Lecture Professor Holloway will address the research findings thus far pointing to a new future where assistive technology is a leading component of the innovation industry.                            </p>
+                            <a href="https://www.ucl.ac.uk/events/events/2020/dec/virtual-event-assistive-technology-innovation-leader-vision-future">
+                                <span class="visually-hidden">View event</span>
+                                <i class="cta-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                            </div>
+            <div class="social__events__carousel">
+                <div class="owl-carousel2 owl-off">
+                                                                        <div class="event__item">
+                                <div class="event__content">
+                                    <div class="event__header">
+                                        <p class="event-date">
+                                            <time datetime="2020-12-08">08 Dec                                            </time>
+                                            <time datetime="2020-12-08">                                            </time>
+                                        </p>
+                                        <p class="event-type">Virtual event</p>
+                                    </div>
+                                    <h3>VIRTUAL EVENT: What Do Private Schools Do? A Look at the Evidence</h3>
+                                    <p class="event-time">
+                                        <time class="text-lowercase" datetime="13:00+00:00">1:00 pm</time><!--?
+                                        ?--><time class="text-lowercase" datetime="14:00+00:00">–2:00 pm                                        </time>
+                                    </p>
+                                    <p class="event-location">Virtual event                                    </p>
+                                    <p class="event-desc">This lecture will showcase evidence, on the effectiveness of private schools, that has built up over the last 20 years, much of it at UCL.                                    </p>
+                                    <a href="https://www.ucl.ac.uk/events/events/2020/dec/virtual-event-what-do-private-schools-do-look-evidence">
+                                        <span class="visually-hidden">View event</span>
+                                        <i class="cta-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                                                                                                <div class="event__item">
+                                <div class="event__content">
+                                    <div class="event__header">
+                                        <p class="event-date">
+                                            <time datetime="2020-12-10">10 Dec                                            </time>
+                                            <time datetime="2020-12-10">                                            </time>
+                                        </p>
+                                        <p class="event-type">Seminar</p>
+                                    </div>
+                                    <h3>Reuse and Repurposing in Black Aesthetic Practices</h3>
+                                    <p class="event-time">
+                                        <time class="text-lowercase" datetime="16:00+00:00">4:00 pm</time><!--?
+                                        ?--><time class="text-lowercase" datetime="17:30+00:00">–5:30 pm                                        </time>
+                                    </p>
+                                    <p class="event-location">                                    </p>
+                                    <p class="event-desc">Part of the Race, Power, and Poetics Seminar Series                                    </p>
+                                    <a href="https://www.ucl.ac.uk/arts-humanities/events/2020/dec/reuse-and-repurposing-black-aesthetic-practices">
+                                        <span class="visually-hidden">View event</span>
+                                        <i class="cta-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                                                                                                <div class="event__item">
+                                <div class="event__content">
+                                    <div class="event__header">
+                                        <p class="event-date">
+                                            <time datetime="2021-01-27">27 Jan                                            </time>
+                                            <time datetime="2021-01-27">                                            </time>
+                                        </p>
+                                        <p class="event-type">Virtual event</p>
+                                    </div>
+                                    <h3>VIRTUAL EVENT: Historical pedagogies for literacy: the eighteenth century</h3>
+                                    <p class="event-time">
+                                        <time class="text-lowercase" datetime="16:00+00:00">4:00 pm</time><!--?
+                                        ?--><time class="text-lowercase" datetime="17:00+00:00">–5:00 pm                                        </time>
+                                    </p>
+                                    <p class="event-location">                                    </p>
+                                    <p class="event-desc">In this webinar, Professor Michele Cohen will explore the fragmented but intriguing story of attempts to formalise ‘literacy’ for children in the eighteenth century.                                    </p>
+                                    <a href="https://www.ucl.ac.uk/ioe/events/2021/jan/virtual-event-historical-pedagogies-literacy-eighteenth-century">
+                                        <span class="visually-hidden">View event</span>
+                                        <i class="cta-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                                                                                                <div class="event__item">
+                                <div class="event__content">
+                                    <div class="event__header">
+                                        <p class="event-date">
+                                            <time datetime="2021-01-28">28 Jan                                            </time>
+                                            <time datetime="2021-01-28">                                            </time>
+                                        </p>
+                                        <p class="event-type">Workshop</p>
+                                    </div>
+                                    <h3>Women in Enterprise Network event: Leadership and resilience for startups</h3>
+                                    <p class="event-time">
+                                        <time class="text-lowercase" datetime="17:30+00:00">5:30 pm</time><!--?
+                                        ?--><time class="text-lowercase" datetime="18:30+00:00">–6:30 pm                                        </time>
+                                    </p>
+                                    <p class="event-location">                                    </p>
+                                    <p class="event-desc">This online workshop will help you become an effective and resilient leader. It's free and open to anyone who is setting up their own business or social enterprise.                                    </p>
+                                    <a href="https://www.ucl.ac.uk/enterprise/events/2021/jan/women-enterprise-network-event-leadership-and-resilience-startups">
+                                        <span class="visually-hidden">View event</span>
+                                        <i class="cta-arrow"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                                                            </div> <!-- end .owl-carousel2 -->
+
+                <div class="events__mobile__controls owl-nav">
+                    <!-- Populated with Owl Carousel 2 JS -->
+                    <div class="controls__paging"></div>
+                </div>
+            </div> <!-- end .event__carousel -->
+
+        <p>Discover more events, podcasts and exhibitions at UCL Minds</p>
+            <a href="https://www.ucl.ac.uk/events">
+                <span class="visually-hidden">View event</span>
+                <i class="cta-arrow"></i>
+            </a>
+
+        </div>
+    </div>
+</div> <!-- end .row.row--grey -->
+<!-- Stats -->
+<div class="row row--white">
+<div class="site-content site-content--block wrapper clearfix">
+        <div class="statistics">
+            <div class="statistics__block">
+                                    <div class="block">
+                        <div class="stat"><span>1st</span></div>
+                        <p>UCL was rated the top university in the UK for research strength in the most recent Research Excellence Framework</p>
+                    </div>
+                                    <div class="block">
+                        <div class="stat"><span>10th</span></div>
+                        <p>UCL is ranked 10th in the 2021 QS World University Rankings</p>
+                    </div>
+                                    <div class="block">
+                        <div class="stat"><span>30</span></div>
+                        <p>There have been 30 Nobel Prize laureates amongst UCL’s alumni and current and former staff to date</p>
+                    </div>
+                                    <div class="block">
+                        <div class="stat"><span>1st</span></div>
+                        <p>UCL was the first university in England to welcome students of any religion, and to welcome women to university education</p>
+                    </div>
+                                
+            </div>
+            <a href="https://www.ucl.ac.uk/about/?utm_source=homepage&amp;utm_medium=click&amp;utm_campaign=homepage_about">Learn more about UCL <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+        </div>
+    </div>
+</div> <!-- end .row.row--white --><!-- Soundcloud -->
+<div class="row row--blue">
+    <div class="site-content wrapper clearfix">
+        <div class="social__soundcloud">
+            <div class="social__soundcloud__wrapper">
+                <div class="soundcloud__title">
+                    <h2>The latest from UCL Sound</h2>
+                    <a class="more--desktop" href="https://soundcloud.com/uclsound">Follow us <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+                </div>
+                <div class="soundcloud__item">
+                    <div class="soundcloud__content">
+                        <h3>Coronavirus: The Whole Story</h3>
+                        <p>How is the pandemic affecting women?</p>
+                        <div class="soundcloud__player">
+                            <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F930212068&amp;show_artwork=true"></iframe>                              <!-- <iframe width="300" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/344096809&amp;color=%23333333&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false&amp;show_artwork=false&amp;sharing=false&amp;show_playcount=false"></iframe> -->
+                        </div>
+                        <a class="more--mobile" href="https://soundcloud.com/uclsound">Follow us <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- end .row.row--blue --><!-- Twitter -->
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="row row--white">
+    <div class="site-content site-content--block wrapper clearfix">
+        <div class="social__twitter">
+            <h2><svg class="svg-inline--fa fa-twitter fa-w-16 fa-xs" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg><!-- <i class="fab fa-twitter fa-xs"></i> -->Follow us on Twitter</h2>
+            <div class="social__twitter__carousel">
+                <div class="owl-carousel2 owl-off">
+                                            <div class="block">
+                            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="padding: 0px; border: none; display: inline-block; max-width: 100%; width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; position: static; visibility: visible; height: 408.25px;" data-widget-id="profile:ucl" title="Twitter Timeline"></iframe>
+                        </div>
+                                            <div class="block">
+                            <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="padding: 0px; border: none; display: inline-block; max-width: 100%; width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; position: static; visibility: visible; height: 482.656px;" data-widget-id="profile:uclnews" title="Twitter Timeline"></iframe>
+                        </div>
+                                            <div class="block">
+                            <iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="padding: 0px; border: none; display: inline-block; max-width: 100%; width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; position: static; visibility: visible; height: 404.25px;" data-widget-id="profile:UCL_SRM" title="Twitter Timeline"></iframe>
+                        </div>
+                                            <div class="block">
+                            <iframe id="twitter-widget-3" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="padding: 0px; border: none; display: inline-block; max-width: 100%; width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; position: static; visibility: visible; height: 337.688px;" data-widget-id="profile:UCLAlumni" title="Twitter Timeline"></iframe>
+                        </div>
+                                    </div>
+            </div>
+            <div class="twitter__mobile__controls owl-nav">
+                    <!-- Populated with Owl Carousel 2 JS -->
+                <div class="controls__paging"></div>
+            </div>
+        </div>
+    </div>
+</div> <!-- end .row.row--white -->        <!-- end home page sections -->
+
+        <footer class="footer">
+            <div class="footer__inner wrapper clearfix">
+                <div class="footer__social clearfix">
+                    <div class="block block--col-1">
+                        <h2 class="as-h5">Follow UCL</h2>
+                        <ul class="social__list list-unstyled">
+                            <li class="social__item">
+                                <a href="https://twitter.com/ucl" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL Twitter</span>
+                                    <svg class="svg-inline--fa fa-twitter fa-w-16 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg><!-- <i class="fab fa-twitter fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://www.facebook.com/uclofficial" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL Facebook</span>
+                                    <svg class="svg-inline--fa fa-facebook-f fa-w-9 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512"><path fill="currentColor" d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"/></svg><!-- <i class="fab fa-facebook-f fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://www.instagram.com/ucl/" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL Instagram</span>
+                                    <svg class="svg-inline--fa fa-instagram fa-w-14 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg><!-- <i class="fab fa-instagram fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="http://www.youtube.com/ucltv" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL YouTube</span>
+                                    <svg class="svg-inline--fa fa-youtube fa-w-18 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg><!-- <i class="fab fa-youtube fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://soundcloud.com/uclsound" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL SoundCloud</span>
+                                    <svg class="svg-inline--fa fa-soundcloud fa-w-20 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="soundcloud" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M111.4 256.3l5.8 65-5.8 68.3c-.3 2.5-2.2 4.4-4.4 4.4s-4.2-1.9-4.2-4.4l-5.6-68.3 5.6-65c0-2.2 1.9-4.2 4.2-4.2 2.2 0 4.1 2 4.4 4.2zm21.4-45.6c-2.8 0-4.7 2.2-5 5l-5 105.6 5 68.3c.3 2.8 2.2 5 5 5 2.5 0 4.7-2.2 4.7-5l5.8-68.3-5.8-105.6c0-2.8-2.2-5-4.7-5zm25.5-24.1c-3.1 0-5.3 2.2-5.6 5.3l-4.4 130 4.4 67.8c.3 3.1 2.5 5.3 5.6 5.3 2.8 0 5.3-2.2 5.3-5.3l5.3-67.8-5.3-130c0-3.1-2.5-5.3-5.3-5.3zM7.2 283.2c-1.4 0-2.2 1.1-2.5 2.5L0 321.3l4.7 35c.3 1.4 1.1 2.5 2.5 2.5s2.2-1.1 2.5-2.5l5.6-35-5.6-35.6c-.3-1.4-1.1-2.5-2.5-2.5zm23.6-21.9c-1.4 0-2.5 1.1-2.5 2.5l-6.4 57.5 6.4 56.1c0 1.7 1.1 2.8 2.5 2.8s2.5-1.1 2.8-2.5l7.2-56.4-7.2-57.5c-.3-1.4-1.4-2.5-2.8-2.5zm25.3-11.4c-1.7 0-3.1 1.4-3.3 3.3L47 321.3l5.8 65.8c.3 1.7 1.7 3.1 3.3 3.1 1.7 0 3.1-1.4 3.1-3.1l6.9-65.8-6.9-68.1c0-1.9-1.4-3.3-3.1-3.3zm25.3-2.2c-1.9 0-3.6 1.4-3.6 3.6l-5.8 70 5.8 67.8c0 2.2 1.7 3.6 3.6 3.6s3.6-1.4 3.9-3.6l6.4-67.8-6.4-70c-.3-2.2-2-3.6-3.9-3.6zm241.4-110.9c-1.1-.8-2.8-1.4-4.2-1.4-2.2 0-4.2.8-5.6 1.9-1.9 1.7-3.1 4.2-3.3 6.7v.8l-3.3 176.7 1.7 32.5 1.7 31.7c.3 4.7 4.2 8.6 8.9 8.6s8.6-3.9 8.6-8.6l3.9-64.2-3.9-177.5c-.4-3-2-5.8-4.5-7.2zm-26.7 15.3c-1.4-.8-2.8-1.4-4.4-1.4s-3.1.6-4.4 1.4c-2.2 1.4-3.6 3.9-3.6 6.7l-.3 1.7-2.8 160.8s0 .3 3.1 65.6v.3c0 1.7.6 3.3 1.7 4.7 1.7 1.9 3.9 3.1 6.4 3.1 2.2 0 4.2-1.1 5.6-2.5 1.7-1.4 2.5-3.3 2.5-5.6l.3-6.7 3.1-58.6-3.3-162.8c-.3-2.8-1.7-5.3-3.9-6.7zm-111.4 22.5c-3.1 0-5.8 2.8-5.8 6.1l-4.4 140.6 4.4 67.2c.3 3.3 2.8 5.8 5.8 5.8 3.3 0 5.8-2.5 6.1-5.8l5-67.2-5-140.6c-.2-3.3-2.7-6.1-6.1-6.1zm376.7 62.8c-10.8 0-21.1 2.2-30.6 6.1-6.4-70.8-65.8-126.4-138.3-126.4-17.8 0-35 3.3-50.3 9.4-6.1 2.2-7.8 4.4-7.8 9.2v249.7c0 5 3.9 8.6 8.6 9.2h218.3c43.3 0 78.6-35 78.6-78.3.1-43.6-35.2-78.9-78.5-78.9zm-296.7-60.3c-4.2 0-7.5 3.3-7.8 7.8l-3.3 136.7 3.3 65.6c.3 4.2 3.6 7.5 7.8 7.5 4.2 0 7.5-3.3 7.5-7.5l3.9-65.6-3.9-136.7c-.3-4.5-3.3-7.8-7.5-7.8zm-53.6-7.8c-3.3 0-6.4 3.1-6.4 6.7l-3.9 145.3 3.9 66.9c.3 3.6 3.1 6.4 6.4 6.4 3.6 0 6.4-2.8 6.7-6.4l4.4-66.9-4.4-145.3c-.3-3.6-3.1-6.7-6.7-6.7zm26.7 3.4c-3.9 0-6.9 3.1-6.9 6.9L227 321.3l3.9 66.4c.3 3.9 3.1 6.9 6.9 6.9s6.9-3.1 6.9-6.9l4.2-66.4-4.2-141.7c0-3.9-3-6.9-6.9-6.9z"/></svg><!-- <i class="fab fa-soundcloud fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="http://www.flickr.com/photos/uclnews" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL Flickr</span>
+                                    <svg class="svg-inline--fa fa-flickr fa-w-14 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="flickr" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM144.5 319c-35.1 0-63.5-28.4-63.5-63.5s28.4-63.5 63.5-63.5 63.5 28.4 63.5 63.5-28.4 63.5-63.5 63.5zm159 0c-35.1 0-63.5-28.4-63.5-63.5s28.4-63.5 63.5-63.5 63.5 28.4 63.5 63.5-28.4 63.5-63.5 63.5z"/></svg><!-- <i class="fab fa-flickr fa-lg"></i> -->
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://medium.com/ucl-antenna" target="_blank" rel="noreferrer">
+                                    <span class="visually-hidden">UCL Medium</span>
+                                    <svg class="svg-inline--fa fa-medium fa-w-14 fa-lg" aria-hidden="true" data-fa-processed="" data-prefix="fab" data-icon="medium" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg><!-- <i class="fab fa-medium fa-lg"></i> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__links clearfix">
+                    <article class="block block--col-1">
+                        <h2 class="as-h5">UCL facilities</h2>
+                        <ul class="footer__list list-unstyled">
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/about">About UCL</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/departments/faculties">Faculties and departments</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/library/">Library</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/museums">Museums and Collections</a></li>
+                            <li class="footer__item"><a href="//www.thebloomsbury.com/">UCL Bloomsbury Theatre</a></li>
+                            <li class="footer__item"><a href="//shop.ucl.ac.uk/">UCL Shop</a></li>
+                        </ul>
+                    </article>
+                    <article class="block block--col-2">
+                        <h2 class="as-h5">UCL locations</h2>
+                        <ul class="footer__list list-unstyled">
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/maps">Maps and buildings</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/london">UCL and London</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/global">UCL Global</a></li>
+                        </ul>
+                    </article>
+                    <article class="block block--col-3">
+                        <h2 class="as-h5">Connect with UCL</h2>
+                        <ul class="footer__list list-unstyled">
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/alumni">Alumni</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/enterprise/businesses">Businesses</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/media">Media Relations</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/hr/jobs/">Jobs</a></li>
+                            <li class="footer__item"><a href="//www.ucl.ac.uk/campaign">Give to UCL</a></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="footer__details clearfix">
+                    <div class="block block--col-1">
+                        <address>
+                            University College London,<br />
+                            Gower Street,<br />
+                            London,<br />
+                            WC1E 6BT<br />
+                            Tel: +44 (0) 20 7679 2000
+                        </address>
+                    </div>
+
+                    <div class="block block--col-2">
+                        <div class="footer__details-util">
+                            <span class="copyright-text small">Copyright © 2020 UCL</span>
+                            <ul class="list-inline footer__list list-unstyled list-inline--divided">
+                                <li class="small"><a href="//www.ucl.ac.uk/disclaimer">Disclaimer</a>
+                                </li>
+                                <li class="small"><a href="//www.ucl.ac.uk/foi">Freedom of Information</a>
+                                </li>
+                                <li class="small"><a href="//www.ucl.ac.uk/accessibility">Accessibility</a>
+                                </li>
+                                <li class="small"><a href="//www.ucl.ac.uk/legal-services/privacy">Privacy and Cookies</a>
+                                </li>
+                                <li class="small"><a href="//www.ucl.ac.uk/procurement/suppliers/slavery-stmt">Slavery statement</a>
+                                </li>
+                                <li class="small"><a href="//www.ucl.ac.uk/about/contact-us">Contact Us</a>
+                                </li>
+                                <li class="small"><a rel="nofollow" href="https://cas.ucl.ac.uk/cas/login?service=https://www.ucl.ac.uk/home/user/cas%3Fdestination%3Dnode"><img class="zero-bottom lazy" height="10" width="10" alt="Edit Icon" title="Edit Content" src="//cdn.ucl.ac.uk/skins/UCLIndigoSkin/default-theme/images/edit.gif" data-src="//cdn.ucl.ac.uk/skins/UCLIndigoSkin/default-theme/images/edit.gif" id="edit_button" /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+        <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"320633c495","applicationID":"427937119,55043572","transactionName":"YgZTNUtYDxAEVEBQDFtMcAJNUA4NSllbXQZqE1AGXGYFBgNWQVUX","queueTime":0,"applicationTime":906,"atts":"TkFQQwNCHB4=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.96fd96193cc66c3e11d4c5e4c7c7ec97.html?origin=https%3A%2F%2Fwww.ucl.ac.uk" title="Twitter settings iframe" style="display: none;"></iframe><div style="display: none; visibility: hidden;">
+<script>!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","571252266361666");fbq("track","PageView");</script>
+<noscript></noscript>
+</div><div style="display: none; visibility: hidden;">
+<script type="text/javascript">(function(a,b,d){if(!a.snaptr){var c=a.snaptr=function(){c.handleRequest?c.handleRequest.apply(c,arguments):c.queue.push(arguments)};c.queue=[];a="script";r=b.createElement(a);r.async=!0;r.src=d;b=b.getElementsByTagName(a)[0];b.parentNode.insertBefore(r,b)}})(window,document,"https://sc-static.net/scevent.min.js");snaptr("init","33e2644b-48b2-47a5-8cc2-0a5af5b10aff",{user_email:"__INSERT_USER_EMAIL__"});snaptr("track","PAGE_VIEW");</script>
+</div><script type="text/javascript" id="" src="https://cdn.ucl.ac.uk/skins/indigo-drupal-theme-js/app/gecko_cookie.js"></script><script type="text/javascript" id="">(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//siteimproveanalytics.com/js/siteanalyze_51623617.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe"></iframe><script src="https://analytics.twitter.com/i/adsct?type=javascript&amp;version=1.1.0&amp;p_id=Twitter&amp;p_user_id=0&amp;txn_id=o3wfr&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Fwww.ucl.ac.uk%2F" type="text/javascript"></script></body></html>

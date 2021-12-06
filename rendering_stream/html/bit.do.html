@@ -1,0 +1,1367 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<!-- TODO: codigo duplicado? -->
+<script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://partner.googleadservices.com/gampad/cookie.js?domain=bit.do&amp;callback=_gfp_s_&amp;client=ca-pub-8949154439106523"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/UFwvoDBMjc8LiYc1DKXiAomK/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20201201/r20190131/show_ads_impl.js" id="google_shimpl"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script data-ad-client="ca-pub-8949154439106523" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<meta name="description" content="Make a long URL short, easy to remember and to share. With traffic stats." />
+<meta name="keywords" content="URL shortener,url redirection,shorter link,encurtador de url,short url" />
+
+<meta name="norton-safeweb-site-verification" content="emgwvks55bduf8-suikpw74hhcbewlj5r1rn7b-koyd5v-l5lg2rubqpy6e280jurjv551wnmnqjsnbn-m3axdeisaesdnep6g968rfbo9ndbqzl7zeeiodv72ro44d3" />
+
+<meta property="og:image" content="http://bit.do/images/bit-do-url-shortener-logo-sq-160.png" />
+<link rel="image_src" href="http://bit.do/images/bit-do-url-shortener-logo-sq-160.png" />
+
+<title>Bit.do URL Shortener - Shorten, customize and track your links</title>
+
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+
+<style type="text/css">
+
+a {
+  color: #505050;
+  border-bottom: 1px solid #fab035;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #ffe070;
+}
+
+
+body {
+ font-family: Arial;
+ margin: 0;
+ height: 100%;
+ color: #404040;
+}
+
+.url {
+ background-color: #f9f9f9;
+ width: 350px;
+ height: 16px;
+ border: 1px solid #654;
+ padding: 3px;
+}
+
+.round {
+ background-color: white;
+ border: 1px solid #bbb;
+ margin-bottom: 10px;
+ -moz-border-radius: 15px;
+ -webkit-border-radius: 15px;
+ border-radius: 15px;
+ width: 100%;
+ max-width: 840px;
+}
+
+.input-placeholder {
+ position: absolute;
+ font-style: italic;
+ color: #aaa;
+ margin: 0.3em 0 0 0.5em;
+}
+
+.orange_logo {
+  color: #fab035;
+}
+
+.h {
+ display: none;
+}
+
+</style>
+<link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=bit.do" as="script" /><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=bit.do"></script></head>
+
+<body>
+
+
+<div style="height: 28px;&#10; background-color: #fab035;&#10; text-align: right;&#10; color: black;&#10; line-height: 28px;&#10; padding-right: 10px;&#10; font-size: 0.8em;&#10;">
+
+<p class="pull-right" id="top_user_info" style="display: none;">
+Welcome 
+<a href="/admin">
+<b><span id="top_user_info_username"></span></b>
+| 
+manage your links</a>
+
+<!--
+| <a href="javascript:;" onClick="logout()">Logout</a>
+-->
+</p>
+
+<p class="pull-right" id="top_login_info">
+<a href="javascript:;" onclick="login_show()">login</a>
+or
+<a href="javascript:;" onclick="signup_show()">register</a> 
+to manage your links.
+<!--
+(free!)
+-->
+</p>
+
+</div>
+
+<script src="/js/jquery/jquery.min.js"></script>
+
+<!--
+<script src="js/jquery/jquery.min.js"></script>
+<script src="http://js.do/js/dump.js"></script>
+-->
+
+
+<div class="bg-danger fade in" id="alert_message" style="&#10;border-radius: 5px;&#10;display: none;&#10;top: 20px;&#10;padding: 8px;&#10;left: 0;&#10;right: 0;&#10;margin-left:auto;&#10;margin-right:auto;&#10;width: 50%;&#10;position: absolute;&#10;z-index: 21;&#10;"></div>
+
+
+<!--
+
+<p class="pull-right" id="top_user_info" style="display: none;">
+Welcome <b><span id="top_user_info_username"></span></b>
+| 
+<a href="javascript:;" onClick="inauth.logout()">Logout</a>
+</p>
+
+<p class="pull-right" id="top_login_info">
+<a href="javascript:;" onClick="login_show()">login</a>
+or 
+<a href="javascript:;" onClick="signup_show()">register</a> (free!)
+</p>
+
+-->
+
+
+
+
+<div id="login_or_register" style="&#10;border-radius: 5px;&#10;display: none;&#10;z-index: 20;&#10;top: 80px;&#10;position: absolute;&#10;background-color: white;&#10;border: 1px solid black;&#10;box-shadow: 0px 0px 10px #c0c0c0;&#10;padding: 20px;&#10;left:0;&#10;right:0;&#10;margin-left:auto;&#10;margin-right:auto;&#10;max-width: 700px;&#10;">
+
+<a class="close" href="javascript:;" onclick="$('#login_or_register').hide();lightbox(0)" id="close_login_popup">×</a>
+
+
+<div id="login_show" style="vertical-align: top">
+<i class="icon-hand-right"></i>
+
+<b>Login</b> to <b style="color: #fab035;">save your links, view stats</b> and manage <b style="color: #fab035;">your link collection</b>:<br />
+
+<br />
+
+<form class="form-inline" onsubmit="chklogin();return(false);">
+
+
+<table style="float: left;">
+<tbody><tr>
+ <td style="line-height: 60px">Username:  </td>
+ <td style="line-height: 60px"><input class="form-control" type="text" id="login_user_username" name="username" style="width: 250px;" /></td>
+<!--
+ <td rowspan=2 style="padding-left: 50px; vertical-align: top; line-height: 25px; padding-top: 20px;">
+&nbsp; New to <b>bit.do</b>?<br>
+<a href="javascript:;" onClick="signup_show()"><b>Sign-up</b></a>, it's free!
+</td>
+-->
+</tr>
+
+<tr>
+ <td>Password:</td>
+ <td><input class="form-control" type="password" id="login_user_password" name="password" />
+  <input type="submit" value="Login" class="btn btn-small btn-primary" />
+</td>
+</tr>
+</tbody></table>
+
+<div style="&#10; margin-left: 40px;&#10; vertical-align: top;&#10; line-height: 25px;&#10; padding-top: 20px;&#10; float: left;&#10;">
+  New to <b>bit.do</b>?<br />
+<a href="javascript:;" onclick="signup_show()"><b>Sign-up</b></a>, it's free!
+</div>
+
+
+</form>
+</div> <!-- /login_show -->
+
+<div id="signup_show" style="display:none">
+
+<style>
+td {
+ padding-bottom: 6px;
+ padding-left: 10px;
+}
+</style>
+
+
+<form>
+Register now to <b style="color: #fab035;">save your links, view stats</b> and manage <b style="color: #fab035;">your link collection</b>:<br />
+
+<br />
+
+<table>
+ <tbody><tr>
+ <td>Username:</td>
+ <td style="width: 300px;"><input type="text" id="signup_user_username" class="form-control" /></td>
+</tr>
+<tr>
+ <td>Password:</td>
+ <td><input type="password" id="signup_user_password" class="form-control" /></td>
+</tr>
+<tr>
+ <td style="white-space: nowrap;">Password (confirm):</td>
+ <td><input type="password" id="signup_user_password_confirm" class="form-control" /></td>
+</tr>
+<tr>
+ <td>Email:</td>
+ <td><input type="text" id="signup_user_email" class="form-control" /></td>
+</tr>
+<tr>
+ <td></td>
+ <td><input type="button" value="Sign-up" onclick="signup()" class="btn btn-small btn-primary" /></td>
+</tr>
+</tbody></table>
+
+
+</form>
+<br />
+Already have an account ? <a href="javascript:;" onclick="login_show()">Sign-in</a>
+
+</div> <!-- /signup_show -->
+
+</div> <!-- /login_or_register -->
+
+
+
+
+
+
+<script>
+
+// TODO: inauth.js
+var inauth = {};
+
+inauth.keep_logged_in_days = 15 * 365;
+
+if (document.URL.indexOf('debug=1') != -1) {
+ inauth.debug = 1;
+}
+
+inauth.cookie_name = "InAuth-bitdo";
+//inauth.cookie_domain = '.bit.do';
+inauth.cookie_domain = '.bit.do';
+
+// TODO:
+inauth.init = function() {
+}
+
+
+
+
+// TODO: use inauth.app_id
+//inauth.app_id = 'bit.do';
+inauth.app_id = 'bit.do';
+
+// AUTH FUNCTIONS //
+
+// TODO: Register/Unregister this function on open/close popup
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { $('#close_login_popup').click(); } // esc
+//  if (e.keyCode == 13) { $('.enter').click(); }   // enter
+});
+
+
+
+
+
+inauth.getcookie = function(cookie_name) {
+
+  if (!cookie_name) {
+    cookie_name = inauth.cookie_name; // will use default cookie name
+  }
+
+  var cookie_nameEQ = cookie_name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i &lt; ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(cookie_nameEQ) == 0) return c.substring(cookie_nameEQ.length,c.length);
+  }
+
+  return null;
+}
+
+
+inauth.logout = function (redirect_url) {
+
+// should tell server? http://inauth.insite.com.br/mod_perl/login.pl?acao=logout
+
+  inauth.delcookie(inauth.cookie_name);
+
+  if (redirect_url) {
+    document.location.href = redirect_url;
+
+  } else {
+    inauth.logged_user_username = '';
+    hide_user_info();
+    alert_message('info', 'You\'re logged out. Please &lt;a href="javascript:;" onClick="login_show()"&gt;login&lt;/a&gt; again to save and manage your links.');
+  }
+  return false;
+}
+
+
+inauth.setcookie = function(params) {
+
+  var name   = params.name;
+  var value  = params.value;
+  var days   = params.days;
+  var domain = params.domain;
+
+  var expires_str;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires_str = "; expires=" + date.toGMTString();
+  } else {
+    expires_str = "";
+  }
+
+  var domain_str;
+  if (domain) {
+    domain_str = "; DOMAIN=" + domain
+  }
+
+  var set_cookie_value = name + "=" + value + expires_str + domain_str + "; path=/";
+  document.cookie = set_cookie_value;
+
+  if (inauth.debug) {
+    console.log("inauth.setcookie: "+set_cookie_value);
+  }
+
+  window.localStorage.setItem(name, value); // Sometimes cookies are not wokring (Android app)
+
+}
+
+inauth.delcookie = function (cookie_name) {
+  inauth.setcookie({
+     'name': cookie_name,
+    'value': "",
+   'domain': inauth.cookie_domain,
+     'days': -1
+  });
+
+// TODO: Should remove from window.localStorage
+}
+
+inauth.create_or_get_permasession = function() {
+
+  // Retrieve or set permanent session
+  var permasession_value = inauth.getcookie('permasession');
+  if (!permasession_value) {
+    var days = 15 * 365;
+    var time = parseInt ((new Date().getTime()) / 1000);
+    var rnd_str = Math.random().toString(36).slice(-10);
+    permasession_value = time+'|'+rnd_str;
+
+    inauth.setcookie({
+      'name': 'permasession',
+     'value': permasession_value,
+      'days': days
+    });
+  }
+  inauth.permasession_value = permasession_value;
+  return permasession_value;
+
+}
+
+// TODO: Not working
+// Set cookie session again if cookie was lost/deleted
+inauth.init();
+
+
+
+
+
+
+function signup_show() {
+  $('#login_or_register').show();
+  $('#login_show').hide('fast');
+  $('#signup_show').show('fast');
+  $('#signup_user_username').focus();
+  lightbox(1);
+}
+
+function login_show() {
+  $('#login_or_register').show();
+  $('#signup_show').hide('fast');
+  $('#login_show').show('fast');
+  $('#login_user_username').focus();
+  lightbox(1);
+}
+
+function signup() {
+  var user_username = $('#signup_user_username').val();
+  var user_password = $('#signup_user_password').val();
+  var user_password_confirm = $('#signup_user_password_confirm').val();
+  var user_email    = $('#signup_user_email').val();
+
+  var signup_url = 'https://inauth.insite.com.br/mod_perl/cadastro.pl';
+
+  POST({
+    url: signup_url,
+    data: {
+                'action': 'cadastro_ok',
+         'user_username': user_username,
+         'user_password': user_password,
+ 'user_password_confirm': user_password_confirm,
+            'user_email': user_email,
+                  'lang': 'en',
+               'cookies': 'no',
+               'app_id' : inauth.app_id,
+           'cookie_name': inauth.cookie_name
+    },
+    'callback': function(res) {
+      res.msg = res.user_username + ', you are now registered!';
+
+      // Clear lightbox
+      lightbox(0);
+
+      set_login_cookie_and_info(res);
+
+      // If user don't click "x" to hide alert "(username), you are now registered", will auto-hide after 5 seconds
+      setTimeout("$('#alert_message').slideUp('slow')", 5000);
+
+    }
+  });
+}
+
+function set_and_show_user_info(user) {
+
+  inauth.user_username = user.user_username;
+  inauth.user_email    = user.user_email;
+
+  $('#login_or_register').hide();
+
+  $('#signup_show').hide();
+  $('#top_login_info').hide();
+  $('#top_user_info').show('fast');
+
+  $('#top_user_info_username').html(user.user_username);
+
+  $('#url_stats_is_private_div').show(); // only logged in users can see
+
+}
+
+function hide_user_info(user_username) { // called on logout
+
+  inauth.user_username = null;
+  inauth.user_email    = null;
+  $('#top_user_info').hide();
+  $('#top_login_info').show('fast');
+  $('#top_user_info_username').html('');
+
+  $('#url_stats_is_private_div').hide(); // only logged in users can see
+}
+
+function set_login_cookie_and_info(res) {
+
+  if (res.auth_cookie_name != null) {
+// TODO: Keep logged
+
+    inauth.setcookie({
+          'name': res.auth_cookie_name, 
+         'value': res.auth_cookie_value,
+        'domain': inauth.cookie_domain,
+          'days': inauth.keep_logged_in_days
+    });
+
+    alert_message('info', res.msg);
+    set_and_show_user_info(res);
+
+    inauth.logged_user_username = res.user_username;
+    return 1;
+  } else {
+    alert('error');
+//dump(res);
+    return null;
+  }
+}
+
+function chklogin() {
+
+  var user_username = $('#login_user_username').val();
+  var user_password = $('#login_user_password').val();
+  var auth_url = 'https://inauth.insite.com.br/mod_perl/login.pl';
+
+  POST({
+    'url': auth_url,
+    'data': {
+        'user_username': user_username,
+        'user_password': user_password, 
+                 'lang': 'en',
+              'cookies': 'no',
+               'action': 'chklogin',
+               'app_id': inauth.app_id,
+          'cookie_name': inauth.cookie_name,
+  'keep_logged_in_days': inauth.keep_logged_in_days
+     },
+    'callback': function(res) {
+
+       if (!res.user_username) {
+// TODO: O que fazer quando nao tem username???!?!!!
+// Devia pedir para cadastrar um username.
+alert('ERROR: No username. Please register again and choose a username.');
+//         res.user_username = res.user_email;
+       }
+
+       res.msg = 'You are now logged in as ' + res.user_username;
+
+       if (window.location.hash == '#login/admin') { // Redirect to url admin page
+         document.location.href = '/admin';
+       }
+
+
+       // Clear lightbox
+       lightbox(0);
+
+       set_login_cookie_and_info(res);
+
+       // If user don't click "x" to hide alert "You are now logged in as (username)", will auto-hide after 5 seconds
+       setTimeout("$('#alert_message').slideUp('slow')", 5000);
+
+    }
+  });
+}
+
+
+function getCookie(c_name) {
+  var i,x,y,ARRcookies=document.cookie.split(";");
+  for (i=0;i&lt;ARRcookies.length;i++) {
+    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+    x=x.replace(/^\s+|\s+$/g,"");
+    if (x==c_name) {
+      return unescape(y);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+$( 
+ function() {
+
+  if (window.location.hash.match(/login/)) { // User wants to login, even if already logged in
+    login_show();
+    return;
+  }
+
+  if (window.location.hash.match(/register/)) { // https://bit.do/#register
+    signup_show();
+    return;
+  }
+
+
+// Is user logged in ?
+  var auth_cookie_value = getCookie(inauth.cookie_name);
+
+
+  if (auth_cookie_value) { // user is logged in
+
+    $('#login_show').slideUp('slow');
+
+    var auth_url = 'https://inauth.insite.com.br/mod_perl/login.pl';
+
+    POST({
+      url: auth_url,
+     data: {
+               'action': 'get_user_info',
+          'cookie_name': inauth.cookie_name,
+         'cookie_value': auth_cookie_value
+     },
+     'callback': function(res) {
+                   if (res.user_id != null &amp;&amp; res.user_id != '') { // user is logged in
+                     inauth.logged_user_username = res.user_username;
+                     set_and_show_user_info(res);
+console.log('is logged in. err='+res.err);
+
+                   } else { // wrong cookie(?) or expired session
+                     inauth.logged_user_username = '';
+//err=Timeout (inatividade por mais de 12 horas).;
+//dump(res);
+console.log('will logout. err='+res.err);
+inauth.logout();
+                   }
+                 }
+     });
+  }
+
+
+ }
+
+);
+
+
+
+
+
+
+
+</script>
+
+
+<script>
+
+function lightbox(active) { // 1=activate(dark), 0=transparent
+
+  var FadeIncrement = .03;
+  var FadeSpeed  = 2;
+
+  var el = document.getElementById('lightbox');
+  if (el == null) {
+    el = document.createElement('div');
+    el.style.position = 'fixed';
+    el.style.top = '0';
+    el.style.left = '0';
+    el.style.width = '100%';
+    el.style.height = '100%';
+    el.style.backgroundColor = 'black';
+    el.style.zIndex = '9';
+    el.id = 'lightbox';
+    var body = document.getElementsByTagName('body')[0];
+    body.insertBefore(el, body.firstChild);
+  }
+
+  if (active == 1) { // to dark
+    fadeOut(el, 0.3, 0.55);
+  } else {           // to transparent
+    fadeOut(el, 0.55, 0.3);
+  }
+
+  // (el, 0, 1) = white to black
+  function fadeOut(el, opacity_start, opacity_end, signal) {
+
+    if (signal == undefined) {
+
+      el.style.opacity = (opacity_start-opacity_end &gt; 0) ? opacity_start + FadeIncrement : opacity_start - FadeIncrement;
+
+      signal = (opacity_start-opacity_end &lt; 0) ? 1 : -1; // 0..1
+
+      el.style.opacity = opacity_start - signal * FadeIncrement;
+      if (el.style.opacity&gt;1) {
+        el.style.opacity = 1;
+      } else if (el.style.opacity&lt;0) {
+        el.style.opacity = 0;
+      }
+    }
+
+    var new_opacity = parseInt(1000* (parseFloat(el.style.opacity) + signal * FadeIncrement))/1000;
+
+    if (signal*new_opacity &gt;= signal*opacity_end) {
+      el.style.opacity=opacity_end;
+      if (signal == -1) {
+        el.parentNode.removeChild(el);
+      }
+      return;
+    }
+
+    el.style.opacity = new_opacity;
+
+    setTimeout( function() {fadeOut(el, opacity_start, opacity_end, signal);}, FadeSpeed);
+
+  }
+
+}
+
+
+</script>
+
+
+
+
+<script>
+/// START CODE FROM in-framework/main.js ///
+
+function POST(params) {
+  params.type = 'POST';
+  GET(params);
+}
+
+function GET(params) {
+
+  var url      = params.url;
+  var data     = params.data;
+  var callback = params.callback;
+  var type     = params.type; // GET or POST
+
+  if (!type) {
+    type = 'GET';
+  }
+
+  document.body.style.cursor = "wait";
+
+// RODS: headers added to be sure that crossDomain requests will keep the HTTP_X_REQUESTED_WITH
+
+  $.ajax({
+        type: type,
+         url: url,
+     headers: {'X-Requested-With': 'XMLHttpRequest'},
+        data: data,
+  beforeSend: function() {
+       //         $('#loading').html('&lt;span class="loading_span"&gt;&lt;img src="/images/loading.gif" alt="Loading..."&gt;&lt;/span&gt;');
+              },
+
+       error:
+         function(jqXHR, textStatus, errorThrown) { // eg: 500 Internal Server Error
+           document.body.style.cursor = "default";
+            var err = jqXHR.responseText;
+            if (err == '') {
+              if (jqXHR.status == 500) {
+                err = 'Internal Server Error (error code 500)';
+              } else {
+                err = 'Connection error. Please try again later.'+jqXHR;
+                if (jqXHR.status!=0) {
+                  err += ' (error code: '+jqXHR.status+')';
+                }
+              }
+           }
+           var error_code = ' (error code: '+textStatus+'; '+errorThrown + ')';
+           alert('ERROR: ' + err + error_code);
+//           alert('status='+jqXHR.status+';statusText='+jqXHR.statusText+'; readyState='+jqXHR.readyState);
+         },
+
+     success:
+       function(str_result) {
+         document.body.style.cursor = "default";
+// $('.loading_span').remove();
+         if (str_result.error) {
+// RODS: new in js.do:
+           alert_message('error', str_result.error);
+         } else {
+           if (str_result.alert) {
+             alert_message('block', str_result.alert);
+           }
+
+           if (typeof(callback)=='function') {
+             callback(str_result);
+           }
+         }
+       }
+  });
+
+}
+
+/// END OF in-framework CODE ///
+
+
+
+
+function alert_message(alert_type, msg) { // alert_type = block, error, success, info
+
+  var msg = '&lt;a class="close" href="javascript:;" onClick="$(\'#alert_message\').hide()"&gt;&amp;times;&lt;/a&gt;'+ msg;
+  $('#alert_message').empty()
+                     .removeClass('alert-success').removeClass('alert-error').removeClass('alert-info').removeClass('alert-block')
+                     .addClass('alert-'+alert_type)
+                     .hide().fadeIn(50);
+  $('#alert_message')[0].innerHTML=msg; // better than .html(msg) because malformed html was causing error
+
+}
+
+
+</script>
+
+
+
+<!--
+<div id='alert_message' class='alert_message'></div>
+<div id='error_message' class='error_message'></div>
+-->
+
+<div style="margin: 0 auto; height: 100%; border: 0px solid black; max-width: 900px;">
+
+<!--table all-->
+<table style="margin: 0 auto; width: 100%;">
+<tbody><tr>
+ <td style="text-align: center; &#10;vertical-align: top;&#10;">
+
+
+<a href="http://bit.do/" style="border: 0;">
+<img src="/images/bit-do-url-shortener-logo-sq-160.png" style="&#10; width: 160px;&#10; height: 160px;&#10; margin-top: 12px;&#10; xmargin-left: 35px;&#10; xmargin-right: 35px;&#10;" alt="URL Shortener" /></a>
+
+
+
+<br />
+<br />
+More value to your links
+<!--
+Get more from your links
+--><br />
+
+<h1 style="font-size: 20px">URL Shortener</h1>
+
+<br />
+
+
+
+<!-- bit.do adsense banner 200x200 -->
+<!--
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:200px"
+     data-ad-client="ca-pub-8949154439106523"
+     data-ad-slot="4940671825"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+
+<script data-ad-client="ca-pub-8949154439106523" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
+
+
+
+
+</td>
+<td style="padding-right: 30px; vertical-align: top;">
+
+
+<!--
+Shorten any link. Share links and track clicks.<sup style="color: #a0a0a0; font-size: 0.5em;">TM</sup>
+-->
+<!--
+Make a long URL short, easy to remember and to share.
+Powerful and Free URL Shortener Service
+-->
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+
+<script>
+
+var permasession_value = inauth.create_or_get_permasession();
+
+</script>
+
+<!--
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=438953099461035&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+-->
+
+<h3>Share links and track clicks</h3>
+Shorten and personalize any link.<br />
+Get real-time traffic statistics for your links. Free service.<br />
+<br />
+
+
+
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8949154439106523",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+
+<!--
+!-- bit do responsive home --
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8949154439106523"
+     data-ad-slot="6749488224"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+
+
+<form onsubmit="return(false)" class="form-horizontal">
+
+<table style="border: 0px; padding:0px; width: 100%;">
+<tbody><tr>
+<td style="vertical-align:top"><span class="orange_logo"><b>1. </b></span></td>
+
+<td>
+
+<!-- RODS: -->
+
+<h2 class="service_offline" style="display: none;">The link creation is temporarily blocked during system updates.<br />
+Please come back soon, the service will be reestablished soon
+</h2>
+
+<span class="service_online">
+
+Link to shorten:<br />
+
+<input type="text" name="url2" id="url2" value="site" class="h" />
+
+<textarea name="url" class="url" id="url" expandable="" onkeyup="&#10;&#10;// if (event.keyCode==13) {&#10;  this.value = this.value.replace(/[\r\n]/g, &quot;&quot;);&#10; // expand_textarea(this);&#10;" style="overflow: hidden; height: 34px;"></textarea>
+</span> <!-- /service_online -->
+ </td>
+</tr>
+
+<tr>
+<td></td>
+
+
+<!---- RODS: -->
+<td class="service_online" xstyle="display: none;">
+<span style="font-size: 14px; color: #333">
+Customize your short link (optional):<br />
+
+http://bit.do/
+<input type="text" size="26" id="url_hash" name="url_hash" title="name" onkeyup="&#10;  if (this.value.match(/[^\w-]/)) {&#10;    this.value = this.value.replace(/[^\w]+/g, &quot;-&quot;);&#10;  }&#10;  if (this.value.match(/^-/)) {&#10;    this.value = this.value.replace(/^-+/, &quot;&quot;);&#10;  }&#10;" />
+
+</span>
+
+<p>
+
+</p><div id="url_stats_is_private_div" style="display: none;">
+<input type="checkbox" name="url_stats_is_private" value="1" id="url_stats_is_private" /> Make access stats private
+</div>
+
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align:top"><b><span class="orange_logo">2.</span></b></td>
+<td style="vertical-align: top;">
+<span style="font-size: 0.8em; color: #303030;">Follow us on Twitter:
+<b><a href="http://twitter.com/bitdo" target="_blank" class="orange_logo" style="border:0;">@bitdo</a></b></span>
+
+<br /><br />
+</td>
+
+</tr><tr>
+<td style="vertical-align: top;"><b><span class="orange_logo">3.</span></b></td>
+<!-- RODS: -->
+<td style="vertical-align: top; xdisplay: none" class="service_online">
+
+<div class="g-recaptcha" data-sitekey="6Lf77AATAAAAAGJYavTCcRlSKhIrYtAr9jmGnmvc"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lf77AATAAAAAGJYavTCcRlSKhIrYtAr9jmGnmvc&amp;co=aHR0cDovL2JpdC5kbzo4MA..&amp;hl=en&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;size=normal&amp;cb=ntjqadf0hgv3" width="304" height="78" role="presentation" name="a-2mbmvu7zy5w3" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+<br />
+Shorten your URL:
+
+<input type="button" value="Shorten" onclick="shorten()" style="&#10; font-size: 20px;&#10; margin-top: -9px;&#10;" class="btn" id="button_submit" />
+
+  <br />
+<span id="error_msg" style="color: #e02000; font-weight: bold;"></span><br />
+<span style="font-size: 0.8em; color: #606060;"><b>Terms and conditions:</b> Spam links are not accepted and will be deleted.</span><br />
+
+</td>
+</tr>
+
+<tr>
+ <td></td>
+ <td style="vertical-align:top">
+<b style="color: #ff3300">NEW:</b> <a href="/custom-domain/">Have your own URL shortener service with custom domain name</a>
+
+<!-- results -->
+
+<div style="&#10; border: 1px solid black;&#10; background-color: #f0f0f0;&#10; padding: 10px;&#10; float: left;&#10; display: none;&#10; min-width: 450px;&#10;" id="results">
+
+
+<div id="url_title" style="font-weight: bold; margin-bottom: 10px;"></div>
+
+<table>
+<tbody><tr>
+ <td style="padding: 0;"><span id="your_url_is"><b>Short URL:</b></span></td>
+ <td>
+<!--
+<a href="" target=_blank id="url_shortened_link">
+-->
+ <input type="text" readonly="" value="" onclick="this.select()" style="&#10; width: 250px;&#10; border: 0px;&#10; background-color: #f0f0f0;&#10; color: #f06000;&#10; font-weight: bold;&#10;" id="url_shortened" />
+	<!--(copy link)-->
+
+
+<!-- TODO: uncomment
+<a href="" id="post_twitter" target=_blank><img src="images/tweet-this.png" border=0 align=absmiddle alt="Tweet this" title="Tweet this link"></a>
+-->
+</td>
+</tr>
+
+<tr>
+ <td style="padding: 0;"><b>Traffic stats:</b></td>
+ <td><a href="" target="_blank" id="url_shortened_link_stats"><span style="color: #f06000; font-weight: bold;" id="url_shortened_stats"></span></a></td>
+</tr>
+
+</tbody></table>
+
+
+<span id="qr_code" style="&#10; display: inline-block;&#10; margin-top: 7px;&#10; font-size: 12px;&#10; text-align: center;&#10; background-color: white;&#10; padding: 5px;&#10;">qr code<br />code url</span>
+</div>
+<!-- /results -->
+
+<br style="clear: both" />
+
+
+</td>
+</tr>
+
+</tbody></table>
+
+<!-- OLD
+<div class="fb-like" data-href="http://bit.do/" data-send="true" data-width="450" data-show-faces="true"></div>
+-->
+<!-- NEW
+<div class="fb-like" data-href="http://bit.do/" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="true"></div>
+-->
+
+</form>
+
+<script>
+
+// from in-framework/main.js
+function expand_textarea(textArea, min_height, max_height) {
+
+  if (!max_height) {
+    max_height = 400; // default max height
+  }
+  if (!min_height) {
+    min_height = 0;
+  }
+
+  textArea.style.height = '0px';
+  if (textArea.scrollHeight &lt; max_height) {
+    if (textArea.scrollHeight &lt; min_height) {
+      textArea.style.height = min_height + 'px';
+    } else {
+      textArea.style.overflow='hidden'; // hide flickering scrollbar
+      textArea.style.height = (textArea.scrollHeight+8) + 'px';
+    }
+  } else {
+    textArea.style.overflow=''; // display scrollbar
+    textArea.style.height = max_height + 'px';
+  }
+
+}
+
+
+$(
+  function() {
+
+  $('textarea[expandable]').each(
+    function(n) {
+      var max_height = $(this).attr('expandable') || 400; // default max height
+      var min_height = this.offsetHeight || 120; // default min height. (this.offsetHeight=0 if textarea is display:none.Then 120px=7 rows)
+
+      $(this).keydown( function() { expand_textarea(this, min_height, max_height); } );
+      $(this).keyup(   function() { expand_textarea(this, min_height, max_height); } );
+      $(this).focus(   function() { expand_textarea(this, min_height, max_height); } );
+
+      expand_textarea(this, min_height, max_height);
+    }
+  );
+
+});
+
+
+document.getElementById('url').focus();
+document.getElementById('url2').value=' site3 ';
+
+
+var this_shortened_url_and_hash = '';
+var last_shortened_url_and_hash = '';
+
+function shorten() {
+
+  $('#button_submit').prop('disabled', true); // avoids double click
+  setTimeout(function() {
+    $('#button_submit').prop('disabled', false);
+  }, 2500);
+
+  var url = $('#url').val();
+      url = url.replace(/^\s+/, "");
+      url = url.replace(/\s+$/, "");
+
+  var url2 = $('#url2').val();
+
+  var url_stats_is_private = 0;
+  if ( $('#url_stats_is_private').is(":checked") ) {
+    url_stats_is_private = 1;
+  }
+
+  var url_hash = $('#url_hash').val();        // custom user defined
+      url_hash = url_hash.replace(/-+$/, ""); // hash can not end with '-'
+
+  $('#url_hash').val(url_hash);
+
+  if (!is_valid_url(url)) {
+    var error_msg = "Please enter a valid URL.";
+    $('#error_msg').fadeTo("fast",0);
+    $('#error_msg').fadeTo("fast",1).html(error_msg);
+    return false;
+  }
+
+  this_shortened_url_and_hash = url + ';' + url_hash;
+
+  if (this_shortened_url_and_hash == last_shortened_url_and_hash) { // User clicked 2 times in "shorten" button
+//    var error_msg = "You have already shortened this URL.";
+//    $('#error_msg').fadeTo("fast",0);
+//    $('#error_msg').fadeTo("fast",1).html(error_msg);
+    // Blink effect
+    $("#results").fadeOut(100, function() { $("#results").fadeIn(100) } );
+    return false;
+  }
+
+  var recaptcha = $('[name=g-recaptcha-response]').val();
+  if (!recaptcha) {
+    alert("ERROR: please check the reCaptcha to continue.");
+    return false;
+  }
+
+  var url_obj = {
+                 action: 'shorten',
+                    url: url,
+                   url2: url2,
+               url_hash: url_hash,
+   url_stats_is_private: url_stats_is_private,
+              recaptcha: recaptcha,
+           permasession: inauth.permasession_value
+  };
+
+  $.ajax({
+
+       type: "POST",
+        url: "/mod_perl/url-shortener.pl",
+       data: (url_obj),
+
+    error:
+      function(XMLHttpRequest, textStatus, errorThrown) {
+        document.body.style.cursor = "default";
+        console.log(XMLHttpRequest.responseText);
+//        alert(XMLHttpRequest.responseText);
+      },
+
+    success: function(str_result) {
+
+      document.body.style.cursor = "default";
+
+      if (str_result.error) {
+        var error_msg = str_result.error;
+        $('#error_msg').fadeTo("fast",0);
+        $('#error_msg').fadeTo("fast",1).html(error_msg);
+        return false;
+      } else {
+        $('#error_msg').html('');
+      }
+
+      $('#results').fadeTo("fast", 1);
+
+      var url_shortened = str_result.url_base + str_result.url_hash;
+
+//      $('#url_shortened_link').attr('href', url_shortened);
+//      $('#url_shortened').html( url_shortened );
+      $('#url_shortened').val( url_shortened );
+
+      $('#url_shortened_link_stats').attr('href', url_shortened + '-');
+      $('#url_shortened_stats').html( url_shortened + '-' );
+
+// TODO: Uncomment
+//      $('#post_twitter').attr('href', 'http://twitter.com/timeline/home?status=' + url_shortened );
+
+      var qr_code = 'QR Code:&lt;br&gt;&lt;img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=100x100&amp;choe=UTF-8&amp;chld=H%7C0&amp;chl='+url_shortened+'" alt="QR Code" title="Enlarge QR Code"&gt;&lt;br&gt;'+url_shortened;
+      var qr_code_enlarge_url = url_shortened + "-?qrcode=1";
+      var qr_code_html = '&lt;a href="'+ qr_code_enlarge_url + '" style="border: 0;"&gt;' + qr_code + '&lt;/a&gt;';
+
+      $('#qr_code').html(qr_code_html);
+
+      last_shortened_url_and_hash = this_shortened_url_and_hash;
+
+      get_title(str_result.url_id);
+
+    }
+
+  });
+
+  return true;
+
+}
+
+
+function get_title(url_id) {
+
+  var url_obj = {
+         action: 'get_title',
+         url_id: url_id,
+  };
+
+  $.ajax({
+
+       type: "POST",
+        url: "/mod_perl/url-shortener.pl",
+       data: (url_obj),
+
+    error:
+      function(XMLHttpRequest, textStatus, errorThrown) {
+        document.body.style.cursor = "default";
+        console.log(XMLHttpRequest.responseText);
+//        alert(XMLHttpRequest.responseText);
+      },
+
+    success: function(str_result) {
+
+      if (str_result.error) {
+        var error_msg = str_result.error;
+        $('#error_msg').fadeTo("fast",0);
+        $('#error_msg').fadeTo("fast",1).html(error_msg);
+        return false;
+      } else {
+        $('#error_msg').html('');
+      }
+
+      $('#url_title').html(str_result.title + "&lt;br&gt;");
+
+    }
+
+  });
+
+  return true;
+
+}
+
+
+
+function is_valid_url(url) {
+
+ // tem sub igual no .pl
+
+//var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%@!\-\/]))?/
+//  var regexp = /^(ftp|https?):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%@!\-\/]))?/
+//  var regexp = /^((ftp|https?):\/\/)?([\w+:])/;
+//{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%@!\-\/]))?/
+//	return regexp.test(s);
+//  var pos_slash = URL.indexOf ("/");
+//^[\w\.\:]+
+
+  // Accepts Data URL
+  if (url.match(/^data:/)) {
+    return true;
+  }
+
+  // Accepts network addres \\...
+  if (url.match(/^\\\\\w/)) {
+    return true;
+  }
+
+  if (!url.match(/^\w/) || !url.match(/\w\.\w\w/) || url.match(/\s/)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+//$(document).ready(function(){
+if (0) {
+  $('input[type=text][title],input[type=password][title],textarea[title]').each(function(i){
+    var tit = $(this).attr('title');
+
+    function put_placeholder(that) {
+      if ($(that).val()=='') {
+        $(that).css('font-style', 'italic');
+        $(that).css('color', '#888');
+        $(that).val(tit);
+      }
+    }
+    put_placeholder(this);
+
+    $(this).focus(function(){
+      if ($(this).val()==tit) {
+        $(this).val('');
+        $(this).css('font-style', 'normal');
+        $(this).css('color', 'black');
+      }
+    });
+
+    $(this).blur(function(){
+        put_placeholder(this);
+    });
+ });
+}
+//});
+
+
+</script>
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+<!-- /table all -->
+
+
+<p style="float: right; text-align: right; font-size: 0.8em; color: #808080; margin: 0; margin-right: 10px;">
+Read our Tweets: <b><a href="https://twitter.com/bitdo" target="_blank" class="orange_logo" style="border: 0;">@bitdo</a> </b>
+</p>
+<br style="clear: both;" />
+<hr style="&#10; border: 0px;&#10; height: 1px;&#10; background-color: #e0e0e0;&#10; xbackground-color: #fab035;&#10;&#10;" />
+
+<div style="&#10; margin: 0 auto;&#10; text-align: center;&#10; xbackground-color: #c8c8c8;&#10; bottom: 0px;&#10;">
+<span style="font-size: 0.7em; line-height: 35px;">
+Shorten and personalize long web addresses. Get real-time traffic statistics for your links. Free service.<br />
+</span>
+<span style="font-size: 15px; font-family: arial;">
+
+<a href="http://bit.do/">bit.do - home</a>
+
+<span style="color:#bbbbbb">|</span>
+<a href="/best-url-shortener.php">why bit.do is better</a>
+<span style="color:#bbbbbb">|</span>
+<a href="/about-us.php">about us</a> 
+<span style="color:#bbbbbb">|</span>
+<a href="/what-is-url-shortener.php">about url shortener</a>
+
+<span style="color:#bbbbbb">|</span>
+<a href="/faq/">FAQ</a>
+
+<span style="color:#bbbbbb">|</span>
+<a href="/contact.php?subject=abuse+report">abuse report</a>
+
+<span style="color:#bbbbbb">|</span>
+<a href="/contact.php">contact</a>
+
+<!--
+<a href="">FAQ</a> |
+<a href="">terms</a> |
+-->
+</span>
+<p style="margin: 7px; color: #909090; font-size: 0.5em;">
+Copyright © 2020</p>
+
+</div> <!-- /foot -->
+
+
+</div>
+<!-- /height 100% -->
+
+
+<script src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-756399-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; width: 0px; background-color: transparent; visibility: visible;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?guci=2.2.0.0.2.2.0.0&amp;client=ca-pub-8949154439106523&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1606992274&amp;plat=1%3A8%2C2%3A8%2C9%3A32776%2C10%3A32%2C11%3A32%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C40%3A32&amp;format=0x0&amp;url=http%3A%2F%2Fbit.do%2F&amp;ea=0&amp;flash=0&amp;pra=5&amp;wgl=1&amp;tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hZHNlcnZpY2UuZ29vZ2xlLmNvbSIsInN0YXRlIjowfSx7Imlzc3Vlck9yaWdpbiI6Imh0dHBzOi8vYXR0ZXN0YXRpb24uYW5kcm9pZC5jb20iLCJzdGF0ZSI6MH1d&amp;dt=1606992273932&amp;bpp=12&amp;bdt=1777&amp;idt=231&amp;shv=r20201201&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=2279601722776&amp;frm=20&amp;pv=2&amp;ga_vid=222961883.1606992273&amp;ga_sid=1606992273&amp;ga_hid=324412059&amp;ga_fc=1&amp;u_tz=-480&amp;u_his=2&amp;u_java=0&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_nplug=0&amp;u_nmime=0&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=42530671%2C21068084%2C21066973&amp;oid=3&amp;pvsid=2604026928679970&amp;pem=754&amp;rx=0&amp;eae=2&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=8192&amp;bc=23&amp;ifi=0&amp;uci=a!0&amp;fsb=1&amp;dtd=260" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true"></iframe></ins></ins></ins><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"></ins><iframe id="google_osd_static_frame_7498815952380" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=UFwvoDBMjc8LiYc1DKXiAomK&amp;k=6Lf77AATAAAAAGJYavTCcRlSKhIrYtAr9jmGnmvc&amp;cb=fcrthdqsfcnl" name="c-2mbmvu7zy5w3" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><iframe src="https://tpc.googlesyndication.com/sodar/sodar2/219/runner.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20201201/r20190131/zrt_lookup.html#" data-ad-client="ca-pub-8949154439106523" style="display: none;"></iframe></html>
