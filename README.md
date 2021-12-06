@@ -1,4 +1,4 @@
-# [ACSAC-AE] Eluding ML-based Adblockers With Actionable Adversarial Examples
+# Eluding ML-based Adblockers With Actionable Adversarial Examples
 
 Hello! Thank you for evaluating our artifacts. We appreciate your time a lot and thus provide this detailed documentation for walkthrough purposes. Please follow the instructions below to reproduce the main results in the paper (Table 2 in the paper). 
 
