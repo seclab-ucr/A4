@@ -8,11 +8,16 @@ We have only tested our artifacts on **Ubuntu 18.04.5 LTS**. We believe they are
 
 **Reproduction Steps**
 
-**Step #1 -- download repositories**
+**Step #1 -- Download Repositories**
 
-After cloning this repo, you are supposed to observe the following directory structure, with all required files already in place.
+After cloning this repo, you are additionally supposed to download a few binaries and dataset files that cannot be hosted here due to their large sizes.
+
+Specifically, please follow the links below to complete the downloads.
+1. [AdGraph binary](https://github.com/uiowa-irl/AdGraph/releases/download/v1.0/AdGraph-Ubuntu-16.04.zip)
+2. [Dataset and model files](https://drive.google.com/file/d/1UxiFdhf4-s9pGdWLgXDvkcn7UnhSUGZo/view?usp=sharing)
+
+After unzipping the above files, place the folder of 1 under the root directory, and the folders of 2 into `attack-adgraph-pipeline`. Now you have a repo structure like the following.
 ```
-├── AdGraphAPI
 ├── AdGraph-Ubuntu-16.04
 ├── attack-adgraph-pipeline
 ├── map_local_list_cent.csv
@@ -22,7 +27,9 @@ After cloning this repo, you are supposed to observe the following directory str
 └── rendering_stream
 ```
 
-**Step #2 -- set up proxies**
+If you do not want to follow all steps above (we provide them for transparency), you can also directly download the [holistic zip file](https://drive.google.com/file/d/1NXgE7zZmZdT1dPtbAkhNuxuETBU0p1xL/view?usp=sharing) containing all files.
+
+**Step #2 -- Set Up Proxies**
 
 Recall that our attack is launched directly against webpages, which is technically implemented via HTML rewrites (i.e., structural and URL feature perturbations). For simulating real client-server environments (similar to what the deployers of A4 will face) and avoiding excessive engineering efforts, we rewrite local HTML files and pretend to be hosting websites that attempt to cloak ads in them. However, if we directly load local HTML files, several issues might arise (e.g., relative URLs in webpages cannot be interpreted correctly due to changed hostname). To tackle this challenge, we set up a MITM proxy that redirects requests to their originally intended server hostname so that resources can be loaded correctly. As discussed in Section 3.4 in the paper, we have two “mapping-back strategies'' that require two different proxies (due to different versions of the same webpage). In addition to them, the original (unmodified) version of the webpage also needs to be loaded and rendered at the beginning of handling each webpage. 
 
@@ -32,11 +39,11 @@ In the meantime, in order to realize concurrency for reducing the time consumpti
 2. for proxies handling requests from centrally perturbed (“Centralized strategy” in Figure 5 in the paper) webpages, type `cd ~/mitmproxy/ && . venv/bin/activate && mitmproxy --map-local-file ~/map_local_list_cent.csv -p [7777-7787] --use-modified`;
 3. for proxies handling requests from distributionally perturbed (“Distributed strategy” in Figure 5 in the paper) webpages, type `cd ~/mitmproxy/ && . venv/bin/activate && mitmproxy --map-local-file ~/map_local_list_dist.csv -p [7797-7807] --use-modified`. 
 
-**Step #3 -- run the pipeline**
+**Step #3 -- Run The Pipeline**
 
 Now we are ready to run the attack pipeline. Please first enter the `script` directory under `attack-adgraph-pipeline` by typing `cd attack-adgraph-pipeline/script`. Then, start the Python script that launches the attack pipeline in batches: `python3 batch_run_experiments.py`. Note that this script will only launch the “`All`” (i.e., including all perturbable features) variant of A4 attack (as explained in Section 5.1) as we consider it as the main results in the paper. 
 
-**Step #4 -- analyze the results**
+**Step #4 -- Analyze The Results**
 
 Normally, the attack pipeline will take up to 48 hours (with the concurrency over 24 proxies) to finish. After all processes finish, we can now analyze the generated logs to compare their results with what was reported in the paper. Specifically, all logs generated during the execution of the attack pipeline will be dumped into the folder of `attack-adgraph-pipeline/report`. Let us use some simple commands to summarize the results in log files. 
 
